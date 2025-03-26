@@ -1,111 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>静态网站 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</link><description>Recent content in 静态网站 on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 21 Mar 2025 23:00:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/index.xml" rel="self" type="application/rss+xml"/><item><title>将github变为免费图床</title><link>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link><pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid><description>&lt;h2 id="使用-github-作为免费图床的文档">使用 GitHub 作为免费图床的文档&lt;/h2>
-&lt;p>最近就想找一款免费的图床来放置自己的图片，逛了一圈下来发现GitHub可以白嫖，于是乎，就有了这篇文章。&lt;/p>
-&lt;p>GitHub 是一个非常流行的代码托管平台，除了代码存储外，你还可以使用 GitHub 来托管静态资源，比如图片。通过将图片上传到 GitHub 的仓库，你可以轻松获取图片的 URL，从而在网页或文档中嵌入这些图片。以下是如何使用 GitHub 作为免费图床的详细步骤。&lt;/p>
-&lt;h3 id="步骤-1-创建-github-仓库">步骤 1: 创建 GitHub 仓库&lt;/h3>
-&lt;ol>
-&lt;li>
-&lt;p>登录到 &lt;a href="https://github.com/">GitHub&lt;/a>。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>点击右上角的 &amp;ldquo;+&amp;rdquo; 按钮，然后选择 &amp;ldquo;New repository&amp;rdquo;。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>填写仓库的名称（例如：&lt;code>my-image-hosting&lt;/code>），并设置为公开（Public）。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>点击 &amp;ldquo;Create repository&amp;rdquo; 创建仓库。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://pic3.zhimg.com/v2-cdd72cbacf64cf512b0426eb2362d3e6_1440w.jpg" alt="">&lt;/p>
-&lt;h3 id="步骤-2-github获取个人的token">步骤 2: GitHub获取个人的Token&lt;/h3>
-&lt;ol>
-&lt;li>访问：&lt;a href="https://github.com/settings/tokens">settings-tokens&lt;/a> ，点击&lt;strong>Generate new token&lt;/strong>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://picx.zhimg.com/v2-2148c04aa5bc07ccea01b2273ba65033_1440w.jpg" alt="">&lt;/p>
-&lt;p>2.设置 token 属性 ，Expiration：永不过期，Select scopes：&lt;code>repo&lt;/code> 一定要全选，其他的无所谓 ，点击最下方&lt;strong>创建&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://pica.zhimg.com/v2-ef2f47f1c64e0b095e040cf103ea8b62_1440w.jpg" alt="">&lt;/p>
-&lt;ol>
-&lt;li>就会获得一个token字符串， &lt;strong>⚠️ 注意：一定要收藏好 token，因为只会显示一次！&lt;/strong>，关掉这个页面就再也看不见了。&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>[!IMPORTANT] &lt;strong>后续会继续使用这个token!!!!&lt;/strong>&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img src="https://pica.zhimg.com/v2-7efb7778246d4e3964471f46c290f790_1440w.jpg" alt="">&lt;/p>
-&lt;h3 id="步骤-3-下载picgo">步骤 3: 下载PicGo&lt;/h3>
-&lt;ol>
-&lt;li>在PicGo最新页面上下载它的安装包。&lt;a href="https://github.com/Molunerfinn/PicGo/releases">PicGo下载页面&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://picx.zhimg.com/v2-4e1070ec6988ea104dd9f339af322d4b_1440w.jpg" alt="">&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>安装PicGo。无需赘述&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>配置GitHub&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://picx.zhimg.com/v2-86772b08f48e060e991b724d7d11b677_1440w.jpg" alt="">&lt;/p>
-&lt;p>​&lt;/p>
-&lt;ol>
-&lt;li>&lt;strong>PicGo 上传区配置选中你的配置&lt;/strong>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://pic4.zhimg.com/v2-01a76c0126a75365b9bdc2e2163edda7_1440w.jpg" alt="">&lt;/p>
-&lt;p>​ 选择完成配置之后就可以拖拉拽上传文件了。&lt;/p>
-&lt;h3 id="步骤-4-typora中使用">步骤 4: &lt;a href="https://zhida.zhihu.com/search?content_id=253465306&amp;amp;content_type=Article&amp;amp;match_order=1&amp;amp;q=Typora&amp;amp;zhida_source=entity">Typora&lt;/a>中使用&lt;/h3>
-&lt;ol>
-&lt;li>打开Typora，在文件选项中选中偏好设置。&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://pic3.zhimg.com/v2-b7c8c84a3f9046e6003ca2ca01e08540_1440w.jpg" alt="">&lt;/p></description></item><item><title>测试平台教程</title><link>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link><pubDate>Fri, 21 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid><description>&lt;p>一、基本介绍：（）
-桌面端工具（一年左右），使用python的wxpython框架编写，使用pyinstaller打包为桌面exe文件；缺点：体积大，不便于分享；&lt;/p>
-&lt;p>&lt;img src="./images/image_0fa5b6bdd33056f5c14c2ba21dca4298.png" alt="">&lt;/p>
-&lt;p>web端应用（10月初至今）：flask+vue实现；优点，通过脚本实现热更新；链接形式便于分享。&lt;/p>
-&lt;p>&lt;img src="./images/image_554bf84092b63f4dfeef955bec300c72.png" alt="">&lt;/p>
-&lt;p>二、功能介绍：&lt;/p>
-&lt;p>&lt;img src="./images/image_d8f9cc72d69a56ab872809e6e0c32ca7.png" alt="">&lt;/p>
-&lt;p>三、技术实现&lt;/p>
-&lt;p>测试平台采用前后端分离的方式实现:&lt;/p>
-&lt;ol>
-&lt;li>后端由flask框架实现；
-（1）flask项目结构&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="./images/image_08bf969bb5e6e6a6c2866b5ecd815b9a.png" alt="">&lt;/p>
-&lt;p>（2）在项目入口文件中构建接口
-Flask：用于创建一个flask应用,app = Flask(&lt;strong>name&lt;/strong>)
-CORS:解决跨域问题，cors = CORS(app)
-request:接受请求的参数，request.args.get()；phone = request.json[]
-jsonify:以json格式返回结果：jsonify({&amp;ldquo;data&amp;rdquo;: res})
-接口的基本组成：&lt;/p>
-&lt;p>&lt;img src="./images/image_1e0619b874f00563f4df88a914e7b216.png" alt="">&lt;/p>
-&lt;p>构建一个接口的基本步骤：
-导包：Flask、CORS、request、jsonify
-在app.route()装饰器中定义接口的请求类型、url路径
-写一个接口函数
-获取入参（可选）
-get请求 request.args.get()
-post请求 request.json[]
-对得到的参数进行基本校验：如参数类型校验、字段长度、是否空、鉴权等。
-根据传参进行逻辑处理，调用对应功能，得到结果
-构建响应头（可选，返回类型是文件时必须）
-构建结果，使用jsonify将返回结果构建成一个js （可选）
-return结果
-启动flask
-app.run(ip,port,debug=True),其中debug=True代表以调试模式启动，代码改动后自动重启；debug默认为False。
-包的管理 requirements.txt
-代码中引入了的包，需要填写在该文件中，格式：“ 包名==版本号”&lt;/p>
-&lt;p>&lt;img src="./images/image_ddafd5dad0788c85d978475b2b619b09.png" alt="">&lt;/p>
-&lt;p>（3）采用gunnicorn+gevent部署flask项目
-介绍：
-一个HTTP 服务器，可以增加项目的并发，通常和gevent一起使用。
-安装gunicorn和gevent：
-pip install gunicorn -i &lt;a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple&lt;/a>
-pip install gevent-i &lt;a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple&lt;/a>
-配置文件 gunicorn.conf.py
-workers = 10 定义同时开启的处理请求的进程数量，根据网站流量适当调整
-worker_class = &amp;ldquo;gevent&amp;rdquo; 采用gevent库，支持异步处理请求，提高吞吐量
-bind = &amp;ldquo;0.0.0.0:80&amp;rdquo; 监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信,docker部署固定
-采用启动服务：
-gunicorn flask_index:app -c ./gunicorn.conf.py
-注意：Gunicorn只能运行在Linux环境中，不支持windows平台，因此在windows调试的时候不要用这个方式启动flask；
-2. 前端：vue 、node.js（前端的包管理工具，类似python的pip包管理工具）、vue-cli（vue项目的脚手架）、element-ui、echats提供页面交互;&lt;/p></description></item><item><title>docker常用命令</title><link>https://bluespace3.github.io/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid><description>&lt;p>docker pull ubuntu 载入ubuntu 镜像&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>静态网站 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</link><description>Recent content in 静态网站 on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/index.xml" rel="self" type="application/rss+xml"/><item><title>docker常用命令</title><link>https://bluespace3.github.io/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid><description>&lt;p>docker pull ubuntu 载入ubuntu 镜像&lt;/p>
 &lt;p>docker pull training/webapp # 载入镜像&lt;/p>
 &lt;p>docker pull python:3.7 安装python镜像&lt;/p>
 &lt;p>docker pull nginx 安装nginx镜像&lt;/p>
@@ -262,4 +155,55 @@ gunicorn flask_index:app -c ./gunicorn.conf.py
 &lt;/li>
 &lt;li>面试相关&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460820437.png" alt="1742460820437">&lt;/li>
 &lt;li>pycharm关闭pytest测试模式&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460849632.png" alt="1742460849632">&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>测试平台教程</title><link>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid><description>&lt;p>一、基本介绍：（）
+桌面端工具（一年左右），使用python的wxpython框架编写，使用pyinstaller打包为桌面exe文件；缺点：体积大，不便于分享；&lt;/p>
+&lt;p>&lt;img src="./images/image_0fa5b6bdd33056f5c14c2ba21dca4298.png" alt="">&lt;/p>
+&lt;p>web端应用（10月初至今）：flask+vue实现；优点，通过脚本实现热更新；链接形式便于分享。&lt;/p>
+&lt;p>&lt;img src="./images/image_554bf84092b63f4dfeef955bec300c72.png" alt="">&lt;/p>
+&lt;p>二、功能介绍：&lt;/p>
+&lt;p>&lt;img src="./images/image_d8f9cc72d69a56ab872809e6e0c32ca7.png" alt="">&lt;/p>
+&lt;p>三、技术实现&lt;/p>
+&lt;p>测试平台采用前后端分离的方式实现:&lt;/p>
+&lt;ol>
+&lt;li>后端由flask框架实现；
+（1）flask项目结构&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="./images/image_08bf969bb5e6e6a6c2866b5ecd815b9a.png" alt="">&lt;/p>
+&lt;p>（2）在项目入口文件中构建接口
+Flask：用于创建一个flask应用,app = Flask(&lt;strong>name&lt;/strong>)
+CORS:解决跨域问题，cors = CORS(app)
+request:接受请求的参数，request.args.get()；phone = request.json[]
+jsonify:以json格式返回结果：jsonify({&amp;ldquo;data&amp;rdquo;: res})
+接口的基本组成：&lt;/p>
+&lt;p>&lt;img src="./images/image_1e0619b874f00563f4df88a914e7b216.png" alt="">&lt;/p>
+&lt;p>构建一个接口的基本步骤：
+导包：Flask、CORS、request、jsonify
+在app.route()装饰器中定义接口的请求类型、url路径
+写一个接口函数
+获取入参（可选）
+get请求 request.args.get()
+post请求 request.json[]
+对得到的参数进行基本校验：如参数类型校验、字段长度、是否空、鉴权等。
+根据传参进行逻辑处理，调用对应功能，得到结果
+构建响应头（可选，返回类型是文件时必须）
+构建结果，使用jsonify将返回结果构建成一个js （可选）
+return结果
+启动flask
+app.run(ip,port,debug=True),其中debug=True代表以调试模式启动，代码改动后自动重启；debug默认为False。
+包的管理 requirements.txt
+代码中引入了的包，需要填写在该文件中，格式：“ 包名==版本号”&lt;/p>
+&lt;p>&lt;img src="./images/image_ddafd5dad0788c85d978475b2b619b09.png" alt="">&lt;/p>
+&lt;p>（3）采用gunnicorn+gevent部署flask项目
+介绍：
+一个HTTP 服务器，可以增加项目的并发，通常和gevent一起使用。
+安装gunicorn和gevent：
+pip install gunicorn -i &lt;a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple&lt;/a>
+pip install gevent-i &lt;a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple&lt;/a>
+配置文件 gunicorn.conf.py
+workers = 10 定义同时开启的处理请求的进程数量，根据网站流量适当调整
+worker_class = &amp;ldquo;gevent&amp;rdquo; 采用gevent库，支持异步处理请求，提高吞吐量
+bind = &amp;ldquo;0.0.0.0:80&amp;rdquo; 监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信,docker部署固定
+采用启动服务：
+gunicorn flask_index:app -c ./gunicorn.conf.py
+注意：Gunicorn只能运行在Linux环境中，不支持windows平台，因此在windows调试的时候不要用这个方式启动flask；
+2. 前端：vue 、node.js（前端的包管理工具，类似python的pip包管理工具）、vue-cli（vue项目的脚手架）、element-ui、echats提供页面交互;&lt;/p></description></item></channel></rss>
