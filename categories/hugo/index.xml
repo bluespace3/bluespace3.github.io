@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/categories/hugo/</link><description>Recent content in Hugo on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Git submodule</title><link>https://bluespace3.github.io/post/git-submodule/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/git-submodule/</guid><description>&lt;ul>
+&lt;li>
+&lt;ul>
+&lt;li>&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe">Git submodule添加子项目_库&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc">Git归并策略&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue">添加&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f">删除&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>输入“/”快速插入内容&lt;/p>
+&lt;p>添加图标&lt;/p>
+&lt;p>添加封面&lt;/p>
+&lt;p>展示文档信息&lt;/p>
+&lt;p>Git submodule添加子项目_库&lt;/p>
+&lt;p>开发过程中，经常会有一些通用的部分希望抽取出来做成一个公共库来提供给别的工程来使用，而公共代码库的版本管理是个麻烦的事情。git submodule命令就可以解决这个问题。&lt;/p>
+&lt;p>Git归并策略&lt;/p>
+&lt;p>Git归并有两种策略：递归，章鱼。&lt;/p>
+&lt;p>1.递归策略：当分支数只有两个的时候。&lt;/p>
+&lt;p>2.章鱼策略：当分支数大于两个的时候。&lt;/p>
+&lt;p>Git会自动选择归并的方法。&lt;/p>
+&lt;p>3.子树策略：是Git另一种归并方法。（submodule）&lt;/p>
+&lt;p>它可以把另一个子项目，嵌入到当前项目。而且会非常聪明的合并这些子项目。&lt;/p>
+&lt;p>添加&lt;/p>
+&lt;p>为当前工程添加submodule，命令如下：&lt;/p>
+&lt;p>git submodule add 仓库地址 路径&lt;/p>
+&lt;p>其中，仓库地址是指子模块仓库地址，路径指将子模块放置在当前工程下的路径。&lt;/p>
+&lt;p>注意：路径不能以 / 结尾（会造成修改不生效）、不能是现有工程已有的目录（不能順利 Clone）&lt;/p>
+&lt;p>示例:&lt;/p>
+&lt;p>git submodule add -f &lt;a href="http://git.cs/Cmblife_iOS_Internal/modulesLib.git">http://git.cs/Cmblife_iOS_Internal/modulesLib.git&lt;/a>&lt;/p>
+&lt;p>-f 是强制的意思，一般不需要加&lt;/p>
+&lt;p>命令执行完成，会在当前工程根路径下生成一个名为“.gitmodules”的文件，其中记录了子模块的信息。添加完成以后，再将子模块所在的文件夹添加到工程中即可。&lt;/p>
+&lt;p>删除&lt;/p>
+&lt;p>submodule的删除稍微麻烦点：首先，要在“.gitmodules”文件中删除相应配置信息。然后，执行“git rm –cached ”命令将子模块所在的文件从git中删除。&lt;/p>
+&lt;p>下载的工程带有submodule&lt;/p>
+&lt;p>当使用git clone下来的工程中带有submodule时，初始的时候，submodule的内容并不会自动下载下来的，此时，只需执行如下命令：&lt;/p>
+&lt;p>git submodule update –init –recursive&lt;/p>
+&lt;p>即可将子模块内容下载下来后工程才不会缺少相应的文件。&lt;/p></description></item><item><title>Hugo静态网站生成器入门指南</title><link>https://bluespace3.github.io/post/hugo-intro/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/hugo-intro/</guid><description>&lt;h2 id="什么是hugo">什么是Hugo？&lt;/h2>
+&lt;p>Hugo是一个用Go语言编写的快速、现代的静态网站生成器。它可以将Markdown文件转换为HTML页面，非常适合构建文档网站、博客等。&lt;/p>
+&lt;h2 id="hugo的主要特点">Hugo的主要特点&lt;/h2>
+&lt;ul>
+&lt;li>极快的构建速度&lt;/li>
+&lt;li>丰富的主题支持&lt;/li>
+&lt;li>简单的Markdown内容管理&lt;/li>
+&lt;li>强大的模板系统&lt;/li>
+&lt;li>内置的短代码功能&lt;/li>
+&lt;/ul>
+&lt;h2 id="安装hugo">安装Hugo&lt;/h2>
+&lt;p>在Windows上安装Hugo的步骤：&lt;/p>
+&lt;ol>
+&lt;li>下载Hugo的Windows版本&lt;/li>
+&lt;li>解压到指定目录&lt;/li>
+&lt;li>将Hugo的可执行文件路径添加到系统环境变量&lt;/li>
+&lt;/ol>
+&lt;h2 id="创建新站点">创建新站点&lt;/h2>
+&lt;p>使用以下命令创建一个新的Hugo站点：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new site mydocs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="下载插件">下载插件&lt;/h2>
+&lt;h2 id="添加内容">添加内容&lt;/h2>
+&lt;p>在content目录下创建Markdown文件来添加内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new blog/my-first-post.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="运行开发服务器">运行开发服务器&lt;/h2>
+&lt;p>使用以下命令启动开发服务器：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="部署网站">部署网站&lt;/h2>
+&lt;p>使用以下命令生成静态文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>
+&lt;p>然后将public目录下的文件部署到Web服务器即可，注意每次推送前运行hugo更新public文件夹&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若有更新域名，请删除public后，再运行hugo重新生成public，否则会出现路由错误的情况。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>为了方便新建.sh脚本文件，命名为.command.sh&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 判断是否已初始化Git仓库&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> ! -d &lt;span class="s2">&amp;#34;.git&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;未检测到Git仓库，正在初始化...&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> git init
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;Git仓库已初始化&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建.gitignore文件，排除不需要版本控制的文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat &amp;gt; .gitignore &lt;span class="s">&amp;lt;&amp;lt; EOF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">resources/
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">.DS_Store
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">node_modules/
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">.hugo_build.lock
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 添加所有文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 提交更改&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;更新博客&amp;#34;&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检查是否已关联远程仓库&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">REMOTE_URL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>git remote get-url origin 2&amp;gt;/dev/null&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> -z &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$REMOTE_URL&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;未检测到远程仓库，正在添加...&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> git remote add origin https://github.com/bluespace3/bluespace3.github.io
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;已关联远程仓库：&lt;/span>&lt;span class="nv">$REMOTE_URL&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 推送到GitHub&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push -u origin main --force
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>终端运行 ..command.sh&lt;/li>
+&lt;/ol>
+&lt;h2 id="更新维护">更新维护&lt;/h2>
+&lt;p>后期维护有许多要留意的地方否则容易踩坑。&lt;/p></description></item></channel></rss>
