@@ -14,6 +14,9 @@
     <loc>https://bluespace3.github.io/tags/%E6%84%9F%E5%8F%97/</loc>
     <lastmod>2025-03-25T21:43:32+08:00</lastmod>
   </url><url>
+    <loc>https://bluespace3.github.io/tags/%E5%8A%A0%E5%AF%86/</loc>
+    <lastmod>2025-03-25T21:43:32+08:00</lastmod>
+  </url><url>
     <loc>https://bluespace3.github.io/</loc>
     <lastmod>2025-03-25T21:43:32+08:00</lastmod>
   </url><url>
@@ -23,13 +26,43 @@
     <loc>https://bluespace3.github.io/tags/%E6%96%87%E7%AB%A0/</loc>
     <lastmod>2025-03-25T21:43:32+08:00</lastmod>
   </url><url>
+    <loc>https://bluespace3.github.io/tags/ci/cd/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/categories/git/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/tags/git/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/tags/gitlab/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/post/git%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/categories/hugo/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/tags/hugo/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/post/encrypted-example/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace3.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-03-25T12:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://bluespace3.github.io/tags/github/</loc>
     <lastmod>2025-03-21T23:00:32+08:00</lastmod>
   </url><url>
     <loc>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2025-03-21T23:00:32+08:00</lastmod>
-  </url><url>
-    <loc>https://bluespace3.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-03-21T23:00:32+08:00</lastmod>
   </url><url>
     <loc>https://bluespace3.github.io/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</loc>
@@ -37,9 +70,6 @@
   </url><url>
     <loc>https://bluespace3.github.io/categories/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2025-03-21T23:00:32+08:00</lastmod>
-  </url><url>
-    <loc>https://bluespace3.github.io/categories/git/</loc>
-    <lastmod>2025-03-21T12:59:32+08:00</lastmod>
   </url><url>
     <loc>https://bluespace3.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2025-03-21T12:59:32+08:00</lastmod>
@@ -98,9 +128,6 @@
     <loc>https://bluespace3.github.io/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2025-03-20T12:59:32+08:00</lastmod>
   </url><url>
-    <loc>https://bluespace3.github.io/tags/git/</loc>
-    <lastmod>2025-03-20T12:59:32+08:00</lastmod>
-  </url><url>
     <loc>https://bluespace3.github.io/post/git-submodule/</loc>
     <lastmod>2025-03-20T12:59:32+08:00</lastmod>
   </url><url>
@@ -108,12 +135,6 @@
     <lastmod>2025-03-20T12:59:32+08:00</lastmod>
   </url><url>
     <loc>https://bluespace3.github.io/tags/git%E5%AD%90%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2025-03-20T12:59:32+08:00</lastmod>
-  </url><url>
-    <loc>https://bluespace3.github.io/categories/hugo/</loc>
-    <lastmod>2025-03-20T12:59:32+08:00</lastmod>
-  </url><url>
-    <loc>https://bluespace3.github.io/tags/hugo/</loc>
     <lastmod>2025-03-20T12:59:32+08:00</lastmod>
   </url><url>
     <loc>https://bluespace3.github.io/post/hugo-intro/</loc>
@@ -165,9 +186,6 @@
     <lastmod>2025-03-20T12:59:32+08:00</lastmod>
   </url><url>
     <loc>https://bluespace3.github.io/tags/unnitest/</loc>
-    <lastmod>2025-03-20T12:59:32+08:00</lastmod>
-  </url><url>
-    <loc>https://bluespace3.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2025-03-20T12:59:32+08:00</lastmod>
   </url><url>
     <loc>https://bluespace3.github.io/tags/%E8%B8%A9%E5%9D%91/</loc>

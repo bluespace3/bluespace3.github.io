@@ -16,6 +16,13 @@
       <description></description>
     </item>
     <item>
+      <title>加密</title>
+      <link>https://bluespace3.github.io/tags/%E5%8A%A0%E5%AF%86/</link>
+      <pubDate>Tue, 25 Mar 2025 21:43:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/tags/%E5%8A%A0%E5%AF%86/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>文章</title>
       <link>https://bluespace3.github.io/tags/%E6%96%87%E7%AB%A0/</link>
       <pubDate>Tue, 25 Mar 2025 21:43:32 +0800</pubDate>
@@ -23,17 +30,45 @@
       <description></description>
     </item>
     <item>
-      <title>Github</title>
-      <link>https://bluespace3.github.io/tags/github/</link>
-      <pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate>
-      <guid>https://bluespace3.github.io/tags/github/</guid>
+      <title>CI/CD</title>
+      <link>https://bluespace3.github.io/tags/ci/cd/</link>
+      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
+      <guid>https://bluespace3.github.io/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://bluespace3.github.io/tags/git/</link>
+      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
+      <guid>https://bluespace3.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gitlab</title>
+      <link>https://bluespace3.github.io/tags/gitlab/</link>
+      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
+      <guid>https://bluespace3.github.io/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://bluespace3.github.io/tags/hugo/</link>
+      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
+      <guid>https://bluespace3.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>教程</title>
       <link>https://bluespace3.github.io/tags/%E6%95%99%E7%A8%8B/</link>
-      <pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate>
+      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
       <guid>https://bluespace3.github.io/tags/%E6%95%99%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github</title>
+      <link>https://bluespace3.github.io/tags/github/</link>
+      <pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/tags/github/</guid>
       <description></description>
     </item>
     <item>
@@ -107,24 +142,10 @@
       <description></description>
     </item>
     <item>
-      <title>Git</title>
-      <link>https://bluespace3.github.io/tags/git/</link>
-      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
-      <guid>https://bluespace3.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Git子项目</title>
       <link>https://bluespace3.github.io/tags/git%E5%AD%90%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       <guid>https://bluespace3.github.io/tags/git%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hugo</title>
-      <link>https://bluespace3.github.io/tags/hugo/</link>
-      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
-      <guid>https://bluespace3.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     <item>

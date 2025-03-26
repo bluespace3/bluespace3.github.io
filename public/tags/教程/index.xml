@@ -6,8 +6,15 @@
     <description>Recent content in 教程 on 蓝色空间号-新世界的探索者</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 21 Mar 2025 23:00:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate>
     <atom:link href="https://bluespace3.github.io/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>加密文章示例</title>
+      <link>https://bluespace3.github.io/post/encrypted-example/</link>
+      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/encrypted-example/</guid>
+      <description>&lt;h2 id=&#34;这是一篇加密的文章&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%bf%99%e6%98%af%e4%b8%80%e7%af%87%e5%8a%a0%e5%af%86%e7%9a%84%e6%96%87%e7%ab%a0&#34;&gt;&lt;/a&gt;&#xA;这是一篇加密的文章&#xA;&lt;/h2&gt;&lt;p&gt;只有输入正确的密码才能查看这篇文章的内容。&lt;/p&gt;&#xA;&lt;h3 id=&#34;如何设置文章加密&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%a6%82%e4%bd%95%e8%ae%be%e7%bd%ae%e6%96%87%e7%ab%a0%e5%8a%a0%e5%af%86&#34;&gt;&lt;/a&gt;&#xA;如何设置文章加密&#xA;&lt;/h3&gt;&lt;p&gt;在文章的前置参数中添加以下内容：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;encrypted&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;你的密码&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就可以为文章添加密码保护了。&lt;/p&gt;&#xA;&lt;h3 id=&#34;密码保护的工作原理&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%af%86%e7%a0%81%e4%bf%9d%e6%8a%a4%e7%9a%84%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86&#34;&gt;&lt;/a&gt;&#xA;密码保护的工作原理&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;当用户访问加密文章时，会显示密码输入框&lt;/li&gt;&#xA;&lt;li&gt;用户输入正确的密码后，文章内容才会显示&lt;/li&gt;&#xA;&lt;li&gt;密码验证在浏览器端进行，不需要服务器支持&lt;/li&gt;&#xA;&lt;li&gt;使用sessionStorage保存解锁状态，避免刷新页面后需要重新输入密码&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;注意事项&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9&#34;&gt;&lt;/a&gt;&#xA;注意事项&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;这种加密方式只是前端加密，不能防止真正的黑客攻击&lt;/li&gt;&#xA;&lt;li&gt;适合用于简单的内容保护，不适合保护高度敏感的信息&lt;/li&gt;&#xA;&lt;li&gt;密码直接保存在文章的前置参数中，所以不要使用您在其他地方使用的重要密码&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>将github变为免费图床</title>
       <link>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link>
