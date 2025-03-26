@@ -645,7 +645,7 @@ gunicorn flask_index:app -c ./gunicorn.conf.py
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">(&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2001&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3000&lt;/span>&lt;span class="p">),&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">(&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3001&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">9999&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="mi">12345678910111213141516171819202122232425262728293031&lt;/span>&lt;span class="n">AI写代码&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建好以后，如果表的内容和下图一样，那基本就没问题了&lt;/p></description></item><item><title>关于本博客</title><link>https://bluespace3.github.io/about/</link><pubDate>Sun, 09 Mar 2025 20:12:52 +0800</pubDate><guid>https://bluespace3.github.io/about/</guid><description/></item><item><title>友情链接</title><link>https://bluespace3.github.io/friend/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://bluespace3.github.io/friend/</guid><description>&lt;h2 id="本站信息">本站信息&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建好以后，如果表的内容和下图一样，那基本就没问题了&lt;/p></description></item><item><title>关于本博客</title><link>https://bluespace3.github.io/about/</link><pubDate>Sun, 09 Mar 2025 20:12:52 +0800</pubDate><guid>https://bluespace3.github.io/about/</guid><description/></item><item><title>Hello World</title><link>https://bluespace3.github.io/post/hello/</link><pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate><guid>https://bluespace3.github.io/post/hello/</guid><description/></item><item><title>友情链接</title><link>https://bluespace3.github.io/friend/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://bluespace3.github.io/friend/</guid><description>&lt;h2 id="本站信息">本站信息&lt;/h2>
 &lt;ul>
 &lt;li>站名： 拔剑Sketon&lt;/li>
 &lt;li>站长： 拔剑Sketon&lt;/li>
@@ -663,6 +663,4 @@ gunicorn flask_index:app -c ./gunicorn.conf.py
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="小伙伴们">小伙伴们&lt;/h2>
 &lt;div class="friends-link">
  &lt;a href="" target="_blank">&lt;/a>
-&lt;/div></description></item><item><title/><link>https://bluespace3.github.io/cicd%E6%80%9D%E8%B7%AF/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bluespace3.github.io/cicd%E6%80%9D%E8%B7%AF/</guid><description>&lt;ol>
-&lt;li>创建工作流&lt;/li>
-&lt;/ol></description></item><item><title/><link>https://bluespace3.github.io/image/unnitest%E7%AC%94%E8%AE%B0/1742460820437.png/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bluespace3.github.io/image/unnitest%E7%AC%94%E8%AE%B0/1742460820437.png/</guid><description/></item></channel></rss>
+&lt;/div></description></item></channel></rss>
