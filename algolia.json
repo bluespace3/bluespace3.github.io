@@ -15,6 +15,42 @@
   
   , 
   {
+    "objectID": "1742875200",
+    "permalink": "/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/",
+    "title": "gitlab配置cicd工作流",
+    
+    "content": " GitLab CI/CD 简介 GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。\nCI/CD 核心概念 持续集成 (CI): 开发人员频繁地将代码集成到主分支，每次集成都通过自动化构建和测试来验证，从而尽早发现问题。 持续交付 (CD): 确保代码随时可以部署到生产环境，通常包括自动化测试和部署流程。 持续部署 (CD): 将持续交付更进一步，自动将通过测试的代码部署到生产环境。 .gitlab-ci.yml 配置文件 GitLab CI/CD 的核心是 .gitlab-ci.yml 文件，它定义了 CI/CD 流水线的结构和行为。该文件需要放在项目的根目录下。\n基本结构 # 定义阶段 stages: - build - test - deploy # 定义作业 build_job: stage: build script: - echo \u0026#34;Building the app\u0026#34; - make build test_job: stage: test script: - echo \u0026#34;Running tests\u0026#34; - make test deploy_job: stage: deploy script: - echo \u0026#34;Deploying the app\u0026#34; - make deploy only: - master 关键组件 stages: 定义流水线的阶段，按顺序执行。 jobs: 定义在特定阶段执行的任务。 script: 在作业中执行的命令。 only/except: 控制作业何时运行（例如，只在特定分支上运行）。 GitLab Runner GitLab Runner 是执行 CI/CD 作业的代理，它可以安装在不同的环境中，如 Linux、Windows、macOS 等。\n安装 GitLab Runner # 在 Linux 上安装 curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash sudo apt-get install gitlab-runner # 在 macOS 上安装 brew install gitlab-runner 注册 Runner sudo gitlab-runner register 注册过程中，需要提供 GitLab 实例的 URL 和注册令牌，以及 Runner 的标签和执行器类型。\n高级配置 环境变量 variables: DATABASE_URL: \u0026#34;postgres://postgres:postgres@postgres:5432/my_database\u0026#34; job_name: variables: DATABASE_URL: \u0026#34;postgres://postgres:postgres@postgres:5432/my_test_database\u0026#34; script: - echo $DATABASE_URL 缓存和构件 cache: paths: - node_modules/ job_name: artifacts: paths: - dist/ expire_in: 1 week 依赖关系 job_name: stage: deploy dependencies: - build_job script: - echo \u0026#34;Deploying the app\u0026#34; 实际应用示例 Node.js 项目 image: node:14 stages: - build - test - deploy cache: paths: - node_modules/ build: stage: build script: - npm install - npm run build artifacts: paths: - dist/ test: stage: test script: - npm run test deploy_staging: stage: deploy script: - npm install -g firebase-tools - firebase use staging - firebase deploy --token $FIREBASE_TOKEN only: - develop deploy_production: stage: deploy script: - npm install -g firebase-tools - firebase use production - firebase deploy --token $FIREBASE_TOKEN only: - master when: manual Python 项目 image: python:3.9 stages: - test - deploy before_script: - pip install -r requirements.txt test: stage: test script: - pytest deploy: stage: deploy script: - pip install awscli - aws s3 sync ./dist s3://my-bucket/ only: - master CI/CD 最佳实践 保持流水线简单：只包含必要的步骤，避免过度复杂化。 使用缓存：缓存依赖项可以显著提高构建速度。 并行执行：将独立的任务并行执行以节省时间。 环境变量管理：使用 GitLab 的变量功能安全地存储敏感信息。 分支策略：为不同的分支配置不同的 CI/CD 行为。 故障排除 常见问题 Runner 无法连接：检查网络设置和 Runner 注册信息。 构建失败：查看日志以确定失败原因，可能是依赖项问题或脚本错误。 权限问题：确保 Runner 有足够的权限执行所需操作。 调试技巧 job_name: script: - set -x # 启用调试模式 - env # 打印环境变量 - ls -la # 列出文件 结论 GitLab CI/CD 是一个强大的工具，可以自动化软件开发的各个阶段。通过正确配置 .gitlab-ci.yml 文件，可以实现代码的自动构建、测试和部署，提高开发效率和代码质量。随着对 CI/CD 实践的深入理解，可以进一步优化流水线，使其更加高效和可靠。\n",
+    
+    "date": "2025-03-25 12:00:00",
+    "updated": "2025-03-25 12:00:00"
+  }
+  
+  , 
+  {
+    "objectID": "1742875200",
+    "permalink": "/post/git%E6%93%8D%E4%BD%9C/",
+    "title": "git操作",
+    
+    "content": " git回滚操作 回滚到上一个版本 git reset --hard HEAD^ 回滚到指定版本 git reset --hard \u0026lt;commit_id\u0026gt; ",
+    
+    "date": "2025-03-25 12:00:00",
+    "updated": "2025-03-25 12:00:00"
+  }
+  
+  , 
+  {
+    "objectID": "1742875200",
+    "permalink": "/post/encrypted-example/",
+    "title": "加密文章示例",
+    
+    "content": " 这是一篇加密的文章 只有输入正确的密码才能查看这篇文章的内容。\n如何设置文章加密 在文章的前置参数中添加以下内容：\nencrypted: true password: \u0026#34;你的密码\u0026#34; 这样就可以为文章添加密码保护了。\n密码保护的工作原理 当用户访问加密文章时，会显示密码输入框 用户输入正确的密码后，文章内容才会显示 密码验证在浏览器端进行，不需要服务器支持 使用sessionStorage保存解锁状态，避免刷新页面后需要重新输入密码 注意事项 这种加密方式只是前端加密，不能防止真正的黑客攻击 适合用于简单的内容保护，不适合保护高度敏感的信息 密码直接保存在文章的前置参数中，所以不要使用您在其他地方使用的重要密码 ",
+    
+    "date": "2025-03-25 12:00:00",
+    "updated": "2025-03-25 12:00:00"
+  }
+  
+  , 
+  {
     "objectID": "1742569232",
     "permalink": "/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/",
     "title": "将github变为免费图床",

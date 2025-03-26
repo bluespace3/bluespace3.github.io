@@ -91,7 +91,76 @@
 &lt;/ul>
 &lt;h3 id="2-金字塔内部结构">2. 金字塔内部结构&lt;/h3>
 &lt;p>&lt;strong>纵向关系&lt;/strong>：纵向关系是疑问-回答式的表达方式，让读者产生”为什么这么做的想法“，类似于层层推理。&lt;br>
-&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/6293c4ba0f4ff6bdab25842805d19b58.png" alt="在这里插入图片描述">&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/ac3217655f95ce686f2e87eb5ea0950a.png" alt="在这里插入图片描述">&lt;/p></description></item><item><title>将github变为免费图床</title><link>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link><pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid><description>&lt;h2 id="使用-github-作为免费图床的文档">使用 GitHub 作为免费图床的文档&lt;/h2>
+&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/6293c4ba0f4ff6bdab25842805d19b58.png" alt="在这里插入图片描述">&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/ac3217655f95ce686f2e87eb5ea0950a.png" alt="在这里插入图片描述">&lt;/p></description></item><item><title>gitlab配置cicd工作流</title><link>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介">GitLab CI/CD 简介&lt;/h2>
+&lt;p>GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p>
+&lt;h3 id="cicd-核心概念">CI/CD 核心概念&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>持续集成 (CI)&lt;/strong>: 开发人员频繁地将代码集成到主分支，每次集成都通过自动化构建和测试来验证，从而尽早发现问题。&lt;/li>
+&lt;li>&lt;strong>持续交付 (CD)&lt;/strong>: 确保代码随时可以部署到生产环境，通常包括自动化测试和部署流程。&lt;/li>
+&lt;li>&lt;strong>持续部署 (CD)&lt;/strong>: 将持续交付更进一步，自动将通过测试的代码部署到生产环境。&lt;/li>
+&lt;/ul>
+&lt;h2 id="gitlab-ciyml-配置文件">.gitlab-ci.yml 配置文件&lt;/h2>
+&lt;p>GitLab CI/CD 的核心是 &lt;code>.gitlab-ci.yml&lt;/code> 文件，它定义了 CI/CD 流水线的结构和行为。该文件需要放在项目的根目录下。&lt;/p>
+&lt;h3 id="基本结构">基本结构&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 定义阶段&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">stages&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 定义作业&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">build_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Building the app&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">test_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Running tests&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">deploy_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Deploying the app&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">only&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">master&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="关键组件">关键组件&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>stages&lt;/strong>: 定义流水线的阶段，按顺序执行。&lt;/li>
+&lt;li>&lt;strong>jobs&lt;/strong>: 定义在特定阶段执行的任务。&lt;/li>
+&lt;li>&lt;strong>script&lt;/strong>: 在作业中执行的命令。&lt;/li>
+&lt;li>&lt;strong>only/except&lt;/strong>: 控制作业何时运行（例如，只在特定分支上运行）。&lt;/li>
+&lt;/ol>
+&lt;h2 id="gitlab-runner">GitLab Runner&lt;/h2>
+&lt;p>GitLab Runner 是执行 CI/CD 作业的代理，它可以安装在不同的环境中，如 Linux、Windows、macOS 等。&lt;/p></description></item><item><title>git操作</title><link>https://bluespace3.github.io/post/git%E6%93%8D%E4%BD%9C/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/git%E6%93%8D%E4%BD%9C/</guid><description>&lt;h2 id="git回滚操作">git回滚操作&lt;/h2>
+&lt;h3 id="回滚到上一个版本">回滚到上一个版本&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git reset --hard HEAD^
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="回滚到指定版本">回滚到指定版本&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git reset --hard &amp;lt;commit_id&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>加密文章示例</title><link>https://bluespace3.github.io/post/encrypted-example/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/encrypted-example/</guid><description>&lt;h2 id="这是一篇加密的文章">这是一篇加密的文章&lt;/h2>
+&lt;p>只有输入正确的密码才能查看这篇文章的内容。&lt;/p>
+&lt;h3 id="如何设置文章加密">如何设置文章加密&lt;/h3>
+&lt;p>在文章的前置参数中添加以下内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">encrypted&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">password&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;你的密码&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样就可以为文章添加密码保护了。&lt;/p>
+&lt;h3 id="密码保护的工作原理">密码保护的工作原理&lt;/h3>
+&lt;ol>
+&lt;li>当用户访问加密文章时，会显示密码输入框&lt;/li>
+&lt;li>用户输入正确的密码后，文章内容才会显示&lt;/li>
+&lt;li>密码验证在浏览器端进行，不需要服务器支持&lt;/li>
+&lt;li>使用sessionStorage保存解锁状态，避免刷新页面后需要重新输入密码&lt;/li>
+&lt;/ol>
+&lt;h3 id="注意事项">注意事项&lt;/h3>
+&lt;ul>
+&lt;li>这种加密方式只是前端加密，不能防止真正的黑客攻击&lt;/li>
+&lt;li>适合用于简单的内容保护，不适合保护高度敏感的信息&lt;/li>
+&lt;li>密码直接保存在文章的前置参数中，所以不要使用您在其他地方使用的重要密码&lt;/li>
+&lt;/ul></description></item><item><title>将github变为免费图床</title><link>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link><pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid><description>&lt;h2 id="使用-github-作为免费图床的文档">使用 GitHub 作为免费图床的文档&lt;/h2>
 &lt;p>最近就想找一款免费的图床来放置自己的图片，逛了一圈下来发现GitHub可以白嫖，于是乎，就有了这篇文章。&lt;/p>
 &lt;p>GitHub 是一个非常流行的代码托管平台，除了代码存储外，你还可以使用 GitHub 来托管静态资源，比如图片。通过将图片上传到 GitHub 的仓库，你可以轻松获取图片的 URL，从而在网页或文档中嵌入这些图片。以下是如何使用 GitHub 作为免费图床的详细步骤。&lt;/p>
 &lt;h3 id="步骤-1-创建-github-仓库">步骤 1: 创建 GitHub 仓库&lt;/h3>
