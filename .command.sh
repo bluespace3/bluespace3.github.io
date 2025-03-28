@@ -1,3 +1,6 @@
+#加载静态文件
+hugo --minify 
+
 # 判断是否已初始化Git仓库
 if [ ! -d ".git" ]; then
     echo "未检测到Git仓库，正在初始化..."

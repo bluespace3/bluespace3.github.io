@@ -1,19 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Linux常用命令 on 蓝色空间号-新世界的探索者</title>
-    <link>https://bluespace3.github.io/tags/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-    <description>Recent content in Linux常用命令 on 蓝色空间号-新世界的探索者</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate>
-    <atom:link href="https://bluespace3.github.io/tags/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>linux常用命令</title>
-      <link>https://bluespace3.github.io/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
-      <guid>https://bluespace3.github.io/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>&lt;h3 id=&#34;文章目录&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95&#34;&gt;&lt;/a&gt;&#xA;文章目录&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;一、目录操作&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1、批量操作&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;二、文件操作&lt;/li&gt;&#xA;&lt;li&gt;三、文件内容操作（查看日志，更改配置文件）&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1、grep(检索文件内容)&lt;/li&gt;&#xA;&lt;li&gt;2、awk(数据统计)&lt;/li&gt;&#xA;&lt;li&gt;3、sed(替换文件内容)&lt;/li&gt;&#xA;&lt;li&gt;4、管道操作符 &lt;code&gt;|&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;四、系统日志位置&lt;/li&gt;&#xA;&lt;li&gt;五、创建与删除软连接&lt;/li&gt;&#xA;&lt;li&gt;六、压缩和解压缩&lt;/li&gt;&#xA;&lt;li&gt;七、Linux下文件的详细信息&lt;/li&gt;&#xA;&lt;li&gt;八、常用的docker容器的命令：&lt;/li&gt;&#xA;&lt;li&gt;九、运维常用命令&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1、查看服务器端口号是否可用&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;十、yum常用命令&lt;/li&gt;&#xA;&lt;li&gt;十一、其他命令&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1、xargs&lt;/li&gt;&#xA;&lt;li&gt;2、curl语法&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;十二、Linux内核优化&lt;/li&gt;&#xA;&lt;li&gt;十三、用户权限操作&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1、用户操作&lt;/li&gt;&#xA;&lt;li&gt;2、添加组&lt;/li&gt;&#xA;&lt;li&gt;3、sudo用户权限操作&lt;/li&gt;&#xA;&lt;li&gt;4、更换文件所有者&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;十四、TOP&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1、统计信息区&lt;/li&gt;&#xA;&lt;li&gt;2、进程信息区&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;十五、文件安装&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1、文件下载(lrzsz)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;十六、文章PDF版本&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Linux 系统目录&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── bin -&amp;gt; usr/bin &lt;span class=&#34;c1&#34;&gt;# 用于存放二进制命令&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── boot &lt;span class=&#34;c1&#34;&gt;# 内核及引导系统程序所在的目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── dev &lt;span class=&#34;c1&#34;&gt;# 所有设备文件的目录（如磁盘、光驱等）&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── etc &lt;span class=&#34;c1&#34;&gt;# 配置文件默认路径、服务启动命令存放目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── home &lt;span class=&#34;c1&#34;&gt;# 用户家目录，root用户为/root&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── lib -&amp;gt; usr/lib &lt;span class=&#34;c1&#34;&gt;# 32位库文件存放目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── lib64 -&amp;gt; usr/lib64 &lt;span class=&#34;c1&#34;&gt;# 64位库文件存放目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── media &lt;span class=&#34;c1&#34;&gt;# 媒体文件存放目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── mnt &lt;span class=&#34;c1&#34;&gt;# 临时挂载设备目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── opt &lt;span class=&#34;c1&#34;&gt;# 自定义软件安装存放目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── proc &lt;span class=&#34;c1&#34;&gt;# 进程及内核信息存放目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── root &lt;span class=&#34;c1&#34;&gt;# Root用户家目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── run &lt;span class=&#34;c1&#34;&gt;# 系统运行时产生临时文件，存放目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── sbin -&amp;gt; usr/sbin &lt;span class=&#34;c1&#34;&gt;# 系统管理命令存放目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── srv &lt;span class=&#34;c1&#34;&gt;# 服务启动之后需要访问的数据目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── sys &lt;span class=&#34;c1&#34;&gt;# 系统使用目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── tmp &lt;span class=&#34;c1&#34;&gt;# 临时文件目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── usr &lt;span class=&#34;c1&#34;&gt;# 系统命令和帮助文件目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── var &lt;span class=&#34;c1&#34;&gt;# 存放内容易变的文件的目录&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;12345678910111213141516171819&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一目录操作&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%b8%80%e7%9b%ae%e5%bd%95%e6%93%8d%e4%bd%9c&#34;&gt;&lt;/a&gt;&#xA;一、目录操作&#xA;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;                                查看当前工作目录&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clear                         清除屏幕&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~                        当前用户目录&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /                        根目录&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; -                        上一次访问的目录&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..                        上一级目录&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;123456&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;查看目录内信息&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux常用命令 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/tags/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><description>Recent content in Linux常用命令 on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml"/><item><title>linux常用命令</title><link>https://bluespace3.github.io/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;h3 id="文章目录">
+&lt;a class="header-anchor" href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95">&lt;/a>
+文章目录
+&lt;/h3>&lt;ul>
+&lt;li>一、目录操作
+&lt;ul>
+&lt;li>1、批量操作&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>二、文件操作&lt;/li>
+&lt;li>三、文件内容操作（查看日志，更改配置文件）
+&lt;ul>
+&lt;li>1、grep(检索文件内容)&lt;/li>
+&lt;li>2、awk(数据统计)&lt;/li>
+&lt;li>3、sed(替换文件内容)&lt;/li>
+&lt;li>4、管道操作符 &lt;code>|&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>四、系统日志位置&lt;/li>
+&lt;li>五、创建与删除软连接&lt;/li>
+&lt;li>六、压缩和解压缩&lt;/li>
+&lt;li>七、Linux下文件的详细信息&lt;/li>
+&lt;li>八、常用的docker容器的命令：&lt;/li>
+&lt;li>九、运维常用命令
+&lt;ul>
+&lt;li>1、查看服务器端口号是否可用&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>十、yum常用命令&lt;/li>
+&lt;li>十一、其他命令
+&lt;ul>
+&lt;li>1、xargs&lt;/li>
+&lt;li>2、curl语法&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>十二、Linux内核优化&lt;/li>
+&lt;li>十三、用户权限操作
+&lt;ul>
+&lt;li>1、用户操作&lt;/li>
+&lt;li>2、添加组&lt;/li>
+&lt;li>3、sudo用户权限操作&lt;/li>
+&lt;li>4、更换文件所有者&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>十四、TOP
+&lt;ul>
+&lt;li>1、统计信息区&lt;/li>
+&lt;li>2、进程信息区&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>十五、文件安装
+&lt;ul>
+&lt;li>1、文件下载(lrzsz)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>十六、文章PDF版本&lt;/li>
+&lt;/ul>
+&lt;p>Linux 系统目录&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Shell" data-lang="Shell">&lt;span class="line">&lt;span class="cl">├── bin -&amp;gt; usr/bin &lt;span class="c1"># 用于存放二进制命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── boot &lt;span class="c1"># 内核及引导系统程序所在的目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── dev &lt;span class="c1"># 所有设备文件的目录（如磁盘、光驱等）&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── etc &lt;span class="c1"># 配置文件默认路径、服务启动命令存放目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── home &lt;span class="c1"># 用户家目录，root用户为/root&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── lib -&amp;gt; usr/lib &lt;span class="c1"># 32位库文件存放目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── lib64 -&amp;gt; usr/lib64 &lt;span class="c1"># 64位库文件存放目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── media &lt;span class="c1"># 媒体文件存放目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── mnt &lt;span class="c1"># 临时挂载设备目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── opt &lt;span class="c1"># 自定义软件安装存放目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── proc &lt;span class="c1"># 进程及内核信息存放目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── root &lt;span class="c1"># Root用户家目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── run &lt;span class="c1"># 系统运行时产生临时文件，存放目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── sbin -&amp;gt; usr/sbin &lt;span class="c1"># 系统管理命令存放目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── srv &lt;span class="c1"># 服务启动之后需要访问的数据目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── sys &lt;span class="c1"># 系统使用目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── tmp &lt;span class="c1"># 临时文件目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── usr &lt;span class="c1"># 系统命令和帮助文件目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── var &lt;span class="c1"># 存放内容易变的文件的目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="m">12345678910111213141516171819&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="一目录操作">
+&lt;a class="header-anchor" href="#%e4%b8%80%e7%9b%ae%e5%bd%95%e6%93%8d%e4%bd%9c">&lt;/a>
+一、目录操作
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Shell" data-lang="Shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">pwd&lt;/span> 查看当前工作目录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">clear 清除屏幕
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~ 当前用户目录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> / 根目录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> - 上一次访问的目录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> .. 上一级目录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="m">123456&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>查看目录内信息&lt;/strong>&lt;/p></description></item></channel></rss>

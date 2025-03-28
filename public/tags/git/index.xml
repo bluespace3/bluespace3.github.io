@@ -1,40 +1,123 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Git on 蓝色空间号-新世界的探索者</title>
-    <link>https://bluespace3.github.io/tags/git/</link>
-    <description>Recent content in Git on 蓝色空间号-新世界的探索者</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate>
-    <atom:link href="https://bluespace3.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>gitlab配置cicd工作流</title>
-      <link>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
-      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
-      <guid>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
-      <description>&lt;h2 id=&#34;gitlab-cicd-简介&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#gitlab-cicd-%e7%ae%80%e4%bb%8b&#34;&gt;&lt;/a&gt;&#xA;GitLab CI/CD 简介&#xA;&lt;/h2&gt;&lt;p&gt;GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p&gt;&#xA;&lt;h3 id=&#34;cicd-核心概念&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#cicd-%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5&#34;&gt;&lt;/a&gt;&#xA;CI/CD 核心概念&#xA;&lt;/h3&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;持续集成 (CI)&lt;/strong&gt;: 开发人员频繁地将代码集成到主分支，每次集成都通过自动化构建和测试来验证，从而尽早发现问题。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;持续交付 (CD)&lt;/strong&gt;: 确保代码随时可以部署到生产环境，通常包括自动化测试和部署流程。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;持续部署 (CD)&lt;/strong&gt;: 将持续交付更进一步，自动将通过测试的代码部署到生产环境。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;gitlab-ciyml-配置文件&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#gitlab-ciyml-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6&#34;&gt;&lt;/a&gt;&#xA;.gitlab-ci.yml 配置文件&#xA;&lt;/h2&gt;&lt;p&gt;GitLab CI/CD 的核心是 &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; 文件，它定义了 CI/CD 流水线的结构和行为。该文件需要放在项目的根目录下。&lt;/p&gt;&#xA;&lt;h3 id=&#34;基本结构&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84&#34;&gt;&lt;/a&gt;&#xA;基本结构&#xA;&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 定义阶段&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stages&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 定义作业&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;build_job&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;echo &amp;#34;Building the app&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;make build&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;test_job&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;echo &amp;#34;Running tests&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;make test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;deploy_job&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;echo &amp;#34;Deploying the app&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;make deploy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;only&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;master&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;关键组件&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%85%b3%e9%94%ae%e7%bb%84%e4%bb%b6&#34;&gt;&lt;/a&gt;&#xA;关键组件&#xA;&lt;/h3&gt;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;stages&lt;/strong&gt;: 定义流水线的阶段，按顺序执行。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;jobs&lt;/strong&gt;: 定义在特定阶段执行的任务。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;script&lt;/strong&gt;: 在作业中执行的命令。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;only/except&lt;/strong&gt;: 控制作业何时运行（例如，只在特定分支上运行）。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;gitlab-runner&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#gitlab-runner&#34;&gt;&lt;/a&gt;&#xA;GitLab Runner&#xA;&lt;/h2&gt;&lt;p&gt;GitLab Runner 是执行 CI/CD 作业的代理，它可以安装在不同的环境中，如 Linux、Windows、macOS 等。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>git操作</title>
-      <link>https://bluespace3.github.io/post/git%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
-      <guid>https://bluespace3.github.io/post/git%E6%93%8D%E4%BD%9C/</guid>
-      <description>&lt;h2 id=&#34;git回滚操作&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#git%e5%9b%9e%e6%bb%9a%e6%93%8d%e4%bd%9c&#34;&gt;&lt;/a&gt;&#xA;git回滚操作&#xA;&lt;/h2&gt;&lt;h3 id=&#34;回滚到上一个版本&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%9b%9e%e6%bb%9a%e5%88%b0%e4%b8%8a%e4%b8%80%e4%b8%aa%e7%89%88%e6%9c%ac&#34;&gt;&lt;/a&gt;&#xA;回滚到上一个版本&#xA;&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git reset --hard HEAD^&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;回滚到指定版本&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%9b%9e%e6%bb%9a%e5%88%b0%e6%8c%87%e5%ae%9a%e7%89%88%e6%9c%ac&#34;&gt;&lt;/a&gt;&#xA;回滚到指定版本&#xA;&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git reset --hard &amp;lt;commit_id&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Git submodule</title>
-      <link>https://bluespace3.github.io/post/git-submodule/</link>
-      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
-      <guid>https://bluespace3.github.io/post/git-submodule/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe&#34;&gt;Git submodule添加子项目_库&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc&#34;&gt;Git归并策略&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue&#34;&gt;添加&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f&#34;&gt;删除&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;输入“/”快速插入内容&lt;/p&gt;&#xA;&lt;p&gt;添加图标&lt;/p&gt;&#xA;&lt;p&gt;添加封面&lt;/p&gt;&#xA;&lt;p&gt;展示文档信息&lt;/p&gt;&#xA;&lt;p&gt;Git submodule添加子项目_库&lt;/p&gt;&#xA;&lt;p&gt;开发过程中，经常会有一些通用的部分希望抽取出来做成一个公共库来提供给别的工程来使用，而公共代码库的版本管理是个麻烦的事情。git submodule命令就可以解决这个问题。&lt;/p&gt;&#xA;&lt;p&gt;Git归并策略&lt;/p&gt;&#xA;&lt;p&gt;Git归并有两种策略：递归，章鱼。&lt;/p&gt;&#xA;&lt;p&gt;1.递归策略：当分支数只有两个的时候。&lt;/p&gt;&#xA;&lt;p&gt;2.章鱼策略：当分支数大于两个的时候。&lt;/p&gt;&#xA;&lt;p&gt;Git会自动选择归并的方法。&lt;/p&gt;&#xA;&lt;p&gt;3.子树策略：是Git另一种归并方法。（submodule）&lt;/p&gt;&#xA;&lt;p&gt;它可以把另一个子项目，嵌入到当前项目。而且会非常聪明的合并这些子项目。&lt;/p&gt;&#xA;&lt;p&gt;添加&lt;/p&gt;&#xA;&lt;p&gt;为当前工程添加submodule，命令如下：&lt;/p&gt;&#xA;&lt;p&gt;git submodule add 仓库地址 路径&lt;/p&gt;&#xA;&lt;p&gt;其中，仓库地址是指子模块仓库地址，路径指将子模块放置在当前工程下的路径。&lt;/p&gt;&#xA;&lt;p&gt;注意：路径不能以 / 结尾（会造成修改不生效）、不能是现有工程已有的目录（不能順利 Clone）&lt;/p&gt;&#xA;&lt;p&gt;示例:&lt;/p&gt;&#xA;&lt;p&gt;git submodule add -f &lt;a href=&#34;http://git.cs/Cmblife_iOS_Internal/modulesLib.git&#34;&gt;http://git.cs/Cmblife_iOS_Internal/modulesLib.git&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;-f 是强制的意思，一般不需要加&lt;/p&gt;&#xA;&lt;p&gt;命令执行完成，会在当前工程根路径下生成一个名为“.gitmodules”的文件，其中记录了子模块的信息。添加完成以后，再将子模块所在的文件夹添加到工程中即可。&lt;/p&gt;&#xA;&lt;p&gt;删除&lt;/p&gt;&#xA;&lt;p&gt;submodule的删除稍微麻烦点：首先，要在“.gitmodules”文件中删除相应配置信息。然后，执行“git rm –cached ”命令将子模块所在的文件从git中删除。&lt;/p&gt;&#xA;&lt;p&gt;下载的工程带有submodule&lt;/p&gt;&#xA;&lt;p&gt;当使用git clone下来的工程中带有submodule时，初始的时候，submodule的内容并不会自动下载下来的，此时，只需执行如下命令：&lt;/p&gt;&#xA;&lt;p&gt;git submodule update –init –recursive&lt;/p&gt;&#xA;&lt;p&gt;即可将子模块内容下载下来后工程才不会缺少相应的文件。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>git子项目</title>
-      <link>https://bluespace3.github.io/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link>
-      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
-      <guid>https://bluespace3.github.io/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;项目中添加子项目&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1、git clone 父项目url&lt;/li&gt;&#xA;&lt;li&gt;2、cd 父项目对应目录下：git submodule add &amp;lt;子项目地址&amp;gt;&lt;/li&gt;&#xA;&lt;li&gt;3、git commit ;git push&lt;/li&gt;&#xA;&lt;li&gt;4、此时子项目下的子项目是空的，需要cd到父目录cmd执行：&#xA;git submodule update &amp;ndash;init &amp;ndash;recursive&#xA;或者执行：git submodule init 然后执行git submodule update&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;clone含嵌套项目的项目&#xA;&lt;ul&gt;&#xA;&lt;li&gt;git clone 父项目url &amp;ndash;recurse-submodules&#xA;不加&amp;ndash;recurse-submodules，克隆的子项目是空的&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/tags/git/</link><description>Recent content in Git on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>gitlab配置cicd工作流</title><link>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介">
+&lt;a class="header-anchor" href="#gitlab-cicd-%e7%ae%80%e4%bb%8b">&lt;/a>
+GitLab CI/CD 简介
+&lt;/h2>&lt;p>GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p>
+&lt;h3 id="cicd-核心概念">
+&lt;a class="header-anchor" href="#cicd-%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5">&lt;/a>
+CI/CD 核心概念
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>持续集成 (CI)&lt;/strong>: 开发人员频繁地将代码集成到主分支，每次集成都通过自动化构建和测试来验证，从而尽早发现问题。&lt;/li>
+&lt;li>&lt;strong>持续交付 (CD)&lt;/strong>: 确保代码随时可以部署到生产环境，通常包括自动化测试和部署流程。&lt;/li>
+&lt;li>&lt;strong>持续部署 (CD)&lt;/strong>: 将持续交付更进一步，自动将通过测试的代码部署到生产环境。&lt;/li>
+&lt;/ul>
+&lt;h2 id="gitlab-ciyml-配置文件">
+&lt;a class="header-anchor" href="#gitlab-ciyml-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">&lt;/a>
+.gitlab-ci.yml 配置文件
+&lt;/h2>&lt;p>GitLab CI/CD 的核心是 &lt;code>.gitlab-ci.yml&lt;/code> 文件，它定义了 CI/CD 流水线的结构和行为。该文件需要放在项目的根目录下。&lt;/p>
+&lt;h3 id="基本结构">
+&lt;a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84">&lt;/a>
+基本结构
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 定义阶段&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">stages&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 定义作业&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">build_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Building the app&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">test_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Running tests&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">deploy_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Deploying the app&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">only&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">master&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="关键组件">
+&lt;a class="header-anchor" href="#%e5%85%b3%e9%94%ae%e7%bb%84%e4%bb%b6">&lt;/a>
+关键组件
+&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>stages&lt;/strong>: 定义流水线的阶段，按顺序执行。&lt;/li>
+&lt;li>&lt;strong>jobs&lt;/strong>: 定义在特定阶段执行的任务。&lt;/li>
+&lt;li>&lt;strong>script&lt;/strong>: 在作业中执行的命令。&lt;/li>
+&lt;li>&lt;strong>only/except&lt;/strong>: 控制作业何时运行（例如，只在特定分支上运行）。&lt;/li>
+&lt;/ol>
+&lt;h2 id="gitlab-runner">
+&lt;a class="header-anchor" href="#gitlab-runner">&lt;/a>
+GitLab Runner
+&lt;/h2>&lt;p>GitLab Runner 是执行 CI/CD 作业的代理，它可以安装在不同的环境中，如 Linux、Windows、macOS 等。&lt;/p></description></item><item><title>git操作</title><link>https://bluespace3.github.io/post/git%E6%93%8D%E4%BD%9C/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/git%E6%93%8D%E4%BD%9C/</guid><description>&lt;h2 id="git回滚操作">
+&lt;a class="header-anchor" href="#git%e5%9b%9e%e6%bb%9a%e6%93%8d%e4%bd%9c">&lt;/a>
+git回滚操作
+&lt;/h2>&lt;h3 id="回滚到上一个版本">
+&lt;a class="header-anchor" href="#%e5%9b%9e%e6%bb%9a%e5%88%b0%e4%b8%8a%e4%b8%80%e4%b8%aa%e7%89%88%e6%9c%ac">&lt;/a>
+回滚到上一个版本
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git reset --hard HEAD^
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="回滚到指定版本">
+&lt;a class="header-anchor" href="#%e5%9b%9e%e6%bb%9a%e5%88%b0%e6%8c%87%e5%ae%9a%e7%89%88%e6%9c%ac">&lt;/a>
+回滚到指定版本
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git reset --hard &amp;lt;commit_id&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Git submodule</title><link>https://bluespace3.github.io/post/git-submodule/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/git-submodule/</guid><description>&lt;ul>
+&lt;li>
+&lt;ul>
+&lt;li>&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe">Git submodule添加子项目_库&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc">Git归并策略&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue">添加&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f">删除&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>输入“/”快速插入内容&lt;/p>
+&lt;p>添加图标&lt;/p>
+&lt;p>添加封面&lt;/p>
+&lt;p>展示文档信息&lt;/p>
+&lt;p>Git submodule添加子项目_库&lt;/p>
+&lt;p>开发过程中，经常会有一些通用的部分希望抽取出来做成一个公共库来提供给别的工程来使用，而公共代码库的版本管理是个麻烦的事情。git submodule命令就可以解决这个问题。&lt;/p>
+&lt;p>Git归并策略&lt;/p>
+&lt;p>Git归并有两种策略：递归，章鱼。&lt;/p>
+&lt;p>1.递归策略：当分支数只有两个的时候。&lt;/p>
+&lt;p>2.章鱼策略：当分支数大于两个的时候。&lt;/p>
+&lt;p>Git会自动选择归并的方法。&lt;/p>
+&lt;p>3.子树策略：是Git另一种归并方法。（submodule）&lt;/p>
+&lt;p>它可以把另一个子项目，嵌入到当前项目。而且会非常聪明的合并这些子项目。&lt;/p>
+&lt;p>添加&lt;/p>
+&lt;p>为当前工程添加submodule，命令如下：&lt;/p>
+&lt;p>git submodule add 仓库地址 路径&lt;/p>
+&lt;p>其中，仓库地址是指子模块仓库地址，路径指将子模块放置在当前工程下的路径。&lt;/p>
+&lt;p>注意：路径不能以 / 结尾（会造成修改不生效）、不能是现有工程已有的目录（不能順利 Clone）&lt;/p>
+&lt;p>示例:&lt;/p>
+&lt;p>git submodule add -f &lt;a href="http://git.cs/Cmblife_iOS_Internal/modulesLib.git">http://git.cs/Cmblife_iOS_Internal/modulesLib.git&lt;/a>&lt;/p>
+&lt;p>-f 是强制的意思，一般不需要加&lt;/p>
+&lt;p>命令执行完成，会在当前工程根路径下生成一个名为“.gitmodules”的文件，其中记录了子模块的信息。添加完成以后，再将子模块所在的文件夹添加到工程中即可。&lt;/p>
+&lt;p>删除&lt;/p>
+&lt;p>submodule的删除稍微麻烦点：首先，要在“.gitmodules”文件中删除相应配置信息。然后，执行“git rm –cached ”命令将子模块所在的文件从git中删除。&lt;/p>
+&lt;p>下载的工程带有submodule&lt;/p>
+&lt;p>当使用git clone下来的工程中带有submodule时，初始的时候，submodule的内容并不会自动下载下来的，此时，只需执行如下命令：&lt;/p>
+&lt;p>git submodule update –init –recursive&lt;/p>
+&lt;p>即可将子模块内容下载下来后工程才不会缺少相应的文件。&lt;/p></description></item><item><title>git子项目</title><link>https://bluespace3.github.io/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid><description>&lt;ul>
+&lt;li>项目中添加子项目
+&lt;ul>
+&lt;li>1、git clone 父项目url&lt;/li>
+&lt;li>2、cd 父项目对应目录下：git submodule add &amp;lt;子项目地址&amp;gt;&lt;/li>
+&lt;li>3、git commit ;git push&lt;/li>
+&lt;li>4、此时子项目下的子项目是空的，需要cd到父目录cmd执行：
+git submodule update &amp;ndash;init &amp;ndash;recursive
+或者执行：git submodule init 然后执行git submodule update&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>clone含嵌套项目的项目
+&lt;ul>
+&lt;li>git clone 父项目url &amp;ndash;recurse-submodules
+不加&amp;ndash;recurse-submodules，克隆的子项目是空的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

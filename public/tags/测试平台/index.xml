@@ -1,19 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>测试平台 on 蓝色空间号-新世界的探索者</title>
-    <link>https://bluespace3.github.io/tags/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/</link>
-    <description>Recent content in 测试平台 on 蓝色空间号-新世界的探索者</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Fri, 21 Mar 2025 12:59:32 +0800</lastBuildDate>
-    <atom:link href="https://bluespace3.github.io/tags/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>测试平台教程</title>
-      <link>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link>
-      <pubDate>Fri, 21 Mar 2025 12:59:32 +0800</pubDate>
-      <guid>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid>
-      <description>&lt;p&gt;一、基本介绍：（）&#xA;桌面端工具（一年左右），使用python的wxpython框架编写，使用pyinstaller打包为桌面exe文件；缺点：体积大，不便于分享；&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/image_0fa5b6bdd33056f5c14c2ba21dca4298.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;web端应用（10月初至今）：flask+vue实现；优点，通过脚本实现热更新；链接形式便于分享。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/image_554bf84092b63f4dfeef955bec300c72.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;二、功能介绍：&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/image_d8f9cc72d69a56ab872809e6e0c32ca7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;三、技术实现&lt;/p&gt;&#xA;&lt;p&gt;测试平台采用前后端分离的方式实现:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;后端由flask框架实现；&#xA;（1）flask项目结构&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/image_08bf969bb5e6e6a6c2866b5ecd815b9a.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;（2）在项目入口文件中构建接口&#xA;Flask：用于创建一个flask应用,app = Flask(&lt;strong&gt;name&lt;/strong&gt;)&#xA;CORS:解决跨域问题，cors = CORS(app)&#xA;request:接受请求的参数，request.args.get()；phone = request.json[]&#xA;jsonify:以json格式返回结果：jsonify({&amp;ldquo;data&amp;rdquo;: res})&#xA;接口的基本组成：&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/image_1e0619b874f00563f4df88a914e7b216.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;构建一个接口的基本步骤：&#xA;导包：Flask、CORS、request、jsonify&#xA;在app.route()装饰器中定义接口的请求类型、url路径&#xA;写一个接口函数&#xA;获取入参（可选）&#xA;get请求 request.args.get()&#xA;post请求 request.json[]&#xA;对得到的参数进行基本校验：如参数类型校验、字段长度、是否空、鉴权等。&#xA;根据传参进行逻辑处理，调用对应功能，得到结果&#xA;构建响应头（可选，返回类型是文件时必须）&#xA;构建结果，使用jsonify将返回结果构建成一个js （可选）&#xA;return结果&#xA;启动flask&#xA;app.run(ip,port,debug=True),其中debug=True代表以调试模式启动，代码改动后自动重启；debug默认为False。&#xA;包的管理 requirements.txt&#xA;代码中引入了的包，需要填写在该文件中，格式：“ 包名==版本号”&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/image_ddafd5dad0788c85d978475b2b619b09.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;（3）采用gunnicorn+gevent部署flask项目&#xA;介绍：&#xA;一个HTTP 服务器，可以增加项目的并发，通常和gevent一起使用。&#xA;安装gunicorn和gevent：&#xA;pip install gunicorn  -i  &lt;a href=&#34;https://pypi.tuna.tsinghua.edu.cn/simple&#34;&gt;https://pypi.tuna.tsinghua.edu.cn/simple&lt;/a&gt;&#xA;pip install gevent-i  &lt;a href=&#34;https://pypi.tuna.tsinghua.edu.cn/simple&#34;&gt;https://pypi.tuna.tsinghua.edu.cn/simple&lt;/a&gt;&#xA;配置文件 gunicorn.conf.py&#xA;workers = 10   定义同时开启的处理请求的进程数量，根据网站流量适当调整&#xA;worker_class = &amp;ldquo;gevent&amp;rdquo;   采用gevent库，支持异步处理请求，提高吞吐量&#xA;bind = &amp;ldquo;0.0.0.0:80&amp;rdquo;     监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信,docker部署固定&#xA;采用启动服务：&#xA;gunicorn flask_index:app -c ./gunicorn.conf.py&#xA;注意：Gunicorn只能运行在Linux环境中，不支持windows平台，因此在windows调试的时候不要用这个方式启动flask；&#xA;2. 前端：vue 、node.js（前端的包管理工具，类似python的pip包管理工具）、vue-cli（vue项目的脚手架）、element-ui、echats提供页面交互;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>测试平台 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/tags/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/</link><description>Recent content in 测试平台 on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 21 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>测试平台教程</title><link>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link><pubDate>Fri, 21 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid><description>&lt;p>一、基本介绍：（）
+桌面端工具（一年左右），使用python的wxpython框架编写，使用pyinstaller打包为桌面exe文件；缺点：体积大，不便于分享；&lt;/p>
+&lt;p>&lt;img src="./images/image_0fa5b6bdd33056f5c14c2ba21dca4298.png" alt="">&lt;/p>
+&lt;p>web端应用（10月初至今）：flask+vue实现；优点，通过脚本实现热更新；链接形式便于分享。&lt;/p>
+&lt;p>&lt;img src="./images/image_554bf84092b63f4dfeef955bec300c72.png" alt="">&lt;/p>
+&lt;p>二、功能介绍：&lt;/p>
+&lt;p>&lt;img src="./images/image_d8f9cc72d69a56ab872809e6e0c32ca7.png" alt="">&lt;/p>
+&lt;p>三、技术实现&lt;/p>
+&lt;p>测试平台采用前后端分离的方式实现:&lt;/p>
+&lt;ol>
+&lt;li>后端由flask框架实现；
+（1）flask项目结构&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="./images/image_08bf969bb5e6e6a6c2866b5ecd815b9a.png" alt="">&lt;/p>
+&lt;p>（2）在项目入口文件中构建接口
+Flask：用于创建一个flask应用,app = Flask(&lt;strong>name&lt;/strong>)
+CORS:解决跨域问题，cors = CORS(app)
+request:接受请求的参数，request.args.get()；phone = request.json[]
+jsonify:以json格式返回结果：jsonify({&amp;ldquo;data&amp;rdquo;: res})
+接口的基本组成：&lt;/p>
+&lt;p>&lt;img src="./images/image_1e0619b874f00563f4df88a914e7b216.png" alt="">&lt;/p>
+&lt;p>构建一个接口的基本步骤：
+导包：Flask、CORS、request、jsonify
+在app.route()装饰器中定义接口的请求类型、url路径
+写一个接口函数
+获取入参（可选）
+get请求 request.args.get()
+post请求 request.json[]
+对得到的参数进行基本校验：如参数类型校验、字段长度、是否空、鉴权等。
+根据传参进行逻辑处理，调用对应功能，得到结果
+构建响应头（可选，返回类型是文件时必须）
+构建结果，使用jsonify将返回结果构建成一个js （可选）
+return结果
+启动flask
+app.run(ip,port,debug=True),其中debug=True代表以调试模式启动，代码改动后自动重启；debug默认为False。
+包的管理 requirements.txt
+代码中引入了的包，需要填写在该文件中，格式：“ 包名==版本号”&lt;/p>
+&lt;p>&lt;img src="./images/image_ddafd5dad0788c85d978475b2b619b09.png" alt="">&lt;/p>
+&lt;p>（3）采用gunnicorn+gevent部署flask项目
+介绍：
+一个HTTP 服务器，可以增加项目的并发，通常和gevent一起使用。
+安装gunicorn和gevent：
+pip install gunicorn -i &lt;a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple&lt;/a>
+pip install gevent-i &lt;a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple&lt;/a>
+配置文件 gunicorn.conf.py
+workers = 10 定义同时开启的处理请求的进程数量，根据网站流量适当调整
+worker_class = &amp;ldquo;gevent&amp;rdquo; 采用gevent库，支持异步处理请求，提高吞吐量
+bind = &amp;ldquo;0.0.0.0:80&amp;rdquo; 监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信,docker部署固定
+采用启动服务：
+gunicorn flask_index:app -c ./gunicorn.conf.py
+注意：Gunicorn只能运行在Linux环境中，不支持windows平台，因此在windows调试的时候不要用这个方式启动flask；
+2. 前端：vue 、node.js（前端的包管理工具，类似python的pip包管理工具）、vue-cli（vue项目的脚手架）、element-ui、echats提供页面交互;&lt;/p></description></item></channel></rss>

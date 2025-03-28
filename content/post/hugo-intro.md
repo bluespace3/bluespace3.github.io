@@ -48,7 +48,7 @@ hugo new blog/my-first-post.md
 使用以下命令启动开发服务器：
 
 ```bash
-hugo server -D
+hugo server -D --environment development #如果未设置环境变量则不需要指定环境。
 ```
 
 ## 部署网站
@@ -59,13 +59,8 @@ hugo server -D
 hugo
 ```
 
-
 1. 然后将public目录下的文件部署到Web服务器即可，注意每次推送前运行hugo更新public文件夹
-
-
 2. 若有更新域名，请删除public后，再运行hugo重新生成public，否则会出现路由错误的情况。
-
-
 3. 为了方便新建.sh脚本文件，命名为.command.sh
 
 ```bash

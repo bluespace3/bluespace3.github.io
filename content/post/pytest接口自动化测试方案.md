@@ -66,9 +66,8 @@ tags: ["pytest","方案","加密"]
 * 自动化测试框架-pytest + Requests
   * 几款常见接口测试框架对比详情：
 
-    ![1743173315631](/image/pytest接口自动化测试方案/1743173315631.png)
+    ![1743173315631](/images/pytest接口自动化测试方案/1743173315631.png)
   * pytest + Requests
-
 
     * 语法简洁容易上手-接入成本低
     * 灵活，社区支持好，插件丰富-适合复杂测试场景
@@ -166,7 +165,8 @@ tags: ["pytest","方案","加密"]
 * 自动化脚本
   * 代码仓库https://gitlab.guangpuyun.cn/clinic-diag/test/poct_api_test
   * 项目结构
-    ![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MjZhNWZkZDE2MzFjMDRmNTNkODM0MWM2MzE0MTc0NWJfcWdBTTRENnB4NXlmS2IxeWJ2VEdhYVhUSEtpRHBjekdfVG9rZW46WXlkb2I2bmxwb2Q5UFd4aDNtVGNwN2x1blJiXzE3NDMxNzE1MDU6MTc0MzE3NTEwNV9WNA)
+
+    ![1743176486423](/images/pytest接口自动化测试方案/1743176486423.png)
 * 文档
   * 初始化文档[快速编写Pytest接口测试](https://guangpuyun.feishu.cn/docx/SQi7d8NV4opR8OxYDh9cxVG3nmg?from=from_copylink)
   * 自动化用例设计文档[接口自动化测试用例](https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink)
@@ -181,13 +181,13 @@ tags: ["pytest","方案","加密"]
   * 接口变更的处理
     * 用例执行/定时/手动触发脚本爬取接口文档，并与最新接口文档对比
     * 运行main.py 执行用例时，会在warnning日志提醒相关变更
-      ![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MmZjMGQzMGQ1NTBiMTRiOWUxZjZiODIwNzc2NmMzMWRfQVJtM2ZDeGJranVnd1dnOEVIS2ZSWUlYemtkVWJjSDNfVG9rZW46VmJkcWJtNHpWb01qMHV4RWgyWmN1eVVpbkxoXzE3NDMxNzE1MDU6MTc0MzE3NTEwNV9WNA)
+      ![1743176811159](/image/pytest接口自动化测试方案/1743176811159.png)
     * 检查变更是否涉及已经编写的用例（快捷键ctrl+shift+f搜索关键词即可）
-      ![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZWMxZDA0MjA3MzJjM2MzMjM1MmY4ZTRiODMwYzMxY2NfVmlEcUI0a2h4d3BBSm5DTWhsS0pNaWR0VXRnNzJPZTFfVG9rZW46SDFxcGJLeExqb29KUkN4MmlNa2N3Ymd0bkxlXzE3NDMxNzE1MDU6MTc0MzE3NTEwNV9WNA)
+      ![img](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZWMxZDA0MjA3MzJjM2MzMjM1MmY4ZTRiODMwYzMxY2NfVmlEcUI0a2h4d3BBSm5DTWhsS0pNaWR0VXRnNzJPZTFfVG9rZW46SDFxcGJLeExqb29KUkN4MmlNa2N3Ymd0bkxlXzE3NDMxNzE1MDU6MTc0MzE3NTEwNV9WNA)![1743177028645](/image/pytest接口自动化测试方案/1743177028645.png)
 
       如：PoctCreateOrderInModel存在差异，对应json文档中找到对应 **operationId（文件名），在用例文档中搜索createOrder2UsingPOST_1** ，发现涉及已有用例。
 
-      ![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=NDQ3ZTg1OThmMjEwNDk0OWJiMDk1ODRkZDEwMDcyNDFfWmRORUZPenlYRkpqd216VnV2RWY4YzFSRlJicmxuOGlfVG9rZW46U1R0b2JwZ2NHb3Vya3h4ckgzamNVb20zblhjXzE3NDMxNzE1MDU6MTc0MzE3NTEwNV9WNA)
+      ![1743177240411](image/pytest接口自动化测试方案/1743177240411.png)
     * 若有涉及用例，则维护成最新接口信息。
   * 当用例运行报错/不通过进行定位
     * bug->记录并通知开发修复；
