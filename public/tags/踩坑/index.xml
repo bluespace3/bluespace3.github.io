@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>踩坑 on 蓝色空间号-新世界的探索者</title>
-    <link>http://localhost:1313/tags/%E8%B8%A9%E5%9D%91/</link>
+    <link>https://bluespace3.github.io/tags/%E8%B8%A9%E5%9D%91/</link>
     <description>Recent content in 踩坑 on 蓝色空间号-新世界的探索者</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E8%B8%A9%E5%9D%91/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bluespace3.github.io/tags/%E8%B8%A9%E5%9D%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python常见踩坑记录</title>
-      <link>http://localhost:1313/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link>
+      <link>https://bluespace3.github.io/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
-      <guid>http://localhost:1313/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid>
+      <guid>https://bluespace3.github.io/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid>
       <description>&lt;h2 id=&#34;项目结构&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84&#34;&gt;&lt;/a&gt;&#xA;项目结构：&#xA;&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=N2E4ZjQ0N2I5MmEwYWExMjg1YmVmOTcyZTBhNTk1ZTlfdXlaSzZjU09wSE5mR1AyYTBuYVg1SElQcHJIUENSVWpfVG9rZW46S3AyMmI4bFN1b2VjeG54V251Q2NzMHBhbm5nXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;问题&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%97%ae%e9%a2%98&#34;&gt;&lt;/a&gt;&#xA;问题：&#xA;&lt;/h2&gt;&lt;p&gt;执行文件调用dir1，间接调用dir2。执行时报错：“ModuleNotFoundError: No module named &amp;lsquo;dir1.dir2&amp;rsquo;;”&lt;/p&gt;&#xA;&lt;h2 id=&#34;解决方法&#34;&gt;&#xA;&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95&#34;&gt;&lt;/a&gt;&#xA;解决方法：&#xA;&lt;/h2&gt;&lt;p&gt;dir1文件导包时做处理。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;主函数加入这四行，将项目的根目录(webapp)的路径加入到系统PATH中；&#xA;import os,sys&lt;/p&gt;&#xA;&lt;p&gt;from pathlib import Path&lt;/p&gt;&#xA;&lt;p&gt;sys.path[0] = str(Path(sys.path[0]).parent.parent)&lt;/p&gt;&#xA;&lt;p&gt;sys.path.append(os.getcwd())&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;且导包从项目执行入口文件同级开始写&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MzlhZjJjZjgzNzk4YjdjNzU2ZWQ1ZDdjMjA5ODI0MDZfTzN2ZmlQOVM0a1BERU95VkY1amZ5bTFXMEJsc09pTExfVG9rZW46UlgyTmJCdHdLb0I5Z2d4VktJcmNEbDNvblljXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
