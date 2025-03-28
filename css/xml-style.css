@@ -1,0 +1,38 @@
+/* XML文档树样式 */
+xml {
+  display: block;
+  margin: 1em;
+  font-family: monospace;
+  white-space: pre;
+  color: #333;
+}
+
+/* XML标签样式 */
+xml > * {
+  display: block;
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* XML属性样式 */
+xml *[*] {
+  margin-left: 0.5em;
+  color: #666;
+}
+
+/* XML文本内容样式 */
+xml::before {
+  content: '<' attr(tag) '>';
+  color: #2196F3;
+}
+
+xml::after {
+  content: '</' attr(tag) '>';
+  color: #2196F3;
+}
+
+/* XML注释样式 */
+xml comment {
+  color: #888;
+  font-style: italic;
+}
