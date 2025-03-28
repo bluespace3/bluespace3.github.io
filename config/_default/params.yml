@@ -448,9 +448,9 @@ giscus:
 
 algolia_search:
   enable: true
-  appID: D9SOQ6R5AU
-  apiKey: 55635bc05415526049666d38bacceb77
-  indexName: bluespace3_github_io_d9soq6r5au_pages
+  appID: XOD7QMRN6A
+  apiKey: f0c206edfe24bfd2fe1b5837560b4b5e
+  indexName: bluespace3_github_io_xod7qmrn6a_pages
   hits:
     per_page: 10
   labels:
