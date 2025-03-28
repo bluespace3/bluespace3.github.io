@@ -183,11 +183,11 @@ tags: ["pytest","方案","加密"]
     * 运行main.py 执行用例时，会在warnning日志提醒相关变更
       ![1743176811159](/image/pytest接口自动化测试方案/1743176811159.png)
     * 检查变更是否涉及已经编写的用例（快捷键ctrl+shift+f搜索关键词即可）
-      ![img](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZWMxZDA0MjA3MzJjM2MzMjM1MmY4ZTRiODMwYzMxY2NfVmlEcUI0a2h4d3BBSm5DTWhsS0pNaWR0VXRnNzJPZTFfVG9rZW46SDFxcGJLeExqb29KUkN4MmlNa2N3Ymd0bkxlXzE3NDMxNzE1MDU6MTc0MzE3NTEwNV9WNA)![1743177028645](/image/pytest接口自动化测试方案/1743177028645.png)
+      ![1743177028645](/image/pytest接口自动化测试方案/1743177028645.png)
 
       如：PoctCreateOrderInModel存在差异，对应json文档中找到对应 **operationId（文件名），在用例文档中搜索createOrder2UsingPOST_1** ，发现涉及已有用例。
 
-      ![1743177240411](image/pytest接口自动化测试方案/1743177240411.png)
+      ![1743177240411](/image/pytest接口自动化测试方案/1743177240411.png)
     * 若有涉及用例，则维护成最新接口信息。
   * 当用例运行报错/不通过进行定位
     * bug->记录并通知开发修复；
