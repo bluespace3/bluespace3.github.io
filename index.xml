@@ -1,4 +1,167 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/algolia.json</link><description>Recent content on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Mar 2025 21:43:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>《金字塔原理》解析</title><link>https://bluespace3.github.io/post/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link><pubDate>Tue, 25 Mar 2025 21:43:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid><description>&lt;h4 id="金字塔原理读书笔记全">《&lt;a href="https://so.csdn.net/so/search?q=%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86&amp;amp;spm=1001.2101.3001.7020">金字塔原理&lt;/a>》读书笔记（全）&lt;/h4>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/algolia.json</link><description>Recent content on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 28 Mar 2025 22:43:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>pytest接口自动化测试方案</title><link>https://bluespace3.github.io/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 28 Mar 2025 22:43:32 +0800</pubDate><guid>https://bluespace3.github.io/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid><description>&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>当前业务核心聚焦于 POCT 领域，设备购买和设备使用等关键功能，已成为测试工作的重点保障对象，但随着系统复杂度的提升,手工的回归测试工作很难全面覆盖。为了确保关键业务功能的质量稳定性，有必要引入自动化测试，增加测试覆盖范围，降低已有功能漏测的风险，提前发现问题。&lt;/p>
+&lt;hr>
+&lt;h2 id="目标">目标&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>短期目标：接入自动化测试（截至3月底）&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>前期准备工作
+&lt;ul>
+&lt;li>预研不同的自动化测试框架，结合中长期目标与现实情况及各个框架的优缺点选择一套合适的自动化框架
+&lt;ul>
+&lt;li>对比几款常见接口测试框架&lt;/li>
+&lt;li>初步选定：pytest + Requests
+&lt;ul>
+&lt;li>语法简洁容易上手-接入成本低&lt;/li>
+&lt;li>灵活，社区支持好，插件丰富-适合复杂测试场景&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>制定初步的方案&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>自动化项目方案
+&lt;ul>
+&lt;li>项目框架搭建&lt;/li>
+&lt;li>确定实施方案&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>测试人员小范围接入自动化项目（跑通流程）
+&lt;ul>
+&lt;li>三月底能够将三款新设备正向检测流程转化为自动化测试脚本
+&lt;ul>
+&lt;li>**将慢病设备下单-上传检测结果流程；快速检测单流程接入接口自动化测试（正向检测流程）&lt;/li>
+&lt;li>**将免疫、血球设备下单-上传检测结果（正向检测流程）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>中期目标&lt;/strong> ：&lt;strong>自动化项目应用到测试工作流程（截至6月底）&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>覆盖三款新设备装机到检测使用的全部场景&lt;/p>
+&lt;ul>
+&lt;li>覆盖设备装机到检测过程中的各项操作步骤和关键节点，从设备初始化到实际检测，确保各环节功能正常，数据交互准确，为用户提供稳定可靠的设备使用体验（包括异常流程）。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>将自动化流程应用到测试工作流程。&lt;/p>
+&lt;ul>
+&lt;li>能有效增加测试覆盖率，减少漏测风险。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>脚本的维护流程&lt;/p>
+&lt;ul>
+&lt;li>在接口变更，需求功能更改后如何维护&lt;/li>
+&lt;li>运行失败用例如何维护&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>长期目标：不断完善接口自动化，有效应用到研发测试工作流程（截至12月底）&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>完善涉及用户相关的功能的自动化测试覆盖
+&lt;ul>
+&lt;li>对从商城购买到设备装机、检测、报告生成打印及检测后的慢病管理，全流程自动化测试，保障用户使用系统过程中的顺畅性，避免因流程问题导致的交易失败或用户体验不佳情况。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>将自动化测试无缝应用到现有的研发测试工作流程中。&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>替代大部分回归测试，提高测试效率，进一步减少漏测风险。&lt;/li>
+&lt;li>自动化测试成为常态化测试手段,能提前发现问题,有效提升整体工作效率。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="自动化测试工具选型">&lt;strong>自动化测试工具选型&lt;/strong>&lt;/h2>
+&lt;ul>
+&lt;li>自动化测试框架-pytest + Requests
+&lt;ul>
+&lt;li>
+&lt;p>几款常见接口测试框架对比详情：&lt;/p>
+&lt;p>&lt;img src="https://bluespace3.github.io/image/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/1743173315631.png" alt="1743173315631">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>pytest + Requests&lt;/p>
+&lt;ul>
+&lt;li>语法简洁容易上手-接入成本低&lt;/li>
+&lt;li>灵活，社区支持好，插件丰富-适合复杂测试场景&lt;/li>
+&lt;li>已有相关基础&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>选型依据
+　　兼容性、适合复杂流程交互（设备交互）、丰富的社区支持、接入成本&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>测试管理工具（飞书或tapd）
+&lt;ul>
+&lt;li>自动化用例管理&lt;a href="https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink">接口自动化测试用例&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>CI/CD工具&lt;/li>
+&lt;li>GitLab CI&lt;/li>
+&lt;li>uvicorn+fastapi
+&lt;ul>
+&lt;li>部署+接口&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="自动化测试用例设计">&lt;strong>自动化测试用例设计&lt;/strong>&lt;/h2>
+&lt;ol>
+&lt;li>用例分层设计
+&lt;ol>
+&lt;li>基础类（/api）
+&lt;ul>
+&lt;li>根据接口文档生成&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>测试用例（/tests）
+&lt;ul>
+&lt;li>基础功能用例（原子级-单个接口测试）
+&lt;ul>
+&lt;li>&lt;strong>定义&lt;/strong> ：针对单个接口的独立测试，关注接口的输入输出正确性、异常处理能力及边界条件验证。例如，用户登录接口的独立测试需覆盖正常登录、密码错误、账号不存在等场景&lt;/li>
+&lt;li>&lt;strong>特点&lt;/strong> ：&lt;/li>
+&lt;li>&lt;strong>原子性&lt;/strong> ：每个用例仅验证一个接口的单一功能，不依赖其他接口或业务流程。&lt;/li>
+&lt;li>&lt;strong>高复用性&lt;/strong> ：可作为其他复杂用例的构建单元，例如登录接口的测试结果可被后续业务流程用例复用&lt;/li>
+&lt;li>&lt;strong>技术实现&lt;/strong> ：通常结合数据驱动设计（如参数化测试数据），通过多组输入数据覆盖等价类和边界值&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>业务流程用例（端到端、涉及多个接口和流程的测试）
+&lt;ul>
+&lt;li>&lt;strong>定义&lt;/strong> ：模拟真实用户操作路径，串联多个接口验证端到端业务逻辑。例如“创建商品→创建优惠券→创建活动→下单支付”的全流程测试&lt;/li>
+&lt;li>&lt;strong>特点&lt;/strong> ：&lt;/li>
+&lt;li>&lt;strong>场景化&lt;/strong> ：基于用户使用的功能场景设计，关注接口间的数据传递与状态流转。&lt;/li>
+&lt;li>&lt;strong>风险覆盖&lt;/strong> ：重点验证流程中的关键节点（如订单状态变更、库存扣减）和异常分支（如支付超时回滚）&lt;/li>
+&lt;li>&lt;strong>依赖管理&lt;/strong> ：通过关键字驱动设计（如“获取Token”“查询订单状态”）复用基础功能用例，降低冗余代码&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>测试数据（/data）
+&lt;ul>
+&lt;li>存放测试数据&lt;/li>
+&lt;li>提供测试数据的脚本&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>工具(/utils)
+&lt;ul>
+&lt;li>工具类集合&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>数据驱动设计&lt;/li>
+&lt;/ol>
+&lt;p>　　参数化测试数据（Excel、csv、数据库）&lt;/p></description></item><item><title>《金字塔原理》解析</title><link>https://bluespace3.github.io/post/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link><pubDate>Tue, 25 Mar 2025 21:43:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid><description>&lt;h4 id="金字塔原理读书笔记全">《&lt;a href="https://so.csdn.net/so/search?q=%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86&amp;amp;spm=1001.2101.3001.7020">金字塔原理&lt;/a>》读书笔记（全）&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://bluespace3.github.io/post/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80-%e8%a1%a8%e8%be%be%e7%9a%84%e9%80%bb%e8%be%91">一、 表达的逻辑&lt;/a>
 &lt;ul>
@@ -49,18 +212,17 @@
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">	《金字塔原理》资源EPUB：链接：https://pan.baidu.com/s/1-2uv0ktITGT51ft603KfCQ 
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	提取码：aioh 
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	《金字塔原理》资源PDF：链接：https://pan.baidu.com/s/1Z5WIpUSCm9qr7sJhDyf-sQ 
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	提取码：h1sk 
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">12345AI写代码
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>金字塔原理是为了解决沟通、表达或是思考问题时思维混乱、分不清主次的问题。而其背后的方法论就是–搭建金字塔，以金字塔原理进行表达。&lt;br>
-书分为四部分：&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>金字塔原理是为了解决沟通、表达或是思考问题时思维混乱、分不清主次的问题。而其背后的方法论就是–搭建金字塔，以金字塔原理进行表达。书分为四部分：&lt;/p>
 &lt;ol>
 &lt;li>表达的逻辑：说，使用金字塔原理的原因和具体构建方法；&lt;/li>
 &lt;li>思考的逻辑：想，使用金字塔原理过程中的应用逻辑要素；&lt;/li>
 &lt;li>解决问题的逻辑：做，在实例中界定、解构、分析、解决问题；&lt;/li>
-&lt;li>演示的逻辑：表演，在PPT演示中和文字中呈现金字塔。&lt;br>
-&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/c3f84e145fab4e8498edd5048f269561.png" alt="在这里插入图片描述">&lt;/li>
+&lt;li>演示的逻辑：表演，在PPT演示中和文字中呈现金字塔。
+&lt;img src="https://raw.githubusercontent.com/bluespace3/images/master/%E9%87%91%E5%AD%97%E5%A1%94%E4%B8%AD%E5%BF%83%E8%AE%BA%E7%82%B9.png" alt="在这里插入图片描述">&lt;/li>
 &lt;/ol>
 &lt;h2 id="一-表达的逻辑">一、 表达的逻辑&lt;/h2>
 &lt;h3 id="1-为什么要用金字塔">1. 为什么要用金字塔？&lt;/h3>
@@ -75,9 +237,7 @@
 &lt;li>&lt;strong>归类分组，将思想组织成金字塔&lt;/strong>：将关键词罗列出来，并组织归类；&lt;/li>
 &lt;li>&lt;strong>找出逻辑关系，抽象概况&lt;/strong>：找到同类内容之后，我们需要对这部分共性内容进行抽象；&lt;/li>
 &lt;li>&lt;strong>自上而下表达，结论先行&lt;/strong>：当我们先提出总的概念，再列出具体项目，即自上而下地呈现思想时，可以最有效的进行沟通和写作表达，类似于从收敛到发散的过程，脑图结构；&lt;/li>
-&lt;li>&lt;strong>自下而上思考，总结概括&lt;/strong>：思维从底层开始构建，句子按照某种逻辑顺序组成段落，之后将段落组成章节，最后章节组成文章，金字塔最顶端的思想（中心思想、核心观点）代表整片文章观点。&lt;br>
-&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/362bfb90a78a3f267ddfe0333372fe20.png" alt="文章中思想应组成单一思想统领下的金字塔结构">&lt;br>
-文章的思想有三种关联方式：向上、向下、横向。&lt;/li>
+&lt;li>&lt;strong>自下而上思考，总结概括&lt;/strong>：思维从底层开始构建，句子按照某种逻辑顺序组成段落，之后将段落组成章节，最后章节组成文章，金字塔最顶端的思想（中心思想、核心观点）代表整片文章观点。&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/362bfb90a78a3f267ddfe0333372fe20.png" alt="文章中思想应组成单一思想统领下的金字塔结构">文章的思想有三种关联方式：向上、向下、横向。&lt;/li>
 &lt;li>纵向：文章中每一层次上的思想必须是对下一层次思想的概括&lt;/li>
 &lt;li>横向：每组中的思想必须同属于同一逻辑范畴&lt;/li>
 &lt;li>横向：每组中思想必须按逻辑顺序组织&lt;/li>
@@ -90,7 +250,7 @@
 &lt;li>&lt;strong>程度（重要性）顺序&lt;/strong>：最重要、次重要&lt;/li>
 &lt;/ul>
 &lt;h3 id="2-金字塔内部结构">2. 金字塔内部结构&lt;/h3>
-&lt;p>&lt;strong>纵向关系&lt;/strong>：纵向关系是疑问-回答式的表达方式，让读者产生”为什么这么做的想法“，类似于层层推理。&lt;br>
+&lt;p>&lt;strong>纵向关系&lt;/strong>：纵向关系是疑问-回答式的表达方式，让读者产生”为什么这么做的想法“，类似于层层推理。
 &lt;img src="https://i-blog.csdnimg.cn/blog_migrate/6293c4ba0f4ff6bdab25842805d19b58.png" alt="在这里插入图片描述">&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/ac3217655f95ce686f2e87eb5ea0950a.png" alt="在这里插入图片描述">&lt;/p></description></item><item><title>gitlab配置cicd工作流</title><link>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介">GitLab CI/CD 简介&lt;/h2>
 &lt;p>GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p>
 &lt;h3 id="cicd-核心概念">CI/CD 核心概念&lt;/h3>
