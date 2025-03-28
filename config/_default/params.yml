@@ -430,7 +430,7 @@ gitalk:
 # https://giscus.app/zh-CN
 giscus:
   enable: true
-  repo: bluespace3/bluespace3.github.io/
+  repo: bluespace3/bluespace3.github.io
   repoId: R_kgDOOLQbCg
   category: Announcements
   categoryId: DIC_kwDOOLQbCs4Cojds
