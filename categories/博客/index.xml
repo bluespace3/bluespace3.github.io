@@ -43,20 +43,14 @@
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new blog/my-first-post.md
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="运行开发服务器">运行开发服务器&lt;/h2>
 &lt;p>使用以下命令启动开发服务器：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo server -D
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo server -D --environment development &lt;span class="c1">#如果未设置环境变量则不需要指定环境。&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="部署网站">部署网站&lt;/h2>
 &lt;p>使用以下命令生成静态文件：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
-&lt;li>
-&lt;p>然后将public目录下的文件部署到Web服务器即可，注意每次推送前运行hugo更新public文件夹&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>若有更新域名，请删除public后，再运行hugo重新生成public，否则会出现路由错误的情况。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>为了方便新建.sh脚本文件，命名为.command.sh&lt;/p>
-&lt;/li>
+&lt;li>然后将public目录下的文件部署到Web服务器即可，注意每次推送前运行hugo更新public文件夹&lt;/li>
+&lt;li>若有更新域名，请删除public后，再运行hugo重新生成public，否则会出现路由错误的情况。&lt;/li>
+&lt;li>为了方便新建.sh脚本文件，命名为.command.sh&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 判断是否已初始化Git仓库&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> ! -d &lt;span class="s2">&amp;#34;.git&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
