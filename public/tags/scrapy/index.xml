@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scrapy on 蓝色空间号-新世界的探索者</title>
-    <link>https://bluespace3.github.io/tags/scrapy/</link>
+    <link>http://localhost:1313/tags/scrapy/</link>
     <description>Recent content in Scrapy on 蓝色空间号-新世界的探索者</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate>
-    <atom:link href="https://bluespace3.github.io/tags/scrapy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/scrapy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>scrapy爬柚子网示例</title>
-      <link>https://bluespace3.github.io/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link>
+      <link>http://localhost:1313/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
-      <guid>https://bluespace3.github.io/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid>
+      <guid>http://localhost:1313/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid>
       <description>&lt;p&gt;柚子网https://www.uu-zz.com/&lt;/p&gt;&#xA;&lt;p&gt;爬取页码&lt;/p&gt;&#xA;&lt;p&gt;遍历页面内对应的视频集的链接&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/O1YCbvbQBoiZYHxxbO7cqOi6nKb?preview_type=16&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;遍历视频内子视频链接&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/CKMPbtR4souEnDxWowNcxAuenNc?preview_type=16&#34; alt=&#34;&#34;&gt;!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://security.feishu.cn/link/safety?target=https%3A%2F%2Fwww.uu-zz.com%2F%2B%E5%AD%90%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5&amp;amp;scene=ccm&amp;amp;logParams=%7B%22location%22%3A%22ccm_mindnote%22%7D&amp;amp;lang=zh-CN&#34;&gt;https://www.uu-zz.com/+子视频链接&lt;/a&gt;，发送get请求&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/ClLDbx3s5o29xpxWKrncnG3Enzg?preview_type=16&#34; alt=&#34;&#34;&gt;!&lt;/p&gt;&#xA;&lt;p&gt;获得m3u8文件，储存在数据库&lt;/p&gt;</description>
     </item>
   </channel>
