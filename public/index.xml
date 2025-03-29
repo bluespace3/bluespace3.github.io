@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/algolia.json</link><description>Recent content on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 28 Mar 2025 22:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>25年一季度汇报总结反思</title><link>https://bluespace3.github.io/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link><pubDate>Fri, 28 Mar 2025 22:59:32 +0800</pubDate><guid>https://bluespace3.github.io/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid><description>&lt;h3 id="关于汇报过程的反思">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/algolia.json</link><description>Recent content on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 29 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>提示词技巧</title><link>https://bluespace3.github.io/post/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</link><pubDate>Sat, 29 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</guid><description>&lt;p>提示词技巧
+总结：&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/bluespace3/images/master/20250329152414.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/bluespace3/images/master/20250329153529.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/bluespace3/images/master/20250329153627.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/bluespace3/images/master/20250329153708.png" alt="">
+&lt;img src="https://raw.githubusercontent.com/bluespace3/images/master/20250329153716.png" alt="">&lt;/p>
+&lt;p>官方提示词库：
+&lt;a href="https://api-docs.deepseek.com/zh-cn/prompt-library">https://api-docs.deepseek.com/zh-cn/prompt-library&lt;/a>&lt;/p></description></item><item><title>25年一季度汇报总结反思</title><link>https://bluespace3.github.io/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link><pubDate>Fri, 28 Mar 2025 22:59:32 +0800</pubDate><guid>https://bluespace3.github.io/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid><description>&lt;h3 id="关于汇报过程的反思">
 &lt;a class="header-anchor" href="#%e5%85%b3%e4%ba%8e%e6%b1%87%e6%8a%a5%e8%bf%87%e7%a8%8b%e7%9a%84%e5%8f%8d%e6%80%9d">&lt;/a>
 关于汇报过程的反思
 &lt;/h3>&lt;ol>
@@ -1000,15 +1008,7 @@ import os,sys&lt;/p>
 &lt;/li>
 &lt;li>面试相关&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460820437.png" alt="1742460820437">&lt;/li>
 &lt;li>pycharm关闭pytest测试模式&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460849632.png" alt="1742460849632">&lt;/li>
-&lt;/ul></description></item><item><title>提示词技巧</title><link>https://bluespace3.github.io/post/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</guid><description>&lt;p>提示词技巧
-总结：&lt;/p>
-&lt;p>&lt;img src="./images/image_ba757d41c7a7ffe6c96cab21733204f5.png" alt="">&lt;/p>
-&lt;p>&lt;img src="./images/image_8cbe461813a474391f33fb335ebab8f6.png" alt="">&lt;/p>
-&lt;p>&lt;img src="./images/image_44d9cd55663dee910f36f6ba75153821.png" alt="">&lt;/p>
-&lt;p>&lt;img src="./images/image_8dd7fba4e99a354d6df663aa57049cc0.png" alt="">&lt;/p>
-&lt;p>&lt;img src="./images/image_9368612a92cd51d44b6d8ef31705d88a.png" alt="">&lt;/p>
-&lt;p>官方提示词库：
-&lt;a href="https://api-docs.deepseek.com/zh-cn/prompt-library">https://api-docs.deepseek.com/zh-cn/prompt-library&lt;/a>&lt;/p></description></item><item><title>go语言--安装和环境搭配</title><link>https://bluespace3.github.io/post/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link><pubDate>Sat, 15 Mar 2025 11:00:00 -0700</pubDate><guid>https://bluespace3.github.io/post/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid><description>&lt;h3 id="一go简介">
+&lt;/ul></description></item><item><title>go语言--安装和环境搭配</title><link>https://bluespace3.github.io/post/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link><pubDate>Sat, 15 Mar 2025 11:00:00 -0700</pubDate><guid>https://bluespace3.github.io/post/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid><description>&lt;h3 id="一go简介">
 &lt;a class="header-anchor" href="#%e4%b8%80go%e7%ae%80%e4%bb%8b">&lt;/a>
 一.Go简介
 &lt;/h3>&lt;p>Go 语言（又称 Golang）是由 Google 开发的一种开源&lt;a href="https://so.csdn.net/so/search?q=%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80&amp;amp;spm=1001.2101.3001.7020">编程语言&lt;/a>，于 2009 年正式对外发布。下面从多个方面为你介绍它：&lt;/p>

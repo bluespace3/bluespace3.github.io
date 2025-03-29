@@ -99,13 +99,13 @@ injector:
       
       /* 导航菜单项文字颜色 */
       .menu-item a {
-        color: white !重要;
+        color: white !important;
       }
       
       /* 导航菜单图标颜色 */
       .menu-item svg, .menu-item i {
         color: #000000 !important; /* 改为黑色 */
-        fill: #000000 !重要;
+        fill: #000000 !important;
       }
       
       /* 文章标题和按钮颜色 */
@@ -117,7 +117,7 @@ injector:
       .subtitle {
         color: #0033cc !important;
         font-weight: 700 !important;
-        text-shadow: 0 0 3px a(255, 255, 255, 0.7) !important;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.7) !important;
         font-size: 1.3em !important;
         letter-spacing: 1px !important;
       }
@@ -135,21 +135,21 @@ injector:
         border-width: 2px !important;
       }
       
-      # /* 头像样式 */
-      # .author-info img.avatar {
-      #   display: block !important;
-      #   width: 120px !important;
-      #   height: 120px !important;
-      #   border-radius: 50% !important;
-      #   border: 3px solid var(--theme-color) !important;
-      #   margin: 0 auto 10px !important;rgb
-      #   box-shadow: 0 0 10px rgba(0, 51, 153, 0.3) !important;
-      # }
+      /* 头像样式 */
+      .author-info img.avatar {
+        display: block !important;
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 50% !important;
+        border: 3px solid var(--theme-color) !important;
+        margin: 0 auto 10px !important;
+        box-shadow: 0 0 10px rgba(0, 51, 153, 0.3) !important;
+      }
       
       /* 标签和分类按钮背景 */
       .tag-item, .category-item, .friend-item, .recent-post-item {
-        background-color: transparent !important; # 设置为透明
-        color: inherit !important; # 恢复默认文字颜色
+        background-color: transparent !important; /* 设置为透明 */
+        color: inherit !important; /* 恢复默认文字颜色 */
       }
       
       /* 侧边栏标题 */
@@ -285,7 +285,7 @@ reimu_cursor:
     pointer: ../images/cursor/reimu-cursor-pointer.png
     text: ../images/cursor/reimu-cursor-text.png
 
-icon_font: false
+icon_font: 4552607_0khxww3tj3q9
 
 # https://fonts.google.com/
 # Google Fonts, higher priority than local_font
