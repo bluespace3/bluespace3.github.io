@@ -18,7 +18,7 @@ menu:
     url: "friend"
     icon:
 
-mainSections: ["post"]
+mainSections: ["post", "archives"]
 # 年，月，日及时间的格式化样式
 # Format style for year,month,date & time
 yearFormat: "2006"
@@ -50,11 +50,11 @@ banner_srcset:
       media: "(min-width: 800px)"
 
 # 修改为正确的路径，确保以/开头
-avatar: "images/78ac40f951241471287ff985bc25b24b2f03a241.jpg"
+avatar: "images/OIP (4).jpeg"
 # Control the display of the post cover
 # If not set, the banner image will be displayed by default
 # Its priority is lower than the cover in the Front-matter
-cover: rgb(117,117,255)  # 从红色系改为蓝色系
+cover: "#7575ff"  # 从红色系改为蓝色系
 
 # Control the display of the post toc
 # Its priority is lower than the toc in the Front-matter
@@ -227,10 +227,10 @@ footer:
     mask: true # whether to use the images as a mask
 
 # Sidebar
-sidebar: right
+sidebar: left
 
 social:
-  # email: mailto:xxx@gmail.com
+  email: 2637458905@qq.com
   github: https://github.com/bluespace3
   # 其他社交媒体...
   # google: https://plus.google.com/yourname
@@ -244,7 +244,7 @@ social:
   # flickr: https://www.flickr.com/photos/yourname
   # dribbble: https://dribbble.com/yourname
   # behance: https://www.behance.net/yourname
-  # bilibili: https://space.bilibili.com/yourname
+  bilibili: https://space.bilibili.com/390297990
   # weibo: https://weibo.com/yourname
   # zhihu: https://www.zhihu.com/people/yourname
   # reddit: https://www.reddit.com/user/yourname
@@ -259,7 +259,7 @@ social:
 
 widgets:
   - category
-  - tag
+  # - tag
   - tagcloud
   - recent_posts
 
@@ -270,7 +270,7 @@ recent_posts_limits: 5
 tagcloud_limits: 20
 
 # Archive behavior
-only_show_capsule_in_index: false # If you have hugo amounts of tags and categories, you can set this to true to only show the capsule in the index page for better performance
+only_show_capsule_in_index: true # If you have hugo amounts of tags and categories, you can set this to true to only show the capsule in the index page for better performance
 
 ########################################
 # CSS
@@ -294,7 +294,7 @@ font:
     - Mulish
     - Noto Serif SC
   code:
-    # - Ubuntu Mono
+    - Ubuntu Mono
     # - Source Code Pro
     # - JetBrains Mono
 
@@ -592,10 +592,14 @@ share:
 home_categories:
   enable: true
   content:
-    - categories: # string (single-layer category) or array (multi-layer category)
-      cover: rgb(117,117,255)
-    - categories:
-      cover: rgb(117,117,255)
+    - categories: "反思" # 使用复数 categories 和字符串值
+      cover: "/images/R.jpeg"
+    - categories: "技术" # 使用复数 categories 和字符串值
+      cover: "/images/R.jpeg"
+    # - categories: # 如果需要多层分类或一个卡片显示多个分类，可以使用数组
+    #     - 分类1
+    #     - 分类2
+    #   cover: "#7575ff"
 
 ########################################
 # Experimental features
