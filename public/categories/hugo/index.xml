@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/categories/hugo/</link><description>Recent content in Hugo on 蓝色空间号-新世界的探索者</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>加密文章示例</title><link>https://bluespace3.github.io/post/encrypted-example/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/encrypted-example/</guid><description>&lt;h2 id="这是一篇加密的文章">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Hugo on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>加密文章示例</title><link>https://bluespace3.github.io/post/encrypted-example/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/encrypted-example/</guid><description>&lt;h2 id="这是一篇加密的文章">
 &lt;a class="header-anchor" href="#%e8%bf%99%e6%98%af%e4%b8%80%e7%af%87%e5%8a%a0%e5%af%86%e7%9a%84%e6%96%87%e7%ab%a0">&lt;/a>
 这是一篇加密的文章
 &lt;/h2>&lt;p>只有输入正确的密码才能查看这篇文章的内容。&lt;/p>
@@ -133,7 +133,7 @@ Hugo的主要特点
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 提交更改&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;更新博客&amp;#34;&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;更新博客&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检查是否已关联远程仓库&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">REMOTE_URL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>git remote get-url origin 2&amp;gt;/dev/null&lt;span class="k">)&lt;/span>

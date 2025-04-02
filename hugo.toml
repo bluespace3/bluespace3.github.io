@@ -19,3 +19,7 @@ baseName = "algolia"
 isPlainText = true
 mediaType = "application/json"
 notAlternative = true
+
+[outputFormats.RSS]
+mediaType = "application/rss+xml"
+baseName = "index"
