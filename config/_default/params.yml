@@ -651,8 +651,8 @@ player:
         - name: "Free Compress"  # 音乐名称
           artist: "Unknown Artist"  # 艺术家名称
           url: "/freecompress-2906303867.mp3"  # 音频文件路径，确保以 / 开头
-          cover: ""  # 可选，封面图片路径
-      fixed: true  # 固定在页面底部
+          cover: "/images/90.jpeg"  # 可选，封面图片路径
+      fixed: false  # 固定在页面底部
       autoplay: false  # 是否自动播放
       loop: all  # 循环模式，可选值：'all', 'one', 'none'
       order: list  # 播放顺序，可选值：'list', 'random'

@@ -6,7 +6,6 @@ date: 2025-04-06T09:59:32+08:00
 draft: false
 
 tags: ["Git", "教程"]
-cover: https://s21.ax1x.com/2025/03/21/pE0C2Xq.jpg
 
 categories: ["技术笔记"]
 ---
