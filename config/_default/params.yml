@@ -50,7 +50,7 @@ banner_srcset:
       media: "(min-width: 800px)"
 
 # 修改为正确的路径，确保以/开头
-avatar: "images/OIP (4).jpeg"
+avatar: "OIP (4).jpeg"
 # Control the display of the post cover
 # If not set, the banner image will be displayed by default
 # Its priority is lower than the cover in the Front-matter
@@ -580,22 +580,22 @@ sponsor:
 
 # Share
 share:
-  # - facebook
-  # - twitter
-  # - linkedin
-  # - reddit
-  # - weibo
-  # - qq
-  # - weixin
+  - facebook
+  - twitter
+  - linkedin
+  - reddit
+  - weibo
+  - qq
+  - weixin
 
 # show categories card on home page
 home_categories:
   enable: true
   content:
     - categories: "反思" # 使用复数 categories 和字符串值
-      cover: "/images/R.jpeg"
+      cover: "/images/90.jpeg"
     - categories: "技术" # 使用复数 categories 和字符串值
-      cover: "/images/R.jpeg"
+      cover: "/images/飞船2.png"
     # - categories: # 如果需要多层分类或一个卡片显示多个分类，可以使用数组
     #     - 分类1
     #     - 分类2
@@ -678,6 +678,6 @@ player:
 
 pangu:
   # more information: https://github.com/vinta/pangu.js 
-  enable: false  # enable pangu.js to add space between Chinese and English
+  enable: true  # enable pangu.js to add space between Chinese and English
 
 algolia_search.enable: true

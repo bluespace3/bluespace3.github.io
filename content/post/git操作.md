@@ -1,12 +1,12 @@
 ---
 title: "Git 常用命令记录"
 
-date: 2025-04-05T09:59:32+08:00
+date: 2025-04-06T09:59:32+08:00
 
 draft: false
 
 tags: ["Git", "教程"]
-
+cover: https://s21.ax1x.com/2025/03/21/pE0C2Xq.jpg
 
 categories: ["技术笔记"]
 ---
@@ -21,4 +21,4 @@ categories: ["技术笔记"]
 
 #### 子模块的使用
 
-![子模块使用](images/361743670309_.pic.jpg)
+![子模块使用](/images/361743670309_.pic.jpg)
