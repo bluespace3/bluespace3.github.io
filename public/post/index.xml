@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>蓝色空间号-新世界的探索者</title>
-    <link>http://localhost:58479/</link>
+    <link>http://localhost:60467/</link>
     <description>Recent content on 蓝色空间号-新世界的探索者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 26 Jul 2022 21:46:25 +0800</lastBuildDate><atom:link href="http://localhost:58479/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jul 2022 21:46:25 +0800</lastBuildDate><atom:link href="http://localhost:60467/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gemma 3的本地部署</title>
-      <link>http://localhost:58479/post/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link>
+      <link>http://localhost:60467/post/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link>
       <pubDate>Sun, 06 Apr 2025 09:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid>
+      <guid>http://localhost:60467/post/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid>
       <description>&lt;p&gt;Gemma 3 被谷歌称为目前最强的开源视觉模型之一。 该模型支持超过35种语言，能够分析文本、图像和短视频。值得注意的是，Gemma 3 的视觉编码器经过升级，支持高分辨率和非方形图像，并引入了 ShieldGemma 2 图像安全分类器，用于过滤被分类为性暗示、危险或暴力的内容。这些特性使得 Gemma 3 成为当前最强大的开源视觉模型之一。&lt;/p&gt;
 &lt;h4 id=&#34;最新的-gemma-3-多模态开源模型新功能&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%9c%80%e6%96%b0%e7%9a%84-gemma-3-%e5%a4%9a%e6%a8%a1%e6%80%81%e5%bc%80%e6%ba%90%e6%a8%a1%e5%9e%8b%e6%96%b0%e5%8a%9f%e8%83%bd&#34;&gt;&lt;/a&gt;
@@ -33,10 +33,10 @@
     
     <item>
       <title>Git 常用命令记录</title>
-      <link>http://localhost:58479/post/git%E6%93%8D%E4%BD%9C/</link>
+      <link>http://localhost:60467/post/git%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Sun, 06 Apr 2025 09:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/git%E6%93%8D%E4%BD%9C/</guid>
+      <guid>http://localhost:60467/post/git%E6%93%8D%E4%BD%9C/</guid>
       <description>&lt;h4 id=&#34;回滚到指定提交&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%9b%9e%e6%bb%9a%e5%88%b0%e6%8c%87%e5%ae%9a%e6%8f%90%e4%ba%a4&#34;&gt;&lt;/a&gt;
 回滚到指定提交
@@ -53,15 +53,15 @@
 &lt;h4 id=&#34;子模块的使用&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%ad%90%e6%a8%a1%e5%9d%97%e7%9a%84%e4%bd%bf%e7%94%a8&#34;&gt;&lt;/a&gt;
 子模块的使用
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58479/images/361743670309_.pic.jpg&#34; alt=&#34;子模块使用&#34;&gt;&lt;/p&gt;</description>
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:60467/images/361743670309_.pic.jpg&#34; alt=&#34;子模块使用&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Markdown文档编写不完全指南</title>
-      <link>http://localhost:58479/post/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <link>http://localhost:60467/post/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
       <pubDate>Thu, 03 Apr 2025 16:21:23 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <guid>http://localhost:60467/post/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
       <description>&lt;h2 id=&#34;一核心语法精要&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%b8%80%e6%a0%b8%e5%bf%83%e8%af%ad%e6%b3%95%e7%b2%be%e8%a6%81&#34;&gt;&lt;/a&gt;
 一、核心语法精要
@@ -116,10 +116,10 @@ B --&gt;|条件2| D[操作2]
     
     <item>
       <title>提示词技巧</title>
-      <link>http://localhost:58479/post/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</link>
+      <link>http://localhost:60467/post/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Sat, 29 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</guid>
+      <guid>http://localhost:60467/post/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</guid>
       <description>&lt;p&gt;提示词技巧
 总结：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bluespace3/images/master/20250329152414.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -133,10 +133,10 @@ B --&gt;|条件2| D[操作2]
     
     <item>
       <title>pytest接口自动化测试方案</title>
-      <link>http://localhost:58479/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link>
+      <link>http://localhost:60467/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link>
       <pubDate>Fri, 28 Mar 2025 22:43:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid>
+      <guid>http://localhost:60467/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%83%8c%e6%99%af&#34;&gt;&lt;/a&gt;
 背景
@@ -230,7 +230,7 @@ B --&gt;|条件2| D[操作2]
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;几款常见接口测试框架对比详情：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58479/images/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/1743173315631.png&#34; alt=&#34;1743173315631&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:60467/images/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/1743173315631.png&#34; alt=&#34;1743173315631&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;pytest + Requests&lt;/p&gt;
@@ -313,10 +313,10 @@ B --&gt;|条件2| D[操作2]
     
     <item>
       <title>gitlab配置cicd工作流</title>
-      <link>http://localhost:58479/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+      <link>http://localhost:60467/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
       <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+      <guid>http://localhost:60467/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
       <description>&lt;h2 id=&#34;gitlab-cicd-简介&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#gitlab-cicd-%e7%ae%80%e4%bb%8b&#34;&gt;&lt;/a&gt;
 GitLab CI/CD 简介
@@ -379,10 +379,10 @@ GitLab Runner
     
     <item>
       <title>加密文章示例</title>
-      <link>http://localhost:58479/post/encrypted-example/</link>
+      <link>http://localhost:60467/post/encrypted-example/</link>
       <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/encrypted-example/</guid>
+      <guid>http://localhost:60467/post/encrypted-example/</guid>
       <description>&lt;h2 id=&#34;这是一篇加密的文章&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%bf%99%e6%98%af%e4%b8%80%e7%af%87%e5%8a%a0%e5%af%86%e7%9a%84%e6%96%87%e7%ab%a0&#34;&gt;&lt;/a&gt;
 这是一篇加密的文章
@@ -415,10 +415,10 @@ GitLab Runner
     
     <item>
       <title>将github变为免费图床</title>
-      <link>http://localhost:58479/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link>
+      <link>http://localhost:60467/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link>
       <pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid>
+      <guid>http://localhost:60467/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid>
       <description>&lt;h2 id=&#34;使用-github-作为免费图床的文档&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bd%bf%e7%94%a8-github-%e4%bd%9c%e4%b8%ba%e5%85%8d%e8%b4%b9%e5%9b%be%e5%ba%8a%e7%9a%84%e6%96%87%e6%a1%a3&#34;&gt;&lt;/a&gt;
 使用 GitHub 作为免费图床的文档
@@ -482,10 +482,10 @@ GitLab Runner
     
     <item>
       <title>测试平台教程</title>
-      <link>http://localhost:58479/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link>
+      <link>http://localhost:60467/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link>
       <pubDate>Fri, 21 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid>
+      <guid>http://localhost:60467/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid>
       <description>&lt;p&gt;一、基本介绍：（）
 桌面端工具（一年左右），使用python的wxpython框架编写，使用pyinstaller打包为桌面exe文件；缺点：体积大，不便于分享；&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./images/image_0fa5b6bdd33056f5c14c2ba21dca4298.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -542,10 +542,10 @@ gunicorn flask_index:app -c ./gunicorn.conf.py
     
     <item>
       <title>MCP入门指南</title>
-      <link>http://localhost:58479/post/mcp-intro/</link>
+      <link>http://localhost:60467/post/mcp-intro/</link>
       <pubDate>Thu, 20 Mar 2025 13:48:29 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/mcp-intro/</guid>
+      <guid>http://localhost:60467/post/mcp-intro/</guid>
       <description>&lt;h2 id=&#34;什么是mcp&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bb%80%e4%b9%88%e6%98%afmcp&#34;&gt;&lt;/a&gt;
 什么是MCP？
@@ -628,10 +628,10 @@ MCP的安装
     
     <item>
       <title>pytest入门指南</title>
-      <link>http://localhost:58479/post/pytest-intro/</link>
+      <link>http://localhost:60467/post/pytest-intro/</link>
       <pubDate>Thu, 20 Mar 2025 13:42:48 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/pytest-intro/</guid>
+      <guid>http://localhost:60467/post/pytest-intro/</guid>
       <description>&lt;h2 id=&#34;什么是pytest&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bb%80%e4%b9%88%e6%98%afpytest&#34;&gt;&lt;/a&gt;
 什么是pytest？
@@ -686,10 +686,10 @@ pytest的主要特点
     
     <item>
       <title>docker常用命令</title>
-      <link>http://localhost:58479/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>http://localhost:60467/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://localhost:60467/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;docker pull ubuntu 载入ubuntu 镜像&lt;/p&gt;
 &lt;p&gt;docker pull training/webapp  # 载入镜像&lt;/p&gt;
 &lt;p&gt;docker pull python:3.7 安装python镜像&lt;/p&gt;
@@ -710,10 +710,10 @@ pytest的主要特点
     
     <item>
       <title>Git submodule</title>
-      <link>http://localhost:58479/post/git-submodule/</link>
+      <link>http://localhost:60467/post/git-submodule/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/git-submodule/</guid>
+      <guid>http://localhost:60467/post/git-submodule/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;ul&gt;
@@ -756,10 +756,10 @@ pytest的主要特点
     
     <item>
       <title>git子项目</title>
-      <link>http://localhost:58479/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link>
+      <link>http://localhost:60467/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>http://localhost:60467/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;项目中添加子项目
 &lt;ul&gt;
@@ -782,10 +782,10 @@ git submodule update &amp;ndash;init &amp;ndash;recursive
     
     <item>
       <title>Hugo静态网站生成器入门指南</title>
-      <link>http://localhost:58479/post/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</link>
+      <link>http://localhost:60467/post/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</guid>
+      <guid>http://localhost:60467/post/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</guid>
       <description>&lt;h2 id=&#34;什么是hugo&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bb%80%e4%b9%88%e6%98%afhugo&#34;&gt;&lt;/a&gt;
 什么是Hugo？
@@ -881,10 +881,10 @@ Hugo的主要特点
     
     <item>
       <title>linux安装python</title>
-      <link>http://localhost:58479/post/linux%E5%AE%89%E8%A3%85python/</link>
+      <link>http://localhost:60467/post/linux%E5%AE%89%E8%A3%85python/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/linux%E5%AE%89%E8%A3%85python/</guid>
+      <guid>http://localhost:60467/post/linux%E5%AE%89%E8%A3%85python/</guid>
       <description>&lt;p&gt;#依赖包&lt;/p&gt;
 &lt;p&gt;yum -y groupinstall &amp;ldquo;Development tools&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel&lt;/p&gt;
@@ -904,10 +904,10 @@ Hugo的主要特点
     
     <item>
       <title>linux常用命令</title>
-      <link>http://localhost:58479/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>http://localhost:60467/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>http://localhost:60467/post/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;h3 id=&#34;文章目录&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%96%87%e7%ab%a0%e7%9b%ae%e5%bd%95&#34;&gt;&lt;/a&gt;
 文章目录
@@ -1002,10 +1002,10 @@ Hugo的主要特点
     
     <item>
       <title>playwright的python文档</title>
-      <link>http://localhost:58479/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link>
+      <link>http://localhost:60467/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid>
+      <guid>http://localhost:60467/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid>
       <description>&lt;h1 id=&#34;安装&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%ae%89%e8%a3%85&#34;&gt;&lt;/a&gt;
 安装
@@ -1060,10 +1060,10 @@ Hugo的主要特点
     
     <item>
       <title>python常见踩坑记录</title>
-      <link>http://localhost:58479/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link>
+      <link>http://localhost:60467/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid>
+      <guid>http://localhost:60467/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid>
       <description>&lt;h2 id=&#34;项目结构&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84&#34;&gt;&lt;/a&gt;
 项目结构：
@@ -1093,10 +1093,10 @@ import os,sys&lt;/p&gt;
     
     <item>
       <title>python的os模块使用</title>
-      <link>http://localhost:58479/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link>
+      <link>http://localhost:60467/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid>
+      <guid>http://localhost:60467/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;os.listdir(path)
 获取文件夹下全部文件，的列表&lt;/li&gt;
@@ -1110,10 +1110,10 @@ import os,sys&lt;/p&gt;
     
     <item>
       <title>scrapy爬柚子网示例</title>
-      <link>http://localhost:58479/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link>
+      <link>http://localhost:60467/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid>
+      <guid>http://localhost:60467/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid>
       <description>&lt;p&gt;柚子网https://www.uu-zz.com/&lt;/p&gt;
 &lt;p&gt;爬取页码&lt;/p&gt;
 &lt;p&gt;遍历页面内对应的视频集的链接&lt;/p&gt;
@@ -1127,10 +1127,10 @@ import os,sys&lt;/p&gt;
     
     <item>
       <title>unnitest</title>
-      <link>http://localhost:58479/post/unnitest%E7%AC%94%E8%AE%B0/</link>
+      <link>http://localhost:60467/post/unnitest%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
       
-      <guid>http://localhost:58479/post/unnitest%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://localhost:60467/post/unnitest%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;一、引入
 &lt;ul&gt;
@@ -1192,10 +1192,10 @@ import os,sys&lt;/p&gt;
     
     <item>
       <title>go语言--安装和环境搭配</title>
-      <link>http://localhost:58479/post/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link>
+      <link>http://localhost:60467/post/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link>
       <pubDate>Sat, 15 Mar 2025 11:00:00 -0700</pubDate>
       
-      <guid>http://localhost:58479/post/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid>
+      <guid>http://localhost:60467/post/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid>
       <description>&lt;h3 id=&#34;一go简介&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%b8%80go%e7%ae%80%e4%bb%8b&#34;&gt;&lt;/a&gt;
 一.Go简介
@@ -1251,10 +1251,10 @@ Linux
     
     <item>
       <title>mac使用笔记</title>
-      <link>http://localhost:58479/post/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
+      <link>http://localhost:60467/post/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
       <pubDate>Sat, 15 Mar 2025 11:00:00 -0700</pubDate>
       
-      <guid>http://localhost:58479/post/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</guid>
+      <guid>http://localhost:60467/post/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</guid>
       <description>&lt;p&gt;在Mac终端中，有几种方法可以连续删除命令：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;使用 Ctrl + W ：删除光标前的一个单词&lt;/li&gt;
@@ -1267,10 +1267,10 @@ Linux
     
     <item>
       <title>数据库使用笔记</title>
-      <link>http://localhost:58479/post/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link>
+      <link>http://localhost:60467/post/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link>
       <pubDate>Sat, 15 Mar 2025 11:00:00 -0700</pubDate>
       
-      <guid>http://localhost:58479/post/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid>
+      <guid>http://localhost:60467/post/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%BA%93&amp;amp;spm=1001.2101.3001.7020&#34;&gt;数据库&lt;/a&gt;的查询是数据库使用中比较重要的环节，前面的基础查询比较简单，不做介绍，可自行查阅。本文主要介绍复合查询，并结合用例进行讲解。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
