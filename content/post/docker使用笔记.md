@@ -4,7 +4,6 @@ title: "docker常用命令"
 
 date: 2025-03-20T12:59:32+08:00
 
-cover: rgb(117,117,255)
 
 draft: false
 

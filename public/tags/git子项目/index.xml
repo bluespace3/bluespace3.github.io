@@ -1,18 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git子项目 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Git子项目 on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/git%E5%AD%90%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>git子项目</title><link>https://bluespace3.github.io/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid><description>&lt;ul>
-&lt;li>项目中添加子项目
-&lt;ul>
-&lt;li>1、git clone 父项目url&lt;/li>
-&lt;li>2、cd 父项目对应目录下：git submodule add &amp;lt;子项目地址&amp;gt;&lt;/li>
-&lt;li>3、git commit ;git push&lt;/li>
-&lt;li>4、此时子项目下的子项目是空的，需要cd到父目录cmd执行：
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git子项目 on 蓝色空间号-新世界的探索者</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Git子项目 on 蓝色空间号-新世界的探索者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/git%E5%AD%90%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git子项目</title>
+      <link>http://localhost:1313/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;项目中添加子项目
+&lt;ul&gt;
+&lt;li&gt;1、git clone 父项目url&lt;/li&gt;
+&lt;li&gt;2、cd 父项目对应目录下：git submodule add &amp;lt;子项目地址&amp;gt;&lt;/li&gt;
+&lt;li&gt;3、git commit ;git push&lt;/li&gt;
+&lt;li&gt;4、此时子项目下的子项目是空的，需要cd到父目录cmd执行：
 git submodule update &amp;ndash;init &amp;ndash;recursive
-或者执行：git submodule init 然后执行cd&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>clone含嵌套项目的项目
-&lt;ul>
-&lt;li>git clone 父项目url &amp;ndash;recurse-submodules
-不加&amp;ndash;recurse-submodules，克隆的子项目是空的&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+或者执行：git submodule init 然后执行cd&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;clone含嵌套项目的项目
+&lt;ul&gt;
+&lt;li&gt;git clone 父项目url &amp;ndash;recurse-submodules
+不加&amp;ndash;recurse-submodules，克隆的子项目是空的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

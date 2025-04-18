@@ -54,7 +54,7 @@ avatar: "OIP (4).jpeg"
 # Control the display of the post cover
 # If not set, the banner image will be displayed by default
 # Its priority is lower than the cover in the Front-matter
-cover: "#7575ff"  # 从红色系改为蓝色系
+# cover: "#7575ff"  # 从红色系改为蓝色系
 
 # Control the display of the post toc
 # Its priority is lower than the toc in the Front-matter

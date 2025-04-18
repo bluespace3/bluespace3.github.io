@@ -1,111 +1,166 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Python on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>linux安装python</title><link>https://bluespace3.github.io/post/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;p>#依赖包&lt;/p>
-&lt;p>yum -y groupinstall &amp;ldquo;Development tools&amp;rdquo;&lt;/p>
-&lt;p>yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel&lt;/p>
-&lt;p>#下载 Python3&lt;/p>
-&lt;p>wget &lt;a href="https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz">https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz&lt;/a>&lt;/p>
-&lt;p>#创建文件夹&lt;/p>
-&lt;p>mkdir /usr/local/python3&lt;/p>
-&lt;p>#解压编译安装&lt;/p>
-&lt;p>tar -xvJf Python-3.6.2.tar.xz&lt;/p>
-&lt;p>cd Python-3.6.2&lt;/p>
-&lt;p>./configure &amp;ndash;prefix=/usr/local/python3&lt;/p>
-&lt;p>make &amp;amp;&amp;amp; make install&lt;/p>
-&lt;p>#给个软链&lt;/p>
-&lt;p>ln -sf /usr/local/python3/bin/python3 /usr/bin/python3&lt;/p>
-&lt;p>ln -sf /usr/local/python3/bin/pip3 /usr/bin/pip3&lt;/p></description></item><item><title>python常见踩坑记录</title><link>https://bluespace3.github.io/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid><description>&lt;h2 id="项目结构">
-&lt;a class="header-anchor" href="#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84">&lt;/a>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 蓝色空间号-新世界的探索者</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Python on 蓝色空间号-新世界的探索者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux安装python</title>
+      <link>http://localhost:1313/post/linux%E5%AE%89%E8%A3%85python/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux%E5%AE%89%E8%A3%85python/</guid>
+      <description>&lt;p&gt;#依赖包&lt;/p&gt;
+&lt;p&gt;yum -y groupinstall &amp;ldquo;Development tools&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel&lt;/p&gt;
+&lt;p&gt;#下载 Python3&lt;/p&gt;
+&lt;p&gt;wget &lt;a href=&#34;https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz&#34;&gt;https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#创建文件夹&lt;/p&gt;
+&lt;p&gt;mkdir /usr/local/python3&lt;/p&gt;
+&lt;p&gt;#解压编译安装&lt;/p&gt;
+&lt;p&gt;tar -xvJf  Python-3.6.2.tar.xz&lt;/p&gt;
+&lt;p&gt;cd Python-3.6.2&lt;/p&gt;
+&lt;p&gt;./configure &amp;ndash;prefix=/usr/local/python3&lt;/p&gt;
+&lt;p&gt;make &amp;amp;&amp;amp; make install&lt;/p&gt;
+&lt;p&gt;#给个软链&lt;/p&gt;
+&lt;p&gt;ln -sf /usr/local/python3/bin/python3 /usr/bin/python3&lt;/p&gt;
+&lt;p&gt;ln -sf /usr/local/python3/bin/pip3 /usr/bin/pip3&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python常见踩坑记录</title>
+      <link>http://localhost:1313/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid>
+      <description>&lt;h2 id=&#34;项目结构&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84&#34;&gt;&lt;/a&gt;
 项目结构：
-&lt;/h2>&lt;p>&lt;img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=N2E4ZjQ0N2I5MmEwYWExMjg1YmVmOTcyZTBhNTk1ZTlfdXlaSzZjU09wSE5mR1AyYTBuYVg1SElQcHJIUENSVWpfVG9rZW46S3AyMmI4bFN1b2VjeG54V251Q2NzMHBhbm5nXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA" alt="">&lt;/p>
-&lt;h2 id="问题">
-&lt;a class="header-anchor" href="#%e9%97%ae%e9%a2%98">&lt;/a>
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=N2E4ZjQ0N2I5MmEwYWExMjg1YmVmOTcyZTBhNTk1ZTlfdXlaSzZjU09wSE5mR1AyYTBuYVg1SElQcHJIUENSVWpfVG9rZW46S3AyMmI4bFN1b2VjeG54V251Q2NzMHBhbm5nXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%97%ae%e9%a2%98&#34;&gt;&lt;/a&gt;
 问题：
-&lt;/h2>&lt;p>执行文件调用dir1，间接调用dir2。执行时报错：“ModuleNotFoundError: No module named &amp;lsquo;dir1.dir2&amp;rsquo;;”&lt;/p>
-&lt;h2 id="解决方法">
-&lt;a class="header-anchor" href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95">&lt;/a>
+&lt;/h2&gt;&lt;p&gt;执行文件调用dir1，间接调用dir2。执行时报错：“ModuleNotFoundError: No module named &amp;lsquo;dir1.dir2&amp;rsquo;;”&lt;/p&gt;
+&lt;h2 id=&#34;解决方法&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95&#34;&gt;&lt;/a&gt;
 解决方法：
-&lt;/h2>&lt;p>dir1文件导包时做处理。&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>主函数加入这四行，将项目的根目录(webapp)的路径加入到系统PATH中；
-import os,sys&lt;/p>
-&lt;p>from pathlib import Path&lt;/p>
-&lt;p>sys.path[0] = str(Path(sys.path[0]).parent.parent)&lt;/p>
-&lt;p>sys.path.append(os.getcwd())&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>且导包从项目执行入口文件同级开始写&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MzlhZjJjZjgzNzk4YjdjNzU2ZWQ1ZDdjMjA5ODI0MDZfTzN2ZmlQOVM0a1BERU95VkY1amZ5bTFXMEJsc09pTExfVG9rZW46UlgyTmJCdHdLb0I5Z2d4VktJcmNEbDNvblljXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA" alt="">&lt;/p></description></item><item><title>python的os模块使用</title><link>https://bluespace3.github.io/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;ul>
-&lt;li>os.listdir(path)
-获取文件夹下全部文件，的列表&lt;/li>
-&lt;li>os.path.join(path1,path2)
-将路径path1和路径path2拼接成新的路径，path1//path2&lt;/li>
-&lt;li>base_dir = os.path.dirname(os.path.abspath(&lt;strong>file&lt;/strong>))
-获取当前文件的绝对路径&lt;/li>
-&lt;li>input_file = os.path.join(base_dir, &lt;strong>&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong>)&lt;/li>
-&lt;/ul></description></item><item><title>scrapy爬柚子网示例</title><link>https://bluespace3.github.io/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid><description>&lt;p>柚子网https://www.uu-zz.com/&lt;/p>
-&lt;p>爬取页码&lt;/p>
-&lt;p>遍历页面内对应的视频集的链接&lt;/p>
-&lt;p>&lt;img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/O1YCbvbQBoiZYHxxbO7cqOi6nKb?preview_type=16" alt="">&lt;/p>
-&lt;p>遍历视频内子视频链接&lt;/p>
-&lt;p>&lt;img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/CKMPbtR4souEnDxWowNcxAuenNc?preview_type=16" alt="">!&lt;/p>
-&lt;p>&lt;a href="https://security.feishu.cn/link/safety?target=https%3A%2F%2Fwww.uu-zz.com%2F%2B%E5%AD%90%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5&amp;amp;scene=ccm&amp;amp;logParams=%7B%22location%22%3A%22ccm_mindnote%22%7D&amp;amp;lang=zh-CN">https://www.uu-zz.com/+子视频链接&lt;/a>，发送get请求&lt;/p>
-&lt;p>&lt;img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/ClLDbx3s5o29xpxWKrncnG3Enzg?preview_type=16" alt="">!&lt;/p>
-&lt;p>获得m3u8文件，储存在数据库&lt;/p></description></item><item><title>unnitest</title><link>https://bluespace3.github.io/post/unnitest%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/unnitest%E7%AC%94%E8%AE%B0/</guid><description>&lt;ul>
-&lt;li>一、引入
-&lt;ul>
-&lt;li>1.导包，import unnitest&lt;/li>
-&lt;li>2.编写测试类，继承unnitest&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>二、运行
-&lt;ul>
-&lt;li>
-&lt;p>1.unnitest.main(),运行全部用例&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>2.测试套：testsuite&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>创建：suite=unnitest.Testsuite()&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>测试套添加用例：suite.addtTest（类（方法））&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;img src="images/1742460595596.png" alt="1742460595596">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>运行：runner=unnitest.TextTestRunner()&lt;/p>
-&lt;ul>
-&lt;li>运行：runner.run(suite)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>*运行必须在命令行运行否则是运行全部用例&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>三、生成报告&lt;/p>
-&lt;p>&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460643666.png" alt="1742460643666">&lt;/p>
-&lt;ul>
-&lt;li>1.将HTMLTestRunner.py文件放到项目文件夹下&lt;/li>
-&lt;li>2.导包：如左图&lt;/li>
-&lt;li>3.创建测试套，参考上方&lt;/li>
-&lt;li>4.创建测试报告文件，且以测试套运行（参考左图）&lt;/li>
-&lt;li>&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460677985.png" alt="1742460677985">&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>与pytest的异同&lt;/li>
-&lt;li>&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460760547.png" alt="1742460760547">
-&lt;ul>
-&lt;li>pytest以mark方式组织用例（而非套件）&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460791823.png" alt="1742460791823">&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>面试相关&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460820437.png" alt="1742460820437">&lt;/li>
-&lt;li>pycharm关闭pytest测试模式&lt;img src="image/unnitest%E7%AC%94%E8%AE%B0/1742460849632.png" alt="1742460849632">&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/h2&gt;&lt;p&gt;dir1文件导包时做处理。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;主函数加入这四行，将项目的根目录(webapp)的路径加入到系统PATH中；
+import os,sys&lt;/p&gt;
+&lt;p&gt;from pathlib import Path&lt;/p&gt;
+&lt;p&gt;sys.path[0] = str(Path(sys.path[0]).parent.parent)&lt;/p&gt;
+&lt;p&gt;sys.path.append(os.getcwd())&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;且导包从项目执行入口文件同级开始写&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MzlhZjJjZjgzNzk4YjdjNzU2ZWQ1ZDdjMjA5ODI0MDZfTzN2ZmlQOVM0a1BERU95VkY1amZ5bTFXMEJsc09pTExfVG9rZW46UlgyTmJCdHdLb0I5Z2d4VktJcmNEbDNvblljXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>python的os模块使用</title>
+      <link>http://localhost:1313/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;os.listdir(path)
+获取文件夹下全部文件，的列表&lt;/li&gt;
+&lt;li&gt;os.path.join(path1,path2)
+将路径path1和路径path2拼接成新的路径，path1//path2&lt;/li&gt;
+&lt;li&gt;base_dir = os.path.dirname(os.path.abspath(&lt;strong&gt;file&lt;/strong&gt;))
+获取当前文件的绝对路径&lt;/li&gt;
+&lt;li&gt;input_file = os.path.join(base_dir, &lt;strong&gt;&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>scrapy爬柚子网示例</title>
+      <link>http://localhost:1313/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid>
+      <description>&lt;p&gt;柚子网https://www.uu-zz.com/&lt;/p&gt;
+&lt;p&gt;爬取页码&lt;/p&gt;
+&lt;p&gt;遍历页面内对应的视频集的链接&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/O1YCbvbQBoiZYHxxbO7cqOi6nKb?preview_type=16&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;遍历视频内子视频链接&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/CKMPbtR4souEnDxWowNcxAuenNc?preview_type=16&#34; alt=&#34;&#34;&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://security.feishu.cn/link/safety?target=https%3A%2F%2Fwww.uu-zz.com%2F%2B%E5%AD%90%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5&amp;amp;scene=ccm&amp;amp;logParams=%7B%22location%22%3A%22ccm_mindnote%22%7D&amp;amp;lang=zh-CN&#34;&gt;https://www.uu-zz.com/+子视频链接&lt;/a&gt;，发送get请求&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/ClLDbx3s5o29xpxWKrncnG3Enzg?preview_type=16&#34; alt=&#34;&#34;&gt;!&lt;/p&gt;
+&lt;p&gt;获得m3u8文件，储存在数据库&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>unnitest</title>
+      <link>http://localhost:1313/post/unnitest%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/unnitest%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;一、引入
+&lt;ul&gt;
+&lt;li&gt;1.导包，import unnitest&lt;/li&gt;
+&lt;li&gt;2.编写测试类，继承unnitest&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;二、运行
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.unnitest.main(),运行全部用例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.测试套：testsuite&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;创建：suite=unnitest.Testsuite()&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测试套添加用例：suite.addtTest（类（方法））&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img src=&#34;images/1742460595596.png&#34; alt=&#34;1742460595596&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行：runner=unnitest.TextTestRunner()&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;运行：runner.run(suite)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;*运行必须在命令行运行否则是运行全部用例&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;三、生成报告&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image/unnitest%E7%AC%94%E8%AE%B0/1742460643666.png&#34; alt=&#34;1742460643666&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.将HTMLTestRunner.py文件放到项目文件夹下&lt;/li&gt;
+&lt;li&gt;2.导包：如左图&lt;/li&gt;
+&lt;li&gt;3.创建测试套，参考上方&lt;/li&gt;
+&lt;li&gt;4.创建测试报告文件，且以测试套运行（参考左图）&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;image/unnitest%E7%AC%94%E8%AE%B0/1742460677985.png&#34; alt=&#34;1742460677985&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;与pytest的异同&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;image/unnitest%E7%AC%94%E8%AE%B0/1742460760547.png&#34; alt=&#34;1742460760547&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;pytest以mark方式组织用例（而非套件）&lt;img src=&#34;image/unnitest%E7%AC%94%E8%AE%B0/1742460791823.png&#34; alt=&#34;1742460791823&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;面试相关&lt;img src=&#34;image/unnitest%E7%AC%94%E8%AE%B0/1742460820437.png&#34; alt=&#34;1742460820437&#34;&gt;&lt;/li&gt;
+&lt;li&gt;pycharm关闭pytest测试模式&lt;img src=&#34;image/unnitest%E7%AC%94%E8%AE%B0/1742460849632.png&#34; alt=&#34;1742460849632&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

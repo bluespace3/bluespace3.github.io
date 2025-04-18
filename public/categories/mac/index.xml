@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on 蓝色空间号-新世界的探索者</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Mac on 蓝色空间号-新世界的探索者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 15 Mar 2025 11:00:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mac使用笔记</title>
+      <link>http://localhost:1313/post/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
+      <pubDate>Sat, 15 Mar 2025 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</guid>
+      <description>&lt;p&gt;在Mac终端中，有几种方法可以连续删除命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 Ctrl + W ：删除光标前的一个单词&lt;/li&gt;
+&lt;li&gt;使用 Ctrl + U ：删除光标前的整行内容&lt;/li&gt;
+&lt;li&gt;使用 Ctrl + K ：删除光标后的整行内容&lt;/li&gt;
+&lt;li&gt;使用 Option + Delete ：删除光标前的一个单词（与 Ctrl + W 类似）
+这些快捷键可以帮助你快速删除命令内容，提高终端操作效率。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

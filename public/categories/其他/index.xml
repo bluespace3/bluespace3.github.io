@@ -1,59 +1,78 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>其他 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in 其他 on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 21 Mar 2025 23:00:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml"/><item><title>将github变为免费图床</title><link>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link><pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid><description>&lt;h2 id="使用-github-作为免费图床的文档">
-&lt;a class="header-anchor" href="#%e4%bd%bf%e7%94%a8-github-%e4%bd%9c%e4%b8%ba%e5%85%8d%e8%b4%b9%e5%9b%be%e5%ba%8a%e7%9a%84%e6%96%87%e6%a1%a3">&lt;/a>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>其他 on 蓝色空间号-新世界的探索者</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in 其他 on 蓝色空间号-新世界的探索者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 21 Mar 2025 23:00:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>将github变为免费图床</title>
+      <link>http://localhost:1313/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link>
+      <pubDate>Fri, 21 Mar 2025 23:00:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid>
+      <description>&lt;h2 id=&#34;使用-github-作为免费图床的文档&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bd%bf%e7%94%a8-github-%e4%bd%9c%e4%b8%ba%e5%85%8d%e8%b4%b9%e5%9b%be%e5%ba%8a%e7%9a%84%e6%96%87%e6%a1%a3&#34;&gt;&lt;/a&gt;
 使用 GitHub 作为免费图床的文档
-&lt;/h2>&lt;p>最近就想找一款免费的图床来放置自己的图片，逛了一圈下来发现GitHub可以白嫖，于是乎，就有了这篇文章。&lt;/p>
-&lt;p>GitHub 是一个非常流行的代码托管平台，除了代码存储外，你还可以使用 GitHub 来托管静态资源，比如图片。通过将图片上传到 GitHub 的仓库，你可以轻松获取图片的 URL，从而在网页或文档中嵌入这些图片。以下是如何使用 GitHub 作为免费图床的详细步骤。&lt;/p>
-&lt;h3 id="步骤-1-创建-github-仓库">
-&lt;a class="header-anchor" href="#%e6%ad%a5%e9%aa%a4-1-%e5%88%9b%e5%bb%ba-github-%e4%bb%93%e5%ba%93">&lt;/a>
+&lt;/h2&gt;&lt;p&gt;最近就想找一款免费的图床来放置自己的图片，逛了一圈下来发现GitHub可以白嫖，于是乎，就有了这篇文章。&lt;/p&gt;
+&lt;p&gt;GitHub 是一个非常流行的代码托管平台，除了代码存储外，你还可以使用 GitHub 来托管静态资源，比如图片。通过将图片上传到 GitHub 的仓库，你可以轻松获取图片的 URL，从而在网页或文档中嵌入这些图片。以下是如何使用 GitHub 作为免费图床的详细步骤。&lt;/p&gt;
+&lt;h3 id=&#34;步骤-1-创建-github-仓库&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%ad%a5%e9%aa%a4-1-%e5%88%9b%e5%bb%ba-github-%e4%bb%93%e5%ba%93&#34;&gt;&lt;/a&gt;
 步骤 1: 创建 GitHub 仓库
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>登录到 &lt;a href="https://github.com/">GitHub&lt;/a>。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>点击右上角的 &amp;ldquo;+&amp;rdquo; 按钮，然后选择 &amp;ldquo;New repository&amp;rdquo;。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>填写仓库的名称（例如：&lt;code>my-image-hosting&lt;/code>），并设置为公开（Public）。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>点击 &amp;ldquo;Create repository&amp;rdquo; 创建仓库。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://pic3.zhimg.com/v2-cdd72cbacf64cf512b0426eb2362d3e6_1440w.jpg" alt="">&lt;/p>
-&lt;h3 id="步骤-2-github获取个人的token">
-&lt;a class="header-anchor" href="#%e6%ad%a5%e9%aa%a4-2-github%e8%8e%b7%e5%8f%96%e4%b8%aa%e4%ba%ba%e7%9a%84token">&lt;/a>
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;登录到 &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击右上角的 &amp;ldquo;+&amp;rdquo; 按钮，然后选择 &amp;ldquo;New repository&amp;rdquo;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;填写仓库的名称（例如：&lt;code&gt;my-image-hosting&lt;/code&gt;），并设置为公开（Public）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击 &amp;ldquo;Create repository&amp;rdquo; 创建仓库。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/v2-cdd72cbacf64cf512b0426eb2362d3e6_1440w.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;步骤-2-github获取个人的token&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%ad%a5%e9%aa%a4-2-github%e8%8e%b7%e5%8f%96%e4%b8%aa%e4%ba%ba%e7%9a%84token&#34;&gt;&lt;/a&gt;
 步骤 2: GitHub获取个人的Token
-&lt;/h3>&lt;ol>
-&lt;li>访问：&lt;a href="https://github.com/settings/tokens">settings-tokens&lt;/a> ，点击&lt;strong>Generate new token&lt;/strong>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://picx.zhimg.com/v2-2148c04aa5bc07ccea01b2273ba65033_1440w.jpg" alt="">&lt;/p>
-&lt;p>2.设置 token 属性 ，Expiration：永不过期，Select scopes：&lt;code>repo&lt;/code> 一定要全选，其他的无所谓 ，点击最下方&lt;strong>创建&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://pica.zhimg.com/v2-ef2f47f1c64e0b095e040cf103ea8b62_1440w.jpg" alt="">&lt;/p>
-&lt;ol>
-&lt;li>就会获得一个token字符串， &lt;strong>⚠️ 注意：一定要收藏好 token，因为只会显示一次！&lt;/strong>，关掉这个页面就再也看不见了。&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>[!IMPORTANT] &lt;strong>后续会继续使用这个token!!!!&lt;/strong>&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img src="https://pica.zhimg.com/v2-7efb7778246d4e3964471f46c290f790_1440w.jpg" alt="">&lt;/p>
-&lt;h3 id="步骤-3-下载picgo">
-&lt;a class="header-anchor" href="#%e6%ad%a5%e9%aa%a4-3-%e4%b8%8b%e8%bd%bdpicgo">&lt;/a>
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;访问：&lt;a href=&#34;https://github.com/settings/tokens&#34;&gt;settings-tokens&lt;/a&gt; ，点击&lt;strong&gt;Generate new token&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://picx.zhimg.com/v2-2148c04aa5bc07ccea01b2273ba65033_1440w.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2.设置 token 属性 ，Expiration：永不过期，Select scopes：&lt;code&gt;repo&lt;/code&gt; 一定要全选，其他的无所谓 ，点击最下方&lt;strong&gt;创建&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pica.zhimg.com/v2-ef2f47f1c64e0b095e040cf103ea8b62_1440w.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;就会获得一个token字符串， &lt;strong&gt;⚠️ 注意：一定要收藏好 token，因为只会显示一次！&lt;/strong&gt;，关掉这个页面就再也看不见了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT] &lt;strong&gt;后续会继续使用这个token!!!!&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://pica.zhimg.com/v2-7efb7778246d4e3964471f46c290f790_1440w.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;步骤-3-下载picgo&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%ad%a5%e9%aa%a4-3-%e4%b8%8b%e8%bd%bdpicgo&#34;&gt;&lt;/a&gt;
 步骤 3: 下载PicGo
-&lt;/h3>&lt;ol>
-&lt;li>在PicGo最新页面上下载它的安装包。&lt;a href="https://github.com/Molunerfinn/PicGo/releases">PicGo下载页面&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://picx.zhimg.com/v2-4e1070ec6988ea104dd9f339af322d4b_1440w.jpg" alt="">&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>安装PicGo。无需赘述&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>配置GitHub&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://picx.zhimg.com/v2-86772b08f48e060e991b724d7d11b677_1440w.jpg" alt="">&lt;/p>
-&lt;p>​&lt;/p>
-&lt;ol>
-&lt;li>&lt;strong>PicGo 上传区配置选中你的配置&lt;/strong>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://pic4.zhimg.com/v2-01a76c0126a75365b9bdc2e2163edda7_1440w.jpg" alt="">&lt;/p></description></item></channel></rss>
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在PicGo最新页面上下载它的安装包。&lt;a href=&#34;https://github.com/Molunerfinn/PicGo/releases&#34;&gt;PicGo下载页面&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://picx.zhimg.com/v2-4e1070ec6988ea104dd9f339af322d4b_1440w.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安装PicGo。无需赘述&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置GitHub&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://picx.zhimg.com/v2-86772b08f48e060e991b724d7d11b677_1440w.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;PicGo 上传区配置选中你的配置&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic4.zhimg.com/v2-01a76c0126a75365b9bdc2e2163edda7_1440w.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
