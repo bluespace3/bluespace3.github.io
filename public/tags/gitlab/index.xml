@@ -1,77 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Gitlab on 蓝色空间号-新世界的探索者</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Gitlab on 蓝色空间号-新世界的探索者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>gitlab配置cicd工作流</title>
-      <link>http://localhost:1313/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
-      <pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
-      <description>&lt;h2 id=&#34;gitlab-cicd-简介&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#gitlab-cicd-%e7%ae%80%e4%bb%8b&#34;&gt;&lt;/a&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gitlab on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Gitlab on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml"/><item><title>gitlab配置cicd工作流</title><link>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介">
+&lt;a class="header-anchor" href="#gitlab-cicd-%e7%ae%80%e4%bb%8b">&lt;/a>
 GitLab CI/CD 简介
-&lt;/h2&gt;&lt;p&gt;GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p&gt;
-&lt;h3 id=&#34;cicd-核心概念&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#cicd-%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;p>GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p>
+&lt;h3 id="cicd-核心概念">
+&lt;a class="header-anchor" href="#cicd-%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5">&lt;/a>
 CI/CD 核心概念
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;持续集成 (CI)&lt;/strong&gt;: 开发人员频繁地将代码集成到主分支，每次集成都通过自动化构建和测试来验证，从而尽早发现问题。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;持续交付 (CD)&lt;/strong&gt;: 确保代码随时可以部署到生产环境，通常包括自动化测试和部署流程。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;持续部署 (CD)&lt;/strong&gt;: 将持续交付更进一步，自动将通过测试的代码部署到生产环境。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;gitlab-ciyml-配置文件&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#gitlab-ciyml-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6&#34;&gt;&lt;/a&gt;
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>持续集成 (CI)&lt;/strong>: 开发人员频繁地将代码集成到主分支，每次集成都通过自动化构建和测试来验证，从而尽早发现问题。&lt;/li>
+&lt;li>&lt;strong>持续交付 (CD)&lt;/strong>: 确保代码随时可以部署到生产环境，通常包括自动化测试和部署流程。&lt;/li>
+&lt;li>&lt;strong>持续部署 (CD)&lt;/strong>: 将持续交付更进一步，自动将通过测试的代码部署到生产环境。&lt;/li>
+&lt;/ul>
+&lt;h2 id="gitlab-ciyml-配置文件">
+&lt;a class="header-anchor" href="#gitlab-ciyml-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">&lt;/a>
 .gitlab-ci.yml 配置文件
-&lt;/h2&gt;&lt;p&gt;GitLab CI/CD 的核心是 &lt;code&gt;.gitlab-ci.yml&lt;/code&gt; 文件，它定义了 CI/CD 流水线的结构和行为。该文件需要放在项目的根目录下。&lt;/p&gt;
-&lt;h3 id=&#34;基本结构&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;p>GitLab CI/CD 的核心是 &lt;code>.gitlab-ci.yml&lt;/code> 文件，它定义了 CI/CD 流水线的结构和行为。该文件需要放在项目的根目录下。&lt;/p>
+&lt;h3 id="基本结构">
+&lt;a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84">&lt;/a>
 基本结构
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# 定义阶段&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stages&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 定义作业&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;build_job&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;echo &amp;#34;Building the app&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;make build&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;test_job&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;echo &amp;#34;Running tests&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;make test&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;deploy_job&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;stage&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;deploy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;echo &amp;#34;Deploying the app&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;make deploy&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;only&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;master&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;关键组件&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%85%b3%e9%94%ae%e7%bb%84%e4%bb%b6&#34;&gt;&lt;/a&gt;
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 定义阶段&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">stages&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 定义作业&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">build_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Building the app&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">test_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Running tests&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">deploy_job&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">stage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">echo &amp;#34;Deploying the app&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">only&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">master&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="关键组件">
+&lt;a class="header-anchor" href="#%e5%85%b3%e9%94%ae%e7%bb%84%e4%bb%b6">&lt;/a>
 关键组件
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;stages&lt;/strong&gt;: 定义流水线的阶段，按顺序执行。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;jobs&lt;/strong&gt;: 定义在特定阶段执行的任务。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;script&lt;/strong&gt;: 在作业中执行的命令。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;only/except&lt;/strong&gt;: 控制作业何时运行（例如，只在特定分支上运行）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;gitlab-runner&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#gitlab-runner&#34;&gt;&lt;/a&gt;
+&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>stages&lt;/strong>: 定义流水线的阶段，按顺序执行。&lt;/li>
+&lt;li>&lt;strong>jobs&lt;/strong>: 定义在特定阶段执行的任务。&lt;/li>
+&lt;li>&lt;strong>script&lt;/strong>: 在作业中执行的命令。&lt;/li>
+&lt;li>&lt;strong>only/except&lt;/strong>: 控制作业何时运行（例如，只在特定分支上运行）。&lt;/li>
+&lt;/ol>
+&lt;h2 id="gitlab-runner">
+&lt;a class="header-anchor" href="#gitlab-runner">&lt;/a>
 GitLab Runner
-&lt;/h2&gt;&lt;p&gt;GitLab Runner 是执行 CI/CD 作业的代理，它可以安装在不同的环境中，如 Linux、Windows、macOS 等。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/h2>&lt;p>GitLab Runner 是执行 CI/CD 作业的代理，它可以安装在不同的环境中，如 Linux、Windows、macOS 等。&lt;/p></description></item></channel></rss>

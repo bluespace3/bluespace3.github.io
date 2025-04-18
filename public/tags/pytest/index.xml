@@ -1,249 +1,221 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pytest on 蓝色空间号-新世界的探索者</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Pytest on 蓝色空间号-新世界的探索者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Fri, 28 Mar 2025 22:43:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/pytest/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>pytest接口自动化测试方案</title>
-      <link>http://localhost:1313/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link>
-      <pubDate>Fri, 28 Mar 2025 22:43:32 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid>
-      <description>&lt;h2 id=&#34;背景&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%83%8c%e6%99%af&#34;&gt;&lt;/a&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pytest on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Pytest on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 28 Mar 2025 22:43:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/pytest/index.xml" rel="self" type="application/rss+xml"/><item><title>pytest接口自动化测试方案</title><link>https://bluespace3.github.io/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 28 Mar 2025 22:43:32 +0800</pubDate><guid>https://bluespace3.github.io/post/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid><description>&lt;h2 id="背景">
+&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af">&lt;/a>
 背景
-&lt;/h2&gt;&lt;p&gt;当前业务核心聚焦于 POCT 领域，设备购买和设备使用等关键功能，已成为测试工作的重点保障对象，但随着系统复杂度的提升,手工的回归测试工作很难全面覆盖。为了确保关键业务功能的质量稳定性，有必要引入自动化测试，增加测试覆盖范围，降低已有功能漏测的风险，提前发现问题。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;目标&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e7%9b%ae%e6%a0%87&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;p>当前业务核心聚焦于 POCT 领域，设备购买和设备使用等关键功能，已成为测试工作的重点保障对象，但随着系统复杂度的提升,手工的回归测试工作很难全面覆盖。为了确保关键业务功能的质量稳定性，有必要引入自动化测试，增加测试覆盖范围，降低已有功能漏测的风险，提前发现问题。&lt;/p>
+&lt;hr>
+&lt;h2 id="目标">
+&lt;a class="header-anchor" href="#%e7%9b%ae%e6%a0%87">&lt;/a>
 目标
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;短期目标：接入自动化测试（截至3月底）&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;前期准备工作
-&lt;ul&gt;
-&lt;li&gt;预研不同的自动化测试框架，结合中长期目标与现实情况及各个框架的优缺点选择一套合适的自动化框架
-&lt;ul&gt;
-&lt;li&gt;对比几款常见接口测试框架&lt;/li&gt;
-&lt;li&gt;初步选定：pytest + Requests
-&lt;ul&gt;
-&lt;li&gt;语法简洁容易上手-接入成本低&lt;/li&gt;
-&lt;li&gt;灵活，社区支持好，插件丰富-适合复杂测试场景&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;制定初步的方案&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;自动化项目方案
-&lt;ul&gt;
-&lt;li&gt;项目框架搭建&lt;/li&gt;
-&lt;li&gt;确定实施方案&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;测试人员小范围接入自动化项目（跑通流程）
-&lt;ul&gt;
-&lt;li&gt;三月底能够将三款新设备正向检测流程转化为自动化测试脚本
-&lt;ul&gt;
-&lt;li&gt;**将慢病设备下单-上传检测结果流程；快速检测单流程接入接口自动化测试（正向检测流程）&lt;/li&gt;
-&lt;li&gt;**将免疫、血球设备下单-上传检测结果（正向检测流程）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;中期目标&lt;/strong&gt; ：&lt;strong&gt;自动化项目应用到测试工作流程（截至6月底）&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;覆盖三款新设备装机到检测使用的全部场景&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;覆盖设备装机到检测过程中的各项操作步骤和关键节点，从设备初始化到实际检测，确保各环节功能正常，数据交互准确，为用户提供稳定可靠的设备使用体验（包括异常流程）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;将自动化流程应用到测试工作流程。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;能有效增加测试覆盖率，减少漏测风险。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;脚本的维护流程&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在接口变更，需求功能更改后如何维护&lt;/li&gt;
-&lt;li&gt;运行失败用例如何维护&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;长期目标：不断完善接口自动化，有效应用到研发测试工作流程（截至12月底）&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;完善涉及用户相关的功能的自动化测试覆盖
-&lt;ul&gt;
-&lt;li&gt;对从商城购买到设备装机、检测、报告生成打印及检测后的慢病管理，全流程自动化测试，保障用户使用系统过程中的顺畅性，避免因流程问题导致的交易失败或用户体验不佳情况。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;将自动化测试无缝应用到现有的研发测试工作流程中。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;替代大部分回归测试，提高测试效率，进一步减少漏测风险。&lt;/li&gt;
-&lt;li&gt;自动化测试成为常态化测试手段,能提前发现问题,有效提升整体工作效率。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;自动化测试工具选型&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e5%b7%a5%e5%85%b7%e9%80%89%e5%9e%8b&#34;&gt;&lt;/a&gt;
-&lt;strong&gt;自动化测试工具选型&lt;/strong&gt;
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;自动化测试框架-pytest + Requests
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;几款常见接口测试框架对比详情：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/1743173315631.png&#34; alt=&#34;1743173315631&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;pytest + Requests&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;语法简洁容易上手-接入成本低&lt;/li&gt;
-&lt;li&gt;灵活，社区支持好，插件丰富-适合复杂测试场景&lt;/li&gt;
-&lt;li&gt;已有相关基础&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;选型依据
-　　兼容性、适合复杂流程交互（设备交互）、丰富的社区支持、接入成本&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;测试管理工具（飞书或tapd）
-&lt;ul&gt;
-&lt;li&gt;自动化用例管理&lt;a href=&#34;https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink&#34;&gt;接口自动化测试用例&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;CI/CD工具&lt;/li&gt;
-&lt;li&gt;GitLab CI&lt;/li&gt;
-&lt;li&gt;uvicorn+fastapi
-&lt;ul&gt;
-&lt;li&gt;部署+接口&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;自动化测试用例设计&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e8%ae%be%e8%ae%a1&#34;&gt;&lt;/a&gt;
-&lt;strong&gt;自动化测试用例设计&lt;/strong&gt;
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;用例分层设计
-&lt;ol&gt;
-&lt;li&gt;基础类（/api）
-&lt;ul&gt;
-&lt;li&gt;根据接口文档生成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;测试用例（/tests）
-&lt;ul&gt;
-&lt;li&gt;基础功能用例（原子级-单个接口测试）
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt; ：针对单个接口的独立测试，关注接口的输入输出正确性、异常处理能力及边界条件验证。例如，用户登录接口的独立测试需覆盖正常登录、密码错误、账号不存在等场景&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt; ：&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;原子性&lt;/strong&gt; ：每个用例仅验证一个接口的单一功能，不依赖其他接口或业务流程。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;高复用性&lt;/strong&gt; ：可作为其他复杂用例的构建单元，例如登录接口的测试结果可被后续业务流程用例复用&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;技术实现&lt;/strong&gt; ：通常结合数据驱动设计（如参数化测试数据），通过多组输入数据覆盖等价类和边界值&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;业务流程用例（端到端、涉及多个接口和流程的测试）
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt; ：模拟真实用户操作路径，串联多个接口验证端到端业务逻辑。例如“创建商品→创建优惠券→创建活动→下单支付”的全流程测试&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt; ：&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;场景化&lt;/strong&gt; ：基于用户使用的功能场景设计，关注接口间的数据传递与状态流转。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;风险覆盖&lt;/strong&gt; ：重点验证流程中的关键节点（如订单状态变更、库存扣减）和异常分支（如支付超时回滚）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;依赖管理&lt;/strong&gt; ：通过关键字驱动设计（如“获取Token”“查询订单状态”）复用基础功能用例，降低冗余代码&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;测试数据（/data）
-&lt;ul&gt;
-&lt;li&gt;存放测试数据&lt;/li&gt;
-&lt;li&gt;提供测试数据的脚本&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;工具(/utils)
-&lt;ul&gt;
-&lt;li&gt;工具类集合&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;数据驱动设计&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;　　参数化测试数据（Excel、csv、数据库）&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>pytest入门指南</title>
-      <link>http://localhost:1313/post/pytest-intro/</link>
-      <pubDate>Thu, 20 Mar 2025 13:42:48 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/pytest-intro/</guid>
-      <description>&lt;h2 id=&#34;什么是pytest&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bb%80%e4%b9%88%e6%98%afpytest&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>短期目标：接入自动化测试（截至3月底）&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>前期准备工作
+&lt;ul>
+&lt;li>预研不同的自动化测试框架，结合中长期目标与现实情况及各个框架的优缺点选择一套合适的自动化框架
+&lt;ul>
+&lt;li>对比几款常见接口测试框架&lt;/li>
+&lt;li>初步选定：pytest + Requests
+&lt;ul>
+&lt;li>语法简洁容易上手-接入成本低&lt;/li>
+&lt;li>灵活，社区支持好，插件丰富-适合复杂测试场景&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>制定初步的方案&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>自动化项目方案
+&lt;ul>
+&lt;li>项目框架搭建&lt;/li>
+&lt;li>确定实施方案&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>测试人员小范围接入自动化项目（跑通流程）
+&lt;ul>
+&lt;li>三月底能够将三款新设备正向检测流程转化为自动化测试脚本
+&lt;ul>
+&lt;li>**将慢病设备下单-上传检测结果流程；快速检测单流程接入接口自动化测试（正向检测流程）&lt;/li>
+&lt;li>**将免疫、血球设备下单-上传检测结果（正向检测流程）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>中期目标&lt;/strong> ：&lt;strong>自动化项目应用到测试工作流程（截至6月底）&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>覆盖三款新设备装机到检测使用的全部场景&lt;/p>
+&lt;ul>
+&lt;li>覆盖设备装机到检测过程中的各项操作步骤和关键节点，从设备初始化到实际检测，确保各环节功能正常，数据交互准确，为用户提供稳定可靠的设备使用体验（包括异常流程）。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>将自动化流程应用到测试工作流程。&lt;/p>
+&lt;ul>
+&lt;li>能有效增加测试覆盖率，减少漏测风险。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>脚本的维护流程&lt;/p>
+&lt;ul>
+&lt;li>在接口变更，需求功能更改后如何维护&lt;/li>
+&lt;li>运行失败用例如何维护&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>长期目标：不断完善接口自动化，有效应用到研发测试工作流程（截至12月底）&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>完善涉及用户相关的功能的自动化测试覆盖
+&lt;ul>
+&lt;li>对从商城购买到设备装机、检测、报告生成打印及检测后的慢病管理，全流程自动化测试，保障用户使用系统过程中的顺畅性，避免因流程问题导致的交易失败或用户体验不佳情况。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>将自动化测试无缝应用到现有的研发测试工作流程中。&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>替代大部分回归测试，提高测试效率，进一步减少漏测风险。&lt;/li>
+&lt;li>自动化测试成为常态化测试手段,能提前发现问题,有效提升整体工作效率。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="自动化测试工具选型">
+&lt;a class="header-anchor" href="#%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e5%b7%a5%e5%85%b7%e9%80%89%e5%9e%8b">&lt;/a>
+&lt;strong>自动化测试工具选型&lt;/strong>
+&lt;/h2>&lt;ul>
+&lt;li>自动化测试框架-pytest + Requests
+&lt;ul>
+&lt;li>
+&lt;p>几款常见接口测试框架对比详情：&lt;/p>
+&lt;p>&lt;img src="https://bluespace3.github.io/images/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/1743173315631.png" alt="1743173315631">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>pytest + Requests&lt;/p>
+&lt;ul>
+&lt;li>语法简洁容易上手-接入成本低&lt;/li>
+&lt;li>灵活，社区支持好，插件丰富-适合复杂测试场景&lt;/li>
+&lt;li>已有相关基础&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>选型依据
+　　兼容性、适合复杂流程交互（设备交互）、丰富的社区支持、接入成本&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>测试管理工具（飞书或tapd）
+&lt;ul>
+&lt;li>自动化用例管理&lt;a href="https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink">接口自动化测试用例&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>CI/CD工具&lt;/li>
+&lt;li>GitLab CI&lt;/li>
+&lt;li>uvicorn+fastapi
+&lt;ul>
+&lt;li>部署+接口&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="自动化测试用例设计">
+&lt;a class="header-anchor" href="#%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e8%ae%be%e8%ae%a1">&lt;/a>
+&lt;strong>自动化测试用例设计&lt;/strong>
+&lt;/h2>&lt;ol>
+&lt;li>用例分层设计
+&lt;ol>
+&lt;li>基础类（/api）
+&lt;ul>
+&lt;li>根据接口文档生成&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>测试用例（/tests）
+&lt;ul>
+&lt;li>基础功能用例（原子级-单个接口测试）
+&lt;ul>
+&lt;li>&lt;strong>定义&lt;/strong> ：针对单个接口的独立测试，关注接口的输入输出正确性、异常处理能力及边界条件验证。例如，用户登录接口的独立测试需覆盖正常登录、密码错误、账号不存在等场景&lt;/li>
+&lt;li>&lt;strong>特点&lt;/strong> ：&lt;/li>
+&lt;li>&lt;strong>原子性&lt;/strong> ：每个用例仅验证一个接口的单一功能，不依赖其他接口或业务流程。&lt;/li>
+&lt;li>&lt;strong>高复用性&lt;/strong> ：可作为其他复杂用例的构建单元，例如登录接口的测试结果可被后续业务流程用例复用&lt;/li>
+&lt;li>&lt;strong>技术实现&lt;/strong> ：通常结合数据驱动设计（如参数化测试数据），通过多组输入数据覆盖等价类和边界值&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>业务流程用例（端到端、涉及多个接口和流程的测试）
+&lt;ul>
+&lt;li>&lt;strong>定义&lt;/strong> ：模拟真实用户操作路径，串联多个接口验证端到端业务逻辑。例如“创建商品→创建优惠券→创建活动→下单支付”的全流程测试&lt;/li>
+&lt;li>&lt;strong>特点&lt;/strong> ：&lt;/li>
+&lt;li>&lt;strong>场景化&lt;/strong> ：基于用户使用的功能场景设计，关注接口间的数据传递与状态流转。&lt;/li>
+&lt;li>&lt;strong>风险覆盖&lt;/strong> ：重点验证流程中的关键节点（如订单状态变更、库存扣减）和异常分支（如支付超时回滚）&lt;/li>
+&lt;li>&lt;strong>依赖管理&lt;/strong> ：通过关键字驱动设计（如“获取Token”“查询订单状态”）复用基础功能用例，降低冗余代码&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>测试数据（/data）
+&lt;ul>
+&lt;li>存放测试数据&lt;/li>
+&lt;li>提供测试数据的脚本&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>工具(/utils)
+&lt;ul>
+&lt;li>工具类集合&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>数据驱动设计&lt;/li>
+&lt;/ol>
+&lt;p>　　参数化测试数据（Excel、csv、数据库）&lt;/p></description></item><item><title>pytest入门指南</title><link>https://bluespace3.github.io/post/pytest-intro/</link><pubDate>Thu, 20 Mar 2025 13:42:48 +0800</pubDate><guid>https://bluespace3.github.io/post/pytest-intro/</guid><description>&lt;h2 id="什么是pytest">
+&lt;a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%afpytest">&lt;/a>
 什么是pytest？
-&lt;/h2&gt;&lt;p&gt;pytest是一个功能强大且易于使用的Python测试框架。它可以帮助开发者编写简洁、可读性强的测试代码，并提供丰富的插件支持。&lt;/p&gt;
-&lt;h2 id=&#34;pytest的主要特点&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#pytest%e7%9a%84%e4%b8%bb%e8%a6%81%e7%89%b9%e7%82%b9&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;p>pytest是一个功能强大且易于使用的Python测试框架。它可以帮助开发者编写简洁、可读性强的测试代码，并提供丰富的插件支持。&lt;/p>
+&lt;h2 id="pytest的主要特点">
+&lt;a class="header-anchor" href="#pytest%e7%9a%84%e4%b8%bb%e8%a6%81%e7%89%b9%e7%82%b9">&lt;/a>
 pytest的主要特点
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;简洁的测试用例编写方式&lt;/li&gt;
-&lt;li&gt;自动发现测试用例&lt;/li&gt;
-&lt;li&gt;支持参数化测试&lt;/li&gt;
-&lt;li&gt;强大的断言功能&lt;/li&gt;
-&lt;li&gt;丰富的插件生态系统&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;安装pytest&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%ae%89%e8%a3%85pytest&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;ul>
+&lt;li>简洁的测试用例编写方式&lt;/li>
+&lt;li>自动发现测试用例&lt;/li>
+&lt;li>支持参数化测试&lt;/li>
+&lt;li>强大的断言功能&lt;/li>
+&lt;li>丰富的插件生态系统&lt;/li>
+&lt;/ul>
+&lt;h2 id="安装pytest">
+&lt;a class="header-anchor" href="#%e5%ae%89%e8%a3%85pytest">&lt;/a>
 安装pytest
-&lt;/h2&gt;&lt;p&gt;使用以下命令安装pytest：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install pytest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;编写测试用例&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e7%bc%96%e5%86%99%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;p>使用以下命令安装pytest：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pip install pytest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="编写测试用例">
+&lt;a class="header-anchor" href="#%e7%bc%96%e5%86%99%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b">&lt;/a>
 编写测试用例
-&lt;/h2&gt;&lt;p&gt;一个简单的pytest测试用例如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;test_addition&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;assert&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;test_subtraction&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;assert&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;运行测试&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;p>一个简单的pytest测试用例如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">test_addition&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">assert&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">test_subtraction&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">assert&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="运行测试">
+&lt;a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95">&lt;/a>
 运行测试
-&lt;/h2&gt;&lt;p&gt;使用以下命令运行pytest测试：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pytest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;参数化测试&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%8f%82%e6%95%b0%e5%8c%96%e6%b5%8b%e8%af%95&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;p>使用以下命令运行pytest测试：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pytest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="参数化测试">
+&lt;a class="header-anchor" href="#%e5%8f%82%e6%95%b0%e5%8c%96%e6%b5%8b%e8%af%95">&lt;/a>
 参数化测试
-&lt;/h2&gt;&lt;p&gt;pytest支持参数化测试，可以使用&lt;code&gt;@pytest.mark.parametrize&lt;/code&gt;装饰器：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pytest&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@pytest.mark.parametrize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;test_input,expected&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;3+5&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2+4&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;6*9&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;42&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;test_eval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;test_input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;expected&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;assert&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;test_input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;expected&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;总结&#34;&gt;
-&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%80%bb%e7%bb%93&#34;&gt;&lt;/a&gt;
+&lt;/h2>&lt;p>pytest支持参数化测试，可以使用&lt;code>@pytest.mark.parametrize&lt;/code>装饰器：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">pytest&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@pytest.mark.parametrize&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;test_input,expected&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;3+5&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;2+4&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;6*9&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">42&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">test_eval&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">test_input&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">expected&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">assert&lt;/span> &lt;span class="nb">eval&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">test_input&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">expected&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="总结">
+&lt;a class="header-anchor" href="#%e6%80%bb%e7%bb%93">&lt;/a>
 总结
-&lt;/h2&gt;&lt;p&gt;pytest是一个功能强大且易于使用的Python测试框架，可以帮助开发者编写简洁、可读性强的测试代码。通过本指南，您已经了解了pytest的基本使用方法，接下来可以探索更多高级功能。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/h2>&lt;p>pytest是一个功能强大且易于使用的Python测试框架，可以帮助开发者编写简洁、可读性强的测试代码。通过本指南，您已经了解了pytest的基本使用方法，接下来可以探索更多高级功能。&lt;/p></description></item></channel></rss>

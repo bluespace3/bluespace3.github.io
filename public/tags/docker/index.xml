@@ -1,35 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Docker on 蓝色空间号-新世界的探索者</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Docker on 蓝色空间号-新世界的探索者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>docker常用命令</title>
-      <link>http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
-      <description>&lt;p&gt;docker pull ubuntu 载入ubuntu 镜像&lt;/p&gt;
-&lt;p&gt;docker pull training/webapp  # 载入镜像&lt;/p&gt;
-&lt;p&gt;docker pull python:3.7 安装python镜像&lt;/p&gt;
-&lt;p&gt;docker pull nginx 安装nginx镜像&lt;/p&gt;
-&lt;p&gt;docker run -it python:3.7 /bin/bash 进入python镜像&lt;/p&gt;
-&lt;p&gt;连接不上时，终端输入：&lt;/p&gt;
-&lt;p&gt;1.cd &amp;ldquo;C:\Program Files\Docker\Docker&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;2.DockerCli.exe -SwitchDaemon&lt;/p&gt;
-&lt;p&gt;docker run -it ubuntu /bin/bash 启用进入容器&lt;/p&gt;
-&lt;p&gt;exit退出容器&lt;/p&gt;
-&lt;p&gt;docker run -d -P training/webapp python app.py 后台启用容器并随机映射到本机端口&lt;/p&gt;
-&lt;p&gt;docker run -d -p 5000:5000 training/webapp python app.py后台启用容器并指定映射到&lt;/p&gt;
-&lt;p&gt;docker logs -f id 查看应用日志&lt;/p&gt;
-&lt;p&gt;docker logs  -f -t &amp;ndash;tail=100 dockerid 动态查看最新100条日志&lt;/p&gt;
-&lt;p&gt;docker top  id 查看容器内部应用进程&lt;/p&gt;
-&lt;p&gt;docker ps -a 查看所有容器(可查容器id)&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Docker on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>docker常用命令</title><link>https://bluespace3.github.io/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid><description>&lt;p>docker pull ubuntu 载入ubuntu 镜像&lt;/p>
+&lt;p>docker pull training/webapp # 载入镜像&lt;/p>
+&lt;p>docker pull python:3.7 安装python镜像&lt;/p>
+&lt;p>docker pull nginx 安装nginx镜像&lt;/p>
+&lt;p>docker run -it python:3.7 /bin/bash 进入python镜像&lt;/p>
+&lt;p>连接不上时，终端输入：&lt;/p>
+&lt;p>1.cd &amp;ldquo;C:\Program Files\Docker\Docker&amp;rdquo;&lt;/p>
+&lt;p>2.DockerCli.exe -SwitchDaemon&lt;/p>
+&lt;p>docker run -it ubuntu /bin/bash 启用进入容器&lt;/p>
+&lt;p>exit退出容器&lt;/p>
+&lt;p>docker run -d -P training/webapp python app.py 后台启用容器并随机映射到本机端口&lt;/p>
+&lt;p>docker run -d -p 5000:5000 training/webapp python app.py后台启用容器并指定映射到&lt;/p>
+&lt;p>docker logs -f id 查看应用日志&lt;/p>
+&lt;p>docker logs -f -t &amp;ndash;tail=100 dockerid 动态查看最新100条日志&lt;/p>
+&lt;p>docker top id 查看容器内部应用进程&lt;/p>
+&lt;p>docker ps -a 查看所有容器(可查容器id)&lt;/p></description></item></channel></rss>
