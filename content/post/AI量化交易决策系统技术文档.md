@@ -1,11 +1,13 @@
-title: "AI量化交易系统技术方案"
-categories: ["博客", "交易","AI"]
 
-date: 2025-07-12T12:00:00+08:00
+title: "AI量化交易决策系统技术文档"
+
+date: 2025-07-13T12:59:32+08:00
+
 draft: false
-tags: ["Hugo","AI量化交易", "教程"]
-encrypted: false
-password: "123456"
+
+tags: ["AI量化交易", "文档"]
+
+categories: ["技术",  "AI", "量化交易"]
 
 # AI量化交易系统 API 文档
 
@@ -42,8 +44,8 @@ src/
 
 #### 配置常量
 
-```python
 # 股票池配置
+
 STOCK_POOL = {
     "000001.SZ": "平安银行",
     "600519.SH": "贵州茅台",
@@ -51,12 +53,13 @@ STOCK_POOL = {
 }
 
 # API配置
-GEMINI_API_URL = "https://rglnawodplak.ap-southeast-1.clawcloudrun.com/v1/chat/completions"
-GEMINI_API_KEY = "sk-shrimp"
+
+GEMINI_API_URL = "https://rglnawodplak.ap-southeast-1.clawcloudrun.com/*******t/completions"
+GEMINI_API_KEY = "***"
 
 # 数据路径
+
 DATA_PATH = "data"
-```
 
 ## 📈 数据加载器 (data_loader.py)
 
