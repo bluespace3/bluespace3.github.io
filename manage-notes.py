@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+'''
+Hugo 笔记管理工具
+功能：
+1. 从远程仓库强制同步笔记到主项目（可选 --force 覆盖本地更改）
+2. 自动为 content/post 目录下的 Markdown 文件添加或更新 Hugo Front Matter
+3. 统一标题为文件名（去掉 .md 后缀）
+4. 可选将格式化后的笔记推送回远程笔记仓库
+5. 可选构建并部署整个 Hugo 站点到主项目的远程仓库'''
 
 import os
 import sys
