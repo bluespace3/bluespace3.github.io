@@ -1,15 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Git on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/git/index.xml" rel="self" type="application/rss+xml"/><item><title>gitlab配置cicd工作流</title><link>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介">GitLab CI/CD 简介&lt;/h2>
-&lt;p>GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p>
-&lt;h3 id="cicd-核心概念">CI/CD 核心概念&lt;/h3>
-&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Git on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Mar 2025 12:00:00 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/git/index.xml" rel="self" type="application/rss+xml"/><item><title>gitlab配置cicd工作流</title><link>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace3.github.io/post/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介">
+&lt;a class="header-anchor" href="#gitlab-cicd-%e7%ae%80%e4%bb%8b">&lt;/a>
+GitLab CI/CD 简介
+&lt;/h2>&lt;p>GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p>
+&lt;h3 id="cicd-核心概念">
+&lt;a class="header-anchor" href="#cicd-%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5">&lt;/a>
+CI/CD 核心概念
+&lt;/h3>&lt;ul>
 &lt;li>&lt;strong>持续集成 (CI)&lt;/strong>: 开发人员频繁地将代码集成到主分支，每次集成都通过自动化构建和测试来验证，从而尽早发现问题。&lt;/li>
 &lt;li>&lt;strong>持续交付 (CD)&lt;/strong>: 确保代码随时可以部署到生产环境，通常包括自动化测试和部署流程。&lt;/li>
 &lt;li>&lt;strong>持续部署 (CD)&lt;/strong>: 将持续交付更进一步，自动将通过测试的代码部署到生产环境。&lt;/li>
 &lt;/ul>
-&lt;h2 id="gitlab-ciyml-配置文件">.gitlab-ci.yml 配置文件&lt;/h2>
-&lt;p>GitLab CI/CD 的核心是 &lt;code>.gitlab-ci.yml&lt;/code> 文件，它定义了 CI/CD 流水线的结构和行为。该文件需要放在项目的根目录下。&lt;/p>
-&lt;h3 id="基本结构">基本结构&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 定义阶段&lt;/span>&lt;span class="w">
+&lt;h2 id="gitlab-ciyml-配置文件">
+&lt;a class="header-anchor" href="#gitlab-ciyml-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">&lt;/a>
+.gitlab-ci.yml 配置文件
+&lt;/h2>&lt;p>GitLab CI/CD 的核心是 &lt;code>.gitlab-ci.yml&lt;/code> 文件，它定义了 CI/CD 流水线的结构和行为。该文件需要放在项目的根目录下。&lt;/p>
+&lt;h3 id="基本结构">
+&lt;a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84">&lt;/a>
+基本结构
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 定义阶段&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">stages&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">build&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">test&lt;/span>&lt;span class="w">
@@ -35,15 +43,19 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">make deploy&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">only&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">master&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="关键组件">关键组件&lt;/h3>
-&lt;ol>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="关键组件">
+&lt;a class="header-anchor" href="#%e5%85%b3%e9%94%ae%e7%bb%84%e4%bb%b6">&lt;/a>
+关键组件
+&lt;/h3>&lt;ol>
 &lt;li>&lt;strong>stages&lt;/strong>: 定义流水线的阶段，按顺序执行。&lt;/li>
 &lt;li>&lt;strong>jobs&lt;/strong>: 定义在特定阶段执行的任务。&lt;/li>
 &lt;li>&lt;strong>script&lt;/strong>: 在作业中执行的命令。&lt;/li>
 &lt;li>&lt;strong>only/except&lt;/strong>: 控制作业何时运行（例如，只在特定分支上运行）。&lt;/li>
 &lt;/ol>
-&lt;h2 id="gitlab-runner">GitLab Runner&lt;/h2>
-&lt;p>GitLab Runner 是执行 CI/CD 作业的代理，它可以安装在不同的环境中，如 Linux、Windows、macOS 等。&lt;/p></description></item><item><title>测试平台教程</title><link>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link><pubDate>Fri, 21 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid><description>&lt;p>一、基本介绍：（）
+&lt;h2 id="gitlab-runner">
+&lt;a class="header-anchor" href="#gitlab-runner">&lt;/a>
+GitLab Runner
+&lt;/h2>&lt;p>GitLab Runner 是执行 CI/CD 作业的代理，它可以安装在不同的环境中，如 Linux、Windows、macOS 等。&lt;/p></description></item><item><title>测试平台教程</title><link>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link><pubDate>Fri, 21 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid><description>&lt;p>一、基本介绍：（）
 桌面端工具（一年左右），使用python的wxpython框架编写，使用pyinstaller打包为桌面exe文件；缺点：体积大，不便于分享；&lt;/p>
 &lt;p>&lt;img src="./images/image_0fa5b6bdd33056f5c14c2ba21dca4298.png" alt="">&lt;/p>
 &lt;p>web端应用（10月初至今）：flask+vue实现；优点，通过脚本实现热更新；链接形式便于分享。&lt;/p>
@@ -131,9 +143,13 @@ gunicorn flask_index:app -c ./gunicorn.conf.py
 &lt;p>下载的工程带有submodule&lt;/p>
 &lt;p>当使用git clone下来的工程中带有submodule时，初始的时候，submodule的内容并不会自动下载下来的，此时，只需执行如下命令：&lt;/p>
 &lt;p>git submodule update –init –recursive&lt;/p>
-&lt;p>即可将子模块内容下载下来后工程才不会缺少相应的文件。&lt;/p></description></item><item><title>playwright的python文档</title><link>https://bluespace3.github.io/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
-&lt;h2 id="引言">引言&lt;/h2>
-&lt;p>Playwright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。&lt;/p>
+&lt;p>即可将子模块内容下载下来后工程才不会缺少相应的文件。&lt;/p></description></item><item><title>playwright的python文档</title><link>https://bluespace3.github.io/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid><description>&lt;h1 id="安装">
+&lt;a class="header-anchor" href="#%e5%ae%89%e8%a3%85">&lt;/a>
+安装
+&lt;/h1>&lt;h2 id="引言">
+&lt;a class="header-anchor" href="#%e5%bc%95%e8%a8%80">&lt;/a>
+引言
+&lt;/h2>&lt;p>Playwright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。&lt;/p>
 &lt;p>Playwright 库可以用作通用的浏览器自动化工具，为同步和异步 Python 提供了一套强大的 API 来自动化 Web 应用程序。&lt;/p>
 &lt;p>本介绍描述了 Playwright Pytest 插件，这是编写端到端测试的推荐方式。&lt;/p>
 &lt;p>&lt;strong>你将学到&lt;/strong>&lt;/p>
@@ -141,16 +157,20 @@ gunicorn flask_index:app -c ./gunicorn.conf.py
 &lt;li>如何安装 Playwright Pytest&lt;/li>
 &lt;li>如何运行示例测试&lt;/li>
 &lt;/ul>
-&lt;h2 id="安装-playwright-pytest">安装 Playwright Pytest&lt;/h2>
-&lt;p>Playwright 建议使用官方的 Playwright Pytest 插件来编写端到端测试。它提供了上下文隔离，并开箱即用地在多个浏览器配置上运行。&lt;/p>
+&lt;h2 id="安装-playwright-pytest">
+&lt;a class="header-anchor" href="#%e5%ae%89%e8%a3%85-playwright-pytest">&lt;/a>
+安装 Playwright Pytest
+&lt;/h2>&lt;p>Playwright 建议使用官方的 Playwright Pytest 插件来编写端到端测试。它提供了上下文隔离，并开箱即用地在多个浏览器配置上运行。&lt;/p>
 &lt;p>首先，通过安装 Playwright 并运行示例测试来开始，亲眼看看它是如何工作的。&lt;/p>
 &lt;ul>
 &lt;li>PyPI&lt;/li>
 &lt;li>Anaconda&lt;/li>
 &lt;/ul>
 &lt;p>安装所需的浏览器：&lt;/p>
-&lt;h2 id="添加示例测试">添加示例测试&lt;/h2>
-&lt;p>在当前工作目录或遵循 &lt;code>test_&lt;/code> 前缀约定的子目录中创建一个文件，例如 &lt;code>test_example.py&lt;/code>，并在其中包含以下代码。确保你的测试名称也遵循 &lt;code>test_&lt;/code> 前缀约定。&lt;/p>
+&lt;h2 id="添加示例测试">
+&lt;a class="header-anchor" href="#%e6%b7%bb%e5%8a%a0%e7%a4%ba%e4%be%8b%e6%b5%8b%e8%af%95">&lt;/a>
+添加示例测试
+&lt;/h2>&lt;p>在当前工作目录或遵循 &lt;code>test_&lt;/code> 前缀约定的子目录中创建一个文件，例如 &lt;code>test_example.py&lt;/code>，并在其中包含以下代码。确保你的测试名称也遵循 &lt;code>test_&lt;/code> 前缀约定。&lt;/p>
 &lt;p>test_example.py&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Python" data-lang="Python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">re&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">playwright.sync_api&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Page&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">expect&lt;/span>
@@ -169,5 +189,7 @@ gunicorn flask_index:app -c ./gunicorn.conf.py
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 期望页面有一个名为“安装”的标题。&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">expect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">page&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_by_role&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;heading&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;Installation&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_be_visible&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="运行示例测试">运行示例测试&lt;/h2>
-&lt;p>默认情况下，测试将在 Chromium 上运行。这可以通过 CLI 选项进行配置。测试以无头模式运行，这意味着在运行测试时不会打开浏览器 UI。测试结果和测试日志将在终端中显示。&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="运行示例测试">
+&lt;a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e7%a4%ba%e4%be%8b%e6%b5%8b%e8%af%95">&lt;/a>
+运行示例测试
+&lt;/h2>&lt;p>默认情况下，测试将在 Chromium 上运行。这可以通过 CLI 选项进行配置。测试以无头模式运行，这意味着在运行测试时不会打开浏览器 UI。测试结果和测试日志将在终端中显示。&lt;/p></description></item></channel></rss>

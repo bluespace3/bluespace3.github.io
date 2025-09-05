@@ -1,6 +1,226 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文档 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in 文档 on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 03 Apr 2025 16:21:23 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown文档编写不完全指南</title><link>https://bluespace3.github.io/post/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link><pubDate>Thu, 03 Apr 2025 16:21:23 +0800</pubDate><guid>https://bluespace3.github.io/post/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid><description>&lt;h2 id="一核心语法精要">一、核心语法精要&lt;/h2>
-&lt;h3 id="1-标题与段落">1. 标题与段落&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">&lt;span class="gh"># 主标题（H1）
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文档 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in 文档 on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 13 Jul 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml"/><item><title>AI量化交易决策系统方案</title><link>https://bluespace3.github.io/post/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</link><pubDate>Sun, 13 Jul 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</guid><description>&lt;h2 id="-2025-07-13-近期优化与变更">
+&lt;a class="header-anchor" href="#-2025-07-13-%e8%bf%91%e6%9c%9f%e4%bc%98%e5%8c%96%e4%b8%8e%e5%8f%98%e6%9b%b4">&lt;/a>
+📝 2025-07-13 近期优化与变更
+&lt;/h2>&lt;ul>
+&lt;li>新增布林带、KDJ、成交量、ATR、威廉指标，技术指标体系更丰富。&lt;/li>
+&lt;li>评分体系优化：技术面40分、基本面35分、情绪面25分，ETF与A股评分规则分离，ETF基本面恒为0，ETF评分=技术面50分+AI消息面50分。&lt;/li>
+&lt;li>决策等级优化：5级决策（重仓买入、买入、持有、谨慎持有、卖出），买入阈值降至50分，持有30分，谨慎持有10分，卖出&amp;lt;10分。&lt;/li>
+&lt;li>日志与邮件去重：每只股票仅保留最新信号，输出和报告更简明。&lt;/li>
+&lt;li>自动邮件集成：主程序运行后自动发送HTML格式决策报告，内容美化，信号带emoji和中文名。&lt;/li>
+&lt;li>数据兼容性增强：分析引擎支持成交量列名为vol或volume。&lt;/li>
+&lt;li>AI分析优化：ETF和A股分开提示，ETF基本面恒为0，AI消息面更关注资金流和行业新闻。&lt;/li>
+&lt;li>文档完善：补充README、部署、API、策略等文档，详细说明系统架构、评分体系、部署与接口。&lt;/li>
+&lt;li>用户体验提升：聚合报告美化，策略可读性提升，项目说明更精炼。&lt;/li>
+&lt;/ul>
+&lt;p>本文档详细阐述了本量化交易系统的核心决策逻辑。系统通过对技术面、基本面和AI市场情绪面三个维度进行独立的量化评分，最终加权汇总，生成交易信号。&lt;/p>
+&lt;p>&lt;strong>总分 = 技术面得分 + 基本面得分 + AI市场情绪面得分&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>重仓买入阈值&lt;/strong>: 总分 &amp;gt;= 80&lt;/li>
+&lt;li>&lt;strong>买入阈值&lt;/strong>: 总分 &amp;gt;= 60&lt;/li>
+&lt;li>&lt;strong>持有阈值&lt;/strong>: 总分 &amp;gt;= 20&lt;/li>
+&lt;li>&lt;strong>谨慎持有阈值&lt;/strong>: 总分 &amp;gt;= -10&lt;/li>
+&lt;li>&lt;strong>卖出阈值&lt;/strong>: 总分 &amp;lt; -10&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="etf评分体系指数基金etf专用">
+&lt;a class="header-anchor" href="#etf%e8%af%84%e5%88%86%e4%bd%93%e7%b3%bb%e6%8c%87%e6%95%b0%e5%9f%ba%e9%87%91etf%e4%b8%93%e7%94%a8">&lt;/a>
+ETF评分体系（指数基金/ETF专用）
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>技术面&lt;/strong>：50分（均线、成交量、波动率等为主，弱化KDJ等短线指标）&lt;/li>
+&lt;li>&lt;strong>AI消息面&lt;/strong>：50分（重点关注资金流向、申购赎回、行业轮动、指数调整等）&lt;/li>
+&lt;li>&lt;strong>基本面&lt;/strong>：恒为0分（ETF不参与基本面打分）&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>总分 = 技术面得分（归一化到50分） + AI消息面得分（归一化到50分）&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>归一化方法：技术面原始得分/40×50，AI消息面原始得分/25×50，四舍五入取整。&lt;/li>
+&lt;li>ETF决策流程与A股一致，但分数分布和信号解释更侧重资金流和行业轮动。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="一-技术面分析-总权重-40分">
+&lt;a class="header-anchor" href="#%e4%b8%80-%e6%8a%80%e6%9c%af%e9%9d%a2%e5%88%86%e6%9e%90-%e6%80%bb%e6%9d%83%e9%87%8d-40%e5%88%86">&lt;/a>
+一、 技术面分析 (总权重: 40分)
+&lt;/h2>&lt;p>技术面分析旨在捕捉市场的短期趋势和动量。它由四个核心指标构成，各自有独立的评分和权重。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">指标&lt;/th>
+&lt;th style="text-align: left">权重&lt;/th>
+&lt;th style="text-align: left">触发条件&lt;/th>
+&lt;th style="text-align: left">得分&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>MACD趋势&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">15分&lt;/td>
+&lt;td style="text-align: left">看涨金叉 (DIF上穿DEA，且DIF&amp;gt;0)&lt;/td>
+&lt;td style="text-align: left">+15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">看跌死叉 (DIF下穿DEA，且DIF&amp;lt;0)&lt;/td>
+&lt;td style="text-align: left">-15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">多头排列 (DIF&amp;gt;DEA)&lt;/td>
+&lt;td style="text-align: left">+8&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">空头排列 (DIF&amp;lt;DEA)&lt;/td>
+&lt;td style="text-align: left">-8&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>RSI动量&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">10分&lt;/td>
+&lt;td style="text-align: left">RSI &amp;lt; 30 (超卖区)&lt;/td>
+&lt;td style="text-align: left">+10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">RSI &amp;gt; 70 (超买区)&lt;/td>
+&lt;td style="text-align: left">-10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">RSI &amp;lt; 40 (偏弱)&lt;/td>
+&lt;td style="text-align: left">+5&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">RSI &amp;gt; 60 (偏强)&lt;/td>
+&lt;td style="text-align: left">-5&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>布林带&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">8分&lt;/td>
+&lt;td style="text-align: left">价格触及下轨&lt;/td>
+&lt;td style="text-align: left">+8&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">价格触及上轨&lt;/td>
+&lt;td style="text-align: left">-8&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">价格在中轨下方&lt;/td>
+&lt;td style="text-align: left">+3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">价格在中轨上方&lt;/td>
+&lt;td style="text-align: left">-3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;strong>KDJ指标&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">7分&lt;/td>
+&lt;td style="text-align: left">KDJ超卖 (K&amp;lt;20, D&amp;lt;20)&lt;/td>
+&lt;td style="text-align: left">+7&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">KDJ超买 (K&amp;gt;80, D&amp;gt;80)&lt;/td>
+&lt;td style="text-align: left">-7&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">KDJ金叉 (K&amp;gt;D)&lt;/td>
+&lt;td style="text-align: left">+3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">KDJ死叉 (K&amp;lt;D)&lt;/td>
+&lt;td style="text-align: left">-3&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>最终报告形式&lt;/strong>: &lt;code>技术面得分: [总分] | 原因: [综合原因] (MACD: [得分], RSI: [得分], 布林带: [得分], KDJ: [得分])&lt;/code>&lt;/p></description></item><item><title>AI量化交易决策系统技术文档</title><link>https://bluespace3.github.io/post/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</link><pubDate>Sun, 13 Jul 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</guid><description>&lt;h2 id="-2025-07-13-近期优化与变更">
+&lt;a class="header-anchor" href="#-2025-07-13-%e8%bf%91%e6%9c%9f%e4%bc%98%e5%8c%96%e4%b8%8e%e5%8f%98%e6%9b%b4">&lt;/a>
+📝 2025-07-13 近期优化与变更
+&lt;/h2>&lt;ul>
+&lt;li>API支持ETF与A股评分体系分离，ETF基本面恒为0，ETF评分=技术面50分+AI消息面50分。&lt;/li>
+&lt;li>评分体系与决策等级优化，买入阈值降至50分，持有30分，谨慎持有10分，卖出&amp;lt;10分。&lt;/li>
+&lt;li>日志与邮件内容去重，每只股票仅保留最新信号。&lt;/li>
+&lt;li>集成自动邮件功能，主程序运行后自动发送HTML决策报告。&lt;/li>
+&lt;li>数据兼容性增强，分析引擎支持成交量列名为vol或volume。&lt;/li>
+&lt;li>文档补充与完善，详细说明系统架构、评分体系、部署与接口。&lt;/li>
+&lt;li>用户体验提升，聚合报告美化，策略可读性提升。&lt;/li>
+&lt;/ul>
+&lt;h2 id="-概述">
+&lt;a class="header-anchor" href="#-%e6%a6%82%e8%bf%b0">&lt;/a>
+📋 概述
+&lt;/h2>&lt;p>本文档详细说明了量化交易系统的各个模块、类、方法和接口，为开发者提供完整的API参考。&lt;/p>
+&lt;h2 id="-系统架构">
+&lt;a class="header-anchor" href="#-%e7%b3%bb%e7%bb%9f%e6%9e%b6%e6%9e%84">&lt;/a>
+🏗️ 系统架构
+&lt;/h2>&lt;h3 id="核心模块">
+&lt;a class="header-anchor" href="#%e6%a0%b8%e5%bf%83%e6%a8%a1%e5%9d%97">&lt;/a>
+核心模块
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">src&lt;/span>&lt;span class="o">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">config&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">py&lt;/span> &lt;span class="c1"># 配置管理&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">data_loader&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">py&lt;/span> &lt;span class="c1"># 数据加载器&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">analysis_engine&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">py&lt;/span> &lt;span class="c1"># 分析引擎&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">strategy_engine&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">py&lt;/span> &lt;span class="c1"># 策略引擎&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">└──&lt;/span> &lt;span class="n">gemini_analyzer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">py&lt;/span> &lt;span class="c1"># AI分析器&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-配置模块-configpy">
+&lt;a class="header-anchor" href="#-%e9%85%8d%e7%bd%ae%e6%a8%a1%e5%9d%97-configpy">&lt;/a>
+📊 配置模块 (config.py)
+&lt;/h2>&lt;h3 id="类和方法">
+&lt;a class="header-anchor" href="#%e7%b1%bb%e5%92%8c%e6%96%b9%e6%b3%95">&lt;/a>
+类和方法
+&lt;/h3>&lt;h4 id="配置常量">
+&lt;a class="header-anchor" href="#%e9%85%8d%e7%bd%ae%e5%b8%b8%e9%87%8f">&lt;/a>
+配置常量
+&lt;/h4>&lt;h1 id="股票池配置">
+&lt;a class="header-anchor" href="#%e8%82%a1%e7%a5%a8%e6%b1%a0%e9%85%8d%e7%bd%ae">&lt;/a>
+股票池配置
+&lt;/h1>&lt;p>STOCK_POOL = {
+&amp;ldquo;000001.SZ&amp;rdquo;: &amp;ldquo;平安银行&amp;rdquo;,
+&amp;ldquo;600519.SH&amp;rdquo;: &amp;ldquo;贵州茅台&amp;rdquo;,
+# &amp;hellip;
+}&lt;/p>
+&lt;h1 id="api配置">
+&lt;a class="header-anchor" href="#api%e9%85%8d%e7%bd%ae">&lt;/a>
+API配置
+&lt;/h1>&lt;p>GEMINI_API_URL = &amp;ldquo;&lt;a href="https://rglnawodplak.ap-southeast-1.clawcloudrun.com/">https://rglnawodplak.ap-southeast-1.clawcloudrun.com/&lt;/a>****&lt;em>&lt;strong>t/completions&amp;rdquo;
+GEMINI_API_KEY = &amp;ldquo;&lt;/strong>&lt;/em>&amp;rdquo;&lt;/p>
+&lt;h1 id="数据路径">
+&lt;a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e8%b7%af%e5%be%84">&lt;/a>
+数据路径
+&lt;/h1>&lt;p>DATA_PATH = &amp;ldquo;data&amp;rdquo;&lt;/p>
+&lt;h2 id="-数据加载器-data_loaderpy">
+&lt;a class="header-anchor" href="#-%e6%95%b0%e6%8d%ae%e5%8a%a0%e8%bd%bd%e5%99%a8-data_loaderpy">&lt;/a>
+📈 数据加载器 (data_loader.py)
+&lt;/h2>&lt;h3 id="dataloader-类">
+&lt;a class="header-anchor" href="#dataloader-%e7%b1%bb">&lt;/a>
+DataLoader 类
+&lt;/h3>&lt;h4 id="方法">
+&lt;a class="header-anchor" href="#%e6%96%b9%e6%b3%95">&lt;/a>
+方法
+&lt;/h4>&lt;h5 id="__init__self">
+&lt;a class="header-anchor" href="#__init__self">&lt;/a>
+&lt;code>__init__(self)&lt;/code>
+&lt;/h5>&lt;p>初始化数据加载器。&lt;/p></description></item><item><title>Markdown文档编写不完全指南</title><link>https://bluespace3.github.io/post/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link><pubDate>Thu, 03 Apr 2025 16:21:23 +0800</pubDate><guid>https://bluespace3.github.io/post/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid><description>&lt;h2 id="一核心语法精要">
+&lt;a class="header-anchor" href="#%e4%b8%80%e6%a0%b8%e5%bf%83%e8%af%ad%e6%b3%95%e7%b2%be%e8%a6%81">&lt;/a>
+一、核心语法精要
+&lt;/h2>&lt;h3 id="1-标题与段落">
+&lt;a class="header-anchor" href="#1-%e6%a0%87%e9%a2%98%e4%b8%8e%e6%ae%b5%e8%90%bd">&lt;/a>
+1. 标题与段落
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">&lt;span class="gh"># 主标题（H1）
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gh">&lt;/span>&lt;span class="gu">## 二级标题（H2）
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gu">&lt;/span>普通段落直接换行书写，空行分隔段落
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">2.&lt;/span> 列表系统
@@ -38,13 +258,18 @@ width=&amp;ldquo;80%&amp;rdquo;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">![&lt;span class="nt">技术架构图&lt;/span>](&lt;span class="na">/images/tech-arch.png&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>三、可视化元素
 流程图示例&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">graph TD
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">A[开始] --&amp;gt; B{判断}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">B --&amp;gt;|条件1| C[操作1]
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">B --&amp;gt;|条件2| D[操作2]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>数据表格&lt;/p></description></item><item><title>playwright的python文档</title><link>https://bluespace3.github.io/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
-&lt;h2 id="引言">引言&lt;/h2>
-&lt;p>Playwright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。&lt;/p>
+&lt;pre class="mermaid">graph TD
+A[开始] --> B{判断}
+B -->|条件1| C[操作1]
+B -->|条件2| D[操作2]
+&lt;/pre>
+&lt;p>数据表格&lt;/p></description></item><item><title>playwright的python文档</title><link>https://bluespace3.github.io/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid><description>&lt;h1 id="安装">
+&lt;a class="header-anchor" href="#%e5%ae%89%e8%a3%85">&lt;/a>
+安装
+&lt;/h1>&lt;h2 id="引言">
+&lt;a class="header-anchor" href="#%e5%bc%95%e8%a8%80">&lt;/a>
+引言
+&lt;/h2>&lt;p>Playwright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。&lt;/p>
 &lt;p>Playwright 库可以用作通用的浏览器自动化工具，为同步和异步 Python 提供了一套强大的 API 来自动化 Web 应用程序。&lt;/p>
 &lt;p>本介绍描述了 Playwright Pytest 插件，这是编写端到端测试的推荐方式。&lt;/p>
 &lt;p>&lt;strong>你将学到&lt;/strong>&lt;/p>
@@ -52,16 +277,20 @@ width=&amp;ldquo;80%&amp;rdquo;
 &lt;li>如何安装 Playwright Pytest&lt;/li>
 &lt;li>如何运行示例测试&lt;/li>
 &lt;/ul>
-&lt;h2 id="安装-playwright-pytest">安装 Playwright Pytest&lt;/h2>
-&lt;p>Playwright 建议使用官方的 Playwright Pytest 插件来编写端到端测试。它提供了上下文隔离，并开箱即用地在多个浏览器配置上运行。&lt;/p>
+&lt;h2 id="安装-playwright-pytest">
+&lt;a class="header-anchor" href="#%e5%ae%89%e8%a3%85-playwright-pytest">&lt;/a>
+安装 Playwright Pytest
+&lt;/h2>&lt;p>Playwright 建议使用官方的 Playwright Pytest 插件来编写端到端测试。它提供了上下文隔离，并开箱即用地在多个浏览器配置上运行。&lt;/p>
 &lt;p>首先，通过安装 Playwright 并运行示例测试来开始，亲眼看看它是如何工作的。&lt;/p>
 &lt;ul>
 &lt;li>PyPI&lt;/li>
 &lt;li>Anaconda&lt;/li>
 &lt;/ul>
 &lt;p>安装所需的浏览器：&lt;/p>
-&lt;h2 id="添加示例测试">添加示例测试&lt;/h2>
-&lt;p>在当前工作目录或遵循 &lt;code>test_&lt;/code> 前缀约定的子目录中创建一个文件，例如 &lt;code>test_example.py&lt;/code>，并在其中包含以下代码。确保你的测试名称也遵循 &lt;code>test_&lt;/code> 前缀约定。&lt;/p>
+&lt;h2 id="添加示例测试">
+&lt;a class="header-anchor" href="#%e6%b7%bb%e5%8a%a0%e7%a4%ba%e4%be%8b%e6%b5%8b%e8%af%95">&lt;/a>
+添加示例测试
+&lt;/h2>&lt;p>在当前工作目录或遵循 &lt;code>test_&lt;/code> 前缀约定的子目录中创建一个文件，例如 &lt;code>test_example.py&lt;/code>，并在其中包含以下代码。确保你的测试名称也遵循 &lt;code>test_&lt;/code> 前缀约定。&lt;/p>
 &lt;p>test_example.py&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Python" data-lang="Python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">re&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">playwright.sync_api&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Page&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">expect&lt;/span>
@@ -80,5 +309,7 @@ width=&amp;ldquo;80%&amp;rdquo;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 期望页面有一个名为“安装”的标题。&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">expect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">page&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_by_role&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;heading&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;Installation&amp;#34;&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_be_visible&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="运行示例测试">运行示例测试&lt;/h2>
-&lt;p>默认情况下，测试将在 Chromium 上运行。这可以通过 CLI 选项进行配置。测试以无头模式运行，这意味着在运行测试时不会打开浏览器 UI。测试结果和测试日志将在终端中显示。&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="运行示例测试">
+&lt;a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e7%a4%ba%e4%be%8b%e6%b5%8b%e8%af%95">&lt;/a>
+运行示例测试
+&lt;/h2>&lt;p>默认情况下，测试将在 Chromium 上运行。这可以通过 CLI 选项进行配置。测试以无头模式运行，这意味着在运行测试时不会打开浏览器 UI。测试结果和测试日志将在终端中显示。&lt;/p></description></item></channel></rss>
