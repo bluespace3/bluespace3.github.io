@@ -1,9 +1,8 @@
 ---
-title: "pytest入门指南"
-categories: ["技术", "pytest", "测试"]
-date: 2025-03-20T13:42:48+08:00
-draft: false
-tags: ["pytest", "测试", "Python"]
+title: '什么是pytest？'
+categories: ["技术"]
+date: 2025-09-05T14:48:25+00:00
+lastmod: 2025-09-05T14:48:25+00:00
 ---
 
 ## 什么是pytest？

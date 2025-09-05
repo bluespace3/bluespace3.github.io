@@ -10,7 +10,10 @@
       "Bash(git subtree push:*)",
       "Bash(./add-hugo-frontmatter.sh:*)",
       "Bash(python add-hugo-frontmatter.py:*)",
-      "Bash(python manage-notes.py:*)"
+      "Bash(python manage-notes.py:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []

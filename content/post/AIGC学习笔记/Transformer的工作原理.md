@@ -1,8 +1,8 @@
 ---
 title: 'Transformer的工作原理'
 categories: ["技术"]
-date: 2025-09-05T14:34:27+00:00
-lastmod: 2025-09-05T14:34:27+00:00
+date: 2025-09-05T14:48:25+00:00
+lastmod: 2025-09-05T14:48:25+00:00
 ---
 
 Transformer的工作原理

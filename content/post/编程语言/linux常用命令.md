@@ -1,10 +1,9 @@
 ---
-title: 'linux常用命令'
+title: 'title: "linux常用命令"'
 categories: ["技术"]
-date: 2025-09-05T14:34:27+00:00
-lastmod: 2025-09-05T14:34:27+00:00
+date: 2025-09-05T14:48:25+00:00
+lastmod: 2025-09-05T14:48:25+00:00
 ---
-
 
 ---
 title: "linux常用命令"

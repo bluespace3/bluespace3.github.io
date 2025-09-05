@@ -1,10 +1,10 @@
 ---
-title: "MCP入门指南"
-categories: ["工具",  "开发"]
-date: 2025-03-20T13:48:29+08:00
-draft: false
-tags: ["MCP", "工具", "开发","插件"]
+title: '什么是MCP？'
+categories: ["技术"]
+date: 2025-09-05T14:48:25+00:00
+lastmod: 2025-09-05T14:48:25+00:00
 ---
+
 ## 什么是MCP？
 
 MCP（Model Context Protocol）是一种用于扩展和增强开发工具功能的协议。它允许开发者创建和使用MCP服务器，这些服务器可以提供额外的工具和资源，以提高开发效率和灵活性。
