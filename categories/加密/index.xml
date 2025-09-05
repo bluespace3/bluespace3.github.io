@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>加密 on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in 加密 on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 10 Apr 2025 22:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/%E5%8A%A0%E5%AF%86/index.xml" rel="self" type="application/rss+xml"/><item><title>关于投资的反思_副本</title><link>https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</link><pubDate>Thu, 10 Apr 2025 22:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</guid><description>&lt;h3 id="25年一季度投资反思"&gt;25年一季度投资反思&lt;/h3&gt;
+&lt;p&gt;最近几天资产缩水严重，在此做一个简单总结。&lt;/p&gt;
+&lt;p&gt;。。。。。。&lt;/p&gt;
+&lt;div class="encrypted-content" id="encrypted-%!s(int64=1757094394)" data-password="tianqinghong"&gt;
+&lt;div class="encrypted-lock"&gt;
+&lt;div class="lock-icon"&gt;🔒&lt;/div&gt;
+&lt;h3&gt;此内容已加密&lt;/h3&gt;
+&lt;p&gt;请输入密码查看受保护的内容&lt;/p&gt;
+&lt;div class="password-input-group"&gt;
+&lt;input type="password" class="password-input" placeholder="请输入密码..." /&gt;
+&lt;button class="decrypt-btn" onclick="decryptContent('encrypted-%!s(int64=1757094394)')"&gt;解锁&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="error-message" id="encrypted-%!s(int64=1757094394)-error" style="display: none;"&gt;
+密码错误，请重试
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="encrypted-content-wrapper" id="encrypted-%!s(int64=1757094394)-content" style="display: none;"&gt;
+&lt;p&gt;一季度大概亏了1w左右。因为一个黑天鹅事件，美国向中国加了125%关税。 虽然后面又涨回来了，但是我在市场最恐慌的时候卖出了至少2/3的股票仓位，导致后面的反弹与我无缘。经过这次亏损我有一下几点反思。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;这说明我对这种短期的方向判断力是不够的，不太适合做短线。&lt;/li&gt;
+&lt;li&gt;另外一定要合理控制仓位，我之所以承受这么大的波动损失是因为我的股票型基金+股票的配比太大。借这次减仓后，需要合理配置这类高风险的资产。以后股票资产不能超过总账户的10%&lt;/li&gt;
+&lt;li&gt;另一个反思的点是我需要拉长定投周期，如果定投只能坚持几个月往往是在在左侧定投右侧卖出造成较大的亏损。既然选择了定投就应该让定投起到平滑操作带来的损失，去博大方向上的机会。&lt;/li&gt;
+&lt;li&gt;最后一个点是，在打算定投一个标的的适合一定要看看是否足够便宜，如果处于高点我宁可不参与。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;style&gt;
+.encrypted-summary-indicator {
+display: inline-block;
+margin: 5px 0;
+}
+.encrypted-badge {
+display: inline-flex;
+align-items: center;
+gap: 4px;
+padding: 2px 8px;
+background-color: #f8f9fa;
+color: #6c757d;
+font-size: 12px;
+border-radius: 12px;
+border: 1px solid #dee2e6;
+vertical-align: middle;
+}
+.encrypted-badge:hover {
+background-color: #e9ecef;
+border-color: #adb5bd;
+}
+.encrypted-content {
+margin: 20px 0;
+border: 2px dashed #ddd;
+border-radius: 8px;
+overflow: hidden;
+}
+.encrypted-lock {
+padding: 30px;
+text-align: center;
+background-color: #f8f9fa;
+}
+.lock-icon {
+font-size: 48px;
+margin-bottom: 15px;
+}
+.encrypted-lock h3 {
+margin: 0 0 10px 0;
+color: #333;
+font-size: 18px;
+}
+.encrypted-lock p {
+margin: 0 0 20px 0;
+color: #666;
+font-size: 14px;
+}
+.password-input-group {
+display: flex;
+gap: 10px;
+justify-content: center;
+max-width: 300px;
+margin: 0 auto;
+}
+.password-input {
+flex: 1;
+padding: 10px 15px;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-size: 14px;
+}
+.password-input:focus {
+outline: none;
+border-color: #007bff;
+box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+.decrypt-btn {
+padding: 10px 20px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 14px;
+transition: background-color 0.2s;
+}
+.decrypt-btn:hover {
+background-color: #0056b3;
+}
+.decrypt-btn:active {
+transform: scale(0.98);
+}
+.error-message {
+color: #dc3545;
+font-size: 12px;
+margin-top: 10px;
+padding: 8px;
+background-color: #f8d7da;
+border: 1px solid #f5c6cb;
+border-radius: 4px;
+}
+.encrypted-content-wrapper {
+padding: 20px;
+background-color: white;
+}
+&lt;/style&gt;
+&lt;script&gt;
+function decryptContent(elementId) {
+const encryptedDiv = document.getElementById(elementId);
+const passwordInput = encryptedDiv.querySelector('.password-input');
+const errorMsg = document.getElementById(elementId + '-error');
+const lockDiv = encryptedDiv.querySelector('.encrypted-lock');
+const contentDiv = document.getElementById(elementId + '-content');
+const enteredPassword = passwordInput.value;
+const correctPassword = encryptedDiv.getAttribute('data-password');
+if (enteredPassword === correctPassword) {
+lockDiv.style.display = 'none';
+contentDiv.style.display = 'block';
+errorMsg.style.display = 'none';
+passwordInput.value = '';
+window.dispatchEvent(new Event('resize'));
+} else {
+errorMsg.style.display = 'block';
+passwordInput.value = '';
+passwordInput.focus();
+setTimeout(() =&gt; {
+errorMsg.style.display = 'none';
+}, 3000);
+}
+}
+document.addEventListener('DOMContentLoaded', function() {
+const encryptedContents = document.querySelectorAll('.encrypted-content');
+encryptedContents.forEach(function(encryptedDiv) {
+const passwordInput = encryptedDiv.querySelector('.password-input');
+if (passwordInput) {
+passwordInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+const elementId = encryptedDiv.id;
+decryptContent(elementId);
+}
+});
+}
+});
+});
+&lt;/script&gt;</description></item><item><title>金字塔原理解析</title><link>https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link><pubDate>Tue, 25 Mar 2025 21:43:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid><description>&lt;h4 id="金字塔原理读书笔记全"&gt;《&lt;a href="https://so.csdn.net/so/search?q=%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86&amp;amp;spm=1001.2101.3001.7020"&gt;金字塔原理&lt;/a&gt;》读书笔记（全）&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80-%e8%a1%a8%e8%be%be%e7%9a%84%e9%80%bb%e8%be%91"&gt;一、 表达的逻辑&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#1-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e7%94%a8%e9%87%91%e5%ad%97%e5%a1%94"&gt;1. 为什么要用金字塔？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#2-%e9%87%91%e5%ad%97%e5%a1%94%e5%86%85%e9%83%a8%e7%bb%93%e6%9e%84"&gt;2. 金字塔内部结构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#3-%e5%a6%82%e4%bd%95%e6%9e%84%e5%bb%ba%e9%87%91%e5%ad%97%e5%a1%94"&gt;3. 如何构建金字塔？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#4-%e5%ba%8f%e8%a8%80%e7%9a%84%e5%85%b7%e4%bd%93%e5%86%99%e6%b3%95"&gt;4. 序言的具体写法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#5-%e6%bc%94%e7%bb%8e%e6%8e%a8%e7%90%86%e4%b8%8e%e5%bd%92%e7%ba%b3%e6%8e%a8%e7%90%86"&gt;5. 演绎推理与归纳推理&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c-%e6%80%9d%e8%80%83%e7%9a%84%e9%80%bb%e8%be%91"&gt;二、 思考的逻辑&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#6%e5%ba%94%e7%94%a8%e9%80%bb%e8%be%91%e9%a1%ba%e5%ba%8f"&gt;6.应用逻辑顺序&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e6%97%b6%e9%97%b4%e9%a1%ba%e5%ba%8f"&gt;（一）时间顺序&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e7%bb%93%e6%9e%84%e9%a1%ba%e5%ba%8f"&gt;（二）结构顺序&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%89%e7%a8%8b%e5%ba%a6%e9%a1%ba%e5%ba%8f"&gt;（三）程度顺序&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#7%e6%a6%82%e6%8b%ac%e8%bf%99%e7%a7%8d%e6%80%9d%e6%83%b3"&gt;7.概括这种思想&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e8%a1%8c%e5%8a%a8%e6%80%a7%e6%80%9d%e6%83%b3%e7%9a%84%e6%a6%82%e6%8b%ac%e8%af%b4%e6%98%8e%e9%87%87%e5%8f%96%e8%a1%8c%e5%8a%a8%e7%9a%84%e7%bb%93%e6%9e%9c%e7%9b%ae%e6%a0%87"&gt;（一）行动性思想的概括——说明采取行动的结果/目标&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e6%8f%8f%e8%bf%b0%e6%80%a7%e6%80%9d%e6%83%b3%e7%9a%84%e6%a6%82%e6%8b%ac%e6%89%be%e5%87%ba%e5%90%84%e7%bb%93%e8%ae%ba%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b1%e6%80%a7"&gt;（二）描述性思想的概括——找出各结论之间的共性&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%89-%e8%a7%a3%e5%86%b3%e9%97%ae%e9%a2%98%e7%9a%84%e9%80%bb%e8%be%91"&gt;三、 解决问题的逻辑&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#8%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98"&gt;8.界定问题&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98%e7%9a%84%e8%bf%9e%e7%bb%ad%e5%88%86%e6%9e%90%e6%b3%95"&gt;（一）界定问题的连续分析法：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98%e7%9a%84%e6%a1%86%e6%9e%b6"&gt;（二）界定问题的框架&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#9%e7%bb%93%e6%9e%84%e5%8c%96%e5%88%86%e6%9e%90%e9%97%ae%e9%a2%98"&gt;9.结构化分析问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e5%9b%9b-%e6%bc%94%e7%a4%ba%e7%9a%84%e9%80%bb%e8%be%91"&gt;四、 演示的逻辑&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#10%e5%9c%a8%e4%b9%a6%e9%9d%a2%e4%b8%8a%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94"&gt;10.在书面上呈现金字塔&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#11%e5%9c%a8ppt%e4%b8%ad%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94"&gt;11.在PPT中呈现金字塔&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#12%e5%9c%a8%e5%ad%97%e9%87%8c%e8%a1%8c%e9%97%b4%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94"&gt;12.在字里行间呈现金字塔&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e8%af%bb%e5%90%8e%e5%bf%83%e5%be%97"&gt;读后心得&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace3.github.io/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e9%83%a8%e5%88%86%e5%8f%82%e8%80%83%e7%ac%94%e8%ae%b0"&gt;部分参考笔记：&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 《金字塔原理》资源EPUB：链接：https://pan.baidu.com/s/1-2uv0ktITGT51ft603KfCQ
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 提取码：aioh
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 《金字塔原理》资源PDF：链接：https://pan.baidu.com/s/1Z5WIpUSCm9qr7sJhDyf-sQ
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 提取码：h1sk
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;12345AI写代码
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;金字塔原理是为了解决沟通、表达或是思考问题时思维混乱、分不清主次的问题。而其背后的方法论就是–搭建金字塔，以金字塔原理进行表达。书分为四部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;表达的逻辑：说，使用金字塔原理的原因和具体构建方法；&lt;/li&gt;
+&lt;li&gt;思考的逻辑：想，使用金字塔原理过程中的应用逻辑要素；&lt;/li&gt;
+&lt;li&gt;解决问题的逻辑：做，在实例中界定、解构、分析、解决问题；&lt;/li&gt;
+&lt;li&gt;演示的逻辑：表演，在PPT演示中和文字中呈现金字塔。
+&lt;img src="https://raw.githubusercontent.com/bluespace3/images/master/%E9%87%91%E5%AD%97%E5%A1%94%E4%B8%AD%E5%BF%83%E8%AE%BA%E7%82%B9.png" alt="在这里插入图片描述"&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="一-表达的逻辑"&gt;一、 表达的逻辑&lt;/h2&gt;
+&lt;h3 id="1-为什么要用金字塔"&gt;1. 为什么要用金字塔？&lt;/h3&gt;
+&lt;p&gt;究其原因是和人脑的思维逻辑有关系，人们思考的习惯方式倾向于对输入信息进行自动联想和关联，而对于那些没有逻辑或关联的内容习惯性忽略。所以金字塔结构表达，加强逻辑关联，可以让我们沟通更加高效。《金字塔原理》中指出，人类的思维结构一般有以下几个规律：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大脑会自动将有相关联的信息进行归类；&lt;/li&gt;
+&lt;li&gt;一次记忆不超过7个思想、概念或项目；&lt;/li&gt;
+&lt;li&gt;在进行观点阐述时将背景、冲突、疑问等进行说明与解答可以更好地吸引读者注意力。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此当我们在进行写作和演讲活动时，为了让受众更好地了解并接受我们所表达的观点我们必须：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;归类分组，将思想组织成金字塔&lt;/strong&gt;：将关键词罗列出来，并组织归类；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;找出逻辑关系，抽象概况&lt;/strong&gt;：找到同类内容之后，我们需要对这部分共性内容进行抽象；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自上而下表达，结论先行&lt;/strong&gt;：当我们先提出总的概念，再列出具体项目，即自上而下地呈现思想时，可以最有效的进行沟通和写作表达，类似于从收敛到发散的过程，脑图结构；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自下而上思考，总结概括&lt;/strong&gt;：思维从底层开始构建，句子按照某种逻辑顺序组成段落，之后将段落组成章节，最后章节组成文章，金字塔最顶端的思想（中心思想、核心观点）代表整片文章观点。&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/362bfb90a78a3f267ddfe0333372fe20.png" alt="文章中思想应组成单一思想统领下的金字塔结构"&gt;文章的思想有三种关联方式：向上、向下、横向。&lt;/li&gt;
+&lt;li&gt;纵向：文章中每一层次上的思想必须是对下一层次思想的概括&lt;/li&gt;
+&lt;li&gt;横向：每组中的思想必须同属于同一逻辑范畴&lt;/li&gt;
+&lt;li&gt;横向：每组中思想必须按逻辑顺序组织&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;而思想的组织存在4种逻辑顺序：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;演绎顺序&lt;/strong&gt;：大前提、小前提、结论&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时间（步骤）顺序&lt;/strong&gt;：第一、第二、第三&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;结构（空间）顺序&lt;/strong&gt;：波士顿、纽约、华盛顿&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;程度（重要性）顺序&lt;/strong&gt;：最重要、次重要&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-金字塔内部结构"&gt;2. 金字塔内部结构&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;纵向关系&lt;/strong&gt;：纵向关系是疑问-回答式的表达方式，让读者产生”为什么这么做的想法“，类似于层层推理。
+&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/6293c4ba0f4ff6bdab25842805d19b58.png" alt="在这里插入图片描述"&gt;&lt;img src="https://i-blog.csdnimg.cn/blog_migrate/ac3217655f95ce686f2e87eb5ea0950a.png" alt="在这里插入图片描述"&gt;&lt;/p&gt;</description></item></channel></rss>
