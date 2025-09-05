@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/tian4/knowledge_bases/**)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git subtree add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
