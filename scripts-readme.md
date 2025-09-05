@@ -29,26 +29,35 @@
 - 将主项目中 `content/post` 的更改推送到独立笔记仓库
 - 运行前会检查是否有未提交的更改
 
-### 3. add-hugo-frontmatter.sh
-**功能**：为 Markdown 文件自动添加 Hugo Front Matter
+### 3. add-hugo-frontmatter.py
+**功能**：为 Markdown 文件自动添加 Hugo Front Matter（Python 版，支持递归处理多层目录）
 **用法**：
 ```bash
+# 处理 content/post 目录（默认）
+python add-hugo-frontmatter.py
+
 # 处理单个文件
-./add-hugo-frontmatter.sh path/to/file.md
+python add-hugo-frontmatter.py path/to/file.md
 
-# 处理整个目录
-./add-hugo-frontmatter.sh path/to/directory
+# 处理指定目录
+python add-hugo-frontmatter.py content/post/编程语言
 
-# 处理当前目录下所有 .md 文件
-./add-hugo-frontmatter.sh
+# 试运行模式（不实际修改文件）
+python add-hugo-frontmatter.py --dry-run
+
+# 查看帮助
+python add-hugo-frontmatter.py --help
 ```
 
 **说明**：
-- 自动检测文件是否已有 Hugo 头
+- 自动递归处理目录中的所有 Markdown 文件
+- 智能检测文件是否已有 Hugo 头
 - 提取文件第一行作为标题（去除 # 符号）
 - 如果第一行为空，使用文件名作为标题
 - 自动设置当前时间为 `date` 和 `lastmod`
 - 默认分类为 `["技术"]`
+- 完全支持中文文件名和路径
+- 提供详细的处理进度和统计信息
 
 ### 4. push-to-github.sh
 **功能**：将笔记仓库推送到 GitHub

@@ -1,3 +1,10 @@
+---
+title: 'Transformer的工作原理'
+categories: ["技术"]
+date: 2025-09-05T14:34:27+00:00
+lastmod: 2025-09-05T14:34:27+00:00
+---
+
 Transformer的工作原理
 
 拿到句子：从前有个国王，他有个女儿

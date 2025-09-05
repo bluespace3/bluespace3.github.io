@@ -1,3 +1,10 @@
+---
+title: 'python中的os函数用法'
+categories: ["技术"]
+date: 2025-09-05T14:34:27+00:00
+lastmod: 2025-09-05T14:34:27+00:00
+---
+
 
 ---
 title: "python的os模块使用"
