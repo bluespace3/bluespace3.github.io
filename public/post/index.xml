@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 蓝色空间号-新世界的探索者</title>
-    <link>http://localhost:54600/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Posts on 蓝色空间号-新世界的探索者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 05 Sep 2025 23:50:00 +0000</lastBuildDate><atom:link href="http://localhost:54600/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Sep 2025 23:55:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI量化交易决策系统方案</title>
-      <link>http://localhost:54600/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</link>
+      <link>http://localhost:1313/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</guid>
+      <guid>http://localhost:1313/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</guid>
       <description>&lt;h2 id=&#34;-2025-07-13-近期优化与变更&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#-2025-07-13-%e8%bf%91%e6%9c%9f%e4%bc%98%e5%8c%96%e4%b8%8e%e5%8f%98%e6%9b%b4&#34;&gt;&lt;/a&gt;
 📝 2025-07-13 近期优化与变更
@@ -168,10 +168,10 @@ ETF评分体系（指数基金/ETF专用）
     
     <item>
       <title>AI量化交易决策系统技术文档</title>
-      <link>http://localhost:54600/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</link>
+      <link>http://localhost:1313/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</guid>
+      <guid>http://localhost:1313/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</guid>
       <description>&lt;h2 id=&#34;-2025-07-13-近期优化与变更&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#-2025-07-13-%e8%bf%91%e6%9c%9f%e4%bc%98%e5%8c%96%e4%b8%8e%e5%8f%98%e6%9b%b4&#34;&gt;&lt;/a&gt;
 📝 2025-07-13 近期优化与变更
@@ -243,10 +243,10 @@ DataLoader 类
     
     <item>
       <title>Git submodule</title>
-      <link>http://localhost:54600/post/git/git-submodule/</link>
+      <link>http://localhost:1313/post/git/git-submodule/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/git/git-submodule/</guid>
+      <guid>http://localhost:1313/post/git/git-submodule/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;Git submodule&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;,  &amp;ldquo;git&amp;rdquo;, &amp;ldquo;hugo&amp;rdquo;]&lt;/p&gt;
@@ -296,10 +296,10 @@ tags: [&amp;ldquo;submodule&amp;rdquo;, &amp;ldquo;Git&amp;rdquo;, &amp;ldquo;�
     
     <item>
       <title>gitlab配置cicd工作流</title>
-      <link>http://localhost:54600/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+      <link>http://localhost:1313/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+      <guid>http://localhost:1313/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
       <description>&lt;h2 id=&#34;gitlab-cicd-简介&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#gitlab-cicd-%e7%ae%80%e4%bb%8b&#34;&gt;&lt;/a&gt;
 GitLab CI/CD 简介
@@ -362,10 +362,10 @@ GitLab Runner
     
     <item>
       <title>git操作</title>
-      <link>http://localhost:54600/post/git/git%E6%93%8D%E4%BD%9C/</link>
+      <link>http://localhost:1313/post/git/git%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/git/git%E6%93%8D%E4%BD%9C/</guid>
+      <guid>http://localhost:1313/post/git/git%E6%93%8D%E4%BD%9C/</guid>
       <description>&lt;h4 id=&#34;回滚到指定提交&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%9b%9e%e6%bb%9a%e5%88%b0%e6%8c%87%e5%ae%9a%e6%8f%90%e4%ba%a4&#34;&gt;&lt;/a&gt;
 回滚到指定提交
@@ -382,15 +382,15 @@ GitLab Runner
 &lt;h4 id=&#34;子模块的使用&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%ad%90%e6%a8%a1%e5%9d%97%e7%9a%84%e4%bd%bf%e7%94%a8&#34;&gt;&lt;/a&gt;
 子模块的使用
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:54600/images/361743670309_.pic.jpg&#34; alt=&#34;子模块使用&#34;&gt;&lt;/p&gt;</description>
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/361743670309_.pic.jpg&#34; alt=&#34;子模块使用&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>git添加子项目</title>
-      <link>http://localhost:54600/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link>
+      <link>http://localhost:1313/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>http://localhost:1313/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;项目中添加子项目
 &lt;ul&gt;
@@ -413,10 +413,10 @@ git submodule update &amp;ndash;init &amp;ndash;recursive
     
     <item>
       <title>mcp-intro</title>
-      <link>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</link>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</guid>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</guid>
       <description>&lt;h2 id=&#34;什么是mcp&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bb%80%e4%b9%88%e6%98%afmcp&#34;&gt;&lt;/a&gt;
 什么是MCP？
@@ -499,10 +499,10 @@ MCP的安装
     
     <item>
       <title>playwright的python文档</title>
-      <link>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid>
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid>
       <description>&lt;h1 id=&#34;安装&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%ae%89%e8%a3%85&#34;&gt;&lt;/a&gt;
 安装
@@ -557,10 +557,10 @@ MCP的安装
     
     <item>
       <title>pytest-intro</title>
-      <link>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid>
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid>
       <description>&lt;h2 id=&#34;什么是pytest&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bb%80%e4%b9%88%e6%98%afpytest&#34;&gt;&lt;/a&gt;
 什么是pytest？
@@ -615,10 +615,10 @@ pytest的主要特点
     
     <item>
       <title>pytest接口自动化测试方案</title>
-      <link>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid>
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%83%8c%e6%99%af&#34;&gt;&lt;/a&gt;
 背景
@@ -712,7 +712,7 @@ pytest的主要特点
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;几款常见接口测试框架对比详情：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:54600/images/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/1743173315631.png&#34; alt=&#34;1743173315631&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/1743173315631.png&#34; alt=&#34;1743173315631&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;pytest + Requests&lt;/p&gt;
@@ -795,10 +795,10 @@ pytest的主要特点
     
     <item>
       <title>strategy</title>
-      <link>http://localhost:54600/post/quant_trading/strategy/</link>
+      <link>http://localhost:1313/post/quant_trading/strategy/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/quant_trading/strategy/</guid>
+      <guid>http://localhost:1313/post/quant_trading/strategy/</guid>
       <description>&lt;h1 id=&#34;量化交易策略知识库&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%87%8f%e5%8c%96%e4%ba%a4%e6%98%93%e7%ad%96%e7%95%a5%e7%9f%a5%e8%af%86%e5%ba%93&#34;&gt;&lt;/a&gt;
 量化交易策略知识库
@@ -836,10 +836,10 @@ pytest的主要特点
     
     <item>
       <title>SYSTEM_DESIGN</title>
-      <link>http://localhost:54600/post/quant_trading/system_design/</link>
+      <link>http://localhost:1313/post/quant_trading/system_design/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/quant_trading/system_design/</guid>
+      <guid>http://localhost:1313/post/quant_trading/system_design/</guid>
       <description>&lt;h1 id=&#34;系统设计与开发者文档&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e7%b3%bb%e7%bb%9f%e8%ae%be%e8%ae%a1%e4%b8%8e%e5%bc%80%e5%8f%91%e8%80%85%e6%96%87%e6%a1%a3&#34;&gt;&lt;/a&gt;
 系统设计与开发者文档
@@ -890,10 +890,10 @@ pytest的主要特点
     
     <item>
       <title>test_knowledge_base</title>
-      <link>http://localhost:54600/post/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8C%AB%E5%92%AA/test_knowledge_base/</link>
+      <link>http://localhost:1313/post/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8C%AB%E5%92%AA/test_knowledge_base/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8C%AB%E5%92%AA/test_knowledge_base/</guid>
+      <guid>http://localhost:1313/post/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8C%AB%E5%92%AA/test_knowledge_base/</guid>
       <description>&lt;h1 id=&#34;这是一个测试知识库文件&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%bf%99%e6%98%af%e4%b8%80%e4%b8%aa%e6%b5%8b%e8%af%95%e7%9f%a5%e8%af%86%e5%ba%93%e6%96%87%e4%bb%b6&#34;&gt;&lt;/a&gt;
 这是一个测试知识库文件
@@ -903,10 +903,10 @@ pytest的主要特点
     
     <item>
       <title>Transformer的工作原理</title>
-      <link>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
       <description>&lt;p&gt;Transformer的工作原理&lt;/p&gt;
 &lt;p&gt;拿到句子：从前有个国王，他有个女儿&lt;/p&gt;
 &lt;p&gt;1.Token化：分词为得到token:从前|有个|国王|，|他|有个|女儿&lt;/p&gt;
@@ -920,10 +920,10 @@ pytest的主要特点
     
     <item>
       <title>unnitest笔记</title>
-      <link>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/unnitest%E7%AC%94%E8%AE%B0/</link>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/unnitest%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/unnitest%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/unnitest%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;一、引入
 &lt;ul&gt;
@@ -985,10 +985,10 @@ pytest的主要特点
     
     <item>
       <title>测试平台分享</title>
-      <link>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid>
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;测试平台教程&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;编程&amp;rdquo;, &amp;ldquo;git&amp;rdquo;]&lt;/p&gt;
@@ -1054,20 +1054,20 @@ gunicorn flask_index:app -c ./gunicorn.conf.py
     
     <item>
       <title>大模型概述笔记</title>
-      <link>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/</link>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;大模型概述笔记&lt;/p&gt;
 &lt;p&gt;AGI:通用人工智能，能模拟人类抽象推理，因果理解等能力，解决未知环境的复杂问题，是人工智能的终极目标之一。大模型是AI发展的里程碑，也是实现AGI的重要步骤。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>构建fastapi&#43;vue项目dockerfile</title>
-      <link>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%9E%84%E5%BB%BAfastapi&#43;vue%E9%A1%B9%E7%9B%AEdockerfile/</link>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%9E%84%E5%BB%BAfastapi&#43;vue%E9%A1%B9%E7%9B%AEdockerfile/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%9E%84%E5%BB%BAfastapi&#43;vue%E9%A1%B9%E7%9B%AEdockerfile/</guid>
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%9E%84%E5%BB%BAfastapi&#43;vue%E9%A1%B9%E7%9B%AEdockerfile/</guid>
       <description>&lt;h3 id=&#34;构建fastapi步骤&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%9e%84%e5%bb%bafastapi%e6%ad%a5%e9%aa%a4&#34;&gt;&lt;/a&gt;
 构建fastapi步骤
@@ -1161,10 +1161,10 @@ dockerfile内容
     
     <item>
       <title>机器学习</title>
-      <link>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
       <description>&lt;p&gt;机器学习&lt;/p&gt;
 &lt;p&gt;步骤：&lt;/p&gt;
 &lt;p&gt;准备历史数据-&amp;gt;创建模型并训练历史数据-&amp;gt;新数据输入预测结果&lt;/p&gt;
@@ -1181,10 +1181,10 @@ dockerfile内容
     
     <item>
       <title>快速上手pytest项目</title>
-      <link>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</link>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</guid>
       <description>&lt;h2 id=&#34;tags-pytest-python&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#tags-pytest-python&#34;&gt;&lt;/a&gt;
 tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
@@ -1201,7 +1201,7 @@ tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
 项目初始化
 &lt;/h1&gt;&lt;p&gt;克隆项目◦ git clone &lt;a href=&#34;mailto:git@gitlab.guangpuyun.cn&#34;&gt;git@gitlab.guangpuyun.cn&lt;/a&gt;:clinic-diag/test/poct_api_test.git
 了解项目结构&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:54600/images/528752a3cec6442b7fb16aabcf1f313f94a9b0c3c9a71d46f85a3bb0ab45bcc6.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/528752a3cec6442b7fb16aabcf1f313f94a9b0c3c9a71d46f85a3bb0ab45bcc6.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;安装依赖&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96&#34;&gt;&lt;/a&gt;
 安装依赖
@@ -1221,14 +1221,14 @@ tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
 2、运行脚本api/generateTestCases.py，生成基础用例，存放于/api目录
 3、基础用例结构&lt;/p&gt;
 &lt;p&gt;此时只是生成了接口的对象，还需要编写实现逻辑和传参进一步实现该对象，完成测试用例编写（见用例编写）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:54600/images/e2e3d30579d03e71fcd65320f80da7a2b548bfc1056245fa3d54b9669e3ce7c3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/e2e3d30579d03e71fcd65320f80da7a2b548bfc1056245fa3d54b9669e3ce7c3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;用例编写&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e7%94%a8%e4%be%8b%e7%bc%96%e5%86%99&#34;&gt;&lt;/a&gt;
 用例编写
 &lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;在/test对应的目录下新建用例文件，命名以test_开头，表明测试场景&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:54600/mages/3dcd5da9b6d6fde4508a1aada61ca3d3486938faed0f48a273a4a4ac026db38f.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/mages/3dcd5da9b6d6fde4508a1aada61ca3d3486938faed0f48a273a4a4ac026db38f.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;导入必要的包和基础用例，如：&lt;/li&gt;
 &lt;/ol&gt;
@@ -1237,10 +1237,10 @@ tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
     
     <item>
       <title>使用GiHub作为图床</title>
-      <link>http://localhost:54600/post/git/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link>
+      <link>http://localhost:1313/post/git/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/git/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid>
+      <guid>http://localhost:1313/post/git/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid>
       <description>&lt;h2 id=&#34;使用-github-作为免费图床的文档&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bd%bf%e7%94%a8-github-%e4%bd%9c%e4%b8%ba%e5%85%8d%e8%b4%b9%e5%9b%be%e5%ba%8a%e7%9a%84%e6%96%87%e6%a1%a3&#34;&gt;&lt;/a&gt;
 使用 GitHub 作为免费图床的文档
@@ -1304,10 +1304,10 @@ tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
     
     <item>
       <title>提示词技巧</title>
-      <link>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</link>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Fri, 05 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</guid>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</guid>
       <description>&lt;p&gt;提示词技巧
 总结：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/bluespace3/images/master/20250329152414.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -1321,10 +1321,10 @@ tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
     
     <item>
       <title>docker使用笔记</title>
-      <link>http://localhost:54600/post/%E6%95%99%E7%A8%8B/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>http://localhost:1313/post/%E6%95%99%E7%A8%8B/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 03 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%95%99%E7%A8%8B/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://localhost:1313/post/%E6%95%99%E7%A8%8B/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;docker pull ubuntu 载入ubuntu 镜像&lt;/p&gt;
 &lt;p&gt;docker pull training/webapp  # 载入镜像&lt;/p&gt;
 &lt;p&gt;docker pull python:3.7 安装python镜像&lt;/p&gt;
@@ -1345,10 +1345,10 @@ tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
     
     <item>
       <title>encrypted-example</title>
-      <link>http://localhost:54600/post/%E6%95%99%E7%A8%8B/encrypted-example/</link>
+      <link>http://localhost:1313/post/%E6%95%99%E7%A8%8B/encrypted-example/</link>
       <pubDate>Wed, 03 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%95%99%E7%A8%8B/encrypted-example/</guid>
+      <guid>http://localhost:1313/post/%E6%95%99%E7%A8%8B/encrypted-example/</guid>
       <description>&lt;h2 id=&#34;这是一篇加密的文章&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%bf%99%e6%98%af%e4%b8%80%e7%af%87%e5%8a%a0%e5%af%86%e7%9a%84%e6%96%87%e7%ab%a0&#34;&gt;&lt;/a&gt;
 这是一篇加密的文章
@@ -1381,10 +1381,10 @@ tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
     
     <item>
       <title>python中的os函数用法</title>
-      <link>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link>
+      <link>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link>
       <pubDate>Wed, 03 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid>
+      <guid>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;python的os模块使用&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;编程&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
@@ -1406,10 +1406,10 @@ tags: [&amp;ldquo;os&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;教程
     
     <item>
       <title>scrapy爬柚子网示例</title>
-      <link>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link>
+      <link>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link>
       <pubDate>Wed, 03 Sep 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid>
+      <guid>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid>
       <description>&lt;p&gt;柚子网https://www.uu-zz.com/&lt;/p&gt;
 &lt;p&gt;爬取页码&lt;/p&gt;
 &lt;p&gt;遍历页面内对应的视频集的链接&lt;/p&gt;
@@ -1423,30 +1423,30 @@ tags: [&amp;ldquo;os&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;教程
     
     <item>
       <title>关于投资的反思_副本</title>
-      <link>http://localhost:54600/post/%E6%80%9D%E8%80%83/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</link>
+      <link>http://localhost:1313/post/%E6%80%9D%E8%80%83/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</link>
       <pubDate>Thu, 10 Apr 2025 22:59:32 +0800</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%80%9D%E8%80%83/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</guid>
+      <guid>http://localhost:1313/post/%E6%80%9D%E8%80%83/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</guid>
       <description>&lt;h3 id=&#34;25年一季度投资反思&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#25%e5%b9%b4%e4%b8%80%e5%ad%a3%e5%ba%a6%e6%8a%95%e8%b5%84%e5%8f%8d%e6%80%9d&#34;&gt;&lt;/a&gt;
 25年一季度投资反思
 &lt;/h3&gt;&lt;p&gt;最近几天资产缩水严重，在此做一个简单总结。&lt;/p&gt;
 &lt;p&gt;。。。。。。&lt;/p&gt;
 
-    &lt;div class=&#34;encrypted-content&#34; id=&#34;encrypted-%!s(int64=1757094073)&#34; data-password=&#34;tianqinghong&#34;&gt;
+    &lt;div class=&#34;encrypted-content&#34; id=&#34;encrypted-%!s(int64=1757094661)&#34; data-password=&#34;tianqinghong&#34;&gt;
         &lt;div class=&#34;encrypted-lock&#34;&gt;
             &lt;div class=&#34;lock-icon&#34;&gt;🔒&lt;/div&gt;
             &lt;h3&gt;此内容已加密&lt;/h3&gt;
             &lt;p&gt;请输入密码查看受保护的内容&lt;/p&gt;
             &lt;div class=&#34;password-input-group&#34;&gt;
                 &lt;input type=&#34;password&#34; class=&#34;password-input&#34; placeholder=&#34;请输入密码...&#34; /&gt;
-                &lt;button class=&#34;decrypt-btn&#34; onclick=&#34;decryptContent(&#39;encrypted-%!s(int64=1757094073)&#39;)&#34;&gt;解锁&lt;/button&gt;
+                &lt;button class=&#34;decrypt-btn&#34; onclick=&#34;decryptContent(&#39;encrypted-%!s(int64=1757094661)&#39;)&#34;&gt;解锁&lt;/button&gt;
             &lt;/div&gt;
-            &lt;div class=&#34;error-message&#34; id=&#34;encrypted-%!s(int64=1757094073)-error&#34; style=&#34;display: none;&#34;&gt;
+            &lt;div class=&#34;error-message&#34; id=&#34;encrypted-%!s(int64=1757094661)-error&#34; style=&#34;display: none;&#34;&gt;
                 密码错误，请重试
             &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&#34;encrypted-content-wrapper&#34; id=&#34;encrypted-%!s(int64=1757094073)-content&#34; style=&#34;display: none;&#34;&gt;
+        &lt;div class=&#34;encrypted-content-wrapper&#34; id=&#34;encrypted-%!s(int64=1757094661)-content&#34; style=&#34;display: none;&#34;&gt;
             &lt;p&gt;一季度大概亏了1w左右。因为一个黑天鹅事件，美国向中国加了125%关税。  虽然后面又涨回来了，但是我在市场最恐慌的时候卖出了至少2/3的股票仓位，导致后面的反弹与我无缘。经过这次亏损我有一下几点反思。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;这说明我对这种短期的方向判断力是不够的，不太适合做短线。&lt;/li&gt;
@@ -1623,28 +1623,28 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     
     <item>
       <title>25年一季度汇报总结反思</title>
-      <link>http://localhost:54600/post/%E6%80%9D%E8%80%83/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link>
+      <link>http://localhost:1313/post/%E6%80%9D%E8%80%83/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link>
       <pubDate>Fri, 28 Mar 2025 22:59:32 +0800</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%80%9D%E8%80%83/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid>
+      <guid>http://localhost:1313/post/%E6%80%9D%E8%80%83/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid>
       <description>&lt;h3 id=&#34;关于汇报过程的反思&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%85%b3%e4%ba%8e%e6%b1%87%e6%8a%a5%e8%bf%87%e7%a8%8b%e7%9a%84%e5%8f%8d%e6%80%9d&#34;&gt;&lt;/a&gt;
 关于汇报过程的反思
 &lt;/h3&gt;
-    &lt;div class=&#34;encrypted-content&#34; id=&#34;encrypted-%!s(int64=1757094073)&#34; data-password=&#34;tianqinghong&#34;&gt;
+    &lt;div class=&#34;encrypted-content&#34; id=&#34;encrypted-%!s(int64=1757094661)&#34; data-password=&#34;tianqinghong&#34;&gt;
         &lt;div class=&#34;encrypted-lock&#34;&gt;
             &lt;div class=&#34;lock-icon&#34;&gt;🔒&lt;/div&gt;
             &lt;h3&gt;此内容已加密&lt;/h3&gt;
             &lt;p&gt;请输入密码查看受保护的内容&lt;/p&gt;
             &lt;div class=&#34;password-input-group&#34;&gt;
                 &lt;input type=&#34;password&#34; class=&#34;password-input&#34; placeholder=&#34;请输入密码...&#34; /&gt;
-                &lt;button class=&#34;decrypt-btn&#34; onclick=&#34;decryptContent(&#39;encrypted-%!s(int64=1757094073)&#39;)&#34;&gt;解锁&lt;/button&gt;
+                &lt;button class=&#34;decrypt-btn&#34; onclick=&#34;decryptContent(&#39;encrypted-%!s(int64=1757094661)&#39;)&#34;&gt;解锁&lt;/button&gt;
             &lt;/div&gt;
-            &lt;div class=&#34;error-message&#34; id=&#34;encrypted-%!s(int64=1757094073)-error&#34; style=&#34;display: none;&#34;&gt;
+            &lt;div class=&#34;error-message&#34; id=&#34;encrypted-%!s(int64=1757094661)-error&#34; style=&#34;display: none;&#34;&gt;
                 密码错误，请重试
             &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&#34;encrypted-content-wrapper&#34; id=&#34;encrypted-%!s(int64=1757094073)-content&#34; style=&#34;display: none;&#34;&gt;
+        &lt;div class=&#34;encrypted-content-wrapper&#34; id=&#34;encrypted-%!s(int64=1757094661)-content&#34; style=&#34;display: none;&#34;&gt;
             &lt;ol&gt;
 &lt;li&gt;汇报过程难免还是有些紧张，感觉到不是内心害怕什么，就是单纯的紧张，可能是缺乏长时间汇报的经验，或者当初不擅长表达和总结。不过与以前对比效果稍好，这次准备的反而不多，可能是最后汇报的原因。并没有太多火力集中在我身上。&lt;/li&gt;
 &lt;li&gt;汇报往往会有许多问题和意见，对于别人的意见的看法，有些是好的意见，但是也不乏一些意见仅仅是提问人为了找存在感而提出来的。而且有些人相当强势，咄咄逼人，不给你反驳的机会。这种人往往都是狭隘和傲娇的，往往沉浸在自己的世界。对于这种意见，一笑了知即可。但是当触及到我们的棱角时，需要适当的发作。否则这些人会得寸进尺。&lt;/li&gt;
@@ -1820,60 +1820,60 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     
     <item>
       <title>金字塔原理解析</title>
-      <link>http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link>
+      <link>http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Tue, 25 Mar 2025 21:43:32 +0800</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid>
+      <guid>http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid>
       <description>&lt;h4 id=&#34;金字塔原理读书笔记全&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%87%91%e5%ad%97%e5%a1%94%e5%8e%9f%e7%90%86%e8%af%bb%e4%b9%a6%e7%ac%94%e8%ae%b0%e5%85%a8&#34;&gt;&lt;/a&gt;
 《&lt;a href=&#34;https://so.csdn.net/so/search?q=%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86&amp;amp;spm=1001.2101.3001.7020&#34;&gt;金字塔原理&lt;/a&gt;》读书笔记（全）
 &lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80-%e8%a1%a8%e8%be%be%e7%9a%84%e9%80%bb%e8%be%91&#34;&gt;一、 表达的逻辑&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80-%e8%a1%a8%e8%be%be%e7%9a%84%e9%80%bb%e8%be%91&#34;&gt;一、 表达的逻辑&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#1-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e7%94%a8%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;1. 为什么要用金字塔？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#2-%e9%87%91%e5%ad%97%e5%a1%94%e5%86%85%e9%83%a8%e7%bb%93%e6%9e%84&#34;&gt;2. 金字塔内部结构&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#3-%e5%a6%82%e4%bd%95%e6%9e%84%e5%bb%ba%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;3. 如何构建金字塔？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#4-%e5%ba%8f%e8%a8%80%e7%9a%84%e5%85%b7%e4%bd%93%e5%86%99%e6%b3%95&#34;&gt;4. 序言的具体写法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#5-%e6%bc%94%e7%bb%8e%e6%8e%a8%e7%90%86%e4%b8%8e%e5%bd%92%e7%ba%b3%e6%8e%a8%e7%90%86&#34;&gt;5. 演绎推理与归纳推理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#1-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e7%94%a8%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;1. 为什么要用金字塔？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#2-%e9%87%91%e5%ad%97%e5%a1%94%e5%86%85%e9%83%a8%e7%bb%93%e6%9e%84&#34;&gt;2. 金字塔内部结构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#3-%e5%a6%82%e4%bd%95%e6%9e%84%e5%bb%ba%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;3. 如何构建金字塔？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#4-%e5%ba%8f%e8%a8%80%e7%9a%84%e5%85%b7%e4%bd%93%e5%86%99%e6%b3%95&#34;&gt;4. 序言的具体写法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#5-%e6%bc%94%e7%bb%8e%e6%8e%a8%e7%90%86%e4%b8%8e%e5%bd%92%e7%ba%b3%e6%8e%a8%e7%90%86&#34;&gt;5. 演绎推理与归纳推理&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c-%e6%80%9d%e8%80%83%e7%9a%84%e9%80%bb%e8%be%91&#34;&gt;二、 思考的逻辑&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c-%e6%80%9d%e8%80%83%e7%9a%84%e9%80%bb%e8%be%91&#34;&gt;二、 思考的逻辑&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#6%e5%ba%94%e7%94%a8%e9%80%bb%e8%be%91%e9%a1%ba%e5%ba%8f&#34;&gt;6.应用逻辑顺序&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#6%e5%ba%94%e7%94%a8%e9%80%bb%e8%be%91%e9%a1%ba%e5%ba%8f&#34;&gt;6.应用逻辑顺序&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e6%97%b6%e9%97%b4%e9%a1%ba%e5%ba%8f&#34;&gt;（一）时间顺序&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e7%bb%93%e6%9e%84%e9%a1%ba%e5%ba%8f&#34;&gt;（二）结构顺序&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%89%e7%a8%8b%e5%ba%a6%e9%a1%ba%e5%ba%8f&#34;&gt;（三）程度顺序&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e6%97%b6%e9%97%b4%e9%a1%ba%e5%ba%8f&#34;&gt;（一）时间顺序&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e7%bb%93%e6%9e%84%e9%a1%ba%e5%ba%8f&#34;&gt;（二）结构顺序&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%89%e7%a8%8b%e5%ba%a6%e9%a1%ba%e5%ba%8f&#34;&gt;（三）程度顺序&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#7%e6%a6%82%e6%8b%ac%e8%bf%99%e7%a7%8d%e6%80%9d%e6%83%b3&#34;&gt;7.概括这种思想&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#7%e6%a6%82%e6%8b%ac%e8%bf%99%e7%a7%8d%e6%80%9d%e6%83%b3&#34;&gt;7.概括这种思想&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e8%a1%8c%e5%8a%a8%e6%80%a7%e6%80%9d%e6%83%b3%e7%9a%84%e6%a6%82%e6%8b%ac%e8%af%b4%e6%98%8e%e9%87%87%e5%8f%96%e8%a1%8c%e5%8a%a8%e7%9a%84%e7%bb%93%e6%9e%9c%e7%9b%ae%e6%a0%87&#34;&gt;（一）行动性思想的概括——说明采取行动的结果/目标&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e6%8f%8f%e8%bf%b0%e6%80%a7%e6%80%9d%e6%83%b3%e7%9a%84%e6%a6%82%e6%8b%ac%e6%89%be%e5%87%ba%e5%90%84%e7%bb%93%e8%ae%ba%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b1%e6%80%a7&#34;&gt;（二）描述性思想的概括——找出各结论之间的共性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e8%a1%8c%e5%8a%a8%e6%80%a7%e6%80%9d%e6%83%b3%e7%9a%84%e6%a6%82%e6%8b%ac%e8%af%b4%e6%98%8e%e9%87%87%e5%8f%96%e8%a1%8c%e5%8a%a8%e7%9a%84%e7%bb%93%e6%9e%9c%e7%9b%ae%e6%a0%87&#34;&gt;（一）行动性思想的概括——说明采取行动的结果/目标&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e6%8f%8f%e8%bf%b0%e6%80%a7%e6%80%9d%e6%83%b3%e7%9a%84%e6%a6%82%e6%8b%ac%e6%89%be%e5%87%ba%e5%90%84%e7%bb%93%e8%ae%ba%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b1%e6%80%a7&#34;&gt;（二）描述性思想的概括——找出各结论之间的共性&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%89-%e8%a7%a3%e5%86%b3%e9%97%ae%e9%a2%98%e7%9a%84%e9%80%bb%e8%be%91&#34;&gt;三、 解决问题的逻辑&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%89-%e8%a7%a3%e5%86%b3%e9%97%ae%e9%a2%98%e7%9a%84%e9%80%bb%e8%be%91&#34;&gt;三、 解决问题的逻辑&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#8%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98&#34;&gt;8.界定问题&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#8%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98&#34;&gt;8.界定问题&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98%e7%9a%84%e8%bf%9e%e7%bb%ad%e5%88%86%e6%9e%90%e6%b3%95&#34;&gt;（一）界定问题的连续分析法：&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98%e7%9a%84%e6%a1%86%e6%9e%b6&#34;&gt;（二）界定问题的框架&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%b8%80%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98%e7%9a%84%e8%bf%9e%e7%bb%ad%e5%88%86%e6%9e%90%e6%b3%95&#34;&gt;（一）界定问题的连续分析法：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e4%ba%8c%e7%95%8c%e5%ae%9a%e9%97%ae%e9%a2%98%e7%9a%84%e6%a1%86%e6%9e%b6&#34;&gt;（二）界定问题的框架&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#9%e7%bb%93%e6%9e%84%e5%8c%96%e5%88%86%e6%9e%90%e9%97%ae%e9%a2%98&#34;&gt;9.结构化分析问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#9%e7%bb%93%e6%9e%84%e5%8c%96%e5%88%86%e6%9e%90%e9%97%ae%e9%a2%98&#34;&gt;9.结构化分析问题&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e5%9b%9b-%e6%bc%94%e7%a4%ba%e7%9a%84%e9%80%bb%e8%be%91&#34;&gt;四、 演示的逻辑&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e5%9b%9b-%e6%bc%94%e7%a4%ba%e7%9a%84%e9%80%bb%e8%be%91&#34;&gt;四、 演示的逻辑&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#10%e5%9c%a8%e4%b9%a6%e9%9d%a2%e4%b8%8a%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;10.在书面上呈现金字塔&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#11%e5%9c%a8ppt%e4%b8%ad%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;11.在PPT中呈现金字塔&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#12%e5%9c%a8%e5%ad%97%e9%87%8c%e8%a1%8c%e9%97%b4%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;12.在字里行间呈现金字塔&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#10%e5%9c%a8%e4%b9%a6%e9%9d%a2%e4%b8%8a%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;10.在书面上呈现金字塔&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#11%e5%9c%a8ppt%e4%b8%ad%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;11.在PPT中呈现金字塔&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#12%e5%9c%a8%e5%ad%97%e9%87%8c%e8%a1%8c%e9%97%b4%e5%91%88%e7%8e%b0%e9%87%91%e5%ad%97%e5%a1%94&#34;&gt;12.在字里行间呈现金字塔&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e8%af%bb%e5%90%8e%e5%bf%83%e5%be%97&#34;&gt;读后心得&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:54600/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e9%83%a8%e5%88%86%e5%8f%82%e8%80%83%e7%ac%94%e8%ae%b0&#34;&gt;部分参考笔记：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e8%af%bb%e5%90%8e%e5%bf%83%e5%be%97&#34;&gt;读后心得&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/post/%E6%80%9D%E8%80%83/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/#%e9%83%a8%e5%88%86%e5%8f%82%e8%80%83%e7%ac%94%e8%ae%b0&#34;&gt;部分参考笔记：&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	《金字塔原理》资源EPUB：链接：https://pan.baidu.com/s/1-2uv0ktITGT51ft603KfCQ 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	提取码：aioh 
@@ -1916,10 +1916,10 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     
     <item>
       <title>Gemma 3本地部署教程</title>
-      <link>http://localhost:54600/post/%E6%95%99%E7%A8%8B/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link>
+      <link>http://localhost:1313/post/%E6%95%99%E7%A8%8B/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%95%99%E7%A8%8B/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid>
+      <guid>http://localhost:1313/post/%E6%95%99%E7%A8%8B/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid>
       <description>&lt;p&gt;Gemma 3 被谷歌称为目前最强的开源视觉模型之一。 该模型支持超过35种语言，能够分析文本、图像和短视频。值得注意的是，Gemma 3 的视觉编码器经过升级，支持高分辨率和非方形图像，并引入了 ShieldGemma 2 图像安全分类器，用于过滤被分类为性暗示、危险或暴力的内容。这些特性使得 Gemma 3 成为当前最强大的开源视觉模型之一。&lt;/p&gt;
 &lt;h4 id=&#34;最新的-gemma-3-多模态开源模型新功能&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%9c%80%e6%96%b0%e7%9a%84-gemma-3-%e5%a4%9a%e6%a8%a1%e6%80%81%e5%bc%80%e6%ba%90%e6%a8%a1%e5%9e%8b%e6%96%b0%e5%8a%9f%e8%83%bd&#34;&gt;&lt;/a&gt;
@@ -1940,10 +1940,10 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     
     <item>
       <title>Go语言--安装和环境搭配</title>
-      <link>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link>
+      <link>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid>
+      <guid>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid>
       <description>&lt;h3 id=&#34;一go简介&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%b8%80go%e7%ae%80%e4%bb%8b&#34;&gt;&lt;/a&gt;
 一.Go简介
@@ -1996,10 +1996,10 @@ Linux
     
     <item>
       <title>Hugo静态网站生成器入门指南</title>
-      <link>http://localhost:54600/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</link>
+      <link>http://localhost:1313/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</guid>
+      <guid>http://localhost:1313/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</guid>
       <description>&lt;h2 id=&#34;什么是hugo&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bb%80%e4%b9%88%e6%98%afhugo&#34;&gt;&lt;/a&gt;
 什么是Hugo？
@@ -2095,10 +2095,10 @@ Hugo的主要特点
     
     <item>
       <title>linux安装python</title>
-      <link>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link>
+      <link>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid>
+      <guid>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;linux安装python&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;,  &amp;ldquo;linux&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
@@ -2126,10 +2126,10 @@ tags: [&amp;ldquo;linux&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;教
     
     <item>
       <title>linux常用命令</title>
-      <link>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;linux常用命令&amp;rdquo;
 categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;linux&amp;rdquo;]
@@ -2232,10 +2232,10 @@ tags: [&amp;ldquo;linux常用命令&amp;rdquo;]
     
     <item>
       <title>mac电脑使用速记</title>
-      <link>http://localhost:54600/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
+      <link>http://localhost:1313/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</guid>
+      <guid>http://localhost:1313/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</guid>
       <description>&lt;p&gt;在Mac终端中，有几种方法可以连续删除命令：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;使用 Ctrl + W ：删除光标前的一个单词&lt;/li&gt;
@@ -2248,10 +2248,10 @@ tags: [&amp;ldquo;linux常用命令&amp;rdquo;]
     
     <item>
       <title>md格式笔记使用指南</title>
-      <link>http://localhost:54600/post/%E6%95%99%E7%A8%8B/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <link>http://localhost:1313/post/%E6%95%99%E7%A8%8B/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E6%95%99%E7%A8%8B/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <guid>http://localhost:1313/post/%E6%95%99%E7%A8%8B/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
       <description>&lt;h2 id=&#34;一核心语法精要&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%b8%80%e6%a0%b8%e5%bf%83%e8%af%ad%e6%b3%95%e7%b2%be%e8%a6%81&#34;&gt;&lt;/a&gt;
 一、核心语法精要
@@ -2306,10 +2306,10 @@ B --&gt;|条件2| D[操作2]
     
     <item>
       <title>MySQL -- 复合查询</title>
-      <link>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link>
+      <link>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid>
+      <guid>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%BA%93&amp;amp;spm=1001.2101.3001.7020&#34;&gt;数据库&lt;/a&gt;的查询是数据库使用中比较重要的环节，前面的基础查询比较简单，不做介绍，可自行查阅。本文主要介绍复合查询，并结合用例进行讲解。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
@@ -2389,10 +2389,10 @@ B --&gt;|条件2| D[操作2]
     
     <item>
       <title>python非同级目录调用报错</title>
-      <link>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link>
+      <link>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link>
       <pubDate>Wed, 05 Mar 2025 14:48:25 +0000</pubDate>
       
-      <guid>http://localhost:54600/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid>
+      <guid>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid>
       <description>&lt;h2 id=&#34;项目结构&#34;&gt;
 &lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%a1%b9%e7%9b%ae%e7%bb%93%e6%9e%84&#34;&gt;&lt;/a&gt;
 项目结构：
