@@ -1,5 +1,5 @@
 ---
-title: '量化交易策略知识库'
+title: 'strategy'
 categories: ["技术"]
 date: 2025-09-05T14:48:25+00:00
 lastmod: 2025-09-05T14:48:25+00:00

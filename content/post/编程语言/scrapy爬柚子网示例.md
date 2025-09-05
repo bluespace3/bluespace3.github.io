@@ -1,10 +1,9 @@
 ---
-title: '柚子网https://www.uu-zz.com/'
+title: 'scrapy爬柚子网示例'
 categories: ["技术"]
-date: 2025-09-05T14:48:25+00:00
+date: 2025-09-03T14:48:25+00:00
 lastmod: 2025-09-05T14:48:25+00:00
 ---
-
 柚子网https://www.uu-zz.com/
 
 爬取页码

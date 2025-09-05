@@ -1,0 +1,190 @@
+{{- /* 加密内容 Shortcode - 仅在单个文章页面渲染 */ -}}
+{{- if eq .Page.Kind "page" -}}
+    {{- $password := .Get "password" | default "" -}}
+    {{- $content := .Inner -}}
+    {{- $uniqueId := printf "encrypted-%s" (now.Unix) -}}
+
+    <!-- 在完整文章页面显示完整的加密组件 -->
+    <div class="encrypted-content" id="{{ $uniqueId }}" data-password="{{ $password }}">
+        <div class="encrypted-lock">
+            <div class="lock-icon">🔒</div>
+            <h3>此内容已加密</h3>
+            <p>请输入密码查看受保护的内容</p>
+            <div class="password-input-group">
+                <input type="password" class="password-input" placeholder="请输入密码..." />
+                <button class="decrypt-btn" onclick="decryptContent('{{ $uniqueId }}')">解锁</button>
+            </div>
+            <div class="error-message" id="{{ $uniqueId }}-error" style="display: none;">
+                密码错误，请重试
+            </div>
+        </div>
+        <div class="encrypted-content-wrapper" id="{{ $uniqueId }}-content" style="display: none;">
+            {{ $content | markdownify }}
+        </div>
+    </div>
+{{- end -}}
+
+<style>
+.encrypted-summary-indicator {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.encrypted-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  font-size: 12px;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+.encrypted-badge:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.encrypted-content {
+    margin: 20px 0;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.encrypted-lock {
+    padding: 30px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.lock-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.encrypted-lock h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.encrypted-lock p {
+    margin: 0 0 20px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.password-input-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.password-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.decrypt-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.decrypt-btn:hover {
+    background-color: #0056b3;
+}
+
+.decrypt-btn:active {
+    transform: scale(0.98);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
+.encrypted-content-wrapper {
+    padding: 20px;
+    background-color: white;
+}
+</style>
+
+<script>
+function decryptContent(elementId) {
+    const encryptedDiv = document.getElementById(elementId);
+    const passwordInput = encryptedDiv.querySelector('.password-input');
+    const errorMsg = document.getElementById(elementId + '-error');
+    const lockDiv = encryptedDiv.querySelector('.encrypted-lock');
+    const contentDiv = document.getElementById(elementId + '-content');
+    
+    const enteredPassword = passwordInput.value;
+    const correctPassword = encryptedDiv.getAttribute('data-password');
+    
+    // 简单的密码验证
+    if (enteredPassword === correctPassword) {
+        // 密码正确，显示内容
+        lockDiv.style.display = 'none';
+        contentDiv.style.display = 'block';
+        errorMsg.style.display = 'none';
+        
+        // 清空密码输入框
+        passwordInput.value = '';
+        
+        // 可选：触发页面重排以确保内容正确显示
+        window.dispatchEvent(new Event('resize'));
+    } else {
+        // 密码错误，显示错误信息
+        errorMsg.style.display = 'block';
+        passwordInput.value = '';
+        passwordInput.focus();
+        
+        // 3秒后隐藏错误信息
+        setTimeout(() => {
+            errorMsg.style.display = 'none';
+        }, 3000);
+    }
+}
+
+// 添加回车键支持
+document.addEventListener('DOMContentLoaded', function() {
+    const encryptedContents = document.querySelectorAll('.encrypted-content');
+    
+    encryptedContents.forEach(function(encryptedDiv) {
+        const passwordInput = encryptedDiv.querySelector('.password-input');
+        if (passwordInput) {
+            passwordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const elementId = encryptedDiv.id;
+                    decryptContent(elementId);
+                }
+            });
+        }
+    });
+});
+</script>

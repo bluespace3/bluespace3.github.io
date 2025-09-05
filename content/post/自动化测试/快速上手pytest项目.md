@@ -1,5 +1,5 @@
 ---
-title: 'tags: ["pytest", "python"]'
+title: '快速上手pytest项目'
 categories: ["技术"]
 date: 2025-09-05T14:48:25+00:00
 lastmod: 2025-09-05T14:48:25+00:00

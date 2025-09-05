@@ -1,5 +1,5 @@
 ---
-title: '什么是MCP？'
+title: 'mcp-intro'
 categories: ["技术"]
 date: 2025-09-05T14:48:25+00:00
 lastmod: 2025-09-05T14:48:25+00:00

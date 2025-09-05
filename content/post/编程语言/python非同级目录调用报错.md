@@ -1,10 +1,9 @@
 ---
-title: '项目结构：'
+title: 'python非同级目录调用报错'
 categories: ["技术"]
-date: 2025-09-05T14:48:25+00:00
+date: 2025-03-05T14:48:25+00:00
 lastmod: 2025-09-05T14:48:25+00:00
 ---
-
 ## 项目结构：
 
 ![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=N2E4ZjQ0N2I5MmEwYWExMjg1YmVmOTcyZTBhNTk1ZTlfdXlaSzZjU09wSE5mR1AyYTBuYVg1SElQcHJIUENSVWpfVG9rZW46S3AyMmI4bFN1b2VjeG54V251Q2NzMHBhbm5nXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA)

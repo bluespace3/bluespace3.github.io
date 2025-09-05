@@ -1,10 +1,9 @@
 ---
-title: 'docker pull ubuntu 载入ubuntu 镜像'
+title: 'docker使用笔记'
 categories: ["技术"]
-date: 2025-09-05T14:48:25+00:00
+date: 2025-09-03T14:48:25+00:00
 lastmod: 2025-09-05T14:48:25+00:00
 ---
-
 docker pull ubuntu 载入ubuntu 镜像
 
 docker pull training/webapp  # 载入镜像

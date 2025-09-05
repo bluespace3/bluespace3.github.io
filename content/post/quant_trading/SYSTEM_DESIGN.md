@@ -1,5 +1,5 @@
 ---
-title: '系统设计与开发者文档'
+title: 'SYSTEM_DESIGN'
 categories: ["技术"]
 date: 2025-09-05T14:48:25+00:00
 lastmod: 2025-09-05T14:48:25+00:00
