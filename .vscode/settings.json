@@ -1,4 +1,0 @@
-{
-    "pasteImage.path": "../../static/images", // 图片保存到当前 Markdown 文件所在目录的 images 子目录
-    "pasteImage.name": "${currentFileName}-${date}.png" // 图片命名规则：当前文件名 + 日期
-  }
