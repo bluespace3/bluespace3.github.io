@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Os on 蓝色空间号-新世界的探索者</title><link>https://bluespace3.github.io/</link><description>Recent content in Os on 蓝色空间号-新世界的探索者</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/os/index.xml" rel="self" type="application/rss+xml"/><item><title>python的os模块使用</title><link>https://bluespace3.github.io/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;ul>
-&lt;li>os.listdir(path)
-获取文件夹下全部文件，的列表&lt;/li>
-&lt;li>os.path.join(path1,path2)
-将路径path1和路径path2拼接成新的路径，path1//path2&lt;/li>
-&lt;li>base_dir = os.path.dirname(os.path.abspath(&lt;strong>file&lt;/strong>))
-获取当前文件的绝对路径&lt;/li>
-&lt;li>input_file = os.path.join(base_dir, &lt;strong>&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong>)&lt;/li>
-&lt;/ul></description></item></channel></rss>
