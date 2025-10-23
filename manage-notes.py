@@ -33,34 +33,98 @@ class NotesManager:
         """通用命令执行函数"""
         if cwd is None:
             cwd = self.hugo_project_dir
-            
+
         try:
             if description:
                 print(f"🔄 {description}...")
-            
+
             result = subprocess.run(
-                command, 
-                shell=True, 
-                cwd=cwd, 
-                capture_output=True, 
-                text=True, 
+                command,
+                shell=True,
+                cwd=cwd,
+                capture_output=True,
+                text=True,
                 encoding='utf-8',
                 check=check # 引发异常如果命令返回非零退出码
             )
-            
+
+            # 打印标准输出（包括警告信息）
             if result.stdout.strip():
                 print(result.stdout.strip())
-            
+
             return True
-            
+
         except subprocess.CalledProcessError as e:
+            # 对于Hugo命令，我们需要特殊处理警告和错误
+            if "hugo" in command.lower():
+                # 打印输出和错误信息
+                if e.stdout and e.stdout.strip():
+                    print(e.stdout.strip())
+                if e.stderr and e.stderr.strip():
+                    print(e.stderr.strip())
+
+                # 检查是否只有警告而没有真正的错误
+                # Hugo在只有警告时通常会返回0，但如果有一些特定的警告可能会返回非0
+                # 我们可以根据错误信息判断是否继续
+                error_output = (e.stderr or "") + (e.stdout or "")
+                if "error building site" not in error_output.lower() and "failed to" not in error_output.lower():
+                    print("⚠️  Hugo构建出现警告，但没有致命错误，继续执行...")
+                    return True
+
             print(f"❌ 命令执行失败：{command}")
-            print(f"错误信息：{e.stderr}")
+            if e.stderr and e.stderr.strip():
+                print(f"错误信息：{e.stderr}")
             return False
         except Exception as e:
             print(f"❌ 执行命令时出错：{e}")
             return False
-    
+
+    def run_hugo_command(self, command, cwd=None, description=""):
+        """专门用于执行 Hugo 命令的函数，能够更好地区分警告和错误"""
+        if cwd is None:
+            cwd = self.hugo_project_dir
+
+        try:
+            if description:
+                print(f"🔄 {description}...")
+
+            result = subprocess.run(
+                command,
+                shell=True,
+                cwd=cwd,
+                capture_output=True,
+                text=True,
+                encoding='utf-8',
+                check=False  # 不直接抛出异常，我们自己处理
+            )
+
+            # 打印标准输出（包括警告信息）
+            if result.stdout.strip():
+                print(result.stdout.strip())
+
+            # 检查是否有真正的错误（而不是警告）
+            if result.returncode != 0:
+                error_output = (result.stderr or "") + (result.stdout or "")
+                # 检查是否是真正的构建错误
+                if ("error building site" in error_output.lower() or
+                    "failed to" in error_output.lower() or
+                    "error:" in error_output.lower()):
+                    print(f"❌ Hugo命令执行失败：{command}")
+                    if result.stderr and result.stderr.strip():
+                        print(f"错误信息：{result.stderr}")
+                    return False
+                else:
+                    # 只是警告，不是错误
+                    print("⚠️  Hugo构建出现警告，但没有致命错误，继续执行...")
+                    return True
+            else:
+                # 命令成功执行
+                return True
+
+        except Exception as e:
+            print(f"❌ 执行Hugo命令时出错：{e}")
+            return False
+
     def sync_notes_from_remote(self, force=False):
         """从远程笔记仓库强制同步到主项目"""
         print("🔄 开始从远程笔记仓库同步...")
@@ -145,7 +209,7 @@ class NotesManager:
         print("🚀 开始构建和部署 Hugo 站点...")
 
         # 1. 构建 Hugo 站点
-        if not self.run_command("hugo --minify", description="正在构建 Hugo 站点"):
+        if not self.run_hugo_command("hugo --minify", description="正在构建 Hugo 站点"):
             return False
 
         # 2. 暂存所有文件
