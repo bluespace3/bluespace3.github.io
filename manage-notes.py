@@ -251,13 +251,22 @@ class NotesManager:
             # 修复测试平台分享.md中的JavaScript语法错误
             if "测试平台分享.md" in file_path:
                 # 修复错误的JavaScript语法：})`</script>` -> });\n</script>
-                old_pattern = r"\}\)`</script>`"
+                old_pattern = "})`</script>`"
                 new_pattern = "});\n</script>"
                 if old_pattern in content:
                     content = content.replace(old_pattern, new_pattern)
                     with open(file_path, 'w', encoding='utf-8') as f:
                         f.write(content)
                     print(f"✅ 修复了文件中的JavaScript语法错误: {file_path}")
+
+                # 修复另一个可能的JavaScript语法错误
+                old_pattern2 = "})`</script>"
+                new_pattern2 = "});\n</script>"
+                if old_pattern2 in content and old_pattern not in content:
+                    content = content.replace(old_pattern2, new_pattern2)
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    print(f"✅ 修复了文件中的JavaScript语法错误 (变体2): {file_path}")
 
             # 可以在这里添加更多已知问题的修复逻辑
 
