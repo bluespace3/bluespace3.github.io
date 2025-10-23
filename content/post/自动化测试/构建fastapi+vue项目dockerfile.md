@@ -1,9 +1,10 @@
 ---
 title: '构建fastapi+vue项目dockerfile'
 categories: ["技术"]
-date: 2025-10-23T13:22:59+00:00
-lastmod: 2025-10-23T13:22:59+00:00
+date: 2025-10-23T13:50:13+00:00
+lastmod: 2025-10-23T13:50:13+00:00
 ---
+
 
 
 ### 构建fastapi步骤
