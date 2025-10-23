@@ -329,6 +329,7 @@ def main():
     parser.add_argument('--title-only', action='store_true', help='仅统一标题为文件名，跳过其他格式化步骤。')
     parser.add_argument('--push-notes', action='store_true', help='格式化后，将笔记的更改推送回远程笔记仓库。')
     parser.add_argument('--deploy', action='store_true', help='构建并部署整个 Hugo 站点到主项目的远程仓库。')
+    parser.add_argument('--force', action='store_true', help='强制同步模式：在同步前自动提交本地更改，并强制覆盖 content/post 目录。')
     
     args = parser.parse_args()
     
