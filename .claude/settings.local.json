@@ -17,7 +17,8 @@
       "WebSearch",
       "Bash(hugo server:*)",
       "Bash(pkill:*)",
-      "Bash(python -m py_compile:*)"
+      "Bash(python -m py_compile:*)",
+      "Bash(hugo --minify)"
     ],
     "deny": [],
     "ask": []

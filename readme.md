@@ -10,8 +10,8 @@
 **用法**：
 
 ```bash
-# 执行完整的同步和格式化流程（推荐）
-# 流程：同步笔记 -> 添加/更新 Hugo 头 -> 统一标题为文件名
+# 执行完整的自动化流程（推荐）
+# 流程：同步笔记 -> 格式化笔记 -> 推送笔记 -> 部署网站
 python manage-notes.py
 
 # --- 功能组合示例 ---
@@ -32,12 +32,13 @@ python manage-notes.py --format-only --push-notes
 python manage-notes.py --push-notes --deploy
 
 # 只部署网站（适用于手动修改后）
-python manage-notes.py --sync-only --deploy
+python manage-notes.py --deploy
 ```
 
 **说明**：
 
 - 一体化管理工具，集成所有功能
+- 不带参数运行时，默认执行完整自动化流程：同步 -> 格式化 -> 推送笔记 -> 部署网站
 - 自动从笔记仓库同步到主项目（使用 git subtree）
 - 自动为 Markdown 文件添加或更新 Hugo Front Matter
 - **新增**：自动将所有文章的标题统一为文件名（去除.md后缀）
@@ -103,6 +104,6 @@ chmod +x your_script_name.sh
 ## 🎯 最佳实践
 
 1. **定期同步**：建议定期运行 `python manage-notes.py` 保持主项目更新。
-2. **完整工作流**：使用 `python manage-notes.py --push-notes --deploy` 来自动化从同步到部署的全过程。
+2. **完整工作流**：直接运行 `python manage-notes.py` 即可执行完整自动化流程（同步 -> 格式化 -> 推送笔记 -> 部署网站）。
 3. **分支管理**：对于重大更改，建议创建功能分支而非直接在 `master` 或 `main` 分支上操作。
 4. **模板覆盖**：为了修复主题的加密内容泄露问题，我们在 `layouts/partials/post.html` 创建了一个模板覆盖文件。请不要轻易删除它。

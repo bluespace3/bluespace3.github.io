@@ -332,14 +332,24 @@ def main():
     parser.add_argument('--force', action='store_true', help='强制同步模式：在同步前自动提交本地更改，并强制覆盖 content/post 目录。')
     
     args = parser.parse_args()
-    
+
     manager = NotesManager()
-    
-    run_sync = not args.format_only and not args.deploy and not args.title_only # deploy-only 和 title-only 模式下也跳过同步
-    run_format = not args.sync_only and not args.title_only
-    run_title_only = args.title_only
-    run_push_notes = args.push_notes
-    run_deploy = args.deploy
+
+    # 如果没有指定任何参数，则默认执行完整流程
+    if not any([args.sync_only, args.format_only, args.title_only, args.push_notes, args.deploy]):
+        # 默认执行完整流程
+        run_sync = True
+        run_format = True
+        run_title_only = False
+        run_push_notes = True
+        run_deploy = True
+    else:
+        # 按照指定的参数执行
+        run_sync = not args.format_only and not args.deploy and not args.title_only # deploy-only 和 title-only 模式下也跳过同步
+        run_format = not args.sync_only and not args.title_only
+        run_title_only = args.title_only
+        run_push_notes = args.push_notes
+        run_deploy = args.deploy
 
     try:
         if run_sync:
