@@ -1,10 +1,10 @@
 ---
-title: "Hugo静态网站生成器入门指南"
-categories: ["博客", "hugo"]
-date: 2025-03-20T12:59:32+08:00
-draft: false
-tags: ["Hugo", "静态网站", "教程"]
+title: 'Hugo静态网站生成器入门指南'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 ## 什么是Hugo？
 
 Hugo是一个用Go语言编写的快速、现代的静态网站生成器。它可以将Markdown文件转换为HTML页面，非常适合构建文档网站、博客等。

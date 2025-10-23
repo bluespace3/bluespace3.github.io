@@ -1,15 +1,10 @@
 ---
-title: "python常见踩坑记录"
-
-categories: ["技术", "编程", "python"]
-date: 2025-03-20T12:59:32+08:00
-
-
-draft: false
-
-lastmod: 2025-04-15T11:00:00-07:00
-tags: ["python", "踩坑", "教程"]
+title: 'python非同级目录调用报错'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 ## 项目结构：
 
 ![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=N2E4ZjQ0N2I5MmEwYWExMjg1YmVmOTcyZTBhNTk1ZTlfdXlaSzZjU09wSE5mR1AyYTBuYVg1SElQcHJIUENSVWpfVG9rZW46S3AyMmI4bFN1b2VjeG54V251Q2NzMHBhbm5nXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA)

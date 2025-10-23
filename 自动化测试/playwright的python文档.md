@@ -1,12 +1,10 @@
 ---
-title: "playwright的python文档"
-categories: ["技术", "测试", "git"]
-date: 2025-03-20T12:59:32+08:00
-
-draft: false
-
-tags: ["playwright", "文档"]
+title: 'playwright的python文档'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 
 # 安装
 

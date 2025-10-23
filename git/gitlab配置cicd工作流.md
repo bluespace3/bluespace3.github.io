@@ -1,10 +1,10 @@
 ---
-title: "gitlab配置cicd工作流"
-categories: ["git"]
-date: 2025-03-25T12:00:00+08:00
-draft: false
-tags: ["git", "CI/CD", "gitlab"]
+title: 'gitlab配置cicd工作流'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 
 ## GitLab CI/CD 简介
 

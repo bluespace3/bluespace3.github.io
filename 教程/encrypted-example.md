@@ -1,12 +1,10 @@
 ---
-title: "加密文章示例"
-categories: ["博客", "hugo"]
-date: 2025-03-25T12:00:00+08:00
-draft: false
-tags: ["Hugo", "加密", "教程"]
-encrypted: true
-password: "123456"
+title: 'encrypted-example'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 
 ## 这是一篇加密的文章
 

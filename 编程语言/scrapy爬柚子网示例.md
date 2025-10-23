@@ -1,15 +1,10 @@
 ---
-title: "scrapy爬柚子网示例"
-categories: ["技术", "python"]
-
-date: 2025-03-20T12:59:32+08:00
-
-
-draft: false
-
-
-tags: ["scrapy", "静态网站", "教程"]
+title: 'scrapy爬柚子网示例'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 柚子网https://www.uu-zz.com/
 
 爬取页码

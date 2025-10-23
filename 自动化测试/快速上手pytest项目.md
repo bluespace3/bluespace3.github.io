@@ -1,18 +1,10 @@
 ---
-title: "快速上手pytest项目"
-
-categories: ["技术", "pytest"]
-
-author: "tian"
-
-date: 2025-04-18T12:59:32+08:00
-
-draft: false
-
-encrypted: true
-
-password: "tian123456"
+title: '快速上手pytest项目'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 tags: ["pytest", "python"]
 --------------------------
 

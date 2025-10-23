@@ -1,16 +1,10 @@
 ---
-title: "fastapi+vue测试平台项目部署案例"
-
-categories: ["测试平台","技术"]
-
-author: "tian"
-
-date: 2025-04-15T12:59:32+08:00
-
-draft: false
-
-tags: ["测试平台", "fastapi", "vue","部署"]
+title: '构建fastapi+vue项目dockerfile'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 
 ### 构建fastapi步骤
 

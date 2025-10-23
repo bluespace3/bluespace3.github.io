@@ -1,15 +1,10 @@
 ---
-title: "git子项目"
-
-
-date: 2025-03-20T12:59:32+08:00
-
-
-draft: false
-
-
-tags: ["Git", "git子项目", "教程"]
+title: 'git添加子项目'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 * 项目中添加子项目
   * 1、git clone 父项目url
   * 2、cd 父项目对应目录下：git submodule add <子项目地址>

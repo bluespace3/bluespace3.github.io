@@ -1,3 +1,10 @@
+---
+title: 'Git submodule'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
+---
+
 
 ---
 title: "Git submodule"
