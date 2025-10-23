@@ -1,16 +1,10 @@
 ---
-title: "将github变为免费图床"
-
-categories: ["其他"]
-
-author: "tian"
-
-date: 2025-03-21T23:00:32+08:00
-
-draft: false
-
-tags: ["静态网站", "教程","github"]
+title: '使用GiHub作为图床'
+categories: ["技术"]
+date: 2025-10-23T13:22:59+00:00
+lastmod: 2025-10-23T13:22:59+00:00
 ---
+
 
 
 ## 使用 GitHub 作为免费图床的文档
