@@ -242,6 +242,28 @@ class NotesManager:
         return self.run_command("git push -u origin main --force", description="正在将站点推送到主仓库")
 
     
+    def fix_known_issues(self, file_path):
+        """修复已知的文件问题"""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # 修复测试平台分享.md中的JavaScript语法错误
+            if "测试平台分享.md" in file_path:
+                # 修复错误的JavaScript语法：})`</script>` -> });\n</script>
+                old_pattern = r"\}\)`</script>`"
+                new_pattern = "});\n</script>"
+                if old_pattern in content:
+                    content = content.replace(old_pattern, new_pattern)
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    print(f"✅ 修复了文件中的JavaScript语法错误: {file_path}")
+
+            # 可以在这里添加更多已知问题的修复逻辑
+
+        except Exception as e:
+            print(f"⚠️  修复文件时出错 {file_path}: {e}")
+
     def extract_title_from_content(self, content_lines, file_path):
         """从内容中提取标题，如果失败则使用文件名"""
         for line in content_lines:
@@ -250,7 +272,7 @@ class NotesManager:
                 title = re.sub(r'^#+\s*', '', line).strip()
                 if title:
                     return title
-        
+
         # 如果无法从内容中找到标题，则使用文件名
         filename = os.path.basename(file_path)
         return os.path.splitext(filename)[0]
@@ -259,7 +281,10 @@ class NotesManager:
         """为单个 Markdown 文件添加或更新 Hugo Front Matter"""
         if not (os.path.exists(file_path) and file_path.endswith('.md')):
             return False
-        
+
+        # 修复已知的JavaScript语法错误
+        self.fix_known_issues(file_path)
+
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
