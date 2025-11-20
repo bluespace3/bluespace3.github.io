@@ -19,7 +19,7 @@ import argparse
 class NotesManager:
     def __init__(self):
         self.hugo_project_dir = os.getcwd()
-        self.notes_repo_url = "https://github.com/bluespace3/knowledge_bases.git"
+        self.notes_repo_url = "https://github.com/bluespace3/note-gen-sync.git"
         self.content_post_dir = os.path.join(self.hugo_project_dir, "content/post")
         
     def check_hugo_project(self):
