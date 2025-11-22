@@ -18,7 +18,10 @@
       "Bash(hugo server:*)",
       "Bash(pkill:*)",
       "Bash(python -m py_compile:*)",
-      "Bash(hugo --minify)"
+      "Bash(hugo --minify)",
+      "Bash(dir:*)",
+      "Bash(git subtree:*)",
+      "Read(//c//**)"
     ],
     "deny": [],
     "ask": []
