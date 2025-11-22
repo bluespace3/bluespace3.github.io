@@ -1,3 +1,10 @@
+---
+title: 'doc转md'
+categories: ["技术"]
+date: 2025-11-22T16:21:11+00:00
+lastmod: 2025-11-22T16:21:11+00:00
+---
+
 1. Pandoc 简介
 
 Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。
