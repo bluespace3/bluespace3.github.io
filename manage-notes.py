@@ -21,6 +21,7 @@ class NotesManager:
         self.hugo_project_dir = os.getcwd()
         self.notes_repo_url = "https://github.com/bluespace3/knowledge_bases.git"
         self.content_post_dir = os.path.join(self.hugo_project_dir, "content/post")
+        self.knowledge_base_dir = r"C:\Users\tian4\knowledge_bases"
         
     def check_hugo_project(self):
         """检查是否在 Hugo 项目根目录"""
@@ -28,6 +29,71 @@ class NotesManager:
             print("❌ 错误：请在 Hugo 项目根目录运行此脚本")
             return False
         return True
+
+    def commit_and_push_local_knowledge_base(self):
+        """在脚本执行前，先提交并推送本地知识库"""
+        knowledge_base_dir = r"C:\Users\tian4\knowledge_bases"
+        knowledge_base_url = "https://github.com/bluespace3/knowledge_bases.git"
+
+        if not os.path.exists(knowledge_base_dir):
+            print(f"⚠️  本地知识库目录不存在：{knowledge_base_dir}")
+            return True  # 不是致命错误，继续执行
+
+        try:
+            # 切换到知识库目录并检查是否是git仓库
+            result = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"],
+                                  cwd=knowledge_base_dir, capture_output=True, text=True, encoding='utf-8')
+            if result.returncode != 0:
+                print(f"⚠️  {knowledge_base_dir} 不是有效的git仓库")
+                return True  # 不是致命错误，继续执行
+
+            print("🔄 开始提交并推送本地知识库...")
+            print(f"📍 知识库目录：{knowledge_base_dir}")
+
+            # 检查是否有未提交的更改
+            result = subprocess.run(["git", "status", "--porcelain"],
+                                  cwd=knowledge_base_dir, capture_output=True, text=True, encoding='utf-8')
+            if result.stdout.strip():
+                print("🔄 检测到未提交的更改，自动提交...")
+                # 添加所有更改
+                if not self.run_command("git add .", cwd=knowledge_base_dir, description="暂存知识库更改"):
+                    return False
+
+                # 提交更改
+                commit_msg = "更新笔记内容 - 自动提交\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>"
+                if not self.run_command(f'git commit -m "{commit_msg}"', cwd=knowledge_base_dir, description="提交知识库更改"):
+                    return False
+
+            # 获取默认分支
+            try:
+                result = subprocess.run(["git", "remote", "show", "origin"],
+                                      cwd=knowledge_base_dir, capture_output=True, text=True, encoding='utf-8')
+                if result.returncode == 0:
+                    for line in result.stdout.split('\n'):
+                        if 'HEAD branch' in line:
+                            default_branch = line.split()[-1]
+                            break
+                    else:
+                        default_branch = "master"  # 默认使用master分支
+                else:
+                    default_branch = "master"
+            except Exception:
+                default_branch = "master"
+
+            # 确保远程仓库已配置
+            self.run_command(f"git remote add origin {knowledge_base_url}", cwd=knowledge_base_dir, description="配置知识库远程仓库", check=False)
+            self.run_command(f"git remote set-url origin {knowledge_base_url}", cwd=knowledge_base_dir, description="更新知识库远程仓库URL")
+
+            # 推送到GitHub
+            if not self.run_command(f"git push -u origin {default_branch}", cwd=knowledge_base_dir, description="推送知识库到GitHub"):
+                return False
+
+            print("✅ 本地知识库提交并推送完成！")
+            return True
+
+        except Exception as e:
+            print(f"❌ 处理本地知识库时出错：{e}")
+            return False
     
     def run_command(self, command, cwd=None, description="", check=True):
         """通用命令执行函数"""
@@ -273,6 +339,32 @@ class NotesManager:
         except Exception as e:
             print(f"⚠️  修复文件时出错 {file_path}: {e}")
 
+    def find_category_from_knowledge_base(self, title):
+        """根据标题在知识库中查找对应的分类（文件夹名）"""
+        if not os.path.exists(self.knowledge_base_dir):
+            print(f"⚠️  知识库目录不存在：{self.knowledge_base_dir}")
+            return "技术"  # 默认分类
+
+        # 构建要查找的文件名
+        target_filename = title + ".md"
+
+        # 递归遍历知识库目录
+        for root, dirs, files in os.walk(self.knowledge_base_dir):
+            if target_filename in files:
+                # 找到文件，返回其父目录名（相对于知识库根目录）
+                relative_path = os.path.relpath(root, self.knowledge_base_dir)
+                if relative_path == ".":
+                    # 文件在根目录
+                    return "技术"
+                else:
+                    # 返回第一级目录名作为分类
+                    first_dir = relative_path.split(os.sep)[0]
+                    return first_dir
+
+        # 如果没有找到匹配的文件，返回默认分类
+        print(f"⚠️  未在知识库中找到标题为 '{title}' 的文件，使用默认分类")
+        return "技术"
+
     def extract_title_from_content(self, content_lines, file_path):
         """从内容中提取标题，如果失败则使用文件名"""
         for line in content_lines:
@@ -297,43 +389,53 @@ class NotesManager:
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
-            
+
             lines = content.split('\n')
-            has_frontmatter = lines and lines[0].strip() == '---'
-            
-            if has_frontmatter and not force:
-                print(f"✅ 文件已有 Hugo 头，跳过：{file_path}")
-                return True
-            
-            content_lines = lines
-            if has_frontmatter:
-                second_dash_pos = -1
+
+            # 检查是否有完整的 Front Matter
+            has_complete_frontmatter = False
+            frontmatter_end_pos = -1
+
+            if lines and lines[0].strip() == '---':
+                # 找到 Front Matter 的结束位置
                 for i, line in enumerate(lines[1:], 1):
                     if line.strip() == '---':
-                        second_dash_pos = i
+                        frontmatter_end_pos = i
+                        has_complete_frontmatter = True
                         break
-                if second_dash_pos > 0:
-                    content_lines = lines[second_dash_pos + 1:]
-            
+
+            # 如果已经有完整的 Front Matter 且不是强制模式，跳过
+            if has_complete_frontmatter and not force:
+                print(f"✅ 文件已有完整的 Hugo Front Matter，跳过：{file_path}")
+                return True
+
+            # 提取内容部分（移除现有的 Front Matter 如果存在）
+            content_lines = lines
+            if has_complete_frontmatter:
+                content_lines = lines[frontmatter_end_pos + 1:]
+
             title = self.extract_title_from_content(content_lines, file_path)
+            category = self.find_category_from_knowledge_base(title)
             current_time = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S%:z')
-            
+
             frontmatter = f"""---
 title: '{title}'
-categories: ["技术"]
+categories: ["{category}"]
 date: {current_time}
 lastmod: {current_time}
+encrypted: false
+password: "123456"
 ---
 
 """
-            
+
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(frontmatter + '\n'.join(content_lines))
-            
-            action_msg = "强制更新" if has_frontmatter else "成功添加"
-            print(f"✅ {action_msg} Hugo 头：{file_path}")
+
+            action_msg = "强制更新" if has_complete_frontmatter else "成功添加"
+            print(f"✅ {action_msg} Hugo Front Matter：{file_path}")
             return True
-            
+
         except Exception as e:
             print(f"❌ 处理文件 {file_path} 时出错：{e}")
             return False
@@ -450,6 +552,11 @@ def main():
         run_deploy = args.deploy
 
     try:
+        # 在执行任何操作之前，先提交并推送本地知识库
+        print("\n--- 预处理步骤：提交并推送本地知识库 ---")
+        if not manager.commit_and_push_local_knowledge_base():
+            print("\n⚠️  本地知识库提交/推送失败，但继续执行后续步骤...")
+
         if run_sync:
             print("\n--- 步骤 1/3：同步笔记 ---")
             if not manager.sync_notes_from_remote(force=args.force):

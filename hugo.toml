@@ -1,5 +1,5 @@
 baseURL ='https://bluespace3.github.io/'
-title = '蓝色空间号-新世界的探索者'
+title = '蓝色空间号'
 theme = 'hugo-theme-reimu'
 languageCode = 'zh-CN'
 defaultContentLanguage = 'zh-CN'
@@ -13,7 +13,7 @@ mainSections = ["post"]
 [languages]
 [languages.zh-CN]
 languageName = '简体中文'
-weight = 1
+weight = 2
 [markup.highlight]
 guessSyntax = true
 noClasses = false
