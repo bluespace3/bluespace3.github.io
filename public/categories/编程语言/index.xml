@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程语言 on 蓝色空间号</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in 编程语言 on 蓝色空间号</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Dec 2025 15:39:38 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>advanced</title>
+      <link>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/advanced/</link>
+      <pubDate>Tue, 02 Dec 2025 15:39:38 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/advanced/</guid>
+      <description>&lt;h1 id=&#34;python-高级技巧&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#python-%e9%ab%98%e7%ba%a7%e6%8a%80%e5%b7%a7&#34;&gt;&lt;/a&gt;
+Python 高级技巧
+&lt;/h1&gt;&lt;p&gt;这是 Python 高级技巧的内容。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

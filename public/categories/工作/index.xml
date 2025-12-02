@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工作 on 蓝色空间号</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in 工作 on 蓝色空间号</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Dec 2025 15:36:11 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B7%A5%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test_new</title>
+      <link>http://localhost:1313/post/%E5%B7%A5%E4%BD%9C/test_new/</link>
+      <pubDate>Tue, 02 Dec 2025 15:36:11 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E5%B7%A5%E4%BD%9C/test_new/</guid>
+      <description>&lt;h1 id=&#34;这是一个新的测试文件&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%bf%99%e6%98%af%e4%b8%80%e4%b8%aa%e6%96%b0%e7%9a%84%e6%b5%8b%e8%af%95%e6%96%87%e4%bb%b6&#34;&gt;&lt;/a&gt;
+这是一个新的测试文件
+&lt;/h1&gt;&lt;p&gt;这是测试内容。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

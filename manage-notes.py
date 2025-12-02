@@ -395,6 +395,8 @@ class NotesManager:
             # 检查是否有完整的 Front Matter
             has_complete_frontmatter = False
             frontmatter_end_pos = -1
+            existing_date = None
+            existing_categories = None
 
             if lines and lines[0].strip() == '---':
                 # 找到 Front Matter 的结束位置
@@ -403,6 +405,16 @@ class NotesManager:
                         frontmatter_end_pos = i
                         has_complete_frontmatter = True
                         break
+
+                # 如果有 Front Matter，解析现有的 date 和 categories 字段
+                if has_complete_frontmatter:
+                    frontmatter_lines = lines[1:frontmatter_end_pos]
+                    for line in frontmatter_lines:
+                        line = line.strip()
+                        if line.startswith('date:'):
+                            existing_date = line.split('date:', 1)[1].strip()
+                        elif line.startswith('categories:'):
+                            existing_categories = line.split('categories:', 1)[1].strip()
 
             # 如果已经有完整的 Front Matter 且不是强制模式，跳过
             if has_complete_frontmatter and not force:
@@ -415,13 +427,32 @@ class NotesManager:
                 content_lines = lines[frontmatter_end_pos + 1:]
 
             title = self.extract_title_from_content(content_lines, file_path)
-            category = self.find_category_from_knowledge_base(title)
+
+            # 获取 categories：优先使用现有 categories，如果没有则从目录结构获取
+            if existing_categories:
+                category_str = existing_categories
+            else:
+                # 从文件路径获取上级目录作为分类
+                rel_path = os.path.relpath(file_path, self.content_post_dir)
+                dir_parts = os.path.dirname(rel_path).split(os.sep)
+                if dir_parts and dir_parts[0] and dir_parts[0] != '.':
+                    category = dir_parts[0]
+                else:
+                    category = "技术"  # 默认分类
+                category_str = f'["{category}"]'
+
             current_time = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S%:z')
+
+            # 保留原有的 date，只更新 lastmod
+            if existing_date:
+                date_to_use = existing_date
+            else:
+                date_to_use = current_time
 
             frontmatter = f"""---
 title: '{title}'
-categories: ["{category}"]
-date: {current_time}
+categories: {category_str}
+date: {date_to_use}
 lastmod: {current_time}
 encrypted: false
 password: "123456"

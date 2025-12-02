@@ -1,97 +1,125 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>自动化测试 on 蓝色空间号</title><link>https://bluespace3.github.io/</link><description>Recent content in 自动化测试 on 蓝色空间号</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 02 Dec 2025 15:13:20 +0000</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml"/><item><title>java快速生成接口自动化测试用例项目</title><link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java-testng/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link><pubDate>Tue, 02 Dec 2025 15:13:20 +0000</pubDate><guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java-testng/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="java快速生成接口自动化测试用例项目">
-&lt;a class="header-anchor" href="#java%e5%bf%ab%e9%80%9f%e7%94%9f%e6%88%90%e6%8e%a5%e5%8f%a3%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e9%a1%b9%e7%9b%ae">&lt;/a>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自动化测试 on 蓝色空间号</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in 自动化测试 on 蓝色空间号</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Dec 2025 15:13:20 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java快速生成接口自动化测试用例项目</title>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java-testng/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 02 Dec 2025 15:13:20 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java-testng/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid>
+      <description>&lt;h1 id=&#34;java快速生成接口自动化测试用例项目&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#java%e5%bf%ab%e9%80%9f%e7%94%9f%e6%88%90%e6%8e%a5%e5%8f%a3%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e9%a1%b9%e7%9b%ae&#34;&gt;&lt;/a&gt;
 java快速生成接口自动化测试用例项目
-&lt;/h1>&lt;p>这是一个示例项目，演示如何使用 TestNG 和 REST Assured 进行 API 测试，并支持测试用例与接口逻辑分离的架构。&lt;/p>
-&lt;h2 id="har文件自动化测试生成">
-&lt;a class="header-anchor" href="#har%e6%96%87%e4%bb%b6%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%9f%e6%88%90">&lt;/a>
+&lt;/h1&gt;&lt;p&gt;这是一个示例项目，演示如何使用 TestNG 和 REST Assured 进行 API 测试，并支持测试用例与接口逻辑分离的架构。&lt;/p&gt;
+&lt;h2 id=&#34;har文件自动化测试生成&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#har%e6%96%87%e4%bb%b6%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%9f%e6%88%90&#34;&gt;&lt;/a&gt;
 HAR文件自动化测试生成
-&lt;/h2>&lt;p>项目支持将浏览器录制的HAR文件自动转换为完整的自动化测试套件：&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>单文件导入&lt;/strong>: &lt;code>import-har.bat your-file.har&lt;/code> 或 &lt;code>import-har.ps1 your-file.har&lt;/code>&lt;/li>
-&lt;li>&lt;strong>批量导入&lt;/strong>: &lt;code>import-har.bat har-files-directory/&lt;/code> 或 &lt;code>import-har.ps1 har-files-directory/&lt;/code>&lt;/li>
-&lt;li>&lt;strong>独立配置&lt;/strong>: 每个HAR文件生成对应的JSON测试用例文件（如 &lt;code>your-file_test_cases.json&lt;/code>）&lt;/li>
-&lt;li>&lt;strong>统一执行&lt;/strong>: 所有测试用例通过统一的 &lt;code>UnifiedApiTest&lt;/code> 类执行&lt;/li>
-&lt;li>&lt;strong>一键运行&lt;/strong>: 生成的测试可直接运行，无需修改代码&lt;/li>
-&lt;/ul>
-&lt;h3 id="文件结构说明">
-&lt;a class="header-anchor" href="#%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84%e8%af%b4%e6%98%8e">&lt;/a>
+&lt;/h2&gt;&lt;p&gt;项目支持将浏览器录制的HAR文件自动转换为完整的自动化测试套件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;单文件导入&lt;/strong&gt;: &lt;code&gt;import-har.bat your-file.har&lt;/code&gt; 或 &lt;code&gt;import-har.ps1 your-file.har&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;批量导入&lt;/strong&gt;: &lt;code&gt;import-har.bat har-files-directory/&lt;/code&gt; 或 &lt;code&gt;import-har.ps1 har-files-directory/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;独立配置&lt;/strong&gt;: 每个HAR文件生成对应的JSON测试用例文件（如 &lt;code&gt;your-file_test_cases.json&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;统一执行&lt;/strong&gt;: 所有测试用例通过统一的 &lt;code&gt;UnifiedApiTest&lt;/code&gt; 类执行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一键运行&lt;/strong&gt;: 生成的测试可直接运行，无需修改代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;文件结构说明&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84%e8%af%b4%e6%98%8e&#34;&gt;&lt;/a&gt;
 文件结构说明
-&lt;/h3>&lt;p>导入HAR文件后，项目结构如下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">src&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">test&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">resources&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">testcases&lt;/span>&lt;span class="o">/&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">your&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">har&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">file1_test_cases&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">json&lt;/span> &lt;span class="c1"># HAR文件1对应的测试用例&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">your&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">har&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">file2_test_cases&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">json&lt;/span> &lt;span class="c1"># HAR文件2对应的测试用例&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">custom_variables_demo&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">json&lt;/span> &lt;span class="c1"># 自定义变量示例&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">db_query_demo&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">json&lt;/span> &lt;span class="c1"># 数据库查询示例&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">└──&lt;/span> &lt;span class="o">...&lt;/span> &lt;span class="c1"># 其他示例文件&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>每个HAR文件都会生成一个独立的JSON文件，文件命名规则为：&lt;code>{har文件名}_test_cases.json&lt;/code>&lt;/p>
-&lt;h3 id="优势">
-&lt;a class="header-anchor" href="#%e4%bc%98%e5%8a%bf">&lt;/a>
+&lt;/h3&gt;&lt;p&gt;导入HAR文件后，项目结构如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;testcases&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;your&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;har&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file1_test_cases&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# HAR文件1对应的测试用例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;your&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;har&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file2_test_cases&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# HAR文件2对应的测试用例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;custom_variables_demo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;# 自定义变量示例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;db_query_demo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;               &lt;span class=&#34;c1&#34;&gt;# 数据库查询示例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;                              &lt;span class=&#34;c1&#34;&gt;# 其他示例文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;每个HAR文件都会生成一个独立的JSON文件，文件命名规则为：&lt;code&gt;{har文件名}_test_cases.json&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;优势&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bc%98%e5%8a%bf&#34;&gt;&lt;/a&gt;
 优势
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>模块化&lt;/strong>: 每个HAR文件对应独立的测试用例文件，便于管理和维护&lt;/li>
-&lt;li>&lt;strong>灵活性&lt;/strong>: 可以单独修改某个HAR文件对应的测试用例，不影响其他测试&lt;/li>
-&lt;li>&lt;strong>可追溯性&lt;/strong>: 测试用例与原始HAR文件一一对应，便于追踪来源&lt;/li>
-&lt;li>&lt;strong>统一执行&lt;/strong>: 所有测试用例仍然通过统一入口执行，保持测试管理的一致性&lt;/li>
-&lt;/ul>
-&lt;h2 id="详细功能指南">
-&lt;a class="header-anchor" href="#%e8%af%a6%e7%bb%86%e5%8a%9f%e8%83%bd%e6%8c%87%e5%8d%97">&lt;/a>
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;模块化&lt;/strong&gt;: 每个HAR文件对应独立的测试用例文件，便于管理和维护&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活性&lt;/strong&gt;: 可以单独修改某个HAR文件对应的测试用例，不影响其他测试&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可追溯性&lt;/strong&gt;: 测试用例与原始HAR文件一一对应，便于追踪来源&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;统一执行&lt;/strong&gt;: 所有测试用例仍然通过统一入口执行，保持测试管理的一致性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;详细功能指南&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%af%a6%e7%bb%86%e5%8a%9f%e8%83%bd%e6%8c%87%e5%8d%97&#34;&gt;&lt;/a&gt;
 详细功能指南
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>&lt;a href="DEPENDENCY_AND_DATA_DRIVEN_GUIDE.md">测试用例依赖和数据驱动测试指南&lt;/a>&lt;/strong> - 详细说明如何配置测试用例依赖、参数化测试、数据提取和动态变量&lt;/li>
-&lt;li>&lt;strong>&lt;a href="DATABASE_QUERY_GUIDE.md">数据库查询功能使用指南&lt;/a>&lt;/strong> - 详细说明如何集成数据库查询功能&lt;/li>
-&lt;/ul>
-&lt;h2 id="高级功能">
-&lt;a class="header-anchor" href="#%e9%ab%98%e7%ba%a7%e5%8a%9f%e8%83%bd">&lt;/a>
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;DEPENDENCY_AND_DATA_DRIVEN_GUIDE.md&#34;&gt;测试用例依赖和数据驱动测试指南&lt;/a&gt;&lt;/strong&gt; - 详细说明如何配置测试用例依赖、参数化测试、数据提取和动态变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;DATABASE_QUERY_GUIDE.md&#34;&gt;数据库查询功能使用指南&lt;/a&gt;&lt;/strong&gt; - 详细说明如何集成数据库查询功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;高级功能&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%ab%98%e7%ba%a7%e5%8a%9f%e8%83%bd&#34;&gt;&lt;/a&gt;
 高级功能
-&lt;/h2>&lt;h3 id="测试用例依赖管理">
-&lt;a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e4%be%9d%e8%b5%96%e7%ae%a1%e7%90%86">&lt;/a>
+&lt;/h2&gt;&lt;h3 id=&#34;测试用例依赖管理&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e4%be%9d%e8%b5%96%e7%ae%a1%e7%90%86&#34;&gt;&lt;/a&gt;
 测试用例依赖管理
-&lt;/h3>&lt;p>支持测试用例之间的依赖关系，确保依赖的测试用例先执行。通过 &lt;code>dependsOn&lt;/code> 字段指定依赖的测试用例ID。&lt;/p></description></item><item><title>java快速生成接口自动化测试用例项目</title><link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link><pubDate>Tue, 02 Dec 2025 15:13:20 +0000</pubDate><guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="java快速生成接口自动化测试用例项目">
-&lt;a class="header-anchor" href="#java%e5%bf%ab%e9%80%9f%e7%94%9f%e6%88%90%e6%8e%a5%e5%8f%a3%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e9%a1%b9%e7%9b%ae">&lt;/a>
+&lt;/h3&gt;&lt;p&gt;支持测试用例之间的依赖关系，确保依赖的测试用例先执行。通过 &lt;code&gt;dependsOn&lt;/code&gt; 字段指定依赖的测试用例ID。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>java快速生成接口自动化测试用例项目</title>
+      <link>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 02 Dec 2025 15:13:20 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid>
+      <description>&lt;h1 id=&#34;java快速生成接口自动化测试用例项目&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#java%e5%bf%ab%e9%80%9f%e7%94%9f%e6%88%90%e6%8e%a5%e5%8f%a3%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e9%a1%b9%e7%9b%ae&#34;&gt;&lt;/a&gt;
 java快速生成接口自动化测试用例项目
-&lt;/h1>&lt;p>这是一个示例项目，演示如何使用 TestNG 和 REST Assured 进行 API 测试，并支持测试用例与接口逻辑分离的架构。&lt;/p>
-&lt;h2 id="har文件自动化测试生成">
-&lt;a class="header-anchor" href="#har%e6%96%87%e4%bb%b6%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%9f%e6%88%90">&lt;/a>
+&lt;/h1&gt;&lt;p&gt;这是一个示例项目，演示如何使用 TestNG 和 REST Assured 进行 API 测试，并支持测试用例与接口逻辑分离的架构。&lt;/p&gt;
+&lt;h2 id=&#34;har文件自动化测试生成&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#har%e6%96%87%e4%bb%b6%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%94%9f%e6%88%90&#34;&gt;&lt;/a&gt;
 HAR文件自动化测试生成
-&lt;/h2>&lt;p>项目支持将浏览器录制的HAR文件自动转换为完整的自动化测试套件：&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>单文件导入&lt;/strong>: &lt;code>import-har.bat your-file.har&lt;/code> 或 &lt;code>import-har.ps1 your-file.har&lt;/code>&lt;/li>
-&lt;li>&lt;strong>批量导入&lt;/strong>: &lt;code>import-har.bat har-files-directory/&lt;/code> 或 &lt;code>import-har.ps1 har-files-directory/&lt;/code>&lt;/li>
-&lt;li>&lt;strong>独立配置&lt;/strong>: 每个HAR文件生成对应的JSON测试用例文件（如 &lt;code>your-file_test_cases.json&lt;/code>）&lt;/li>
-&lt;li>&lt;strong>统一执行&lt;/strong>: 所有测试用例通过统一的 &lt;code>UnifiedApiTest&lt;/code> 类执行&lt;/li>
-&lt;li>&lt;strong>一键运行&lt;/strong>: 生成的测试可直接运行，无需修改代码&lt;/li>
-&lt;/ul>
-&lt;h3 id="文件结构说明">
-&lt;a class="header-anchor" href="#%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84%e8%af%b4%e6%98%8e">&lt;/a>
+&lt;/h2&gt;&lt;p&gt;项目支持将浏览器录制的HAR文件自动转换为完整的自动化测试套件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;单文件导入&lt;/strong&gt;: &lt;code&gt;import-har.bat your-file.har&lt;/code&gt; 或 &lt;code&gt;import-har.ps1 your-file.har&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;批量导入&lt;/strong&gt;: &lt;code&gt;import-har.bat har-files-directory/&lt;/code&gt; 或 &lt;code&gt;import-har.ps1 har-files-directory/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;独立配置&lt;/strong&gt;: 每个HAR文件生成对应的JSON测试用例文件（如 &lt;code&gt;your-file_test_cases.json&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;统一执行&lt;/strong&gt;: 所有测试用例通过统一的 &lt;code&gt;UnifiedApiTest&lt;/code&gt; 类执行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一键运行&lt;/strong&gt;: 生成的测试可直接运行，无需修改代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;文件结构说明&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84%e8%af%b4%e6%98%8e&#34;&gt;&lt;/a&gt;
 文件结构说明
-&lt;/h3>&lt;p>导入HAR文件后，项目结构如下：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">src&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">test&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">resources&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">testcases&lt;/span>&lt;span class="o">/&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">your&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">har&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">file1_test_cases&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">json&lt;/span> &lt;span class="c1"># HAR文件1对应的测试用例&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">your&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">har&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">file2_test_cases&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">json&lt;/span> &lt;span class="c1"># HAR文件2对应的测试用例&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">custom_variables_demo&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">json&lt;/span> &lt;span class="c1"># 自定义变量示例&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">├──&lt;/span> &lt;span class="n">db_query_demo&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">json&lt;/span> &lt;span class="c1"># 数据库查询示例&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">└──&lt;/span> &lt;span class="o">...&lt;/span> &lt;span class="c1"># 其他示例文件&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>每个HAR文件都会生成一个独立的JSON文件，文件命名规则为：&lt;code>{har文件名}_test_cases.json&lt;/code>&lt;/p>
-&lt;h3 id="优势">
-&lt;a class="header-anchor" href="#%e4%bc%98%e5%8a%bf">&lt;/a>
+&lt;/h3&gt;&lt;p&gt;导入HAR文件后，项目结构如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;resources&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;testcases&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;your&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;har&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file1_test_cases&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# HAR文件1对应的测试用例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;your&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;har&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;file2_test_cases&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# HAR文件2对应的测试用例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;custom_variables_demo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;# 自定义变量示例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;db_query_demo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;json&lt;/span&gt;               &lt;span class=&#34;c1&#34;&gt;# 数据库查询示例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;                              &lt;span class=&#34;c1&#34;&gt;# 其他示例文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;每个HAR文件都会生成一个独立的JSON文件，文件命名规则为：&lt;code&gt;{har文件名}_test_cases.json&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;优势&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%bc%98%e5%8a%bf&#34;&gt;&lt;/a&gt;
 优势
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>模块化&lt;/strong>: 每个HAR文件对应独立的测试用例文件，便于管理和维护&lt;/li>
-&lt;li>&lt;strong>灵活性&lt;/strong>: 可以单独修改某个HAR文件对应的测试用例，不影响其他测试&lt;/li>
-&lt;li>&lt;strong>可追溯性&lt;/strong>: 测试用例与原始HAR文件一一对应，便于追踪来源&lt;/li>
-&lt;li>&lt;strong>统一执行&lt;/strong>: 所有测试用例仍然通过统一入口执行，保持测试管理的一致性&lt;/li>
-&lt;/ul>
-&lt;h2 id="详细功能指南">
-&lt;a class="header-anchor" href="#%e8%af%a6%e7%bb%86%e5%8a%9f%e8%83%bd%e6%8c%87%e5%8d%97">&lt;/a>
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;模块化&lt;/strong&gt;: 每个HAR文件对应独立的测试用例文件，便于管理和维护&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活性&lt;/strong&gt;: 可以单独修改某个HAR文件对应的测试用例，不影响其他测试&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可追溯性&lt;/strong&gt;: 测试用例与原始HAR文件一一对应，便于追踪来源&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;统一执行&lt;/strong&gt;: 所有测试用例仍然通过统一入口执行，保持测试管理的一致性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;详细功能指南&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e8%af%a6%e7%bb%86%e5%8a%9f%e8%83%bd%e6%8c%87%e5%8d%97&#34;&gt;&lt;/a&gt;
 详细功能指南
-&lt;/h2>&lt;ul>
-&lt;li>&lt;strong>&lt;a href="DEPENDENCY_AND_DATA_DRIVEN_GUIDE.md">测试用例依赖和数据驱动测试指南&lt;/a>&lt;/strong> - 详细说明如何配置测试用例依赖、参数化测试、数据提取和动态变量&lt;/li>
-&lt;li>&lt;strong>&lt;a href="DATABASE_QUERY_GUIDE.md">数据库查询功能使用指南&lt;/a>&lt;/strong> - 详细说明如何集成数据库查询功能&lt;/li>
-&lt;/ul>
-&lt;h2 id="高级功能">
-&lt;a class="header-anchor" href="#%e9%ab%98%e7%ba%a7%e5%8a%9f%e8%83%bd">&lt;/a>
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;DEPENDENCY_AND_DATA_DRIVEN_GUIDE.md&#34;&gt;测试用例依赖和数据驱动测试指南&lt;/a&gt;&lt;/strong&gt; - 详细说明如何配置测试用例依赖、参数化测试、数据提取和动态变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;DATABASE_QUERY_GUIDE.md&#34;&gt;数据库查询功能使用指南&lt;/a&gt;&lt;/strong&gt; - 详细说明如何集成数据库查询功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;高级功能&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e9%ab%98%e7%ba%a7%e5%8a%9f%e8%83%bd&#34;&gt;&lt;/a&gt;
 高级功能
-&lt;/h2>&lt;h3 id="测试用例依赖管理">
-&lt;a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e4%be%9d%e8%b5%96%e7%ae%a1%e7%90%86">&lt;/a>
+&lt;/h2&gt;&lt;h3 id=&#34;测试用例依赖管理&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b%e4%be%9d%e8%b5%96%e7%ae%a1%e7%90%86&#34;&gt;&lt;/a&gt;
 测试用例依赖管理
-&lt;/h3>&lt;p>支持测试用例之间的依赖关系，确保依赖的测试用例先执行。通过 &lt;code>dependsOn&lt;/code> 字段指定依赖的测试用例ID。&lt;/p></description></item></channel></rss>
+&lt;/h3&gt;&lt;p&gt;支持测试用例之间的依赖关系，确保依赖的测试用例先执行。通过 &lt;code&gt;dependsOn&lt;/code&gt; 字段指定依赖的测试用例ID。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

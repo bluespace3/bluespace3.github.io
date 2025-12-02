@@ -32,7 +32,8 @@
       "Bash(powershell -Command:*)",
       "Bash(git config:*)",
       "Bash(pwsh -File:*)",
-      "Bash(bash -n:*)"
+      "Bash(bash -n:*)",
+      "Bash(del:*)"
     ],
     "deny": [],
     "ask": []
