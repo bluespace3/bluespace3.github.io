@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>杂谈 on 蓝色空间号</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in 杂谈 on 蓝色空间号</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 27 Apr 2025 22:59:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于mac电脑系统更新崩溃的反思</title>
+      <link>http://localhost:1313/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</link>
+      <pubDate>Sun, 27 Apr 2025 22:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</guid>
+      <description>&lt;h3 id=&#34;事件描述&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e4%ba%8b%e4%bb%b6%e6%8f%8f%e8%bf%b0&#34;&gt;&lt;/a&gt;
+事件描述
+&lt;/h3&gt;&lt;p&gt;今天在mac电脑上更新系统的时候，突然出现了一个问题，就是系统更新崩溃了，因为系统是装在移动硬盘上的，当初只为了追求移动硬盘空间更大，速度更快选择把系统装在了移动硬盘上。关键我也没有打开时间机器（mac自动备份程序），导致系统崩溃后需要重装，文件、应用都丢失了，特别是电脑的环境，如python、nodejs、go等环境都丢失了，导致我重新安装系统的时候，需要重新安装这些环境，非常麻烦，还有这几年积累的一些好用的应用和设置全没了损失惨重。&lt;/p&gt;
+&lt;h3 id=&#34;反思&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%8f%8d%e6%80%9d&#34;&gt;&lt;/a&gt;
+反思
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;当初不应该为了一丁点速度和硬盘空间，把系统装在移动硬盘上，应该把系统装在电脑上，这样才能保证系统的稳定性和安全性。&lt;/li&gt;
+&lt;li&gt;应该打开时间机器备份系统，这样可以避免系统崩溃后，原文件和应用不至于丢失。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;后续步骤&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%90%8e%e7%bb%ad%e6%ad%a5%e9%aa%a4&#34;&gt;&lt;/a&gt;
+后续步骤
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;把系统装在电脑上，这样才能保证系统的稳定性和安全性。&lt;/li&gt;
+&lt;li&gt;格式化移动硬盘，把移动硬盘当作放文件的地方，并设置好分区。&lt;/li&gt;
+&lt;li&gt;打开时间机器备份系统，同时将移动硬盘作为系统备份盘，利用好空间大的优势，并且做好分区管理与正常文件隔离。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于投资的反思</title>
+      <link>http://localhost:1313/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</link>
+      <pubDate>Thu, 10 Apr 2025 22:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</guid>
+      <description>&lt;h3 id=&#34;25年一季度投资反思&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#25%e5%b9%b4%e4%b8%80%e5%ad%a3%e5%ba%a6%e6%8a%95%e8%b5%84%e5%8f%8d%e6%80%9d&#34;&gt;&lt;/a&gt;
+25年一季度投资反思
+&lt;/h3&gt;&lt;p&gt;最近几天资产缩水严重，大概亏了1w左右。因为一个黑天鹅事件，美国向中国加了125%关税。  虽然后面又涨回来了，但是我在市场最恐慌的时候卖出了至少2/3的股票仓位，导致后面的反弹与我无缘。经过这次亏损我有一下几点反思。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;这说明我对这种短期的方向判断力是不够的，不太适合做短线。&lt;/li&gt;
+&lt;li&gt;另外一定要合理控制仓位，我之所以承受这么大的波动损失是因为我的股票型基金+股票的配比太大。借这次减仓后，需要合理配置这类高风险的资产。以后股票资产不能超过总账户的10%&lt;/li&gt;
+&lt;li&gt;另一个反思的点是我需要拉长定投周期，如果定投只能坚持几个月往往是在在左侧定投右侧卖出造成较大的亏损。既然选择了定投就应该让定投起到平滑操作带来的损失，去博大方向上的机会。&lt;/li&gt;
+&lt;li&gt;最后一个点是，在打算定投一个标的的适合一定要看看是否足够便宜，如果处于高点我宁可不参与。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>25年一季度汇报总结反思</title>
+      <link>http://localhost:1313/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link>
+      <pubDate>Fri, 28 Mar 2025 22:59:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid>
+      <description>&lt;h3 id=&#34;关于汇报过程的反思&#34;&gt;
+&lt;a class=&#34;header-anchor&#34; href=&#34;#%e5%85%b3%e4%ba%8e%e6%b1%87%e6%8a%a5%e8%bf%87%e7%a8%8b%e7%9a%84%e5%8f%8d%e6%80%9d&#34;&gt;&lt;/a&gt;
+关于汇报过程的反思
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;汇报过程难免还是有些紧张，感觉到不是内心害怕什么，就是单纯的紧张，可能是缺乏长时间汇报的经验，或者当初不擅长表达和总结。不过与以前对比效果稍好，这次准备的反而不多，可能是最后汇报的原因。并没有太多火力集中在我身上。&lt;/li&gt;
+&lt;li&gt;汇报往往会有许多问题和意见，对于别人的意见的看法，有些是好的意见，但是也不乏一些意见仅仅是提问人为了找存在感而提出来的。而且有些人相当强势，咄咄逼人，不给你反驳的机会。这种人往往都是狭隘和傲娇的，往往沉浸在自己的世界。对于这种意见，一笑了知即可。但是当触及到我们的棱角时，需要适当的发作。否则这些人会得寸进尺。&lt;/li&gt;
+&lt;li&gt;这次汇报准备并不充分，但是汇报效果反而不错。与之前精心准备，但是效果欠佳形成鲜明对比，这可能是心态上不重视，反而给自己临产发挥的空间，不至于被前期的准备束缚。当然，有些总结是不够的，更多的只是把组内做的事情陈列出来，缺乏系统性的总结，思路是不够清晰的。下次重点的提炼总结相关事项。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

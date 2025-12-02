@@ -1,206 +1,2482 @@
-<!doctype html><html lang=zh-cn data-theme-mode=auto><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>playwright的python文档 | 新人类
-</title><meta name=description content="致敬勇于探索未知的人类！"><script>window.siteConfig=JSON.parse('{"anchor_icon":null,"clipboard":{"copyright":{"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！","count":50,"enable":false},"fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","success":"复制成功(*^▽^*)"},"code_block":{"expand":true},"icon_font":"4552607_0khxww3tj3q9","outdate":{"daysago":180,"enable":false,"message":"本文最后更新于 {time}，请注意文中内容可能已经发生变化。"}}')</script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7cUbuntu%20Mono:400,400italic,700,700italic&amp;display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7cUbuntu%20Mono:400,400italic,700,700italic&amp;display=swap" media=print onload='this.media="all"'><link rel=preload href=//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=stylesheet href=/css/loader.min.1cb17565e6c5aa7d84249a695fa50f1fcc363f03720dd8c21edde3bbe5e70cca.css><meta property="og:type" content="website"><meta property="og:title" content="playwright的python文档 | 新人类"><meta property="og:description" content="致敬勇于探索未知的人类！"><meta property="og:url" content="https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/"><meta property="og:site_name" content="蓝色空间号-新世界的探索者"><meta property="og:image" content="/"><meta property="article:author" content="新人类"><meta property="article:published_time" content="2025-11-22T16:21:11+00:00"><meta property="article:modified_time" content="2025-11-22T16:21:11+00:00"><meta name=twitter:card content="summary"><meta name=twitter:image content="/"><link rel="shortcut icon" href=/favicon.ico><link rel=stylesheet href=/css/main.min.da0339eea5d9fe186a8f5f431d358240e6c58c443bfae48a796566c099492f8e.css><link rel=preload as=style href=https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css onload='this.onload=null,this.rel="stylesheet"'><link rel=preload as=style href=https://npm.webcache.cn/katex@0.16.9/dist/katex.min.css onload='this.onload=null,this.rel="stylesheet"'><script src=https://npm.webcache.cn/pace-js@1.2.4/pace.min.js integrity=sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8 crossorigin=anonymous></script><link rel=stylesheet href=https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css><link rel=stylesheet href=https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css><style>:root{--theme-color:#3366cc;--theme-color-light:#99ccff;--theme-color-dark:#003399;--theme-color-text:#ffffff}.header-inner{background-color:var(--theme-color)!important}.menu-item a{color:#fff!important}.menu-item svg,.menu-item i{color:#000!important;fill:#000!important}.article-title a,.post-title,h1,h2,h3,h4,h5,h6{color:var(--theme-color-dark)!important}.subtitle{color:#03c!important;font-weight:700!important;text-shadow:0 0 3px rgba(255,255,255,.7)!important;font-size:1.3em!important;letter-spacing:1px!important}.author-info .author-title,.sidebar-title{color:var(--theme-color-dark)!important;font-weight:700!important}.author-info{background-color:rgba(153,204,255,.1)!important;border-color:var(--theme-color)!important;border-width:2px!important}.author-info img.avatar{display:block!important;width:120px!important;height:120px!important;border-radius:50%!important;border:3px solid var(--theme-color)!important;margin:0 auto 10px!important;box-shadow:0 0 10px rgba(0,51,153,.3)!important}.tag-item,.category-item,.friend-item,.recent-post-item{background-color:transparent!important;color:inherit!important}.sidebar-title,.widget-title,.archive-title{color:var(--theme-color-dark)!important}.post-card{border-color:var(--theme-color-light)!important;box-shadow:0 2px 8px rgba(0,51,153,.1)!important}.button,.btn,button,input[type=button],input[type=submit],.pagination-item.current{background-color:var(--theme-color)!important;color:var(--theme-color-text)!important}a{color:var(--theme-color-dark)!important}a:hover{color:var(--theme-color)!important}.article-meta,.article-footer{color:var(--theme-color-dark)!important}.search-form{border-color:var(--theme-color)!important}.footer{background-color:var(--theme-color-light)!important;color:var(--theme-color-dark)!important}.post-title a{color:var(--theme-color-dark)!important}</style></head><body><div id=loader><div class="loading-left-bg loading-bg"></div><div class="loading-right-bg loading-bg"></div><div class=spinner-box><div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" shape-rendering="geometricPrecision"><path d="M303.5 432a80 80 0 01-12 160 80 80 0 0112-160z" fill="var(--red-1, #ff5252)"/><path d="M512 65a447 447 0 010 894V929a417 417 0 000-834 417 417 0 000 834v30a447 447 0 010-894zm0 30A417 417 0 01929 512 208.5 208.5.0 01720.5 720.5V592a80 80 0 000-160 80 80 0 000 160V720.5A208.5 208.5.0 01512 512 208.5 208.5.0 00303.5 303.5 208.5 208.5.0 0095 512 417 417 0 01512 95z" fill="var(--red-1, #ff5252)"/></svg></div><div class=loading-word>蓝色空间号启动中...</div></div></div></div><script>var time=null,startLoading=()=>{time=Date.now(),document.getElementById("loader").classList.remove("loading")},endLoading=()=>{time?Date.now()-time>500?(time=null,document.body.style.overflow="auto",document.getElementById("loader").classList.add("loading")):(setTimeout(endLoading,500-(Date.now()-time)),time=null):(document.body.style.overflow="auto",document.getElementById("loader").classList.add("loading"))};window.addEventListener("DOMContentLoaded",endLoading),document.getElementById("loader").addEventListener("click",endLoading)</script><div id=copy-tooltip style="pointer-events:none;opacity:0;transition:all .2s ease;position:fixed;top:50%;left:50%;z-index:999;transform:translate(-50%,-50%);color:#fff;background:rgba(0,0,0,.5);padding:10px 15px;border-radius:10px"></div><div id=container><div id=wrap><div id=header-nav><nav id=main-nav><span class=main-nav-link-wrap><div class='main-nav-icon icon rotate'>&#xe62b;</div><a class=main-nav-link href=/>首页</a>
-</span><span class=main-nav-link-wrap><div class='main-nav-icon icon rotate'>&#xe62b;</div><a class=main-nav-link href=/archives>归档</a>
-</span><span class=main-nav-link-wrap><div class='main-nav-icon icon rotate'>&#xe62b;</div><a class=main-nav-link href=/about>关于</a>
-</span><span class=main-nav-link-wrap><div class='main-nav-icon icon rotate'>&#xe62b;</div><a class=main-nav-link href=/friend>友链</a>
-</span><a id=main-nav-toggle class=nav-icon></a></nav><nav id=sub-nav><a id=nav-search-btn class="nav-icon popup-trigger" title=搜索></a></nav></div><header id=header><picture></picture><img fetchpriority=high src=/images/%e9%a3%9e%e8%88%b91.jpeg alt=playwright的python文档><div id=header-outer><div id=header-title><a href=/ id=logo><h1 data-aos=slide-up>playwright的python文档</h1></a><h2 id=subtitle-wrap data-aos=slide-down></h2></div></div></header><div id=content class=sidebar-left><aside id=sidebar><div id=aplayer theme=var(--color-link) data-aos=fade-up></div><div class="sidebar-wrapper wrap-sticky"><div class=sidebar-wrap data-aos=fade-up><div class=sidebar-toc-sidebar><div class=sidebar-toc><h3 class=toc-title>文章目录</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><a href=#引言>引言</a></li><li><a href=#安装-playwright-pytest>安装 Playwright Pytest</a></li><li><a href=#添加示例测试>添加示例测试</a></li><li><a href=#运行示例测试>运行示例测试</a></li><li><a href=#更新-playwright>更新 Playwright</a></li><li><a href=#系统要求>系统要求</a></li><li><a href=#接下来是什么>接下来是什么</a></li></ul><ul><li><a href=#引言-1>引言</a></li><li><a href=#第一个测试>第一个测试</a></li><li><a href=#操作>操作</a><ul><li><a href=#导航>导航</a></li><li><a href=#交互>交互</a></li><li><a href=#基本操作>基本操作</a></li></ul></li><li><a href=#断言>断言</a><ul><li><a href=#测试隔离>测试隔离</a></li><li><a href=#使用夹具>使用夹具</a></li></ul></li><li><a href=#接下来是什么-1>接下来是什么</a></li></ul><ul><li><a href=#引言-2>引言</a></li><li><a href=#运行-codegen>运行 Codegen</a><ul><li><a href=#录制测试>录制测试</a></li><li><a href=#生成定位器>生成定位器</a></li><li><a href=#仿真>仿真</a></li></ul></li><li><a href=#接下来做什么>接下来做什么</a></li></ul><ul><li><a href=#引言-3>引言</a></li><li><a href=#运行测试>运行测试</a><ul><li><a href=#命令行>命令行</a></li><li><a href=#在有头模式下运行测试>在有头模式下运行测试</a></li><li><a href=#在不同的浏览器上运行测试>在不同的浏览器上运行测试</a></li><li><a href=#运行特定测试>运行特定测试</a></li><li><a href=#并行运行测试>并行运行测试</a></li></ul></li><li><a href=#调试测试>调试测试</a></li><li><a href=#接下来做什么-1>接下来做什么</a></li></ul><ul><li><a href=#介绍>介绍</a></li><li><a href=#录制跟踪>录制跟踪</a></li><li><a href=#打开跟踪>打开跟踪</a></li><li><a href=#查看跟踪>查看跟踪</a></li><li><a href=#接下来是什么-2>接下来是什么</a></li></ul><ul><li><a href=#引言-4>引言</a></li><li><a href=#使用方法>使用方法</a></li><li><a href=#命令行参数>命令行参数</a></li><li><a href=#固定装置>固定装置</a></li><li><a href=#并行性同时运行多个测试>并行性：同时运行多个测试</a></li><li><a href=#示例>示例</a><ul><li><a href=#为自动补全配置-mypy-类型>为自动补全配置 Mypy 类型</a></li><li><a href=#配置慢动作>配置慢动作</a></li><li><a href=#按浏览器跳过测试>按浏览器跳过测试</a></li><li><a href=#在特定浏览器上运行>在特定浏览器上运行</a></li><li><a href=#使用自定义浏览器渠道如-google-chrome-或-microsoft-edge>使用自定义浏览器渠道，如 Google Chrome 或 Microsoft Edge</a></li><li><a href=#配置基础-url>配置基础 URL</a></li><li><a href=#忽略-https-错误>忽略 HTTPS 错误</a></li><li><a href=#使用自定义视口大小>使用自定义视口大小</a></li><li><a href=#设备模拟>设备模拟</a></li><li><a href=#与-unittesttestcase-一起使用>与 <code>unittest.TestCase</code> 一起使用</a></li></ul></li><li><a href=#调试>调试</a><ul><li><a href=#与-pdb-一起使用>与 pdb 一起使用</a></li></ul></li><li><a href=#部署到-ci>部署到 CI</a></li></ul></nav></div></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/OIP%20%284%29.jpeg data-sizes=auto alt=新人类 class=lazyload><div class=sidebar-author-name>新人类</div><div class=sidebar-description>致敬勇于探索未知的人类！</div></div><div class=sidebar-state><div class=sidebar-state-article><div>文章</div><div class=sidebar-state-number>50</div></div><div class=sidebar-state-category><div>分类</div><div class=sidebar-state-number>1</div></div><div class=sidebar-state-tag><div>标签</div><div class=sidebar-state-number>0</div></div></div><div class=sidebar-social><div class="icon-bilibili sidebar-social-icon"><a href=https://space.bilibili.com/390297990 itemprop=url target=_blank aria-label=bilibili rel="noopener external nofollow noreferrer"></a></div><div class="icon-email sidebar-social-icon"><a href=2637458905@qq.com itemprop=url target=_blank aria-label=email rel="noopener external nofollow noreferrer"></a></div><div class="icon-github sidebar-social-icon"><a href=https://github.com/bluespace3 itemprop=url target=_blank aria-label=github rel="noopener external nofollow noreferrer"></a></div></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=首页></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>首页</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=归档></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>归档</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=关于></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>关于</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/friend aria-label=友链></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>友链</div></div></div></div><div class=sidebar-btn-wrapper style=position:static><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></div></div><div class=sidebar-widget></div></aside><section id=main><article class="h-entry article" itemprop=blogPost itemscope itemtype=https://schema.org/BlogPosting><div class=article-inner data-aos=fade-up><div class=article-meta><div class=article-date><span class=article-date-link data-aos=zoom-in><time datetime="2025-11-22 16:21:11 +0000 +0000" itemprop=datePublished>2025-11-22</time>
-<time style=display:none id=post-update-time>2025-11-22</time></span></div><div class=article-category><a class=article-category-link href=/categories/%e6%8a%80%e6%9c%af data-aos=zoom-in>技术</a></div></div><div class=hr-line></div><div class="e-content article-entry" itemprop=articleBody><h1 id=安装><a class=header-anchor href=#%e5%ae%89%e8%a3%85></a>安装</h1><h2 id=引言><a class=header-anchor href=#%e5%bc%95%e8%a8%80></a>引言</h2><p>Playwright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。</p><p>Playwright 库可以用作通用的浏览器自动化工具，为同步和异步 Python 提供了一套强大的 API 来自动化 Web 应用程序。</p><p>本介绍描述了 Playwright Pytest 插件，这是编写端到端测试的推荐方式。</p><p><strong>你将学到</strong></p><ul><li>如何安装 Playwright Pytest</li><li>如何运行示例测试</li></ul><h2 id=安装-playwright-pytest><a class=header-anchor href=#%e5%ae%89%e8%a3%85-playwright-pytest></a>安装 Playwright Pytest</h2><p>Playwright 建议使用官方的 Playwright Pytest 插件来编写端到端测试。它提供了上下文隔离，并开箱即用地在多个浏览器配置上运行。</p><p>首先，通过安装 Playwright 并运行示例测试来开始，亲眼看看它是如何工作的。</p><ul><li>PyPI</li><li>Anaconda</li></ul><p>安装所需的浏览器：</p><h2 id=添加示例测试><a class=header-anchor href=#%e6%b7%bb%e5%8a%a0%e7%a4%ba%e4%be%8b%e6%b5%8b%e8%af%95></a>添加示例测试</h2><p>在当前工作目录或遵循 <code>test_</code> 前缀约定的子目录中创建一个文件，例如 <code>test_example.py</code>，并在其中包含以下代码。确保你的测试名称也遵循 <code>test_</code> 前缀约定。</p><p>test_example.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>re</span>
-</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>playwright.sync_api</span> <span class=kn>import</span> <span class=n>Page</span><span class=p>,</span> <span class=n>expect</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_has_title</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://playwright.dev/&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1># 期望标题“包含”一个子字符串。</span>
-</span></span><span class=line><span class=cl>    <span class=n>expect</span><span class=p>(</span><span class=n>page</span><span class=p>)</span><span class=o>.</span><span class=n>to_have_title</span><span class=p>(</span><span class=n>re</span><span class=o>.</span><span class=n>compile</span><span class=p>(</span><span class=s2>&#34;Playwright&#34;</span><span class=p>))</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_get_started_link</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://playwright.dev/&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1># 点击“开始”链接。</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>get_by_role</span><span class=p>(</span><span class=s2>&#34;link&#34;</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=s2>&#34;Get started&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>click</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1># 期望页面有一个名为“安装”的标题。</span>
-</span></span><span class=line><span class=cl>    <span class=n>expect</span><span class=p>(</span><span class=n>page</span><span class=o>.</span><span class=n>get_by_role</span><span class=p>(</span><span class=s2>&#34;heading&#34;</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=s2>&#34;Installation&#34;</span><span class=p>))</span><span class=o>.</span><span class=n>to_be_visible</span><span class=p>()</span>
-</span></span></code></pre></div><h2 id=运行示例测试><a class=header-anchor href=#%e8%bf%90%e8%a1%8c%e7%a4%ba%e4%be%8b%e6%b5%8b%e8%af%95></a>运行示例测试</h2><p>默认情况下，测试将在 Chromium 上运行。这可以通过 CLI 选项进行配置。测试以无头模式运行，这意味着在运行测试时不会打开浏览器 UI。测试结果和测试日志将在终端中显示。</p><h2 id=更新-playwright><a class=header-anchor href=#%e6%9b%b4%e6%96%b0-playwright></a>更新 Playwright</h2><p>要将 Playwright 更新到最新版本，请运行以下命令：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash><span class=line><span class=cl>pip install pytest-playwright playwright -U
-</span></span></code></pre></div><h2 id=系统要求><a class=header-anchor href=#%e7%b3%bb%e7%bb%9f%e8%a6%81%e6%b1%82></a>系统要求</h2><ul><li>Python 3.8 或更高版本。</li><li>Windows 10+、Windows Server 2016+ 或 Windows Subsystem for Linux (WSL)。</li><li>MacOS 12 Monterey、MacOS 13 Ventura 或 MacOS 14 Sonoma。</li><li>Debian 11、Debian 12、Ubuntu 20.04 或 Ubuntu 22.04。</li></ul><h2 id=接下来是什么><a class=header-anchor href=#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e6%98%af%e4%bb%80%e4%b9%88></a>接下来是什么</h2><ul><li>使用 Web 优先断言、页面夹具和定位器编写测试</li><li>运行单个测试、多个测试、有头模式</li><li>使用 Codegen 生成测试</li><li>查看测试的跟踪</li></ul><h1 id=编写测试用例><a class=header-anchor href=#%e7%bc%96%e5%86%99%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b></a>编写测试用例</h1><h2 id=引言-1><a class=header-anchor href=#%e5%bc%95%e8%a8%80-1></a>引言</h2><p>Playwright 测试很简单，它们</p><ul><li><strong>执行操作</strong> ，</li><li><strong>断言状态</strong>与预期相符。</li></ul><p>在执行操作之前没有必要等待任何东西：Playwright 在执行每个操作之前会自动等待一系列可操作性检查通过。</p><p>也没有必要在执行检查时处理竞态条件 - Playwright 断言的设计方式是它们描述了最终需要满足的预期。</p><p>就是这样！这些设计选择允许 Playwright 用户完全忘记他们测试中的不稳定超时和竞态检查。</p><p><strong>你将学到</strong></p><ul><li>如何编写第一个测试</li><li>如何执行操作</li><li>如何使用断言</li><li>测试如何独立运行</li><li>如何使用测试钩子</li></ul><h2 id=第一个测试><a class=header-anchor href=#%e7%ac%ac%e4%b8%80%e4%b8%aa%e6%b5%8b%e8%af%95></a>第一个测试</h2><p>查看以下示例，了解如何编写测试。注意文件名遵循 <code>test_</code> 前缀约定，以及每个测试名称。</p><p>test_example.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>re</span>
-</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>playwright.sync_api</span> <span class=kn>import</span> <span class=n>Page</span><span class=p>,</span> <span class=n>expect</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_has_title</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://playwright.dev/&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1># 期望标题“包含”一个子字符串。</span>
-</span></span><span class=line><span class=cl>    <span class=n>expect</span><span class=p>(</span><span class=n>page</span><span class=p>)</span><span class=o>.</span><span class=n>to_have_title</span><span class=p>(</span><span class=n>re</span><span class=o>.</span><span class=n>compile</span><span class=p>(</span><span class=s2>&#34;Playwright&#34;</span><span class=p>))</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_get_started_link</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://playwright.dev/&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1># 点击“开始”链接。</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>get_by_role</span><span class=p>(</span><span class=s2>&#34;link&#34;</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=s2>&#34;Get started&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>click</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1># 期望页面有一个名为“安装”的标题。</span>
-</span></span><span class=line><span class=cl>    <span class=n>expect</span><span class=p>(</span><span class=n>page</span><span class=o>.</span><span class=n>get_by_role</span><span class=p>(</span><span class=s2>&#34;heading&#34;</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=s2>&#34;Installation&#34;</span><span class=p>))</span><span class=o>.</span><span class=n>to_be_visible</span><span class=p>()</span>
-</span></span></code></pre></div><h2 id=操作><a class=header-anchor href=#%e6%93%8d%e4%bd%9c></a>操作</h2><h3 id=导航><a class=header-anchor href=#%e5%af%bc%e8%88%aa></a>导航</h3><p>大多数测试将从导航到 URL 的页面开始。之后，测试将能够与页面元素进行交互。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://playwright.dev/&#34;</span><span class=p>)</span>
-</span></span></code></pre></div><p>Playwright 会等待页面达到加载状态，然后再继续。了解更多关于 page.goto() 选项的信息。</p><h3 id=交互><a class=header-anchor href=#%e4%ba%a4%e4%ba%92></a>交互</h3><p>执行操作从定位元素开始。Playwright 使用 Locators API 进行此操作。定位器代表了在任何时刻在页面上查找元素（或元素组）的方式，了解更多关于可用的不同类型定位器的信息。Playwright 会在执行操作之前等待元素可操作，因此没有必要等待其变为可用。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=c1># 创建一个定位器。</span>
-</span></span><span class=line><span class=cl><span class=n>get_started</span> <span class=o>=</span> <span class=n>page</span><span class=o>.</span><span class=n>get_by_role</span><span class=p>(</span><span class=s2>&#34;link&#34;</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=s2>&#34;Get started&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 点击它。</span>
-</span></span><span class=line><span class=cl><span class=n>get_started</span><span class=o>.</span><span class=n>click</span><span class=p>()</span>
-</span></span></code></pre></div><p>在大多数情况下，它会写成一行：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=n>page</span><span class=o>.</span><span class=n>get_by_role</span><span class=p>(</span><span class=s2>&#34;link&#34;</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=s2>&#34;Get started&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>click</span><span class=p>()</span>
-</span></span></code></pre></div><h3 id=基本操作><a class=header-anchor href=#%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c></a>基本操作</h3><p>这是最受欢迎的 Playwright 操作列表。请注意，还有更多操作，请确保查看定位器 API 部分以了解更多信息。</p><table><thead><tr><th>操作</th><th>描述</th></tr></thead><tbody><tr><td>locator.check()</td><td>检查输入复选框</td></tr><tr><td>locator.click()</td><td>点击元素</td></tr><tr><td>locator.uncheck()</td><td>取消检查输入复选框</td></tr><tr><td>locator.hover()</td><td>鼠标悬停在元素上</td></tr><tr><td>locator.fill()</td><td>填写表单字段，输入文本</td></tr><tr><td>locator.focus()</td><td>使元素获得焦点</td></tr><tr><td>locator.press()</td><td>按下单个键</td></tr><tr><td>locator.set_input_files()</td><td>选择上传的文件</td></tr><tr><td>locator.select_option()</td><td>在下拉菜单中选择选项</td></tr></tbody></table><h2 id=断言><a class=header-anchor href=#%e6%96%ad%e8%a8%80></a>断言</h2><p>Playwright 包括断言，这些断言会等待直到满足预期条件。使用这些断言可以使测试不脆弱且具有弹性。例如，这段代码会等待页面获得包含“Playwright”的标题：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>re</span>
-</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>playwright.sync_api</span> <span class=kn>import</span> <span class=n>expect</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>expect</span><span class=p>(</span><span class=n>page</span><span class=p>)</span><span class=o>.</span><span class=n>to_have_title</span><span class=p>(</span><span class=n>re</span><span class=o>.</span><span class=n>compile</span><span class=p>(</span><span class=s2>&#34;Playwright&#34;</span><span class=p>))</span>
-</span></span></code></pre></div><p>这是最受欢迎的异步断言列表。请注意，还有更多断言需要熟悉：</p><table><thead><tr><th>断言</th><th>描述</th></tr></thead><tbody><tr><td>expect(locator).to_be_checked()</td><td>复选框被选中</td></tr><tr><td>expect(locator).to_be_enabled()</td><td>控件被启用</td></tr><tr><td>expect(locator).to_be_visible()</td><td>元素可见</td></tr><tr><td>expect(locator).to_contain_text()</td><td>元素包含文本</td></tr><tr><td>expect(locator).to_have_attribute()</td><td>元素具有属性</td></tr><tr><td>expect(locator).to_have_count()</td><td>元素列表具有给定长度</td></tr><tr><td>expect(locator).to_have_text()</td><td>元素匹配文本``</td></tr><tr><td>expect(locator).to_have_value()</td><td>输入元素具有值``</td></tr><tr><td>expect(page).to_have_title()</td><td>页面具有标题``</td></tr><tr><td>expect(page).to_have_url()</td><td>页面具有 URL</td></tr></tbody></table><h3 id=测试隔离><a class=header-anchor href=#%e6%b5%8b%e8%af%95%e9%9a%94%e7%a6%bb></a>测试隔离</h3><p>Playwright Pytest 插件基于测试夹具的概念，例如内置的页面夹具，它被传递到你的测试中。由于浏览器上下文，页面在测试之间是隔离的，这相当于一个全新的浏览器配置文件，每个测试都获得一个新鲜环境，即使多个测试在单个浏览器中运行。</p><p>test_example.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>playwright.sync_api</span> <span class=kn>import</span> <span class=n>Page</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_example_test</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>  <span class=k>pass</span>
-</span></span><span class=line><span class=cl>  <span class=c1># “page”属于一个独立的 BrowserContext，为这个特定测试创建。</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_another_test</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>  <span class=k>pass</span>
-</span></span><span class=line><span class=cl>  <span class=c1># 这个第二个测试中的“page”与第一个测试完全隔离。</span>
-</span></span></code></pre></div><h3 id=使用夹具><a class=header-anchor href=#%e4%bd%bf%e7%94%a8%e5%a4%b9%e5%85%b7></a>使用夹具</h3><p>你可以使用各种夹具在测试之前或之后执行代码并共享对象。一个 <code>function</code> 作用域的夹具，例如带有 autouse 的，表现得像 beforeEach/afterEach。一个 <code>module</code> 作用域的夹具带有 autouse 表现得像 beforeAll/afterAll，它在所有测试之前和之后运行。</p><p>test_example.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pytest</span>
-</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>playwright.sync_api</span> <span class=kn>import</span> <span class=n>Page</span><span class=p>,</span> <span class=n>expect</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nd>@pytest.fixture</span><span class=p>(</span><span class=n>scope</span><span class=o>=</span><span class=s2>&#34;function&#34;</span><span class=p>,</span> <span class=n>autouse</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>before_each_after_each</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;before the test runs&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=c1># 在每个测试之前转到起始 URL。</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://playwright.dev/&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=k>yield</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;after the test runs&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_main_navigation</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=c1># 断言使用 expect API。</span>
-</span></span><span class=line><span class=cl>    <span class=n>expect</span><span class=p>(</span><span class=n>page</span><span class=p>)</span><span class=o>.</span><span class=n>to_have_url</span><span class=p>(</span><span class=s2>&#34;https://playwright.dev/&#34;</span><span class=p>)</span>
-</span></span></code></pre></div><h2 id=接下来是什么-1><a class=header-anchor href=#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e6%98%af%e4%bb%80%e4%b9%88-1></a>接下来是什么</h2><ul><li>运行单个测试，多个测试，有头模式</li><li>使用 Codegen 生成测试</li><li>查看测试的跟踪</li><li>在 CI 上运行测试与 GitHub Actions</li></ul><h1 id=生成测试><a class=header-anchor href=#%e7%94%9f%e6%88%90%e6%b5%8b%e8%af%95></a>生成测试</h1><h2 id=引言-2><a class=header-anchor href=#%e5%bc%95%e8%a8%80-2></a>引言</h2><p>Playwright 提供了开箱即用的测试生成能力，是快速开始测试的绝佳方式。它将打开两个窗口，一个浏览器窗口，您可以在其中与您想要测试的网站进行交互；另一个是 Playwright 检查器窗口，您可以在其中录制测试、复制测试、清除测试以及更改测试的语言。</p><p><strong>您将学到</strong></p><ul><li>如何录制测试</li><li>如何生成定位器</li></ul><h2 id=运行-codegen><a class=header-anchor href=#%e8%bf%90%e8%a1%8c-codegen></a>运行 Codegen</h2><p>使用 <code>codegen</code> 命令运行测试生成器，然后是您想要为其生成测试的网站的 URL。URL 是可选的，您也可以在不指定 URL 的情况下运行命令，然后在浏览器窗口中直接添加 URL。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Shell data-lang=Shell><span class=line><span class=cl>playwright codegen demo.playwright.dev/todomvc
-</span></span></code></pre></div><h3 id=录制测试><a class=header-anchor href=#%e5%bd%95%e5%88%b6%e6%b5%8b%e8%af%95></a>录制测试</h3><p>运行 <code>codegen</code> 并在浏览器中执行操作。Playwright 将为用户交互生成代码。<code>Codegen</code> 将查看渲染后的页面并找出推荐的定位器，优先考虑角色、文本和测试 ID 定位器。如果生成器识别出多个元素与定位器匹配，它将改进定位器，使其更具弹性并唯一地识别目标元素，从而消除和减少由于定位器导致的测试失败和不稳定。</p><p>使用测试生成器，您可以录制：</p><ul><li>通过简单地与页面交互，执行点击或填充等操作</li><li>通过点击工具栏上的一个图标，然后点击页面上的元素进行断言。您可以选择：<ul><li><code>'assert visibility'</code> 断言元素可见</li><li><code>'assert text'</code> 断言元素包含特定文本</li><li><code>'assert value'</code> 断言元素具有特定值</li></ul></li></ul><p><img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MjgxNDZhNjkyZWZiYjk3MjkwOTAxMGIyMWUyOWU0NDNfVmZrcmkwWmt0blpHMHpNMm9JaTZCUXo5OFNWZnVUQXZfVG9rZW46Vm1IM2JadUFBb2Uza3V4SUdidGNYdnpYbm5mXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA" alt></p><p>当您完成与页面的交互后，按下 <code>'record'</code> 按钮停止录制，并使用 <code>'copy'</code> 按钮将生成的代码复制到您的编辑器中。</p><p>使用 <code>'clear'</code> 按钮清除代码以开始重新录制。完成后，关闭 Playwright 检查器窗口或停止终端命令。</p><p>要了解更多关于生成测试的信息，请查看我们关于 Codegen 的详细指南。</p><h3 id=生成定位器><a class=header-anchor href=#%e7%94%9f%e6%88%90%e5%ae%9a%e4%bd%8d%e5%99%a8></a>生成定位器</h3><p>您可以使用测试生成器生成定位器。</p><ul><li>按下 <code>'Record'</code> 按钮停止录制，&lsquo;Pick Locator&rsquo;` 按钮将会出现。</li><li>点击 <code>'Pick Locator'</code> 按钮，然后将鼠标悬停在浏览器窗口的元素上，以查看定位器在每个元素下方突出显示。</li><li>要选择一个定位器，单击您想要定位的元素，该定位器的代码将出现在 Pick Locator 按钮旁边的定位器游乐场中。</li><li>然后您可以在定位器游乐场中编辑定位器以微调它，并看到匹配的元素在浏览器窗口中突出显示。</li><li>使用复制按钮复制定位器并将其粘贴到您的代码中。</li></ul><p><img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=YTRiNjEwY2U4MWUwY2EwZDc1YzliNDZmZGM5NWNiYzBfbVNUNjVQNE5vbjhkZWdBUG1VSkhYR2FlRU1QaXdiZUxfVG9rZW46UFB2eGJVeEhFb05wSmN4ZkM4QmNOam94bmxmXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA" alt></p><h3 id=仿真><a class=header-anchor href=#%e4%bb%bf%e7%9c%9f></a>仿真</h3><p>您还可以使用仿真生成测试，以便为特定的视口、设备、颜色方案生成测试，以及模拟地理位置、语言或时区。测试生成器还可以在保持认证状态的同时生成测试。查看测试生成器指南以了解更多信息。</p><h2 id=接下来做什么><a class=header-anchor href=#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e5%81%9a%e4%bb%80%e4%b9%88></a>接下来做什么</h2><ul><li>查看您的测试跟踪</li></ul><h1 id=运行和调试><a class=header-anchor href=#%e8%bf%90%e8%a1%8c%e5%92%8c%e8%b0%83%e8%af%95></a>运行和调试</h1><h2 id=引言-3><a class=header-anchor href=#%e5%bc%95%e8%a8%80-3></a>引言</h2><p>您可以运行单个测试、一组测试或所有测试。使用 <code>--browser</code> 标志，可以在一个浏览器或多个浏览器上运行测试。默认情况下，测试以无头模式运行，这意味着在运行测试时不会打开浏览器窗口，结果将在终端中显示。如果您愿意，可以通过使用 <code>--headed</code> CLI 参数以有头模式运行您的测试。</p><p><strong>您将学到</strong></p><ul><li>如何从命令行运行测试</li><li>如何调试测试</li></ul><h2 id=运行测试><a class=header-anchor href=#%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95></a>运行测试</h2><h3 id=命令行><a class=header-anchor href=#%e5%91%bd%e4%bb%a4%e8%a1%8c></a>命令行</h3><p>要运行您的测试，请使用 <code>pytest</code> 命令。这将默认在 Chromium 浏览器上运行您的测试。默认情况下，测试以无头模式运行，这意味着在运行测试时不会打开浏览器窗口，结果将在终端中显示。</p><h3 id=在有头模式下运行测试><a class=header-anchor href=#%e5%9c%a8%e6%9c%89%e5%a4%b4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95></a>在有头模式下运行测试</h3><p>要以有头模式运行您的测试，请使用 <code>--headed</code> 标志。这将在运行测试时打开浏览器窗口，并在完成后关闭浏览器窗口。</p><h3 id=在不同的浏览器上运行测试><a class=header-anchor href=#%e5%9c%a8%e4%b8%8d%e5%90%8c%e7%9a%84%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%8a%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95></a>在不同的浏览器上运行测试</h3><p>要指定您想要运行测试的浏览器，请使用 <code>--browser</code> 标志，后跟浏览器的名称。</p><p>要指定要在多个浏览器上运行测试，请多次使用 <code>--browser</code> 标志，后跟每个浏览器的名称。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Shell data-lang=Shell><span class=line><span class=cl>pytest --browser webkit --browser firefox
-</span></span></code></pre></div><h3 id=运行特定测试><a class=header-anchor href=#%e8%bf%90%e8%a1%8c%e7%89%b9%e5%ae%9a%e6%b5%8b%e8%af%95></a>运行特定测试</h3><p>要运行单个测试文件，请传入您想要运行的测试文件的名称。</p><p>要运行一组测试文件，请传入您想要运行的测试文件的名称。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Shell data-lang=Shell><span class=line><span class=cl>pytest tests/test_todo_page.py tests/test_landing_page.py
-</span></span></code></pre></div><p>要运行特定测试，请传入您想要运行的测试的函数名称。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Shell data-lang=Shell><span class=line><span class=cl>pytest -k test_add_a_todo_item
-</span></span></code></pre></div><h3 id=并行运行测试><a class=header-anchor href=#%e5%b9%b6%e8%a1%8c%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95></a>并行运行测试</h3><p>要并行运行您的测试，请使用 <code>--numprocesses</code> 标志，后跟您想要运行测试的进程数量。我们建议使用逻辑 CPU 核心数的一半。</p><p>（这假设已安装了 <code>pytest-xdist</code>。有关更多信息，请参见此处。）</p><p>有关更多信息，请参见 Playwright Pytest 使用情况或 Pytest 文档以了解一般 CLI 使用情况。</p><h2 id=调试测试><a class=header-anchor href=#%e8%b0%83%e8%af%95%e6%b5%8b%e8%af%95></a>调试测试</h2><p>由于 Playwright 在 Python 中运行，您可以使用您选择的调试器进行调试，例如使用 Visual Studio Code 中的 Python 扩展。Playwright 带有 Playwright 检查器，允许您逐步执行 Playwright API 调用，查看它们的调试日志并探索定位器。</p><p>要调试所有测试，请运行以下命令。</p><ul><li>Bash</li><li>PowerShell</li><li>Batch</li></ul><p>要调试一个测试文件，请在命令后运行您想要调试的测试文件的名称。</p><ul><li>Bash</li><li>PowerShell</li><li>Batch</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-Shell data-lang=Shell><span class=line><span class=cl><span class=nv>PWDEBUG</span><span class=o>=</span><span class=m>1</span> pytest -s test_example.py
-</span></span></code></pre></div><p>要调试特定测试，请添加 <code>-k</code> 后跟您想要调试的测试的名称。</p><ul><li>Bash</li><li>PowerShell</li><li>Batch</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-Shell data-lang=Shell><span class=line><span class=cl><span class=nv>PWDEBUG</span><span class=o>=</span><span class=m>1</span> pytest -s -k test_get_started_link
-</span></span></code></pre></div><p>此命令将打开浏览器窗口以及 Playwright 检查器。您可以使用检查器顶部的步过按钮逐步执行您的测试。或者按下播放按钮从开始到结束运行您的测试。一旦测试完成，浏览器窗口将关闭。</p><p>在调试时，您可以使用选择定位器按钮来选择页面上的元素，并查看 Playwright 用于查找该元素的定位器。您还可以编辑定位器并实时在浏览器窗口中看到它被高亮显示。使用复制定位器按钮将定位器复制到剪贴板，然后将其粘贴到您的测试中。</p><p><img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZGM3ZjNlYjFkMDBhYWZhODQ1YzFlZDg5ZWViMjZkZDlfSnZLTUlGc1FXZUk1NWdReUx2NzhjbkJtaHlSbzRvRFRfVG9rZW46VTRXM2JndjRib3lMZVZ4YXdlcGN1N2FGbkNiXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA" alt></p><p>查看我们的调试指南，以了解更多关于 Playwright 检查器以及使用浏览器开发工具进行调试的信息。</p><h2 id=接下来做什么-1><a class=header-anchor href=#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e5%81%9a%e4%bb%80%e4%b9%88-1></a>接下来做什么</h2><ul><li>使用 Codegen 生成测试</li><li>查看您的测试跟踪</li><li>在 CI 上使用 GitHub Actions 运行您的测试</li></ul><h1 id=跟踪查看器><a class=header-anchor href=#%e8%b7%9f%e8%b8%aa%e6%9f%a5%e7%9c%8b%e5%99%a8></a>跟踪查看器</h1><h2 id=介绍><a class=header-anchor href=#%e4%bb%8b%e7%bb%8d></a>介绍</h2><p>Playwright Trace Viewer 是一个图形用户界面（GUI）工具，允许您探索录制的 Playwright 测试跟踪，这意味着您可以前后浏览测试的每个动作，并直观地看到每个动作期间发生了什么。</p><p><strong>您将学到</strong></p><ul><li>如何录制跟踪</li><li>如何打开 HTML 报告</li><li>如何打开跟踪查看器</li></ul><h2 id=录制跟踪><a class=header-anchor href=#%e5%bd%95%e5%88%b6%e8%b7%9f%e8%b8%aa></a>录制跟踪</h2><p>可以通过使用 <code>--tracing</code> 标志运行测试来录制跟踪。</p><p>跟踪的选项有：</p><ul><li><code>on</code>: 为每个测试录制跟踪</li><li><code>off</code>: 不录制跟踪。（默认）</li><li><code>retain-on-failure</code>: 为每个测试录制跟踪，但删除成功测试运行的所有跟踪。</li></ul><p>这将录制跟踪并将其放入 <code>test-results</code> 目录中名为 <code>trace.zip</code> 的文件中。</p><p>如果您没有使用 Pytest，请点击这里了解如何录制跟踪。</p><ul><li>同步</li><li>异步</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=n>browser</span> <span class=o>=</span> <span class=n>chromium</span><span class=o>.</span><span class=n>launch</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=n>context</span> <span class=o>=</span> <span class=n>browser</span><span class=o>.</span><span class=n>new_context</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 在创建/导航页面之前开始跟踪。</span>
-</span></span><span class=line><span class=cl><span class=n>context</span><span class=o>.</span><span class=n>tracing</span><span class=o>.</span><span class=n>start</span><span class=p>(</span><span class=n>screenshots</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span> <span class=n>snapshots</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span> <span class=n>sources</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>page</span> <span class=o>=</span> <span class=n>context</span><span class=o>.</span><span class=n>new_page</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://playwright.dev&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># 停止跟踪并将其导出到 zip 归档中。</span>
-</span></span><span class=line><span class=cl><span class=n>context</span><span class=o>.</span><span class=n>tracing</span><span class=o>.</span><span class=n>stop</span><span class=p>(</span><span class=n>path</span><span class=o>=</span><span class=s2>&#34;trace.zip&#34;</span><span class=p>)</span>
-</span></span></code></pre></div><h2 id=打开跟踪><a class=header-anchor href=#%e6%89%93%e5%bc%80%e8%b7%9f%e8%b8%aa></a>打开跟踪</h2><p>您可以使用 Playwright CLI 或在 <code>trace.playwright.dev</code> 上的浏览器中打开保存的跟踪。确保添加您的 <code>trace.zip</code> 文件所在的完整路径。这应该包括 <code>test-results</code> 目录，然后是测试名称，最后是 <code>trace.zip</code>。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash><span class=line><span class=cl>playwright show-trace trace.zip
-</span></span></code></pre></div><h2 id=查看跟踪><a class=header-anchor href=#%e6%9f%a5%e7%9c%8b%e8%b7%9f%e8%b8%aa></a>查看跟踪</h2><p>通过点击每个动作或使用时间线悬停来查看测试的跟踪，并查看动作前后页面的状态。在测试的每个步骤期间检查日志、源代码和网络。跟踪查看器创建了一个 DOM 快照，因此您可以完全与之交互，打开开发工具等。</p><p>要了解更多信息，请查看我们关于跟踪查看器的详细指南。</p><h2 id=接下来是什么-2><a class=header-anchor href=#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e6%98%af%e4%bb%80%e4%b9%88-2></a>接下来是什么</h2><ul><li>在 GitHub Actions 上运行 CI 测试</li><li>了解更多关于跟踪查看器的信息</li></ul><h1 id=pytest-插件来编写端到端测试><a class=header-anchor href=#pytest-%e6%8f%92%e4%bb%b6%e6%9d%a5%e7%bc%96%e5%86%99%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95></a>Pytest 插件来编写端到端测试</h1><h2 id=引言-4><a class=header-anchor href=#%e5%bc%95%e8%a8%80-4></a>引言</h2><p>Playwright 提供了一个 Pytest 插件来编写端到端测试。要开始使用它，请参考入门指南。</p><h2 id=使用方法><a class=header-anchor href=#%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95></a>使用方法</h2><p>要运行测试，请使用 Pytest 命令行界面。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash><span class=line><span class=cl>pytest --browser webkit --headed
-</span></span></code></pre></div><p>如果你想自动添加命令行参数而不需要明确指定它们，你可以使用 pytest.ini 文件：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-TOML data-lang=TOML><span class=line><span class=cl><span class=c># pytest.ini 文件的内容</span>
-</span></span><span class=line><span class=cl><span class=p>[</span><span class=nx>pytest</span><span class=p>]</span>
-</span></span><span class=line><span class=cl><span class=c># 使用 UI 运行 firefox</span>
-</span></span><span class=line><span class=cl><span class=nx>addopts</span> <span class=p>=</span> <span class=nx>--headed</span> <span class=nx>--browser</span> <span class=nx>firefox</span>
-</span></span></code></pre></div><h2 id=命令行参数><a class=header-anchor href=#%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%8f%82%e6%95%b0></a>命令行参数</h2><p>请注意，命令行参数仅应用于默认的 <code>browser</code>、<code>context</code> 和 <code>page</code> 固定装置。如果你使用 API 调用如 browser.new_context() 创建浏览器、上下文或页面，命令行参数将不会应用。</p><ul><li><code>--headed</code>：以有头模式运行测试（默认：无头）。</li><li><code>--browser</code>：在不同的浏览器中运行测试 <code>chromium</code>、<code>firefox</code> 或 <code>webkit</code>。可以多次指定（默认：<code>chromium</code>）。</li><li><code>--browser-channel</code>：要使用的浏览器渠道。</li><li><code>--slowmo</code>：通过指定的毫秒数减慢 Playwright 操作。这样你可以看清楚发生了什么（默认：0）。</li><li><code>--device</code>：要模拟的设备。</li><li><code>--output</code>：由测试产生的工件目录（默认：<code>test-results</code>）。</li><li><code>--tracing</code>：是否为每个测试记录跟踪。<code>on</code>、<code>off</code> 或 <code>retain-on-failure</code>（默认：<code>off</code>）。</li><li><code>--video</code>：是否为每个测试录制视频。<code>on</code>、<code>off</code> 或 <code>retain-on-failure</code>（默认：<code>off</code>）。</li><li><code>--screenshot</code>：是否在每个测试后自动捕获屏幕截图。<code>on</code>、<code>off</code> 或 <code>only-on-failure</code>（默认：<code>off</code>）。</li><li><code>--full-page-screenshot</code>：在失败时是否拍摄整个页面的屏幕截图。默认情况下，只捕获视口。需要启用 <code>--screenshot</code>（默认：<code>off</code>）。</li></ul><h2 id=固定装置><a class=header-anchor href=#%e5%9b%ba%e5%ae%9a%e8%a3%85%e7%bd%ae></a>固定装置</h2><p>这个插件为 pytest 配置了 Playwright 特定的固定装置。要使用这些固定装置，将固定装置名称作为参数传递给测试函数。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_my_app_is_working</span><span class=p>(</span><span class=n>fixture_name</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>pass</span>
-</span></span><span class=line><span class=cl>    <span class=c1># 使用 fixture_name 进行测试</span>
-</span></span><span class=line><span class=cl>    <span class=c1># ...</span>
-</span></span></code></pre></div><p><strong>函数范围</strong> ：当在测试函数中请求时，这些固定装置被创建，并在测试结束时销毁。</p><ul><li><code>context</code>：测试的新浏览器上下文。</li><li><code>page</code>：测试的新浏览器页面。</li><li><code>new_context</code>：允许为测试创建不同的浏览器上下文。适用于多用户场景。接受与 browser.new_context() 相同的参数。</li></ul><p><strong>会话范围</strong> ：当在测试函数中请求时，这些固定装置被创建，并在所有测试结束时销毁。</p><ul><li><code>playwright</code>：Playwright 实例。</li><li><code>browser_type</code>：当前浏览器的 BrowserType 实例。</li><li><code>browser</code>：由 Playwright 启动的浏览器实例。</li><li><code>browser_name</code>：浏览器名称字符串。</li><li><code>browser_channel</code>：浏览器渠道字符串。</li><li><code>is_chromium</code>、<code>is_webkit</code>、<code>is_firefox</code>：相应浏览器类型的布尔值。</li></ul><p><strong>自定义固定装置选项</strong> ：对于 <code>browser</code> 和 <code>context</code> 固定装置，使用以下固定装置定义自定义启动选项。</p><ul><li><code>browser_type_launch_args</code>：覆盖 browser_type.launch() 的启动参数。它应该返回一个字典。</li><li><code>browser_context_args</code>：覆盖 browser.new_context() 的选项。它应该返回一个字典。</li></ul><p>也可以通过使用 <code>browser_context_args</code> 标记来覆盖单个测试的上下文选项（browser.new_context()）：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pytest</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nd>@pytest.mark.browser_context_args</span><span class=p>(</span><span class=n>timezone_id</span><span class=o>=</span><span class=s2>&#34;Europe/Berlin&#34;</span><span class=p>,</span> <span class=n>locale</span><span class=o>=</span><span class=s2>&#34;en-GB&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_browser_context_args</span><span class=p>(</span><span class=n>page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>assert</span> <span class=n>page</span><span class=o>.</span><span class=n>evaluate</span><span class=p>(</span><span class=s2>&#34;window.navigator.userAgent&#34;</span><span class=p>)</span> <span class=o>==</span> <span class=s2>&#34;Europe/Berlin&#34;</span>
-</span></span><span class=line><span class=cl>    <span class=k>assert</span> <span class=n>page</span><span class=o>.</span><span class=n>evaluate</span><span class=p>(</span><span class=s2>&#34;window.navigator.languages&#34;</span><span class=p>)</span> <span class=o>==</span> <span class=p>[</span><span class=s2>&#34;de-DE&#34;</span><span class=p>]</span>
-</span></span></code></pre></div><h2 id=并行性同时运行多个测试><a class=header-anchor href=#%e5%b9%b6%e8%a1%8c%e6%80%a7%e5%90%8c%e6%97%b6%e8%bf%90%e8%a1%8c%e5%a4%9a%e4%b8%aa%e6%b5%8b%e8%af%95></a>并行性：同时运行多个测试</h2><p>如果你的测试在拥有大量 CPU 的机器上运行，你可以通过使用 <code>pytest-xdist</code> 同时运行多个测试来加快测试套件的整体执行时间：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash><span class=line><span class=cl><span class=c1># 安装依赖</span>
-</span></span><span class=line><span class=cl>pip install pytest-xdist
-</span></span><span class=line><span class=cl><span class=c1># 使用 --numprocesses 标志</span>
-</span></span><span class=line><span class=cl>pytest --numprocesses auto
-</span></span></code></pre></div><p>根据硬件和测试的性质，你可以将 <code>numprocesses</code> 设置为从 <code>2</code> 到机器上的 CPU 数量。如果设置得太高，你可能会注意到意外的行为。</p><p>有关 <code>pytest</code> 选项的一般信息，请参见运行测试。</p><h2 id=示例><a class=header-anchor href=#%e7%a4%ba%e4%be%8b></a>示例</h2><h3 id=为自动补全配置-mypy-类型><a class=header-anchor href=#%e4%b8%ba%e8%87%aa%e5%8a%a8%e8%a1%a5%e5%85%a8%e9%85%8d%e7%bd%ae-mypy-%e7%b1%bb%e5%9e%8b></a>为自动补全配置 Mypy 类型</h3><p>test_my_application.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>playwright.sync_api</span> <span class=kn>import</span> <span class=n>Page</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_visit_admin_dashboard</span><span class=p>(</span><span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;/admin&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=c1># ...</span>
-</span></span></code></pre></div><h3 id=配置慢动作><a class=header-anchor href=#%e9%85%8d%e7%bd%ae%e6%85%a2%e5%8a%a8%e4%bd%9c></a>配置慢动作</h3><p>使用 <code>--slowmo</code> 参数运行测试。</p><p>将 Playwright 操作减慢 100 毫秒。</p><h3 id=按浏览器跳过测试><a class=header-anchor href=#%e6%8c%89%e6%b5%8f%e8%a7%88%e5%99%a8%e8%b7%b3%e8%bf%87%e6%b5%8b%e8%af%95></a>按浏览器跳过测试</h3><p>test_my_application.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pytest</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nd>@pytest.mark.skip_browser</span><span class=p>(</span><span class=s2>&#34;firefox&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_visit_example</span><span class=p>(</span><span class=n>page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://example.com&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=c1># ...</span>
-</span></span></code></pre></div><h3 id=在特定浏览器上运行><a class=header-anchor href=#%e5%9c%a8%e7%89%b9%e5%ae%9a%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%8a%e8%bf%90%e8%a1%8c></a>在特定浏览器上运行</h3><p>conftest.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pytest</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nd>@pytest.mark.only_browser</span><span class=p>(</span><span class=s2>&#34;chromium&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_visit_example</span><span class=p>(</span><span class=n>page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://example.com&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=c1># ...</span>
-</span></span></code></pre></div><h3 id=使用自定义浏览器渠道如-google-chrome-或-microsoft-edge><a class=header-anchor href=#%e4%bd%bf%e7%94%a8%e8%87%aa%e5%ae%9a%e4%b9%89%e6%b5%8f%e8%a7%88%e5%99%a8%e6%b8%a0%e9%81%93%e5%a6%82-google-chrome-%e6%88%96-microsoft-edge></a>使用自定义浏览器渠道，如 Google Chrome 或 Microsoft Edge</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash><span class=line><span class=cl>pytest --browser-channel chrome
-</span></span></code></pre></div><p>test_my_application.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_example</span><span class=p>(</span><span class=n>page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://example.com&#34;</span><span class=p>)</span>
-</span></span></code></pre></div><h3 id=配置基础-url><a class=header-anchor href=#%e9%85%8d%e7%bd%ae%e5%9f%ba%e7%a1%80-url></a>配置基础 URL</h3><p>使用 <code>base-url</code> 参数启动 Pytest。<code>pytest-base-url</code> 插件用于此目的，它允许你从配置、命令行参数或固定装置中设置基础 URL。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash><span class=line><span class=cl>pytest --base-url http://localhost:8080
-</span></span></code></pre></div><p>test_my_application.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_visit_example</span><span class=p>(</span><span class=n>page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;/admin&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=c1># -&gt; 将导致 http://localhost:8080/admin</span>
-</span></span></code></pre></div><h3 id=忽略-https-错误><a class=header-anchor href=#%e5%bf%bd%e7%95%a5-https-%e9%94%99%e8%af%af></a>忽略 HTTPS 错误</h3><p>conftest.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pytest</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nd>@pytest.fixture</span><span class=p>(</span><span class=n>scope</span><span class=o>=</span><span class=s2>&#34;session&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>browser_context_args</span><span class=p>(</span><span class=n>browser_context_args</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=o>**</span><span class=n>browser_context_args</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=s2>&#34;ignore_https_errors&#34;</span><span class=p>:</span> <span class=kc>True</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span></code></pre></div><h3 id=使用自定义视口大小><a class=header-anchor href=#%e4%bd%bf%e7%94%a8%e8%87%aa%e5%ae%9a%e4%b9%89%e8%a7%86%e5%8f%a3%e5%a4%a7%e5%b0%8f></a>使用自定义视口大小</h3><p>conftest.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pytest</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nd>@pytest.fixture</span><span class=p>(</span><span class=n>scope</span><span class=o>=</span><span class=s2>&#34;session&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>browser_context_args</span><span class=p>(</span><span class=n>browser_context_args</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=o>**</span><span class=n>browser_context_args</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=s2>&#34;viewport&#34;</span><span class=p>:</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>            <span class=s2>&#34;width&#34;</span><span class=p>:</span> <span class=mi>1920</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>            <span class=s2>&#34;height&#34;</span><span class=p>:</span> <span class=mi>1080</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=p>}</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span></code></pre></div><h3 id=设备模拟><a class=header-anchor href=#%e8%ae%be%e5%a4%87%e6%a8%a1%e6%8b%9f></a>设备模拟</h3><p>conftest.py</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pytest</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nd>@pytest.fixture</span><span class=p>(</span><span class=n>scope</span><span class=o>=</span><span class=s2>&#34;session&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>browser_context_args</span><span class=p>(</span><span class=n>browser_context_args</span><span class=p>,</span> <span class=n>playwright</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>iphone_11</span> <span class=o>=</span> <span class=n>playwright</span><span class=o>.</span><span class=n>devices</span><span class=p>[</span><span class=s1>&#39;iPhone 11 Pro&#39;</span><span class=p>]</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=o>**</span><span class=n>browser_context_args</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=o>**</span><span class=n>iphone_11</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span></code></pre></div><p>或通过命令行 <code>--device="iPhone 11 Pro"</code>。</p><h3 id=与-unittesttestcase-一起使用><a class=header-anchor href=#%e4%b8%8e-unittesttestcase-%e4%b8%80%e8%b5%b7%e4%bd%bf%e7%94%a8></a>与 <code>unittest.TestCase</code> 一起使用</h3><p>查看以下示例，了解如何将其与 <code>unittest.TestCase</code> 一起使用。这有一个限制，即只能指定单个浏览器，并且在指定多个浏览器时不会生成多个浏览器的矩阵。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pytest</span>
-</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>unittest</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>playwright.sync_api</span> <span class=kn>import</span> <span class=n>Page</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>MyTest</span><span class=p>(</span><span class=n>unittest</span><span class=o>.</span><span class=n>TestCase</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=nd>@pytest.fixture</span><span class=p>(</span><span class=n>autouse</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>setup</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>page</span><span class=p>:</span> <span class=n>Page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>page</span> <span class=o>=</span> <span class=n>page</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>test_foobar</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://microsoft.com&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>page</span><span class=o>.</span><span class=n>locator</span><span class=p>(</span><span class=s2>&#34;#foobar&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>click</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>        <span class=k>assert</span> <span class=bp>self</span><span class=o>.</span><span class=n>page</span><span class=o>.</span><span class=n>evaluate</span><span class=p>(</span><span class=s2>&#34;1 + 1&#34;</span><span class=p>)</span> <span class=o>==</span> <span class=mi>2</span>
-</span></span></code></pre></div><h2 id=调试><a class=header-anchor href=#%e8%b0%83%e8%af%95></a>调试</h2><h3 id=与-pdb-一起使用><a class=header-anchor href=#%e4%b8%8e-pdb-%e4%b8%80%e8%b5%b7%e4%bd%bf%e7%94%a8></a>与 pdb 一起使用</h3><p>在你的测试代码中使用 <code>breakpoint()</code> 语句来暂停执行并获得 pdb REPL。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-Python data-lang=Python><span class=line><span class=cl><span class=k>def</span> <span class=nf>test_bing_is_working</span><span class=p>(</span><span class=n>page</span><span class=p>):</span>
-</span></span><span class=line><span class=cl>    <span class=n>page</span><span class=o>.</span><span class=n>goto</span><span class=p>(</span><span class=s2>&#34;https://bing.com&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=n>breakpoint</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>    <span class=c1># ...</span>
-</span></span></code></pre></div><h2 id=部署到-ci><a class=header-anchor href=#%e9%83%a8%e7%bd%b2%e5%88%b0-ci></a>部署到 CI</h2><p>请参阅 CI 提供商的指南，了解如何将你的测试部署到 CI/CD。</p></div><footer class=article-footer><div class=share-wrapper><a href="https://www.facebook.com/sharer/sharer.php?u=https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/" target=_blank rel="noopener noreferrer" title=playwright的python文档><div class="share-icon icon icon-facebook"></div></a><a href="https://twitter.com/intent/tweet?url=https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;text=playwright%e7%9a%84python%e6%96%87%e6%a1%a3&amp;via=https://bluespace3.github.io/" target=_blank rel="noopener noreferrer" title=playwright的python文档><div class="share-icon icon icon-twitter"></div></a><a href="https://www.linkedin.com/shareArticle?url=https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;title=playwright%e7%9a%84python%e6%96%87%e6%a1%a3&amp;summary=%0d%e5%ae%89%e8%a3%85%0d%e5%bc%95%e8%a8%80%0dPlaywright%20%e6%98%af%e4%b8%93%e9%97%a8%e4%b8%ba%e6%bb%a1%e8%b6%b3%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95%e7%9a%84%e9%9c%80%e6%b1%82%e8%80%8c%e5%88%9b%e5%bb%ba%e7%9a%84%e3%80%82Playwright%20%e6%94%af%e6%8c%81%e5%8c%85%e6%8b%ac%20Chromium%e3%80%81WebKit%20%e5%92%8c%20Firefox%20%e5%9c%a8%e5%86%85%e7%9a%84%e6%89%80%e6%9c%89%e7%8e%b0%e4%bb%a3%e6%b8%b2%e6%9f%93%e5%bc%95%e6%93%8e%e3%80%82%e5%9c%a8%20Windows%e3%80%81Linux%20%e5%92%8c%20macOS%20%e4%b8%8a%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%ef%bc%8c%e6%97%a0%e8%ae%ba%e6%98%af%e6%9c%ac%e5%9c%b0%e8%bf%98%e6%98%af%e5%9c%a8%20CI%20%e4%b8%8a%ef%bc%8c%e6%97%a0%e8%ae%ba%e6%98%af%e6%97%a0%e5%a4%b4%e6%a8%a1%e5%bc%8f%e8%bf%98%e6%98%af%e6%9c%89%e5%a4%b4%e6%a8%a1%e5%bc%8f%ef%bc%8c%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e5%8e%9f%e7%94%9f%e7%a7%bb%e5%8a%a8%e8%ae%be%e5%a4%87%e4%bb%bf%e7%9c%9f%e3%80%82%0aPlaywright%20%e5%ba%93%e5%8f%af%e4%bb%a5%e7%94%a8%e4%bd%9c%e9%80%9a%e7%94%a8%e7%9a%84%e6%b5%8f%e8%a7%88%e5%99%a8%e8%87%aa%e5%8a%a8%e5%8c%96%e5%b7%a5%e5%85%b7%ef%bc%8c%e4%b8%ba%e5%90%8c%e6%ad%a5%e5%92%8c%e5%bc%82%e6%ad%a5%20Python%20%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e5%a5%97%e5%bc%ba%e5%a4%a7%e7%9a%84%20API%20%e6%9d%a5%e8%87%aa%e5%8a%a8%e5%8c%96%20Web%20%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e3%80%82%0a%e6%9c%ac%e4%bb%8b%e7%bb%8d%e6%8f%8f%e8%bf%b0%e4%ba%86%20Playwright%20Pytest%20%e6%8f%92%e4%bb%b6%ef%bc%8c%e8%bf%99%e6%98%af%e7%bc%96%e5%86%99%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95%e7%9a%84%e6%8e%a8%e8%8d%90%e6%96%b9%e5%bc%8f%e3%80%82%0a%e4%bd%a0%e5%b0%86%e5%ad%a6%e5%88%b0%0a%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%85%20Playwright%20%e2%80%a6&amp;mini=true&amp;ro=true" target=_blank rel="noopener noreferrer" title=playwright的python文档><div class="share-icon icon icon-linkedin"></div></a><a href="https://www.reddit.com/submit?url=https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;title=playwright%e7%9a%84python%e6%96%87%e6%a1%a3" target=_blank rel="noopener noreferrer" title=playwright的python文档><div class="share-icon icon icon-reddit"></div></a><a href="https://service.weibo.com/share/share.php?url=https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;appkey=&amp;title=playwright%e7%9a%84python%e6%96%87%e6%a1%a3&amp;pic=&amp;ralateUid=" target=_blank rel="noopener noreferrer" title=playwright的python文档><div class="share-icon icon icon-weibo"></div></a><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;title=playwright%e7%9a%84python%e6%96%87%e6%a1%a3&amp;desc=%0d%e5%ae%89%e8%a3%85%0d%e5%bc%95%e8%a8%80%0dPlaywright%20%e6%98%af%e4%b8%93%e9%97%a8%e4%b8%ba%e6%bb%a1%e8%b6%b3%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95%e7%9a%84%e9%9c%80%e6%b1%82%e8%80%8c%e5%88%9b%e5%bb%ba%e7%9a%84%e3%80%82Playwright%20%e6%94%af%e6%8c%81%e5%8c%85%e6%8b%ac%20Chromium%e3%80%81WebKit%20%e5%92%8c%20Firefox%20%e5%9c%a8%e5%86%85%e7%9a%84%e6%89%80%e6%9c%89%e7%8e%b0%e4%bb%a3%e6%b8%b2%e6%9f%93%e5%bc%95%e6%93%8e%e3%80%82%e5%9c%a8%20Windows%e3%80%81Linux%20%e5%92%8c%20macOS%20%e4%b8%8a%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%ef%bc%8c%e6%97%a0%e8%ae%ba%e6%98%af%e6%9c%ac%e5%9c%b0%e8%bf%98%e6%98%af%e5%9c%a8%20CI%20%e4%b8%8a%ef%bc%8c%e6%97%a0%e8%ae%ba%e6%98%af%e6%97%a0%e5%a4%b4%e6%a8%a1%e5%bc%8f%e8%bf%98%e6%98%af%e6%9c%89%e5%a4%b4%e6%a8%a1%e5%bc%8f%ef%bc%8c%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e5%8e%9f%e7%94%9f%e7%a7%bb%e5%8a%a8%e8%ae%be%e5%a4%87%e4%bb%bf%e7%9c%9f%e3%80%82%0aPlaywright%20%e5%ba%93%e5%8f%af%e4%bb%a5%e7%94%a8%e4%bd%9c%e9%80%9a%e7%94%a8%e7%9a%84%e6%b5%8f%e8%a7%88%e5%99%a8%e8%87%aa%e5%8a%a8%e5%8c%96%e5%b7%a5%e5%85%b7%ef%bc%8c%e4%b8%ba%e5%90%8c%e6%ad%a5%e5%92%8c%e5%bc%82%e6%ad%a5%20Python%20%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e5%a5%97%e5%bc%ba%e5%a4%a7%e7%9a%84%20API%20%e6%9d%a5%e8%87%aa%e5%8a%a8%e5%8c%96%20Web%20%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e3%80%82%0a%e6%9c%ac%e4%bb%8b%e7%bb%8d%e6%8f%8f%e8%bf%b0%e4%ba%86%20Playwright%20Pytest%20%e6%8f%92%e4%bb%b6%ef%bc%8c%e8%bf%99%e6%98%af%e7%bc%96%e5%86%99%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95%e7%9a%84%e6%8e%a8%e8%8d%90%e6%96%b9%e5%bc%8f%e3%80%82%0a%e4%bd%a0%e5%b0%86%e5%ad%a6%e5%88%b0%0a%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%85%20Playwright%20%e2%80%a6&amp;source=https://bluespace3.github.io/" target=_blank rel="noopener noreferrer" title=playwright的python文档><div class="share-icon icon icon-qq"></div></a><a href=javascript:; title=playwright的python文档><div class="share-icon icon icon-weixin"><div id=share-weixin><div class=share-weixin-dom><div class=share-weixin-content><img id=share-weixin-banner><div id=share-weixin-title></div><div id=share-weixin-desc></div></div><div class=share-weixin-qrcode><div class=share-weixin-info><div id=share-weixin-author></div><div id=share-weixin-theme>Powered By hugo-theme-reimu</div></div><img id=share-weixin-qr></div></div><div class=share-weixin-canvas></div></div></div></a></div><ul class=article-tag-list itemprop=keywords></ul></footer></div><nav id=article-nav data-aos=fade-up><div class="article-nav-link-wrap article-nav-link-left"><img data-src=https://s21.ax1x.com/2025/03/21/pE0Pd29.jpg data-sizes=auto alt=pytest-intro class=lazyload>
-<a href=/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/></a><div class=article-nav-caption>前一篇</div><h3 class=article-nav-title>pytest-intro</h3></div><div class="article-nav-link-wrap article-nav-link-right"><img data-src=https://raw.githubusercontent.com/bluespace3/images/master/90.jpeg data-sizes=auto alt=Pandoc class=lazyload>
-<a href=/post/%E5%B7%A5%E5%85%B7/pandoc/></a><div class=article-nav-caption>后一篇</div><h3 class=article-nav-title>Pandoc</h3></div></nav></article><section id=comments data-aos=fade-up><div class=comment-header><h2 class=comment-title>说些什么吧！</h2><div class=comment-selector><div class=comment-selector-wrap><div class=selector-item data-selector=giscus><span>giscus</span></div></div></div></div><div class=comment-content><div class="comment giscus-comment" data-aos=fade-up></div></div></section></section></div><footer id=footer><div style=width:100%;overflow:hidden><div class=footer-line></div></div><div id=footer-info><div><span class=icon-copyright></span>
-2020 -
-2025
-<span class="footer-info-sep rotate"></span>
-新人类</div><div>基于&nbsp;<a href=https://gohugo.io/ target=_blank>Hugo</a>&nbsp; Theme.<a href=https://github.com/D-Sketon/hugo-theme-reimu target=_blank>Reimu</a></div><div><span class=icon-brush>&nbsp;
-13.2k
-</span>&nbsp;|&nbsp;
-<span class=icon-coffee>&nbsp;
-01:34</span></div><div><span class=icon-eye></span>
-<span id=busuanzi_container_site_pv>总访问量&nbsp;<span id=busuanzi_value_site_pv></span></span>
-&nbsp;|&nbsp;
-<span class=icon-user></span>
-<span id=busuanzi_container_site_uv>总访客量&nbsp;<span id=busuanzi_value_site_uv></span></span></div></div></footer><div class=sidebar-top><div class="sidebar-top-taichi rotate"></div><div class=arrow-up></div></div><div id=mask class=hide></div></div><nav id=mobile-nav><div class=sidebar-wrap><div class=sidebar-toc-sidebar><div class=sidebar-toc><h3 class=toc-title>文章目录</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><a href=#引言>引言</a></li><li><a href=#安装-playwright-pytest>安装 Playwright Pytest</a></li><li><a href=#添加示例测试>添加示例测试</a></li><li><a href=#运行示例测试>运行示例测试</a></li><li><a href=#更新-playwright>更新 Playwright</a></li><li><a href=#系统要求>系统要求</a></li><li><a href=#接下来是什么>接下来是什么</a></li></ul><ul><li><a href=#引言-1>引言</a></li><li><a href=#第一个测试>第一个测试</a></li><li><a href=#操作>操作</a><ul><li><a href=#导航>导航</a></li><li><a href=#交互>交互</a></li><li><a href=#基本操作>基本操作</a></li></ul></li><li><a href=#断言>断言</a><ul><li><a href=#测试隔离>测试隔离</a></li><li><a href=#使用夹具>使用夹具</a></li></ul></li><li><a href=#接下来是什么-1>接下来是什么</a></li></ul><ul><li><a href=#引言-2>引言</a></li><li><a href=#运行-codegen>运行 Codegen</a><ul><li><a href=#录制测试>录制测试</a></li><li><a href=#生成定位器>生成定位器</a></li><li><a href=#仿真>仿真</a></li></ul></li><li><a href=#接下来做什么>接下来做什么</a></li></ul><ul><li><a href=#引言-3>引言</a></li><li><a href=#运行测试>运行测试</a><ul><li><a href=#命令行>命令行</a></li><li><a href=#在有头模式下运行测试>在有头模式下运行测试</a></li><li><a href=#在不同的浏览器上运行测试>在不同的浏览器上运行测试</a></li><li><a href=#运行特定测试>运行特定测试</a></li><li><a href=#并行运行测试>并行运行测试</a></li></ul></li><li><a href=#调试测试>调试测试</a></li><li><a href=#接下来做什么-1>接下来做什么</a></li></ul><ul><li><a href=#介绍>介绍</a></li><li><a href=#录制跟踪>录制跟踪</a></li><li><a href=#打开跟踪>打开跟踪</a></li><li><a href=#查看跟踪>查看跟踪</a></li><li><a href=#接下来是什么-2>接下来是什么</a></li></ul><ul><li><a href=#引言-4>引言</a></li><li><a href=#使用方法>使用方法</a></li><li><a href=#命令行参数>命令行参数</a></li><li><a href=#固定装置>固定装置</a></li><li><a href=#并行性同时运行多个测试>并行性：同时运行多个测试</a></li><li><a href=#示例>示例</a><ul><li><a href=#为自动补全配置-mypy-类型>为自动补全配置 Mypy 类型</a></li><li><a href=#配置慢动作>配置慢动作</a></li><li><a href=#按浏览器跳过测试>按浏览器跳过测试</a></li><li><a href=#在特定浏览器上运行>在特定浏览器上运行</a></li><li><a href=#使用自定义浏览器渠道如-google-chrome-或-microsoft-edge>使用自定义浏览器渠道，如 Google Chrome 或 Microsoft Edge</a></li><li><a href=#配置基础-url>配置基础 URL</a></li><li><a href=#忽略-https-错误>忽略 HTTPS 错误</a></li><li><a href=#使用自定义视口大小>使用自定义视口大小</a></li><li><a href=#设备模拟>设备模拟</a></li><li><a href=#与-unittesttestcase-一起使用>与 <code>unittest.TestCase</code> 一起使用</a></li></ul></li><li><a href=#调试>调试</a><ul><li><a href=#与-pdb-一起使用>与 pdb 一起使用</a></li></ul></li><li><a href=#部署到-ci>部署到 CI</a></li></ul></nav></div></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/OIP%20%284%29.jpeg data-sizes=auto alt=新人类 class=lazyload><div class=sidebar-author-name>新人类</div><div class=sidebar-description>致敬勇于探索未知的人类！</div></div><div class=sidebar-state><div class=sidebar-state-article><div>文章</div><div class=sidebar-state-number>50</div></div><div class=sidebar-state-category><div>分类</div><div class=sidebar-state-number>1</div></div><div class=sidebar-state-tag><div>标签</div><div class=sidebar-state-number>0</div></div></div><div class=sidebar-social><div class="icon-bilibili sidebar-social-icon"><a href=https://space.bilibili.com/390297990 itemprop=url target=_blank aria-label=bilibili rel="noopener external nofollow noreferrer"></a></div><div class="icon-email sidebar-social-icon"><a href=2637458905@qq.com itemprop=url target=_blank aria-label=email rel="noopener external nofollow noreferrer"></a></div><div class="icon-github sidebar-social-icon"><a href=https://github.com/bluespace3 itemprop=url target=_blank aria-label=github rel="noopener external nofollow noreferrer"></a></div></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=首页></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>首页</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=归档></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>归档</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=关于></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>关于</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/friend aria-label=友链></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>友链</div></div></div></div></div><div class=sidebar-btn-wrapper><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></nav></div><div class=site-search><div class="reimu-popup popup"><div class=reimu-search><div class=reimu-search-input-icon></div><div class=reimu-search-input id=reimu-search-input></div><div class=popup-btn-close></div></div><div class=reimu-results><div id=reimu-stats></div><div id=reimu-hits></div><div id=reimu-pagination class=reimu-pagination></div></div><img class=reimu-bg src=/images/reimu.png></div></div><script src=https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js integrity=sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf+e crossorigin=anonymous></script><script src=https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js integrity=sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q crossorigin=anonymous></script><script src=/js/main.js integrity crossorigin=anonymous></script><script src=/js/aos.js integrity crossorigin=anonymous></script><script>var aosInit=()=>{AOS.init({duration:1e3,easing:"ease",once:!0,offset:50})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",aosInit):aosInit()</script><script src=/js/pjax_main.js integrity crossorigin=anonymous data-pjax></script><script>var ALGOLIA_CONFIG={logo:"/images/algolia_logo.svg",algolia:{applicationID:"XOD7QMRN6A",apiKey:"f0c206edfe24bfd2fe1b5837560b4b5e",indexName:"bluespace3_github_io_xod7qmrn6a_pages",hits:{per_page:parseInt("10")},labels:{input_placeholder:"搜索.....",hits_empty:"未发现与 「${query}」相关内容",hits_stats:"找到${hits}条结果（用时 ${time} ms）"}}}</script><script src=https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js defer integrity=sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S+jQz7ZBtQXnsXmD+9jDOOY4cL6dCPzlrk crossorigin=anonymous></script><script src=https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js defer integrity=sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y+KHTORelMMEn7mOp2AVPp+7fr03dLgZiV3J crossorigin=anonymous></script><script src=/js/algolia_search.js integrity crossorigin=anonymous></script><script src=https://npm.webcache.cn/mouse-firework@0.1.0/dist/index.umd.js integrity=sha384-KM6i7tu43nYd6e0beIljxHMC5tZc58XBDu7pPA58w50h18Jsx7gLdimfS09RXlKv crossorigin=anonymous></script><script>if(window.firework){const e=JSON.parse('{"excludeelements":["a","button"],"particles":[{"colors":["#5252ff","#7c7cff","#afafff","#d0d0ff"],"duration":[1200,1800],"easing":"easeOutExpo","move":["emit"],"number":20,"shape":"circle","shapeOptions":{"alpha":[0.3,0.5],"radius":[16,32]}},{"colors":["#0000ff"],"duration":[1200,1800],"easing":"easeOutExpo","move":["diffuse"],"number":1,"shape":"circle","shapeOptions":{"alpha":[0.2,0.5],"lineWidth":6,"radius":20}}]}');e.excludeElements=e.excludeelements,delete e.excludeelements,window.firework(e)}</script><div id=lazy-script><div><script data-pjax>window.REIMU_POST={author:"新人类",title:"playwright的python文档",url:"https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/",description:`\r安装\r引言\rPlaywright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。
-Playwright 库可以用作通用的浏览器自动化工具，为同步和异步 Python 提供了一套强大的 API 来自动化 Web 应用程序。
-本介绍描述了 Playwright Pytest 插件，这是编写端到端测试的推荐方式。
-你将学到
-如何安装 Playwright …`,cover:"https://bluespace3.github.io/images/%E9%A3%9E%E8%88%B91.jpeg"}</script><script src=/js/insert_highlight.js integrity crossorigin=anonymous data-pjax></script><script type=module data-pjax>
+<!doctype html>
+<html
+  lang="zh-cn" 
+  
+    data-theme-mode="auto"
+  
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+
+
+
+
+
+
+
+  
+
+<title>
+  playwright的python文档 | 新人类
+</title>
+<meta
+  name="description"
+  content="致敬勇于探索未知的人类！"
+/>
+
+
+
+
+
+
+
+
+
+
+<script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"clipboard\":{\"copyright\":{\"content\":\"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！\",\"count\":50,\"enable\":false},\"fail\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"success\":\"复制成功(*^▽^*)\"},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_0khxww3tj3q9\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":\"本文最后更新于 {time}，请注意文中内容可能已经发生变化。\"}}");
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+
+  
+  
+  
+    
+  
+
+  
+  
+  
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7cUbuntu%20Mono:400,400italic,700,700italic&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7cUbuntu%20Mono:400,400italic,700,700italic&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+
+
+
+
+
+
+  <link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+
+
+
+  
+
+
+
+
+
+
+ <link rel="stylesheet" href="/css/loader.css" />
+
+
+
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="playwright的python文档 | 新人类" />
+  <meta
+    property="og:description"
+    content="致敬勇于探索未知的人类！"
+  />
+  <meta property="og:url" content="http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/" />
+  <meta
+    property="og:site_name"
+    content="蓝色空间号"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="新人类" />
+  <meta property="article:published_time" content="2025-11-22T16:21:11&#43;00:00" />
+  <meta property="article:modified_time" content="2025-11-22T16:21:11&#43;00:00" />
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+  
+  
+  
+  
+  
+
+
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="/css/main.css" />
+
+
+
+
+
+  <link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+
+
+
+
+
+  <link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.9/dist/katex.min.css"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"
+  ></script>
+
+
+
+
+
+  
+
+
+  <link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+
+    
+      <style>
+  :root {
+    --theme-color: #3366cc;         /* 更深的蓝色 */
+    --theme-color-light: #99ccff;   /* 更亮的蓝色 */
+    --theme-color-dark: #003399;    /* 更暗的蓝色 */
+    --theme-color-text: #ffffff;    /* 按钮文字颜色 */
+  }
+  
+  /* 移除蓝色滤镜，因为新图片已经是蓝色调 */
+  /* .banner {
+    filter: hue-rotate(240deg) saturate(1.2) !important;
+  } */
+  
+  /* 导航栏背景颜色 */
+  .header-inner {
+    background-color: var(--theme-color) !important;
+  }
+  
+  /* 导航菜单项文字颜色 */
+  .menu-item a {
+    color: white !important;
+  }
+  
+  /* 导航菜单图标颜色 */
+  .menu-item svg, .menu-item i {
+    color: #000000 !important; /* 改为黑色 */
+    fill: #000000 !important;
+  }
+  
+  /* 文章标题和按钮颜色 */
+  .article-title a, .post-title, h1, h2, h3, h4, h5, h6 {
+    color: var(--theme-color-dark) !important;
+  }
+  
+  /* 增强"新人类"副标题的样式 */
+  .subtitle {
+    color: #0033cc !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7) !important;
+    font-size: 1.3em !important;
+    letter-spacing: 1px !important;
+  }
+  
+  /* 右侧作者信息卡片标题 */
+  .author-info .author-title, .sidebar-title {
+    color: var(--theme-color-dark) !important;
+    font-weight: bold !important;
+  }
+  
+  /* 右侧作者信息卡片背景和边框 */
+  .author-info {
+    background-color: rgba(153, 204, 255, 0.1) !important;
+    border-color: var(--theme-color) !important;
+    border-width: 2px !important;
+  }
+  
+  /* 头像样式 */
+  .author-info img.avatar {
+    display: block !important;
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50% !important;
+    border: 3px solid var(--theme-color) !important;
+    margin: 0 auto 10px !important;
+    box-shadow: 0 0 10px rgba(0, 51, 153, 0.3) !important;
+  }
+  
+  /* 标签和分类按钮背景 */
+  .tag-item, .category-item, .friend-item, .recent-post-item {
+    background-color: transparent !important; /* 设置为透明 */
+    color: inherit !important; /* 恢复默认文字颜色 */
+  }
+  
+  /* 侧边栏标题 */
+  .sidebar-title, .widget-title, .archive-title {
+    color: var(--theme-color-dark) !important;
+  }
+  
+  /* 文章卡片边框和阴影 */
+  .post-card {
+    border-color: var(--theme-color-light) !important;
+    box-shadow: 0 2px 8px rgba(0, 51, 153, 0.1) !important;
+  }
+  
+  /* 按钮和链接高亮 */
+  .button, .btn, button, input[type="button"], input[type="submit"], .pagination-item.current {
+    background-color: var(--theme-color) !important;
+    color: var(--theme-color-text) !important;
+  }
+  
+  /* 链接颜色 */
+  a {
+    color: var(--theme-color-dark) !important;
+  }
+  
+  a:hover {
+    color: var(--theme-color) !important;
+  }
+  
+  /* 文章元信息 */
+  .article-meta, .article-footer {
+    color: var(--theme-color-dark) !important;
+  }
+  
+  /* 搜索框 */
+  .search-form {
+    border-color: var(--theme-color) !important;
+  }
+  
+  /* 页脚 */
+  .footer {
+    background-color: var(--theme-color-light) !important;
+    color: var(--theme-color-dark) !important;
+  }
+  
+  /* Hello World 标题 */
+  .post-title a {
+    color: var(--theme-color-dark) !important;
+  }
+</style>
+
+    
+  </head>
+  <body>
+    
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+        
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+        
+      </div>
+      <div class="loading-word">蓝色空间号启动中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+
+    <div id="container">
+      <div id="wrap">
+        
+<div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'>
+          
+            
+              &#xe62b;
+            
+          
+        </div>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'>
+          
+            
+              &#xe62b;
+            
+          
+        </div>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'>
+          
+            
+              &#xe62b;
+            
+          
+        </div>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'>
+          
+            
+              &#xe62b;
+            
+          
+        </div>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+    
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索"></a>
+    
+  </nav>
+</div>
+<header id="header">
+  
+    
+      
+        <picture>
+          
+        </picture>
+        
+          <img  fetchpriority="high" src="/images/%e9%a3%9e%e8%88%b91.jpeg" alt="playwright的python文档">
+        
+      
+    
+  
+
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          
+        
+  
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">playwright的python文档</h1>
+          </a>
+        
+      
+  
+      
+        
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+        <div id="content"
+          class="sidebar-left"
+            >
+          <aside id="sidebar">
+  
+  
+    <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
+  
+  
+  <div class="sidebar-wrapper wrap-sticky">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    >
+      
+        
+          <div class="sidebar-toc-sidebar">
+            <div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#引言">引言</a></li>
+    <li><a href="#安装-playwright-pytest">安装 Playwright Pytest</a></li>
+    <li><a href="#添加示例测试">添加示例测试</a></li>
+    <li><a href="#运行示例测试">运行示例测试</a></li>
+    <li><a href="#更新-playwright">更新 Playwright</a></li>
+    <li><a href="#系统要求">系统要求</a></li>
+    <li><a href="#接下来是什么">接下来是什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引言-1">引言</a></li>
+    <li><a href="#第一个测试">第一个测试</a></li>
+    <li><a href="#操作">操作</a>
+      <ul>
+        <li><a href="#导航">导航</a></li>
+        <li><a href="#交互">交互</a></li>
+        <li><a href="#基本操作">基本操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#断言">断言</a>
+      <ul>
+        <li><a href="#测试隔离">测试隔离</a></li>
+        <li><a href="#使用夹具">使用夹具</a></li>
+      </ul>
+    </li>
+    <li><a href="#接下来是什么-1">接下来是什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引言-2">引言</a></li>
+    <li><a href="#运行-codegen">运行 Codegen</a>
+      <ul>
+        <li><a href="#录制测试">录制测试</a></li>
+        <li><a href="#生成定位器">生成定位器</a></li>
+        <li><a href="#仿真">仿真</a></li>
+      </ul>
+    </li>
+    <li><a href="#接下来做什么">接下来做什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引言-3">引言</a></li>
+    <li><a href="#运行测试">运行测试</a>
+      <ul>
+        <li><a href="#命令行">命令行</a></li>
+        <li><a href="#在有头模式下运行测试">在有头模式下运行测试</a></li>
+        <li><a href="#在不同的浏览器上运行测试">在不同的浏览器上运行测试</a></li>
+        <li><a href="#运行特定测试">运行特定测试</a></li>
+        <li><a href="#并行运行测试">并行运行测试</a></li>
+      </ul>
+    </li>
+    <li><a href="#调试测试">调试测试</a></li>
+    <li><a href="#接下来做什么-1">接下来做什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#录制跟踪">录制跟踪</a></li>
+    <li><a href="#打开跟踪">打开跟踪</a></li>
+    <li><a href="#查看跟踪">查看跟踪</a></li>
+    <li><a href="#接下来是什么-2">接下来是什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引言-4">引言</a></li>
+    <li><a href="#使用方法">使用方法</a></li>
+    <li><a href="#命令行参数">命令行参数</a></li>
+    <li><a href="#固定装置">固定装置</a></li>
+    <li><a href="#并行性同时运行多个测试">并行性：同时运行多个测试</a></li>
+    <li><a href="#示例">示例</a>
+      <ul>
+        <li><a href="#为自动补全配置-mypy-类型">为自动补全配置 Mypy 类型</a></li>
+        <li><a href="#配置慢动作">配置慢动作</a></li>
+        <li><a href="#按浏览器跳过测试">按浏览器跳过测试</a></li>
+        <li><a href="#在特定浏览器上运行">在特定浏览器上运行</a></li>
+        <li><a href="#使用自定义浏览器渠道如-google-chrome-或-microsoft-edge">使用自定义浏览器渠道，如 Google Chrome 或 Microsoft Edge</a></li>
+        <li><a href="#配置基础-url">配置基础 URL</a></li>
+        <li><a href="#忽略-https-错误">忽略 HTTPS 错误</a></li>
+        <li><a href="#使用自定义视口大小">使用自定义视口大小</a></li>
+        <li><a href="#设备模拟">设备模拟</a></li>
+        <li><a href="#与-unittesttestcase-一起使用">与 <code>unittest.TestCase</code> 一起使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#调试">调试</a>
+      <ul>
+        <li><a href="#与-pdb-一起使用">与 pdb 一起使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#部署到-ci">部署到 CI</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+          </div>
+          <div class="sidebar-common-sidebar hidden">
+            
+<div class="sidebar-author">
+  <img
+    data-src="/avatar/OIP%20%284%29.jpeg"
+    data-sizes="auto"
+    alt="新人类"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">新人类</div>
+  <div class="sidebar-description">致敬勇于探索未知的人类！</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    
+    <div class="sidebar-state-number">56</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      6
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+    <div class="icon-bilibili sidebar-social-icon">
+      <a
+        href="https://space.bilibili.com/390297990"
+        itemprop="url"
+        target="_blank"
+        aria-label="bilibili"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-email sidebar-social-icon">
+      <a
+        href="2637458905@qq.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/bluespace3"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>
+        
+          
+            &#xe62b;
+          
+        
+      </div>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>
+        
+          
+            &#xe62b;
+          
+        
+      </div>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>
+        
+          
+            &#xe62b;
+          
+        
+      </div>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>
+        
+          
+            &#xe62b;
+          
+        
+      </div>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+
+          </div>
+        
+      
+
+      
+        
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+        
+      
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+    
+  </div>
+  
+</aside>
+
+          <section id="main">
+  
+  <article
+  class="h-entry article"
+  itemprop="blogPost"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta">
+      <div class="article-date">
+  <span
+    class="article-date-link"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-11-22 16:21:11 &#43;0000 &#43;0000" itemprop="datePublished"
+      >2025-11-22</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-11-22</time
+    >
+  </span>
+</div>
+
+      <div class="article-category">
+  
+    <a
+      class="article-category-link"
+      href="/categories/%e6%8a%80%e6%9c%af"
+      data-aos="zoom-in"
+      >技术</a
+    >
+  
+</div>
+
+    </div>
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+      
+        <h1 id="安装">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85"></a>
+安装
+</h1><h2 id="引言">
+<a class="header-anchor" href="#%e5%bc%95%e8%a8%80"></a>
+引言
+</h2><p>Playwright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。</p>
+<p>Playwright 库可以用作通用的浏览器自动化工具，为同步和异步 Python 提供了一套强大的 API 来自动化 Web 应用程序。</p>
+<p>本介绍描述了 Playwright Pytest 插件，这是编写端到端测试的推荐方式。</p>
+<p><strong>你将学到</strong></p>
+<ul>
+<li>如何安装 Playwright Pytest</li>
+<li>如何运行示例测试</li>
+</ul>
+<h2 id="安装-playwright-pytest">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85-playwright-pytest"></a>
+安装 Playwright Pytest
+</h2><p>Playwright 建议使用官方的 Playwright Pytest 插件来编写端到端测试。它提供了上下文隔离，并开箱即用地在多个浏览器配置上运行。</p>
+<p>首先，通过安装 Playwright 并运行示例测试来开始，亲眼看看它是如何工作的。</p>
+<ul>
+<li>PyPI</li>
+<li>Anaconda</li>
+</ul>
+<p>安装所需的浏览器：</p>
+<h2 id="添加示例测试">
+<a class="header-anchor" href="#%e6%b7%bb%e5%8a%a0%e7%a4%ba%e4%be%8b%e6%b5%8b%e8%af%95"></a>
+添加示例测试
+</h2><p>在当前工作目录或遵循 <code>test_</code> 前缀约定的子目录中创建一个文件，例如 <code>test_example.py</code>，并在其中包含以下代码。确保你的测试名称也遵循 <code>test_</code> 前缀约定。</p>
+<p>test_example.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">playwright.sync_api</span> <span class="kn">import</span> <span class="n">Page</span><span class="p">,</span> <span class="n">expect</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_has_title</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://playwright.dev/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 期望标题“包含”一个子字符串。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to_have_title</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&#34;Playwright&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_get_started_link</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://playwright.dev/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 点击“开始”链接。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_role</span><span class="p">(</span><span class="s2">&#34;link&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Get started&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 期望页面有一个名为“安装”的标题。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">get_by_role</span><span class="p">(</span><span class="s2">&#34;heading&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Installation&#34;</span><span class="p">))</span><span class="o">.</span><span class="n">to_be_visible</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="运行示例测试">
+<a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e7%a4%ba%e4%be%8b%e6%b5%8b%e8%af%95"></a>
+运行示例测试
+</h2><p>默认情况下，测试将在 Chromium 上运行。这可以通过 CLI 选项进行配置。测试以无头模式运行，这意味着在运行测试时不会打开浏览器 UI。测试结果和测试日志将在终端中显示。</p>
+<h2 id="更新-playwright">
+<a class="header-anchor" href="#%e6%9b%b4%e6%96%b0-playwright"></a>
+更新 Playwright
+</h2><p>要将 Playwright 更新到最新版本，请运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pip install pytest-playwright playwright -U
+</span></span></code></pre></div><h2 id="系统要求">
+<a class="header-anchor" href="#%e7%b3%bb%e7%bb%9f%e8%a6%81%e6%b1%82"></a>
+系统要求
+</h2><ul>
+<li>Python 3.8 或更高版本。</li>
+<li>Windows 10+、Windows Server 2016+ 或 Windows Subsystem for Linux (WSL)。</li>
+<li>MacOS 12 Monterey、MacOS 13 Ventura 或 MacOS 14 Sonoma。</li>
+<li>Debian 11、Debian 12、Ubuntu 20.04 或 Ubuntu 22.04。</li>
+</ul>
+<h2 id="接下来是什么">
+<a class="header-anchor" href="#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e6%98%af%e4%bb%80%e4%b9%88"></a>
+接下来是什么
+</h2><ul>
+<li>使用 Web 优先断言、页面夹具和定位器编写测试</li>
+<li>运行单个测试、多个测试、有头模式</li>
+<li>使用 Codegen 生成测试</li>
+<li>查看测试的跟踪</li>
+</ul>
+<h1 id="编写测试用例">
+<a class="header-anchor" href="#%e7%bc%96%e5%86%99%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b"></a>
+编写测试用例
+</h1><h2 id="引言-1">
+<a class="header-anchor" href="#%e5%bc%95%e8%a8%80-1"></a>
+引言
+</h2><p>Playwright 测试很简单，它们</p>
+<ul>
+<li><strong>执行操作</strong> ，</li>
+<li><strong>断言状态</strong>与预期相符。</li>
+</ul>
+<p>在执行操作之前没有必要等待任何东西：Playwright 在执行每个操作之前会自动等待一系列可操作性检查通过。</p>
+<p>也没有必要在执行检查时处理竞态条件 - Playwright 断言的设计方式是它们描述了最终需要满足的预期。</p>
+<p>就是这样！这些设计选择允许 Playwright 用户完全忘记他们测试中的不稳定超时和竞态检查。</p>
+<p><strong>你将学到</strong></p>
+<ul>
+<li>如何编写第一个测试</li>
+<li>如何执行操作</li>
+<li>如何使用断言</li>
+<li>测试如何独立运行</li>
+<li>如何使用测试钩子</li>
+</ul>
+<h2 id="第一个测试">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e4%b8%aa%e6%b5%8b%e8%af%95"></a>
+第一个测试
+</h2><p>查看以下示例，了解如何编写测试。注意文件名遵循 <code>test_</code> 前缀约定，以及每个测试名称。</p>
+<p>test_example.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">playwright.sync_api</span> <span class="kn">import</span> <span class="n">Page</span><span class="p">,</span> <span class="n">expect</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_has_title</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://playwright.dev/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 期望标题“包含”一个子字符串。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to_have_title</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&#34;Playwright&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_get_started_link</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://playwright.dev/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 点击“开始”链接。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_role</span><span class="p">(</span><span class="s2">&#34;link&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Get started&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 期望页面有一个名为“安装”的标题。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">get_by_role</span><span class="p">(</span><span class="s2">&#34;heading&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Installation&#34;</span><span class="p">))</span><span class="o">.</span><span class="n">to_be_visible</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="操作">
+<a class="header-anchor" href="#%e6%93%8d%e4%bd%9c"></a>
+操作
+</h2><h3 id="导航">
+<a class="header-anchor" href="#%e5%af%bc%e8%88%aa"></a>
+导航
+</h3><p>大多数测试将从导航到 URL 的页面开始。之后，测试将能够与页面元素进行交互。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://playwright.dev/&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Playwright 会等待页面达到加载状态，然后再继续。了解更多关于 page.goto() 选项的信息。</p>
+<h3 id="交互">
+<a class="header-anchor" href="#%e4%ba%a4%e4%ba%92"></a>
+交互
+</h3><p>执行操作从定位元素开始。Playwright 使用 Locators API 进行此操作。定位器代表了在任何时刻在页面上查找元素（或元素组）的方式，了解更多关于可用的不同类型定位器的信息。Playwright 会在执行操作之前等待元素可操作，因此没有必要等待其变为可用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="c1"># 创建一个定位器。</span>
+</span></span><span class="line"><span class="cl"><span class="n">get_started</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">get_by_role</span><span class="p">(</span><span class="s2">&#34;link&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Get started&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 点击它。</span>
+</span></span><span class="line"><span class="cl"><span class="n">get_started</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</span></span></code></pre></div><p>在大多数情况下，它会写成一行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">page</span><span class="o">.</span><span class="n">get_by_role</span><span class="p">(</span><span class="s2">&#34;link&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Get started&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="基本操作">
+<a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c"></a>
+基本操作
+</h3><p>这是最受欢迎的 Playwright 操作列表。请注意，还有更多操作，请确保查看定位器 API 部分以了解更多信息。</p>
+<table>
+  <thead>
+      <tr>
+          <th>操作</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>locator.check()</td>
+          <td>检查输入复选框</td>
+      </tr>
+      <tr>
+          <td>locator.click()</td>
+          <td>点击元素</td>
+      </tr>
+      <tr>
+          <td>locator.uncheck()</td>
+          <td>取消检查输入复选框</td>
+      </tr>
+      <tr>
+          <td>locator.hover()</td>
+          <td>鼠标悬停在元素上</td>
+      </tr>
+      <tr>
+          <td>locator.fill()</td>
+          <td>填写表单字段，输入文本</td>
+      </tr>
+      <tr>
+          <td>locator.focus()</td>
+          <td>使元素获得焦点</td>
+      </tr>
+      <tr>
+          <td>locator.press()</td>
+          <td>按下单个键</td>
+      </tr>
+      <tr>
+          <td>locator.set_input_files()</td>
+          <td>选择上传的文件</td>
+      </tr>
+      <tr>
+          <td>locator.select_option()</td>
+          <td>在下拉菜单中选择选项</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="断言">
+<a class="header-anchor" href="#%e6%96%ad%e8%a8%80"></a>
+断言
+</h2><p>Playwright 包括断言，这些断言会等待直到满足预期条件。使用这些断言可以使测试不脆弱且具有弹性。例如，这段代码会等待页面获得包含“Playwright”的标题：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">playwright.sync_api</span> <span class="kn">import</span> <span class="n">expect</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to_have_title</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&#34;Playwright&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><p>这是最受欢迎的异步断言列表。请注意，还有更多断言需要熟悉：</p>
+<table>
+  <thead>
+      <tr>
+          <th>断言</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>expect(locator).to_be_checked()</td>
+          <td>复选框被选中</td>
+      </tr>
+      <tr>
+          <td>expect(locator).to_be_enabled()</td>
+          <td>控件被启用</td>
+      </tr>
+      <tr>
+          <td>expect(locator).to_be_visible()</td>
+          <td>元素可见</td>
+      </tr>
+      <tr>
+          <td>expect(locator).to_contain_text()</td>
+          <td>元素包含文本</td>
+      </tr>
+      <tr>
+          <td>expect(locator).to_have_attribute()</td>
+          <td>元素具有属性</td>
+      </tr>
+      <tr>
+          <td>expect(locator).to_have_count()</td>
+          <td>元素列表具有给定长度</td>
+      </tr>
+      <tr>
+          <td>expect(locator).to_have_text()</td>
+          <td>元素匹配文本``</td>
+      </tr>
+      <tr>
+          <td>expect(locator).to_have_value()</td>
+          <td>输入元素具有值``</td>
+      </tr>
+      <tr>
+          <td>expect(page).to_have_title()</td>
+          <td>页面具有标题``</td>
+      </tr>
+      <tr>
+          <td>expect(page).to_have_url()</td>
+          <td>页面具有 URL</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="测试隔离">
+<a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e9%9a%94%e7%a6%bb"></a>
+测试隔离
+</h3><p>Playwright Pytest 插件基于测试夹具的概念，例如内置的页面夹具，它被传递到你的测试中。由于浏览器上下文，页面在测试之间是隔离的，这相当于一个全新的浏览器配置文件，每个测试都获得一个新鲜环境，即使多个测试在单个浏览器中运行。</p>
+<p>test_example.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">playwright.sync_api</span> <span class="kn">import</span> <span class="n">Page</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_example_test</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># “page”属于一个独立的 BrowserContext，为这个特定测试创建。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_another_test</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># 这个第二个测试中的“page”与第一个测试完全隔离。</span>
+</span></span></code></pre></div><h3 id="使用夹具">
+<a class="header-anchor" href="#%e4%bd%bf%e7%94%a8%e5%a4%b9%e5%85%b7"></a>
+使用夹具
+</h3><p>你可以使用各种夹具在测试之前或之后执行代码并共享对象。一个 <code>function</code> 作用域的夹具，例如带有 autouse 的，表现得像 beforeEach/afterEach。一个 <code>module</code> 作用域的夹具带有 autouse 表现得像 beforeAll/afterAll，它在所有测试之前和之后运行。</p>
+<p>test_example.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pytest</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">playwright.sync_api</span> <span class="kn">import</span> <span class="n">Page</span><span class="p">,</span> <span class="n">expect</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&#34;function&#34;</span><span class="p">,</span> <span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">before_each_after_each</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;before the test runs&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 在每个测试之前转到起始 URL。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://playwright.dev/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">yield</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;after the test runs&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_main_navigation</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 断言使用 expect API。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to_have_url</span><span class="p">(</span><span class="s2">&#34;https://playwright.dev/&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="接下来是什么-1">
+<a class="header-anchor" href="#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e6%98%af%e4%bb%80%e4%b9%88-1"></a>
+接下来是什么
+</h2><ul>
+<li>运行单个测试，多个测试，有头模式</li>
+<li>使用 Codegen 生成测试</li>
+<li>查看测试的跟踪</li>
+<li>在 CI 上运行测试与 GitHub Actions</li>
+</ul>
+<h1 id="生成测试">
+<a class="header-anchor" href="#%e7%94%9f%e6%88%90%e6%b5%8b%e8%af%95"></a>
+生成测试
+</h1><h2 id="引言-2">
+<a class="header-anchor" href="#%e5%bc%95%e8%a8%80-2"></a>
+引言
+</h2><p>Playwright 提供了开箱即用的测试生成能力，是快速开始测试的绝佳方式。它将打开两个窗口，一个浏览器窗口，您可以在其中与您想要测试的网站进行交互；另一个是 Playwright 检查器窗口，您可以在其中录制测试、复制测试、清除测试以及更改测试的语言。</p>
+<p><strong>您将学到</strong></p>
+<ul>
+<li>如何录制测试</li>
+<li>如何生成定位器</li>
+</ul>
+<h2 id="运行-codegen">
+<a class="header-anchor" href="#%e8%bf%90%e8%a1%8c-codegen"></a>
+运行 Codegen
+</h2><p>使用 <code>codegen</code> 命令运行测试生成器，然后是您想要为其生成测试的网站的 URL。URL 是可选的，您也可以在不指定 URL 的情况下运行命令，然后在浏览器窗口中直接添加 URL。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">playwright codegen demo.playwright.dev/todomvc
+</span></span></code></pre></div><h3 id="录制测试">
+<a class="header-anchor" href="#%e5%bd%95%e5%88%b6%e6%b5%8b%e8%af%95"></a>
+录制测试
+</h3><p>运行 <code>codegen</code> 并在浏览器中执行操作。Playwright 将为用户交互生成代码。<code>Codegen</code> 将查看渲染后的页面并找出推荐的定位器，优先考虑角色、文本和测试 ID 定位器。如果生成器识别出多个元素与定位器匹配，它将改进定位器，使其更具弹性并唯一地识别目标元素，从而消除和减少由于定位器导致的测试失败和不稳定。</p>
+<p>使用测试生成器，您可以录制：</p>
+<ul>
+<li>通过简单地与页面交互，执行点击或填充等操作</li>
+<li>通过点击工具栏上的一个图标，然后点击页面上的元素进行断言。您可以选择：
+<ul>
+<li><code>'assert visibility'</code> 断言元素可见</li>
+<li><code>'assert text'</code> 断言元素包含特定文本</li>
+<li><code>'assert value'</code> 断言元素具有特定值</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MjgxNDZhNjkyZWZiYjk3MjkwOTAxMGIyMWUyOWU0NDNfVmZrcmkwWmt0blpHMHpNMm9JaTZCUXo5OFNWZnVUQXZfVG9rZW46Vm1IM2JadUFBb2Uza3V4SUdidGNYdnpYbm5mXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA" alt=""></p>
+<p>当您完成与页面的交互后，按下 <code>'record'</code> 按钮停止录制，并使用 <code>'copy'</code> 按钮将生成的代码复制到您的编辑器中。</p>
+<p>使用 <code>'clear'</code> 按钮清除代码以开始重新录制。完成后，关闭 Playwright 检查器窗口或停止终端命令。</p>
+<p>要了解更多关于生成测试的信息，请查看我们关于 Codegen 的详细指南。</p>
+<h3 id="生成定位器">
+<a class="header-anchor" href="#%e7%94%9f%e6%88%90%e5%ae%9a%e4%bd%8d%e5%99%a8"></a>
+生成定位器
+</h3><p>您可以使用测试生成器生成定位器。</p>
+<ul>
+<li>按下 <code>'Record'</code> 按钮停止录制，&lsquo;Pick Locator&rsquo;` 按钮将会出现。</li>
+<li>点击 <code>'Pick Locator'</code> 按钮，然后将鼠标悬停在浏览器窗口的元素上，以查看定位器在每个元素下方突出显示。</li>
+<li>要选择一个定位器，单击您想要定位的元素，该定位器的代码将出现在 Pick Locator 按钮旁边的定位器游乐场中。</li>
+<li>然后您可以在定位器游乐场中编辑定位器以微调它，并看到匹配的元素在浏览器窗口中突出显示。</li>
+<li>使用复制按钮复制定位器并将其粘贴到您的代码中。</li>
+</ul>
+<p><img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=YTRiNjEwY2U4MWUwY2EwZDc1YzliNDZmZGM5NWNiYzBfbVNUNjVQNE5vbjhkZWdBUG1VSkhYR2FlRU1QaXdiZUxfVG9rZW46UFB2eGJVeEhFb05wSmN4ZkM4QmNOam94bmxmXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA" alt=""></p>
+<h3 id="仿真">
+<a class="header-anchor" href="#%e4%bb%bf%e7%9c%9f"></a>
+仿真
+</h3><p>您还可以使用仿真生成测试，以便为特定的视口、设备、颜色方案生成测试，以及模拟地理位置、语言或时区。测试生成器还可以在保持认证状态的同时生成测试。查看测试生成器指南以了解更多信息。</p>
+<h2 id="接下来做什么">
+<a class="header-anchor" href="#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e5%81%9a%e4%bb%80%e4%b9%88"></a>
+接下来做什么
+</h2><ul>
+<li>查看您的测试跟踪</li>
+</ul>
+<h1 id="运行和调试">
+<a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e5%92%8c%e8%b0%83%e8%af%95"></a>
+运行和调试
+</h1><h2 id="引言-3">
+<a class="header-anchor" href="#%e5%bc%95%e8%a8%80-3"></a>
+引言
+</h2><p>您可以运行单个测试、一组测试或所有测试。使用 <code>--browser</code> 标志，可以在一个浏览器或多个浏览器上运行测试。默认情况下，测试以无头模式运行，这意味着在运行测试时不会打开浏览器窗口，结果将在终端中显示。如果您愿意，可以通过使用 <code>--headed</code> CLI 参数以有头模式运行您的测试。</p>
+<p><strong>您将学到</strong></p>
+<ul>
+<li>如何从命令行运行测试</li>
+<li>如何调试测试</li>
+</ul>
+<h2 id="运行测试">
+<a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95"></a>
+运行测试
+</h2><h3 id="命令行">
+<a class="header-anchor" href="#%e5%91%bd%e4%bb%a4%e8%a1%8c"></a>
+命令行
+</h3><p>要运行您的测试，请使用 <code>pytest</code> 命令。这将默认在 Chromium 浏览器上运行您的测试。默认情况下，测试以无头模式运行，这意味着在运行测试时不会打开浏览器窗口，结果将在终端中显示。</p>
+<h3 id="在有头模式下运行测试">
+<a class="header-anchor" href="#%e5%9c%a8%e6%9c%89%e5%a4%b4%e6%a8%a1%e5%bc%8f%e4%b8%8b%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95"></a>
+在有头模式下运行测试
+</h3><p>要以有头模式运行您的测试，请使用 <code>--headed</code> 标志。这将在运行测试时打开浏览器窗口，并在完成后关闭浏览器窗口。</p>
+<h3 id="在不同的浏览器上运行测试">
+<a class="header-anchor" href="#%e5%9c%a8%e4%b8%8d%e5%90%8c%e7%9a%84%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%8a%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95"></a>
+在不同的浏览器上运行测试
+</h3><p>要指定您想要运行测试的浏览器，请使用 <code>--browser</code> 标志，后跟浏览器的名称。</p>
+<p>要指定要在多个浏览器上运行测试，请多次使用 <code>--browser</code> 标志，后跟每个浏览器的名称。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">pytest --browser webkit --browser firefox
+</span></span></code></pre></div><h3 id="运行特定测试">
+<a class="header-anchor" href="#%e8%bf%90%e8%a1%8c%e7%89%b9%e5%ae%9a%e6%b5%8b%e8%af%95"></a>
+运行特定测试
+</h3><p>要运行单个测试文件，请传入您想要运行的测试文件的名称。</p>
+<p>要运行一组测试文件，请传入您想要运行的测试文件的名称。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">pytest tests/test_todo_page.py tests/test_landing_page.py
+</span></span></code></pre></div><p>要运行特定测试，请传入您想要运行的测试的函数名称。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">pytest -k test_add_a_todo_item
+</span></span></code></pre></div><h3 id="并行运行测试">
+<a class="header-anchor" href="#%e5%b9%b6%e8%a1%8c%e8%bf%90%e8%a1%8c%e6%b5%8b%e8%af%95"></a>
+并行运行测试
+</h3><p>要并行运行您的测试，请使用 <code>--numprocesses</code> 标志，后跟您想要运行测试的进程数量。我们建议使用逻辑 CPU 核心数的一半。</p>
+<p>（这假设已安装了 <code>pytest-xdist</code>。有关更多信息，请参见此处。）</p>
+<p>有关更多信息，请参见 Playwright Pytest 使用情况或 Pytest 文档以了解一般 CLI 使用情况。</p>
+<h2 id="调试测试">
+<a class="header-anchor" href="#%e8%b0%83%e8%af%95%e6%b5%8b%e8%af%95"></a>
+调试测试
+</h2><p>由于 Playwright 在 Python 中运行，您可以使用您选择的调试器进行调试，例如使用 Visual Studio Code 中的 Python 扩展。Playwright 带有 Playwright 检查器，允许您逐步执行 Playwright API 调用，查看它们的调试日志并探索定位器。</p>
+<p>要调试所有测试，请运行以下命令。</p>
+<ul>
+<li>Bash</li>
+<li>PowerShell</li>
+<li>Batch</li>
+</ul>
+<p>要调试一个测试文件，请在命令后运行您想要调试的测试文件的名称。</p>
+<ul>
+<li>Bash</li>
+<li>PowerShell</li>
+<li>Batch</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="nv">PWDEBUG</span><span class="o">=</span><span class="m">1</span> pytest -s test_example.py
+</span></span></code></pre></div><p>要调试特定测试，请添加 <code>-k</code> 后跟您想要调试的测试的名称。</p>
+<ul>
+<li>Bash</li>
+<li>PowerShell</li>
+<li>Batch</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="nv">PWDEBUG</span><span class="o">=</span><span class="m">1</span> pytest -s -k test_get_started_link
+</span></span></code></pre></div><p>此命令将打开浏览器窗口以及 Playwright 检查器。您可以使用检查器顶部的步过按钮逐步执行您的测试。或者按下播放按钮从开始到结束运行您的测试。一旦测试完成，浏览器窗口将关闭。</p>
+<p>在调试时，您可以使用选择定位器按钮来选择页面上的元素，并查看 Playwright 用于查找该元素的定位器。您还可以编辑定位器并实时在浏览器窗口中看到它被高亮显示。使用复制定位器按钮将定位器复制到剪贴板，然后将其粘贴到您的测试中。</p>
+<p><img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZGM3ZjNlYjFkMDBhYWZhODQ1YzFlZDg5ZWViMjZkZDlfSnZLTUlGc1FXZUk1NWdReUx2NzhjbkJtaHlSbzRvRFRfVG9rZW46VTRXM2JndjRib3lMZVZ4YXdlcGN1N2FGbkNiXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA" alt=""></p>
+<p>查看我们的调试指南，以了解更多关于 Playwright 检查器以及使用浏览器开发工具进行调试的信息。</p>
+<h2 id="接下来做什么-1">
+<a class="header-anchor" href="#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e5%81%9a%e4%bb%80%e4%b9%88-1"></a>
+接下来做什么
+</h2><ul>
+<li>使用 Codegen 生成测试</li>
+<li>查看您的测试跟踪</li>
+<li>在 CI 上使用 GitHub Actions 运行您的测试</li>
+</ul>
+<h1 id="跟踪查看器">
+<a class="header-anchor" href="#%e8%b7%9f%e8%b8%aa%e6%9f%a5%e7%9c%8b%e5%99%a8"></a>
+跟踪查看器
+</h1><h2 id="介绍">
+<a class="header-anchor" href="#%e4%bb%8b%e7%bb%8d"></a>
+介绍
+</h2><p>Playwright Trace Viewer 是一个图形用户界面（GUI）工具，允许您探索录制的 Playwright 测试跟踪，这意味着您可以前后浏览测试的每个动作，并直观地看到每个动作期间发生了什么。</p>
+<p><strong>您将学到</strong></p>
+<ul>
+<li>如何录制跟踪</li>
+<li>如何打开 HTML 报告</li>
+<li>如何打开跟踪查看器</li>
+</ul>
+<h2 id="录制跟踪">
+<a class="header-anchor" href="#%e5%bd%95%e5%88%b6%e8%b7%9f%e8%b8%aa"></a>
+录制跟踪
+</h2><p>可以通过使用 <code>--tracing</code> 标志运行测试来录制跟踪。</p>
+<p>跟踪的选项有：</p>
+<ul>
+<li><code>on</code>: 为每个测试录制跟踪</li>
+<li><code>off</code>: 不录制跟踪。（默认）</li>
+<li><code>retain-on-failure</code>: 为每个测试录制跟踪，但删除成功测试运行的所有跟踪。</li>
+</ul>
+<p>这将录制跟踪并将其放入 <code>test-results</code> 目录中名为 <code>trace.zip</code> 的文件中。</p>
+<p>如果您没有使用 Pytest，请点击这里了解如何录制跟踪。</p>
+<ul>
+<li>同步</li>
+<li>异步</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">browser</span> <span class="o">=</span> <span class="n">chromium</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在创建/导航页面之前开始跟踪。</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="o">.</span><span class="n">tracing</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">screenshots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">snapshots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">page</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">new_page</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://playwright.dev&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 停止跟踪并将其导出到 zip 归档中。</span>
+</span></span><span class="line"><span class="cl"><span class="n">context</span><span class="o">.</span><span class="n">tracing</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">&#34;trace.zip&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="打开跟踪">
+<a class="header-anchor" href="#%e6%89%93%e5%bc%80%e8%b7%9f%e8%b8%aa"></a>
+打开跟踪
+</h2><p>您可以使用 Playwright CLI 或在 <code>trace.playwright.dev</code> 上的浏览器中打开保存的跟踪。确保添加您的 <code>trace.zip</code> 文件所在的完整路径。这应该包括 <code>test-results</code> 目录，然后是测试名称，最后是 <code>trace.zip</code>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">playwright show-trace trace.zip
+</span></span></code></pre></div><h2 id="查看跟踪">
+<a class="header-anchor" href="#%e6%9f%a5%e7%9c%8b%e8%b7%9f%e8%b8%aa"></a>
+查看跟踪
+</h2><p>通过点击每个动作或使用时间线悬停来查看测试的跟踪，并查看动作前后页面的状态。在测试的每个步骤期间检查日志、源代码和网络。跟踪查看器创建了一个 DOM 快照，因此您可以完全与之交互，打开开发工具等。</p>
+<p>要了解更多信息，请查看我们关于跟踪查看器的详细指南。</p>
+<h2 id="接下来是什么-2">
+<a class="header-anchor" href="#%e6%8e%a5%e4%b8%8b%e6%9d%a5%e6%98%af%e4%bb%80%e4%b9%88-2"></a>
+接下来是什么
+</h2><ul>
+<li>在 GitHub Actions 上运行 CI 测试</li>
+<li>了解更多关于跟踪查看器的信息</li>
+</ul>
+<h1 id="pytest-插件来编写端到端测试">
+<a class="header-anchor" href="#pytest-%e6%8f%92%e4%bb%b6%e6%9d%a5%e7%bc%96%e5%86%99%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95"></a>
+Pytest 插件来编写端到端测试
+</h1><h2 id="引言-4">
+<a class="header-anchor" href="#%e5%bc%95%e8%a8%80-4"></a>
+引言
+</h2><p>Playwright 提供了一个 Pytest 插件来编写端到端测试。要开始使用它，请参考入门指南。</p>
+<h2 id="使用方法">
+<a class="header-anchor" href="#%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95"></a>
+使用方法
+</h2><p>要运行测试，请使用 Pytest 命令行界面。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pytest --browser webkit --headed
+</span></span></code></pre></div><p>如果你想自动添加命令行参数而不需要明确指定它们，你可以使用 pytest.ini 文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-TOML" data-lang="TOML"><span class="line"><span class="cl"><span class="c"># pytest.ini 文件的内容</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">pytest</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 使用 UI 运行 firefox</span>
+</span></span><span class="line"><span class="cl"><span class="nx">addopts</span> <span class="p">=</span> <span class="nx">--headed</span> <span class="nx">--browser</span> <span class="nx">firefox</span>
+</span></span></code></pre></div><h2 id="命令行参数">
+<a class="header-anchor" href="#%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%8f%82%e6%95%b0"></a>
+命令行参数
+</h2><p>请注意，命令行参数仅应用于默认的 <code>browser</code>、<code>context</code> 和 <code>page</code> 固定装置。如果你使用 API 调用如 browser.new_context() 创建浏览器、上下文或页面，命令行参数将不会应用。</p>
+<ul>
+<li><code>--headed</code>：以有头模式运行测试（默认：无头）。</li>
+<li><code>--browser</code>：在不同的浏览器中运行测试 <code>chromium</code>、<code>firefox</code> 或 <code>webkit</code>。可以多次指定（默认：<code>chromium</code>）。</li>
+<li><code>--browser-channel</code>：要使用的浏览器渠道。</li>
+<li><code>--slowmo</code>：通过指定的毫秒数减慢 Playwright 操作。这样你可以看清楚发生了什么（默认：0）。</li>
+<li><code>--device</code>：要模拟的设备。</li>
+<li><code>--output</code>：由测试产生的工件目录（默认：<code>test-results</code>）。</li>
+<li><code>--tracing</code>：是否为每个测试记录跟踪。<code>on</code>、<code>off</code> 或 <code>retain-on-failure</code>（默认：<code>off</code>）。</li>
+<li><code>--video</code>：是否为每个测试录制视频。<code>on</code>、<code>off</code> 或 <code>retain-on-failure</code>（默认：<code>off</code>）。</li>
+<li><code>--screenshot</code>：是否在每个测试后自动捕获屏幕截图。<code>on</code>、<code>off</code> 或 <code>only-on-failure</code>（默认：<code>off</code>）。</li>
+<li><code>--full-page-screenshot</code>：在失败时是否拍摄整个页面的屏幕截图。默认情况下，只捕获视口。需要启用 <code>--screenshot</code>（默认：<code>off</code>）。</li>
+</ul>
+<h2 id="固定装置">
+<a class="header-anchor" href="#%e5%9b%ba%e5%ae%9a%e8%a3%85%e7%bd%ae"></a>
+固定装置
+</h2><p>这个插件为 pytest 配置了 Playwright 特定的固定装置。要使用这些固定装置，将固定装置名称作为参数传递给测试函数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_my_app_is_working</span><span class="p">(</span><span class="n">fixture_name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 使用 fixture_name 进行测试</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ...</span>
+</span></span></code></pre></div><p><strong>函数范围</strong> ：当在测试函数中请求时，这些固定装置被创建，并在测试结束时销毁。</p>
+<ul>
+<li><code>context</code>：测试的新浏览器上下文。</li>
+<li><code>page</code>：测试的新浏览器页面。</li>
+<li><code>new_context</code>：允许为测试创建不同的浏览器上下文。适用于多用户场景。接受与 browser.new_context() 相同的参数。</li>
+</ul>
+<p><strong>会话范围</strong> ：当在测试函数中请求时，这些固定装置被创建，并在所有测试结束时销毁。</p>
+<ul>
+<li><code>playwright</code>：Playwright 实例。</li>
+<li><code>browser_type</code>：当前浏览器的 BrowserType 实例。</li>
+<li><code>browser</code>：由 Playwright 启动的浏览器实例。</li>
+<li><code>browser_name</code>：浏览器名称字符串。</li>
+<li><code>browser_channel</code>：浏览器渠道字符串。</li>
+<li><code>is_chromium</code>、<code>is_webkit</code>、<code>is_firefox</code>：相应浏览器类型的布尔值。</li>
+</ul>
+<p><strong>自定义固定装置选项</strong> ：对于 <code>browser</code> 和 <code>context</code> 固定装置，使用以下固定装置定义自定义启动选项。</p>
+<ul>
+<li><code>browser_type_launch_args</code>：覆盖 browser_type.launch() 的启动参数。它应该返回一个字典。</li>
+<li><code>browser_context_args</code>：覆盖 browser.new_context() 的选项。它应该返回一个字典。</li>
+</ul>
+<p>也可以通过使用 <code>browser_context_args</code> 标记来覆盖单个测试的上下文选项（browser.new_context()）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pytest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@pytest.mark.browser_context_args</span><span class="p">(</span><span class="n">timezone_id</span><span class="o">=</span><span class="s2">&#34;Europe/Berlin&#34;</span><span class="p">,</span> <span class="n">locale</span><span class="o">=</span><span class="s2">&#34;en-GB&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_browser_context_args</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="n">page</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&#34;window.navigator.userAgent&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&#34;Europe/Berlin&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="n">page</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&#34;window.navigator.languages&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&#34;de-DE&#34;</span><span class="p">]</span>
+</span></span></code></pre></div><h2 id="并行性同时运行多个测试">
+<a class="header-anchor" href="#%e5%b9%b6%e8%a1%8c%e6%80%a7%e5%90%8c%e6%97%b6%e8%bf%90%e8%a1%8c%e5%a4%9a%e4%b8%aa%e6%b5%8b%e8%af%95"></a>
+并行性：同时运行多个测试
+</h2><p>如果你的测试在拥有大量 CPU 的机器上运行，你可以通过使用 <code>pytest-xdist</code> 同时运行多个测试来加快测试套件的整体执行时间：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="c1"># 安装依赖</span>
+</span></span><span class="line"><span class="cl">pip install pytest-xdist
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用 --numprocesses 标志</span>
+</span></span><span class="line"><span class="cl">pytest --numprocesses auto
+</span></span></code></pre></div><p>根据硬件和测试的性质，你可以将 <code>numprocesses</code> 设置为从 <code>2</code> 到机器上的 CPU 数量。如果设置得太高，你可能会注意到意外的行为。</p>
+<p>有关 <code>pytest</code> 选项的一般信息，请参见运行测试。</p>
+<h2 id="示例">
+<a class="header-anchor" href="#%e7%a4%ba%e4%be%8b"></a>
+示例
+</h2><h3 id="为自动补全配置-mypy-类型">
+<a class="header-anchor" href="#%e4%b8%ba%e8%87%aa%e5%8a%a8%e8%a1%a5%e5%85%a8%e9%85%8d%e7%bd%ae-mypy-%e7%b1%bb%e5%9e%8b"></a>
+为自动补全配置 Mypy 类型
+</h3><p>test_my_application.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">playwright.sync_api</span> <span class="kn">import</span> <span class="n">Page</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_visit_admin_dashboard</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;/admin&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ...</span>
+</span></span></code></pre></div><h3 id="配置慢动作">
+<a class="header-anchor" href="#%e9%85%8d%e7%bd%ae%e6%85%a2%e5%8a%a8%e4%bd%9c"></a>
+配置慢动作
+</h3><p>使用 <code>--slowmo</code> 参数运行测试。</p>
+<p>将 Playwright 操作减慢 100 毫秒。</p>
+<h3 id="按浏览器跳过测试">
+<a class="header-anchor" href="#%e6%8c%89%e6%b5%8f%e8%a7%88%e5%99%a8%e8%b7%b3%e8%bf%87%e6%b5%8b%e8%af%95"></a>
+按浏览器跳过测试
+</h3><p>test_my_application.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pytest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@pytest.mark.skip_browser</span><span class="p">(</span><span class="s2">&#34;firefox&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_visit_example</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://example.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ...</span>
+</span></span></code></pre></div><h3 id="在特定浏览器上运行">
+<a class="header-anchor" href="#%e5%9c%a8%e7%89%b9%e5%ae%9a%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%8a%e8%bf%90%e8%a1%8c"></a>
+在特定浏览器上运行
+</h3><p>conftest.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pytest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@pytest.mark.only_browser</span><span class="p">(</span><span class="s2">&#34;chromium&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_visit_example</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://example.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ...</span>
+</span></span></code></pre></div><h3 id="使用自定义浏览器渠道如-google-chrome-或-microsoft-edge">
+<a class="header-anchor" href="#%e4%bd%bf%e7%94%a8%e8%87%aa%e5%ae%9a%e4%b9%89%e6%b5%8f%e8%a7%88%e5%99%a8%e6%b8%a0%e9%81%93%e5%a6%82-google-chrome-%e6%88%96-microsoft-edge"></a>
+使用自定义浏览器渠道，如 Google Chrome 或 Microsoft Edge
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pytest --browser-channel chrome
+</span></span></code></pre></div><p>test_my_application.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_example</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://example.com&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="配置基础-url">
+<a class="header-anchor" href="#%e9%85%8d%e7%bd%ae%e5%9f%ba%e7%a1%80-url"></a>
+配置基础 URL
+</h3><p>使用 <code>base-url</code> 参数启动 Pytest。<code>pytest-base-url</code> 插件用于此目的，它允许你从配置、命令行参数或固定装置中设置基础 URL。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pytest --base-url http://localhost:8080
+</span></span></code></pre></div><p>test_my_application.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_visit_example</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;/admin&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># -&gt; 将导致 http://localhost:8080/admin</span>
+</span></span></code></pre></div><h3 id="忽略-https-错误">
+<a class="header-anchor" href="#%e5%bf%bd%e7%95%a5-https-%e9%94%99%e8%af%af"></a>
+忽略 HTTPS 错误
+</h3><p>conftest.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pytest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&#34;session&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">browser_context_args</span><span class="p">(</span><span class="n">browser_context_args</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">**</span><span class="n">browser_context_args</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ignore_https_errors&#34;</span><span class="p">:</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><h3 id="使用自定义视口大小">
+<a class="header-anchor" href="#%e4%bd%bf%e7%94%a8%e8%87%aa%e5%ae%9a%e4%b9%89%e8%a7%86%e5%8f%a3%e5%a4%a7%e5%b0%8f"></a>
+使用自定义视口大小
+</h3><p>conftest.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pytest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&#34;session&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">browser_context_args</span><span class="p">(</span><span class="n">browser_context_args</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">**</span><span class="n">browser_context_args</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;viewport&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;width&#34;</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;height&#34;</span><span class="p">:</span> <span class="mi">1080</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><h3 id="设备模拟">
+<a class="header-anchor" href="#%e8%ae%be%e5%a4%87%e6%a8%a1%e6%8b%9f"></a>
+设备模拟
+</h3><p>conftest.py</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pytest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&#34;session&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">browser_context_args</span><span class="p">(</span><span class="n">browser_context_args</span><span class="p">,</span> <span class="n">playwright</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">iphone_11</span> <span class="o">=</span> <span class="n">playwright</span><span class="o">.</span><span class="n">devices</span><span class="p">[</span><span class="s1">&#39;iPhone 11 Pro&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">**</span><span class="n">browser_context_args</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="o">**</span><span class="n">iphone_11</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>或通过命令行 <code>--device=&quot;iPhone 11 Pro&quot;</code>。</p>
+<h3 id="与-unittesttestcase-一起使用">
+<a class="header-anchor" href="#%e4%b8%8e-unittesttestcase-%e4%b8%80%e8%b5%b7%e4%bd%bf%e7%94%a8"></a>
+与 <code>unittest.TestCase</code> 一起使用
+</h3><p>查看以下示例，了解如何将其与 <code>unittest.TestCase</code> 一起使用。这有一个限制，即只能指定单个浏览器，并且在指定多个浏览器时不会生成多个浏览器的矩阵。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pytest</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">unittest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">playwright.sync_api</span> <span class="kn">import</span> <span class="n">Page</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">page</span> <span class="o">=</span> <span class="n">page</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">test_foobar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://microsoft.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">locator</span><span class="p">(</span><span class="s2">&#34;#foobar&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="s2">&#34;1 + 1&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+</span></span></code></pre></div><h2 id="调试">
+<a class="header-anchor" href="#%e8%b0%83%e8%af%95"></a>
+调试
+</h2><h3 id="与-pdb-一起使用">
+<a class="header-anchor" href="#%e4%b8%8e-pdb-%e4%b8%80%e8%b5%b7%e4%bd%bf%e7%94%a8"></a>
+与 pdb 一起使用
+</h3><p>在你的测试代码中使用 <code>breakpoint()</code> 语句来暂停执行并获得 pdb REPL。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_bing_is_working</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://bing.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">breakpoint</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ...</span>
+</span></span></code></pre></div><h2 id="部署到-ci">
+<a class="header-anchor" href="#%e9%83%a8%e7%bd%b2%e5%88%b0-ci"></a>
+部署到 CI
+</h2><p>请参阅 CI 提供商的指南，了解如何将你的测试部署到 CI/CD。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+
+      
+
+      
+        
+
+<div class="share-wrapper">
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/" target="_blank" rel="noopener noreferrer" title="playwright的python文档">
+      <div class="share-icon icon icon-facebook">
+        
+      </div>
+    </a>
+  
+    <a href="https://twitter.com/intent/tweet?url=http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;text=playwright%e7%9a%84python%e6%96%87%e6%a1%a3&amp;via=http://localhost:1313/" target="_blank" rel="noopener noreferrer" title="playwright的python文档">
+      <div class="share-icon icon icon-twitter">
+        
+      </div>
+    </a>
+  
+    <a href="https://www.linkedin.com/shareArticle?url=http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;title=playwright%e7%9a%84python%e6%96%87%e6%a1%a3&amp;summary=%0d%e5%ae%89%e8%a3%85%0d%e5%bc%95%e8%a8%80%0dPlaywright%20%e6%98%af%e4%b8%93%e9%97%a8%e4%b8%ba%e6%bb%a1%e8%b6%b3%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95%e7%9a%84%e9%9c%80%e6%b1%82%e8%80%8c%e5%88%9b%e5%bb%ba%e7%9a%84%e3%80%82Playwright%20%e6%94%af%e6%8c%81%e5%8c%85%e6%8b%ac%20Chromium%e3%80%81WebKit%20%e5%92%8c%20Firefox%20%e5%9c%a8%e5%86%85%e7%9a%84%e6%89%80%e6%9c%89%e7%8e%b0%e4%bb%a3%e6%b8%b2%e6%9f%93%e5%bc%95%e6%93%8e%e3%80%82%e5%9c%a8%20Windows%e3%80%81Linux%20%e5%92%8c%20macOS%20%e4%b8%8a%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%ef%bc%8c%e6%97%a0%e8%ae%ba%e6%98%af%e6%9c%ac%e5%9c%b0%e8%bf%98%e6%98%af%e5%9c%a8%20CI%20%e4%b8%8a%ef%bc%8c%e6%97%a0%e8%ae%ba%e6%98%af%e6%97%a0%e5%a4%b4%e6%a8%a1%e5%bc%8f%e8%bf%98%e6%98%af%e6%9c%89%e5%a4%b4%e6%a8%a1%e5%bc%8f%ef%bc%8c%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e5%8e%9f%e7%94%9f%e7%a7%bb%e5%8a%a8%e8%ae%be%e5%a4%87%e4%bb%bf%e7%9c%9f%e3%80%82%0aPlaywright%20%e5%ba%93%e5%8f%af%e4%bb%a5%e7%94%a8%e4%bd%9c%e9%80%9a%e7%94%a8%e7%9a%84%e6%b5%8f%e8%a7%88%e5%99%a8%e8%87%aa%e5%8a%a8%e5%8c%96%e5%b7%a5%e5%85%b7%ef%bc%8c%e4%b8%ba%e5%90%8c%e6%ad%a5%e5%92%8c%e5%bc%82%e6%ad%a5%20Python%20%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e5%a5%97%e5%bc%ba%e5%a4%a7%e7%9a%84%20API%20%e6%9d%a5%e8%87%aa%e5%8a%a8%e5%8c%96%20Web%20%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e3%80%82%0a%e6%9c%ac%e4%bb%8b%e7%bb%8d%e6%8f%8f%e8%bf%b0%e4%ba%86%20Playwright%20Pytest%20%e6%8f%92%e4%bb%b6%ef%bc%8c%e8%bf%99%e6%98%af%e7%bc%96%e5%86%99%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95%e7%9a%84%e6%8e%a8%e8%8d%90%e6%96%b9%e5%bc%8f%e3%80%82%0a%e4%bd%a0%e5%b0%86%e5%ad%a6%e5%88%b0%0a%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%85%20Playwright%20%e2%80%a6&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="playwright的python文档">
+      <div class="share-icon icon icon-linkedin">
+        
+      </div>
+    </a>
+  
+    <a href="https://www.reddit.com/submit?url=http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;title=playwright%e7%9a%84python%e6%96%87%e6%a1%a3" target="_blank" rel="noopener noreferrer" title="playwright的python文档">
+      <div class="share-icon icon icon-reddit">
+        
+      </div>
+    </a>
+  
+    <a href="https://service.weibo.com/share/share.php?url=http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;appkey=&amp;title=playwright%e7%9a%84python%e6%96%87%e6%a1%a3&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="playwright的python文档">
+      <div class="share-icon icon icon-weibo">
+        
+      </div>
+    </a>
+  
+    <a href="https://connect.qq.com/widget/shareqq/index.html?url=http://localhost:1313/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/&amp;title=playwright%e7%9a%84python%e6%96%87%e6%a1%a3&amp;desc=%0d%e5%ae%89%e8%a3%85%0d%e5%bc%95%e8%a8%80%0dPlaywright%20%e6%98%af%e4%b8%93%e9%97%a8%e4%b8%ba%e6%bb%a1%e8%b6%b3%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95%e7%9a%84%e9%9c%80%e6%b1%82%e8%80%8c%e5%88%9b%e5%bb%ba%e7%9a%84%e3%80%82Playwright%20%e6%94%af%e6%8c%81%e5%8c%85%e6%8b%ac%20Chromium%e3%80%81WebKit%20%e5%92%8c%20Firefox%20%e5%9c%a8%e5%86%85%e7%9a%84%e6%89%80%e6%9c%89%e7%8e%b0%e4%bb%a3%e6%b8%b2%e6%9f%93%e5%bc%95%e6%93%8e%e3%80%82%e5%9c%a8%20Windows%e3%80%81Linux%20%e5%92%8c%20macOS%20%e4%b8%8a%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95%ef%bc%8c%e6%97%a0%e8%ae%ba%e6%98%af%e6%9c%ac%e5%9c%b0%e8%bf%98%e6%98%af%e5%9c%a8%20CI%20%e4%b8%8a%ef%bc%8c%e6%97%a0%e8%ae%ba%e6%98%af%e6%97%a0%e5%a4%b4%e6%a8%a1%e5%bc%8f%e8%bf%98%e6%98%af%e6%9c%89%e5%a4%b4%e6%a8%a1%e5%bc%8f%ef%bc%8c%e9%83%bd%e5%8f%af%e4%bb%a5%e4%bd%bf%e7%94%a8%e5%8e%9f%e7%94%9f%e7%a7%bb%e5%8a%a8%e8%ae%be%e5%a4%87%e4%bb%bf%e7%9c%9f%e3%80%82%0aPlaywright%20%e5%ba%93%e5%8f%af%e4%bb%a5%e7%94%a8%e4%bd%9c%e9%80%9a%e7%94%a8%e7%9a%84%e6%b5%8f%e8%a7%88%e5%99%a8%e8%87%aa%e5%8a%a8%e5%8c%96%e5%b7%a5%e5%85%b7%ef%bc%8c%e4%b8%ba%e5%90%8c%e6%ad%a5%e5%92%8c%e5%bc%82%e6%ad%a5%20Python%20%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e5%a5%97%e5%bc%ba%e5%a4%a7%e7%9a%84%20API%20%e6%9d%a5%e8%87%aa%e5%8a%a8%e5%8c%96%20Web%20%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e3%80%82%0a%e6%9c%ac%e4%bb%8b%e7%bb%8d%e6%8f%8f%e8%bf%b0%e4%ba%86%20Playwright%20Pytest%20%e6%8f%92%e4%bb%b6%ef%bc%8c%e8%bf%99%e6%98%af%e7%bc%96%e5%86%99%e7%ab%af%e5%88%b0%e7%ab%af%e6%b5%8b%e8%af%95%e7%9a%84%e6%8e%a8%e8%8d%90%e6%96%b9%e5%bc%8f%e3%80%82%0a%e4%bd%a0%e5%b0%86%e5%ad%a6%e5%88%b0%0a%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%85%20Playwright%20%e2%80%a6&amp;source=http://localhost:1313/" target="_blank" rel="noopener noreferrer" title="playwright的python文档">
+      <div class="share-icon icon icon-qq">
+        
+      </div>
+    </a>
+  
+    <a href="javascript:;"  title="playwright的python文档">
+      <div class="share-icon icon icon-weixin">
+        
+          <div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hugo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div>
+        
+      </div>
+    </a>
+  
+</div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+      <ul class="article-tag-list" itemprop="keywords">
+  
+</ul>
+
+    </footer>
+  </div>
+  
+    
+  <nav
+    id="article-nav"
+    data-aos="fade-up"
+  >
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img
+              data-src="https://raw.githubusercontent.com/bluespace3/images/master/OIP%20%282%29.jpeg"
+              data-sizes="auto"
+              alt="pytest-intro"
+              class="lazyload"
+            />
+          
+        
+        <a href="/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            pytest-intro
+          
+        </h3>
+      </div>
+    
+
+    
+      <div class="article-nav-link-wrap article-nav-link-right">
+        
+          
+          
+            <img
+              data-src="https://raw.githubusercontent.com/bluespace3/images/master/OIP%20%284%29.jpeg"
+              data-sizes="auto"
+              alt="Pandoc"
+              class="lazyload"
+            />
+          
+        
+        <a href="/post/%E5%B7%A5%E5%85%B7/pandoc/"></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">
+          
+            Pandoc
+          
+        </h3>
+      </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<section id="comments" data-aos="fade-up">
+<div class="comment-header">
+  <h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap">
+      
+        
+        <div class="selector-item" data-selector="giscus">
+          <span>giscus</span>
+        </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+</div>
+
+<div class="comment-content">
+  
+    
+    <div class="comment giscus-comment" data-aos="fade-up"
+     >
+    </div>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</div>
+</section>
+
+  
+</section>
+        </div>
+        
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+<footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    
+    <div>
+      <span class="icon-copyright"></span>
+      
+        2020 -
+        2025
+      
+      <span class="footer-info-sep rotate"></span>
+      新人类
+    </div>
+    
+      <div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          >Hugo</a
+        >&nbsp; Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          >Reimu</a
+        >
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"
+          >&nbsp;
+            14.2k
+          </span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;
+          
+          
+
+          01:43
+        </span>
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div>
+    
+  </div>
+</footer>
+
+        
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      
+        <div class="sidebar-toc-sidebar">
+          <div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#引言">引言</a></li>
+    <li><a href="#安装-playwright-pytest">安装 Playwright Pytest</a></li>
+    <li><a href="#添加示例测试">添加示例测试</a></li>
+    <li><a href="#运行示例测试">运行示例测试</a></li>
+    <li><a href="#更新-playwright">更新 Playwright</a></li>
+    <li><a href="#系统要求">系统要求</a></li>
+    <li><a href="#接下来是什么">接下来是什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引言-1">引言</a></li>
+    <li><a href="#第一个测试">第一个测试</a></li>
+    <li><a href="#操作">操作</a>
+      <ul>
+        <li><a href="#导航">导航</a></li>
+        <li><a href="#交互">交互</a></li>
+        <li><a href="#基本操作">基本操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#断言">断言</a>
+      <ul>
+        <li><a href="#测试隔离">测试隔离</a></li>
+        <li><a href="#使用夹具">使用夹具</a></li>
+      </ul>
+    </li>
+    <li><a href="#接下来是什么-1">接下来是什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引言-2">引言</a></li>
+    <li><a href="#运行-codegen">运行 Codegen</a>
+      <ul>
+        <li><a href="#录制测试">录制测试</a></li>
+        <li><a href="#生成定位器">生成定位器</a></li>
+        <li><a href="#仿真">仿真</a></li>
+      </ul>
+    </li>
+    <li><a href="#接下来做什么">接下来做什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引言-3">引言</a></li>
+    <li><a href="#运行测试">运行测试</a>
+      <ul>
+        <li><a href="#命令行">命令行</a></li>
+        <li><a href="#在有头模式下运行测试">在有头模式下运行测试</a></li>
+        <li><a href="#在不同的浏览器上运行测试">在不同的浏览器上运行测试</a></li>
+        <li><a href="#运行特定测试">运行特定测试</a></li>
+        <li><a href="#并行运行测试">并行运行测试</a></li>
+      </ul>
+    </li>
+    <li><a href="#调试测试">调试测试</a></li>
+    <li><a href="#接下来做什么-1">接下来做什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#录制跟踪">录制跟踪</a></li>
+    <li><a href="#打开跟踪">打开跟踪</a></li>
+    <li><a href="#查看跟踪">查看跟踪</a></li>
+    <li><a href="#接下来是什么-2">接下来是什么</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引言-4">引言</a></li>
+    <li><a href="#使用方法">使用方法</a></li>
+    <li><a href="#命令行参数">命令行参数</a></li>
+    <li><a href="#固定装置">固定装置</a></li>
+    <li><a href="#并行性同时运行多个测试">并行性：同时运行多个测试</a></li>
+    <li><a href="#示例">示例</a>
+      <ul>
+        <li><a href="#为自动补全配置-mypy-类型">为自动补全配置 Mypy 类型</a></li>
+        <li><a href="#配置慢动作">配置慢动作</a></li>
+        <li><a href="#按浏览器跳过测试">按浏览器跳过测试</a></li>
+        <li><a href="#在特定浏览器上运行">在特定浏览器上运行</a></li>
+        <li><a href="#使用自定义浏览器渠道如-google-chrome-或-microsoft-edge">使用自定义浏览器渠道，如 Google Chrome 或 Microsoft Edge</a></li>
+        <li><a href="#配置基础-url">配置基础 URL</a></li>
+        <li><a href="#忽略-https-错误">忽略 HTTPS 错误</a></li>
+        <li><a href="#使用自定义视口大小">使用自定义视口大小</a></li>
+        <li><a href="#设备模拟">设备模拟</a></li>
+        <li><a href="#与-unittesttestcase-一起使用">与 <code>unittest.TestCase</code> 一起使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#调试">调试</a>
+      <ul>
+        <li><a href="#与-pdb-一起使用">与 pdb 一起使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#部署到-ci">部署到 CI</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+        </div>
+        <div class="sidebar-common-sidebar hidden">
+          
+<div class="sidebar-author">
+  <img
+    data-src="/avatar/OIP%20%284%29.jpeg"
+    data-sizes="auto"
+    alt="新人类"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">新人类</div>
+  <div class="sidebar-description">致敬勇于探索未知的人类！</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    
+    <div class="sidebar-state-number">56</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      6
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+    <div class="icon-bilibili sidebar-social-icon">
+      <a
+        href="https://space.bilibili.com/390297990"
+        itemprop="url"
+        target="_blank"
+        aria-label="bilibili"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-email sidebar-social-icon">
+      <a
+        href="2637458905@qq.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/bluespace3"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>
+        
+          
+            &#xe62b;
+          
+        
+      </div>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>
+        
+          
+            &#xe62b;
+          
+        
+      </div>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>
+        
+          
+            &#xe62b;
+          
+        
+      </div>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>
+        
+          
+            &#xe62b;
+          
+        
+      </div>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+
+        </div>
+      
+    
+  </div>
+  
+    
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  
+</nav>
+
+    </div>
+    
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div>
+    
+    
+    
+    
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"
+  ></script>
+
+
+
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"
+  ></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+      
+      <script src="/js/main.js" ></script>
+      
+
+
+
+  
+
+
+
+
+
+  
+      
+      <script src="/js/aos.js" ></script>
+      
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+
+
+
+
+
+
+  
+      
+      <script src="/js/pjax_main.js" data-pjax></script>
+      
+
+
+
+  <script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "XOD7QMRN6A",
+        apiKey: "f0c206edfe24bfd2fe1b5837560b4b5e",
+        indexName: "bluespace3_github_io_xod7qmrn6a_pages",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": "搜索.....",
+          "hits_empty": "未发现与 「${query}」相关内容",
+          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+        }
+      }
+    };
+  </script>
+  
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    defer
+    
+    
+    
+    integrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"
+  ></script>
+
+
+  
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"
+    defer
+    
+    
+    
+    integrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y&#43;KHTORelMMEn7mOp2AVPp&#43;7fr03dLgZiV3J" crossorigin="anonymous"
+  ></script>
+
+
+  
+
+
+
+
+
+  
+      
+      <script src="/js/algolia_search.js" ></script>
+      
+
+
+
+
+  
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/mouse-firework@0.1.0/dist/index.umd.js"
+    
+    
+    
+    
+    integrity="sha384-KM6i7tu43nYd6e0beIljxHMC5tZc58XBDu7pPA58w50h18Jsx7gLdimfS09RXlKv" crossorigin="anonymous"
+  ></script>
+
+
+<script>
+  if (window.firework) {
+    const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"#5252ff\",\"#7c7cff\",\"#afafff\",\"#d0d0ff\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"#0000ff\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+    options.excludeElements = options.excludeelements;
+    delete options.excludeelements;
+    window.firework(options);
+  }
+</script>
+
+
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+      
+      
+        
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "新人类",
+          title: "playwright的python文档",
+          url: "http:\/\/localhost:1313\/post\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95\/playwright%E7%9A%84python%E6%96%87%E6%A1%A3\/",
+          description: "\r安装\r引言\rPlaywright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。\nPlaywright 库可以用作通用的浏览器自动化工具，为同步和异步 Python 提供了一套强大的 API 来自动化 Web 应用程序。\n本介绍描述了 Playwright Pytest 插件，这是编写端到端测试的推荐方式。\n你将学到\n如何安装 Playwright …",
+          cover: "http:\/\/localhost:1313\/images\/%E9%A3%9E%E8%88%B91.jpeg",
+        };
+      </script>
+    
+    
+    
+      
+
+
+
+
+
+  
+      
+      <script src="/js/insert_highlight.js" data-pjax></script>
+      
+
+      
+      
+      
+      
+      <script type="module" data-pjax>
         
         const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;
         
@@ -231,11 +2507,530 @@ Playwright 库可以用作通用的浏览器自动化工具，为同步和异步
         } else {
           window.addEventListener('lightbox:ready', pswp);
         }
-      </script><script data-pjax>var defaultComment,savedCommentType,configDefault,loadScript=(e,t)=>{const n=document.createElement("script");return n.src=e,t&&(n.integrity=t),n.crossOrigin="anonymous",n},commentConfigKeys=["valine","waline","twikoo","gitalk","giscus"],commentConfig={valine:{enable:!1,load:()=>{const e=document.querySelector(".valine-comment");if(!e)return;e.style.display="block";const t=loadScript("https://npm.webcache.cn/valine@1.5.1/dist/Valine.min.js","webcache|valine@1.5.1/dist/Valine.min.js".startsWith("local")?void 0:"sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE+s5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn");t.onload=()=>{const e=["nick","mail","link"],t="nick,mail,link".split(",").filter(t=>e.indexOf(t)>-1),n=JSON.parse("true"),s=JSON.parse("true"),o=JSON.parse("false");new Valine({el:".valine-comment",appId:"",appKey:"",placeholder:"Just go go",pageSize:"10",avatar:"mp",lang:"zh-cn",recordIP:n,highlight:s,visitor:o,requiredFields:t,path:window.location.pathname})},document.head.appendChild(t)}},waline:{enable:!1,load:async()=>{const t=document.querySelector(".waline-comment");if(!t)return;t.style.display="block";let e;const n="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.mjs";if("webcache|@waline/client@2.15.8/dist/waline.mjs".startsWith("local")){const t=await safeImport(n);e=t.init}else{const t=await safeImport(n,"sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5");e=t.init}window.walineInstance=e({el:".waline-comment",serverURL:"",lang:"zh-CN",locale:JSON.parse("{}"),emoji:JSON.parse('["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"]'),meta:JSON.parse('["nick","mail","link"]'),requiredMeta:JSON.parse('["nick","mail"]'),wordLimit:0,comment:!0,pageSize:10,dark:'html[data-theme="dark"]',pageview:!0})}},twikoo:{enable:!1,load:()=>{const e=document.querySelector(".twikoo-comment");if(!e)return;e.style.display="block";const t=loadScript("https://npm.webcache.cn/twikoo@1.6.16/dist/twikoo.all.min.js","webcache|twikoo@1.6.16/dist/twikoo.all.min.js".startsWith("local")?void 0:"sha384-lDHsr5aZmkMS0eKnsUu6e9RWP+dRmn7sgjRAKGOAoXfMyzbUK6Qi86zZK7R+KvRV");t.onload=()=>{twikoo.init({envId:"",el:".twikoo-comment",region:""})},document.head.appendChild(t)}},gitalk:{enable:!1,load:()=>{const e=document.querySelector(".gitalk-comment");if(!e)return;e.style.display="block";const t=loadScript("https://npm.webcache.cn/gitalk@1.8.0/dist/gitalk.min.js","webcache|gitalk@1.8.0/dist/gitalk.min.js".startsWith("local")?void 0:"sha384-kspnZUWBoSWwoJHa0hBCXYbHGbhvU/lcEH5O8eVbSDhbPwsiVUTp/aGX/z/5EuMA");t.onload=()=>{if(!1){const e=loadScript("https://npm.webcache.cn/blueimp-md5@2.19.0/js/md5.min.js","webcache|blueimp-md5@2.19.0/js/md5.min.js".startsWith("local")?void 0:"sha384-JmVtRz6RWiXnA14QbIOJzPuU3MidULOpBP66deeLLyyoF4Tr/gZlbkHkL6vTthxH");e.onload=n,document.head.appendChild(e)}else n()},document.head.appendChild(t);function n(){let e=new Gitalk({clientID:"",clientSecret:"",repo:"",owner:"",admin:JSON.parse("null"),id:"location.pathname",distractionFreeMode:!1});e.render("gitalk-comment")}}},giscus:{enable:!0,load:()=>{const t=document.querySelector(".giscus-comment");if(!t)return;t.style.display="block";const n=t.querySelector('script[src*="giscus.app/client.js"]');n&&n.remove();const s=document.querySelector("iframe.giscus-frame");s&&s.remove();const e=document.createElement("script"),o=document.documentElement.getAttribute("data-theme");e.src="https://giscus.app/client.js",e.setAttribute("data-repo","bluespace3/bluespace3.github.io"),e.setAttribute("data-repo-id","R_kgDOOLQbCg"),e.setAttribute("data-category","Announcements"),e.setAttribute("data-category-id","DIC_kwDOOLQbCs4Cojds"),e.setAttribute("data-mapping","0"),e.setAttribute("data-strict","0"),e.setAttribute("data-reactions-enabled","1"),e.setAttribute("data-emit-metadata","0"),e.setAttribute("data-input-position","bottom"),e.setAttribute("data-theme",o==="dark"?"dark":"light"),e.setAttribute("data-lang","zh-CN"),e.setAttribute("crossorigin","anonymous"),e.async=!0,t.appendChild(e),document.body.addEventListener("light-theme-set",()=>{const e=document.querySelector("iframe.giscus-frame");if(!e)return;e.contentWindow.postMessage({giscus:{setConfig:{theme:"light"}}},"https://giscus.app")}),document.body.addEventListener("dark-theme-set",()=>{const e=document.querySelector("iframe.giscus-frame");if(!e)return;e.contentWindow.postMessage({giscus:{setConfig:{theme:"dark"}}},"https://giscus.app")})}}};commentConfig.enable=commentConfigKeys.some(e=>commentConfig[e].enable),defaultComment="",commentConfig.enable&&(savedCommentType=localStorage.getItem("commentType"),savedCommentType&&commentConfig[savedCommentType]?.enable&&(defaultComment=savedCommentType),defaultComment||(configDefault="waline",commentConfig[configDefault]?.enable&&(defaultComment=configDefault)),defaultComment||(defaultComment=commentConfigKeys.find(e=>commentConfig[e].enable)||""));function loadComments(){if(!commentConfig.enable)return;const e={valine:!1,waline:!1,twikoo:!1,gitalk:!1,giscus:!1},s=()=>{const e=document.querySelectorAll(".comment");e.forEach(e=>{e.style.display="none"})},t=t=>{if(e[t]){document.querySelector(`.${t}-comment`).style.display="block";return}commentConfig[t]?.load(),e[t]=!0},o=e=>{const n=document.querySelectorAll(".selector-item");for(let e=0;e<n.length;e++)n[e].classList.remove("active");e.classList.add("active");const o=e.getAttribute("data-selector");s(),t(o)},n=()=>{const e=document.querySelectorAll(".selector-item");for(let t of e)t.addEventListener("click",()=>{const e=t.getAttribute("data-selector");window.localStorage.setItem("commentType",e),o(t)});if(defaultComment){const e=document.querySelector(`[data-selector="${defaultComment}"]`);if(!e)return;e.style.display="block",e.classList.add("active"),t(defaultComment)}};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",n):n()}loadComments()</script><script src=https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js defer data-pjax integrity=sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx+aUuBDqQwEk crossorigin=anonymous></script><script src=https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js defer data-pjax integrity=sha384-UbfRVKN3/elS1r7JcK2FhmPP+KlJ4CvYwbyYD7tH+uTkbT9bNJr9eJeQ0FoFbAgz crossorigin=anonymous></script></div></div><script src=https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js async integrity=sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S crossorigin=anonymous></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.getRegistrations().then(e=>{for(let t of e)t.unregister()})</script><script>const reimuCopyright=String.raw`
+      </script>
+      
+
+
+
+
+
+
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus'];
+  var commentConfig = {
+    valine: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.valine-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/valine@1.5.1\/dist\/Valine.min.js',
+          !'webcache|valine@1.5.1\/dist\/Valine.min.js'.startsWith('local') ? 'sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE\u002bs5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn' : undefined
+        );
+        script.onload = () => {
+          const GUEST_INFO = ['nick', 'mail', 'link'];
+          const guest_info = 'nick,mail,link'.split(',').filter((item) => {
+            return GUEST_INFO.indexOf(item) > -1
+          });
+          const recordIP = JSON.parse('true');
+          const highlight = JSON.parse('true');
+          const visitor = JSON.parse('false');
+
+          new Valine({
+            el: '.valine-comment',
+            appId: "",
+            appKey: "",
+            placeholder: "Just go go",
+            pageSize: '10',
+            avatar: 'mp',
+            lang: 'zh-cn',
+            recordIP: recordIP,
+            highlight: highlight,
+            visitor: visitor,
+            requiredFields: guest_info,
+            path: window.location.pathname
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    waline: {
+      enable: false,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: '',
+          lang: 'zh-CN',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  0 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },
+    twikoo: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.twikoo-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/twikoo@1.6.16\/dist\/twikoo.all.min.js',
+          !'webcache|twikoo@1.6.16\/dist\/twikoo.all.min.js'.startsWith('local') ? 'sha384-lDHsr5aZmkMS0eKnsUu6e9RWP\u002bdRmn7sgjRAKGOAoXfMyzbUK6Qi86zZK7R\u002bKvRV' : undefined
+        );
+        script.onload = () => {
+          twikoo.init({
+            envId: '',
+            el: '.twikoo-comment',
+            region: '',
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    gitalk: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.gitalk-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/gitalk@1.8.0\/dist\/gitalk.min.js',
+          !'webcache|gitalk@1.8.0\/dist\/gitalk.min.js'.startsWith('local') ? 'sha384-kspnZUWBoSWwoJHa0hBCXYbHGbhvU\/lcEH5O8eVbSDhbPwsiVUTp\/aGX\/z\/5EuMA' : undefined
+        );
+        script.onload = () => {
+          if ( false ) {
+            
+            const md5Script = loadScript(
+              'https:\/\/npm.webcache.cn\/blueimp-md5@2.19.0\/js\/md5.min.js',
+              !'webcache|blueimp-md5@2.19.0\/js\/md5.min.js'.startsWith('local') ? 'sha384-JmVtRz6RWiXnA14QbIOJzPuU3MidULOpBP66deeLLyyoF4Tr\/gZlbkHkL6vTthxH' : undefined
+            );
+            md5Script.onload = initGitalk;
+            document.head.appendChild(md5Script);
+          } else {
+            
+            initGitalk();
+          }
+        };
+        document.head.appendChild(script);
+
+        function initGitalk() {
+          let gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: '',
+            owner: '',
+            admin: JSON.parse("null"),
+            id: 'location.pathname',
+            distractionFreeMode: false
+          });
+          gitalk.render('gitalk-comment');
+        }
+      }
+    },
+    giscus: {
+      enable: true,
+      load: () => {
+        const container = document.querySelector('.giscus-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const existingScript = container.querySelector('script[src*="giscus.app/client.js"]');
+        if (existingScript) existingScript.remove();
+        const existingFrame = document.querySelector('iframe.giscus-frame');
+        if (existingFrame) existingFrame.remove();
+
+        
+        const giscusScript = document.createElement('script');
+        const domMode = document.documentElement.getAttribute("data-theme");
+        giscusScript.src = 'https://giscus.app/client.js';
+        giscusScript.setAttribute('data-repo', 'bluespace3\/bluespace3.github.io');
+        giscusScript.setAttribute('data-repo-id', 'R_kgDOOLQbCg');
+        giscusScript.setAttribute('data-category', 'Announcements');
+        giscusScript.setAttribute('data-category-id', 'DIC_kwDOOLQbCs4Cojds');
+        giscusScript.setAttribute('data-mapping', '0');
+        giscusScript.setAttribute('data-strict', '0');
+        giscusScript.setAttribute('data-reactions-enabled', '1');
+        giscusScript.setAttribute('data-emit-metadata', '0');
+        giscusScript.setAttribute('data-input-position', 'bottom');
+        giscusScript.setAttribute('data-theme', domMode === 'dark' ? 'dark' : 'light');
+        giscusScript.setAttribute('data-lang', 'zh-CN');
+        giscusScript.setAttribute('crossorigin', 'anonymous');
+        giscusScript.async = true;
+        container.appendChild(giscusScript);
+        document.body.addEventListener('light-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        });
+        document.body.addEventListener('dark-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        });
+      }
+    }
+  };
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script>
+
+      
+        
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js"
+    defer
+    
+    data-pjax
+    
+    integrity="sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx&#43;aUuBDqQwEk" crossorigin="anonymous"
+  ></script>
+
+
+        
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js"
+    defer
+    
+    data-pjax
+    
+    integrity="sha384-UbfRVKN3/elS1r7JcK2FhmPP&#43;KlJ4CvYwbyYD7tH&#43;uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous"
+  ></script>
+
+
+      
+    
+    
+  </div>
+</div>
+
+
+
+
+  
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"
+  ></script>
+
+
+
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script>
+
+
+<script>
+  const reimuCopyright = String.raw`
    ______     ______     __     __    __     __  __    
   /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
   \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
    \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
     \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
                                                     
-  `;console.log(String.raw`%c ${reimuCopyright}`,"color: #ff5252;"),console.log("%c Theme.Reimu %c https://github.com/D-Sketon/hugo-theme-reimu ","color: white; background: #ff5252; padding:5px 0;","padding:4px;border:1px solid #ff5252;")</script><script src=https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js integrity=sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL/aORyw+5+HZoU6e crossorigin=anonymous></script><script>var isMobile=window.matchMedia("(max-width: 959px)").matches;if(isMobile){const e=_$("#aplayer");if(e){const t=e.parentNode;t?.tagName==="ASIDE"&&(e.removeAttribute("data-aos"),t.removeChild(e),document.body.appendChild(e))}}const ap=new APlayer({theme:"var(--color-link)",container:document.getElementById("aplayer"),audio:JSON.parse('[{"artist":"Unknown Artist","cover":"/images/90.jpeg","name":"Free Compress","url":"/freecompress-2906303867.mp3"}]')||[],fixed:!!isMobile||!1||!1,autoplay:!1||!1,loop:"all"||"all",order:"list"||"list",preload:"auto"||"auto",volume:.7||.7,mutex:!0||!0,listFolded:!1||!1,lrcType:0||0})</script><script src=https://npm.webcache.cn/pangu@4.0.7/dist/browser/pangu.min.js integrity=sha384-HeUHqi0nVsPUm/E0ss7OfnIV/yD96JWB8ehZvUuoVax9DpNHL17jj9pdfXHzqDxm crossorigin=anonymous></script><script data-pjax>document.readyState==="loading"?document.addEventListener("DOMContentLoaded",()=>{pangu?.spacingPage()}):pangu?.spacingPage()</script></body></html>
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script>
+
+
+  
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    
+    
+    
+    
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"
+  ></script>
+
+
+  
+    <script>
+      var isMobile = window.matchMedia('(max-width: 959px)').matches;
+      if (isMobile) {
+      const aplayer = _$('#aplayer');
+        if (aplayer) {
+          const aside = aplayer.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            aplayer.removeAttribute('data-aos');
+            aside.removeChild(aplayer);
+            document.body.appendChild(aplayer);
+          }
+        }
+      }
+      const ap = new APlayer({
+          theme: "var(--color-link)",
+          container: document.getElementById('aplayer'),
+          audio: JSON.parse("[{\"artist\":\"Unknown Artist\",\"cover\":\"/images/90.jpeg\",\"name\":\"Free Compress\",\"url\":\"/freecompress-2906303867.mp3\"}]") || [],
+          fixed: isMobile ? true : ( false  || false),
+          autoplay:  false  || false,
+          loop: 'all' || 'all',
+          order: 'list' || 'list',
+          preload: 'auto' || 'auto',
+          volume:  0.7  || 0.7,
+          mutex:  true  || true,
+          listFolded:  false  || false,
+          lrcType:  0  || 0,
+      });
+    </script>
+  
+
+
+
+
+
+  
+
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/pangu@4.0.7/dist/browser/pangu.min.js"
+    
+    
+    
+    
+    integrity="sha384-HeUHqi0nVsPUm/E0ss7OfnIV/yD96JWB8ehZvUuoVax9DpNHL17jj9pdfXHzqDxm" crossorigin="anonymous"
+  ></script>
+
+
+  <script data-pjax>
+    if (document.readyState === "loading") {
+      document.addEventListener('DOMContentLoaded', () => {
+        pangu?.spacingPage();
+      });
+    } else {
+      pangu?.spacingPage();
+    }
+  </script>
+
+    
+  </body>
+</html>

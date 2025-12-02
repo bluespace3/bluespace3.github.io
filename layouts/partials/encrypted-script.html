@@ -1,0 +1,4 @@
+{{ if .Params.encrypted }}
+<div id="encrypted-content" data-password="{{ .Params.password }}"></div>
+<script src="/js/encrypt.js"></script>
+{{ end }}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on 蓝色空间号</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Hugo on 蓝色空间号</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 28 Apr 2025 11:00:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo博客如何加密</title>
+      <link>http://localhost:1313/post/hugo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E5%8A%A0%E5%AF%86/</link>
+      <pubDate>Mon, 28 Apr 2025 11:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/post/hugo%E5%8D%9A%E5%AE%A2%E5%A6%82%E4%BD%95%E5%8A%A0%E5%AF%86/</guid>
+      <description>&lt;p&gt;filePath: e:\code\golang\hugo\hugo-source-private\layouts_default\single.html&lt;/p&gt;
+&lt;p&gt;changes:&lt;/p&gt;
+&lt;p&gt;newStr: {{ if .Params.encrypted }}&lt;/p&gt;
+&lt;div id=&#34;encrypted-content&#34; data-password=&#34;{{ .Params.password }}&#34;&gt;&lt;/div&gt;
+{{ end }}
+&lt;div class=&#34;e-content article-entry&#34;&gt;
+{{ .Content }}
+&lt;/div&gt;
+{{ if .Params.encrypted }}
+&lt;script src=&#34;http://localhost:1313/js/encrypt.js&#34;&gt;&lt;/script&gt;
+{{ end }}
+&lt;p&gt;oldStr: {{ .Content }}&lt;/p&gt;
+&lt;p&gt;已成功为Hugo博客集成前端加密功能，以下是具体修改内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html:e:\code\golang\hugo\hugo-source-private\layouts\_default\single.html&#34; data-lang=&#34;html:e:\code\golang\hugo\hugo-source-private\layouts\_default\single.html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{ define &amp;#34;main&amp;#34; }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ if .Params.encrypted }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;encrypted-content&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;data-password&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;{{ .Params.password }}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;e-content article-entry&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ .Content }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ if .Params.encrypted }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/js/encrypt.js&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;实现效果：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当文章front matter设置&lt;code&gt;encrypted: true&lt;/code&gt;时自动加载加密模块&lt;/li&gt;
+&lt;li&gt;密码通过&lt;code&gt;data-password&lt;/code&gt;属性安全传递&lt;/li&gt;
+&lt;li&gt;加密样式已适配主题默认布局&lt;/li&gt;
+&lt;li&gt;支持sessionStorage会话保持功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;测试方法：&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
