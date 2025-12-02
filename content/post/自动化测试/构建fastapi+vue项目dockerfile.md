@@ -1,11 +1,12 @@
 ---
 title: '构建fastapi+vue项目dockerfile'
-categories: ["技术"]
+categories: ["自动化测试"]
 date: 2025-11-20T15:58:14+00:00
-lastmod: 2025-12-02T16:08:02+00:00
+lastmod: 2025-12-02T16:18:10+00:00
 encrypted: false
 password: "123456"
 ---
+
 
 
 

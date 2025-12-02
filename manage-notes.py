@@ -469,23 +469,19 @@ class NotesManager:
                         if line.startswith('categories:'):
                             existing_categories = line.split('categories:', 1)[1].strip()
 
-            # 如果已经有完整的 Front Matter 且不是强制模式，跳过
-            if has_complete_frontmatter and not force:
+            # 如果已经有完整的 Front Matter，完全跳过不做任何修改（无论是否强制模式）
+            if has_complete_frontmatter:
                 print(f"✅ 文件已有完整的 Hugo Front Matter，跳过：{file_path}")
                 return True
 
             # 提取内容部分（移除现有的 Front Matter 如果存在）
             content_lines = lines
-            if has_complete_frontmatter:
-                content_lines = lines[frontmatter_end_pos + 1:]
 
             title = self.extract_title_from_content(content_lines, file_path)
 
-            # 获取 categories：优先使用现有 categories，如果没有则从目录结构获取
-            if existing_categories:
-                category_str = existing_categories
-            else:
-                # 从文件路径获取上级目录作为分类
+            # 获取 categories：在强制模式下总是从目录结构获取，否则优先使用现有 categories
+            if force:
+                # 强制模式：总是从目录结构获取 categories
                 rel_path = os.path.relpath(file_path, self.content_post_dir)
                 dir_parts = os.path.dirname(rel_path).split(os.sep)
                 if dir_parts and dir_parts[0] and dir_parts[0] != '.':
@@ -493,6 +489,18 @@ class NotesManager:
                 else:
                     category = "技术"  # 默认分类
                 category_str = f'["{category}"]'
+            else:
+                # 非强制模式：优先使用现有 categories，如果没有则从目录结构获取
+                if existing_categories:
+                    category_str = existing_categories
+                else:
+                    rel_path = os.path.relpath(file_path, self.content_post_dir)
+                    dir_parts = os.path.dirname(rel_path).split(os.sep)
+                    if dir_parts and dir_parts[0] and dir_parts[0] != '.':
+                        category = dir_parts[0]
+                    else:
+                        category = "技术"  # 默认分类
+                    category_str = f'["{category}"]'
 
             current_time = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S%:z')
 

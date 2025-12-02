@@ -1,11 +1,12 @@
 ---
 title: 'mcp-intro'
-categories: ["技术"]
+categories: ["AIGC学习笔记"]
 date: 2025-11-20T15:58:14+00:00
-lastmod: 2025-12-02T16:07:56+00:00
+lastmod: 2025-12-02T16:18:05+00:00
 encrypted: false
 password: "123456"
 ---
+
 
 
 

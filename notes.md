@@ -22,9 +22,18 @@ password: "123456"
 ```
 
 **分类规则**：
-- 分类名称来自 `C:\Users\tian4\knowledge_bases` 目录中的第一级文件夹名
-- 例如：`C:\Users\tian4\knowledge_bases\AIGC学习笔记\langchain.md` → 分类为 `"AIGC学习笔记"`
-- 如果找不到匹配的文件，默认使用 `"技术"` 作为分类
+- 分类名称来自文件在 `content/post` 目录中的**上级目录名**
+- 例如：`content/post/工作/1017.md` → 分类为 `"工作"`
+- 例如：`content/post/AIGC学习笔记/langchain.md` → 分类为 `"AIGC学习笔记"`
+- 如果文件在根目录（无上级目录），默认使用 `"技术"` 作为分类
+
+**时间字段规则**：
+- `date` 字段：使用文件在远程知识库 (`C:\Users\tian4\knowledge_bases`) 中的**最后提交时间**
+- `lastmod` 字段：使用**当前处理时间**
+
+**处理逻辑**：
+- **重要**：如果文件**已经存在完整的 Hugo Front Matter**，脚本会**完全跳过该文件，不做任何修改**（即使使用 `--force` 参数）
+- 只有**没有 Front Matter 的新文件**才会被自动添加 Front Matter
 
 **用法**：
 
@@ -63,16 +72,15 @@ python manage-notes.py --force
 - 不带参数运行时，默认执行完整自动化流程：提交知识库 → 同步 → 格式化 → 推送笔记 → 部署网站
 - **新增**：每次执行前自动提交并推送本地知识库 (`C:\Users\tian4\knowledge_bases`) 到 GitHub
 - 自动从笔记仓库同步到主项目（使用 git subtree）
-- **新增**：智能 Front Matter 生成，自动从知识库目录结构提取分类
+- **新增**：智能 Front Matter 生成，自动从博客目录结构提取分类
 - **新增**：自动生成加密相关字段 (`encrypted: false`, `password: "123456"`)
 - **新增**：自动将所有文章的标题统一为文件名（去除.md后缀）
 - **新增**：支持将笔记子仓库的更改推送回远程
 - **新增**：支持一键构建和部署整个 Hugo 网站
 - 递归处理多层目录结构
-- 支持强制模式，覆盖现有更改
-- **增强**：智能检测文件是否已有完整 Hugo Front Matter，避免重复修改
+- **重要**：完全跳过已有 Front Matter 的文件，避免重复修改
 - 提取文件第一行内容作为初始标题
-- 自动设置当前时间为 `date` 和 `lastmod`
+- 自动设置远程提交时间为 `date`，当前时间为 `lastmod`
 - 完全支持中文文件名和路径
 - 提供详细的处理进度和统计信息
 
