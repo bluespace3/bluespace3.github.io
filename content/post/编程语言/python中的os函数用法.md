@@ -1,9 +1,12 @@
 ---
 title: 'python中的os函数用法'
 categories: ["技术"]
-date: 2025-11-22T16:21:11+00:00
-lastmod: 2025-11-22T16:21:11+00:00
+date: 2025-12-02T15:13:20+00:00
+lastmod: 2025-12-02T15:13:20+00:00
+encrypted: false
+password: "123456"
 ---
+
 
 
 
