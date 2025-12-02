@@ -221,15 +221,26 @@ class NotesManager:
         if force:
             print("⚠️  --force 模式：将强制覆盖本地 `content/post` 目录，所有本地未推送的更改都将丢失！")
             # 为了强制覆盖，我们先删除，再重新添加 subtree
-            # 1. 强制从 Git 中移除现有目录
-            rm_command = "git rm -rf content/post"
-            self.run_command(rm_command, description="正在从 Git 中移除本地笔记目录...")
+            # 1. 强制从 Git 中移除现有目录（如果存在）
+            if os.path.exists(os.path.join(self.hugo_project_dir, "content", "post")):
+                rm_command = "git rm -rf content/post"
+                self.run_command(rm_command, description="正在从 Git 中移除本地笔记目录...")
 
-            # 2. 提交删除操作，为重新添加做准备
+                # 2. 真正删除工作目录中的 content/post 目录（如果 git rm 没有完全删除）
+                import shutil
+                post_dir = os.path.join(self.hugo_project_dir, "content", "post")
+                if os.path.exists(post_dir):
+                    try:
+                        shutil.rmtree(post_dir)
+                        print("✅ 已彻底删除本地 content/post 目录")
+                    except Exception as e:
+                        print(f"⚠️  删除本地 content/post 目录时出错：{e}")
+
+            # 3. 提交删除操作，为重新添加做准备
             commit_command = 'git commit -m "chore(notes): 准备强制覆盖更新笔记"'
             self.run_command(commit_command, description="正在提交移除操作...") # 忽略此处的失败，因为可能没有东西可提交
 
-            # 3. 重新添加 subtree，这将拉取最新的内容并覆盖
+            # 4. 重新添加 subtree，这将拉取最新的内容并覆盖
             add_command = f"git subtree add --prefix=content/post {self.notes_repo_url} master --squash"
             success = self.run_command(add_command, description="正在强制拉取并覆盖远程笔记...")
         else:
@@ -378,6 +389,51 @@ class NotesManager:
         filename = os.path.basename(file_path)
         return os.path.splitext(filename)[0]
 
+    def get_file_commit_time(self, file_path):
+        """获取文件在知识库中的最后提交时间"""
+        if not os.path.exists(self.knowledge_base_dir):
+            print(f"⚠️  知识库目录不存在：{self.knowledge_base_dir}")
+            return None
+
+        try:
+            # 获取相对于 content/post 的路径
+            rel_path = os.path.relpath(file_path, self.content_post_dir)
+
+            # 构建知识库中的完整路径
+            kb_file_path = os.path.join(self.knowledge_base_dir, rel_path)
+
+            # 检查文件是否存在于知识库中
+            if not os.path.exists(kb_file_path):
+                print(f"⚠️  文件在知识库中不存在：{kb_file_path}")
+                return None
+
+            # 获取文件在知识库中的最后提交时间
+            result = subprocess.run(
+                ["git", "log", "-1", "--format=%cI", "--", rel_path],
+                cwd=self.knowledge_base_dir,
+                capture_output=True,
+                text=True,
+                encoding='utf-8'
+            )
+
+            if result.returncode == 0 and result.stdout.strip():
+                commit_time_str = result.stdout.strip()
+                # 转换为 UTC 时间格式（Hugo 需要的格式）
+                from datetime import datetime, timezone
+                dt = datetime.fromisoformat(commit_time_str.replace('Z', '+00:00'))
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=timezone.utc)
+                else:
+                    dt = dt.astimezone(timezone.utc)
+                return dt.strftime('%Y-%m-%dT%H:%M:%S%:z')
+            else:
+                print(f"⚠️  无法获取文件提交时间：{rel_path}")
+                return None
+
+        except Exception as e:
+            print(f"⚠️  获取文件提交时间时出错：{e}")
+            return None
+
     def add_hugo_frontmatter(self, file_path, force=False):
         """为单个 Markdown 文件添加或更新 Hugo Front Matter"""
         if not (os.path.exists(file_path) and file_path.endswith('.md')):
@@ -395,7 +451,6 @@ class NotesManager:
             # 检查是否有完整的 Front Matter
             has_complete_frontmatter = False
             frontmatter_end_pos = -1
-            existing_date = None
             existing_categories = None
 
             if lines and lines[0].strip() == '---':
@@ -406,14 +461,12 @@ class NotesManager:
                         has_complete_frontmatter = True
                         break
 
-                # 如果有 Front Matter，解析现有的 date 和 categories 字段
+                # 如果有 Front Matter，解析现有的 categories 字段
                 if has_complete_frontmatter:
                     frontmatter_lines = lines[1:frontmatter_end_pos]
                     for line in frontmatter_lines:
                         line = line.strip()
-                        if line.startswith('date:'):
-                            existing_date = line.split('date:', 1)[1].strip()
-                        elif line.startswith('categories:'):
+                        if line.startswith('categories:'):
                             existing_categories = line.split('categories:', 1)[1].strip()
 
             # 如果已经有完整的 Front Matter 且不是强制模式，跳过
@@ -443,10 +496,12 @@ class NotesManager:
 
             current_time = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S%:z')
 
-            # 保留原有的 date，只更新 lastmod
-            if existing_date:
-                date_to_use = existing_date
+            # 获取远程文件的修改时间作为 date 字段
+            remote_date = self.get_file_commit_time(file_path)
+            if remote_date:
+                date_to_use = remote_date
             else:
+                # 如果无法获取远程时间，使用当前时间
                 date_to_use = current_time
 
             frontmatter = f"""---
