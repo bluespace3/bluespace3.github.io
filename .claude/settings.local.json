@@ -21,7 +21,18 @@
       "Bash(hugo --minify)",
       "Bash(dir:*)",
       "Bash(git subtree:*)",
-      "Read(//c//**)"
+      "Read(//c//**)",
+      "Bash(findstr:*)",
+      "Bash(python:*)",
+      "Bash(ping:*)",
+      "Bash(mkdir:*)",
+      "Bash(copy:*)",
+      "Bash(xargs basename:*)",
+      "Bash(comm:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(git config:*)",
+      "Bash(pwsh -File:*)",
+      "Bash(bash -n:*)"
     ],
     "deny": [],
     "ask": []
