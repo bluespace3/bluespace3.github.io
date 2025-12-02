@@ -1,11 +1,12 @@
 ---
 title: 'langchain'
 categories: ["技术"]
-date: 2025-12-02T15:13:18+00:00
-lastmod: 2025-12-02T15:13:18+00:00
+date: 2025-11-22T16:11:04+00:00
+lastmod: 2025-12-02T16:07:56+00:00
 encrypted: false
 password: "123456"
 ---
+
 
 
 ## 核心组件

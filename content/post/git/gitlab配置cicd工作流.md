@@ -1,11 +1,12 @@
 ---
 title: 'gitlab配置cicd工作流'
 categories: ["技术"]
-date: 2025-12-02T15:13:19+00:00
-lastmod: 2025-12-02T15:13:19+00:00
+date: 2025-11-20T15:58:14+00:00
+lastmod: 2025-12-02T16:07:58+00:00
 encrypted: false
 password: "123456"
 ---
+
 
 
 
