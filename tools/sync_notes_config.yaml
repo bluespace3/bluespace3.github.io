@@ -1,0 +1,44 @@
+# 笔记同步到博客配置文件
+# Note Sync to Blog Configuration
+
+# GitHub 配置
+github:
+  # GitHub Personal Access Token (从环境变量读取)
+  # 获取方式：GitHub Settings -> Developer settings -> Personal access tokens -> Tokens (classic)
+  # 需要的权限：repo (Full control of private repositories)
+  token: '${GITHUB_TOKEN}'
+
+  # GitHub 仓库信息
+  owner: 'bluespace3'        # 仓库所有者
+  repo: 'knowledge_bases'    # 笔记仓库名
+  branch: 'main'             # 分支名
+
+# Hugo 配置
+hugo:
+  # 内容目录（相对于项目根目录）
+  content_dir: 'content/post'
+
+  # 时区设置
+  timezone: 'Asia/Shanghai'
+
+# Front Matter 配置
+frontmatter:
+  # 是否覆盖已有 frontmatter
+  # true: 强制更新已有 frontmatter
+  # false: 只添加没有 frontmatter 的文件
+  overwrite: true
+
+  # 默认分类（当文件不在子目录时使用）
+  default_category: '技术'
+
+# 同步选项
+sync:
+  # 是否在同步后自动推送到远程仓库
+  auto_push: false
+
+  # 是否在同步后自动构建和部署
+  auto_deploy: false
+
+  # 批量处理时的并发数（避免触发 GitHub API 速率限制）
+  batch_size: 10
+  batch_delay: 1  # 秒

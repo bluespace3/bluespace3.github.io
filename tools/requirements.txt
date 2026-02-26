@@ -1,0 +1,8 @@
+# 笔记同步到博客工具依赖
+# Note Sync to Blog Tool Requirements
+
+# HTTP 请求库
+requests>=2.31.0
+
+# YAML 配置文件解析
+pyyaml>=6.0.1
