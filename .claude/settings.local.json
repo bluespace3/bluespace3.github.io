@@ -33,7 +33,14 @@
       "Bash(git config:*)",
       "Bash(pwsh -File:*)",
       "Bash(bash -n:*)",
-      "Bash(del:*)"
+      "Bash(del:*)",
+      "Bash(./tools/batch-encrypt.sh content/post/工作 tian45996)",
+      "Bash(bash tools/batch-encrypt.sh content/post/工作 tian45996)",
+      "Bash(python3 tools/encrypt_file.py \"content/post/工作/业务测试/表结构.md\" tian45996)",
+      "Bash(bash deploy.sh)",
+      "Bash(which hugo || which hugo_extended || snap list | grep hugo || dpkg -l | grep hugo)",
+      "Bash(snap install hugo)",
+      "Bash(snap remove hugo)"
     ],
     "deny": [],
     "ask": []

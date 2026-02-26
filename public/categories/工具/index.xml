@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on 蓝色空间号</title>
+    <link>https://bluespace3.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on 蓝色空间号</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Dec 2025 23:51:04 +0800</lastBuildDate>
+    <atom:link href="https://bluespace3.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>番茄下载</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Thu, 18 Dec 2025 23:51:04 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;undefined&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>doc转md</title>
+      <link>https://bluespace3.github.io/post.backup/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link>
+      <pubDate>Sun, 28 Sep 2025 16:23:36 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post.backup/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;Pandoc 简介&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>doc转md</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link>
+      <pubDate>Sun, 28 Sep 2025 16:23:36 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;Pandoc 简介&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

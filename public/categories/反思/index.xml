@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>反思 on 蓝色空间号</title>
-    <link>http://localhost:1313/categories/%E5%8F%8D%E6%80%9D/</link>
+    <link>https://bluespace3.github.io/categories/%E5%8F%8D%E6%80%9D/</link>
     <description>Recent content in 反思 on 蓝色空间号</description>
-    <generator>Hugo -- 0.156.0</generator>
-    <language>zh-CN</language>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Sun, 27 Apr 2025 22:59:32 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E5%8F%8D%E6%80%9D/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bluespace3.github.io/categories/%E5%8F%8D%E6%80%9D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于mac电脑系统更新崩溃的反思</title>
-      <link>http://localhost:1313/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</link>
+      <link>https://bluespace3.github.io/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</link>
       <pubDate>Sun, 27 Apr 2025 22:59:32 +0800</pubDate>
-      <guid>http://localhost:1313/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</guid>
-      <description>mac系统更新崩溃的教训与反思</description>
+      <guid>https://bluespace3.github.io/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</guid>
+      <description>&lt;p&gt;本文记录了作者在 mac 电脑系统更新时遇到崩溃的经历，以及对数据备份和系统管理的深刻反思。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于投资的反思</title>
-      <link>http://localhost:1313/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</link>
+      <link>https://bluespace3.github.io/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</link>
       <pubDate>Thu, 10 Apr 2025 22:59:32 +0800</pubDate>
-      <guid>http://localhost:1313/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</guid>
-      <description>一季度投资经历的经验教训与反思</description>
+      <guid>https://bluespace3.github.io/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</guid>
+      <description>&lt;p&gt;本文记录了作者在一季度投资过程中的经历，以及从中吸取的宝贵教训。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《金字塔原理》解析</title>
-      <link>http://localhost:1313/archives/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link>
+      <link>https://bluespace3.github.io/archives/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Thu, 10 Apr 2025 21:43:32 +0800</pubDate>
-      <guid>http://localhost:1313/archives/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid>
-      <description>加密文章</description>
+      <guid>https://bluespace3.github.io/archives/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid>
+      <description>&lt;p&gt;本文《《金字塔原理》解析》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
     </item>
     <item>
       <title>25年一季度汇报总结反思</title>
-      <link>http://localhost:1313/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link>
+      <link>https://bluespace3.github.io/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link>
       <pubDate>Fri, 28 Mar 2025 22:59:32 +0800</pubDate>
-      <guid>http://localhost:1313/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid>
-      <description>一季度工作汇报的反思与总结</description>
+      <guid>https://bluespace3.github.io/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid>
+      <description>&lt;p&gt;本文记录了作者在一季度工作汇报过程中的反思和总结。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
