@@ -1,3 +1,11 @@
+---
+title: 'linux常用命令'
+categories: ["编程语言"]
+date: 2025-09-07T00:20:44+08:00
+lastmod: 2025-09-07T00:20:44+08:00
+encrypted: false
+password: "123456"
+---
 
 ---
 title: "linux常用命令"

@@ -1,3 +1,11 @@
+---
+title: 'Git_submodule'
+categories: ["git"]
+date: 2025-09-07T00:22:14+08:00
+lastmod: 2025-09-07T00:22:14+08:00
+encrypted: false
+password: "123456"
+---
 
 ---
 title: "Git submodule"

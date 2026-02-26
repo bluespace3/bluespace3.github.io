@@ -1,3 +1,11 @@
+---
+title: 'wsl'
+categories: ["实践"]
+date: 2026-01-15T23:25:17+08:00
+lastmod: 2026-01-15T23:25:17+08:00
+encrypted: false
+password: "123456"
+---
 账号：dministrator
 
 密码：123456

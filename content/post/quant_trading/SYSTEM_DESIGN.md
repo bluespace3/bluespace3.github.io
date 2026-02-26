@@ -1,3 +1,11 @@
+---
+title: 'SYSTEM_DESIGN'
+categories: ["quant_trading"]
+date: 2025-09-07T00:22:06+08:00
+lastmod: 2025-09-07T00:22:06+08:00
+encrypted: false
+password: "123456"
+---
 # 系统设计与开发者文档
 
 本文档为量化交易系统的核心开发者提供全面的技术参考，涵盖了系统架构、核心模块、API接口、部署运维以及未来的发展规划。

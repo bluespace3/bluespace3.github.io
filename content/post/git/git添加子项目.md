@@ -1,14 +1,10 @@
 ---
-title: "git子项目"
-
-
-date: 2025-03-20T12:59:32+08:00
-
-
-draft: false
-
-
-tags: ["Git", "git子项目", "教程"]
+title: 'git添加子项目'
+categories: ["git"]
+date: 2025-09-07T00:22:26+08:00
+lastmod: 2025-09-07T00:22:26+08:00
+encrypted: false
+password: "123456"
 ---
 * 项目中添加子项目
   * 1、git clone 父项目url

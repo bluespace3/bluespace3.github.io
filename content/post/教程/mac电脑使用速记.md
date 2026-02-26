@@ -1,11 +1,10 @@
 ---
-title: 'mac使用笔记'
-
-categories: ["mac", "linux"]
-
-date: 2025-03-15T11:00:00-07:00
-
-lastmod: 2025-04-15T11:00:00-07:00
+title: 'mac电脑使用速记'
+categories: ["教程"]
+date: 2025-09-07T00:20:55+08:00
+lastmod: 2025-09-07T00:20:55+08:00
+encrypted: false
+password: "123456"
 ---
 在Mac终端中，有几种方法可以连续删除命令：
 

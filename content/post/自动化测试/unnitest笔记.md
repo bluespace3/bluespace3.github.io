@@ -1,11 +1,10 @@
 ---
-title: "unnitest"
-categories: ["技术", "测试", "python"]
-date: 2025-03-20T12:59:32+08:00
-
-draft: false
-
-tags: ["unnitest", "静态网站", "教程"]
+title: 'unnitest笔记'
+categories: ["自动化测试"]
+date: 2025-09-07T00:20:30+08:00
+lastmod: 2025-09-07T00:20:30+08:00
+encrypted: false
+password: "123456"
 ---
 * 一、引入
   * 1.导包，import unnitest

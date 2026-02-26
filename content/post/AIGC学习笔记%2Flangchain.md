@@ -1,3 +1,11 @@
+---
+title: 'AIGC学习笔记%2Flangchain'
+categories: ["AIGC学习笔记%2Flangchain.md"]
+date: 2025-12-22T16:43:45+08:00
+lastmod: 2025-12-22T16:43:45+08:00
+encrypted: false
+password: "123456"
+---
 ## 核心组件
 
 ### **模型包装器**

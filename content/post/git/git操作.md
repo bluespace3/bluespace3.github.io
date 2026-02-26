@@ -1,13 +1,10 @@
 ---
-title: "Git 常用命令记录"
-
-date: 2025-04-06T09:59:32+08:00
-
-draft: false
-
-tags: ["Git", "教程"]
-
-categories: ["技术笔记"]
+title: 'git操作'
+categories: ["git"]
+date: 2025-09-07T00:22:21+08:00
+lastmod: 2025-09-07T00:22:21+08:00
+encrypted: false
+password: "123456"
 ---
 #### 回滚到指定提交
 

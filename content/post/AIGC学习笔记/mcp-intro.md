@@ -1,9 +1,10 @@
 ---
-title: "MCP入门指南"
-categories: ["工具",  "开发"]
-date: 2025-03-20T13:48:29+08:00
-draft: false
-tags: ["MCP", "工具", "开发","插件"]
+title: 'mcp-intro'
+categories: ["AIGC学习笔记"]
+date: 2025-09-07T00:04:28+08:00
+lastmod: 2025-09-07T00:04:28+08:00
+encrypted: false
+password: "123456"
 ---
 ## 什么是MCP？
 

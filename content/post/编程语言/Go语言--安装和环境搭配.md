@@ -1,8 +1,10 @@
 ---
-title: 'go语言--安装和环境搭配'
-categories: ["技术", "编程", "go"]
-date: 2025-03-15T11:00:00-07:00
-lastmod: 2025-03-15T11:00:00-07:00
+title: 'Go语言--安装和环境搭配'
+categories: ["编程语言"]
+date: 2025-09-07T00:20:31+08:00
+lastmod: 2025-09-07T00:20:31+08:00
+encrypted: false
+password: "123456"
 ---
 
 
