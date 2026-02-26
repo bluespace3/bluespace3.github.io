@@ -19,7 +19,7 @@ import argparse
 class NotesManager:
     def __init__(self):
         self.hugo_project_dir = os.getcwd()
-        self.notes_repo_url = "https://github.com/bluespace3/knowledge_bases.git"
+        self.notes_repo_url = "https://github.com/bluespace3/note-gen-sync.git"
         self.content_post_dir = os.path.join(self.hugo_project_dir, "content/post")
         self.knowledge_base_dir = r"C:\Users\tian4\knowledge_bases"
         
@@ -33,7 +33,7 @@ class NotesManager:
     def commit_and_push_local_knowledge_base(self):
         """在脚本执行前，先提交并推送本地知识库"""
         knowledge_base_dir = r"C:\Users\tian4\knowledge_bases"
-        knowledge_base_url = "https://github.com/bluespace3/knowledge_bases.git"
+        knowledge_base_url = "https://github.com/bluespace3/note-gen-sync.git"
 
         if not os.path.exists(knowledge_base_dir):
             print(f"⚠️  本地知识库目录不存在：{knowledge_base_dir}")
