@@ -47,3 +47,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages  # 部署到gh-pages分支
+          force_orphan: true  # 强制使用孤立分支，每次完全重建，删除旧文件
