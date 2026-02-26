@@ -22,8 +22,24 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install pycryptodome beautifulsoup4 lxml
+
+      - name: Copy decrypt.js
+        run: |
+          cp tools/hugo_encryptor/decrypt.js static/
+
       - name: Build
         run: hugo --minify --environment production
+
+      - name: Encrypt content
+        run: python tools/hugo_encryptor/hugo-encryptor.py
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
