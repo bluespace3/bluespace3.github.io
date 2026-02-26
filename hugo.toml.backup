@@ -1,0 +1,58 @@
+baseURL ='https://bluespace3.github.io/'
+title = '蓝色空间号'
+theme = 'hugo-theme-reimu'
+languageCode = 'zh-CN'
+defaultContentLanguage = 'zh-CN'
+
+# 设置主要章节，用于首页文章列表
+mainSections = ["post"]
+
+# 设置默认的排序配置 - 按日期降序排列
+[pagination]
+  pagerSize = 10
+[languages]
+[languages.zh-CN]
+languageName = '简体中文'
+weight = 2
+[markup.highlight]
+guessSyntax = true
+noClasses = false
+
+[markup.goldmark]
+[markup.goldmark.renderer]
+  unsafe = true # 允许 HTML 在 Markdown 中
+
+# 摘要配置 - 自动排除加密内容
+[markup.goldmark.extensions]
+  definitionList = true
+  footnote = true
+  linkify = true
+  strikethrough = true
+  table = true
+  taskList = true
+  typographer = true
+
+# 设置摘要分隔符和长度
+summaryLength = 150
+
+[outputs]
+home = ["Algolia", "HTML", "RSS"]
+
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[outputFormats.RSS]
+mediaType = "application/rss+xml"
+baseName = "index"
+
+# 加密功能配置 - 注入自定义CSS和JS文件
+[params.injector]
+  head_end = """
+  <link rel="stylesheet" href="/css/encrypted-content.css" />
+  """
+  body_end = """
+  <script src="/js/encrypted-content.js"></script>
+  """

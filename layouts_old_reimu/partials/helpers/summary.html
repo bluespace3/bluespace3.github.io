@@ -1,0 +1,30 @@
+{{- /* 自定义摘要生成器，排除加密内容 */ -}}
+
+{{- $content := .Content -}}
+{{- $summary := "" -}}
+
+{{- /* 移除加密内容的正则表达式 */ -}}
+{{- $encryptedRegex := `(?s)<div class="encrypted-content".*?</div>\s*` -}}
+
+{{- /* 如果设置了手动摘要（在 Front Matter 中），优先使用 */ -}}
+{{- if .Params.summary -}}
+  {{- $summary = .Params.summary -}}
+{{- else if .Params.description -}}
+  {{- $summary = .Params.description -}}
+{{- else -}}
+  {{- /* 自动生成摘要，排除加密内容 */ -}}
+  {{- $cleanContent := $content | replaceRE $encryptedRegex "" -}}
+  
+  {{- /* 查找第一个段落或有意义的文本块 */ -}}
+  {{- $firstParagraph := index (findRE `(?s)<p>.*?</p>` $cleanContent 1) 0 -}}
+  
+  {{- if $firstParagraph -}}
+    {{- $summary = $firstParagraph | plainify | truncate (site.Config.Services.RSS.Limit) "" | htmlEscape -}}
+  {{- else -}}
+    {{- /* 如果没有段落，使用清理后的前150个字符 */ -}}
+    {{- $plainText := $cleanContent | plainify | htmlEscape -}}
+    {{- $summary = $plainText | truncate (site.Config.Services.RSS.Limit) "" -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $summary -}}

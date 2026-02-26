@@ -1,68 +1,531 @@
-<!doctype html><html lang=zh-cn data-theme-mode=auto><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Go语言--安装和环境搭配 | 新人类
-</title><meta name=description content="致敬勇于探索未知的人类！"><script>window.siteConfig=JSON.parse('{"anchor_icon":null,"clipboard":{"copyright":{"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！","count":50,"enable":false},"fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","success":"复制成功(*^▽^*)"},"code_block":{"expand":true},"icon_font":"4552607_0khxww3tj3q9","outdate":{"daysago":180,"enable":false,"message":"本文最后更新于 {time}，请注意文中内容可能已经发生变化。"}}')</script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7cUbuntu%20Mono:400,400italic,700,700italic&amp;display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7cUbuntu%20Mono:400,400italic,700,700italic&amp;display=swap" media=print onload='this.media="all"'><link rel=preload href=//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=stylesheet href=/css/loader.min.1cb17565e6c5aa7d84249a695fa50f1fcc363f03720dd8c21edde3bbe5e70cca.css><meta property="og:type" content="website"><meta property="og:title" content="Go语言--安装和环境搭配 | 新人类"><meta property="og:description" content="致敬勇于探索未知的人类！"><meta property="og:url" content="https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/"><meta property="og:site_name" content="蓝色空间号"><meta property="og:image" content="/"><meta property="article:author" content="新人类"><meta property="article:published_time" content="2025-11-20T15:58:14+00:00"><meta property="article:modified_time" content="2025-12-02T16:08:01+00:00"><meta name=twitter:card content="summary"><meta name=twitter:image content="/"><link rel="shortcut icon" href=/favicon.ico><link rel=stylesheet href=/css/main.min.da0339eea5d9fe186a8f5f431d358240e6c58c443bfae48a796566c099492f8e.css><link rel=preload as=style href=https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css onload='this.onload=null,this.rel="stylesheet"'><link rel=preload as=style href=https://npm.webcache.cn/katex@0.16.9/dist/katex.min.css onload='this.onload=null,this.rel="stylesheet"'><script src=https://npm.webcache.cn/pace-js@1.2.4/pace.min.js integrity=sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8 crossorigin=anonymous></script><link rel=stylesheet href=https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css><link rel=stylesheet href=https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css><style>:root{--theme-color:#3366cc;--theme-color-light:#99ccff;--theme-color-dark:#003399;--theme-color-text:#ffffff}.header-inner{background-color:var(--theme-color)!important}.menu-item a{color:#fff!important}.menu-item svg,.menu-item i{color:#000!important;fill:#000!important}.article-title a,.post-title,h1,h2,h3,h4,h5,h6{color:var(--theme-color-dark)!important}.subtitle{color:#03c!important;font-weight:700!important;text-shadow:0 0 3px rgba(255,255,255,.7)!important;font-size:1.3em!important;letter-spacing:1px!important}.author-info .author-title,.sidebar-title{color:var(--theme-color-dark)!important;font-weight:700!important}.author-info{background-color:rgba(153,204,255,.1)!important;border-color:var(--theme-color)!important;border-width:2px!important}.author-info img.avatar{display:block!important;width:120px!important;height:120px!important;border-radius:50%!important;border:3px solid var(--theme-color)!important;margin:0 auto 10px!important;box-shadow:0 0 10px rgba(0,51,153,.3)!important}.tag-item,.category-item,.friend-item,.recent-post-item{background-color:transparent!important;color:inherit!important}.sidebar-title,.widget-title,.archive-title{color:var(--theme-color-dark)!important}.post-card{border-color:var(--theme-color-light)!important;box-shadow:0 2px 8px rgba(0,51,153,.1)!important}.button,.btn,button,input[type=button],input[type=submit],.pagination-item.current{background-color:var(--theme-color)!important;color:var(--theme-color-text)!important}a{color:var(--theme-color-dark)!important}a:hover{color:var(--theme-color)!important}.article-meta,.article-footer{color:var(--theme-color-dark)!important}.search-form{border-color:var(--theme-color)!important}.footer{background-color:var(--theme-color-light)!important;color:var(--theme-color-dark)!important}.post-title a{color:var(--theme-color-dark)!important}</style></head><body><div id=loader><div class="loading-left-bg loading-bg"></div><div class="loading-right-bg loading-bg"></div><div class=spinner-box><div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" shape-rendering="geometricPrecision"><path d="M303.5 432a80 80 0 01-12 160 80 80 0 0112-160z" fill="var(--red-1, #ff5252)"/><path d="M512 65a447 447 0 010 894V929a417 417 0 000-834 417 417 0 000 834v30a447 447 0 010-894zm0 30A417 417 0 01929 512 208.5 208.5.0 01720.5 720.5V592a80 80 0 000-160 80 80 0 000 160V720.5A208.5 208.5.0 01512 512 208.5 208.5.0 00303.5 303.5 208.5 208.5.0 0095 512 417 417 0 01512 95z" fill="var(--red-1, #ff5252)"/></svg></div><div class=loading-word>蓝色空间号启动中...</div></div></div></div><script>var time=null,startLoading=()=>{time=Date.now(),document.getElementById("loader").classList.remove("loading")},endLoading=()=>{time?Date.now()-time>500?(time=null,document.body.style.overflow="auto",document.getElementById("loader").classList.add("loading")):(setTimeout(endLoading,500-(Date.now()-time)),time=null):(document.body.style.overflow="auto",document.getElementById("loader").classList.add("loading"))};window.addEventListener("DOMContentLoaded",endLoading),document.getElementById("loader").addEventListener("click",endLoading)</script><div id=copy-tooltip style="pointer-events:none;opacity:0;transition:all .2s ease;position:fixed;top:50%;left:50%;z-index:999;transform:translate(-50%,-50%);color:#fff;background:rgba(0,0,0,.5);padding:10px 15px;border-radius:10px"></div><div id=container><div id=wrap><div id=header-nav><nav id=main-nav><span class=main-nav-link-wrap><div class='main-nav-icon icon rotate'>&#xe62b;</div><a class=main-nav-link href=/>首页</a>
-</span><span class=main-nav-link-wrap><div class='main-nav-icon icon rotate'>&#xe62b;</div><a class=main-nav-link href=/archives>归档</a>
-</span><span class=main-nav-link-wrap><div class='main-nav-icon icon rotate'>&#xe62b;</div><a class=main-nav-link href=/about>关于</a>
-</span><span class=main-nav-link-wrap><div class='main-nav-icon icon rotate'>&#xe62b;</div><a class=main-nav-link href=/friend>友链</a>
-</span><a id=main-nav-toggle class=nav-icon></a></nav><nav id=sub-nav><a id=nav-search-btn class="nav-icon popup-trigger" title=搜索></a></nav></div><header id=header><picture></picture><img fetchpriority=high src=/images/%e9%a3%9e%e8%88%b91.jpeg alt=Go语言--安装和环境搭配><div id=header-outer><div id=header-title><a href=/ id=logo><h1 data-aos=slide-up>Go语言--安装和环境搭配</h1></a><h2 id=subtitle-wrap data-aos=slide-down></h2></div></div></header><div id=content class=sidebar-left><aside id=sidebar><div id=aplayer theme=var(--color-link) data-aos=fade-up></div><div class="sidebar-wrapper wrap-sticky"><div class=sidebar-wrap data-aos=fade-up><div class=sidebar-toc-sidebar><div class=sidebar-toc><h3 class=toc-title>文章目录</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><ul><li><a href=#一go简介>一.Go简介</a></li><li><a href=#二go语言安装与配置>二、Go语言安装与配置</a></li><li><a href=#windows>windows</a></li><li><a href=#linux>Linux</a></li></ul></li><li><a href=#三编写基本测试用例>三.编写基本测试用例</a></li></ul></nav></div></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/OIP%20%284%29.jpeg data-sizes=auto alt=新人类 class=lazyload><div class=sidebar-author-name>新人类</div><div class=sidebar-description>致敬勇于探索未知的人类！</div></div><div class=sidebar-state><div class=sidebar-state-article><div>文章</div><div class=sidebar-state-number>54</div></div><div class=sidebar-state-category><div>分类</div><div class=sidebar-state-number>5</div></div><div class=sidebar-state-tag><div>标签</div><div class=sidebar-state-number>7</div></div></div><div class=sidebar-social><div class="icon-bilibili sidebar-social-icon"><a href=https://space.bilibili.com/390297990 itemprop=url target=_blank aria-label=bilibili rel="noopener external nofollow noreferrer"></a></div><div class="icon-email sidebar-social-icon"><a href=2637458905@qq.com itemprop=url target=_blank aria-label=email rel="noopener external nofollow noreferrer"></a></div><div class="icon-github sidebar-social-icon"><a href=https://github.com/bluespace3 itemprop=url target=_blank aria-label=github rel="noopener external nofollow noreferrer"></a></div></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=首页></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>首页</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=归档></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>归档</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=关于></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>关于</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/friend aria-label=友链></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>友链</div></div></div></div><div class=sidebar-btn-wrapper style=position:static><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></div></div><div class=sidebar-widget></div></aside><section id=main><article class="h-entry article" itemprop=blogPost itemscope itemtype=https://schema.org/BlogPosting><div class=article-inner data-aos=fade-up><div class=article-meta><div class=article-date><span class=article-date-link data-aos=zoom-in><time datetime="2025-11-20 15:58:14 +0000 +0000" itemprop=datePublished>2025-11-20</time>
-<time style=display:none id=post-update-time>2025-12-02</time></span></div><div class=article-category><a class=article-category-link href=/categories/%e6%8a%80%e6%9c%af data-aos=zoom-in>技术</a></div></div><div class=hr-line></div><div class="e-content article-entry" itemprop=articleBody><h3 id=一go简介><a class=header-anchor href=#%e4%b8%80go%e7%ae%80%e4%bb%8b></a>一.Go简介</h3><p>Go 语言（又称 Golang）是由 Google 开发的一种开源<a href="https://so.csdn.net/so/search?q=%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80&amp;spm=1001.2101.3001.7020">编程语言</a>，于 2009 年正式对外发布。下面从多个方面为你介绍它：</p><h4 id=设计目标><a class=header-anchor href=#%e8%ae%be%e8%ae%a1%e7%9b%ae%e6%a0%87></a>设计目标</h4><p>Go 语言的设计初衷是为了解决大规模<a href="https://so.csdn.net/so/search?q=%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91&amp;spm=1001.2101.3001.7020">软件开发</a>中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。</p><h4 id=特点><a class=header-anchor href=#%e7%89%b9%e7%82%b9></a>特点</h4><ul><li><strong>高效的编译和执行</strong>：Go 语言拥有快速的编译速度，这使得开发过程更加流畅。同时，它的执行效率也很高，能充分利用现代多核处理器的性能。</li><li><strong>内置并发支持</strong>：Go 语言原生支持并发编程，通过<code>goroutine</code>和<code>channel</code>可以很方便地实现高并发程序。<code>goroutine</code>是一种轻量级的线程，占用资源少，创建和销毁的开销小；<code>channel</code>则用于<code>goroutine</code>之间的通信和同步。</li><li><strong>垃圾回收机制</strong>：它具备自动垃圾回收功能，开发者无需手动管理内存，减少了内存泄漏的风险，提高了开发效率。</li><li><strong>丰富的标准库</strong>：标准库涵盖了网络编程、文件操作、加密解密等多个领域，为开发者提供了便利，减少了对第三方库的依赖。</li><li><strong>跨平台支持</strong>：可以在不同的操作系统和硬件平台上编译和运行，方便开发跨平台的应用程序。</li></ul><h4 id=应用场景><a class=header-anchor href=#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af></a>应用场景</h4><ul><li><strong>云计算与容器编排</strong>：像 Docker 和 Kubernetes 这类知名项目，就是用 Go 语言开发的。</li><li><strong>网络编程</strong>：由于其出色的并发性能和网络库，Go 语言非常适合开发网络服务器、代理服务器等。</li><li><strong>分布式系统</strong>：在分布式系统中，Go 语言的并发模型和网络编程能力使其能够高效地处理大量的并发请求。</li></ul><h3 id=二go语言安装与配置><a class=header-anchor href=#%e4%ba%8cgo%e8%af%ad%e8%a8%80%e5%ae%89%e8%a3%85%e4%b8%8e%e9%85%8d%e7%bd%ae></a>二、Go语言安装与配置</h3><p>Go语言支持以下系统：Linux、Mac、Windows。</p><p>安装包下载地址：<a href=https://go.dev/ title="The Go Programming Language">The Go Programming Language</a></p><p><img src=https://i-blog.csdnimg.cn/direct/a7dff5ff7bda44cc8408d8355ec1ceb1.png alt></p><h3 id=windows><a class=header-anchor href=#windows></a>windows</h3><p>直接安装系统下载安装即可！</p><h3 id=linux><a class=header-anchor href=#linux></a>Linux</h3><h5 id=将下载的二进制包解压至usrlocal目录><a class=header-anchor href=#%e5%b0%86%e4%b8%8b%e8%bd%bd%e7%9a%84%e4%ba%8c%e8%bf%9b%e5%88%b6%e5%8c%85%e8%a7%a3%e5%8e%8b%e8%87%b3usrlocal%e7%9b%ae%e5%bd%95></a>将下载的二进制包解压至/usr/local目录</h5><div class=highlight><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>tar -C</span> <span class=o>/</span><span class=nv>usr</span><span class=o>/</span><span class=nv>local</span> <span class=o>-</span><span class=nv>xzf</span> <span class=nv>go1</span><span class=p>.</span><span class=mi>19</span><span class=p>.</span><span class=mi>1</span><span class=p>.</span><span class=nv>linux-amd64</span><span class=p>.</span><span class=nv>tar</span><span class=p>.</span><span class=nv>gz</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=nv>AI</span><span class=err>写代码
-</span></span></span></code></pre></div><h5 id=将-usrlocalgobin-目录添加至-path-环境变量><a class=header-anchor href=#%e5%b0%86-usrlocalgobin-%e7%9b%ae%e5%bd%95%e6%b7%bb%e5%8a%a0%e8%87%b3-path-%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f></a>将 /usr/local/go/bin 目录添加至 PATH 环境变量：</h5><p>可以编辑 /etc/profile，并将以下命令添加该文件的末尾，这样就可以永久生效：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-ruby data-lang=ruby><span class=line><span class=cl><span class=n>export</span> <span class=no>PATH</span><span class=o>=</span><span class=vg>$PATH</span><span class=ss>:/</span><span class=n>usr</span><span class=o>/</span><span class=n>local</span><span class=o>/</span><span class=n>go</span><span class=o>/</span><span class=n>bin</span>
-</span></span><span class=line><span class=cl><span class=no>AI写代码</span>
-</span></span></code></pre></div><p>然后执行</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>source</span> <span class=o>/</span><span class=nv>etc</span><span class=o>/</span><span class=nv>profileAI</span><span class=err>写代码
-</span></span></span></code></pre></div><h2 id=三编写基本测试用例><a class=header-anchor href=#%e4%b8%89%e7%bc%96%e5%86%99%e5%9f%ba%e6%9c%ac%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b></a>三.编写基本测试用例</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span> <span class=kn>import</span> <span class=s>&#34;fmt&#34;</span> <span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Hello, World!&#34;</span><span class=p>)}</span><span class=nx>AI写代码</span>
-</span></span></code></pre></div><p><img src=https://i-blog.csdnimg.cn/direct/18dc582244354f9883843fc711ddb6d2.png alt></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-cobol data-lang=cobol><span class=line><span class=cl><span class=c>go bui</span><span class=nv>ld</span> <span class=err>文件名</span><span class=o>+</span> <span class=err>运行程序</span><span class=o>=</span><span class=kr>go</span> <span class=nv>run文件名AI</span><span class=err>写代码
-</span></span></span></code></pre></div></div><footer class=article-footer><div class=share-wrapper><a href="https://www.facebook.com/sharer/sharer.php?u=https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/" target=_blank rel="noopener noreferrer" title=Go语言--安装和环境搭配><div class="share-icon icon icon-facebook"></div></a><a href="https://twitter.com/intent/tweet?url=https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/&amp;text=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&amp;via=https://bluespace3.github.io/" target=_blank rel="noopener noreferrer" title=Go语言--安装和环境搭配><div class="share-icon icon icon-twitter"></div></a><a href="https://www.linkedin.com/shareArticle?url=https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/&amp;title=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&amp;summary=%0d%e4%b8%80.Go%e7%ae%80%e4%bb%8b%0dGo%20%e8%af%ad%e8%a8%80%ef%bc%88%e5%8f%88%e7%a7%b0%20Golang%ef%bc%89%e6%98%af%e7%94%b1%20Google%20%e5%bc%80%e5%8f%91%e7%9a%84%e4%b8%80%e7%a7%8d%e5%bc%80%e6%ba%90%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%ef%bc%8c%e4%ba%8e%202009%20%e5%b9%b4%e6%ad%a3%e5%bc%8f%e5%af%b9%e5%a4%96%e5%8f%91%e5%b8%83%e3%80%82%e4%b8%8b%e9%9d%a2%e4%bb%8e%e5%a4%9a%e4%b8%aa%e6%96%b9%e9%9d%a2%e4%b8%ba%e4%bd%a0%e4%bb%8b%e7%bb%8d%e5%ae%83%ef%bc%9a%0a%e8%ae%be%e8%ae%a1%e7%9b%ae%e6%a0%87%0dGo%20%e8%af%ad%e8%a8%80%e7%9a%84%e8%ae%be%e8%ae%a1%e5%88%9d%e8%a1%b7%e6%98%af%e4%b8%ba%e4%ba%86%e8%a7%a3%e5%86%b3%e5%a4%a7%e8%a7%84%e6%a8%a1%e8%bd%af%e4%bb%b6%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98%ef%bc%8c%e6%af%94%e5%a6%82%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6%e6%85%a2%e3%80%81%e5%b9%b6%e5%8f%91%e7%bc%96%e7%a8%8b%e5%a4%8d%e6%9d%82%e3%80%81%e4%bb%a3%e7%a0%81%e5%8f%af%e7%bb%b4%e6%8a%a4%e6%80%a7%e5%b7%ae%e7%ad%89%e3%80%82%e6%89%80%e4%bb%a5%e5%ae%83%e7%bb%93%e5%90%88%e4%ba%86%e9%9d%99%e6%80%81%e8%af%ad%e8%a8%80%e7%9a%84%e6%80%a7%e8%83%bd%e4%bc%98%e5%8a%bf%e5%92%8c%e5%8a%a8%e6%80%81%e8%af%ad%e8%a8%80%e7%9a%84%e5%bc%80%e5%8f%91%e6%95%88%e7%8e%87%e3%80%82%0a%e7%89%b9%e7%82%b9%0d%e9%ab%98%e6%95%88%e7%9a%84%e7%bc%96%e8%af%91%e5%92%8c%e6%89%a7%e8%a1%8c%ef%bc%9aGo%20%e8%af%ad%e8%a8%80%e6%8b%a5%e6%9c%89%e5%bf%ab%e9%80%9f%e7%9a%84%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6%ef%bc%8c%e8%bf%99%e4%bd%bf%e5%be%97%e5%bc%80%e5%8f%91%e8%bf%87%e7%a8%8b%e6%9b%b4%e5%8a%a0%e6%b5%81%e7%95%85%e3%80%82%e5%90%8c%e6%97%b6%ef%bc%8c%e5%ae%83%e7%9a%84%e6%89%a7%e8%a1%8c%e6%95%88%e7%8e%87%e4%b9%9f%e5%be%88%e9%ab%98%ef%bc%8c%e8%83%bd%e5%85%85%e5%88%86%e5%88%a9%e7%94%a8%e7%8e%b0%e4%bb%a3%e5%a4%9a%e6%a0%b8%e5%a4%84%e7%90%86%e5%99%a8%e7%9a%84%e6%80%a7%e8%83%bd%e3%80%82%20%e5%86%85%e7%bd%ae%e5%b9%b6%e5%8f%91%e6%94%af%e6%8c%81%ef%bc%9aGo%20%e8%af%ad%e8%a8%80%e5%8e%9f%e7%94%9f%e6%94%af%e6%8c%81%e5%b9%b6%e5%8f%91%e7%bc%96%e7%a8%8b%ef%bc%8c%e9%80%9a%e8%bf%87goroutine%e5%92%8cchannel%e5%8f%af%e4%bb%a5%e5%be%88%e6%96%b9%e4%be%bf%e5%9c%b0%e5%ae%9e%e7%8e%b0%e9%ab%98%e5%b9%b6%e5%8f%91%e7%a8%8b%e5%ba%8f%e3%80%82goroutine%e6%98%af%e4%b8%80%e7%a7%8d%e8%bd%bb%e9%87%8f%e7%ba%a7%e7%9a%84%e7%ba%bf%20%e2%80%a6&amp;mini=true&amp;ro=true" target=_blank rel="noopener noreferrer" title=Go语言--安装和环境搭配><div class="share-icon icon icon-linkedin"></div></a><a href="https://www.reddit.com/submit?url=https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/&amp;title=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d" target=_blank rel="noopener noreferrer" title=Go语言--安装和环境搭配><div class="share-icon icon icon-reddit"></div></a><a href="https://service.weibo.com/share/share.php?url=https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/&amp;appkey=&amp;title=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&amp;pic=&amp;ralateUid=" target=_blank rel="noopener noreferrer" title=Go语言--安装和环境搭配><div class="share-icon icon icon-weibo"></div></a><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/&amp;title=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&amp;desc=%0d%e4%b8%80.Go%e7%ae%80%e4%bb%8b%0dGo%20%e8%af%ad%e8%a8%80%ef%bc%88%e5%8f%88%e7%a7%b0%20Golang%ef%bc%89%e6%98%af%e7%94%b1%20Google%20%e5%bc%80%e5%8f%91%e7%9a%84%e4%b8%80%e7%a7%8d%e5%bc%80%e6%ba%90%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%ef%bc%8c%e4%ba%8e%202009%20%e5%b9%b4%e6%ad%a3%e5%bc%8f%e5%af%b9%e5%a4%96%e5%8f%91%e5%b8%83%e3%80%82%e4%b8%8b%e9%9d%a2%e4%bb%8e%e5%a4%9a%e4%b8%aa%e6%96%b9%e9%9d%a2%e4%b8%ba%e4%bd%a0%e4%bb%8b%e7%bb%8d%e5%ae%83%ef%bc%9a%0a%e8%ae%be%e8%ae%a1%e7%9b%ae%e6%a0%87%0dGo%20%e8%af%ad%e8%a8%80%e7%9a%84%e8%ae%be%e8%ae%a1%e5%88%9d%e8%a1%b7%e6%98%af%e4%b8%ba%e4%ba%86%e8%a7%a3%e5%86%b3%e5%a4%a7%e8%a7%84%e6%a8%a1%e8%bd%af%e4%bb%b6%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98%ef%bc%8c%e6%af%94%e5%a6%82%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6%e6%85%a2%e3%80%81%e5%b9%b6%e5%8f%91%e7%bc%96%e7%a8%8b%e5%a4%8d%e6%9d%82%e3%80%81%e4%bb%a3%e7%a0%81%e5%8f%af%e7%bb%b4%e6%8a%a4%e6%80%a7%e5%b7%ae%e7%ad%89%e3%80%82%e6%89%80%e4%bb%a5%e5%ae%83%e7%bb%93%e5%90%88%e4%ba%86%e9%9d%99%e6%80%81%e8%af%ad%e8%a8%80%e7%9a%84%e6%80%a7%e8%83%bd%e4%bc%98%e5%8a%bf%e5%92%8c%e5%8a%a8%e6%80%81%e8%af%ad%e8%a8%80%e7%9a%84%e5%bc%80%e5%8f%91%e6%95%88%e7%8e%87%e3%80%82%0a%e7%89%b9%e7%82%b9%0d%e9%ab%98%e6%95%88%e7%9a%84%e7%bc%96%e8%af%91%e5%92%8c%e6%89%a7%e8%a1%8c%ef%bc%9aGo%20%e8%af%ad%e8%a8%80%e6%8b%a5%e6%9c%89%e5%bf%ab%e9%80%9f%e7%9a%84%e7%bc%96%e8%af%91%e9%80%9f%e5%ba%a6%ef%bc%8c%e8%bf%99%e4%bd%bf%e5%be%97%e5%bc%80%e5%8f%91%e8%bf%87%e7%a8%8b%e6%9b%b4%e5%8a%a0%e6%b5%81%e7%95%85%e3%80%82%e5%90%8c%e6%97%b6%ef%bc%8c%e5%ae%83%e7%9a%84%e6%89%a7%e8%a1%8c%e6%95%88%e7%8e%87%e4%b9%9f%e5%be%88%e9%ab%98%ef%bc%8c%e8%83%bd%e5%85%85%e5%88%86%e5%88%a9%e7%94%a8%e7%8e%b0%e4%bb%a3%e5%a4%9a%e6%a0%b8%e5%a4%84%e7%90%86%e5%99%a8%e7%9a%84%e6%80%a7%e8%83%bd%e3%80%82%20%e5%86%85%e7%bd%ae%e5%b9%b6%e5%8f%91%e6%94%af%e6%8c%81%ef%bc%9aGo%20%e8%af%ad%e8%a8%80%e5%8e%9f%e7%94%9f%e6%94%af%e6%8c%81%e5%b9%b6%e5%8f%91%e7%bc%96%e7%a8%8b%ef%bc%8c%e9%80%9a%e8%bf%87goroutine%e5%92%8cchannel%e5%8f%af%e4%bb%a5%e5%be%88%e6%96%b9%e4%be%bf%e5%9c%b0%e5%ae%9e%e7%8e%b0%e9%ab%98%e5%b9%b6%e5%8f%91%e7%a8%8b%e5%ba%8f%e3%80%82goroutine%e6%98%af%e4%b8%80%e7%a7%8d%e8%bd%bb%e9%87%8f%e7%ba%a7%e7%9a%84%e7%ba%bf%20%e2%80%a6&amp;source=https://bluespace3.github.io/" target=_blank rel="noopener noreferrer" title=Go语言--安装和环境搭配><div class="share-icon icon icon-qq"></div></a><a href=javascript:; title=Go语言--安装和环境搭配><div class="share-icon icon icon-weixin"><div id=share-weixin><div class=share-weixin-dom><div class=share-weixin-content><img id=share-weixin-banner><div id=share-weixin-title></div><div id=share-weixin-desc></div></div><div class=share-weixin-qrcode><div class=share-weixin-info><div id=share-weixin-author></div><div id=share-weixin-theme>Powered By hugo-theme-reimu</div></div><img id=share-weixin-qr></div></div><div class=share-weixin-canvas></div></div></div></a></div><ul class=article-tag-list itemprop=keywords></ul></footer></div><nav id=article-nav data-aos=fade-up><div class="article-nav-link-wrap article-nav-link-left"><img data-src=https://raw.githubusercontent.com/bluespace3/images/master/90%20%281%29.jpeg data-sizes=auto alt=Hugo静态网站生成器入门指南 class=lazyload>
-<a href=/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/></a><div class=article-nav-caption>前一篇</div><h3 class=article-nav-title>Hugo静态网站生成器入门指南</h3></div><div class="article-nav-link-wrap article-nav-link-right"><img data-src=https://s21.ax1x.com/2025/03/21/pE0CWn0.png data-sizes=auto alt=git添加子项目 class=lazyload>
-<a href=/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/></a><div class=article-nav-caption>后一篇</div><h3 class=article-nav-title>git添加子项目</h3></div></nav></article><section id=comments data-aos=fade-up><div class=comment-header><h2 class=comment-title>说些什么吧！</h2><div class=comment-selector><div class=comment-selector-wrap><div class=selector-item data-selector=giscus><span>giscus</span></div></div></div></div><div class=comment-content><div class="comment giscus-comment" data-aos=fade-up></div></div></section></section></div><footer id=footer><div style=width:100%;overflow:hidden><div class=footer-line></div></div><div id=footer-info><div><span class=icon-copyright></span>
-2020 -
-2025
-<span class="footer-info-sep rotate"></span>
-新人类</div><div>基于&nbsp;<a href=https://gohugo.io/ target=_blank>Hugo</a>&nbsp; Theme.<a href=https://github.com/D-Sketon/hugo-theme-reimu target=_blank>Reimu</a></div><div><span class=icon-brush>&nbsp;
-13.7k
-</span>&nbsp;|&nbsp;
-<span class=icon-coffee>&nbsp;
-01:40</span></div><div><span class=icon-eye></span>
-<span id=busuanzi_container_site_pv>总访问量&nbsp;<span id=busuanzi_value_site_pv></span></span>
-&nbsp;|&nbsp;
-<span class=icon-user></span>
-<span id=busuanzi_container_site_uv>总访客量&nbsp;<span id=busuanzi_value_site_uv></span></span></div></div></footer><div class=sidebar-top><div class="sidebar-top-taichi rotate"></div><div class=arrow-up></div></div><div id=mask class=hide></div></div><nav id=mobile-nav><div class=sidebar-wrap><div class=sidebar-toc-sidebar><div class=sidebar-toc><h3 class=toc-title>文章目录</h3><div class="sidebar-toc-wrapper toc-div-class"><nav id=TableOfContents><ul><li><ul><li><a href=#一go简介>一.Go简介</a></li><li><a href=#二go语言安装与配置>二、Go语言安装与配置</a></li><li><a href=#windows>windows</a></li><li><a href=#linux>Linux</a></li></ul></li><li><a href=#三编写基本测试用例>三.编写基本测试用例</a></li></ul></nav></div></div></div><div class="sidebar-common-sidebar hidden"><div class=sidebar-author><img data-src=/avatar/OIP%20%284%29.jpeg data-sizes=auto alt=新人类 class=lazyload><div class=sidebar-author-name>新人类</div><div class=sidebar-description>致敬勇于探索未知的人类！</div></div><div class=sidebar-state><div class=sidebar-state-article><div>文章</div><div class=sidebar-state-number>54</div></div><div class=sidebar-state-category><div>分类</div><div class=sidebar-state-number>5</div></div><div class=sidebar-state-tag><div>标签</div><div class=sidebar-state-number>7</div></div></div><div class=sidebar-social><div class="icon-bilibili sidebar-social-icon"><a href=https://space.bilibili.com/390297990 itemprop=url target=_blank aria-label=bilibili rel="noopener external nofollow noreferrer"></a></div><div class="icon-email sidebar-social-icon"><a href=2637458905@qq.com itemprop=url target=_blank aria-label=email rel="noopener external nofollow noreferrer"></a></div><div class="icon-github sidebar-social-icon"><a href=https://github.com/bluespace3 itemprop=url target=_blank aria-label=github rel="noopener external nofollow noreferrer"></a></div></div><div class=sidebar-menu><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/ aria-label=首页></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>首页</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/archives aria-label=归档></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>归档</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/about aria-label=关于></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>关于</div></div><div class=sidebar-menu-link-wrap><a class=sidebar-menu-link-dummy href=/friend aria-label=友链></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class=sidebar-menu-link>友链</div></div></div></div></div><div class=sidebar-btn-wrapper><div class="sidebar-toc-btn current"></div><div class=sidebar-common-btn></div></div></nav></div><div class=site-search><div class="reimu-popup popup"><div class=reimu-search><div class=reimu-search-input-icon></div><div class=reimu-search-input id=reimu-search-input></div><div class=popup-btn-close></div></div><div class=reimu-results><div id=reimu-stats></div><div id=reimu-hits></div><div id=reimu-pagination class=reimu-pagination></div></div><img class=reimu-bg src=/images/reimu.png></div></div><script src=https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js integrity=sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf+e crossorigin=anonymous></script><script src=https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js integrity=sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q crossorigin=anonymous></script><script src=/js/main.js integrity crossorigin=anonymous></script><script src=/js/aos.js integrity crossorigin=anonymous></script><script>var aosInit=()=>{AOS.init({duration:1e3,easing:"ease",once:!0,offset:50})};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",aosInit):aosInit()</script><script src=/js/pjax_main.js integrity crossorigin=anonymous data-pjax></script><script>var ALGOLIA_CONFIG={logo:"/images/algolia_logo.svg",algolia:{applicationID:"XOD7QMRN6A",apiKey:"f0c206edfe24bfd2fe1b5837560b4b5e",indexName:"bluespace3_github_io_xod7qmrn6a_pages",hits:{per_page:parseInt("10")},labels:{input_placeholder:"搜索.....",hits_empty:"未发现与 「${query}」相关内容",hits_stats:"找到${hits}条结果（用时 ${time} ms）"}}}</script><script src=https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js defer integrity=sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S+jQz7ZBtQXnsXmD+9jDOOY4cL6dCPzlrk crossorigin=anonymous></script><script src=https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js defer integrity=sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y+KHTORelMMEn7mOp2AVPp+7fr03dLgZiV3J crossorigin=anonymous></script><script src=/js/algolia_search.js integrity crossorigin=anonymous></script><script src=https://npm.webcache.cn/mouse-firework@0.1.0/dist/index.umd.js integrity=sha384-KM6i7tu43nYd6e0beIljxHMC5tZc58XBDu7pPA58w50h18Jsx7gLdimfS09RXlKv crossorigin=anonymous></script><script>if(window.firework){const e=JSON.parse('{"excludeelements":["a","button"],"particles":[{"colors":["#5252ff","#7c7cff","#afafff","#d0d0ff"],"duration":[1200,1800],"easing":"easeOutExpo","move":["emit"],"number":20,"shape":"circle","shapeOptions":{"alpha":[0.3,0.5],"radius":[16,32]}},{"colors":["#0000ff"],"duration":[1200,1800],"easing":"easeOutExpo","move":["diffuse"],"number":1,"shape":"circle","shapeOptions":{"alpha":[0.2,0.5],"lineWidth":6,"radius":20}}]}');e.excludeElements=e.excludeelements,delete e.excludeelements,window.firework(e)}</script><div id=lazy-script><div><script data-pjax>window.REIMU_POST={author:"新人类",title:"Go语言--安装和环境搭配",url:"https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/",description:`\r一.Go简介\rGo 语言（又称 Golang）是由 Google 开发的一种开源编程语言，于 2009 年正式对外发布。下面从多个方面为你介绍它：
-设计目标\rGo 语言的设计初衷是为了解决大规模软件开发中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。
-特点\r高效的编译和执行：Go 语言拥有快速的编译速度，这使得开发过程更加流畅。同时，它的执行效率也很高，能充分利用现代多核处理器的性能。 内置并发支持：Go 语言原生支持并发编程，通过goroutine和channel可以很方便地实现高并发程序。goroutine是一种轻量级的线 …`,cover:"https://bluespace3.github.io/images/%E9%A3%9E%E8%88%B91.jpeg"}</script><script src=/js/insert_highlight.js integrity crossorigin=anonymous data-pjax></script><script type=module data-pjax>
-        
-        const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;
-        
-        const pswp = () => {
-          if (_$$('.article-entry a.article-gallery-item').length > 0) {
-            new PhotoSwipeLightbox({
-              gallery: '.article-entry',
-              children: 'a.article-gallery-item',
-              
-              pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")
-              
-            }).init();
-          }
-          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
-            new PhotoSwipeLightbox({
-              gallery: '.article-gallery',
-              children: 'a.article-gallery-item',
-              
-              pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")
-              
-            }).init();
-          }
-          window.lightboxStatus = 'done';
-          window.removeEventListener('lightbox:ready', pswp);
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Go语言--安装和环境搭配 | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="一.Go简介
+Go 语言（又称 Golang）是由 Google 开发的一种开源编程语言，于 2009 年正式对外发布。下面从多个方面为你介绍它：
+设计目标
+Go 语言的设计初衷是为了解决大规模软件开发中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。
+特点
+
+高效的编译和执行：Go 语言拥有快速的编译速度，这使得开发过程更加流畅。同时，它的执行效率也很高，能充分利用现代多核处理器的性能。
+内置并发支持：Go 语言原生支持并发编程，通过goroutine和channel可以很方便地实现高并发程序。goroutine是一种轻量级的线程，占用资源少，创建和销毁的开销小；channel则用于goroutine之间的通信和同步。
+垃圾回收机制：它具备自动垃圾回收功能，开发者无需手动管理内存，减少了内存泄漏的风险，提高了开发效率。
+丰富的标准库：标准库涵盖了网络编程、文件操作、加密解密等多个领域，为开发者提供了便利，减少了对第三方库的依赖。
+跨平台支持：可以在不同的操作系统和硬件平台上编译和运行，方便开发跨平台的应用程序。
+
+应用场景
+
+云计算与容器编排：像 Docker 和 Kubernetes 这类知名项目，就是用 Go 语言开发的。
+网络编程：由于其出色的并发性能和网络库，Go 语言非常适合开发网络服务器、代理服务器等。
+分布式系统：在分布式系统中，Go 语言的并发模型和网络编程能力使其能够高效地处理大量的并发请求。
+
+二、Go语言安装与配置
+Go语言支持以下系统：Linux、Mac、Windows。">
+<meta name="author" content="新人类">
+<link rel="canonical" href="http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
         }
-        if(window.lightboxStatus === 'ready') {
-          pswp()
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/">
+  <meta property="og:site_name" content="蓝色空间号">
+  <meta property="og:title" content="Go语言--安装和环境搭配">
+  <meta property="og:description" content="一.Go简介 Go 语言（又称 Golang）是由 Google 开发的一种开源编程语言，于 2009 年正式对外发布。下面从多个方面为你介绍它：
+设计目标 Go 语言的设计初衷是为了解决大规模软件开发中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。
+特点 高效的编译和执行：Go 语言拥有快速的编译速度，这使得开发过程更加流畅。同时，它的执行效率也很高，能充分利用现代多核处理器的性能。 内置并发支持：Go 语言原生支持并发编程，通过goroutine和channel可以很方便地实现高并发程序。goroutine是一种轻量级的线程，占用资源少，创建和销毁的开销小；channel则用于goroutine之间的通信和同步。 垃圾回收机制：它具备自动垃圾回收功能，开发者无需手动管理内存，减少了内存泄漏的风险，提高了开发效率。 丰富的标准库：标准库涵盖了网络编程、文件操作、加密解密等多个领域，为开发者提供了便利，减少了对第三方库的依赖。 跨平台支持：可以在不同的操作系统和硬件平台上编译和运行，方便开发跨平台的应用程序。 应用场景 云计算与容器编排：像 Docker 和 Kubernetes 这类知名项目，就是用 Go 语言开发的。 网络编程：由于其出色的并发性能和网络库，Go 语言非常适合开发网络服务器、代理服务器等。 分布式系统：在分布式系统中，Go 语言的并发模型和网络编程能力使其能够高效地处理大量的并发请求。 二、Go语言安装与配置 Go语言支持以下系统：Linux、Mac、Windows。">
+  <meta property="og:locale" content="zh-CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-11-20T15:58:14+00:00">
+    <meta property="article:modified_time" content="2025-12-02T16:08:01+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Go语言--安装和环境搭配">
+<meta name="twitter:description" content="一.Go简介
+Go 语言（又称 Golang）是由 Google 开发的一种开源编程语言，于 2009 年正式对外发布。下面从多个方面为你介绍它：
+设计目标
+Go 语言的设计初衷是为了解决大规模软件开发中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。
+特点
+
+高效的编译和执行：Go 语言拥有快速的编译速度，这使得开发过程更加流畅。同时，它的执行效率也很高，能充分利用现代多核处理器的性能。
+内置并发支持：Go 语言原生支持并发编程，通过goroutine和channel可以很方便地实现高并发程序。goroutine是一种轻量级的线程，占用资源少，创建和销毁的开销小；channel则用于goroutine之间的通信和同步。
+垃圾回收机制：它具备自动垃圾回收功能，开发者无需手动管理内存，减少了内存泄漏的风险，提高了开发效率。
+丰富的标准库：标准库涵盖了网络编程、文件操作、加密解密等多个领域，为开发者提供了便利，减少了对第三方库的依赖。
+跨平台支持：可以在不同的操作系统和硬件平台上编译和运行，方便开发跨平台的应用程序。
+
+应用场景
+
+云计算与容器编排：像 Docker 和 Kubernetes 这类知名项目，就是用 Go 语言开发的。
+网络编程：由于其出色的并发性能和网络库，Go 语言非常适合开发网络服务器、代理服务器等。
+分布式系统：在分布式系统中，Go 语言的并发模型和网络编程能力使其能够高效地处理大量的并发请求。
+
+二、Go语言安装与配置
+Go语言支持以下系统：Linux、Mac、Windows。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Go语言--安装和环境搭配",
+      "item": "http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Go语言--安装和环境搭配",
+  "name": "Go语言--安装和环境搭配",
+  "description": "一.Go简介 Go 语言（又称 Golang）是由 Google 开发的一种开源编程语言，于 2009 年正式对外发布。下面从多个方面为你介绍它：\n设计目标 Go 语言的设计初衷是为了解决大规模软件开发中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。\n特点 高效的编译和执行：Go 语言拥有快速的编译速度，这使得开发过程更加流畅。同时，它的执行效率也很高，能充分利用现代多核处理器的性能。 内置并发支持：Go 语言原生支持并发编程，通过goroutine和channel可以很方便地实现高并发程序。goroutine是一种轻量级的线程，占用资源少，创建和销毁的开销小；channel则用于goroutine之间的通信和同步。 垃圾回收机制：它具备自动垃圾回收功能，开发者无需手动管理内存，减少了内存泄漏的风险，提高了开发效率。 丰富的标准库：标准库涵盖了网络编程、文件操作、加密解密等多个领域，为开发者提供了便利，减少了对第三方库的依赖。 跨平台支持：可以在不同的操作系统和硬件平台上编译和运行，方便开发跨平台的应用程序。 应用场景 云计算与容器编排：像 Docker 和 Kubernetes 这类知名项目，就是用 Go 语言开发的。 网络编程：由于其出色的并发性能和网络库，Go 语言非常适合开发网络服务器、代理服务器等。 分布式系统：在分布式系统中，Go 语言的并发模型和网络编程能力使其能够高效地处理大量的并发请求。 二、Go语言安装与配置 Go语言支持以下系统：Linux、Mac、Windows。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "一.Go简介 Go 语言（又称 Golang）是由 Google 开发的一种开源编程语言，于 2009 年正式对外发布。下面从多个方面为你介绍它：\n设计目标 Go 语言的设计初衷是为了解决大规模软件开发中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。\n特点 高效的编译和执行：Go 语言拥有快速的编译速度，这使得开发过程更加流畅。同时，它的执行效率也很高，能充分利用现代多核处理器的性能。 内置并发支持：Go 语言原生支持并发编程，通过goroutine和channel可以很方便地实现高并发程序。goroutine是一种轻量级的线程，占用资源少，创建和销毁的开销小；channel则用于goroutine之间的通信和同步。 垃圾回收机制：它具备自动垃圾回收功能，开发者无需手动管理内存，减少了内存泄漏的风险，提高了开发效率。 丰富的标准库：标准库涵盖了网络编程、文件操作、加密解密等多个领域，为开发者提供了便利，减少了对第三方库的依赖。 跨平台支持：可以在不同的操作系统和硬件平台上编译和运行，方便开发跨平台的应用程序。 应用场景 云计算与容器编排：像 Docker 和 Kubernetes 这类知名项目，就是用 Go 语言开发的。 网络编程：由于其出色的并发性能和网络库，Go 语言非常适合开发网络服务器、代理服务器等。 分布式系统：在分布式系统中，Go 语言的并发模型和网络编程能力使其能够高效地处理大量的并发请求。 二、Go语言安装与配置 Go语言支持以下系统：Linux、Mac、Windows。\n安装包下载地址：The Go Programming Language\nwindows 直接安装系统下载安装即可！\nLinux 将下载的二进制包解压至/usr/local目录 tar -C /usr/local -xzf go1.19.1.linux-amd64.tar.gz AI写代码 将 /usr/local/go/bin 目录添加至 PATH 环境变量： 可以编辑 /etc/profile，并将以下命令添加该文件的末尾，这样就可以永久生效：\nexport PATH=$PATH:/usr/local/go/bin AI写代码 然后执行\nsource /etc/profileAI写代码 三.编写基本测试用例 package main import \"fmt\" func main() { fmt.Println(\"Hello, World!\")}AI写代码 go build 文件名+ 运行程序=go run文件名AI写代码 ",
+  "wordCount" : "836",
+  "inLanguage": "zh-cn",
+  "datePublished": "2025-11-20T15:58:14Z",
+  "dateModified": "2025-12-02T16:08:01Z",
+  "author":{
+    "@type": "Person",
+    "name": "新人类"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "蓝色空间号",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Go语言--安装和环境搭配
+    </h1>
+    <div class="post-meta"><span title='2025-11-20 15:58:14 +0000 +0000'>2025-11-20</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>836 words</span>&nbsp;·&nbsp;<span>新人类</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一go简介">一.Go简介</a></li>
+        <li><a href="#二go语言安装与配置">二、Go语言安装与配置</a></li>
+        <li><a href="#windows">windows</a></li>
+        <li><a href="#linux">Linux</a></li>
+      </ul>
+    </li>
+    <li><a href="#三编写基本测试用例">三.编写基本测试用例</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="一go简介">一.Go简介<a hidden class="anchor" aria-hidden="true" href="#一go简介">#</a></h3>
+<p>Go 语言（又称 Golang）是由 Google 开发的一种开源<a href="https://so.csdn.net/so/search?q=%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80&amp;spm=1001.2101.3001.7020">编程语言</a>，于 2009 年正式对外发布。下面从多个方面为你介绍它：</p>
+<h4 id="设计目标">设计目标<a hidden class="anchor" aria-hidden="true" href="#设计目标">#</a></h4>
+<p>Go 语言的设计初衷是为了解决大规模<a href="https://so.csdn.net/so/search?q=%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91&amp;spm=1001.2101.3001.7020">软件开发</a>中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。</p>
+<h4 id="特点">特点<a hidden class="anchor" aria-hidden="true" href="#特点">#</a></h4>
+<ul>
+<li><strong>高效的编译和执行</strong>：Go 语言拥有快速的编译速度，这使得开发过程更加流畅。同时，它的执行效率也很高，能充分利用现代多核处理器的性能。</li>
+<li><strong>内置并发支持</strong>：Go 语言原生支持并发编程，通过<code>goroutine</code>和<code>channel</code>可以很方便地实现高并发程序。<code>goroutine</code>是一种轻量级的线程，占用资源少，创建和销毁的开销小；<code>channel</code>则用于<code>goroutine</code>之间的通信和同步。</li>
+<li><strong>垃圾回收机制</strong>：它具备自动垃圾回收功能，开发者无需手动管理内存，减少了内存泄漏的风险，提高了开发效率。</li>
+<li><strong>丰富的标准库</strong>：标准库涵盖了网络编程、文件操作、加密解密等多个领域，为开发者提供了便利，减少了对第三方库的依赖。</li>
+<li><strong>跨平台支持</strong>：可以在不同的操作系统和硬件平台上编译和运行，方便开发跨平台的应用程序。</li>
+</ul>
+<h4 id="应用场景">应用场景<a hidden class="anchor" aria-hidden="true" href="#应用场景">#</a></h4>
+<ul>
+<li><strong>云计算与容器编排</strong>：像 Docker 和 Kubernetes 这类知名项目，就是用 Go 语言开发的。</li>
+<li><strong>网络编程</strong>：由于其出色的并发性能和网络库，Go 语言非常适合开发网络服务器、代理服务器等。</li>
+<li><strong>分布式系统</strong>：在分布式系统中，Go 语言的并发模型和网络编程能力使其能够高效地处理大量的并发请求。</li>
+</ul>
+<h3 id="二go语言安装与配置">二、Go语言安装与配置<a hidden class="anchor" aria-hidden="true" href="#二go语言安装与配置">#</a></h3>
+<p>Go语言支持以下系统：Linux、Mac、Windows。</p>
+<p>安装包下载地址：<a href="https://go.dev/" title="The Go Programming Language">The Go Programming Language</a></p>
+<p><img loading="lazy" src="https://i-blog.csdnimg.cn/direct/a7dff5ff7bda44cc8408d8355ec1ceb1.png"></p>
+<h3 id="windows">windows<a hidden class="anchor" aria-hidden="true" href="#windows">#</a></h3>
+<p>直接安装系统下载安装即可！</p>
+<h3 id="linux">Linux<a hidden class="anchor" aria-hidden="true" href="#linux">#</a></h3>
+<h5 id="将下载的二进制包解压至usrlocal目录">将下载的二进制包解压至/usr/local目录<a hidden class="anchor" aria-hidden="true" href="#将下载的二进制包解压至usrlocal目录">#</a></h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cobol" data-lang="cobol"><span class="line"><span class="cl"><span class="c">tar -C</span> <span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">local</span> <span class="o">-</span><span class="nv">xzf</span> <span class="nv">go1</span><span class="p">.</span><span class="mi">19</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="nv">linux-amd64</span><span class="p">.</span><span class="nv">tar</span><span class="p">.</span><span class="nv">gz</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="nv">AI</span><span class="err">写代码
+</span></span></span></code></pre></div><h5 id="将-usrlocalgobin-目录添加至-path-环境变量">将 /usr/local/go/bin 目录添加至 PATH 环境变量：<a hidden class="anchor" aria-hidden="true" href="#将-usrlocalgobin-目录添加至-path-环境变量">#</a></h5>
+<p>可以编辑 /etc/profile，并将以下命令添加该文件的末尾，这样就可以永久生效：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">export</span> <span class="no">PATH</span><span class="o">=</span><span class="vg">$PATH</span><span class="ss">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">go</span><span class="o">/</span><span class="n">bin</span>
+</span></span><span class="line"><span class="cl"><span class="no">AI写代码</span>
+</span></span></code></pre></div><p>然后执行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cobol" data-lang="cobol"><span class="line"><span class="cl"><span class="c">source</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">profileAI</span><span class="err">写代码
+</span></span></span></code></pre></div><h2 id="三编写基本测试用例">三.编写基本测试用例<a hidden class="anchor" aria-hidden="true" href="#三编写基本测试用例">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="s">&#34;fmt&#34;</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello, World!&#34;</span><span class="p">)}</span><span class="nx">AI写代码</span><span class="w">
+</span></span></span></code></pre></div><p><img loading="lazy" src="https://i-blog.csdnimg.cn/direct/18dc582244354f9883843fc711ddb6d2.png"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cobol" data-lang="cobol"><span class="line"><span class="cl"><span class="c">go bui</span><span class="nv">ld</span> <span class="err">文件名</span><span class="o">+</span> <span class="err">运行程序</span><span class="o">=</span><span class="kr">go</span> <span class="nv">run文件名AI</span><span class="err">写代码
+</span></span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/">
+    <span class="title">« </span>
+    <br>
+    <span>git添加子项目</span>
+  </a>
+  <a class="next" href="http://localhost:1313/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">
+    <span class="title"> »</span>
+    <br>
+    <span>Hugo静态网站生成器入门指南</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Go语言--安装和环境搭配 on x"
+            href="https://x.com/intent/tweet/?text=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2f%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2fgo%25E8%25AF%25AD%25E8%25A8%2580--%25E5%25AE%2589%25E8%25A3%2585%25E5%2592%258C%25E7%258E%25AF%25E5%25A2%2583%25E6%2590%25AD%25E9%2585%258D%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Go语言--安装和环境搭配 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2f%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2fgo%25E8%25AF%25AD%25E8%25A8%2580--%25E5%25AE%2589%25E8%25A3%2585%25E5%2592%258C%25E7%258E%25AF%25E5%25A2%2583%25E6%2590%25AD%25E9%2585%258D%2f&amp;title=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&amp;summary=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&amp;source=http%3a%2f%2flocalhost%3a1313%2fpost%2f%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2fgo%25E8%25AF%25AD%25E8%25A8%2580--%25E5%25AE%2589%25E8%25A3%2585%25E5%2592%258C%25E7%258E%25AF%25E5%25A2%2583%25E6%2590%25AD%25E9%2585%258D%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Go语言--安装和环境搭配 on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpost%2f%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2fgo%25E8%25AF%25AD%25E8%25A8%2580--%25E5%25AE%2589%25E8%25A3%2585%25E5%2592%258C%25E7%258E%25AF%25E5%25A2%2583%25E6%2590%25AD%25E9%2585%258D%2f&title=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Go语言--安装和环境搭配 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpost%2f%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2fgo%25E8%25AF%25AD%25E8%25A8%2580--%25E5%25AE%2589%25E8%25A3%2585%25E5%2592%258C%25E7%258E%25AF%25E5%25A2%2583%25E6%2590%25AD%25E9%2585%258D%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Go语言--安装和环境搭配 on whatsapp"
+            href="https://api.whatsapp.com/send?text=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d%20-%20http%3a%2f%2flocalhost%3a1313%2fpost%2f%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2fgo%25E8%25AF%25AD%25E8%25A8%2580--%25E5%25AE%2589%25E8%25A3%2585%25E5%2592%258C%25E7%258E%25AF%25E5%25A2%2583%25E6%2590%25AD%25E9%2585%258D%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Go语言--安装和环境搭配 on telegram"
+            href="https://telegram.me/share/url?text=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2f%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2fgo%25E8%25AF%25AD%25E8%25A8%2580--%25E5%25AE%2589%25E8%25A3%2585%25E5%2592%258C%25E7%258E%25AF%25E5%25A2%2583%25E6%2590%25AD%25E9%2585%258D%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Go语言--安装和环境搭配 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Go%e8%af%ad%e8%a8%80--%e5%ae%89%e8%a3%85%e5%92%8c%e7%8e%af%e5%a2%83%e6%90%ad%e9%85%8d&u=http%3a%2f%2flocalhost%3a1313%2fpost%2f%25E7%25BC%2596%25E7%25A8%258B%25E8%25AF%25AD%25E8%25A8%2580%2fgo%25E8%25AF%25AD%25E8%25A8%2580--%25E5%25AE%2589%25E8%25A3%2585%25E5%2592%258C%25E7%258E%25AF%25E5%25A2%2583%25E6%2590%25AD%25E9%2585%258D%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">蓝色空间号</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
         } else {
-          window.addEventListener('lightbox:ready', pswp);
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
         }
-      </script><script data-pjax>var defaultComment,savedCommentType,configDefault,loadScript=(e,t)=>{const n=document.createElement("script");return n.src=e,t&&(n.integrity=t),n.crossOrigin="anonymous",n},commentConfigKeys=["valine","waline","twikoo","gitalk","giscus"],commentConfig={valine:{enable:!1,load:()=>{const e=document.querySelector(".valine-comment");if(!e)return;e.style.display="block";const t=loadScript("https://npm.webcache.cn/valine@1.5.1/dist/Valine.min.js","webcache|valine@1.5.1/dist/Valine.min.js".startsWith("local")?void 0:"sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE+s5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn");t.onload=()=>{const e=["nick","mail","link"],t="nick,mail,link".split(",").filter(t=>e.indexOf(t)>-1),n=JSON.parse("true"),s=JSON.parse("true"),o=JSON.parse("false");new Valine({el:".valine-comment",appId:"",appKey:"",placeholder:"Just go go",pageSize:"10",avatar:"mp",lang:"zh-cn",recordIP:n,highlight:s,visitor:o,requiredFields:t,path:window.location.pathname})},document.head.appendChild(t)}},waline:{enable:!1,load:async()=>{const t=document.querySelector(".waline-comment");if(!t)return;t.style.display="block";let e;const n="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.mjs";if("webcache|@waline/client@2.15.8/dist/waline.mjs".startsWith("local")){const t=await safeImport(n);e=t.init}else{const t=await safeImport(n,"sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5");e=t.init}window.walineInstance=e({el:".waline-comment",serverURL:"",lang:"zh-CN",locale:JSON.parse("{}"),emoji:JSON.parse('["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"]'),meta:JSON.parse('["nick","mail","link"]'),requiredMeta:JSON.parse('["nick","mail"]'),wordLimit:0,comment:!0,pageSize:10,dark:'html[data-theme="dark"]',pageview:!0})}},twikoo:{enable:!1,load:()=>{const e=document.querySelector(".twikoo-comment");if(!e)return;e.style.display="block";const t=loadScript("https://npm.webcache.cn/twikoo@1.6.16/dist/twikoo.all.min.js","webcache|twikoo@1.6.16/dist/twikoo.all.min.js".startsWith("local")?void 0:"sha384-lDHsr5aZmkMS0eKnsUu6e9RWP+dRmn7sgjRAKGOAoXfMyzbUK6Qi86zZK7R+KvRV");t.onload=()=>{twikoo.init({envId:"",el:".twikoo-comment",region:""})},document.head.appendChild(t)}},gitalk:{enable:!1,load:()=>{const e=document.querySelector(".gitalk-comment");if(!e)return;e.style.display="block";const t=loadScript("https://npm.webcache.cn/gitalk@1.8.0/dist/gitalk.min.js","webcache|gitalk@1.8.0/dist/gitalk.min.js".startsWith("local")?void 0:"sha384-kspnZUWBoSWwoJHa0hBCXYbHGbhvU/lcEH5O8eVbSDhbPwsiVUTp/aGX/z/5EuMA");t.onload=()=>{if(!1){const e=loadScript("https://npm.webcache.cn/blueimp-md5@2.19.0/js/md5.min.js","webcache|blueimp-md5@2.19.0/js/md5.min.js".startsWith("local")?void 0:"sha384-JmVtRz6RWiXnA14QbIOJzPuU3MidULOpBP66deeLLyyoF4Tr/gZlbkHkL6vTthxH");e.onload=n,document.head.appendChild(e)}else n()},document.head.appendChild(t);function n(){let e=new Gitalk({clientID:"",clientSecret:"",repo:"",owner:"",admin:JSON.parse("null"),id:"location.pathname",distractionFreeMode:!1});e.render("gitalk-comment")}}},giscus:{enable:!0,load:()=>{const t=document.querySelector(".giscus-comment");if(!t)return;t.style.display="block";const n=t.querySelector('script[src*="giscus.app/client.js"]');n&&n.remove();const s=document.querySelector("iframe.giscus-frame");s&&s.remove();const e=document.createElement("script"),o=document.documentElement.getAttribute("data-theme");e.src="https://giscus.app/client.js",e.setAttribute("data-repo","bluespace3/bluespace3.github.io"),e.setAttribute("data-repo-id","R_kgDOOLQbCg"),e.setAttribute("data-category","Announcements"),e.setAttribute("data-category-id","DIC_kwDOOLQbCs4Cojds"),e.setAttribute("data-mapping","0"),e.setAttribute("data-strict","0"),e.setAttribute("data-reactions-enabled","1"),e.setAttribute("data-emit-metadata","0"),e.setAttribute("data-input-position","bottom"),e.setAttribute("data-theme",o==="dark"?"dark":"light"),e.setAttribute("data-lang","zh-CN"),e.setAttribute("crossorigin","anonymous"),e.async=!0,t.appendChild(e),document.body.addEventListener("light-theme-set",()=>{const e=document.querySelector("iframe.giscus-frame");if(!e)return;e.contentWindow.postMessage({giscus:{setConfig:{theme:"light"}}},"https://giscus.app")}),document.body.addEventListener("dark-theme-set",()=>{const e=document.querySelector("iframe.giscus-frame");if(!e)return;e.contentWindow.postMessage({giscus:{setConfig:{theme:"dark"}}},"https://giscus.app")})}}};commentConfig.enable=commentConfigKeys.some(e=>commentConfig[e].enable),defaultComment="",commentConfig.enable&&(savedCommentType=localStorage.getItem("commentType"),savedCommentType&&commentConfig[savedCommentType]?.enable&&(defaultComment=savedCommentType),defaultComment||(configDefault="waline",commentConfig[configDefault]?.enable&&(defaultComment=configDefault)),defaultComment||(defaultComment=commentConfigKeys.find(e=>commentConfig[e].enable)||""));function loadComments(){if(!commentConfig.enable)return;const e={valine:!1,waline:!1,twikoo:!1,gitalk:!1,giscus:!1},s=()=>{const e=document.querySelectorAll(".comment");e.forEach(e=>{e.style.display="none"})},t=t=>{if(e[t]){document.querySelector(`.${t}-comment`).style.display="block";return}commentConfig[t]?.load(),e[t]=!0},o=e=>{const n=document.querySelectorAll(".selector-item");for(let e=0;e<n.length;e++)n[e].classList.remove("active");e.classList.add("active");const o=e.getAttribute("data-selector");s(),t(o)},n=()=>{const e=document.querySelectorAll(".selector-item");for(let t of e)t.addEventListener("click",()=>{const e=t.getAttribute("data-selector");window.localStorage.setItem("commentType",e),o(t)});if(defaultComment){const e=document.querySelector(`[data-selector="${defaultComment}"]`);if(!e)return;e.style.display="block",e.classList.add("active"),t(defaultComment)}};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",n):n()}loadComments()</script><script src=https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js defer data-pjax integrity=sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx+aUuBDqQwEk crossorigin=anonymous></script><script src=https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js defer data-pjax integrity=sha384-UbfRVKN3/elS1r7JcK2FhmPP+KlJ4CvYwbyYD7tH+uTkbT9bNJr9eJeQ0FoFbAgz crossorigin=anonymous></script></div></div><script src=https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js async integrity=sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S crossorigin=anonymous></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.getRegistrations().then(e=>{for(let t of e)t.unregister()})</script><script>const reimuCopyright=String.raw`
-   ______     ______     __     __    __     __  __    
-  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
-  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
-   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
-    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
-                                                    
-  `;console.log(String.raw`%c ${reimuCopyright}`,"color: #ff5252;"),console.log("%c Theme.Reimu %c https://github.com/D-Sketon/hugo-theme-reimu ","color: white; background: #ff5252; padding:5px 0;","padding:4px;border:1px solid #ff5252;")</script><script src=https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js integrity=sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL/aORyw+5+HZoU6e crossorigin=anonymous></script><script>var isMobile=window.matchMedia("(max-width: 959px)").matches;if(isMobile){const e=_$("#aplayer");if(e){const t=e.parentNode;t?.tagName==="ASIDE"&&(e.removeAttribute("data-aos"),t.removeChild(e),document.body.appendChild(e))}}const ap=new APlayer({theme:"var(--color-link)",container:document.getElementById("aplayer"),audio:JSON.parse('[{"artist":"Unknown Artist","cover":"/images/90.jpeg","name":"Free Compress","url":"/freecompress-2906303867.mp3"}]')||[],fixed:!!isMobile||!1||!1,autoplay:!1||!1,loop:"all"||"all",order:"list"||"list",preload:"auto"||"auto",volume:.7||.7,mutex:!0||!0,listFolded:!1||!1,lrcType:0||0})</script><script src=https://npm.webcache.cn/pangu@4.0.7/dist/browser/pangu.min.js integrity=sha384-HeUHqi0nVsPUm/E0ss7OfnIV/yD96JWB8ehZvUuoVax9DpNHL17jj9pdfXHzqDxm crossorigin=anonymous></script><script data-pjax>document.readyState==="loading"?document.addEventListener("DOMContentLoaded",()=>{pangu?.spacingPage()}):pangu?.spacingPage()</script></body></html>
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

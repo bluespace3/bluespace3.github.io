@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{ if .Params.encrypted }}
+  <div id="encrypted-content" data-password="{{ .Params.password }}" style="display: none;"></div>
+  {{ end }}
+  {{ partial "partials/article.html" . }}
+  {{ if .Params.encrypted }}
+  <script src="/js/encrypt.js"></script>
+  {{ end }}
+{{ end }}

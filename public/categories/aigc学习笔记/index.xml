@@ -1,17 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/css/xml-style.css" type="text/css"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AIGC学习笔记 on 蓝色空间号</title><link>https://bluespace3.github.io/</link><description>Recent content in AIGC学习笔记 on 蓝色空间号</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 22 Nov 2025 16:11:04 +0000</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>大模型通识</title><link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/aigc%E9%80%9A%E8%AF%86/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%AF%86/</link><pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate><guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/aigc%E9%80%9A%E8%AF%86/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%AF%86/</guid><description/></item><item><title>模型微调</title><link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</link><pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate><guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</guid><description>&lt;h1 id="模型微调">
-&lt;a class="header-anchor" href="#%e6%a8%a1%e5%9e%8b%e5%be%ae%e8%b0%83">&lt;/a>
-模型微调
-&lt;/h1>&lt;p>定义:在开源模型上，用领域内专业数据调整参数以适应特定任务。&lt;/p></description></item><item><title>智能体</title><link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/</link><pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate><guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/</guid><description>&lt;h1 id="智能体">
-&lt;a class="header-anchor" href="#%e6%99%ba%e8%83%bd%e4%bd%93">&lt;/a>
-智能体
-&lt;/h1>&lt;p>定义：自主执行任务的AI系统，可协调多个子代理完成复杂流程&lt;/p>
-&lt;p>具备：工具调用、记忆、规划、行动等能力&lt;/p>
-&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/bluespace3/note-gen-image-sync@main/ca721bff-d9f7-40bd-84f6-c0ebffdae590.png" alt="image.png">&lt;/p></description></item><item><title>Transformer的工作原理</title><link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid><description>&lt;p>Transformer的工作原理&lt;/p>
-&lt;p>拿到句子：从前有个国王，他有个女儿&lt;/p>
-&lt;p>1.Token化：分词为得到token:从前|有个|国王|，|他|有个|女儿&lt;/p>
-&lt;p>2.词嵌入、词向量：将每个token进行向量化（该token和其他对象的关联关系打分）-&amp;gt;转换成一堆数字,例如国王[0.9（权力）,0.8（城堡），0.7（严肃）&amp;hellip;.]，女儿[&amp;hellip;.]&lt;/p>
-&lt;p>3.注意力机制：&lt;/p>
-&lt;p>​ 编码器处理：分析问题用注意力划重点（如国王和女儿关系等）&lt;/p>
-&lt;p>​ 解码器处理：边编故事边查表，用注意力确保连贯，生成内容。&lt;/p>
-&lt;p>整体：进入计算-&amp;gt;注意力机制-&amp;gt;计算token与上下文的关系 ，据概率得到新词&lt;/p>
-&lt;p>4.不断生成：再将新词进行上述计算，得到下一个新词。像玩文字无限接龙，每次参考所有历史信息，用注意力决定下一步重点。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AIGC学习笔记 on 蓝色空间号</title>
+    <link>http://localhost:1313/categories/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in AIGC学习笔记 on 蓝色空间号</description>
+    <generator>Hugo -- 0.156.0</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 02 Dec 2025 16:07:58 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大模型通识</title>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/aigc%E9%80%9A%E8%AF%86/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%AF%86/</link>
+      <pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/aigc%E9%80%9A%E8%AF%86/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%AF%86/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>模型微调</title>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</link>
+      <pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</guid>
+      <description>&lt;h1 id=&#34;模型微调&#34;&gt;模型微调&lt;/h1&gt;
+&lt;p&gt;定义:在开源模型上，用领域内专业数据调整参数以适应特定任务。&lt;/p&gt;
+&lt;p&gt;&amp;ndash;todo&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>智能体</title>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/</link>
+      <pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
+      <description>&lt;h1 id=&#34;智能体&#34;&gt;智能体&lt;/h1&gt;
+&lt;p&gt;定义：自主执行任务的AI系统，可协调多个子代理完成复杂流程&lt;/p&gt;
+&lt;p&gt;具备：工具调用、记忆、规划、行动等能力&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image.png&#34; loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/bluespace3/note-gen-image-sync@main/ca721bff-d9f7-40bd-84f6-c0ebffdae590.png&#34;&gt;&amp;ndash;todo&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transformer的工作原理</title>
+      <link>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate>
+      <guid>http://localhost:1313/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <description>&lt;p&gt;Transformer的工作原理&lt;/p&gt;
+&lt;p&gt;拿到句子：从前有个国王，他有个女儿&lt;/p&gt;
+&lt;p&gt;1.Token化：分词为得到token:从前|有个|国王|，|他|有个|女儿&lt;/p&gt;
+&lt;p&gt;2.词嵌入、词向量：将每个token进行向量化（该token和其他对象的关联关系打分）-&amp;gt;转换成一堆数字,例如国王[0.9（权力）,0.8（城堡），0.7（严肃）&amp;hellip;.]，女儿[&amp;hellip;.]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

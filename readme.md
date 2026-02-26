@@ -1,97 +1,123 @@
-# Hugo博客双仓库部署方案
+# 蓝色空间号 - Hugo 博客
 
-## 项目说明
+基于 Hugo + PaperMod 主题的个人博客，支持文章加密功能。
 
-本项目采用双仓库部署方案：
+## ✨ 特性
 
-- **私有仓库 (hugo-source-private)**: 存储博客源码
-- **公开仓库 (bluespace3.github.io)**: 存储生成的静态文件，用于GitHub Pages展示
+- 📝 **简洁优雅**：使用 PaperMod 主题，极简设计
+- 🔐 **文章加密**：支持密码保护私密文章
+- 🎨 **响应式设计**：完美适配手机和电脑
+- 🌓 **深色模式**：自动切换主题
+- 🚀 **自动部署**：GitHub Actions 自动构建发布
+- 📂 **智能分类**：根据目录自动添加分类
 
-## 部署流程
+## 🚀 快速开始
 
-1. 源码保存在私有仓库 `bluespace3/hugo-source-private`
-2. GitHub Actions自动构建Hugo站点
-3. 构建结果自动推送到公开仓库 `bluespace3/bluespace3.github.io` 的 `gh-pages` 分支
+### 本地预览
 
-## 配置说明
+```bash
+# 克隆项目
+git clone https://github.com/bluespace3/bluespace3.github.io.git
+cd bluespace3.github.io
 
-### 部署密钥设置
+# 安装依赖
+pip install pycryptodome beautifulsoup4 lxml
 
-需要在私有仓库中设置以下密钥：
+# 启动预览
+hugo server -D
+```
 
-1. `DEPLOY_KEY`: 用于向公开仓库推送内容的SSH部署密钥
-   - 生成SSH密钥对: `ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages-deploy`
-   - 私钥添加到私有仓库的Secrets中
-   - 公钥添加到公开仓库的Deploy Keys中（需要勾选写入权限）
+访问 http://localhost:1313
 
-2. `CNAME`（可选）: 如果使用自定义域名，在此处设置
+### 发布文章
 
-### GitHub Actions工作流
+```bash
+# Windows
+deploy.bat
 
-工作流配置文件位于 `.github/workflows/hugo.yml`，主要完成以下工作：
+# Linux/macOS
+./deploy.sh
+```
 
-1. 检出私有仓库代码
-2. 设置Hugo环境
-3. 构建站点
-4. 将生成的静态文件推送到公开仓库
+## 📖 文档
 
-## 本地开发
+### 核心文档
 
-1. 克隆私有仓库：
-   ```bash
-   git clone https://github.com/bluespace3/hugo-source-private.git
-   ```
+- **[SKILLS.md](./SKILLS.md)** - 完整的项目管理和使用指南（AI 友好）
+- **[快速开始.md](./快速开始.md)** - 快速上手指南
+- **[博客搭建指南.md](./博客搭建指南.md)** - 从零搭建博客
 
-2. 本地预览：
-   ```bash
-   hugo server -D
-   ```
+### 工具文档
 
-3. 提交更改到私有仓库：
-   ```bash
-   git add .
-   git commit -m "更新内容"
-   git push origin main
-   ```
+- **[工具箱.md](./工具箱.md)** - 所有自动化工具总览
 
-4. GitHub Actions会自动构建并部署到公开仓库
+## 🛠️ 工具脚本
 
-## 注意事项
+项目包含以下自动化工具（位于 `tools/` 目录）：
 
-- 所有内容修改应在私有仓库中进行
-- 不要直接修改公开仓库的内容，它们会被自动部署覆盖
-- 确保部署密钥配置正确，否则自动部署将失败
+| 工具 | 功能 | 使用 |
+|------|------|------|
+| `deploy.*` | 自动部署 | `deploy.bat` 或 `./deploy.sh` |
+| `preview.*` | 本地预览 | `preview.bat` 或 `./preview.sh` |
+| `batch-encrypt.*` | 批量加密 | 批量加密文章 |
+| `add_categories.*` | 自动分类 | 根据目录添加分类 |
 
-## 一键部署脚本
+## 🔐 文章加密
 
-为了方便本地开发和手动部署，项目提供了一键部署脚本：
+### 添加加密文章
 
-### 使用方法
+```markdown
+---
+title: "加密文章"
+---
 
-1. **PowerShell (Windows)**:
-   ```powershell
-   # 在公开仓库目录中运行
-   .\deploy-blog.ps1 "提交信息"
-   ```
+公开内容...
 
-2. **Bash (Linux/macOS/Git Bash)**:
-   ```bash
-   # 赋予执行权限
-   chmod +x deploy-blog.sh
+<!--more-->
 
-   # 在公开仓库目录中运行
-   ./deploy-blog.sh "提交信息"
-   ```
+{{% hugo-encryptor "密码" %}}
 
-### 脚本功能
+加密内容...
 
-- 自动将博客源码提交到私有仓库 `bluespace3/hugo-source-private`
-- 自动构建 Hugo 站点
-- 自动将生成的静态文件提交到公开仓库 `bluespace3/bluespace3.github.io`
+{{% /hugo-encryptor %}}
+```
 
-### 注意事项
+### 发布加密文章
 
-- 确保已安装 Hugo
-- 确保有私有仓库的访问权限
-- 脚本假设私有仓库 URL 为 `https://github.com/bluespace3/hugo-source-private.git`
-- 如果私有仓库 URL 不同，请修改脚本中的 `PRIVATE_REPO_URL` 变量
+```bash
+hugo --cleanDestinationDir
+python tools/hugo_encryptor/hugo-encryptor.py
+deploy.bat
+```
+
+## 📁 项目结构
+
+```
+.
+├── content/          # 博客文章
+├── themes/          # Hugo 主题（PaperMod）
+├── static/          # 静态资源
+├── layouts/         # 自定义布局
+├── tools/           # 工具脚本
+├── public/          # 生成的静态网站
+├── hugo.toml        # Hugo 配置
+└── .github/workflows/ # GitHub Actions
+```
+
+## 🔄 自动部署
+
+1. 推送代码到 `main` 分支
+2. GitHub Actions 自动构建
+3. 自动部署到 `gh-pages` 分支
+4. GitHub Pages 自动更新
+
+## 💡 技术栈
+
+- **Hugo**：v0.156.0+
+- **PaperMod**：Hugo 主题
+- **hugo-encryptor**：内容加密
+- **GitHub Actions**：自动部署
+
+## 📝 许可证
+
+© 2025 蓝色空间号
