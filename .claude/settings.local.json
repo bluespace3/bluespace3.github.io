@@ -40,7 +40,12 @@
       "Bash(bash deploy.sh)",
       "Bash(which hugo || which hugo_extended || snap list | grep hugo || dpkg -l | grep hugo)",
       "Bash(snap install hugo)",
-      "Bash(snap remove hugo)"
+      "Bash(snap remove hugo)",
+      "Bash(ls -la *.md | head -20)",
+      "Bash(ls -la *.sh *.bat *.py 2>/dev/null | head -30)",
+      "Bash(ls -la *.sh *.bat 2>/dev/null)",
+      "Bash(ls -la tools/*.sh tools/*.py 2>/dev/null | grep -E \"\\(deploy-to-server|sync-and-deploy|run-full-sync|setup-token-simple\\)\")",
+      "Bash(echo \"=== 根目录脚本 ===\" && ls -la *.sh *.bat 2>/dev/null && echo \"\" && echo \"=== tools/ 目录相关脚本 ===\" && ls -la tools/*.sh tools/*.py 2>/dev/null | grep -E \"\\(deploy-to-server|sync-and-deploy|run-full-sync|setup-token-simple|sync_notes\\)\")"
     ],
     "deny": [],
     "ask": []
