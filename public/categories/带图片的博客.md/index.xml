@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>带图片的博客.md on 蓝色空间号</title>
+    <link>https://bluespace3.github.io/categories/%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E5%8D%9A%E5%AE%A2.md/</link>
+    <description>Recent content in 带图片的博客.md on 蓝色空间号</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 27 Feb 2026 00:43:26 +0800</lastBuildDate>
+    <atom:link href="https://bluespace3.github.io/categories/%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E5%8D%9A%E5%AE%A2.md/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>带图片的博客</title>
+      <link>https://bluespace3.github.io/post/%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 27 Feb 2026 00:43:26 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B8%A6%E5%9B%BE%E7%89%87%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;h1 id=&#34;我的电脑配置&#34;&gt;我的电脑配置&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;assets/Pastedimage20260227003423.png&#34; alt=&#34;我的电脑&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
