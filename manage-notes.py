@@ -241,11 +241,11 @@ class NotesManager:
             self.run_command(commit_command, description="正在提交移除操作...") # 忽略此处的失败，因为可能没有东西可提交
 
             # 4. 重新添加 subtree，这将拉取最新的内容并覆盖
-            add_command = f"git subtree add --prefix=content/post {self.notes_repo_url} master --squash"
+            add_command = f"git subtree add --prefix=content/post {self.notes_repo_url} main --squash"
             success = self.run_command(add_command, description="正在强制拉取并覆盖远程笔记...")
         else:
             # 标准的 subtree pull（合并策略）
-            pull_command = f"git subtree pull --prefix=content/post {self.notes_repo_url} master"
+            pull_command = f"git subtree pull --prefix=content/post {self.notes_repo_url} main"
             success = self.run_command(pull_command, description="正在执行 git subtree pull 从远程仓库拉取笔记...")
         
         if success:
