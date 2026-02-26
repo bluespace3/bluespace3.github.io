@@ -206,13 +206,29 @@ password: "123456"
         if not directory.is_absolute():
             directory = self.project_root / directory
 
+        # 获取忽略目录列表
+        ignore_dirs = self.config.get('sync.ignore_dirs', [])
+
         print(f"\n📁 开始处理目录：{directory.relative_to(self.project_root)}")
         print(f"   覆盖模式: {'是' if overwrite else '否'}")
         print(f"   批量大小: {batch_size}")
-        print(f"   批量延迟: {batch_delay}秒\n")
+        print(f"   批量延迟: {batch_delay}秒")
+        if ignore_dirs:
+            print(f"   忽略目录: {', '.join(ignore_dirs)}\n")
+        else:
+            print(f"\n")
 
-        # 查找所有 Markdown 文件
-        md_files = list(directory.rglob('*.md'))
+        # 查找所有 Markdown 文件，排除忽略的目录
+        md_files = []
+        for file_path in directory.rglob('*.md'):
+            # 检查文件路径中是否包含忽略的目录
+            skip = False
+            for ignore_dir in ignore_dirs:
+                if ignore_dir in file_path.parts:
+                    skip = True
+                    break
+            if not skip:
+                md_files.append(file_path)
 
         if not md_files:
             print(f"  ⚠️  未找到 Markdown 文件")

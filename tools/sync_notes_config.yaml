@@ -42,3 +42,11 @@ sync:
   # 批量处理时的并发数（避免触发 GitHub API 速率限制）
   batch_size: 10
   batch_delay: 1  # 秒
+
+  # 忽略的目录（不参与同步）
+  ignore_dirs:
+    - '.data'
+    - '.settings'
+    - '.git'
+    - '__pycache__'
+    - 'node_modules'
