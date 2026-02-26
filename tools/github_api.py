@@ -71,6 +71,9 @@ class GitHubFileTimeFetcher:
                 'Accept': 'application/vnd.github.v3+json'
             })
 
+        # 禁用 SSL 验证（仅用于测试，生产环境不推荐）
+        self.session.verify = False
+
     def get_file_info(self, file_path: str, branch: str = 'main') -> Optional[Dict[str, str]]:
         """
         获取文件在 GitHub 仓库的信息
@@ -229,28 +232,37 @@ def extract_category_from_path(file_path: str, base_dir: str = 'content/post') -
         >>> extract_category_from_path('content/post/根目录文件.md')
         '技术'
     """
-    # 标准化路径
-    file_path = os.path.normpath(file_path)
-    base_dir = os.path.normpath(base_dir)
-
-    # 获取相对路径
     try:
-        rel_path = os.path.relpath(file_path, base_dir)
-    except ValueError:
-        # 如果文件不在 base_dir 下，返回默认分类
+        # 转换为 Path 对象
+        file_path_obj = Path(file_path)
+
+        # 如果是绝对路径，获取相对路径
+        if file_path_obj.is_absolute():
+            # 获取文件相对于 content/post 的路径部分
+            # 例如: /var/www/.../content/post/AIGC学习笔记/mcp-intro.md -> AIGC学习笔记
+            parts = file_path_obj.parts
+            try:
+                post_idx = parts.index('content')
+                # content/post/分类/文件.md，跳过 'content' 和 'post'，返回分类名
+                if post_idx + 2 < len(parts):
+                    return parts[post_idx + 2]
+                else:
+                    return "技术"
+            except ValueError:
+                return "技术"
+        else:
+            # 相对路径
+            # 例如: content/post/AIGC学习笔记/mcp-intro.md -> AIGC学习笔记
+            parts = file_path_obj.parts
+            if len(parts) >= 3 and parts[0] == 'content' and parts[1] == 'post':
+                return parts[2]
+            elif len(parts) > 1:
+                return parts[0]
+            else:
+                return "技术"
+    except Exception as e:
+        # 出错时返回默认分类
         return "技术"
-
-    # 获取目录部分
-    dir_part = os.path.dirname(rel_path)
-
-    # 如果文件在根目录，返回默认分类
-    if not dir_part or dir_part == '.':
-        return "技术"
-
-    # 获取第一级目录作为分类
-    first_dir = dir_part.split(os.sep)[0]
-
-    return first_dir or "技术"
 
 
 if __name__ == "__main__":

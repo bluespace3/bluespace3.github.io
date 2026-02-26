@@ -1,8 +1,8 @@
 ---
 title: 'doc转md'
-categories: ["技术"]
-date: 2025-11-22T16:11:04+00:00
-lastmod: 2025-12-02T16:07:59+00:00
+categories: ["工具"]
+date: 2025-09-28T16:23:36+08:00
+lastmod: 2025-09-28T16:23:36+08:00
 encrypted: false
 password: "123456"
 ---

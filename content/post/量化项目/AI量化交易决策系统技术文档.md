@@ -1,8 +1,8 @@
 ---
 title: 'AI量化交易决策系统技术文档'
-categories: ["技术"]
-date: 2025-11-20T15:58:14+00:00
-lastmod: 2025-12-02T16:08:03+00:00
+categories: ["量化项目"]
+date: 2025-09-07T00:20:07+08:00
+lastmod: 2025-09-07T00:20:07+08:00
 encrypted: false
 password: "123456"
 ---

@@ -102,7 +102,7 @@ class NotesSyncManager:
 
             # 提取分类
             if category is None:
-                category = extract_category_from_path(str(file_path), str(self.content_dir))
+                category = extract_category_from_path(str(file_path), self.config.hugo_content_dir)
                 # 使用配置中的默认分类
                 if not category or category == '技术':
                     category = self.config.frontmatter_default_category
@@ -199,6 +199,13 @@ password: "123456"
             batch_size: 批量处理大小
             batch_delay: 批量之间的延迟（秒）
         """
+        # 转换为 Path 对象
+        directory = Path(directory)
+
+        # 如果是相对路径，转换为绝对路径
+        if not directory.is_absolute():
+            directory = self.project_root / directory
+
         print(f"\n📁 开始处理目录：{directory.relative_to(self.project_root)}")
         print(f"   覆盖模式: {'是' if overwrite else '否'}")
         print(f"   批量大小: {batch_size}")

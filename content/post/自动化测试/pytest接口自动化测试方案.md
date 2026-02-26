@@ -1,8 +1,8 @@
 ---
 title: 'pytest接口自动化测试方案'
-categories: ["技术"]
-date: 2025-11-20T15:58:14+00:00
-lastmod: 2025-12-02T16:08:02+00:00
+categories: ["自动化测试"]
+date: 2025-09-07T00:20:29+08:00
+lastmod: 2025-09-07T00:20:29+08:00
 encrypted: false
 password: "123456"
 ---

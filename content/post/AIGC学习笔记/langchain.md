@@ -1,8 +1,8 @@
 ---
 title: 'langchain'
-categories: ["技术"]
-date: 2025-11-22T16:11:04+00:00
-lastmod: 2025-12-02T16:07:56+00:00
+categories: ["AIGC学习笔记"]
+date: 2025-12-21T00:44:38+08:00
+lastmod: 2025-12-21T00:44:38+08:00
 encrypted: false
 password: "123456"
 ---

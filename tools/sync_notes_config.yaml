@@ -10,7 +10,7 @@ github:
 
   # GitHub 仓库信息
   owner: 'bluespace3'        # 仓库所有者
-  repo: 'knowledge_bases'    # 笔记仓库名
+  repo: 'note-gen-sync'      # 笔记仓库名
   branch: 'main'             # 分支名
 
 # Hugo 配置

@@ -1,8 +1,8 @@
 ---
 title: 'test_knowledge_base'
-categories: ["技术"]
-date: 2025-11-22T17:13:21+00:00
-lastmod: 2025-12-02T16:07:59+00:00
+categories: ["人工智能猫咪"]
+date: 2025-09-07T00:21:38+08:00
+lastmod: 2025-09-07T00:21:38+08:00
 encrypted: false
 password: "123456"
 ---

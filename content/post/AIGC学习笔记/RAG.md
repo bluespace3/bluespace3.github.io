@@ -1,8 +1,8 @@
 ---
 title: 'RAG'
-categories: ["技术"]
-date: 2025-11-22T16:11:04+00:00
-lastmod: 2025-12-02T16:07:56+00:00
+categories: ["AIGC学习笔记"]
+date: 2025-12-04T19:41:12+08:00
+lastmod: 2025-12-04T19:41:12+08:00
 encrypted: false
 password: "123456"
 ---
