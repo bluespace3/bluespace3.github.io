@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "tagId": 1,
+    "content": "重排模型（Reranking Model）是在初步检索或排序结果基础上，对候选结果进行精细化重排序的模型，目的是提升最终排序的准确性和相关性。常见于搜索引擎、推荐系统、问答系统等场景。\n\n以下是常见的重排模型及其作用：\n\n---\n\n### 一、常见重排模型\n\n1. **Pointwise 重排模型**\n   - 代表：基于 Logistic Regression、GBDT、DNN 的单文档打分模型\n   - 特点：独立对每个候选文档打分，不考虑文档间关系\n   - 适用：简单高效，适合初排序后的粗筛\n\n2. **Pairwise 重排模型**\n   - 代表：RankNet、LambdaRank、RankSVM\n   - 特点：比较文档对的相对顺序，优化排序损失\n   - 适用：强调文档间的相对排序，适合 NDCG、MAP 等排序指标优化\n\n3. **Listwise 重排模型**\n   - 代表：ListNet、ListMLE、LambdaMART\n   - 特点：以整个候选列表为单位建模，直接优化排序指标\n   - 适用：效果更优，但计算复杂度高\n\n4. **基于 Transformer 的重排模型**\n   - 代表：BERT、T5、ColBERT、MonoT5、DuoT5\n   - 特点：利用预训练语言模型理解语义，对 Query-Document 对做深度交互建模\n   - 适用：高精度重排，尤其适合语义匹配任务（如问答、检索）\n\n5. **交互式重排模型（Cross-Encoder）**\n   - 代表：BERT Cross-Encoder\n   - 特点：Query 与每个 Document 深度交互计算相关性得分\n   - 优势：精度极高\n   - 劣势：计算开销大，通常用于 Top-K 精排\n\n6. **蒸馏式轻量重排模型**\n   - 代表：DistilBERT、MiniLM、ColBERT（双塔结构）\n   - 特点：从大模型蒸馏或设计轻量结构，兼顾效率与效果\n   - 适用：工业场景中平衡性能与速度\n\n---\n\n### 二、重排模型的作用\n\n1. **提升排序精度**  \n   初步检索（如 BM25、向量召回）往往基于关键词或浅层语义，重排模型可引入深层语义理解，提高 Top 结果相关性。\n\n2. **优化排序指标**  \n   如 NDCG@K、MAP、MRR 等，重排模型能更直接针对这些指标优化。\n\n3. **融合多源特征**  \n   可融合文本相关性、用户行为、时效性、权威性等多维度特征，实现综合排序。\n\n4. **缓解“召回-排序”鸿沟**  \n   召回阶段可能遗漏优质结果，重排阶段可结合上下文微调顺序，提升用户体验。\n\n5. **支持个性化排序**  \n   结合用户画像、历史行为等，在重排阶段实现个性化结果调整。\n\n---\n\n### 三、典型应用场景\n\n- 搜索引擎：Query → 召回 → 粗排 → 精排（重排）→ 展示\n- 推荐系统：召回 → 粗排 → 精排 → 重排（考虑多样性、上下文）\n- 问答系统：候选答案生成 → 语义重排 → 输出最佳答案\n- 广告系统：CTR 预估 + 重排（考虑 ROI、频次控制等业务规则）\n\n---\n\n✅ 总结：重排模型是信息检索与推荐系统中的“精修”环节，通过语义建模、特征融合、排序优化等手段，把“好结果”排到“最前面”，是提升用户体验的关键技术。",
+    "role": "system",
+    "type": "chat",
+    "image": null,
+    "inserted": 0,
+    "createdAt": 1757310897649,
+    "ragSources": null,
+    "agentHistory": null
+  },
+  {
+    "id": 2,
+    "tagId": 2,
+    "content": "田庆宏 12/4 10:20:22\n俊源分享：采购记录-〉新建记录-预入库单-入库同步（order_in－out）-〉仓店上架任务（task-onself）-扫码上架-〉库存增加\n\n田庆宏 12/4 10:21:10\n库存只统计合格区\n\n田庆宏 12/4 10:24:02\n掌店易-修改库存后-先退库，再入库\n\n田庆宏 12/4 10:26:20\n库存修正-元茂\n\n田庆宏 12/4 10:29:15\ngoods_code掌店易商品唯一编码；durgˉid，relate-drugid平台唯一编码\n\n田庆宏 12/4 10:29:58\nrelate-drugid包含多个durgˉid\n\n田庆宏 12/4 10:33:13\ngoods'-base-relate\n\n田庆宏 12/4 10:35:42\nspu与relate-id 一对一\n\n田庆宏 12/4 10:36:14\nspu与relate-id与店内码 一对一\n\n田庆宏 12/4 10:44:39\ngoodsid'=goodscodex门店\n\n田庆宏 12/4 11:26:05\n库存减逻辑：近效期短的    帮我整理成笔记",
+    "role": "user",
+    "type": "chat",
+    "image": null,
+    "inserted": 0,
+    "createdAt": 1764820539414,
+    "ragSources": null,
+    "agentHistory": null
+  },
+  {
+    "id": 3,
+    "tagId": 2,
+    "content": "# 库存与商品编码管理笔记\n\n## 采购与入库流程\n- **采购记录** → **新建记录** → **预入库单** → **入库同步（order_in-out）** → **仓店上架任务（task-onself）** → **扫码上架** → **库存增加**\n\n## 库存统计规则\n- 仅统计**合格区**的库存。\n- **库存修正操作**（如掌店易中修改库存）需遵循：**先退库，再入库**。\n- 库存减少时，优先消耗**近效期较短**的商品。\n\n## 商品编码体系说明\n- `goods_code`：掌店易系统中商品的**唯一编码**（按门店维度）。\n- `drug_id`：平台内药品的**唯一编码**。\n- `relate_drugid`：一个关联编码，可包含**多个** `drug_id`。\n- `spu` 与 `relate_id` 为**一对一**关系。\n- `spu`、`relate_id` 与**店内码**也为**一对一**关系。\n- `goodsid' = goodscode × 门店`，即商品在门店的唯一标识由商品编码与门店组合而成。\n\n## 其他备注\n- **库存修正**相关功能由**元茂**负责。\n- 数据表参考：`goods_base_relate`。",
+    "role": "system",
+    "type": "chat",
+    "image": null,
+    "inserted": 1,
+    "createdAt": 1764820539435,
+    "ragSources": null,
+    "agentHistory": null
+  },
+  {
+    "id": 4,
+    "tagId": 3,
+    "content": "Yes, and auto-accept edits\n ❯ 2. Yes, and manually approve edits 翻译这两个选项",
+    "role": "user",
+    "type": "chat",
+    "image": null,
+    "inserted": 0,
+    "createdAt": 1764905711422,
+    "ragSources": null,
+    "agentHistory": null
+  },
+  {
+    "id": 5,
+    "tagId": 3,
+    "content": "❯ 1. 是的，并自动接受编辑  \n❯ 2. 是的，并手动批准编辑",
+    "role": "system",
+    "type": "chat",
+    "image": null,
+    "inserted": 0,
+    "createdAt": 1764905711447,
+    "ragSources": null,
+    "agentHistory": null
+  }
+]
