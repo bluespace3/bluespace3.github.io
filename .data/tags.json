@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Idea",
+    "isLocked": "true",
+    "isPin": "true",
+    "sortOrder": 0,
+    "total": 0
+  },
+  {
+    "id": 2,
+    "name": "Untitled Chat",
+    "isLocked": 0,
+    "isPin": 0,
+    "sortOrder": 1,
+    "total": 1
+  },
+  {
+    "id": 3,
+    "name": "Untitled Chat",
+    "isLocked": 0,
+    "isPin": 0,
+    "sortOrder": 2,
+    "total": 0
+  }
+]
