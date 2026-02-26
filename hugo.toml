@@ -1,52 +1,133 @@
-baseURL ='https://bluespace3.github.io/'
+baseURL = 'https://bluespace3.github.io/'
 title = '蓝色空间号'
-theme = 'hugo-theme-reimu'
+theme = 'PaperMod'
+
+# 语言设置
 languageCode = 'zh-CN'
 defaultContentLanguage = 'zh-CN'
+hasCJKLanguage = true
 
-# 设置主要章节，用于首页文章列表
+# 主要章节
 mainSections = ["post"]
 
-# 设置默认的排序配置 - 按日期降序排列
+# 分页配置
 [pagination]
   pagerSize = 10
+
+# 语言配置
 [languages]
-[languages.zh-CN]
-languageName = '简体中文'
-weight = 2
-[markup.highlight]
-guessSyntax = true
-noClasses = false
+  [languages.zh-CN]
+    languageName = '简体中文'
+    weight = 1
+    title = '蓝色空间号'
 
-[markup.goldmark]
-[markup.goldmark.renderer]
-  unsafe = true # 允许 HTML 在 Markdown 中
+# Markdown 配置
+[markup]
+  [markup.highlight]
+    guessSyntax = true
+    noClasses = false
+    lineNos = false
+    lineNumbersInTable = true
+    tabWidth = 2
 
-# 摘要配置 - 自动排除加密内容
-[markup.goldmark.extensions]
-  definitionList = true
-  footnote = true
-  linkify = true
-  strikethrough = true
-  table = true
-  taskList = true
-  typographer = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # 允许 HTML 在 Markdown 中
 
-# 设置摘要分隔符和长度
+  [markup.goldmark.extensions]
+    definitionList = true
+    footnote = true
+    linkify = true
+    strikethrough = true
+    table = true
+    taskList = true
+    typographer = true
+
+# 摘要长度
 summaryLength = 150
 
-[outputs]
-home = ["Algolia", "HTML", "RSS"]
+# PaperMod 主题参数
+[params]
+  # 环境变量
+  env = "production"
 
-[outputFormats.Algolia]
-baseName = "algolia"
-isPlainText = true
-mediaType = "application/json"
-notAlternative = true
+  # 主题模式
+  defaultTheme = "auto" # auto, light, dark
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
 
-[outputFormats.RSS]
-mediaType = "application/rss+xml"
-baseName = "index"
+  # 首页信息模式
+  [params.homeInfoParams]
+    Title = "蓝色空间号"
+    Content = """
+    欢迎来到我的博客！
+
+    这里记录我的学习笔记和技术心得。
+    """
+
+  # 社交图标
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/bluespace3/"
+
+  # 资源配置
+  [params.assets]
+    # disableHLJS = true # 禁用 highlight.js
+    favicon = "/favicon.ico"
+    favicon16x16 = "/favicon-16x16.png"
+    favicon32x32 = "/favicon-32x32.png"
+    apple_touch_icon = "/apple-touch-icon.png"
+    safari_pinned_tab = "/safari-pinned-tab.svg"
+
+# 菜单配置
+[[menu.main]]
+  identifier = "home"
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "posts"
+  name = "文章"
+  url = "/post/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "archives"
+  name = "归档"
+  url = "/archives/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "categories"
+  name = "分类"
+  url = "/categories/"
+  weight = 4
+
+[[menu.main]]
+  identifier = "tags"
+  name = "标签"
+  url = "/tags/"
+  weight = 5
+
+[[menu.main]]
+  identifier = "about"
+  name = "关于"
+  url = "/about/"
+  weight = 6
 
 # 加密功能配置 - 注入自定义CSS和JS文件
 [params.injector]
@@ -56,3 +137,17 @@ baseName = "index"
   body_end = """
   <script src="/js/encrypted-content.js"></script>
   """
+
+# Algolia 搜索配置
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+
+[outputs]
+  home = ["Algolia", "HTML", "RSS"]
+
+[params.algolia]
+  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+  params = ["categories", "tags"]
