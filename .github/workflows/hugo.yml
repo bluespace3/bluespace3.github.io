@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: false  # 确保自动拉取子模块
+          submodules: recursive  # 递归拉取所有子模块
           fetch-depth: 0    # 获取所有历史记录和标签
 
       - name: Setup Hugo
