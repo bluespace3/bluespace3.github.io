@@ -1,20 +1,3 @@
----
-title: 'langchain'
-categories: ["AIGC学习笔记"]
-date: 2025-12-21T00:44:38+08:00
-lastmod: 2025-12-21T00:44:38+08:00
-encrypted: false
----
-title: 'langchain'
-categories: ["AIGC学习笔记"]
-date: 2025-12-21T00:44:38+08:00
-lastmod: 2025-12-21T00:44:38+08:00
-encrypted: false
-title: 'langchain'
-categories: ["AIGC学习笔记"]
-date: 2025-12-21T00:44:38+08:00
-lastmod: 2025-12-21T00:44:38+08:00
-encrypted: false
 ## 核心组件
 
 ### **模型包装器**

@@ -4,10 +4,6 @@ categories: ["编程语言"]
 date: 2025-09-07T00:20:44+08:00
 lastmod: 2025-09-07T00:20:44+08:00
 encrypted: false
-
-## 一、目录操作
-
----
 ```Shell
 pwd                                查看当前工作目录
 clear                         清除屏幕

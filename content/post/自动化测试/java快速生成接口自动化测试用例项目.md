@@ -4,7 +4,6 @@ categories: ["自动化测试"]
 date: 2025-11-20T23:59:32+08:00
 lastmod: 2025-11-20T23:59:32+08:00
 encrypted: false
----
 title: 'java快速生成接口自动化测试用例项目'
 categories: ["自动化测试"]
 date: 2025-11-20T23:59:32+08:00

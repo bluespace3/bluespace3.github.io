@@ -4,7 +4,6 @@ categories: ["教程"]
 date: 2025-09-07T00:20:45+08:00
 lastmod: 2025-09-07T00:20:45+08:00
 encrypted: false
----
 title: 'Gemma_3本地部署教程'
 categories: ["教程"]
 date: 2025-09-07T00:20:45+08:00
