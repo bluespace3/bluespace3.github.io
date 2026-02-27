@@ -6,21 +6,21 @@
     <description>Recent content in 实践 on 蓝色空间号</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 Feb 2026 21:36:52 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 09:56:24 +0800</lastBuildDate>
     <atom:link href="https://bluespace3.github.io/categories/%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clawdbot</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/clawdbot/</link>
+      <pubDate>Fri, 27 Feb 2026 09:56:24 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/clawdbot/</guid>
+      <description>&lt;p&gt;设置clawdbot和tailscale开机自启&lt;/p&gt;&#xA;&lt;p&gt;PS C:\WINDOWS\system32&amp;gt; Unregister-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -&lt;/p&gt;&#xA;&lt;p&gt;Confirm:$false -ErrorAction SilentlyContinue&#xA;PS C:\WINDOWS\system32&amp;gt; $Action = New-ScheduledTaskAction -Execute &amp;ldquo;PowerShell.exe&amp;rdquo; -Argument &amp;ldquo;-File C:\Users\Administrator\Start-Clawdbot.ps1&amp;rdquo;&#xA;PS C:\WINDOWS\system32&amp;gt; $Trigger = New-ScheduledTaskTrigger -AtStartup&#xA;PS C:\WINDOWS\system32&amp;gt; $Settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries&#xA;PS C:\WINDOWS\system32&amp;gt;  $Principal = New-ScheduledTaskPrincipal -UserId &amp;ldquo;$env:USERNAME&amp;rdquo; -LogonType Interactive&#xA;PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p&gt;</description>
+    </item>
     <item>
       <title>ssh连接服务器踩坑点</title>
       <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link>
       <pubDate>Wed, 25 Feb 2026 21:36:52 +0800</pubDate>
       <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid>
       <description>&lt;h1 id=&#34;通过密钥连接服务器踩坑配置正确但是连接失败&#34;&gt;通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;初始状态&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;已成功生成SSH密钥对（ed25519）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;已将公钥添加到服务器的 ~/.ssh/authorized_keys                                            - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>clawdbot</title>
-      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/clawdbot/</link>
-      <pubDate>Wed, 25 Feb 2026 11:25:12 +0800</pubDate>
-      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/clawdbot/</guid>
-      <description>&lt;p&gt;设置clawdbot和tailscale开机自启&lt;/p&gt;&#xA;&lt;p&gt;PS C:\WINDOWS\system32&amp;gt; Unregister-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -&lt;/p&gt;&#xA;&lt;p&gt;Confirm:$false -ErrorAction SilentlyContinue&#xA;PS C:\WINDOWS\system32&amp;gt; $Action = New-ScheduledTaskAction -Execute &amp;ldquo;PowerShell.exe&amp;rdquo; -Argument &amp;ldquo;-File C:\Users\Administrator\Start-Clawdbot.ps1&amp;rdquo;&#xA;PS C:\WINDOWS\system32&amp;gt; $Trigger = New-ScheduledTaskTrigger -AtStartup&#xA;PS C:\WINDOWS\system32&amp;gt; $Settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries&#xA;PS C:\WINDOWS\system32&amp;gt;  $Principal = New-ScheduledTaskPrincipal -UserId &amp;ldquo;$env:USERNAME&amp;rdquo; -LogonType Interactive&#xA;PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p&gt;</description>
     </item>
     <item>
       <title>terminus</title>

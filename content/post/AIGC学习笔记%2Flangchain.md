@@ -1,8 +1,8 @@
 ---
 title: 'AIGC学习笔记%2Flangchain'
 categories: ["AIGC学习笔记%2Flangchain.md"]
-date: 2025-12-22T16:43:45+08:00
-lastmod: 2025-12-22T16:43:45+08:00
+date: 2026-02-27T10:12:56+08:00
+lastmod: 2026-02-27T10:12:56+08:00
 encrypted: false
 password: "123456"
 ---

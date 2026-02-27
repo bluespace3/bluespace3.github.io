@@ -1,8 +1,8 @@
 ---
 title: 'clawdbot'
 categories: ["实践"]
-date: 2026-02-25T11:25:12+08:00
-lastmod: 2026-02-25T11:25:12+08:00
+date: 2026-02-27T09:56:24+08:00
+lastmod: 2026-02-27T09:56:24+08:00
 encrypted: false
 password: "123456"
 ---
