@@ -4,8 +4,17 @@ categories: ["自动化测试"]
 date: 2025-09-07T00:20:27+08:00
 lastmod: 2025-09-07T00:20:27+08:00
 encrypted: false
-password: "123456"
 ---
+title: 'pytest-intro'
+categories: ["自动化测试"]
+date: 2025-09-07T00:20:27+08:00
+lastmod: 2025-09-07T00:20:27+08:00
+encrypted: false
+title: 'pytest-intro'
+categories: ["自动化测试"]
+date: 2025-09-07T00:20:27+08:00
+lastmod: 2025-09-07T00:20:27+08:00
+encrypted: false
 
 ## 什么是pytest？
 

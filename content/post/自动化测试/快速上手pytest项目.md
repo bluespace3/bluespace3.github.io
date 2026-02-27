@@ -4,8 +4,17 @@ categories: ["自动化测试"]
 date: 2025-09-07T00:20:43+08:00
 lastmod: 2025-09-07T00:20:43+08:00
 encrypted: false
-password: "123456"
 ---
+title: '快速上手pytest项目'
+categories: ["自动化测试"]
+date: 2025-09-07T00:20:43+08:00
+lastmod: 2025-09-07T00:20:43+08:00
+encrypted: false
+title: '快速上手pytest项目'
+categories: ["自动化测试"]
+date: 2025-09-07T00:20:43+08:00
+lastmod: 2025-09-07T00:20:43+08:00
+encrypted: false
 tags: ["pytest", "python"]
 --------------------------
 

@@ -118,8 +118,6 @@ categories: ["{category}"]
 date: {date_hugo}
 lastmod: {lastmod_hugo}
 encrypted: false
-password: "123456"
----
 """
 
             # 预览模式
@@ -142,7 +140,6 @@ password: "123456"
 
             # 修正图片路径：将相对路径改为绝对路径
             # 将 assets/xxx.png 替换为 /assets/xxx.png
-            import re
             content_body = re.sub(
                 r'!\[([^\]]*)\]\(assets/([^)]+)\)',
                 r'![\1](/assets/\2)',

@@ -4,8 +4,17 @@ categories: ["git"]
 date: 2026-02-27T11:05:10+08:00
 lastmod: 2026-02-27T11:05:10+08:00
 encrypted: false
-password: "123456"
 ---
+title: 'git操作'
+categories: ["git"]
+date: 2026-02-27T11:05:10+08:00
+lastmod: 2026-02-27T11:05:10+08:00
+encrypted: false
+title: 'git操作'
+categories: ["git"]
+date: 2026-02-27T11:05:10+08:00
+lastmod: 2026-02-27T11:05:10+08:00
+encrypted: false
 #### 回滚到指定提交
 
 1. git reset --hard c1ac53850b0314a20e97f669bafc8bb67a3a1124

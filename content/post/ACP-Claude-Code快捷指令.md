@@ -4,61 +4,9 @@ categories: ["ACP-Claude-Code快捷指令.md"]
 date: 2026-02-28T01:35:43+08:00
 lastmod: 2026-02-28T01:35:43+08:00
 encrypted: false
-password: "123456"
----
-# Claude Code 快捷指令与使用技巧
-
-> 最后更新：2026-02-28
-> ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用
-
----
-
-## 什么是 ACP？
-
-ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。
-
-**在 OpenClaw 中使用 Claude Code：**
-```bash
-# 启动 Claude Code 会话
-/acp spawn claude --mode persistent
-
-# 配置默认使用 Claude Code
-openclaw config set acp.defaultAgent claude
-```
-
-**更多信息：** 查看 OpenClaw 文档中的 ACP 部分
-
----
-
-## Claude Code 快捷键
-
-### 基础快捷键
-
-| 快捷键 | 功能 | 说明 |
-|--------|------|------|
-| `Enter` | 发送消息 | 提交当前请求 |
-| `Esc` | 停止生成 | 中断当前生成 |
-| `Ctrl+C` | 清除输入 | 按一次清除输入，按两次退出 |
-
-### 导航快捷键
-
-| 快捷键 | 功能 |
-|--------|------|
-| `↑/↓` | 浏览历史消息 |
-| `Ctrl+L` | 清屏 |
-| `Ctrl+U` | 清除到行首 |
-| `Ctrl+K` | 清除到行尾 |
-
-### 文件操作
-
-| 快捷键 | 功能 |
-|--------|------|
-| `Ctrl+O` | 打开文件 |
-| `Ctrl+W` | 保存当前更改 |
-
----
 
 ## Claude Code 核心指令
+---
 
 ### 文件操作
 

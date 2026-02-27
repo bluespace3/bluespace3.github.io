@@ -4,8 +4,17 @@ categories: ["实践"]
 date: 2026-02-25T11:23:31+08:00
 lastmod: 2026-02-25T11:23:31+08:00
 encrypted: false
-password: "123456"
 ---
+title: 'terminus'
+categories: ["实践"]
+date: 2026-02-25T11:23:31+08:00
+lastmod: 2026-02-25T11:23:31+08:00
+encrypted: false
+title: 'terminus'
+categories: ["实践"]
+date: 2026-02-25T11:23:31+08:00
+lastmod: 2026-02-25T11:23:31+08:00
+encrypted: false
 ## terminus快捷键使用合集
 
 | 功能                 | macOS                         | Windows / Linux                   |

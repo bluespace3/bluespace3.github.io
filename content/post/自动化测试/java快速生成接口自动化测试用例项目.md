@@ -4,8 +4,17 @@ categories: ["自动化测试"]
 date: 2025-11-20T23:59:32+08:00
 lastmod: 2025-11-20T23:59:32+08:00
 encrypted: false
-password: "123456"
 ---
+title: 'java快速生成接口自动化测试用例项目'
+categories: ["自动化测试"]
+date: 2025-11-20T23:59:32+08:00
+lastmod: 2025-11-20T23:59:32+08:00
+encrypted: false
+title: 'java快速生成接口自动化测试用例项目'
+categories: ["自动化测试"]
+date: 2025-11-20T23:59:32+08:00
+lastmod: 2025-11-20T23:59:32+08:00
+encrypted: false
 # java快速生成接口自动化测试用例项目
 
 这是一个示例项目，演示如何使用 TestNG 和 REST Assured 进行 API 测试，并支持测试用例与接口逻辑分离的架构。

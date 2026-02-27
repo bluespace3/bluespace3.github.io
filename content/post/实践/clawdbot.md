@@ -4,8 +4,17 @@ categories: ["实践"]
 date: 2026-02-27T09:56:24+08:00
 lastmod: 2026-02-27T09:56:24+08:00
 encrypted: false
-password: "123456"
 ---
+title: 'clawdbot'
+categories: ["实践"]
+date: 2026-02-27T09:56:24+08:00
+lastmod: 2026-02-27T09:56:24+08:00
+encrypted: false
+title: 'clawdbot'
+categories: ["实践"]
+date: 2026-02-27T09:56:24+08:00
+lastmod: 2026-02-27T09:56:24+08:00
+encrypted: false
 设置clawdbot和tailscale开机自启
 
 PS C:\WINDOWS\system32> Unregister-ScheduledTask -TaskName "Start-WSL2-Clawdbot" -
