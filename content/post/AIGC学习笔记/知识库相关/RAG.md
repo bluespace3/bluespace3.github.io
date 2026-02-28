@@ -20,6 +20,11 @@ categories: ["AIGC学习笔记"]
 date: 2025-12-09T21:21:48+08:00
 lastmod: 2025-12-09T21:21:48+08:00
 encrypted: false
+title: 'RAG'
+categories: ["AIGC学习笔记"]
+date: 2025-12-09T21:21:48+08:00
+lastmod: 2025-12-09T21:21:48+08:00
+encrypted: false
 **RAG定义**：模型的外挂知识库，解决专业领域的知识检索；可以将用户的问题与知识库检索内容结合成提示词，发给大模型给出结果。
 
 ![image.png](http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2F674a7cce-9e56-471c-ab09-185017d061ba.png)

@@ -20,6 +20,11 @@ categories: ["AIGC学习笔记"]
 date: 2025-09-07T00:22:19+08:00
 lastmod: 2025-09-07T00:22:19+08:00
 encrypted: false
+title: 'Transformer的工作原理'
+categories: ["AIGC学习笔记"]
+date: 2025-09-07T00:22:19+08:00
+lastmod: 2025-09-07T00:22:19+08:00
+encrypted: false
 Transformer的工作原理
 
 拿到句子：从前有个国王，他有个女儿

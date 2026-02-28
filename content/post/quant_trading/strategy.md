@@ -20,6 +20,11 @@ categories: ["quant_trading"]
 date: 2025-09-07T00:22:05+08:00
 lastmod: 2025-09-07T00:22:05+08:00
 encrypted: false
+title: 'strategy'
+categories: ["quant_trading"]
+date: 2025-09-07T00:22:05+08:00
+lastmod: 2025-09-07T00:22:05+08:00
+encrypted: false
 # 量化交易策略知识库
 
 ## 核心策略

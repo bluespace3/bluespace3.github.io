@@ -1,11 +1,10 @@
 ---
 title: 'ACP-Claude-Code快捷指令'
-categories: ["ACP"]
+categories: ["ACP-Claude-Code快捷指令.md"]
 date: 2026-02-28T01:35:43+08:00
 lastmod: 2026-02-28T01:35:43+08:00
 encrypted: false
 ---
-# Claude Code 快捷指令与使用技巧
 
 > 最后更新：2026-02-28
 > ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用
