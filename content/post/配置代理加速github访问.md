@@ -4,6 +4,7 @@ categories: ["配置"]
 date: 2026-02-28T03:25:00+08:00
 lastmod: 2026-02-28T03:25:00+08:00
 encrypted: false
+---
 # Node.js Shadowsocks 完整配置指南
 
 ## 架构说明

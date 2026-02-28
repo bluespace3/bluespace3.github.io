@@ -4,6 +4,12 @@ categories: ["实践"]
 date: 2026-02-02T15:27:36+08:00
 lastmod: 2026-02-02T15:27:36+08:00
 encrypted: false
+---
+title: 'vllm'
+categories: ["实践"]
+date: 2026-02-02T15:27:36+08:00
+lastmod: 2026-02-02T15:27:36+08:00
+encrypted: false
 title: 'vllm'
 categories: ["实践"]
 date: 2026-02-02T15:27:36+08:00

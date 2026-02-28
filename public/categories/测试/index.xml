@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>测试 on 蓝色空间号</title>
+    <link>https://bluespace3.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 测试 on 蓝色空间号</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 26 Feb 2025 15:30:00 +0800</lastBuildDate>
+    <atom:link href="https://bluespace3.github.io/categories/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Encryptor 加密测试</title>
+      <link>https://bluespace3.github.io/post.backup/hugo-encryptor-test/</link>
+      <pubDate>Wed, 26 Feb 2025 15:30:00 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post.backup/hugo-encryptor-test/</guid>
+      <description>&lt;p&gt;这是一篇测试 Hugo Encryptor 加密功能的文章。&lt;/p&gt;&#xA;&lt;p&gt;前面这段内容是公开的，所有人都可以看到。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

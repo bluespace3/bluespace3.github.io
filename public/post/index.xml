@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 蓝色空间号</title>
+    <link>https://bluespace3.github.io/post/</link>
+    <description>Recent content in Posts on 蓝色空间号</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 28 Feb 2026 03:25:00 +0800</lastBuildDate>
+    <atom:link href="https://bluespace3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>配置代理加速github访问</title>
+      <link>https://bluespace3.github.io/post/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</link>
+      <pubDate>Sat, 28 Feb 2026 03:25:00 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</guid>
+      <description>&lt;h1 id=&#34;nodejs-shadowsocks-完整配置指南&#34;&gt;Node.js Shadowsocks 完整配置指南&lt;/h1&gt;&#xA;&lt;h2 id=&#34;架构说明&#34;&gt;架构说明&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;本地电脑                        海外服务器&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;┌─────────────┐               ┌──────────────┐&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   浏览器    │────SOCKS5────▶│ Shadowsocks  │&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   (1080)    │               │   Server     │&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│             │               │              │&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  Node.js    │────加密──────▶│ (ss-server)  │&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  客户端     │               │              │&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└─────────────┘               └──────────────┘&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      │                              │&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      └─────────────访问 GitHub ─────┘&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;第一部分服务端配置海外服务器&#34;&gt;第一部分：服务端配置（海外服务器）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-安装-shadowsocks-服务端&#34;&gt;1.1 安装 Shadowsocks 服务端&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# SSH 连接到服务器&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh root@your-server-ip&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 更新包管理器&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt update&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装 shadowsocks-libev&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt install shadowsocks-libev -y&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;12-创建配置文件&#34;&gt;1.2 创建配置文件&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat &amp;gt; /etc/shadowsocks-libev/config.json &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;{&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;server&amp;#34;: &amp;#34;0.0.0.0&amp;#34;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;server_port&amp;#34;: 8388,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;password&amp;#34;: &amp;#34;YourStrongPassword123!&amp;#34;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;timeout&amp;#34;: 300,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;method&amp;#34;: &amp;#34;aes-256-gcm&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;配置说明&lt;/strong&gt;：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenClaw快捷键</title>
+      <link>https://bluespace3.github.io/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Sat, 28 Feb 2026 03:17:58 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>&lt;h1 id=&#34;openclaw-快捷键速查表&#34;&gt;OpenClaw 快捷键速查表&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;最后更新：2026-02-28&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;tui终端界面快捷键&#34;&gt;TUI（终端界面）快捷键&lt;/h2&gt;&#xA;&lt;h3 id=&#34;基础操作&#34;&gt;基础操作&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;快捷键&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Enter&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;发送消息&lt;/td&gt;&#xA;          &lt;td&gt;提交当前输入&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Esc&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;中止运行&lt;/td&gt;&#xA;          &lt;td&gt;立即停止当前活动运行&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl+C&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;清除输入&lt;/td&gt;&#xA;          &lt;td&gt;按一次清除输入，按两次退出 TUI&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl+D&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;退出&lt;/td&gt;&#xA;          &lt;td&gt;直接退出 TUI&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;选择器与面板&#34;&gt;选择器与面板&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;快捷键&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl+L&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;模型选择器&lt;/td&gt;&#xA;          &lt;td&gt;打开模型选择器&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl+G&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;智能体选择器&lt;/td&gt;&#xA;          &lt;td&gt;打开 Agent 选择器&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl+P&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;会话选择器&lt;/td&gt;&#xA;          &lt;td&gt;打开会话选择器&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl+O&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;工具输出展开&lt;/td&gt;&#xA;          &lt;td&gt;切换工具卡片的折叠/展开状态&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;Ctrl+T&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;思考可见性&lt;/td&gt;&#xA;          &lt;td&gt;切换思考模式的可见性（重新加载历史）&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;斜杠命令&#34;&gt;斜杠命令&lt;/h2&gt;&#xA;&lt;h3 id=&#34;核心命令&#34;&gt;核心命令&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命令&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;示例&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/help&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;显示帮助信息&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/help&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/status&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;显示当前状态&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/status&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/agent &amp;lt;id&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;切换智能体&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/agent research&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/agents&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;列出可用智能体&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/agents&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/session &amp;lt;key&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;切换会话&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/session main&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/sessions&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;列出可用会话&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/sessions&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/model &amp;lt;provider/model&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;选择模型&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/model claude/gpt-4&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/models&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;列出可用模型&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/models&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;会话控制&#34;&gt;会话控制&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命令&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;选项&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/think &amp;lt;level&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;设置思考级别&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;off&lt;/code&gt;, &lt;code&gt;minimal&lt;/code&gt;, &lt;code&gt;low&lt;/code&gt;, &lt;code&gt;medium&lt;/code&gt;, &lt;code&gt;high&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/verbose &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;详细输出模式&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;full&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/reasoning &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;推理可见性&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;, &lt;code&gt;stream&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/usage &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;使用统计显示&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;off&lt;/code&gt;, &lt;code&gt;tokens&lt;/code&gt;, &lt;code&gt;full&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/elevated &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;提升权限模式&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;, &lt;code&gt;ask&lt;/code&gt;, &lt;code&gt;full&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/activation &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;激活模式（群组）&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;mention&lt;/code&gt;, &lt;code&gt;always&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/deliver &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;消息投递开关&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;会话生命周期&#34;&gt;会话生命周期&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命令&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/new [model]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;新建会话&lt;/td&gt;&#xA;          &lt;td&gt;可选模型参数&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/reset [model]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;重置会话&lt;/td&gt;&#xA;          &lt;td&gt;可选模型参数&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/abort&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;中止运行&lt;/td&gt;&#xA;          &lt;td&gt;中止当前活动&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/settings&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;打开设置面板&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/exit&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;退出 TUI&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;工具与调试&#34;&gt;工具与调试&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命令&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/context [mode]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;显示上下文信息&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;list&lt;/code&gt;, &lt;code&gt;detail&lt;/code&gt;, &lt;code&gt;json&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/export [path]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;导出会话&lt;/td&gt;&#xA;          &lt;td&gt;导出当前会话为 HTML&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/whoami&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;显示发送者 ID&lt;/td&gt;&#xA;          &lt;td&gt;别名：&lt;code&gt;/id&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/skill &amp;lt;name&amp;gt; [input]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;运行技能&lt;/td&gt;&#xA;          &lt;td&gt;按名称运行技能&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/subagents &amp;lt;action&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;子代理管理&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;list&lt;/code&gt;, &lt;code&gt;kill&lt;/code&gt;, &lt;code&gt;log&lt;/code&gt;, &lt;code&gt;info&lt;/code&gt;, &lt;code&gt;send&lt;/code&gt;, &lt;code&gt;steer&lt;/code&gt;, &lt;code&gt;spawn&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/acp &amp;lt;action&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;ACP 会话控制&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;spawn&lt;/code&gt;, &lt;code&gt;cancel&lt;/code&gt;, &lt;code&gt;steer&lt;/code&gt;, &lt;code&gt;close&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt; 等&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/agents&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;列出线程绑定代理&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;权限与配置&#34;&gt;权限与配置&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命令&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/allowlist &amp;lt;action&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;管理允许列表&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;list&lt;/code&gt;, &lt;code&gt;add&lt;/code&gt;, &lt;code&gt;remove&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/approve &amp;lt;id&amp;gt; &amp;lt;decision&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;批准执行请求&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;allow-once&lt;/code&gt;, &lt;code&gt;allow-always&lt;/code&gt;, &lt;code&gt;deny&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/config &amp;lt;action&amp;gt; [path]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;配置管理&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;show&lt;/code&gt;, &lt;code&gt;get&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;, &lt;code&gt;unset&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/debug &amp;lt;action&amp;gt; [path]&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;运行时调试覆盖&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;show&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;, &lt;code&gt;unset&lt;/code&gt;, &lt;code&gt;reset&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/session ttl &amp;lt;duration&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;会话 TTL 管理&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;多端切换&#34;&gt;多端切换&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命令&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/dock-telegram&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;切换到 Telegram&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/dock-discord&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;切换到 Discord&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/dock-slack&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;切换到 Slack&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;文字转语音tts&#34;&gt;文字转语音（TTS）&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命令&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/tts &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;TTS 控制&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;off&lt;/code&gt;, &lt;code&gt;always&lt;/code&gt;, &lt;code&gt;inbound&lt;/code&gt;, &lt;code&gt;tagged&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt;, &lt;code&gt;provider&lt;/code&gt;, &lt;code&gt;limit&lt;/code&gt;, &lt;code&gt;summary&lt;/code&gt;, &lt;code&gt;audio&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;/voice&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Discord TTS 命令&lt;/td&gt;&#xA;          &lt;td&gt;Discord 原生命令（&lt;code&gt;/tts&lt;/code&gt; 的别名）&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;本地-shell-命令&#34;&gt;本地 Shell 命令&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命令&lt;/th&gt;&#xA;          &lt;th&gt;功能&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;! &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;执行本地 Shell 命令&lt;/td&gt;&#xA;          &lt;td&gt;在 TUI 主机上运行&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;!poll&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;检查输出/状态&lt;/td&gt;&#xA;          &lt;td&gt;查看后台任务状态&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;!stop&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;停止运行任务&lt;/td&gt;&#xA;          &lt;td&gt;停止当前 Shell 任务&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ACP-Claude-Code快捷指令</title>
+      <link>https://bluespace3.github.io/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Sat, 28 Feb 2026 01:35:43 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid>
+      <description>&lt;h1 id=&#34;claude-code-快捷指令与使用技巧&#34;&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;最后更新：2026-02-28&#xA;ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;什么是-acp&#34;&gt;什么是 ACP？&lt;/h2&gt;&#xA;&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Git_submodule</title>
+      <link>https://bluespace3.github.io/post/git/git_submodule/</link>
+      <pubDate>Fri, 27 Feb 2026 11:05:10 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/git/git_submodule/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;Git_submodule&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2026-02-27T11:05:10+08:00&#xA;lastmod: 2026-02-27T11:05:10+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Git_submodule&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2026-02-27T11:05:10+08:00&#xA;lastmod: 2026-02-27T11:05:10+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe&#34;&gt;Git submodule添加子项目_库&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc&#34;&gt;Git归并策略&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue&#34;&gt;添加&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f&#34;&gt;删除&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;输入“/”快速插入内容&lt;/p&gt;&#xA;&lt;p&gt;添加图标&lt;/p&gt;&#xA;&lt;p&gt;添加封面&lt;/p&gt;&#xA;&lt;p&gt;展示文档信息&lt;/p&gt;&#xA;&lt;p&gt;Git submodule添加子项目_库&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>git操作</title>
+      <link>https://bluespace3.github.io/post/git/git%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Fri, 27 Feb 2026 11:05:10 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/git/git%E6%93%8D%E4%BD%9C/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;git操作&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2026-02-27T11:05:10+08:00&#xA;lastmod: 2026-02-27T11:05:10+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;git操作&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2026-02-27T11:05:10+08:00&#xA;lastmod: 2026-02-27T11:05:10+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;git操作&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2026-02-27T11:05:10+08:00&#xA;lastmod: 2026-02-27T11:05:10+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>解决浏览器反调试机制</title>
+      <link>https://bluespace3.github.io/post/%E7%88%AC%E8%99%AB/%E8%A7%A3%E5%86%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8D%E8%B0%83%E8%AF%95%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Fri, 27 Feb 2026 10:38:04 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%88%AC%E8%99%AB/%E8%A7%A3%E5%86%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8D%E8%B0%83%E8%AF%95%E6%9C%BA%E5%88%B6/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;解决浏览器反调试机制&amp;rsquo;&#xA;categories: [&amp;ldquo;爬虫&amp;rdquo;]&#xA;date: 2026-02-27T10:38:04+08:00&#xA;lastmod: 2026-02-27T10:38:04+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;解决浏览器反调试机制&amp;rsquo;&#xA;categories: [&amp;ldquo;爬虫&amp;rdquo;]&#xA;date: 2026-02-27T10:38:04+08:00&#xA;lastmod: 2026-02-27T10:38:04+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;解决浏览器反调试机制&amp;rsquo;&#xA;categories: [&amp;ldquo;爬虫&amp;rdquo;]&#xA;date: 2026-02-27T10:38:04+08:00&#xA;lastmod: 2026-02-27T10:38:04+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>clawdbot</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/clawdbot/</link>
+      <pubDate>Fri, 27 Feb 2026 09:56:24 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/clawdbot/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;clawdbot&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-27T09:56:24+08:00&#xA;lastmod: 2026-02-27T09:56:24+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;clawdbot&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-27T09:56:24+08:00&#xA;lastmod: 2026-02-27T09:56:24+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;clawdbot&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-27T09:56:24+08:00&#xA;lastmod: 2026-02-27T09:56:24+08:00&#xA;encrypted: false&#xA;设置clawdbot和tailscale开机自启&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ssh连接服务器踩坑点</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link>
+      <pubDate>Wed, 25 Feb 2026 21:36:52 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;ssh连接服务器踩坑点&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T21:36:52+08:00&#xA;lastmod: 2026-02-25T21:36:52+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;ssh连接服务器踩坑点&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T21:36:52+08:00&#xA;lastmod: 2026-02-25T21:36:52+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;ssh连接服务器踩坑点&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T21:36:52+08:00&#xA;lastmod: 2026-02-25T21:36:52+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>terminus</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/terminus/</link>
+      <pubDate>Wed, 25 Feb 2026 11:23:31 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/terminus/</guid>
+      <description>&lt;p&gt;title: &amp;rsquo;terminus&#39;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T11:23:31+08:00&#xA;lastmod: 2026-02-25T11:23:31+08:00&#xA;encrypted: false&#xA;title: &amp;rsquo;terminus&#39;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T11:23:31+08:00&#xA;lastmod: 2026-02-25T11:23:31+08:00&#xA;encrypted: false&#xA;title: &amp;rsquo;terminus&#39;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T11:23:31+08:00&#xA;lastmod: 2026-02-25T11:23:31+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>机顶盒刷机linux系统</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Wed, 25 Feb 2026 11:12:42 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;机顶盒刷机linux系统&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T11:12:42+08:00&#xA;lastmod: 2026-02-25T11:12:42+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;机顶盒刷机linux系统&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T11:12:42+08:00&#xA;lastmod: 2026-02-25T11:12:42+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;机顶盒刷机linux系统&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-25T11:12:42+08:00&#xA;lastmod: 2026-02-25T11:12:42+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告</title>
+      <link>https://bluespace3.github.io/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Fri, 13 Feb 2026 01:22:05 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2026-02-13T01:22:05+08:00&#xA;lastmod: 2026-02-13T01:22:05+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2026-02-13T01:22:05+08:00&#xA;lastmod: 2026-02-13T01:22:05+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2026-02-13T01:22:05+08:00&#xA;lastmod: 2026-02-13T01:22:05+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>vllm</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/vllm/</link>
+      <pubDate>Mon, 02 Feb 2026 15:27:36 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/vllm/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;vllm&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-02T15:27:36+08:00&#xA;lastmod: 2026-02-02T15:27:36+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;vllm&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-02T15:27:36+08:00&#xA;lastmod: 2026-02-02T15:27:36+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;vllm&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-02-02T15:27:36+08:00&#xA;lastmod: 2026-02-02T15:27:36+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>大模型考试题</title>
+      <link>https://bluespace3.github.io/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%80%83%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Wed, 28 Jan 2026 00:41:41 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%80%83%E8%AF%95%E9%A2%98/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;大模型考试题&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2026-01-28T00:41:41+08:00&#xA;lastmod: 2026-01-28T00:41:41+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;大模型考试题&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2026-01-28T00:41:41+08:00&#xA;lastmod: 2026-01-28T00:41:41+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;大模型考试题&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2026-01-28T00:41:41+08:00&#xA;lastmod: 2026-01-28T00:41:41+08:00&#xA;encrypted: false&#xA;问：两人轮流从一堆 21 颗石子中取 1~3 颗，取到最后一颗者输。你先手，是否有必胜策略？&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>aigc</title>
+      <link>https://bluespace3.github.io/post/%E9%97%AE%E9%A2%98/aigc/</link>
+      <pubDate>Sun, 25 Jan 2026 22:27:52 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E9%97%AE%E9%A2%98/aigc/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;aigc&amp;rsquo;&#xA;categories: [&amp;ldquo;问题&amp;rdquo;]&#xA;date: 2026-01-25T22:27:52+08:00&#xA;lastmod: 2026-01-25T22:27:52+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;aigc&amp;rsquo;&#xA;categories: [&amp;ldquo;问题&amp;rdquo;]&#xA;date: 2026-01-25T22:27:52+08:00&#xA;lastmod: 2026-01-25T22:27:52+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;aigc&amp;rsquo;&#xA;categories: [&amp;ldquo;问题&amp;rdquo;]&#xA;date: 2026-01-25T22:27:52+08:00&#xA;lastmod: 2026-01-25T22:27:52+08:00&#xA;encrypted: false&#xA;&lt;img src=&#34;http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%E9%97%AE%E9%A2%98%2Fassets%2Fc127665f-c6c0-43d6-854c-d2f020c05e93.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Untitled</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link>
+      <pubDate>Sat, 24 Jan 2026 22:36:25 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-24T22:36:25+08:00&#xA;lastmod: 2026-01-24T22:36:25+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-24T22:36:25+08:00&#xA;lastmod: 2026-01-24T22:36:25+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-24T22:36:25+08:00&#xA;lastmod: 2026-01-24T22:36:25+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>地址、账号和密码</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E5%9C%B0%E5%9D%80%E8%B4%A6%E5%8F%B7%E5%92%8C%E5%AF%86%E7%A0%81/</link>
+      <pubDate>Wed, 21 Jan 2026 11:36:17 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E5%9C%B0%E5%9D%80%E8%B4%A6%E5%8F%B7%E5%92%8C%E5%AF%86%E7%A0%81/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;地址、账号和密码&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2026-01-21T11:36:17+08:00&#xA;lastmod: 2026-01-21T11:36:17+08:00&#xA;encrypted: false&#xA;lastmod: 2026-01-21T11:36:17+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://testntr.yaoshibang.cn/wsms-web/home&#34;&gt;邻药汇仓店管理系统&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;admin/12345&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>表结构</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E4%B8%9A%E5%8A%A1%E6%B5%8B%E8%AF%95/%E8%A1%A8%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 21 Jan 2026 11:25:24 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E4%B8%9A%E5%8A%A1%E6%B5%8B%E8%AF%95/%E8%A1%A8%E7%BB%93%E6%9E%84/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;表结构&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2026-01-21T11:25:24+08:00&#xA;lastmod: 2026-01-21T11:25:24+08:00&#xA;encrypted: false&#xA;lastmod: 2026-01-21T11:25:24+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;三方订单：&lt;code&gt;ext_sc.ts_third_order&lt;/code&gt;&#xA;三方订单详情：&lt;code&gt;ext_sc.ts_third_order_detail&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>qodercli</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/qodercli/</link>
+      <pubDate>Sat, 17 Jan 2026 09:40:22 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/qodercli/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;qodercli&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-17T09:40:22+08:00&#xA;lastmod: 2026-01-17T09:40:22+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;qodercli&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-17T09:40:22+08:00&#xA;lastmod: 2026-01-17T09:40:22+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;qodercli&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-17T09:40:22+08:00&#xA;lastmod: 2026-01-17T09:40:22+08:00&#xA;encrypted: false&#xA;终端输入qodercli启动&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>wsl</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/wsl/</link>
+      <pubDate>Thu, 15 Jan 2026 23:25:17 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/wsl/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;wsl&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-15T23:25:17+08:00&#xA;lastmod: 2026-01-15T23:25:17+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;wsl&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-15T23:25:17+08:00&#xA;lastmod: 2026-01-15T23:25:17+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;wsl&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-15T23:25:17+08:00&#xA;lastmod: 2026-01-15T23:25:17+08:00&#xA;encrypted: false&#xA;账号：dministrator&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Untitled</title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</link>
+      <pubDate>Wed, 14 Jan 2026 19:43:15 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2026-01-14T19:43:15+08:00&#xA;lastmod: 2026-01-14T19:43:15+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2026-01-14T19:43:15+08:00&#xA;lastmod: 2026-01-14T19:43:15+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2026-01-14T19:43:15+08:00&#xA;lastmod: 2026-01-14T19:43:15+08:00&#xA;encrypted: false&#xA;powershell启动虚拟环境：&amp;amp; E:/AI/MinerU/.venv/Scripts/Activate.ps1&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>知识库痛点分析</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%97%9B%E7%82%B9%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 14 Jan 2026 12:41:59 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%97%9B%E7%82%B9%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;知识库痛点分析&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2026-01-14T12:41:59+08:00&#xA;lastmod: 2026-01-14T12:41:59+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;知识库痛点分析&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2026-01-14T12:41:59+08:00&#xA;lastmod: 2026-01-14T12:41:59+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;知识库痛点分析&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2026-01-14T12:41:59+08:00&#xA;lastmod: 2026-01-14T12:41:59+08:00&#xA;encrypted: false&#xA;&lt;img src=&#34;http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2Fed1f73c7-941a-4162-9793-8674c1f87f2b.png&#34; alt=&#34;Snipaste_2025-12-23_22-14-58.png&#34;&gt;&lt;img src=&#34;undefined&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mineru</title>
+      <link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/mineru/</link>
+      <pubDate>Mon, 12 Jan 2026 00:38:24 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/mineru/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;mineru&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-12T00:38:24+08:00&#xA;lastmod: 2026-01-12T00:38:24+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;mineru&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-12T00:38:24+08:00&#xA;lastmod: 2026-01-12T00:38:24+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;mineru&amp;rsquo;&#xA;categories: [&amp;ldquo;实践&amp;rdquo;]&#xA;date: 2026-01-12T00:38:24+08:00&#xA;lastmod: 2026-01-12T00:38:24+08:00&#xA;encrypted: false&#xA;mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>25年终总结</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/25%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 06 Jan 2026 17:52:25 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/25%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;25年终总结&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2026-01-06T17:52:25+08:00&#xA;lastmod: 2026-01-06T17:52:25+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;25年终总结&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2026-01-06T17:52:25+08:00&#xA;lastmod: 2026-01-06T17:52:25+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;25年终总结&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2026-01-06T17:52:25+08:00&#xA;lastmod: 2026-01-06T17:52:25+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本文《&amp;lsquo;25年终总结&amp;rsquo;》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>0909工作</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/0909%E5%B7%A5%E4%BD%9C/</link>
+      <pubDate>Tue, 06 Jan 2026 15:49:16 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/0909%E5%B7%A5%E4%BD%9C/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;0909工作&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2026-01-06T15:49:16+08:00&#xA;lastmod: 2026-01-06T15:49:16+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;0909工作&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2026-01-06T15:49:16+08:00&#xA;lastmod: 2026-01-06T15:49:16+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;0909工作&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2026-01-06T15:49:16+08:00&#xA;lastmod: 2026-01-06T15:49:16+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本文《&amp;lsquo;0909工作&amp;rsquo;》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>高级知识库</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E5%BA%93/</link>
+      <pubDate>Sun, 04 Jan 2026 11:41:38 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E5%BA%93/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;高级知识库&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2026-01-04T11:41:38+08:00&#xA;lastmod: 2026-01-04T11:41:38+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;高级知识库&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2026-01-04T11:41:38+08:00&#xA;lastmod: 2026-01-04T11:41:38+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;高级知识库&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2026-01-04T11:41:38+08:00&#xA;lastmod: 2026-01-04T11:41:38+08:00&#xA;encrypted: false&#xA;&lt;img src=&#34;https://bluespace3.github.io/assets/94884087-5bfb-4bc8-b959-baa05d039a90.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>知识库痛点分析</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%97%9B%E7%82%B9%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 31 Dec 2025 13:04:34 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%97%9B%E7%82%B9%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;知识库痛点分析&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-31T13:04:34+08:00&#xA;lastmod: 2025-12-31T13:04:34+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;知识库痛点分析&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-31T13:04:34+08:00&#xA;lastmod: 2025-12-31T13:04:34+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;知识库痛点分析&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-31T13:04:34+08:00&#xA;lastmod: 2025-12-31T13:04:34+08:00&#xA;encrypted: false&#xA;&lt;img src=&#34;http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2Fed1f73c7-941a-4162-9793-8674c1f87f2b.png&#34; alt=&#34;Snipaste_2025-12-23_22-14-58.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>事项推进</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E4%BA%8B%E9%A1%B9%E6%8E%A8%E8%BF%9B/</link>
+      <pubDate>Mon, 29 Dec 2025 19:24:46 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E4%BA%8B%E9%A1%B9%E6%8E%A8%E8%BF%9B/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;事项推进&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-29T19:24:46+08:00&#xA;lastmod: 2025-12-29T19:24:46+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;事项推进&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-29T19:24:46+08:00&#xA;lastmod: 2025-12-29T19:24:46+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;事项推进&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-29T19:24:46+08:00&#xA;lastmod: 2025-12-29T19:24:46+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本文《&amp;lsquo;事项推进&amp;rsquo;》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>测试平台</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Sat, 20 Dec 2025 14:15:08 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;测试平台&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-12-20T14:15:08+08:00&#xA;lastmod: 2025-12-20T14:15:08+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;测试平台&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-12-20T14:15:08+08:00&#xA;lastmod: 2025-12-20T14:15:08+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;测试平台&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-12-20T14:15:08+08:00&#xA;lastmod: 2025-12-20T14:15:08+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>番茄下载</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Thu, 18 Dec 2025 23:51:04 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;番茄下载&amp;rsquo;&#xA;categories: [&amp;ldquo;工具&amp;rdquo;]&#xA;date: 2025-12-18T23:51:04+08:00&#xA;lastmod: 2025-12-18T23:51:04+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;番茄下载&amp;rsquo;&#xA;categories: [&amp;ldquo;工具&amp;rdquo;]&#xA;date: 2025-12-18T23:51:04+08:00&#xA;lastmod: 2025-12-18T23:51:04+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;番茄下载&amp;rsquo;&#xA;categories: [&amp;ldquo;工具&amp;rdquo;]&#xA;date: 2025-12-18T23:51:04+08:00&#xA;lastmod: 2025-12-18T23:51:04+08:00&#xA;encrypted: false&#xA;&lt;img src=&#34;undefined&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>掌店易异构版本</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E6%8E%8C%E5%BA%97%E6%98%93%E5%BC%82%E6%9E%84%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Wed, 17 Dec 2025 17:27:47 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E6%8E%8C%E5%BA%97%E6%98%93%E5%BC%82%E6%9E%84%E7%89%88%E6%9C%AC/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;掌店易异构版本&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-17T17:27:47+08:00&#xA;lastmod: 2025-12-17T17:27:47+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;掌店易异构版本&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-17T17:27:47+08:00&#xA;lastmod: 2025-12-17T17:27:47+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;掌店易异构版本&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-17T17:27:47+08:00&#xA;lastmod: 2025-12-17T17:27:47+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本文《&amp;lsquo;掌店易异构版本&amp;rsquo;》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Untitled</title>
+      <link>https://bluespace3.github.io/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/untitled/</link>
+      <pubDate>Wed, 17 Dec 2025 01:10:50 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/untitled/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2025-12-17T01:10:50+08:00&#xA;lastmod: 2025-12-17T01:10:50+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2025-12-17T01:10:50+08:00&#xA;lastmod: 2025-12-17T01:10:50+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Untitled&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2025-12-17T01:10:50+08:00&#xA;lastmod: 2025-12-17T01:10:50+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ollama</title>
+      <link>https://bluespace3.github.io/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/ollama/</link>
+      <pubDate>Sat, 13 Dec 2025 22:14:15 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/ollama/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;ollama&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2025-12-13T22:14:15+08:00&#xA;lastmod: 2025-12-13T22:14:15+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;ollama&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2025-12-13T22:14:15+08:00&#xA;lastmod: 2025-12-13T22:14:15+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;ollama&amp;rsquo;&#xA;categories: [&amp;ldquo;大模型实践&amp;rdquo;]&#xA;date: 2025-12-13T22:14:15+08:00&#xA;lastmod: 2025-12-13T22:14:15+08:00&#xA;encrypted: false&#xA;gpt-oss:20b思考、工具&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>仓店业务逻辑记录</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E4%BB%93%E5%BA%97%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 12 Dec 2025 16:53:23 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E4%BB%93%E5%BA%97%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;仓店业务逻辑记录&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-12T16:53:23+08:00&#xA;lastmod: 2025-12-12T16:53:23+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;仓店业务逻辑记录&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-12T16:53:23+08:00&#xA;lastmod: 2025-12-12T16:53:23+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;仓店业务逻辑记录&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-12T16:53:23+08:00&#xA;lastmod: 2025-12-12T16:53:23+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本文《&amp;lsquo;仓店业务逻辑记录&amp;rsquo;》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RAG</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/rag/</link>
+      <pubDate>Tue, 09 Dec 2025 21:21:48 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/rag/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;RAG&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-09T21:21:48+08:00&#xA;lastmod: 2025-12-09T21:21:48+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;RAG&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-09T21:21:48+08:00&#xA;lastmod: 2025-12-09T21:21:48+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;RAG&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-09T21:21:48+08:00&#xA;lastmod: 2025-12-09T21:21:48+08:00&#xA;encrypted: false&#xA;&lt;strong&gt;RAG定义&lt;/strong&gt;：模型的外挂知识库，解决专业领域的知识检索；可以将用户的问题与知识库检索内容结合成提示词，发给大模型给出结果。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>调岗事项推进</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E8%B0%83%E5%B2%97%E4%BA%8B%E9%A1%B9%E6%8E%A8%E8%BF%9B/</link>
+      <pubDate>Mon, 08 Dec 2025 10:32:13 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E8%B0%83%E5%B2%97%E4%BA%8B%E9%A1%B9%E6%8E%A8%E8%BF%9B/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;调岗事项推进&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-08T10:32:13+08:00&#xA;lastmod: 2025-12-08T10:32:13+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;调岗事项推进&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-08T10:32:13+08:00&#xA;lastmod: 2025-12-08T10:32:13+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;调岗事项推进&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-12-08T10:32:13+08:00&#xA;lastmod: 2025-12-08T10:32:13+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本文《&amp;lsquo;调岗事项推进&amp;rsquo;》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RAG</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/rag/</link>
+      <pubDate>Thu, 04 Dec 2025 19:41:12 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/rag/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;RAG&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-04T19:41:12+08:00&#xA;lastmod: 2025-12-04T19:41:12+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;RAG&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-04T19:41:12+08:00&#xA;lastmod: 2025-12-04T19:41:12+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;RAG&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-12-04T19:41:12+08:00&#xA;lastmod: 2025-12-04T19:41:12+08:00&#xA;encrypted: false&#xA;&lt;strong&gt;RAG定义&lt;/strong&gt;：模型的外挂知识库，解决专业领域的知识检索；可以将用户的问题与知识库检索内容结合成提示词，发给大模型给出结果。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>定时任务</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</link>
+      <pubDate>Tue, 02 Dec 2025 17:08:31 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;定时任务&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-12-02T17:08:31+08:00&#xA;lastmod: 2025-12-02T17:08:31+08:00&#xA;encrypted: false&#xA;lastmod: 2025-12-02T17:08:31+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;✅ &lt;strong&gt;结论：&lt;/strong&gt;&#xA;红框内应填写：&lt;code&gt;0 0 * * 3&lt;/code&gt;&#xA;（即每周三 0 点触发自动构建）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>java快速生成接口自动化测试用例项目</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java-testng/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sat, 22 Nov 2025 00:04:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java-testng/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;java快速生成接口自动化测试用例项目&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-11-22T00:04:32+08:00&#xA;lastmod: 2025-11-22T00:04:32+08:00&#xA;encrypted: false&#xA;lastmod: 2025-11-22T00:04:32+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本框架旨在提供一个灵活、可维护、功能强大的API自动化测试解决方案，帮助团队提高测试效率和软件质量。通过HAR文件自动化转换、智能依赖管理、数据驱动测试等特性，您可以快速构建完整的API测试套件。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>java快速生成接口自动化测试用例项目</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Thu, 20 Nov 2025 23:59:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;java快速生成接口自动化测试用例项目&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-11-20T23:59:32+08:00&#xA;lastmod: 2025-11-20T23:59:32+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;java快速生成接口自动化测试用例项目&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-11-20T23:59:32+08:00&#xA;lastmod: 2025-11-20T23:59:32+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;java快速生成接口自动化测试用例项目&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-11-20T23:59:32+08:00&#xA;lastmod: 2025-11-20T23:59:32+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>doc转md</title>
+      <link>https://bluespace3.github.io/post/%E8%B5%84%E6%96%99/doc%E8%BD%ACmd/</link>
+      <pubDate>Mon, 17 Nov 2025 11:53:38 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%B5%84%E6%96%99/doc%E8%BD%ACmd/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;doc转md&amp;rsquo;&#xA;categories: [&amp;ldquo;资料&amp;rdquo;]&#xA;date: 2025-11-17T11:53:38+08:00&#xA;lastmod: 2025-11-17T11:53:38+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;doc转md&amp;rsquo;&#xA;categories: [&amp;ldquo;资料&amp;rdquo;]&#xA;date: 2025-11-17T11:53:38+08:00&#xA;lastmod: 2025-11-17T11:53:38+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;doc转md&amp;rsquo;&#xA;categories: [&amp;ldquo;资料&amp;rdquo;]&#xA;date: 2025-11-17T11:53:38+08:00&#xA;lastmod: 2025-11-17T11:53:38+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>aigc教程链接</title>
+      <link>https://bluespace3.github.io/post/%E8%B5%84%E6%96%99/aigc%E6%95%99%E7%A8%8B%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Mon, 17 Nov 2025 11:53:19 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%B5%84%E6%96%99/aigc%E6%95%99%E7%A8%8B%E9%93%BE%E6%8E%A5/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;aigc教程链接&amp;rsquo;&#xA;categories: [&amp;ldquo;资料&amp;rdquo;]&#xA;date: 2025-11-17T11:53:19+08:00&#xA;lastmod: 2025-11-17T11:53:19+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;aigc教程链接&amp;rsquo;&#xA;categories: [&amp;ldquo;资料&amp;rdquo;]&#xA;date: 2025-11-17T11:53:19+08:00&#xA;lastmod: 2025-11-17T11:53:19+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;aigc教程链接&amp;rsquo;&#xA;categories: [&amp;ldquo;资料&amp;rdquo;]&#xA;date: 2025-11-17T11:53:19+08:00&#xA;lastmod: 2025-11-17T11:53:19+08:00&#xA;encrypted: false&#xA;【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href=&#34;https://itingnao.com/s/2722352/1ddnb1krx5r/w&#34;&gt;https://itingnao.com/s/2722352/1ddnb1krx5r/w&lt;/a&gt;&#xA;【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href=&#34;https://itingnao.com/s/2733974/1dhiaryfdjo/w&#34;&gt;https://itingnao.com/s/2733974/1dhiaryfdjo/w&lt;/a&gt;&#xA;【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href=&#34;https://itingnao.com/s/2733997/1dhjq2rct1x/w&#34;&gt;https://itingnao.com/s/2733997/1dhjq2rct1x/w&lt;/a&gt;&#xA;【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href=&#34;https://itingnao.com/s/2742868/1dokzokvxhb/w&#34;&gt;https://itingnao.com/s/2742868/1dokzokvxhb/w&lt;/a&gt;&#xA;【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href=&#34;https://itingnao.com/s/2762642/1e44ayzf9uw/w&#34;&gt;https://itingnao.com/s/2762642/1e44ayzf9uw/w&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>药品编码定义</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E8%8D%AF%E5%93%81%E7%BC%96%E7%A0%81%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Mon, 17 Nov 2025 10:59:34 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/%E8%8D%AF%E5%93%81%E7%BC%96%E7%A0%81%E5%AE%9A%E4%B9%89/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;药品编码定义&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-11-17T10:59:34+08:00&#xA;lastmod: 2025-11-17T10:59:34+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;药品编码定义&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-11-17T10:59:34+08:00&#xA;lastmod: 2025-11-17T10:59:34+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;药品编码定义&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-11-17T10:59:34+08:00&#xA;lastmod: 2025-11-17T10:59:34+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本文《&amp;lsquo;药品编码定义&amp;rsquo;》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>v100显卡折腾笔记</title>
+      <link>https://bluespace3.github.io/post/%E6%90%9E%E6%9C%BA/v100%E6%98%BE%E5%8D%A1%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 23 Oct 2025 18:15:44 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E6%90%9E%E6%9C%BA/v100%E6%98%BE%E5%8D%A1%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;v100显卡折腾笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;搞机&amp;rdquo;]&#xA;date: 2025-10-23T18:15:44+08:00&#xA;lastmod: 2025-10-23T18:15:44+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;v100显卡折腾笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;搞机&amp;rdquo;]&#xA;date: 2025-10-23T18:15:44+08:00&#xA;lastmod: 2025-10-23T18:15:44+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;v100显卡折腾笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;搞机&amp;rdquo;]&#xA;date: 2025-10-23T18:15:44+08:00&#xA;lastmod: 2025-10-23T18:15:44+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1017</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/1017/</link>
+      <pubDate>Fri, 17 Oct 2025 15:37:55 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E4%BD%9C/1017/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;1017&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-10-17T15:37:55+08:00&#xA;lastmod: 2025-10-17T15:37:55+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;1017&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-10-17T15:37:55+08:00&#xA;lastmod: 2025-10-17T15:37:55+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;1017&amp;rsquo;&#xA;categories: [&amp;ldquo;工作&amp;rdquo;]&#xA;date: 2025-10-17T15:37:55+08:00&#xA;lastmod: 2025-10-17T15:37:55+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;本文《&amp;lsquo;1017&amp;rsquo;》包含加密内容，请输入密码查看。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>绩效、行为</title>
+      <link>https://bluespace3.github.io/post/%E7%AE%A1%E7%90%86/%E7%BB%A9%E6%95%88%E8%A1%8C%E4%B8%BA/</link>
+      <pubDate>Tue, 14 Oct 2025 01:53:15 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%AE%A1%E7%90%86/%E7%BB%A9%E6%95%88%E8%A1%8C%E4%B8%BA/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;绩效、行为&amp;rsquo;&#xA;categories: [&amp;ldquo;管理&amp;rdquo;]&#xA;date: 2025-10-14T01:53:15+08:00&#xA;lastmod: 2025-10-14T01:53:15+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;绩效、行为&amp;rsquo;&#xA;categories: [&amp;ldquo;管理&amp;rdquo;]&#xA;date: 2025-10-14T01:53:15+08:00&#xA;lastmod: 2025-10-14T01:53:15+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;绩效、行为&amp;rsquo;&#xA;categories: [&amp;ldquo;管理&amp;rdquo;]&#xA;date: 2025-10-14T01:53:15+08:00&#xA;lastmod: 2025-10-14T01:53:15+08:00&#xA;encrypted: false&#xA;&lt;strong&gt;监督目标执行三步骤：&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>doc转md</title>
+      <link>https://bluespace3.github.io/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link>
+      <pubDate>Sun, 28 Sep 2025 16:23:36 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;doc转md&amp;rsquo;&#xA;categories: [&amp;ldquo;工具&amp;rdquo;]&#xA;date: 2025-09-28T16:23:36+08:00&#xA;lastmod: 2025-09-28T16:23:36+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;doc转md&amp;rsquo;&#xA;categories: [&amp;ldquo;工具&amp;rdquo;]&#xA;date: 2025-09-28T16:23:36+08:00&#xA;lastmod: 2025-09-28T16:23:36+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;doc转md&amp;rsquo;&#xA;categories: [&amp;ldquo;工具&amp;rdquo;]&#xA;date: 2025-09-28T16:23:36+08:00&#xA;lastmod: 2025-09-28T16:23:36+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>防止提示词注入技巧</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%98%B2%E6%AD%A2%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Thu, 25 Sep 2025 20:26:51 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%98%B2%E6%AD%A2%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%E6%8A%80%E5%B7%A7/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;防止提示词注入技巧&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-25T20:26:51+08:00&#xA;lastmod: 2025-09-25T20:26:51+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;防止提示词注入技巧&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-25T20:26:51+08:00&#xA;lastmod: 2025-09-25T20:26:51+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;防止提示词注入技巧&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-25T20:26:51+08:00&#xA;lastmod: 2025-09-25T20:26:51+08:00&#xA;encrypted: false&#xA;1.系统提示词设置固定角色和现在工作范围。例如：&lt;img src=&#34;https://cdn.jsdelivr.net/gh/bluespace3/note-gen-image-sync@main/7829a1ec-feba-463e-ab1c-a50f1c78db6c.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>大模型概述笔记</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 19 Sep 2025 21:45:58 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;大模型概述笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:45:58+08:00&#xA;lastmod: 2025-09-19T21:45:58+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;大模型概述笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:45:58+08:00&#xA;lastmod: 2025-09-19T21:45:58+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;大模型概述笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:45:58+08:00&#xA;lastmod: 2025-09-19T21:45:58+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>模型微调</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</link>
+      <pubDate>Fri, 19 Sep 2025 21:05:28 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;模型微调&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:05:28+08:00&#xA;lastmod: 2025-09-19T21:05:28+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;模型微调&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:05:28+08:00&#xA;lastmod: 2025-09-19T21:05:28+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;模型微调&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:05:28+08:00&#xA;lastmod: 2025-09-19T21:05:28+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>智能体</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/</link>
+      <pubDate>Fri, 19 Sep 2025 21:03:23 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;智能体&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:03:23+08:00&#xA;lastmod: 2025-09-19T21:03:23+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;智能体&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:03:23+08:00&#xA;lastmod: 2025-09-19T21:03:23+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;智能体&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T21:03:23+08:00&#xA;lastmod: 2025-09-19T21:03:23+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>机器学习</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Fri, 19 Sep 2025 20:42:30 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;机器学习&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T20:42:30+08:00&#xA;lastmod: 2025-09-19T20:42:30+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;机器学习&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T20:42:30+08:00&#xA;lastmod: 2025-09-19T20:42:30+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;机器学习&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T20:42:30+08:00&#xA;lastmod: 2025-09-19T20:42:30+08:00&#xA;encrypted: false&#xA;&lt;strong&gt;机器学习&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>大模型通识</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%AF%86/</link>
+      <pubDate>Fri, 19 Sep 2025 20:29:24 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%AF%86/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;大模型通识&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T20:29:24+08:00&#xA;lastmod: 2025-09-19T20:29:24+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;大模型通识&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T20:29:24+08:00&#xA;lastmod: 2025-09-19T20:29:24+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;大模型通识&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-19T20:29:24+08:00&#xA;lastmod: 2025-09-19T20:29:24+08:00&#xA;encrypted: false&#xA;&lt;strong&gt;大模型（LLM）：lage langrage model，基本都是基于transformer&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>git添加子项目</title>
+      <link>https://bluespace3.github.io/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sun, 07 Sep 2025 00:22:26 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;git添加子项目&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2025-09-07T00:22:26+08:00&#xA;lastmod: 2025-09-07T00:22:26+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;git添加子项目&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2025-09-07T00:22:26+08:00&#xA;lastmod: 2025-09-07T00:22:26+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;git添加子项目&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2025-09-07T00:22:26+08:00&#xA;lastmod: 2025-09-07T00:22:26+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transformer的工作原理</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Sun, 07 Sep 2025 00:22:19 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;Transformer的工作原理&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-07T00:22:19+08:00&#xA;lastmod: 2025-09-07T00:22:19+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Transformer的工作原理&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-07T00:22:19+08:00&#xA;lastmod: 2025-09-07T00:22:19+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Transformer的工作原理&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-07T00:22:19+08:00&#xA;lastmod: 2025-09-07T00:22:19+08:00&#xA;encrypted: false&#xA;Transformer的工作原理&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gitlab配置cicd工作流</title>
+      <link>https://bluespace3.github.io/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+      <pubDate>Sun, 07 Sep 2025 00:22:15 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;gitlab配置cicd工作流&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2025-09-07T00:22:15+08:00&#xA;lastmod: 2025-09-07T00:22:15+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;gitlab配置cicd工作流&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2025-09-07T00:22:15+08:00&#xA;lastmod: 2025-09-07T00:22:15+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;gitlab配置cicd工作流&amp;rsquo;&#xA;categories: [&amp;ldquo;git&amp;rdquo;]&#xA;date: 2025-09-07T00:22:15+08:00&#xA;lastmod: 2025-09-07T00:22:15+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>strategy</title>
+      <link>https://bluespace3.github.io/post/quant_trading/strategy/</link>
+      <pubDate>Sun, 07 Sep 2025 00:22:05 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/quant_trading/strategy/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;strategy&amp;rsquo;&#xA;categories: [&amp;ldquo;quant_trading&amp;rdquo;]&#xA;date: 2025-09-07T00:22:05+08:00&#xA;lastmod: 2025-09-07T00:22:05+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;strategy&amp;rsquo;&#xA;categories: [&amp;ldquo;quant_trading&amp;rdquo;]&#xA;date: 2025-09-07T00:22:05+08:00&#xA;lastmod: 2025-09-07T00:22:05+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;strategy&amp;rsquo;&#xA;categories: [&amp;ldquo;quant_trading&amp;rdquo;]&#xA;date: 2025-09-07T00:22:05+08:00&#xA;lastmod: 2025-09-07T00:22:05+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;h1 id=&#34;量化交易策略知识库&#34;&gt;量化交易策略知识库&lt;/h1&gt;&#xA;&lt;h2 id=&#34;核心策略&#34;&gt;核心策略&lt;/h2&gt;&#xA;&lt;p&gt;本系统采用多因子综合评分策略，结合技术面、基本面和消息面分析。&lt;/p&gt;&#xA;&lt;h3 id=&#34;技术面分析指标&#34;&gt;技术面分析指标&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;MACD指标：判断趋势转折点&lt;/li&gt;&#xA;&lt;li&gt;RSI指标：判断超买超卖状态&lt;/li&gt;&#xA;&lt;li&gt;KDJ指标：判断股价趋势&lt;/li&gt;&#xA;&lt;li&gt;布林带：判断价格波动区间&lt;/li&gt;&#xA;&lt;li&gt;成交量分析：确认价格变动的有效性&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;基本面分析要素&#34;&gt;基本面分析要素&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;财务指标分析：盈利能力、偿债能力、运营能力&lt;/li&gt;&#xA;&lt;li&gt;行业地位评估：市场份额、竞争优势&lt;/li&gt;&#xA;&lt;li&gt;盈利能力评估：营收增长、利润增长&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;消息面分析方法&#34;&gt;消息面分析方法&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;新闻情感分析：判断市场情绪&lt;/li&gt;&#xA;&lt;li&gt;政策影响评估：分析政策对行业的影响&lt;/li&gt;&#xA;&lt;li&gt;市场情绪监控：跟踪市场热点和资金流向&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>test_knowledge_base</title>
+      <link>https://bluespace3.github.io/post/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8C%AB%E5%92%AA/test_knowledge_base/</link>
+      <pubDate>Sun, 07 Sep 2025 00:21:38 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8C%AB%E5%92%AA/test_knowledge_base/</guid>
+      <description>&lt;p&gt;title: &amp;rsquo;test_knowledge_base&#39;&#xA;categories: [&amp;ldquo;人工智能猫咪&amp;rdquo;]&#xA;date: 2025-09-07T00:21:38+08:00&#xA;lastmod: 2025-09-07T00:21:38+08:00&#xA;encrypted: false&#xA;title: &amp;rsquo;test_knowledge_base&#39;&#xA;categories: [&amp;ldquo;人工智能猫咪&amp;rdquo;]&#xA;date: 2025-09-07T00:21:38+08:00&#xA;lastmod: 2025-09-07T00:21:38+08:00&#xA;encrypted: false&#xA;title: &amp;rsquo;test_knowledge_base&#39;&#xA;categories: [&amp;ldquo;人工智能猫咪&amp;rdquo;]&#xA;date: 2025-09-07T00:21:38+08:00&#xA;lastmod: 2025-09-07T00:21:38+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mac电脑使用速记</title>
+      <link>https://bluespace3.github.io/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:55 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;mac电脑使用速记&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:55+08:00&#xA;lastmod: 2025-09-07T00:20:55+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;mac电脑使用速记&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:55+08:00&#xA;lastmod: 2025-09-07T00:20:55+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;mac电脑使用速记&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:55+08:00&#xA;lastmod: 2025-09-07T00:20:55+08:00&#xA;encrypted: false&#xA;在Mac终端中，有几种方法可以连续删除命令：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>python中的os函数用法</title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:47 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;python中的os函数用法&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:47+08:00&#xA;lastmod: 2025-09-07T00:20:47+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;python中的os函数用法&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:47+08:00&#xA;lastmod: 2025-09-07T00:20:47+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo静态网站生成器入门指南</title>
+      <link>https://bluespace3.github.io/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:46 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;Hugo静态网站生成器入门指南&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:46+08:00&#xA;lastmod: 2025-09-07T00:20:46+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Hugo静态网站生成器入门指南&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:46+08:00&#xA;lastmod: 2025-09-07T00:20:46+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Hugo静态网站生成器入门指南&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:46+08:00&#xA;lastmod: 2025-09-07T00:20:46+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gemma_3本地部署教程</title>
+      <link>https://bluespace3.github.io/post/%E6%95%99%E7%A8%8B/gemma_3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E6%95%99%E7%A8%8B/gemma_3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;Gemma_3本地部署教程&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Gemma_3本地部署教程&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Gemma_3本地部署教程&amp;rsquo;&#xA;categories: [&amp;ldquo;教程&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&#xA;Gemma 3 被谷歌称为目前最强的开源视觉模型之一。 该模型支持超过35种语言，能够分析文本、图像和短视频。值得注意的是，Gemma 3 的视觉编码器经过升级，支持高分辨率和非方形图像，并引入了 ShieldGemma 2 图像安全分类器，用于过滤被分类为性暗示、危险或暴力的内容。这些特性使得 Gemma 3 成为当前最强大的开源视觉模型之一。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL_--_复合查询</title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql_--_%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql_--_%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;MySQL_&amp;ndash;&lt;em&gt;复合查询&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;MySQL&lt;/em&gt;&amp;ndash;&lt;em&gt;复合查询&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;MySQL&lt;/em&gt;&amp;ndash;_复合查询&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>构建fastapi&#43;vue项目dockerfile</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%9E%84%E5%BB%BAfastapi&#43;vue%E9%A1%B9%E7%9B%AEdockerfile/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%9E%84%E5%BB%BAfastapi&#43;vue%E9%A1%B9%E7%9B%AEdockerfile/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;构建fastapi+vue项目dockerfile&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;构建fastapi+vue项目dockerfile&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;构建fastapi+vue项目dockerfile&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:45+08:00&#xA;lastmod: 2025-09-07T00:20:45+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>linux安装python</title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:43 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid>
+      <description>&lt;p&gt;title: &amp;rsquo;linux安装python&#39;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:43+08:00&#xA;lastmod: 2025-09-07T00:20:43+08:00&#xA;encrypted: false&#xA;title: &amp;rsquo;linux安装python&#39;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:43+08:00&#xA;lastmod: 2025-09-07T00:20:43+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>快速上手pytest项目</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:43 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</guid>
+      <description>&lt;h2 id=&#34;tags-pytest-python&#34;&gt;title: &amp;lsquo;快速上手pytest项目&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:43+08:00&#xA;lastmod: 2025-09-07T00:20:43+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;快速上手pytest项目&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:43+08:00&#xA;lastmod: 2025-09-07T00:20:43+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;快速上手pytest项目&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:43+08:00&#xA;lastmod: 2025-09-07T00:20:43+08:00&#xA;encrypted: false&#xA;tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]&lt;/h2&gt;&#xA;&lt;h1 id=&#34;快速上手pytest接口测试&#34;&gt;快速上手Pytest接口测试&lt;/h1&gt;&#xA;&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;&#xA;&lt;p&gt;以前有分享过httprunner+pytest相关的使用方法，并且一直使用httprunner编写用自动化脚本，以前的经验可以快速帮我们上手pytest框架。为了快速上手pytest，HttpRunner 与Pytest 在编写自动化脚本异同点对比：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Go语言--安装和环境搭配</title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:31 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;Go语言&amp;ndash;安装和环境搭配&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:31+08:00&#xA;lastmod: 2025-09-07T00:20:31+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Go语言&amp;ndash;安装和环境搭配&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:31+08:00&#xA;lastmod: 2025-09-07T00:20:31+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;Go语言&amp;ndash;安装和环境搭配&amp;rsquo;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:31+08:00&#xA;lastmod: 2025-09-07T00:20:31+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>unnitest笔记</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/unnitest%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:30 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/unnitest%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;unnitest笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:30+08:00&#xA;lastmod: 2025-09-07T00:20:30+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;unnitest笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:30+08:00&#xA;lastmod: 2025-09-07T00:20:30+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;unnitest笔记&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:30+08:00&#xA;lastmod: 2025-09-07T00:20:30+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>pytest-intro</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:27 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;pytest-intro&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:27+08:00&#xA;lastmod: 2025-09-07T00:20:27+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;pytest-intro&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:27+08:00&#xA;lastmod: 2025-09-07T00:20:27+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;pytest-intro&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:27+08:00&#xA;lastmod: 2025-09-07T00:20:27+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>playwright的python文档</title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:26 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;playwright的python文档&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:26+08:00&#xA;lastmod: 2025-09-07T00:20:26+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;playwright的python文档&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:26+08:00&#xA;lastmod: 2025-09-07T00:20:26+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;playwright的python文档&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:26+08:00&#xA;lastmod: 2025-09-07T00:20:26+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI量化交易决策系统技术文档</title>
+      <link>https://bluespace3.github.io/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Sun, 07 Sep 2025 00:20:07 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;AI量化交易决策系统技术文档&amp;rsquo;&#xA;categories: [&amp;ldquo;量化项目&amp;rdquo;]&#xA;date: 2025-09-07T00:20:07+08:00&#xA;lastmod: 2025-09-07T00:20:07+08:00&#xA;encrypted: false&#xA;lastmod: 2025-09-07T00:20:07+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;API版本&lt;/strong&gt;: v2.0&#xA;&lt;strong&gt;最后更新&lt;/strong&gt;: 2025-01-13&#xA;&lt;strong&gt;维护者&lt;/strong&gt;: 量化交易系统团队&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mcp-intro</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</link>
+      <pubDate>Sun, 07 Sep 2025 00:04:28 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;mcp-intro&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-07T00:04:28+08:00&#xA;lastmod: 2025-09-07T00:04:28+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;mcp-intro&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-07T00:04:28+08:00&#xA;lastmod: 2025-09-07T00:04:28+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;mcp-intro&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-07T00:04:28+08:00&#xA;lastmod: 2025-09-07T00:04:28+08:00&#xA;encrypted: false&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>课程目标</title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87/</link>
+      <pubDate>Sat, 06 Sep 2025 03:17:26 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;课程目标&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-06T03:17:26+08:00&#xA;lastmod: 2025-09-06T03:17:26+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;课程目标&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-06T03:17:26+08:00&#xA;lastmod: 2025-09-06T03:17:26+08:00&#xA;encrypted: false&#xA;title: &amp;lsquo;课程目标&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-06T03:17:26+08:00&#xA;lastmod: 2025-09-06T03:17:26+08:00&#xA;encrypted: false&#xA;把握好转行的机会！&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI量化交易决策系统方案</title>
+      <link>https://bluespace3.github.io/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Sun, 13 Jul 2025 12:59:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</guid>
+      <description>&lt;h2 id=&#34;-2025-07-13-近期优化与变更&#34;&gt;📝 2025-07-13 近期优化与变更&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;新增布林带、KDJ、成交量、ATR、威廉指标，技术指标体系更丰富。&lt;/li&gt;&#xA;&lt;li&gt;评分体系优化：技术面40分、基本面35分、情绪面25分，ETF与A股评分规则分离，ETF基本面恒为0，ETF评分=技术面50分+AI消息面50分。&lt;/li&gt;&#xA;&lt;li&gt;决策等级优化：5级决策（重仓买入、买入、持有、谨慎持有、卖出），买入阈值降至50分，持有30分，谨慎持有10分，卖出&amp;lt;10分。&lt;/li&gt;&#xA;&lt;li&gt;日志与邮件去重：每只股票仅保留最新信号，输出和报告更简明。&lt;/li&gt;&#xA;&lt;li&gt;自动邮件集成：主程序运行后自动发送HTML格式决策报告，内容美化，信号带emoji和中文名。&lt;/li&gt;&#xA;&lt;li&gt;数据兼容性增强：分析引擎支持成交量列名为vol或volume。&lt;/li&gt;&#xA;&lt;li&gt;AI分析优化：ETF和A股分开提示，ETF基本面恒为0，AI消息面更关注资金流和行业新闻。&lt;/li&gt;&#xA;&lt;li&gt;文档完善：补充README、部署、API、策略等文档，详细说明系统架构、评分体系、部署与接口。&lt;/li&gt;&#xA;&lt;li&gt;用户体验提升：聚合报告美化，策略可读性提升，项目说明更精炼。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;本文档详细阐述了本量化交易系统的核心决策逻辑。系统通过对技术面、基本面和AI市场情绪面三个维度进行独立的量化评分，最终加权汇总，生成交易信号。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/langchain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/langchain/</guid>
+      <description>&lt;h2 id=&#34;核心组件&#34;&gt;核心组件&lt;/h2&gt;&#xA;&lt;h3 id=&#34;模型包装器&#34;&gt;&lt;strong&gt;模型包装器&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;内部结构：创建连接-&amp;gt;提示词模板-&amp;gt;语言模型-&amp;gt;输出解析&lt;/p&gt;&#xA;&lt;h4 id=&#34;1创建大模型连接&#34;&gt;1.创建大模型连接&lt;/h4&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2Fb5d58554-4eab-4773-b6a4-695841c4c66e.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;2提示词模板&#34;&gt;2.提示词模板&lt;/h4&gt;&#xA;&lt;p&gt;作用：将提示词内容进行参数化&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2F033bc311-a106-45d3-b5b2-2fb0bf547252.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;常用提示词模板：&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2F026bd779-f37c-42b9-a1fc-f8dba6b2d0ab.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;1.字符串提示词模板&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bluespace3.github.io/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;提示词技巧&amp;rsquo;&#xA;categories: [&amp;ldquo;AIGC学习笔记&amp;rdquo;]&#xA;date: 2025-09-28T16:28:38+08:00&#xA;lastmod: 2025-09-28T16:28:38+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;h3 id=&#34;-教育背景&#34;&gt;🎓 教育背景&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;上海交通大学&lt;/strong&gt; 计算机科学与技术 硕士 &lt;em&gt;2015.09 - 2018.06&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://bluespace3.github.io/post/quant_trading/system_design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bluespace3.github.io/post/quant_trading/system_design/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;SYSTEM_DESIGN&amp;rsquo;&#xA;categories: [&amp;ldquo;quant_trading&amp;rdquo;]&#xA;date: 2025-09-07T00:22:06+08:00&#xA;lastmod: 2025-09-07T00:22:06+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;h3 id=&#34;23-基本面分析-总权重-35分&#34;&gt;2.3. 基本面分析 (总权重: 35分)&lt;/h3&gt;&#xA;&lt;p&gt;基本面分析旨在评估资产的内在价值。它由三个核心估值指标构成，以适应不同类型的投资标的。&lt;/p&gt;&#xA;&lt;h4 id=&#34;1-市盈率-pe---权重-15分&#34;&gt;1. 市盈率 (PE) - (权重: 15分)&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;数据来源&lt;/strong&gt;: Akshare实时接口。对于ETF，则自动获取其跟踪指数的PE。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;评分标准&lt;/strong&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;PE &amp;lt; 15: &lt;strong&gt;+15分&lt;/strong&gt; (估值低)&lt;/li&gt;&#xA;&lt;li&gt;15 &amp;lt;= PE &amp;lt; 30: &lt;strong&gt;+8分&lt;/strong&gt; (估值合理)&lt;/li&gt;&#xA;&lt;li&gt;30 &amp;lt;= PE &amp;lt; 50: &lt;strong&gt;-8分&lt;/strong&gt; (估值偏高)&lt;/li&gt;&#xA;&lt;li&gt;PE &amp;gt;= 50: &lt;strong&gt;-15分&lt;/strong&gt; (估值过高)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;2-市净率-pb---权重-12分&#34;&gt;2. 市净率 (PB) - (权重: 12分)&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;数据来源&lt;/strong&gt;: Akshare实时接口。对于ETF，则自动获取其跟踪指数的PB。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;评分标准&lt;/strong&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;PB &amp;lt; 1.5: &lt;strong&gt;+12分&lt;/strong&gt; (估值低)&lt;/li&gt;&#xA;&lt;li&gt;1.5 &amp;lt;= PB &amp;lt; 3: &lt;strong&gt;+6分&lt;/strong&gt; (估值合理)&lt;/li&gt;&#xA;&lt;li&gt;3 &amp;lt;= PB &amp;lt; 5: &lt;strong&gt;-6分&lt;/strong&gt; (估值偏高)&lt;/li&gt;&#xA;&lt;li&gt;PB &amp;gt;= 5: &lt;strong&gt;-12分&lt;/strong&gt; (估值过高)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;3-股息率-dividend-yield---权重-8分&#34;&gt;3. 股息率 (Dividend Yield) - (权重: 8分)&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;数据来源&lt;/strong&gt;: Akshare实时接口。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;评分标准&lt;/strong&gt;:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;股息率 &amp;gt; 4%: &lt;strong&gt;+8分&lt;/strong&gt; (高股息)&lt;/li&gt;&#xA;&lt;li&gt;2% &amp;lt; 股息率 &amp;lt;= 4%: &lt;strong&gt;+4分&lt;/strong&gt; (股息尚可)&lt;/li&gt;&#xA;&lt;li&gt;股息率 &amp;lt;= 2%: &lt;strong&gt;-8分&lt;/strong&gt; (股息较低)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;评分平衡性&lt;/strong&gt;: 正向分数总和 = 负向分数总和 = 35分&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;title: &amp;rsquo;linux常用命令&#39;&#xA;categories: [&amp;ldquo;编程语言&amp;rdquo;]&#xA;date: 2025-09-07T00:20:44+08:00&#xA;lastmod: 2025-09-07T00:20:44+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;查看历史使用命令&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;history&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;过滤与 &lt;code&gt;es&lt;/code&gt;相关命令&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;history&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep es&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;查看占用资源&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://bluespace3.github.io/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid>
+      <description>&lt;p&gt;title: &amp;lsquo;pytest接口自动化测试方案&amp;rsquo;&#xA;categories: [&amp;ldquo;自动化测试&amp;rdquo;]&#xA;date: 2025-09-07T00:20:29+08:00&#xA;lastmod: 2025-09-07T00:20:29+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;h2 id=&#34;测试执行策略&#34;&gt;&lt;strong&gt;测试执行策略&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;触发条件&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;　　开发人员提交代码触发&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

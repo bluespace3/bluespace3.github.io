@@ -4,6 +4,12 @@ categories: ["人工智能猫咪"]
 date: 2025-09-07T00:21:38+08:00
 lastmod: 2025-09-07T00:21:38+08:00
 encrypted: false
+---
+title: 'test_knowledge_base'
+categories: ["人工智能猫咪"]
+date: 2025-09-07T00:21:38+08:00
+lastmod: 2025-09-07T00:21:38+08:00
+encrypted: false
 title: 'test_knowledge_base'
 categories: ["人工智能猫咪"]
 date: 2025-09-07T00:21:38+08:00

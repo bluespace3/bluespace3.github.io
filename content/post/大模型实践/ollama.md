@@ -4,6 +4,12 @@ categories: ["大模型实践"]
 date: 2025-12-13T22:14:15+08:00
 lastmod: 2025-12-13T22:14:15+08:00
 encrypted: false
+---
+title: 'ollama'
+categories: ["大模型实践"]
+date: 2025-12-13T22:14:15+08:00
+lastmod: 2025-12-13T22:14:15+08:00
+encrypted: false
 title: 'ollama'
 categories: ["大模型实践"]
 date: 2025-12-13T22:14:15+08:00

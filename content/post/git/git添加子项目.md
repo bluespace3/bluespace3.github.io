@@ -4,6 +4,12 @@ categories: ["git"]
 date: 2025-09-07T00:22:26+08:00
 lastmod: 2025-09-07T00:22:26+08:00
 encrypted: false
+---
+title: 'git添加子项目'
+categories: ["git"]
+date: 2025-09-07T00:22:26+08:00
+lastmod: 2025-09-07T00:22:26+08:00
+encrypted: false
 title: 'git添加子项目'
 categories: ["git"]
 date: 2025-09-07T00:22:26+08:00

@@ -4,6 +4,12 @@ categories: ["AIGC学习笔记"]
 date: 2025-12-09T21:21:48+08:00
 lastmod: 2025-12-09T21:21:48+08:00
 encrypted: false
+---
+title: 'RAG'
+categories: ["AIGC学习笔记"]
+date: 2025-12-09T21:21:48+08:00
+lastmod: 2025-12-09T21:21:48+08:00
+encrypted: false
 title: 'RAG'
 categories: ["AIGC学习笔记"]
 date: 2025-12-09T21:21:48+08:00
