@@ -138,6 +138,22 @@ encrypted: false
             else:
                 content_body = content
 
+            # 修复 Obsidian wikilink 图片格式
+            # 将 ![[image.png]] 转换为 ![image.png](/assets/image.png)
+            # 将 ![[image.png|alt text]] 转换为 ![alt text](/assets/image.png)
+            def fix_obsidian_wikilink(match):
+                """修复 Obsidian wikilink 格式"""
+                filename = match.group(1).strip()
+                alt_text = match.group(3) or filename
+                return f"![{alt_text}](/assets/{filename})"
+
+            content_body = re.sub(
+                r'!\[\[([^\]]+?)(\|([^\]]+))?\]\]',
+                fix_obsidian_wikilink,
+                content_body
+            )
+
+
             # 修正图片路径：将相对路径改为绝对路径
             # 将 assets/xxx.png 替换为 /assets/xxx.png
             content_body = re.sub(
