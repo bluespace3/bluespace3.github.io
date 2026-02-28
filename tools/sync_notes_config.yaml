@@ -50,3 +50,6 @@ sync:
     - '.git'
     - '__pycache__'
     - 'node_modules'
+    - '.obsidian'
+    - 'assets'
+    - '工作'

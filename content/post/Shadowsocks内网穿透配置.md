@@ -199,10 +199,10 @@ git config --global --get https.proxy
 当前最简单、最方便的方式**[shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows)**，这里是拿windows做演示，其他平台不是这个仓库。
 1. 客户端安装：https://github.com/shadowsocks/shadowsocks-windows.git
 2. 选择 [releases](https://github.com/shadowsocks/shadowsocks-windows/releases)直接下载到本地，免安装，直接使用。
-![配置][assets/Pastedimage20260228152426.png]
+![配置](/assets/Pastedimage20260228152426.png)
 3. 配置：按照下图填写你的服务端，注意加密方式一定要一致否则连接不上。
-![[Pasted image 20260228152732.png]]
-4.一般使用PAC模式，既智能代理，当需要代理时自动使用。 ![[Pasted image 20260228153454.png]]
+![](/assets/Pasted image 20260228152732.png)
+4.一般使用PAC模式，既智能代理，当需要代理时自动使用。 ![](/assets/Pasted image 20260228153454.png)
 ## 配置浏览器使用代理
 
 ### Chrome/Edge
