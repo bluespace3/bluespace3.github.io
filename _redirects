@@ -1,0 +1,9 @@
+# GitHub Pages 重定向配置
+# 将所有流量重定向到 Cloudflare Pages
+# 这样可以保留原域名，同时获得更快的访问速度
+
+# 所有页面重定向
+https://bluespace3.github.io/* https://bluespace3.pages.dev/:splat 301!
+
+# 主页重定向
+https://bluespace3.github.io/ https://bluespace3.pages.dev/ 301!
