@@ -136,7 +136,43 @@ vim content/post/我的文章.md
 
 ### 3. 文章加密
 
-#### 手动添加加密
+**新方式（推荐）**：使用 `password` 字段 + 自动加密脚本
+
+#### Step 1: 添加密码字段
+
+在文章的 Front Matter 中添加 `password` 字段：
+
+```markdown
+---
+title: "加密文章"
+date: 2026-02-26
+password: "tian459996"  👈 添加密码
+---
+
+文章内容...
+```
+
+#### Step 2: 运行自动加密脚本
+
+```bash
+# 预览模式（推荐先预览）
+python tools/auto_encrypt.py content/post/工作 --dry-run
+
+# 实际加密
+python tools/auto_encrypt.py content/post/工作
+```
+
+#### Step 3: 部署
+
+```bash
+./deploy.sh
+```
+
+**详细文档**：参见 [ENCRYPT_GUIDE.md](./ENCRYPT_GUIDE.md)
+
+#### 手动加密（旧方式，不推荐）
+
+如果需要手动加密，可以使用以下方式：
 
 ```markdown
 ---
@@ -153,16 +189,6 @@ date: 2026-02-26
 加密内容，需要密码才能查看。
 
 {{% /hugo-encryptor %}}
-```
-
-#### 批量加密
-
-```bash
-# 加密整个目录
-bash tools/batch-encrypt.sh content/post/工作 密码123
-
-# 加密单个文件
-python tools/encrypt_file.py "content/post/secret.md" "密码123"
 ```
 
 ### 4. 笔记同步
@@ -287,7 +313,7 @@ bash tools/add-categories.sh content/post
 
 | 工具 | 功能 | 命令 |
 |------|------|------|
-| **batch-encrypt** | 批量加密文章 | `bash tools/batch-encrypt.sh <目录> <密码>` |
+| **auto-encrypt** | 自动加密文章 | `python tools/auto_encrypt.py <目录>` |
 | **add-categories** | 自动添加分类 | `bash tools/add-categories.sh <目录>` |
 | **sync-notes** | 同步 GitHub 笔记 | `python tools/sync_notes_from_github.py --batch <目录>` |
 | **setup-token** | 快速设置 Token | `python tools/setup-token-simple.py` |
@@ -311,10 +337,14 @@ bash tools/add-categories.sh content/post
 
 **场景 2：批量加密文章**
 ```bash
-# 1. 批量加密
-bash tools/batch-encrypt.sh content/post/工作 密码123
+# 1. 为文章添加 password 字段
+vim content/post/工作/文章1.md  # 添加 password: "tian459996"
+vim content/post/工作/文章2.md  # 添加 password: "tian459996"
 
-# 2. 发布
+# 2. 自动加密
+python tools/auto_encrypt.py content/post/工作
+
+# 3. 发布
 ./deploy.sh
 ```
 
