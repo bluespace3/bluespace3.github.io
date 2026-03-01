@@ -78,6 +78,16 @@ class NotesSyncManager:
 
             lines = content.split('\n')
 
+            # Sanity check - warn if too many dashes (indicates duplication bug)
+            dash_count = sum(1 for line in lines if line.strip() == '---')
+            if dash_count > 2:
+                print(f"  ⚠️  警告：{file_path.name} 有 {dash_count} 个 --- 标记")
+                print(f"     建议先运行：python tools/clean_duplicate_frontmatter.py {file_path.parent}")
+                if not dry_run:
+                    response = input("     是否继续？[y/N] ")
+                    if response.lower() != 'y':
+                        return False
+
             # 检查是否有完整的 Front Matter
             has_complete_frontmatter = False
             frontmatter_end_pos = -1
@@ -132,8 +142,21 @@ lastmod: {lastmod_hugo}
 
             # 如果有 Front Matter，替换它；否则添加到开头
             if has_complete_frontmatter:
-                # 保留 Front Matter 之后的内容
-                content_lines = lines[frontmatter_end_pos + 1:]
+                # Skip all consecutive --- markers and empty frontmatter blocks
+                content_start = frontmatter_end_pos + 1
+                while content_start < len(lines):
+                    if lines[content_start].strip() != '---':
+                        # Found non-dash line
+                        # Check if this looks like another frontmatter start
+                        remaining = '\n'.join(lines[content_start:content_start+10])
+                        if 'title:' in remaining or 'categories:' in remaining:
+                            # Another frontmatter, skip it
+                            content_start += 1
+                            continue
+                        break
+                    content_start += 1
+
+                content_lines = lines[content_start:]
                 content_body = '\n'.join(content_lines)
             else:
                 content_body = content
