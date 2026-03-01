@@ -117,7 +117,6 @@ title: '{title}'
 categories: ["{category}"]
 date: {date_hugo}
 lastmod: {lastmod_hugo}
-encrypted: false
 ---
 """
 
