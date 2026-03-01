@@ -13,7 +13,7 @@
       <link>https://bluespace3.github.io/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link>
       <pubDate>Sat, 28 Feb 2026 01:35:43 +0800</pubDate>
       <guid>https://bluespace3.github.io/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;最后更新：2026-02-28&#xA;ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;什么是-acp&#34;&gt;什么是 ACP？&lt;/h2&gt;&#xA;&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;claude-code-快捷指令与使用技巧&#34;&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;最后更新：2026-02-28&#xA;ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;什么是-acp&#34;&gt;什么是 ACP？&lt;/h2&gt;&#xA;&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

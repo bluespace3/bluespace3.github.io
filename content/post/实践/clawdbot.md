@@ -5,6 +5,12 @@ date: 2026-02-27T09:56:24+08:00
 lastmod: 2026-02-27T09:56:24+08:00
 encrypted: false
 ---
+---
+title: 'clawdbot'
+categories: ["实践"]
+date: 2026-02-27T09:56:24+08:00
+lastmod: 2026-02-27T09:56:24+08:00
+encrypted: false
 title: 'clawdbot'
 categories: ["实践"]
 date: 2026-02-27T09:56:24+08:00

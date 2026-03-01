@@ -5,6 +5,12 @@ date: 2025-09-07T00:20:46+08:00
 lastmod: 2025-09-07T00:20:46+08:00
 encrypted: false
 ---
+---
+title: 'Hugo静态网站生成器入门指南'
+categories: ["教程"]
+date: 2025-09-07T00:20:46+08:00
+lastmod: 2025-09-07T00:20:46+08:00
+encrypted: false
 title: 'Hugo静态网站生成器入门指南'
 categories: ["教程"]
 date: 2025-09-07T00:20:46+08:00
@@ -104,7 +110,7 @@ EOF
 git add .
 
 # 提交更改
-git commit -m "更新博客" 
+git commit -m "更新博客"
 
 # 检查是否已关联远程仓库
 REMOTE_URL=$(git remote get-url origin 2>/dev/null)

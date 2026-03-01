@@ -5,6 +5,12 @@ date: 2025-09-07T00:20:44+08:00
 lastmod: 2025-09-07T00:20:44+08:00
 encrypted: false
 ---
+---
+title: 'linux常用命令'
+categories: ["编程语言"]
+date: 2025-09-07T00:20:44+08:00
+lastmod: 2025-09-07T00:20:44+08:00
+encrypted: false
 title: 'linux常用命令'
 categories: ["编程语言"]
 date: 2025-09-07T00:20:44+08:00
@@ -98,9 +104,9 @@ chkconfig                                        查看开机启动服务列表
 **查看MySQL服务的程序的状态**
 
 ```Shell
-service mysql start        开启MySQL  
-service mysql status       查看MySQL的状态  
-service mysql stop         关闭MySQL  
+service mysql start        开启MySQL
+service mysql status       查看MySQL的状态
+service mysql stop         关闭MySQL
 123
 ```
 
@@ -312,7 +318,7 @@ sudo -s
 ```
 
 ```Shell
-sudo   vi /etc/sysconfig/network-scripts/ifcfg-ens33 
+sudo   vi /etc/sysconfig/network-scripts/ifcfg-ens33
 1
 ```
 

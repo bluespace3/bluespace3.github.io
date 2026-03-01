@@ -5,6 +5,12 @@ date: 2026-02-25T11:12:42+08:00
 lastmod: 2026-02-25T11:12:42+08:00
 encrypted: false
 ---
+---
+title: '机顶盒刷机linux系统'
+categories: ["实践"]
+date: 2026-02-25T11:12:42+08:00
+lastmod: 2026-02-25T11:12:42+08:00
+encrypted: false
 title: '机顶盒刷机linux系统'
 categories: ["实践"]
 date: 2026-02-25T11:12:42+08:00

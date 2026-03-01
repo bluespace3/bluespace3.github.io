@@ -118,6 +118,7 @@ categories: ["{category}"]
 date: {date_hugo}
 lastmod: {lastmod_hugo}
 encrypted: false
+---
 """
 
             # 预览模式

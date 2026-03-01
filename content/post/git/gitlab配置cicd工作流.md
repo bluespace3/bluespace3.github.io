@@ -5,6 +5,12 @@ date: 2025-09-07T00:22:15+08:00
 lastmod: 2025-09-07T00:22:15+08:00
 encrypted: false
 ---
+---
+title: 'gitlab配置cicd工作流'
+categories: ["git"]
+date: 2025-09-07T00:22:15+08:00
+lastmod: 2025-09-07T00:22:15+08:00
+encrypted: false
 title: 'gitlab配置cicd工作流'
 categories: ["git"]
 date: 2025-09-07T00:22:15+08:00

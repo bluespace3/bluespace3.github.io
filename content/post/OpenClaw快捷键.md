@@ -93,9 +93,6 @@ encrypted: false
 | `/tts <mode>` | TTS 控制         | `off`, `always`, `inbound`, `tagged`, `status`, `provider`, `limit`, `summary`, `audio` |
 | `/voice`      | Discord TTS 命令 | Discord 原生命令（`/tts` 的别名）                                                                |
 
-
----
-
 ## 本地 Shell 命令
 
 
@@ -110,9 +107,6 @@ encrypted: false
 
 - 首次使用 `!` 时会提示授权，拒绝后会在该会话中禁用
 - 单独的 `!` 会作为普通消息发送
-- 前导空格不会触发本地执行
-
----
 
 ## 常用命令别名
 
@@ -127,10 +121,6 @@ encrypted: false
 | `/export`        | `/export-session` |
 | `/dock_telegram` | `/dock-telegram`  |
 | `/dock_discord`  | `/dock-discord`   |
-| `/dock_slack`    | `/dock-slack`     |
-
-
----
 
 ## 命令使用技巧
 
@@ -162,9 +152,6 @@ encrypted: false
 
 - 使用 `/elevated on` 提升权限级别
 - 使用 `/exec` 查看当前执行设置
-- 使用 `/approve` 处理执行批准请求
-
----
 
 ## 注意事项
 
@@ -185,9 +172,6 @@ encrypted: false
 
 - Dashboard 是管理员界面，不要公开暴露
 - 使用 localhost、Tailscale Serve 或 SSH 隧道访问
-- 令牌存储在 `localStorage`，注意保护
-
----
 
 ## 快速参考
 
