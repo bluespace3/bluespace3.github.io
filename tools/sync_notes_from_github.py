@@ -142,19 +142,27 @@ lastmod: {lastmod_hugo}
 
             # 如果有 Front Matter，替换它；否则添加到开头
             if has_complete_frontmatter:
-                # Skip all consecutive --- markers and empty frontmatter blocks
+                # Skip all consecutive frontmatter blocks
+                # Start from after the first frontmatter end
                 content_start = frontmatter_end_pos + 1
+
+                # Keep skipping while we find more frontmatter blocks
                 while content_start < len(lines):
-                    if lines[content_start].strip() != '---':
-                        # Found non-dash line
-                        # Check if this looks like another frontmatter start
-                        remaining = '\n'.join(lines[content_start:content_start+10])
-                        if 'title:' in remaining or 'categories:' in remaining:
-                            # Another frontmatter, skip it
-                            content_start += 1
+                    # Check if this line starts a new frontmatter block
+                    if lines[content_start].strip() == '---':
+                        # This might be another frontmatter, find its end
+                        found_end = False
+                        for i in range(content_start + 1, min(content_start + 20, len(lines))):
+                            if lines[i].strip() == '---':
+                                # Found a complete frontmatter block, skip it
+                                content_start = i + 1
+                                found_end = True
+                                break
+                        if found_end:
+                            # Continue checking for more duplicates
                             continue
-                        break
-                    content_start += 1
+                    # Not a frontmatter block, this is real content
+                    break
 
                 content_lines = lines[content_start:]
                 content_body = '\n'.join(content_lines)
