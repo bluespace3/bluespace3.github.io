@@ -1,31 +1,15 @@
 ---
-title: 'python中的os函数用法'
-categories: ["编程语言"]
-date: 2025-09-07T00:20:47+08:00
-lastmod: 2025-09-07T00:20:47+08:00
-encrypted: false
+title: "python的os模块使用"
+
+categories: ["技术", "编程", "python"]
+date: 2025-03-20T12:59:32+08:00
+
+
+draft: false
+
+
+tags: ["os", "python", "教程"]
 ---
----
-title: 'python中的os函数用法'
-categories: ["编程语言"]
-date: 2025-09-07T00:20:47+08:00
-lastmod: 2025-09-07T00:20:47+08:00
-encrypted: false
-title: 'python中的os函数用法'
-categories: ["编程语言"]
-date: 2025-09-07T00:20:47+08:00
-lastmod: 2025-09-07T00:20:47+08:00
-encrypted: false
-title: 'python中的os函数用法'
-categories: ["编程语言"]
-date: 2025-09-07T00:20:47+08:00
-lastmod: 2025-09-07T00:20:47+08:00
-encrypted: false
-title: 'python中的os函数用法'
-categories: ["编程语言"]
-date: 2025-09-07T00:20:47+08:00
-lastmod: 2025-09-07T00:20:47+08:00
-encrypted: false
 
 * os.listdir(path)
   获取文件夹下全部文件，的列表

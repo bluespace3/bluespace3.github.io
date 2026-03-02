@@ -10,6 +10,8 @@ encrypted: false
 > 最后更新：2026-02-28
 > ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用
 
+---
+
 ## 什么是 ACP？
 
 ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。
@@ -23,6 +25,9 @@ ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Co
 openclaw config set acp.defaultAgent claude
 ```
 
+**更多信息：** 查看 OpenClaw 文档中的 ACP 部分
+
+---
 
 ## Claude Code 快捷键
 
@@ -48,6 +53,9 @@ openclaw config set acp.defaultAgent claude
 | 快捷键 | 功能 |
 |--------|------|
 | `Ctrl+O` | 打开文件 |
+| `Ctrl+W` | 保存当前更改 |
+
+---
 
 ## Claude Code 核心指令
 
@@ -85,6 +93,9 @@ openclaw config set acp.defaultAgent claude
 |------|------|------|
 | `test` | 运行测试 | `test` |
 | `test <file>` | 运行特定测试 | `test test_main.py` |
+| `coverage` | 查看测试覆盖率 | `coverage` |
+
+---
 
 ## Claude Code 使用技巧
 
@@ -158,6 +169,9 @@ openclaw config set acp.defaultAgent claude
 你：理解这个模块的设计
 你：如何将其改为使用设计模式？
 你：执行重构，保持功能不变
+```
+
+---
 
 ## 高级用法
 
@@ -211,6 +225,9 @@ openclaw config set acp.defaultAgent claude
 **环境变量管理：**
 ```
 你：生成 .env 文件示例
+```
+
+---
 
 ## 常见任务速查
 
@@ -253,6 +270,9 @@ openclaw config set acp.defaultAgent claude
 2. 让 Claude分析优化点
 3. 应用优化方案
 4. 验证性能提升
+```
+
+---
 
 ## 最佳实践
 
@@ -303,6 +323,9 @@ openclaw config set acp.defaultAgent claude
 3. 记录问题
 4. 讨论改进方案
 5. 应用改进
+```
+
+---
 
 ## 提示词模板
 
@@ -355,6 +378,9 @@ openclaw config set acp.defaultAgent claude
 1. 找出问题原因
 2. 提供修复方案
 3. 解释为什么会发生
+```
+
+---
 
 ## 常见问题
 
@@ -384,6 +410,9 @@ A: Claude Code 支持几乎所有编程语言，包括：
 - Python, JavaScript, TypeScript
 - Java, C++, Go, Rust
 - Ruby, PHP, Swift, Kotlin
+- 以及其他常见语言
+
+---
 
 ## 相关资源
 

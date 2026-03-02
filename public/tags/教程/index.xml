@@ -15,5 +15,26 @@
       <guid>https://bluespace3.github.io/post.backup/neon%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;创建Neon实例&lt;/strong&gt;&#xA;登录Neon控制台（官网：&lt;strong&gt;&lt;a href=&#34;https://neon.tech&#34;&gt;https://neon.tech&lt;/a&gt;&lt;/strong&gt;），点击创建免费的Serverless Postgres实例，选择配置（如地区、分支、计算/存储规格）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;获取连接信息&lt;/strong&gt;&#xA;创建成功后，控制台会提供以下关键信息：&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Git submodule</title>
+      <link>https://bluespace3.github.io/post/git/git_submodule/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/git/git_submodule/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe&#34;&gt;Git submodule添加子项目_库&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc&#34;&gt;Git归并策略&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue&#34;&gt;添加&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f&#34;&gt;删除&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;输入“/”快速插入内容&lt;/p&gt;&#xA;&lt;p&gt;添加图标&lt;/p&gt;&#xA;&lt;p&gt;添加封面&lt;/p&gt;&#xA;&lt;p&gt;展示文档信息&lt;/p&gt;&#xA;&lt;p&gt;Git submodule添加子项目_库&lt;/p&gt;&#xA;&lt;p&gt;开发过程中，经常会有一些通用的部分希望抽取出来做成一个公共库来提供给别的工程来使用，而公共代码库的版本管理是个麻烦的事情。git submodule命令就可以解决这个问题。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>linux安装python</title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid>
+      <description>&lt;p&gt;#依赖包&lt;/p&gt;&#xA;&lt;p&gt;yum -y groupinstall &amp;ldquo;Development tools&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel&lt;/p&gt;&#xA;&lt;p&gt;#下载 Python3&lt;/p&gt;&#xA;&lt;p&gt;wget &lt;a href=&#34;https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz&#34;&gt;https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;#创建文件夹&lt;/p&gt;&#xA;&lt;p&gt;mkdir /usr/local/python3&lt;/p&gt;&#xA;&lt;p&gt;#解压编译安装&lt;/p&gt;&#xA;&lt;p&gt;tar -xvJf  Python-3.6.2.tar.xz&lt;/p&gt;&#xA;&lt;p&gt;cd Python-3.6.2&lt;/p&gt;&#xA;&lt;p&gt;./configure &amp;ndash;prefix=/usr/local/python3&lt;/p&gt;&#xA;&lt;p&gt;make &amp;amp;&amp;amp; make install&lt;/p&gt;&#xA;&lt;p&gt;#给个软链&lt;/p&gt;&#xA;&lt;p&gt;ln -sf /usr/local/python3/bin/python3 /usr/bin/python3&lt;/p&gt;&#xA;&lt;p&gt;ln -sf /usr/local/python3/bin/pip3 /usr/bin/pip3&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>python的os模块使用</title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;os.listdir(path)&#xA;获取文件夹下全部文件，的列表&lt;/li&gt;&#xA;&lt;li&gt;os.path.join(path1,path2)&#xA;将路径path1和路径path2拼接成新的路径，path1//path2&lt;/li&gt;&#xA;&lt;li&gt;base_dir = os.path.dirname(os.path.abspath(&lt;strong&gt;file&lt;/strong&gt;))&#xA;获取当前文件的绝对路径&lt;/li&gt;&#xA;&lt;li&gt;input_file = os.path.join(base_dir, &lt;strong&gt;&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
   </channel>
 </rss>

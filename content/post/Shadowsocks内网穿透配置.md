@@ -190,20 +190,32 @@ git config --global --unset https.proxy
 git config --global --get http.proxy
 git config --global --get https.proxy
 ```
+
 ## 直接使用客户端代理
+
 当前最简单、最方便的方式**[shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows)**，这里是拿windows做演示，其他平台不是这个仓库。
+
 1. 客户端安装：https://github.com/shadowsocks/shadowsocks-windows.git
 2. 选择 [releases](https://github.com/shadowsocks/shadowsocks-windows/releases)直接下载到本地，免安装，直接使用。
+
 ![配置](/assets/Pastedimage20260228152426.png)
+
 3. 配置：按照下图填写你的服务端，注意加密方式一定要一致否则连接不上。
-![Pasted_image_20260228152732.png](/assets/Pasted_image_20260228152732.png)
-4.一般使用PAC模式，既智能代理，当需要代理时自动使用。 ![Pasted_image_20260228153454.png](/assets/Pasted_image_20260228153454.png)
+
+![配置](/assets/Pasted%20image%2020260228152732.png)
+
+
+4.一般使用PAC模式，既智能代理，当需要代理时自动使用。
+
+ ![PAC模式](/assets/Pasted%20image%2020260228153454.png)
+
 ## 配置浏览器使用代理
 
 ### Chrome/Edge
 
 1. 设置 → 系统 → 打开计算机的代理设置
 2. 配置 SOCKS5 代理：
+
    - 代理服务器：`127.0.0.1`
    - 端口：`1080`
 
@@ -212,6 +224,7 @@ git config --global --get https.proxy
 1. 设置 → 网络设置
 2. 选择"手动配置代理"
 3. 配置 SOCKS v5：
+
    - SOCKS 主机：`127.0.0.1`
    - 端口：`1080`
    - 选择 "SOCKS v5"
@@ -250,6 +263,7 @@ journalctl -u shadowsocks-libev --since "5 minutes ago" --no-pager
 **原因：** 端口未开放或服务未启动
 
 **解决：**
+
 - 检查服务端服务是否运行：`systemctl status shadowsocks-libev`
 - 检查云服务商安全组是否开放 8388 端口
 
@@ -258,16 +272,17 @@ journalctl -u shadowsocks-libev --since "5 minutes ago" --no-pager
 **原因：** 防火墙阻止
 
 **解决：**
+
 - 检查本地防火墙（UFW）
 - 检查云服务商安全组规则
 
 ## 常用加密方式对比
 
-| 加密方式 | 安全性 | 速度 | 兼容性 | 推荐度 |
-|---------|--------|------|--------|--------|
-| aes-256-gcm | 高 | 快 | 较好 | ⭐⭐⭐⭐⭐ |
-| aes-256-cfb | 中 | 中 | 好 | ⭐⭐⭐ |
-| rc4-md5 | 低 | 最快 | 最好 | ⭐⭐ |
+| 加密方式    | 安全性 | 速度 | 兼容性 | 推荐度     |
+| ----------- | ------ | ---- | ------ | ---------- |
+| aes-256-gcm | 高     | 快   | 较好   | ⭐⭐⭐⭐⭐ |
+| aes-256-cfb | 中     | 中   | 好     | ⭐⭐⭐     |
+| rc4-md5     | 低     | 最快 | 最好   | ⭐⭐       |
 
 **推荐使用 `aes-256-gcm`**，安全性和性能都很好。
 
@@ -283,16 +298,17 @@ journalctl -u shadowsocks-libev --since "5 minutes ago" --no-pager
 ## 使用注意事项
 
 1. **每次使用前先启动客户端**
+
    - Windows: `node start.js`
    - Python: `sslocal -s <服务器IP> -p 8388 -k <密码> -m aes-256-gcm -l 1080`
+1. **代理只对本机有效**
 
-2. **代理只对本机有效**
    - 如需局域网共享，需要修改客户端配置为监听 `0.0.0.0`
+1. **加密方式不一致会导致连接失败**
 
-3. **加密方式不一致会导致连接失败**
    - 客户端和服务端的加密方式必须完全一致
+1. **云服务商安全组必须开放端口**
 
-4. **云服务商安全组必须开放端口**
    - 即使本地防火墙开放，云服务商安全组不开放也无法连接
 
 ## 进阶：配置为系统服务

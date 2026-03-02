@@ -5,32 +5,6 @@ date: 2025-09-07T00:20:30+08:00
 lastmod: 2025-09-07T00:20:30+08:00
 encrypted: false
 ---
----
-title: 'unnitest笔记'
-categories: ["自动化测试"]
-date: 2025-09-07T00:20:30+08:00
-lastmod: 2025-09-07T00:20:30+08:00
-encrypted: false
-title: 'unnitest笔记'
-categories: ["自动化测试"]
-date: 2025-09-07T00:20:30+08:00
-lastmod: 2025-09-07T00:20:30+08:00
-encrypted: false
-title: 'unnitest笔记'
-categories: ["自动化测试"]
-date: 2025-09-07T00:20:30+08:00
-lastmod: 2025-09-07T00:20:30+08:00
-encrypted: false
-title: 'unnitest笔记'
-categories: ["自动化测试"]
-date: 2025-09-07T00:20:30+08:00
-lastmod: 2025-09-07T00:20:30+08:00
-encrypted: false
-title: 'unnitest笔记'
-categories: ["自动化测试"]
-date: 2025-09-07T00:20:30+08:00
-lastmod: 2025-09-07T00:20:30+08:00
-encrypted: false
 * 一、引入
   * 1.导包，import unnitest
   * 2.编写测试类，继承unnitest

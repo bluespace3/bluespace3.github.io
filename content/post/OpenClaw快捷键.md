@@ -5,6 +5,36 @@ date: 2026-02-28T03:17:58+08:00
 lastmod: 2026-02-28T03:17:58+08:00
 encrypted: false
 ---
+# OpenClaw 快捷键速查表
+
+> 最后更新：2026-02-28
+
+## TUI（终端界面）快捷键
+
+### 基础操作
+
+
+| 快捷键      | 功能   | 说明                |
+| -------- | ---- | ----------------- |
+| `Enter`  | 发送消息 | 提交当前输入            |
+| `Esc`    | 中止运行 | 立即停止当前活动运行        |
+| `Ctrl+C` | 清除输入 | 按一次清除输入，按两次退出 TUI |
+| `Ctrl+D` | 退出   | 直接退出 TUI          |
+
+
+### 选择器与面板
+
+
+| 快捷键      | 功能     | 说明                 |
+| -------- | ------ | ------------------ |
+| `Ctrl+L` | 模型选择器  | 打开模型选择器            |
+| `Ctrl+G` | 智能体选择器 | 打开 Agent 选择器       |
+| `Ctrl+P` | 会话选择器  | 打开会话选择器            |
+| `Ctrl+O` | 工具输出展开 | 切换工具卡片的折叠/展开状态     |
+| `Ctrl+T` | 思考可见性  | 切换思考模式的可见性（重新加载历史） |
+
+
+---
 
 ## 斜杠命令
 
@@ -93,6 +123,9 @@ encrypted: false
 | `/tts <mode>` | TTS 控制         | `off`, `always`, `inbound`, `tagged`, `status`, `provider`, `limit`, `summary`, `audio` |
 | `/voice`      | Discord TTS 命令 | Discord 原生命令（`/tts` 的别名）                                                                |
 
+
+---
+
 ## 本地 Shell 命令
 
 
@@ -107,6 +140,9 @@ encrypted: false
 
 - 首次使用 `!` 时会提示授权，拒绝后会在该会话中禁用
 - 单独的 `!` 会作为普通消息发送
+- 前导空格不会触发本地执行
+
+---
 
 ## 常用命令别名
 
@@ -121,6 +157,10 @@ encrypted: false
 | `/export`        | `/export-session` |
 | `/dock_telegram` | `/dock-telegram`  |
 | `/dock_discord`  | `/dock-discord`   |
+| `/dock_slack`    | `/dock-slack`     |
+
+
+---
 
 ## 命令使用技巧
 
@@ -152,6 +192,9 @@ encrypted: false
 
 - 使用 `/elevated on` 提升权限级别
 - 使用 `/exec` 查看当前执行设置
+- 使用 `/approve` 处理执行批准请求
+
+---
 
 ## 注意事项
 
@@ -172,6 +215,9 @@ encrypted: false
 
 - Dashboard 是管理员界面，不要公开暴露
 - 使用 localhost、Tailscale Serve 或 SSH 隧道访问
+- 令牌存储在 `localStorage`，注意保护
+
+---
 
 ## 快速参考
 

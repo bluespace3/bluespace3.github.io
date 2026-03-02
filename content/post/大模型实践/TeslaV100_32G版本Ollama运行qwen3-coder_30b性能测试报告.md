@@ -5,32 +5,6 @@ date: 2026-02-13T01:22:05+08:00
 lastmod: 2026-02-13T01:22:05+08:00
 encrypted: false
 ---
----
-title: 'TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告'
-categories: ["大模型实践"]
-date: 2026-02-13T01:22:05+08:00
-lastmod: 2026-02-13T01:22:05+08:00
-encrypted: false
-title: 'TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告'
-categories: ["大模型实践"]
-date: 2026-02-13T01:22:05+08:00
-lastmod: 2026-02-13T01:22:05+08:00
-encrypted: false
-title: 'TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告'
-categories: ["大模型实践"]
-date: 2026-02-13T01:22:05+08:00
-lastmod: 2026-02-13T01:22:05+08:00
-encrypted: false
-title: 'TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告'
-categories: ["大模型实践"]
-date: 2026-02-13T01:22:05+08:00
-lastmod: 2026-02-13T01:22:05+08:00
-encrypted: false
-title: 'TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告'
-categories: ["大模型实践"]
-date: 2026-02-13T01:22:05+08:00
-lastmod: 2026-02-13T01:22:05+08:00
-encrypted: false
 # Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告
 
 ## 测试概要

@@ -5,17 +5,6 @@ date: 2025-12-21T00:44:38+08:00
 lastmod: 2025-12-21T00:44:38+08:00
 encrypted: false
 ---
----
-title: 'langchain'
-categories: ["AIGC学习笔记"]
-date: 2025-12-21T00:44:38+08:00
-lastmod: 2025-12-21T00:44:38+08:00
-encrypted: false
-title: 'langchain'
-categories: ["AIGC学习笔记"]
-date: 2025-12-21T00:44:38+08:00
-lastmod: 2025-12-21T00:44:38+08:00
-encrypted: false
 ## 核心组件
 
 ### **模型包装器**
@@ -34,7 +23,7 @@ encrypted: false
 
 常用提示词模板：
 
-![image.png](http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2F026bd779-f37c-42b9-a1fc-f8dba6b2d0ab.png)
+![image.png](http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2F026bd779-f37c-42b9-a1fc-f8dba6b2d0ab.png)   
 
 1.字符串提示词模板
 

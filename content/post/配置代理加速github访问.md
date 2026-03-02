@@ -5,6 +5,24 @@ date: 2026-02-28T03:25:00+08:00
 lastmod: 2026-02-28T03:25:00+08:00
 encrypted: false
 ---
+# Node.js Shadowsocks 完整配置指南
+
+## 架构说明
+
+```
+本地电脑                        海外服务器
+┌─────────────┐               ┌──────────────┐
+│   浏览器    │────SOCKS5────▶│ Shadowsocks  │
+│   (1080)    │               │   Server     │
+│             │               │              │
+│  Node.js    │────加密──────▶│ (ss-server)  │
+│  客户端     │               │              │
+└─────────────┘               └──────────────┘
+      │                              │
+      └─────────────访问 GitHub ─────┘
+```
+
+---
 
 ## 第一部分：服务端配置（海外服务器）
 
@@ -107,6 +125,8 @@ ss -tuln | grep 8388
 # 应该看到类似输出
 # udp   UNCONN  0  0  0.0.0.0:8388  0.0.0.0:**
 ```
+
+---
 
 ## 第二部分：本地客户端配置（Windows）
 
@@ -257,6 +277,9 @@ curl --proxy socks5://127.0.0.1:1080 https://api.ipify.org
 The document has moved
 <A HREF="https://www.google.com/">here</A>.
 </BODY></HTML>
+```
+
+---
 
 ## 第三部分：配置应用程序使用代理
 
@@ -653,6 +676,9 @@ if %ERRORLEVEL% equ 0 (
 )
 
 pause
+```
+
+---
 
 ## 第四部分：开机自启动配置
 
@@ -694,6 +720,9 @@ cat > C:\Users\YourName\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\St
 cd /d C:\shadowsocks-client
 start /min node node_modules\shadowsocks\bin\sslocal -c C:\Users\YourName\.shadowsocks\config.json
 EOF
+```
+
+---
 
 ## 第五部分：故障排查
 
@@ -791,6 +820,9 @@ EOF
 
 # 重启服务
 systemctl restart shadowsocks-libev
+```
+
+---
 
 ## 第六部分：安全建议
 
@@ -830,6 +862,9 @@ apt update && apt upgrade shadowsocks-libev -y
 
 # 客户端定期更新
 npm update -g shadowsocks
+```
+
+---
 
 ## 第七部分：高级配置
 
@@ -875,6 +910,9 @@ iftop -i eth0 -f "port 8388"
 
 # 或使用 nethogs
 nethogs
+```
+
+---
 
 ## 附录 A：快速命令参考
 
@@ -922,6 +960,9 @@ git config --global http.proxy
 
 # 取消
 git config --global --unset http.proxy
+```
+
+---
 
 ## 附录 B：配置文件模板
 
@@ -951,6 +992,9 @@ git config --global --unset http.proxy
     "timeout": 300,
     "method": "aes-256-gcm"
 }
+```
+
+---
 
 ## 附录 C：常见问题 FAQ
 
@@ -974,6 +1018,9 @@ A: 尝试使用不同版本的包：
 npm install shadowsocks@latest
 # 或
 npm install shadowsocks-node-client
+```
+
+---
 
 ## 总结
 

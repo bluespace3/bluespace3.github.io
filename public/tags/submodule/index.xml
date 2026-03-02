@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Submodule on 蓝色空间号</title>
+    <link>https://bluespace3.github.io/tags/submodule/</link>
+    <description>Recent content in Submodule on 蓝色空间号</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate>
+    <atom:link href="https://bluespace3.github.io/tags/submodule/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git submodule</title>
+      <link>https://bluespace3.github.io/post/git/git_submodule/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/git/git_submodule/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe&#34;&gt;Git submodule添加子项目_库&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc&#34;&gt;Git归并策略&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue&#34;&gt;添加&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f&#34;&gt;删除&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;输入“/”快速插入内容&lt;/p&gt;&#xA;&lt;p&gt;添加图标&lt;/p&gt;&#xA;&lt;p&gt;添加封面&lt;/p&gt;&#xA;&lt;p&gt;展示文档信息&lt;/p&gt;&#xA;&lt;p&gt;Git submodule添加子项目_库&lt;/p&gt;&#xA;&lt;p&gt;开发过程中，经常会有一些通用的部分希望抽取出来做成一个公共库来提供给别的工程来使用，而公共代码库的版本管理是个麻烦的事情。git submodule命令就可以解决这个问题。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

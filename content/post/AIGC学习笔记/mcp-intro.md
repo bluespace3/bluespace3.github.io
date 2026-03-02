@@ -5,32 +5,6 @@ date: 2025-09-07T00:04:28+08:00
 lastmod: 2025-09-07T00:04:28+08:00
 encrypted: false
 ---
----
-title: 'mcp-intro'
-categories: ["AIGC学习笔记"]
-date: 2025-09-07T00:04:28+08:00
-lastmod: 2025-09-07T00:04:28+08:00
-encrypted: false
-title: 'mcp-intro'
-categories: ["AIGC学习笔记"]
-date: 2025-09-07T00:04:28+08:00
-lastmod: 2025-09-07T00:04:28+08:00
-encrypted: false
-title: 'mcp-intro'
-categories: ["AIGC学习笔记"]
-date: 2025-09-07T00:04:28+08:00
-lastmod: 2025-09-07T00:04:28+08:00
-encrypted: false
-title: 'mcp-intro'
-categories: ["AIGC学习笔记"]
-date: 2025-09-07T00:04:28+08:00
-lastmod: 2025-09-07T00:04:28+08:00
-encrypted: false
-title: 'mcp-intro'
-categories: ["AIGC学习笔记"]
-date: 2025-09-07T00:04:28+08:00
-lastmod: 2025-09-07T00:04:28+08:00
-encrypted: false
 ## 什么是MCP？
 
 MCP（Model Context Protocol）是一种用于扩展和增强开发工具功能的协议。它允许开发者创建和使用MCP服务器，这些服务器可以提供额外的工具和资源，以提高开发效率和灵活性。

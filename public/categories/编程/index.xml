@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程 on 蓝色空间号</title>
+    <link>https://bluespace3.github.io/categories/%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 编程 on 蓝色空间号</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate>
+    <atom:link href="https://bluespace3.github.io/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python的os模块使用</title>
+      <link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate>
+      <guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;os.listdir(path)&#xA;获取文件夹下全部文件，的列表&lt;/li&gt;&#xA;&lt;li&gt;os.path.join(path1,path2)&#xA;将路径path1和路径path2拼接成新的路径，path1//path2&lt;/li&gt;&#xA;&lt;li&gt;base_dir = os.path.dirname(os.path.abspath(&lt;strong&gt;file&lt;/strong&gt;))&#xA;获取当前文件的绝对路径&lt;/li&gt;&#xA;&lt;li&gt;input_file = os.path.join(base_dir, &lt;strong&gt;&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
