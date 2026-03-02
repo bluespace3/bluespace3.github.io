@@ -191,7 +191,114 @@ date: 2026-02-26
 {{% /hugo-encryptor %}}
 ```
 
-### 4. 笔记同步
+### 4. 自定义域名配置
+
+#### 当前实现方式
+
+本项目使用 **static/CNAME 文件方式** 配置自定义域名，确保 CNAME 不会被 GitHub Actions 覆盖。
+
+**工作原理：**
+1. `static/CNAME` 文件包含自定义域名
+2. Hugo 构建时自动将 `static/` 目录复制到 `public/`
+3. GitHub Actions 部署 `public/` 到 `gh-pages` 分支
+4. GitHub Pages 自动识别 CNAME 文件并配置域名
+
+**优势：**
+- ✅ CNAME 文件在源代码中，不会被覆盖
+- ✅ 每次构建自动包含 CNAME
+- ✅ 即使使用 `force_orphan: true` 也能保持
+
+#### 配置自定义域名
+
+**Step 1: 创建 CNAME 文件**
+
+```bash
+# 在项目根目录的 static/ 文件夹中创建 CNAME 文件
+echo "yourdomain.com" > static/CNAME
+
+# 或使用子域名
+echo "blog.yourdomain.com" > static/CNAME
+```
+
+**Step 2: 修改 baseURL**
+
+编辑 `hugo.toml` 和 `config/production/config.toml`：
+
+```toml
+baseURL = 'https://yourdomain.com/'
+```
+
+**Step 3: 配置 DNS**
+
+在域名注册商处添加 DNS 记录：
+
+**使用 CNAME（推荐）：**
+```
+类型: CNAME
+主机记录: @ (或 www)
+记录值: bluespace3.github.io
+TTL: 600
+```
+
+或使用 A 记录：
+```
+类型: A
+主机记录: @
+记录值: 185.199.108.153
+TTL: 600
+```
+
+GitHub Pages IP 地址：
+- 185.199.108.153
+- 185.199.109.153
+- 185.199.110.153
+- 185.199.111.153
+
+**Step 4: 在 GitHub 配置域名**
+
+1. 打开 GitHub 仓库 → **Settings** → **Pages**
+2. 在 **Custom domain** 中输入你的域名
+3. 等待 DNS 检查通过
+4. ✅ 勾选 **Enforce HTTPS**（强制 HTTPS）
+
+**Step 5: 验证配置**
+
+```bash
+# 本地构建测试
+hugo --minify --environment production
+
+# 检查 canonical URL
+grep -i "canonical" public/index.html
+# 期望：href="https://yourdomain.com/"
+
+# 检查 CNAME 文件
+cat public/CNAME
+# 期望：yourdomain.com
+
+# 部署
+./deploy.sh
+```
+
+#### 注意事项
+
+⚠️ **重要：**
+1. **CNAME 文件位置**：必须放在 `static/CNAME`，不要直接放在 `public/`
+2. **baseURL 配置**：必须与 CNAME 文件中的域名一致
+3. **DNS 传播**：可能需要 10 分钟到 24 小时生效
+4. **HTTPS 证书**：GitHub 会自动提供 Let's Encrypt 证书（可能需要 24 小时）
+
+#### 常见问题
+
+**Q: 每次部署后 CNAME 消失？**
+A: 确保 CNAME 文件在 `static/` 目录，不在 `public/` 目录
+
+**Q: 访问域名显示 404？**
+A: 检查 DNS 配置和 GitHub Pages 的 Custom domain 设置
+
+**Q: Canonical URL 不正确？**
+A: 检查 `hugo.toml` 中的 `baseURL` 是否正确配置
+
+### 5. 笔记同步
 
 从 GitHub 仓库同步笔记并获取真实时间戳。
 
