@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>实践 on 蓝色空间号</title><link>https://bluespace3.github.io/categories/%E5%AE%9E%E8%B7%B5/</link><description>Recent content in 实践 on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Fri, 27 Feb 2026 09:56:24 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml"/><item><title>clawdbot</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/clawdbot/</link><pubDate>Fri, 27 Feb 2026 09:56:24 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/clawdbot/</guid><description>&lt;p&gt;设置clawdbot和tailscale开机自启&lt;/p&gt;
+&lt;p&gt;PS C:\WINDOWS\system32&amp;gt; Unregister-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -&lt;/p&gt;
+&lt;p&gt;Confirm:$false -ErrorAction SilentlyContinue
+PS C:\WINDOWS\system32&amp;gt; $Action = New-ScheduledTaskAction -Execute &amp;ldquo;PowerShell.exe&amp;rdquo; -Argument &amp;ldquo;-File C:\Users\Administrator\Start-Clawdbot.ps1&amp;rdquo;
+PS C:\WINDOWS\system32&amp;gt; $Trigger = New-ScheduledTaskTrigger -AtStartup
+PS C:\WINDOWS\system32&amp;gt; $Settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+PS C:\WINDOWS\system32&amp;gt; $Principal = New-ScheduledTaskPrincipal -UserId &amp;ldquo;$env:USERNAME&amp;rdquo; -LogonType Interactive
+PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p&gt;</description></item><item><title>ssh连接服务器踩坑点</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link><pubDate>Wed, 25 Feb 2026 21:36:52 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid><description>&lt;h1 id="通过密钥连接服务器踩坑配置正确但是连接失败"&gt;通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;初始状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;已成功生成SSH密钥对（ed25519）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;已将公钥添加到服务器的 ~/.ssh/authorized_keys - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/p&gt;</description></item><item><title>terminus</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/terminus/</link><pubDate>Wed, 25 Feb 2026 11:23:31 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/terminus/</guid><description>&lt;h2 id="terminus快捷键使用合集"&gt;terminus快捷键使用合集&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;macOS&lt;/th&gt;
+&lt;th&gt;Windows / Linux&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;新建标签页&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + T&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + T&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;关闭当前标签页&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + W&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + W&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;切换标签页（1-8）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + 1~8&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + 1~8&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;切换到最后标签页&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + 9&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + 9&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;下一/上一标签页&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + Tab&lt;/code&gt;/&lt;code&gt;⌘ + Shift + Tab&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + Tab&lt;/code&gt;/&lt;code&gt;Ctrl + Shift + Tab&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;全屏&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + Ctrl + F&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;F11&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;复制（需先选中文本）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + C&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + C&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;粘贴&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + V&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + V&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;全选&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查找文本&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + F&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + F&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打开设置&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + ,&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + ,&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;重连当前会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + R&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + R&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打开会话侧边栏&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + B&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;`Ctrl + B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;`&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;终端内&lt;/p&gt;</description></item><item><title>机顶盒刷机linux系统</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</link><pubDate>Wed, 25 Feb 2026 11:12:42 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h1 id="h96max-rk3318-464g的刷机教程"&gt;H96Max rk3318 4+64G的刷机教程&lt;/h1&gt;
+&lt;p&gt;相信很多朋友已经搜索了一大堆这个机型的刷机教程，再此之前我也搜索过，不过对我的帮助不大，所以我又连续几天在armbian官方论坛搜索查询、向大神请教。最终解决了刷机难题。 首先，我们来确认一下机型吧，看看图片和型号是否对得上。&lt;/p&gt;</description></item><item><title>vllm</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/vllm/</link><pubDate>Mon, 02 Feb 2026 15:27:36 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/vllm/</guid><description>&lt;h1 id="绕过网站反调试机制打不开f12的解决方案"&gt;绕过网站反调试机制（打不开F12的解决方案）&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Untitled</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link><pubDate>Sat, 24 Jan 2026 22:36:25 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid><description>&lt;h3 id="添加本地mcp"&gt;添加本地mcp&lt;/h3&gt;
+&lt;p&gt;claude mcp add &amp;ndash;transport stdio &amp;ndash;scope user mysql &amp;ndash;env MYSQL_HOST=192.168.0.203 &amp;ndash;env MYSQL_USER=tianqinghong &amp;ndash;env MYSQL_PASSWORD=&amp;ldquo;pG4QbSdb1u0KcjUQX+E=&amp;rdquo; &amp;ndash;env MYSQL_DATABASE=db_diag &amp;ndash; &amp;ldquo;npm exec &amp;ndash;yes &amp;ndash; @f4ww4z/mcp-mysql-server&amp;rdquo;&lt;/p&gt;
+&lt;h3 id="获取mcp列表"&gt;获取mcp列表&lt;/h3&gt;
+&lt;p&gt;claude mcp list&lt;/p&gt;
+&lt;h3 id="无脑接受模式"&gt;无脑接受模式&lt;/h3&gt;
+&lt;p&gt;&amp;ndash;dangerously-skip-permissions&lt;/p&gt;
+&lt;h3 id="手机无缝衔接claudecode"&gt;手机无缝衔接claudecode&lt;/h3&gt;
+&lt;p&gt;电脑端npm install -g happy-coder；然后终端输入：happy&lt;/p&gt;
+&lt;p&gt;手机端下载 &lt;strong&gt;Happy Coder&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>qodercli</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/qodercli/</link><pubDate>Sat, 17 Jan 2026 09:40:22 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/qodercli/</guid><description>&lt;p&gt;终端输入qodercli启动&lt;/p&gt;</description></item><item><title>wsl</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/wsl/</link><pubDate>Thu, 15 Jan 2026 23:25:17 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/wsl/</guid><description>&lt;p&gt;账号：dministrator&lt;/p&gt;
+&lt;p&gt;密码：123456&lt;/p&gt;
+&lt;p&gt;激活py虚拟环境：source vllm_env/bin/activate&lt;/p&gt;
+&lt;p&gt;vllm运行大模型：vllm serve .cache/modelscope/hub/models/JunHowie/Qwen3-14B-GPTQ-Int4
+&amp;ndash;trust-remote-code
+&amp;ndash;max-model-len 65536
+&amp;ndash;gpu-memory-utilization 0.95
+&amp;ndash;tensor-parallel-size 1
+&amp;ndash;max-num-seqs 1&lt;/p&gt;
+&lt;p&gt;vllm serve .cache/modelscope/hub/models/Qwen/Qwen3-VL-8B-Instruct
+&amp;ndash;trust-remote-code
+&amp;ndash;max-model-len 65536
+&amp;ndash;gpu-memory-utilization 0.95
+&amp;ndash;tensor-parallel-size 1
+&amp;ndash;max-num-seqs 1&lt;/p&gt;</description></item><item><title>mineru</title><link>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/mineru/</link><pubDate>Mon, 12 Jan 2026 00:38:24 +0800</pubDate><guid>https://bluespace3.github.io/post/%E5%AE%9E%E8%B7%B5/mineru/</guid><description>&lt;p&gt;mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p&gt;</description></item></channel></rss>

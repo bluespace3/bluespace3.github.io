@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>ACP-Claude-Code快捷指令.md on 蓝色空间号</title><link>https://bluespace3.github.io/categories/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4.md/</link><description>Recent content in ACP-Claude-Code快捷指令.md on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Sat, 28 Feb 2026 01:35:43 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4.md/index.xml" rel="self" type="application/rss+xml"/><item><title>ACP-Claude-Code快捷指令</title><link>https://bluespace3.github.io/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Sat, 28 Feb 2026 01:35:43 +0800</pubDate><guid>https://bluespace3.github.io/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="claude-code-快捷指令与使用技巧"&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最后更新：2026-02-28
+ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="什么是-acp"&gt;什么是 ACP？&lt;/h2&gt;
+&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description></item></channel></rss>

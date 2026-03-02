@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Linux on 蓝色空间号</title><link>https://bluespace3.github.io/tags/linux/</link><description>Recent content in Linux on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Thu, 20 Mar 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>linux安装python</title><link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;p&gt;#依赖包&lt;/p&gt;
+&lt;p&gt;yum -y groupinstall &amp;ldquo;Development tools&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel&lt;/p&gt;
+&lt;p&gt;#下载 Python3&lt;/p&gt;
+&lt;p&gt;wget &lt;a href="https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz"&gt;https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#创建文件夹&lt;/p&gt;
+&lt;p&gt;mkdir /usr/local/python3&lt;/p&gt;
+&lt;p&gt;#解压编译安装&lt;/p&gt;
+&lt;p&gt;tar -xvJf Python-3.6.2.tar.xz&lt;/p&gt;
+&lt;p&gt;cd Python-3.6.2&lt;/p&gt;
+&lt;p&gt;./configure &amp;ndash;prefix=/usr/local/python3&lt;/p&gt;
+&lt;p&gt;make &amp;amp;&amp;amp; make install&lt;/p&gt;
+&lt;p&gt;#给个软链&lt;/p&gt;
+&lt;p&gt;ln -sf /usr/local/python3/bin/python3 /usr/bin/python3&lt;/p&gt;
+&lt;p&gt;ln -sf /usr/local/python3/bin/pip3 /usr/bin/pip3&lt;/p&gt;</description></item></channel></rss>

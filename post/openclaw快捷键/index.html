@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html data-theme="auto" dir="auto" lang="zh-cn"><head><meta charset="utf-8"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><meta content="index, follow" name="robots"/><title>OpenClaw快捷键 | 蓝色空间号</title><meta content="" name="keywords"/><meta content="OpenClaw 快捷键速查表
+
+最后更新：2026-02-28
+
+TUI（终端界面）快捷键
+基础操作
+
+  
+      
+          快捷键
+          功能
+          说明
+      
+  
+  
+      
+          Enter
+          发送消息
+          提交当前输入
+      
+      
+          Esc
+          中止运行
+          立即停止当前活动运行
+      
+      
+          Ctrl+C
+          清除输入
+          按一次清除输入，按两次退出 TUI
+      
+      
+          Ctrl+D
+          退出
+          直接退出 TUI
+      
+  
+
+选择器与面板
+
+  
+      
+          快捷键
+          功能
+          说明
+      
+  
+  
+      
+          Ctrl+L
+          模型选择器
+          打开模型选择器
+      
+      
+          Ctrl+G
+          智能体选择器
+          打开 Agent 选择器
+      
+      
+          Ctrl+P
+          会话选择器
+          打开会话选择器
+      
+      
+          Ctrl+O
+          工具输出展开
+          切换工具卡片的折叠/展开状态
+      
+      
+          Ctrl+T
+          思考可见性
+          切换思考模式的可见性（重新加载历史）
+      
+  
+
+
+斜杠命令
+核心命令
+
+  
+      
+          命令
+          功能
+          示例
+      
+  
+  
+      
+          /help
+          显示帮助信息
+          /help
+      
+      
+          /status
+          显示当前状态
+          /status
+      
+      
+          /agent &lt;id&gt;
+          切换智能体
+          /agent research
+      
+      
+          /agents
+          列出可用智能体
+          /agents
+      
+      
+          /session &lt;key&gt;
+          切换会话
+          /session main
+      
+      
+          /sessions
+          列出可用会话
+          /sessions
+      
+      
+          /model &lt;provider/model&gt;
+          选择模型
+          /model claude/gpt-4
+      
+      
+          /models
+          列出可用模型
+          /models
+      
+  
+
+会话控制
+
+  
+      
+          命令
+          功能
+          选项
+      
+  
+  
+      
+          /think &lt;level&gt;
+          设置思考级别
+          off, minimal, low, medium, high
+      
+      
+          /verbose &lt;mode&gt;
+          详细输出模式
+          on, full, off
+      
+      
+          /reasoning &lt;mode&gt;
+          推理可见性
+          on, off, stream
+      
+      
+          /usage &lt;mode&gt;
+          使用统计显示
+          off, tokens, full
+      
+      
+          /elevated &lt;mode&gt;
+          提升权限模式
+          on, off, ask, full
+      
+      
+          /activation &lt;mode&gt;
+          激活模式（群组）
+          mention, always
+      
+      
+          /deliver &lt;mode&gt;
+          消息投递开关
+          on, off
+      
+  
+
+会话生命周期
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /new [model]
+          新建会话
+          可选模型参数
+      
+      
+          /reset [model]
+          重置会话
+          可选模型参数
+      
+      
+          /abort
+          中止运行
+          中止当前活动
+      
+      
+          /settings
+          打开设置面板
+          -
+      
+      
+          /exit
+          退出 TUI
+          -
+      
+  
+
+工具与调试
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /context [mode]
+          显示上下文信息
+          list, detail, json
+      
+      
+          /export [path]
+          导出会话
+          导出当前会话为 HTML
+      
+      
+          /whoami
+          显示发送者 ID
+          别名：/id
+      
+      
+          /skill &lt;name&gt; [input]
+          运行技能
+          按名称运行技能
+      
+      
+          /subagents &lt;action&gt;
+          子代理管理
+          list, kill, log, info, send, steer, spawn
+      
+      
+          /acp &lt;action&gt;
+          ACP 会话控制
+          spawn, cancel, steer, close, status 等
+      
+      
+          /agents
+          列出线程绑定代理
+          -
+      
+  
+
+权限与配置
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /allowlist &lt;action&gt;
+          管理允许列表
+          list, add, remove
+      
+      
+          /approve &lt;id&gt; &lt;decision&gt;
+          批准执行请求
+          allow-once, allow-always, deny
+      
+      
+          /config &lt;action&gt; [path]
+          配置管理
+          show, get, set, unset
+      
+      
+          /debug &lt;action&gt; [path]
+          运行时调试覆盖
+          show, set, unset, reset
+      
+      
+          /session ttl &lt;duration&gt;
+          会话 TTL 管理
+          -
+      
+  
+
+多端切换
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /dock-telegram
+          切换到 Telegram
+          -
+      
+      
+          /dock-discord
+          切换到 Discord
+          -
+      
+      
+          /dock-slack
+          切换到 Slack
+          -
+      
+  
+
+文字转语音（TTS）
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /tts &lt;mode&gt;
+          TTS 控制
+          off, always, inbound, tagged, status, provider, limit, summary, audio
+      
+      
+          /voice
+          Discord TTS 命令
+          Discord 原生命令（/tts 的别名）
+      
+  
+
+
+本地 Shell 命令
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          ! &lt;command&gt;
+          执行本地 Shell 命令
+          在 TUI 主机上运行
+      
+      
+          !poll
+          检查输出/状态
+          查看后台任务状态
+      
+      
+          !stop
+          停止运行任务
+          停止当前 Shell 任务
+      
+  
+
+注意：" name="description"/><meta content="新人类" name="author"/><link href="https://bluespace3.github.io/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="canonical"/><link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet"/><link href="https://bluespace3.github.io/favicon.ico" rel="icon"/><link href="https://bluespace3.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="https://bluespace3.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="https://bluespace3.github.io/apple-touch-icon.png" rel="apple-touch-icon"/><link href="https://bluespace3.github.io/safari-pinned-tab.svg" rel="mask-icon"/><meta content="#2e2e33" name="theme-color"/><meta content="#2e2e33" name="msapplication-TileColor"/><link href="https://bluespace3.github.io/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/" hreflang="zh-cn" rel="alternate"/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta content="https://bluespace3.github.io/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/" property="og:url"/><meta content="蓝色空间号" property="og:site_name"/><meta content="OpenClaw快捷键" property="og:title"/><meta content="OpenClaw 快捷键速查表 最后更新：2026-02-28
+TUI（终端界面）快捷键 基础操作 快捷键 功能 说明 Enter 发送消息 提交当前输入 Esc 中止运行 立即停止当前活动运行 Ctrl+C 清除输入 按一次清除输入，按两次退出 TUI Ctrl+D 退出 直接退出 TUI 选择器与面板 快捷键 功能 说明 Ctrl+L 模型选择器 打开模型选择器 Ctrl+G 智能体选择器 打开 Agent 选择器 Ctrl+P 会话选择器 打开会话选择器 Ctrl+O 工具输出展开 切换工具卡片的折叠/展开状态 Ctrl+T 思考可见性 切换思考模式的可见性（重新加载历史） 斜杠命令 核心命令 命令 功能 示例 /help 显示帮助信息 /help /status 显示当前状态 /status /agent &lt;id&gt; 切换智能体 /agent research /agents 列出可用智能体 /agents /session &lt;key&gt; 切换会话 /session main /sessions 列出可用会话 /sessions /model &lt;provider/model&gt; 选择模型 /model claude/gpt-4 /models 列出可用模型 /models 会话控制 命令 功能 选项 /think &lt;level&gt; 设置思考级别 off, minimal, low, medium, high /verbose &lt;mode&gt; 详细输出模式 on, full, off /reasoning &lt;mode&gt; 推理可见性 on, off, stream /usage &lt;mode&gt; 使用统计显示 off, tokens, full /elevated &lt;mode&gt; 提升权限模式 on, off, ask, full /activation &lt;mode&gt; 激活模式（群组） mention, always /deliver &lt;mode&gt; 消息投递开关 on, off 会话生命周期 命令 功能 说明 /new [model] 新建会话 可选模型参数 /reset [model] 重置会话 可选模型参数 /abort 中止运行 中止当前活动 /settings 打开设置面板 - /exit 退出 TUI - 工具与调试 命令 功能 说明 /context [mode] 显示上下文信息 list, detail, json /export [path] 导出会话 导出当前会话为 HTML /whoami 显示发送者 ID 别名：/id /skill &lt;name&gt; [input] 运行技能 按名称运行技能 /subagents &lt;action&gt; 子代理管理 list, kill, log, info, send, steer, spawn /acp &lt;action&gt; ACP 会话控制 spawn, cancel, steer, close, status 等 /agents 列出线程绑定代理 - 权限与配置 命令 功能 说明 /allowlist &lt;action&gt; 管理允许列表 list, add, remove /approve &lt;id&gt; &lt;decision&gt; 批准执行请求 allow-once, allow-always, deny /config &lt;action&gt; [path] 配置管理 show, get, set, unset /debug &lt;action&gt; [path] 运行时调试覆盖 show, set, unset, reset /session ttl &lt;duration&gt; 会话 TTL 管理 - 多端切换 命令 功能 说明 /dock-telegram 切换到 Telegram - /dock-discord 切换到 Discord - /dock-slack 切换到 Slack - 文字转语音（TTS） 命令 功能 说明 /tts &lt;mode&gt; TTS 控制 off, always, inbound, tagged, status, provider, limit, summary, audio /voice Discord TTS 命令 Discord 原生命令（/tts 的别名） 本地 Shell 命令 命令 功能 说明 ! &lt;command&gt; 执行本地 Shell 命令 在 TUI 主机上运行 !poll 检查输出/状态 查看后台任务状态 !stop 停止运行任务 停止当前 Shell 任务 注意：" property="og:description"/><meta content="zh-CN" property="og:locale"/><meta content="article" property="og:type"/><meta content="post" property="article:section"/><meta content="2026-02-28T03:17:58+08:00" property="article:published_time"/><meta content="2026-02-28T03:17:58+08:00" property="article:modified_time"/><meta content="summary" name="twitter:card"/><meta content="OpenClaw快捷键" name="twitter:title"/><meta content="OpenClaw 快捷键速查表
+
+最后更新：2026-02-28
+
+TUI（终端界面）快捷键
+基础操作
+
+  
+      
+          快捷键
+          功能
+          说明
+      
+  
+  
+      
+          Enter
+          发送消息
+          提交当前输入
+      
+      
+          Esc
+          中止运行
+          立即停止当前活动运行
+      
+      
+          Ctrl+C
+          清除输入
+          按一次清除输入，按两次退出 TUI
+      
+      
+          Ctrl+D
+          退出
+          直接退出 TUI
+      
+  
+
+选择器与面板
+
+  
+      
+          快捷键
+          功能
+          说明
+      
+  
+  
+      
+          Ctrl+L
+          模型选择器
+          打开模型选择器
+      
+      
+          Ctrl+G
+          智能体选择器
+          打开 Agent 选择器
+      
+      
+          Ctrl+P
+          会话选择器
+          打开会话选择器
+      
+      
+          Ctrl+O
+          工具输出展开
+          切换工具卡片的折叠/展开状态
+      
+      
+          Ctrl+T
+          思考可见性
+          切换思考模式的可见性（重新加载历史）
+      
+  
+
+
+斜杠命令
+核心命令
+
+  
+      
+          命令
+          功能
+          示例
+      
+  
+  
+      
+          /help
+          显示帮助信息
+          /help
+      
+      
+          /status
+          显示当前状态
+          /status
+      
+      
+          /agent &lt;id&gt;
+          切换智能体
+          /agent research
+      
+      
+          /agents
+          列出可用智能体
+          /agents
+      
+      
+          /session &lt;key&gt;
+          切换会话
+          /session main
+      
+      
+          /sessions
+          列出可用会话
+          /sessions
+      
+      
+          /model &lt;provider/model&gt;
+          选择模型
+          /model claude/gpt-4
+      
+      
+          /models
+          列出可用模型
+          /models
+      
+  
+
+会话控制
+
+  
+      
+          命令
+          功能
+          选项
+      
+  
+  
+      
+          /think &lt;level&gt;
+          设置思考级别
+          off, minimal, low, medium, high
+      
+      
+          /verbose &lt;mode&gt;
+          详细输出模式
+          on, full, off
+      
+      
+          /reasoning &lt;mode&gt;
+          推理可见性
+          on, off, stream
+      
+      
+          /usage &lt;mode&gt;
+          使用统计显示
+          off, tokens, full
+      
+      
+          /elevated &lt;mode&gt;
+          提升权限模式
+          on, off, ask, full
+      
+      
+          /activation &lt;mode&gt;
+          激活模式（群组）
+          mention, always
+      
+      
+          /deliver &lt;mode&gt;
+          消息投递开关
+          on, off
+      
+  
+
+会话生命周期
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /new [model]
+          新建会话
+          可选模型参数
+      
+      
+          /reset [model]
+          重置会话
+          可选模型参数
+      
+      
+          /abort
+          中止运行
+          中止当前活动
+      
+      
+          /settings
+          打开设置面板
+          -
+      
+      
+          /exit
+          退出 TUI
+          -
+      
+  
+
+工具与调试
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /context [mode]
+          显示上下文信息
+          list, detail, json
+      
+      
+          /export [path]
+          导出会话
+          导出当前会话为 HTML
+      
+      
+          /whoami
+          显示发送者 ID
+          别名：/id
+      
+      
+          /skill &lt;name&gt; [input]
+          运行技能
+          按名称运行技能
+      
+      
+          /subagents &lt;action&gt;
+          子代理管理
+          list, kill, log, info, send, steer, spawn
+      
+      
+          /acp &lt;action&gt;
+          ACP 会话控制
+          spawn, cancel, steer, close, status 等
+      
+      
+          /agents
+          列出线程绑定代理
+          -
+      
+  
+
+权限与配置
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /allowlist &lt;action&gt;
+          管理允许列表
+          list, add, remove
+      
+      
+          /approve &lt;id&gt; &lt;decision&gt;
+          批准执行请求
+          allow-once, allow-always, deny
+      
+      
+          /config &lt;action&gt; [path]
+          配置管理
+          show, get, set, unset
+      
+      
+          /debug &lt;action&gt; [path]
+          运行时调试覆盖
+          show, set, unset, reset
+      
+      
+          /session ttl &lt;duration&gt;
+          会话 TTL 管理
+          -
+      
+  
+
+多端切换
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /dock-telegram
+          切换到 Telegram
+          -
+      
+      
+          /dock-discord
+          切换到 Discord
+          -
+      
+      
+          /dock-slack
+          切换到 Slack
+          -
+      
+  
+
+文字转语音（TTS）
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          /tts &lt;mode&gt;
+          TTS 控制
+          off, always, inbound, tagged, status, provider, limit, summary, audio
+      
+      
+          /voice
+          Discord TTS 命令
+          Discord 原生命令（/tts 的别名）
+      
+  
+
+
+本地 Shell 命令
+
+  
+      
+          命令
+          功能
+          说明
+      
+  
+  
+      
+          ! &lt;command&gt;
+          执行本地 Shell 命令
+          在 TUI 主机上运行
+      
+      
+          !poll
+          检查输出/状态
+          查看后台任务状态
+      
+      
+          !stop
+          停止运行任务
+          停止当前 Shell 任务
+      
+  
+
+注意：" name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://bluespace3.github.io/post/"},{"@type":"ListItem","position":2,"name":"OpenClaw快捷键","item":"https://bluespace3.github.io/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"OpenClaw快捷键","name":"OpenClaw快捷键","description":"OpenClaw 快捷键速查表 最后更新：2026-02-28\nTUI（终端界面）快捷键 基础操作 快捷键 功能 说明 Enter 发送消息 提交当前输入 Esc 中止运行 立即停止当前活动运行 Ctrl+C 清除输入 按一次清除输入，按两次退出 TUI Ctrl+D 退出 直接退出 TUI 选择器与面板 快捷键 功能 说明 Ctrl+L 模型选择器 打开模型选择器 Ctrl+G 智能体选择器 打开 Agent 选择器 Ctrl+P 会话选择器 打开会话选择器 Ctrl+O 工具输出展开 切换工具卡片的折叠/展开状态 Ctrl+T 思考可见性 切换思考模式的可见性（重新加载历史） 斜杠命令 核心命令 命令 功能 示例 /help 显示帮助信息 /help /status 显示当前状态 /status /agent \u0026lt;id\u0026gt; 切换智能体 /agent research /agents 列出可用智能体 /agents /session \u0026lt;key\u0026gt; 切换会话 /session main /sessions 列出可用会话 /sessions /model \u0026lt;provider/model\u0026gt; 选择模型 /model claude/gpt-4 /models 列出可用模型 /models 会话控制 命令 功能 选项 /think \u0026lt;level\u0026gt; 设置思考级别 off, minimal, low, medium, high /verbose \u0026lt;mode\u0026gt; 详细输出模式 on, full, off /reasoning \u0026lt;mode\u0026gt; 推理可见性 on, off, stream /usage \u0026lt;mode\u0026gt; 使用统计显示 off, tokens, full /elevated \u0026lt;mode\u0026gt; 提升权限模式 on, off, ask, full /activation \u0026lt;mode\u0026gt; 激活模式（群组） mention, always /deliver \u0026lt;mode\u0026gt; 消息投递开关 on, off 会话生命周期 命令 功能 说明 /new [model] 新建会话 可选模型参数 /reset [model] 重置会话 可选模型参数 /abort 中止运行 中止当前活动 /settings 打开设置面板 - /exit 退出 TUI - 工具与调试 命令 功能 说明 /context [mode] 显示上下文信息 list, detail, json /export [path] 导出会话 导出当前会话为 HTML /whoami 显示发送者 ID 别名：/id /skill \u0026lt;name\u0026gt; [input] 运行技能 按名称运行技能 /subagents \u0026lt;action\u0026gt; 子代理管理 list, kill, log, info, send, steer, spawn /acp \u0026lt;action\u0026gt; ACP 会话控制 spawn, cancel, steer, close, status 等 /agents 列出线程绑定代理 - 权限与配置 命令 功能 说明 /allowlist \u0026lt;action\u0026gt; 管理允许列表 list, add, remove /approve \u0026lt;id\u0026gt; \u0026lt;decision\u0026gt; 批准执行请求 allow-once, allow-always, deny /config \u0026lt;action\u0026gt; [path] 配置管理 show, get, set, unset /debug \u0026lt;action\u0026gt; [path] 运行时调试覆盖 show, set, unset, reset /session ttl \u0026lt;duration\u0026gt; 会话 TTL 管理 - 多端切换 命令 功能 说明 /dock-telegram 切换到 Telegram - /dock-discord 切换到 Discord - /dock-slack 切换到 Slack - 文字转语音（TTS） 命令 功能 说明 /tts \u0026lt;mode\u0026gt; TTS 控制 off, always, inbound, tagged, status, provider, limit, summary, audio /voice Discord TTS 命令 Discord 原生命令（/tts 的别名） 本地 Shell 命令 命令 功能 说明 ! \u0026lt;command\u0026gt; 执行本地 Shell 命令 在 TUI 主机上运行 !poll 检查输出/状态 查看后台任务状态 !stop 停止运行任务 停止当前 Shell 任务 注意：\n","keywords":[],"articleBody":"OpenClaw 快捷键速查表 最后更新：2026-02-28\nTUI（终端界面）快捷键 基础操作 快捷键 功能 说明 Enter 发送消息 提交当前输入 Esc 中止运行 立即停止当前活动运行 Ctrl+C 清除输入 按一次清除输入，按两次退出 TUI Ctrl+D 退出 直接退出 TUI 选择器与面板 快捷键 功能 说明 Ctrl+L 模型选择器 打开模型选择器 Ctrl+G 智能体选择器 打开 Agent 选择器 Ctrl+P 会话选择器 打开会话选择器 Ctrl+O 工具输出展开 切换工具卡片的折叠/展开状态 Ctrl+T 思考可见性 切换思考模式的可见性（重新加载历史） 斜杠命令 核心命令 命令 功能 示例 /help 显示帮助信息 /help /status 显示当前状态 /status /agent 切换智能体 /agent research /agents 列出可用智能体 /agents /session 切换会话 /session main /sessions 列出可用会话 /sessions /model 选择模型 /model claude/gpt-4 /models 列出可用模型 /models 会话控制 命令 功能 选项 /think 设置思考级别 off, minimal, low, medium, high /verbose 详细输出模式 on, full, off /reasoning 推理可见性 on, off, stream /usage 使用统计显示 off, tokens, full /elevated 提升权限模式 on, off, ask, full /activation 激活模式（群组） mention, always /deliver 消息投递开关 on, off 会话生命周期 命令 功能 说明 /new [model] 新建会话 可选模型参数 /reset [model] 重置会话 可选模型参数 /abort 中止运行 中止当前活动 /settings 打开设置面板 - /exit 退出 TUI - 工具与调试 命令 功能 说明 /context [mode] 显示上下文信息 list, detail, json /export [path] 导出会话 导出当前会话为 HTML /whoami 显示发送者 ID 别名：/id /skill [input] 运行技能 按名称运行技能 /subagents 子代理管理 list, kill, log, info, send, steer, spawn /acp ACP 会话控制 spawn, cancel, steer, close, status 等 /agents 列出线程绑定代理 - 权限与配置 命令 功能 说明 /allowlist 管理允许列表 list, add, remove /approve 批准执行请求 allow-once, allow-always, deny /config [path] 配置管理 show, get, set, unset /debug [path] 运行时调试覆盖 show, set, unset, reset /session ttl 会话 TTL 管理 - 多端切换 命令 功能 说明 /dock-telegram 切换到 Telegram - /dock-discord 切换到 Discord - /dock-slack 切换到 Slack - 文字转语音（TTS） 命令 功能 说明 /tts TTS 控制 off, always, inbound, tagged, status, provider, limit, summary, audio /voice Discord TTS 命令 Discord 原生命令（/tts 的别名） 本地 Shell 命令 命令 功能 说明 ! 执行本地 Shell 命令 在 TUI 主机上运行 !poll 检查输出/状态 查看后台任务状态 !stop 停止运行任务 停止当前 Shell 任务 注意：\n首次使用 ! 时会提示授权，拒绝后会在该会话中禁用 单独的 ! 会作为普通消息发送 前导空格不会触发本地执行 常用命令别名 原命令 别名 /think /thinking, /t /verbose /v /reasoning /reason /elevated /elev /whoami /id /export /export-session /dock_telegram /dock-telegram /dock_discord /dock-discord /dock_slack /dock-slack 命令使用技巧 1. 快捷键组合技巧 快速清理并退出：Ctrl+C 两次 快速查看状态：输入 /status 后按 Enter 切换思考模式：Ctrl+T 或使用 /think 命令 2. 斜杠命令技巧 命令参数分隔：可在命令和参数间使用 :（如 /think: high） 内联快捷方式：授权发送者可在消息中内联使用 /help, /commands, /status, /whoami 仅命令消息：仅包含命令的消息会立即处理，跳过队列和模型 3. 模型选择技巧 使用 /model 或 /models 打开模型选择器 可使用模型别名直接选择：/model 3（选择编号 3 的模型） Discord 支持交互式选择器 4. 会话管理技巧 会话键格式：agent:: 使用 /session main 快速切换到主会话 使用 /session agent:other:main 显式切换到其他智能体的会话 5. 权限控制技巧 使用 /elevated on 提升权限级别 使用 /exec 查看当前执行设置 使用 /approve 处理执行批准请求 注意事项 权限要求 /config 命令需要 commands.config: true 配置 /debug 命令需要 commands.debug: true 配置 /bash 命令需要 commands.bash: true 配置和 tools.elevated 允许列表 内联快捷方式仅对授权发送者有效 群组使用 /reasoning 和 /verbose 在群组中有风险，可能暴露内部推理 建议在群组中保持这些功能关闭 /activation mention 设置仅在群组中提及 AI 时响应 安全建议 Dashboard 是管理员界面，不要公开暴露 使用 localhost、Tailscale Serve 或 SSH 隧道访问 令牌存储在 localStorage，注意保护 快速参考 日常高频命令 /status # 查看状态 /model # 选择模型 /think high # 开启深度思考 /deliver on # 开启消息投递 /new # 新建会话 调试命令 /verbose on # 显示详细输出 /context detail # 查看详细上下文 /debug show # 查看运行时配置 /export # 导出会话 权限管理 /elevated on # 提升权限 /allowlist list # 查看允许列表 /config show # 查看配置 ","wordCount":"1421","inLanguage":"zh-cn","datePublished":"2026-02-28T03:17:58+08:00","dateModified":"2026-02-28T03:17:58+08:00","author":{"@type":"Person","name":"新人类"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bluespace3.github.io/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/"},"publisher":{"@type":"Organization","name":"蓝色空间号","logo":{"@type":"ImageObject","url":"https://bluespace3.github.io/favicon.ico"}}}</script></head><body id="top"><header class="header"><nav class="nav"><div class="logo"><a accesskey="h" href="https://bluespace3.github.io/" title="蓝色空间号 (Alt + H)">蓝色空间号</a><div class="logo-switches"><button accesskey="t" aria-label="Toggle theme" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></button></div></div><ul id="menu"><li><a href="https://bluespace3.github.io/" title="首页"><span>首页</span></a></li><li><a href="https://bluespace3.github.io/post/" title="文章"><span>文章</span></a></li><li><a href="https://bluespace3.github.io/archives/" title="归档"><span>归档</span></a></li><li><a href="https://bluespace3.github.io/categories/" title="分类"><span>分类</span></a></li><li><a href="https://bluespace3.github.io/tags/" title="标签"><span>标签</span></a></li><li><a href="https://bluespace3.github.io/about/" title="关于"><span>关于</span></a></li></ul></nav></header><main class="main"><article class="post-single"><header class="post-header"><div class="breadcrumbs"><a href="https://bluespace3.github.io/">Home</a> » <a href="https://bluespace3.github.io/post/">Posts</a></div><h1 class="post-title entry-hint-parent">OpenClaw快捷键</h1><div class="post-meta"><span title="2026-02-28 03:17:58 +0800 +0800">2026-02-28</span> · <span>3 min</span> · <span>1421 words</span> · <span>新人类</span></div></header><div class="toc"><details><summary accesskey="c" title="(Alt + C)"><span class="details">Table of Contents</span></summary><div class="inner"><nav id="TableOfContents"><ul><li><a href="#tui终端界面快捷键">TUI（终端界面）快捷键</a><ul><li><a href="#基础操作">基础操作</a></li><li><a href="#选择器与面板">选择器与面板</a></li></ul></li><li><a href="#斜杠命令">斜杠命令</a><ul><li><a href="#核心命令">核心命令</a></li><li><a href="#会话控制">会话控制</a></li><li><a href="#会话生命周期">会话生命周期</a></li><li><a href="#工具与调试">工具与调试</a></li><li><a href="#权限与配置">权限与配置</a></li><li><a href="#多端切换">多端切换</a></li><li><a href="#文字转语音tts">文字转语音（TTS）</a></li></ul></li><li><a href="#本地-shell-命令">本地 Shell 命令</a></li><li><a href="#常用命令别名">常用命令别名</a></li><li><a href="#命令使用技巧">命令使用技巧</a><ul><li><a href="#1-快捷键组合技巧">1. 快捷键组合技巧</a></li><li><a href="#2-斜杠命令技巧">2. 斜杠命令技巧</a></li><li><a href="#3-模型选择技巧">3. 模型选择技巧</a></li><li><a href="#4-会话管理技巧">4. 会话管理技巧</a></li><li><a href="#5-权限控制技巧">5. 权限控制技巧</a></li></ul></li><li><a href="#注意事项">注意事项</a><ul><li><a href="#权限要求">权限要求</a></li><li><a href="#群组使用">群组使用</a></li><li><a href="#安全建议">安全建议</a></li></ul></li><li><a href="#快速参考">快速参考</a><ul><li><a href="#日常高频命令">日常高频命令</a></li><li><a href="#调试命令">调试命令</a></li><li><a href="#权限管理">权限管理</a></li></ul></li></ul></nav></div></details></div><div class="post-content"><h1 id="openclaw-快捷键速查表">OpenClaw 快捷键速查表<a aria-hidden="true" class="anchor" hidden="" href="#openclaw-快捷键速查表">#</a></h1><blockquote><p>最后更新：2026-02-28</p></blockquote><h2 id="tui终端界面快捷键">TUI（终端界面）快捷键<a aria-hidden="true" class="anchor" hidden="" href="#tui终端界面快捷键">#</a></h2><h3 id="基础操作">基础操作<a aria-hidden="true" class="anchor" hidden="" href="#基础操作">#</a></h3><table><thead><tr><th>快捷键</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><code>Enter</code></td><td>发送消息</td><td>提交当前输入</td></tr><tr><td><code>Esc</code></td><td>中止运行</td><td>立即停止当前活动运行</td></tr><tr><td><code>Ctrl+C</code></td><td>清除输入</td><td>按一次清除输入，按两次退出 TUI</td></tr><tr><td><code>Ctrl+D</code></td><td>退出</td><td>直接退出 TUI</td></tr></tbody></table><h3 id="选择器与面板">选择器与面板<a aria-hidden="true" class="anchor" hidden="" href="#选择器与面板">#</a></h3><table><thead><tr><th>快捷键</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><code>Ctrl+L</code></td><td>模型选择器</td><td>打开模型选择器</td></tr><tr><td><code>Ctrl+G</code></td><td>智能体选择器</td><td>打开 Agent 选择器</td></tr><tr><td><code>Ctrl+P</code></td><td>会话选择器</td><td>打开会话选择器</td></tr><tr><td><code>Ctrl+O</code></td><td>工具输出展开</td><td>切换工具卡片的折叠/展开状态</td></tr><tr><td><code>Ctrl+T</code></td><td>思考可见性</td><td>切换思考模式的可见性（重新加载历史）</td></tr></tbody></table><hr/><h2 id="斜杠命令">斜杠命令<a aria-hidden="true" class="anchor" hidden="" href="#斜杠命令">#</a></h2><h3 id="核心命令">核心命令<a aria-hidden="true" class="anchor" hidden="" href="#核心命令">#</a></h3><table><thead><tr><th>命令</th><th>功能</th><th>示例</th></tr></thead><tbody><tr><td><code>/help</code></td><td>显示帮助信息</td><td><code>/help</code></td></tr><tr><td><code>/status</code></td><td>显示当前状态</td><td><code>/status</code></td></tr><tr><td><code>/agent &lt;id&gt;</code></td><td>切换智能体</td><td><code>/agent research</code></td></tr><tr><td><code>/agents</code></td><td>列出可用智能体</td><td><code>/agents</code></td></tr><tr><td><code>/session &lt;key&gt;</code></td><td>切换会话</td><td><code>/session main</code></td></tr><tr><td><code>/sessions</code></td><td>列出可用会话</td><td><code>/sessions</code></td></tr><tr><td><code>/model &lt;provider/model&gt;</code></td><td>选择模型</td><td><code>/model claude/gpt-4</code></td></tr><tr><td><code>/models</code></td><td>列出可用模型</td><td><code>/models</code></td></tr></tbody></table><h3 id="会话控制">会话控制<a aria-hidden="true" class="anchor" hidden="" href="#会话控制">#</a></h3><table><thead><tr><th>命令</th><th>功能</th><th>选项</th></tr></thead><tbody><tr><td><code>/think &lt;level&gt;</code></td><td>设置思考级别</td><td><code>off</code>, <code>minimal</code>, <code>low</code>, <code>medium</code>, <code>high</code></td></tr><tr><td><code>/verbose &lt;mode&gt;</code></td><td>详细输出模式</td><td><code>on</code>, <code>full</code>, <code>off</code></td></tr><tr><td><code>/reasoning &lt;mode&gt;</code></td><td>推理可见性</td><td><code>on</code>, <code>off</code>, <code>stream</code></td></tr><tr><td><code>/usage &lt;mode&gt;</code></td><td>使用统计显示</td><td><code>off</code>, <code>tokens</code>, <code>full</code></td></tr><tr><td><code>/elevated &lt;mode&gt;</code></td><td>提升权限模式</td><td><code>on</code>, <code>off</code>, <code>ask</code>, <code>full</code></td></tr><tr><td><code>/activation &lt;mode&gt;</code></td><td>激活模式（群组）</td><td><code>mention</code>, <code>always</code></td></tr><tr><td><code>/deliver &lt;mode&gt;</code></td><td>消息投递开关</td><td><code>on</code>, <code>off</code></td></tr></tbody></table><h3 id="会话生命周期">会话生命周期<a aria-hidden="true" class="anchor" hidden="" href="#会话生命周期">#</a></h3><table><thead><tr><th>命令</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><code>/new [model]</code></td><td>新建会话</td><td>可选模型参数</td></tr><tr><td><code>/reset [model]</code></td><td>重置会话</td><td>可选模型参数</td></tr><tr><td><code>/abort</code></td><td>中止运行</td><td>中止当前活动</td></tr><tr><td><code>/settings</code></td><td>打开设置面板</td><td>-</td></tr><tr><td><code>/exit</code></td><td>退出 TUI</td><td>-</td></tr></tbody></table><h3 id="工具与调试">工具与调试<a aria-hidden="true" class="anchor" hidden="" href="#工具与调试">#</a></h3><table><thead><tr><th>命令</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><code>/context [mode]</code></td><td>显示上下文信息</td><td><code>list</code>, <code>detail</code>, <code>json</code></td></tr><tr><td><code>/export [path]</code></td><td>导出会话</td><td>导出当前会话为 HTML</td></tr><tr><td><code>/whoami</code></td><td>显示发送者 ID</td><td>别名：<code>/id</code></td></tr><tr><td><code>/skill &lt;name&gt; [input]</code></td><td>运行技能</td><td>按名称运行技能</td></tr><tr><td><code>/subagents &lt;action&gt;</code></td><td>子代理管理</td><td><code>list</code>, <code>kill</code>, <code>log</code>, <code>info</code>, <code>send</code>, <code>steer</code>, <code>spawn</code></td></tr><tr><td><code>/acp &lt;action&gt;</code></td><td>ACP 会话控制</td><td><code>spawn</code>, <code>cancel</code>, <code>steer</code>, <code>close</code>, <code>status</code> 等</td></tr><tr><td><code>/agents</code></td><td>列出线程绑定代理</td><td>-</td></tr></tbody></table><h3 id="权限与配置">权限与配置<a aria-hidden="true" class="anchor" hidden="" href="#权限与配置">#</a></h3><table><thead><tr><th>命令</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><code>/allowlist &lt;action&gt;</code></td><td>管理允许列表</td><td><code>list</code>, <code>add</code>, <code>remove</code></td></tr><tr><td><code>/approve &lt;id&gt; &lt;decision&gt;</code></td><td>批准执行请求</td><td><code>allow-once</code>, <code>allow-always</code>, <code>deny</code></td></tr><tr><td><code>/config &lt;action&gt; [path]</code></td><td>配置管理</td><td><code>show</code>, <code>get</code>, <code>set</code>, <code>unset</code></td></tr><tr><td><code>/debug &lt;action&gt; [path]</code></td><td>运行时调试覆盖</td><td><code>show</code>, <code>set</code>, <code>unset</code>, <code>reset</code></td></tr><tr><td><code>/session ttl &lt;duration&gt;</code></td><td>会话 TTL 管理</td><td>-</td></tr></tbody></table><h3 id="多端切换">多端切换<a aria-hidden="true" class="anchor" hidden="" href="#多端切换">#</a></h3><table><thead><tr><th>命令</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><code>/dock-telegram</code></td><td>切换到 Telegram</td><td>-</td></tr><tr><td><code>/dock-discord</code></td><td>切换到 Discord</td><td>-</td></tr><tr><td><code>/dock-slack</code></td><td>切换到 Slack</td><td>-</td></tr></tbody></table><h3 id="文字转语音tts">文字转语音（TTS）<a aria-hidden="true" class="anchor" hidden="" href="#文字转语音tts">#</a></h3><table><thead><tr><th>命令</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><code>/tts &lt;mode&gt;</code></td><td>TTS 控制</td><td><code>off</code>, <code>always</code>, <code>inbound</code>, <code>tagged</code>, <code>status</code>, <code>provider</code>, <code>limit</code>, <code>summary</code>, <code>audio</code></td></tr><tr><td><code>/voice</code></td><td>Discord TTS 命令</td><td>Discord 原生命令（<code>/tts</code> 的别名）</td></tr></tbody></table><hr/><h2 id="本地-shell-命令">本地 Shell 命令<a aria-hidden="true" class="anchor" hidden="" href="#本地-shell-命令">#</a></h2><table><thead><tr><th>命令</th><th>功能</th><th>说明</th></tr></thead><tbody><tr><td><code>! &lt;command&gt;</code></td><td>执行本地 Shell 命令</td><td>在 TUI 主机上运行</td></tr><tr><td><code>!poll</code></td><td>检查输出/状态</td><td>查看后台任务状态</td></tr><tr><td><code>!stop</code></td><td>停止运行任务</td><td>停止当前 Shell 任务</td></tr></tbody></table><p><strong>注意</strong>：</p><ul><li>首次使用 <code>!</code> 时会提示授权，拒绝后会在该会话中禁用</li><li>单独的 <code>!</code> 会作为普通消息发送</li><li>前导空格不会触发本地执行</li></ul><hr/><h2 id="常用命令别名">常用命令别名<a aria-hidden="true" class="anchor" hidden="" href="#常用命令别名">#</a></h2><table><thead><tr><th>原命令</th><th>别名</th></tr></thead><tbody><tr><td><code>/think</code></td><td><code>/thinking</code>, <code>/t</code></td></tr><tr><td><code>/verbose</code></td><td><code>/v</code></td></tr><tr><td><code>/reasoning</code></td><td><code>/reason</code></td></tr><tr><td><code>/elevated</code></td><td><code>/elev</code></td></tr><tr><td><code>/whoami</code></td><td><code>/id</code></td></tr><tr><td><code>/export</code></td><td><code>/export-session</code></td></tr><tr><td><code>/dock_telegram</code></td><td><code>/dock-telegram</code></td></tr><tr><td><code>/dock_discord</code></td><td><code>/dock-discord</code></td></tr><tr><td><code>/dock_slack</code></td><td><code>/dock-slack</code></td></tr></tbody></table><hr/><h2 id="命令使用技巧">命令使用技巧<a aria-hidden="true" class="anchor" hidden="" href="#命令使用技巧">#</a></h2><h3 id="1-快捷键组合技巧">1. 快捷键组合技巧<a aria-hidden="true" class="anchor" hidden="" href="#1-快捷键组合技巧">#</a></h3><ul><li><strong>快速清理并退出</strong>：<code>Ctrl+C</code> 两次</li><li><strong>快速查看状态</strong>：输入 <code>/status</code> 后按 <code>Enter</code></li><li><strong>切换思考模式</strong>：<code>Ctrl+T</code> 或使用 <code>/think</code> 命令</li></ul><h3 id="2-斜杠命令技巧">2. 斜杠命令技巧<a aria-hidden="true" class="anchor" hidden="" href="#2-斜杠命令技巧">#</a></h3><ul><li><strong>命令参数分隔</strong>：可在命令和参数间使用 <code>:</code>（如 <code>/think: high</code>）</li><li><strong>内联快捷方式</strong>：授权发送者可在消息中内联使用 <code>/help</code>, <code>/commands</code>, <code>/status</code>, <code>/whoami</code></li><li><strong>仅命令消息</strong>：仅包含命令的消息会立即处理，跳过队列和模型</li></ul><h3 id="3-模型选择技巧">3. 模型选择技巧<a aria-hidden="true" class="anchor" hidden="" href="#3-模型选择技巧">#</a></h3><ul><li>使用 <code>/model</code> 或 <code>/models</code> 打开模型选择器</li><li>可使用模型别名直接选择：<code>/model 3</code>（选择编号 3 的模型）</li><li>Discord 支持交互式选择器</li></ul><h3 id="4-会话管理技巧">4. 会话管理技巧<a aria-hidden="true" class="anchor" hidden="" href="#4-会话管理技巧">#</a></h3><ul><li>会话键格式：<code>agent:&lt;agentId&gt;:&lt;sessionKey&gt;</code></li><li>使用 <code>/session main</code> 快速切换到主会话</li><li>使用 <code>/session agent:other:main</code> 显式切换到其他智能体的会话</li></ul><h3 id="5-权限控制技巧">5. 权限控制技巧<a aria-hidden="true" class="anchor" hidden="" href="#5-权限控制技巧">#</a></h3><ul><li>使用 <code>/elevated on</code> 提升权限级别</li><li>使用 <code>/exec</code> 查看当前执行设置</li><li>使用 <code>/approve</code> 处理执行批准请求</li></ul><hr/><h2 id="注意事项">注意事项<a aria-hidden="true" class="anchor" hidden="" href="#注意事项">#</a></h2><h3 id="权限要求">权限要求<a aria-hidden="true" class="anchor" hidden="" href="#权限要求">#</a></h3><ul><li><code>/config</code> 命令需要 <code>commands.config: true</code> 配置</li><li><code>/debug</code> 命令需要 <code>commands.debug: true</code> 配置</li><li><code>/bash</code> 命令需要 <code>commands.bash: true</code> 配置和 <code>tools.elevated</code> 允许列表</li><li>内联快捷方式仅对授权发送者有效</li></ul><h3 id="群组使用">群组使用<a aria-hidden="true" class="anchor" hidden="" href="#群组使用">#</a></h3><ul><li><code>/reasoning</code> 和 <code>/verbose</code> 在群组中有风险，可能暴露内部推理</li><li>建议在群组中保持这些功能关闭</li><li><code>/activation mention</code> 设置仅在群组中提及 AI 时响应</li></ul><h3 id="安全建议">安全建议<a aria-hidden="true" class="anchor" hidden="" href="#安全建议">#</a></h3><ul><li>Dashboard 是管理员界面，不要公开暴露</li><li>使用 localhost、Tailscale Serve 或 SSH 隧道访问</li><li>令牌存储在 <code>localStorage</code>，注意保护</li></ul><hr/><h2 id="快速参考">快速参考<a aria-hidden="true" class="anchor" hidden="" href="#快速参考">#</a></h2><h3 id="日常高频命令">日常高频命令<a aria-hidden="true" class="anchor" hidden="" href="#日常高频命令">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/status          <span class="c1"># 查看状态</span>
+</span></span><span class="line"><span class="cl">/model           <span class="c1"># 选择模型</span>
+</span></span><span class="line"><span class="cl">/think high      <span class="c1"># 开启深度思考</span>
+</span></span><span class="line"><span class="cl">/deliver on      <span class="c1"># 开启消息投递</span>
+</span></span><span class="line"><span class="cl">/new             <span class="c1"># 新建会话</span>
+</span></span></code></pre></div><h3 id="调试命令">调试命令<a aria-hidden="true" class="anchor" hidden="" href="#调试命令">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/verbose on      <span class="c1"># 显示详细输出</span>
+</span></span><span class="line"><span class="cl">/context detail  <span class="c1"># 查看详细上下文</span>
+</span></span><span class="line"><span class="cl">/debug show      <span class="c1"># 查看运行时配置</span>
+</span></span><span class="line"><span class="cl">/export          <span class="c1"># 导出会话</span>
+</span></span></code></pre></div><h3 id="权限管理">权限管理<a aria-hidden="true" class="anchor" hidden="" href="#权限管理">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/elevated on     <span class="c1"># 提升权限</span>
+</span></span><span class="line"><span class="cl">/allowlist list  <span class="c1"># 查看允许列表</span>
+</span></span><span class="line"><span class="cl">/config show     <span class="c1"># 查看配置</span>
+</span></span></code></pre></div><p> </p></div><footer class="post-footer"><ul class="post-tags"></ul><nav class="paginav"><a class="prev" href="https://bluespace3.github.io/post/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/"><span class="title">«</span><br/><span>配置代理加速github访问</span>
+</a><a class="next" href="https://bluespace3.github.io/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/"><span class="title">»</span><br/><span>ACP-Claude-Code快捷指令</span></a></nav><ul class="share-buttons"><li><a aria-label="share OpenClaw快捷键 on x" href="https://x.com/intent/tweet/?text=OpenClaw%e5%bf%ab%e6%8d%b7%e9%94%ae&amp;url=https%3a%2f%2fbluespace3.github.io%2fpost%2fopenclaw%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%2f&amp;hashtags=" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"></path></svg></a></li><li><a aria-label="share OpenClaw快捷键 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace3.github.io%2fpost%2fopenclaw%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%2f&amp;title=OpenClaw%e5%bf%ab%e6%8d%b7%e9%94%ae&amp;summary=OpenClaw%e5%bf%ab%e6%8d%b7%e9%94%ae&amp;source=https%3a%2f%2fbluespace3.github.io%2fpost%2fopenclaw%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"></path></svg></a></li><li><a aria-label="share OpenClaw快捷键 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fbluespace3.github.io%2fpost%2fopenclaw%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%2f&amp;title=OpenClaw%e5%bf%ab%e6%8d%b7%e9%94%ae" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"></path></svg></a></li><li><a aria-label="share OpenClaw快捷键 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace3.github.io%2fpost%2fopenclaw%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"></path></svg></a></li><li><a aria-label="share OpenClaw快捷键 on whatsapp" href="https://api.whatsapp.com/send?text=OpenClaw%e5%bf%ab%e6%8d%b7%e9%94%ae%20-%20https%3a%2f%2fbluespace3.github.io%2fpost%2fopenclaw%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"></path></svg></a></li><li><a aria-label="share OpenClaw快捷键 on telegram" href="https://telegram.me/share/url?text=OpenClaw%e5%bf%ab%e6%8d%b7%e9%94%ae&amp;url=https%3a%2f%2fbluespace3.github.io%2fpost%2fopenclaw%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="2 2 28 28" width="30"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"></path></svg></a></li><li><a aria-label="share OpenClaw快捷键 on ycombinator" href="https://news.ycombinator.com/submitlink?t=OpenClaw%e5%bf%ab%e6%8d%b7%e9%94%ae&amp;u=https%3a%2f%2fbluespace3.github.io%2fpost%2fopenclaw%25E5%25BF%25AB%25E6%258D%25B7%25E9%2594%25AE%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"></path></svg></a></li></ul></footer></article></main><footer class="footer"><span>© 2026 <a href="https://bluespace3.github.io/">蓝色空间号</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+<a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a></span></footer><a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)"><svg fill="currentColor" viewbox="0 0 12 6"><path d="M12 6H0l6-6z"></path></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

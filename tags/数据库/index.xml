@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>数据库 on 蓝色空间号</title><link>https://bluespace3.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link><description>Recent content in 数据库 on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Sun, 27 Apr 2025 11:59:32 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml"/><item><title>Neon配置教程</title><link>https://bluespace3.github.io/post.backup/neon%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link><pubDate>Sun, 27 Apr 2025 11:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/neon%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid><description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;创建Neon实例&lt;/strong&gt;
+登录Neon控制台（官网：&lt;strong&gt;&lt;a href="https://neon.tech"&gt;https://neon.tech&lt;/a&gt;&lt;/strong&gt;），点击创建免费的Serverless Postgres实例，选择配置（如地区、分支、计算/存储规格）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;获取连接信息&lt;/strong&gt;
+创建成功后，控制台会提供以下关键信息：&lt;/p&gt;</description></item></channel></rss>

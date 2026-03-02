@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Git on 蓝色空间号</title><link>https://bluespace3.github.io/categories/git/</link><description>Recent content in Git on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Fri, 27 Feb 2026 11:05:10 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/git/index.xml" rel="self" type="application/rss+xml"/><item><title>git操作</title><link>https://bluespace3.github.io/post/git/git%E6%93%8D%E4%BD%9C/</link><pubDate>Fri, 27 Feb 2026 11:05:10 +0800</pubDate><guid>https://bluespace3.github.io/post/git/git%E6%93%8D%E4%BD%9C/</guid><description>&lt;h4 id="回滚到指定提交"&gt;回滚到指定提交&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;git reset &amp;ndash;hard c1ac53850b0314a20e97f669bafc8bb67a3a1124&lt;/li&gt;
+&lt;li&gt;git push&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="放弃变更强制提交"&gt;放弃变更强制提交&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;git reset &amp;ndash;hard ; git pull &amp;ndash;force&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="子模块的使用"&gt;子模块的使用&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="子模块使用" loading="lazy" src="https://bluespace3.github.io/images/361743670309_.pic.jpg"&gt;&lt;/p&gt;</description></item><item><title>git添加子项目</title><link>https://bluespace3.github.io/post.backup/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link><pubDate>Sun, 07 Sep 2025 00:22:26 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid><description>&lt;ul&gt;
+&lt;li&gt;项目中添加子项目
+&lt;ul&gt;
+&lt;li&gt;1、git clone 父项目url&lt;/li&gt;
+&lt;li&gt;2、cd 父项目对应目录下：git submodule add &amp;lt;子项目地址&amp;gt;&lt;/li&gt;
+&lt;li&gt;3、git commit ;git push&lt;/li&gt;
+&lt;li&gt;4、此时子项目下的子项目是空的，需要cd到父目录cmd执行：
+git submodule update &amp;ndash;init &amp;ndash;recursive
+或者执行：git submodule init 然后执行cd&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;clone含嵌套项目的项目
+&lt;ul&gt;
+&lt;li&gt;git clone 父项目url &amp;ndash;recurse-submodules
+不加&amp;ndash;recurse-submodules，克隆的子项目是空的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>git添加子项目</title><link>https://bluespace3.github.io/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link><pubDate>Sun, 07 Sep 2025 00:22:26 +0800</pubDate><guid>https://bluespace3.github.io/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid><description>&lt;ul&gt;
+&lt;li&gt;项目中添加子项目
+&lt;ul&gt;
+&lt;li&gt;1、git clone 父项目url&lt;/li&gt;
+&lt;li&gt;2、cd 父项目对应目录下：git submodule add &amp;lt;子项目地址&amp;gt;&lt;/li&gt;
+&lt;li&gt;3、git commit ;git push&lt;/li&gt;
+&lt;li&gt;4、此时子项目下的子项目是空的，需要cd到父目录cmd执行：
+git submodule update &amp;ndash;init &amp;ndash;recursive
+或者执行：git submodule init 然后执行cd&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;clone含嵌套项目的项目
+&lt;ul&gt;
+&lt;li&gt;git clone 父项目url &amp;ndash;recurse-submodules
+不加&amp;ndash;recurse-submodules，克隆的子项目是空的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>git操作</title><link>https://bluespace3.github.io/post.backup/git/git%E6%93%8D%E4%BD%9C/</link><pubDate>Sun, 07 Sep 2025 00:22:21 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/git/git%E6%93%8D%E4%BD%9C/</guid><description>&lt;h4 id="回滚到指定提交"&gt;回滚到指定提交&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;git reset &amp;ndash;hard c1ac53850b0314a20e97f669bafc8bb67a3a1124&lt;/li&gt;
+&lt;li&gt;git push&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="放弃变更强制提交"&gt;放弃变更强制提交&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;git reset &amp;ndash;hard ; git pull &amp;ndash;force&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="子模块的使用"&gt;子模块的使用&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="子模块使用" loading="lazy" src="https://bluespace3.github.io/images/361743670309_.pic.jpg"&gt;&lt;/p&gt;</description></item><item><title>gitlab配置cicd工作流</title><link>https://bluespace3.github.io/post.backup/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Sun, 07 Sep 2025 00:22:15 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介"&gt;GitLab CI/CD 简介&lt;/h2&gt;
+&lt;p&gt;GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p&gt;</description></item><item><title>gitlab配置cicd工作流</title><link>https://bluespace3.github.io/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Sun, 07 Sep 2025 00:22:15 +0800</pubDate><guid>https://bluespace3.github.io/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介"&gt;GitLab CI/CD 简介&lt;/h2&gt;
+&lt;p&gt;GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p&gt;</description></item><item><title>Git submodule</title><link>https://bluespace3.github.io/post/git/git_submodule/</link><pubDate>Thu, 20 Mar 2025 12:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post/git/git_submodule/</guid><description>&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe"&gt;Git submodule添加子项目_库&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc"&gt;Git归并策略&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue"&gt;添加&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f"&gt;删除&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入“/”快速插入内容&lt;/p&gt;
+&lt;p&gt;添加图标&lt;/p&gt;
+&lt;p&gt;添加封面&lt;/p&gt;
+&lt;p&gt;展示文档信息&lt;/p&gt;
+&lt;p&gt;Git submodule添加子项目_库&lt;/p&gt;
+&lt;p&gt;开发过程中，经常会有一些通用的部分希望抽取出来做成一个公共库来提供给别的工程来使用，而公共代码库的版本管理是个麻烦的事情。git submodule命令就可以解决这个问题。&lt;/p&gt;</description></item></channel></rss>
