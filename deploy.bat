@@ -69,7 +69,7 @@ echo ========================================
 echo       🎉 部署完成！
 echo ========================================
 echo.
-echo 博客地址: https://bluespace3.github.io/
+echo 博客地址: https://bluespace.eu.org/
 echo.
 
 pause

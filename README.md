@@ -548,7 +548,7 @@ python tools/setup-token-simple.py
 
 ## 🔗 相关链接
 
-- **博客地址**: https://bluespace3.github.io/
+- **博客地址**: https://bluespace.eu.org/
 - **GitHub 仓库**: https://github.com/bluespace3/bluespace3.github.io
 - **Hugo 文档**: https://gohugo.io/documentation/
 - **PaperMod 主题**: https://github.com/adityatelange/hugo-PaperMod
