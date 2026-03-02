@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>编程语言 on 蓝色空间号</title><link>https://bluespace3.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link><description>Recent content in 编程语言 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 14 Jan 2026 19:43:15 +0800</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml"/><item><title>Untitled</title><link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</link><pubDate>Wed, 14 Jan 2026 19:43:15 +0800</pubDate><guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</guid><description>&lt;p&gt;date: 2026-01-14T19:43:15+08:00
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>编程语言 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link><description>Recent content in 编程语言 on 蓝色空间号</description><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Wed, 14 Jan 2026 19:43:15 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml"/><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</link><pubDate>Wed, 14 Jan 2026 19:43:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</guid><description>&lt;p&gt;date: 2026-01-14T19:43:15+08:00
 lastmod: 2026-01-14T19:43:15+08:00
 encrypted: false
-powershell启动虚拟环境：&amp;amp; E:/AI/MinerU/.venv/Scripts/Activate.ps1&lt;/p&gt;</description></item><item><title>python中的os函数用法</title><link>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Sun, 07 Sep 2025 00:20:47 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;hr&gt;
+powershell启动虚拟环境：&amp;amp; E:/AI/MinerU/.venv/Scripts/Activate.ps1&lt;/p&gt;</description></item><item><title>python中的os函数用法</title><link>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Sun, 07 Sep 2025 00:20:47 +0800</pubDate><guid>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;python的os模块使用&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;编程&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
 date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
@@ -15,7 +15,7 @@ date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
 &lt;li&gt;base_dir = os.path.dirname(os.path.abspath(&lt;strong&gt;file&lt;/strong&gt;))
 获取当前文件的绝对路径&lt;/li&gt;
 &lt;li&gt;input_file = os.path.join(base_dir, &lt;strong&gt;&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong&gt;)&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>python中的os函数用法</title><link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Sun, 07 Sep 2025 00:20:47 +0800</pubDate><guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:47+08:00
+&lt;/ul&gt;</description></item><item><title>python中的os函数用法</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Sun, 07 Sep 2025 00:20:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:47+08:00
 lastmod: 2025-09-07T00:20:47+08:00
 encrypted: false&lt;/p&gt;
 &lt;ul&gt;
@@ -26,7 +26,7 @@ encrypted: false&lt;/p&gt;
 &lt;li&gt;base_dir = os.path.dirname(os.path.abspath(&lt;strong&gt;file&lt;/strong&gt;))
 获取当前文件的绝对路径&lt;/li&gt;
 &lt;li&gt;input_file = os.path.join(base_dir, &lt;strong&gt;&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong&gt;)&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>MySQL_--_复合查询</title><link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql_--_%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link><pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate><guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql_--_%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:45+08:00
+&lt;/ul&gt;</description></item><item><title>MySQL_--_复合查询</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql_--_%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link><pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql_--_%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:45+08:00
 lastmod: 2025-09-07T00:20:45+08:00
 encrypted: false&lt;/p&gt;
 &lt;blockquote&gt;
@@ -99,7 +99,7 @@ encrypted: false&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3000&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9999&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;12345678910111213141516171819202122232425262728293031&lt;/span&gt;&lt;span class="n"&gt;AI写代码&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建好以后，如果表的内容和下图一样，那基本就没问题了&lt;/p&gt;</description></item><item><title>linux常用命令</title><link>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Sun, 07 Sep 2025 00:20:44 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;hr&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建好以后，如果表的内容和下图一样，那基本就没问题了&lt;/p&gt;</description></item><item><title>linux常用命令</title><link>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Sun, 07 Sep 2025 00:20:44 +0800</pubDate><guid>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;linux常用命令&amp;rdquo;
 categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;linux&amp;rdquo;]
 date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
@@ -160,7 +160,7 @@ date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;十六、文章PDF版本&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Linux 系统目录&lt;/p&gt;</description></item><item><title>linux常用命令</title><link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Sun, 07 Sep 2025 00:20:44 +0800</pubDate><guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:44+08:00
+&lt;p&gt;Linux 系统目录&lt;/p&gt;</description></item><item><title>linux常用命令</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Sun, 07 Sep 2025 00:20:44 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:44+08:00
 lastmod: 2025-09-07T00:20:44+08:00
 encrypted: false&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;查看历史使用命令&lt;/strong&gt;&lt;/p&gt;
@@ -173,13 +173,13 @@ encrypted: false&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-Shell" data-lang="Shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ps -au 占用的资源是从进程启动开始，计算的平均占用资源，比如cpu等
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;top 实时占用的资源；
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;12&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;查看当前目录所占存储&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>linux安装python</title><link>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Sun, 07 Sep 2025 00:20:43 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;hr&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;查看当前目录所占存储&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>linux安装python</title><link>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Sun, 07 Sep 2025 00:20:43 +0800</pubDate><guid>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;linux安装python&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;linux&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
 date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
 &lt;p&gt;draft: false&lt;/p&gt;
 &lt;h2 id="tags-linux-python-教程"&gt;tags: [&amp;ldquo;linux&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;教程&amp;rdquo;]&lt;/h2&gt;
-&lt;p&gt;#依赖包&lt;/p&gt;</description></item><item><title>linux安装python</title><link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Sun, 07 Sep 2025 00:20:43 +0800</pubDate><guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:43+08:00
+&lt;p&gt;#依赖包&lt;/p&gt;</description></item><item><title>linux安装python</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Sun, 07 Sep 2025 00:20:43 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:43+08:00
 lastmod: 2025-09-07T00:20:43+08:00
 encrypted: false&lt;/p&gt;
 &lt;p&gt;#依赖包&lt;/p&gt;
@@ -196,7 +196,7 @@ encrypted: false&lt;/p&gt;
 &lt;p&gt;make &amp;amp;&amp;amp; make install&lt;/p&gt;
 &lt;p&gt;#给个软链&lt;/p&gt;
 &lt;p&gt;ln -sf /usr/local/python3/bin/python3 /usr/bin/python3&lt;/p&gt;
-&lt;p&gt;ln -sf /usr/local/python3/bin/pip3 /usr/bin/pip3&lt;/p&gt;</description></item><item><title>Go语言--安装和环境搭配</title><link>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link><pubDate>Sun, 07 Sep 2025 00:20:31 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid><description>&lt;h3 id="一go简介"&gt;一.Go简介&lt;/h3&gt;
+&lt;p&gt;ln -sf /usr/local/python3/bin/pip3 /usr/bin/pip3&lt;/p&gt;</description></item><item><title>Go语言--安装和环境搭配</title><link>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link><pubDate>Sun, 07 Sep 2025 00:20:31 +0800</pubDate><guid>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid><description>&lt;h3 id="一go简介"&gt;一.Go简介&lt;/h3&gt;
 &lt;p&gt;Go 语言（又称 Golang）是由 Google 开发的一种开源&lt;a href="https://so.csdn.net/so/search?q=%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80&amp;amp;spm=1001.2101.3001.7020"&gt;编程语言&lt;/a&gt;，于 2009 年正式对外发布。下面从多个方面为你介绍它：&lt;/p&gt;
 &lt;h4 id="设计目标"&gt;设计目标&lt;/h4&gt;
 &lt;p&gt;Go 语言的设计初衷是为了解决大规模&lt;a href="https://so.csdn.net/so/search?q=%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91&amp;amp;spm=1001.2101.3001.7020"&gt;软件开发&lt;/a&gt;中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。&lt;/p&gt;
@@ -215,7 +215,7 @@ encrypted: false&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;分布式系统&lt;/strong&gt;：在分布式系统中，Go 语言的并发模型和网络编程能力使其能够高效地处理大量的并发请求。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="二go语言安装与配置"&gt;二、Go语言安装与配置&lt;/h3&gt;
-&lt;p&gt;Go语言支持以下系统：Linux、Mac、Windows。&lt;/p&gt;</description></item><item><title>Go语言--安装和环境搭配</title><link>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link><pubDate>Sun, 07 Sep 2025 00:20:31 +0800</pubDate><guid>https://bluespace3.github.io/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:31+08:00
+&lt;p&gt;Go语言支持以下系统：Linux、Mac、Windows。&lt;/p&gt;</description></item><item><title>Go语言--安装和环境搭配</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link><pubDate>Sun, 07 Sep 2025 00:20:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:31+08:00
 lastmod: 2025-09-07T00:20:31+08:00
 encrypted: false&lt;/p&gt;
 &lt;h3 id="一go简介"&gt;一.Go简介&lt;/h3&gt;

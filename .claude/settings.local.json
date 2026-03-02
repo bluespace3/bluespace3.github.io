@@ -49,7 +49,9 @@
       "Bash(done)",
       "Bash(find:*)",
       "Bash(xargs grep:*)",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "Bash(git submodule:*)",
+      "Bash(hugo:*)"
     ],
     "deny": [],
     "ask": []

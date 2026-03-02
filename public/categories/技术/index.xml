@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术 on 蓝色空间号</title><link>https://bluespace3.github.io/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 02 Dec 2025 16:08:01 +0000</lastBuildDate><atom:link href="https://bluespace3.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Pandoc</title><link>https://bluespace3.github.io/post.backup/%E5%B7%A5%E5%85%B7/pandoc/</link><pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/%E5%B7%A5%E5%85%B7/pandoc/</guid><description>&lt;ol&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>技术 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on 蓝色空间号</description><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Tue, 02 Dec 2025 16:08:01 +0000</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Pandoc</title><link>https://bluespace.eu.org/post.backup/%E5%B7%A5%E5%85%B7/pandoc/</link><pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/%E5%B7%A5%E5%85%B7/pandoc/</guid><description>&lt;ol&gt;
 &lt;li&gt;Pandoc 简介&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description></item><item><title>提示词参考范例</title><link>https://bluespace3.github.io/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%8F%82%E8%80%83%E8%8C%83%E4%BE%8B/</link><pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%8F%82%E8%80%83%E8%8C%83%E4%BE%8B/</guid><description>&lt;h4 id="通用提示词"&gt;通用提示词&lt;/h4&gt;
+&lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description></item><item><title>提示词参考范例</title><link>https://bluespace.eu.org/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%8F%82%E8%80%83%E8%8C%83%E4%BE%8B/</link><pubDate>Sat, 22 Nov 2025 16:11:04 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%8F%82%E8%80%83%E8%8C%83%E4%BE%8B/</guid><description>&lt;h4 id="通用提示词"&gt;通用提示词&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 角色：角色名称
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt; 角色概述和主要职责的一句话描述
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
@@ -181,10 +181,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt; 仅处理一寸彩照相关业务，拒绝回答无关问题。
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; 严格按照要求进行处理，确保最终生成的照片符合正装一寸彩照的标准。
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="任务执行类提示词示例"&gt;任务执行类提示词示例：&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 角色 
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 角色
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;你是某某角色，你的目标任务是什么，想要达成什么目标
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;## 工作步骤 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;## 工作步骤
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;&lt;/span&gt;&lt;span class="k"&gt;1.&lt;/span&gt; 工作流程1的一句话概括
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;2.&lt;/span&gt; 工作流程2的一句话概括
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;3.&lt;/span&gt; 工作流程3的一句话概括
@@ -312,7 +312,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt; 5 年大厂 AI 产品经验。
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; 擅长以70% 实战 + 30% 理论的方式设计课程。
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; 已帮200+非技术背景学生转型AI领域
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; 结课后可产出面试作品集 
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; 结课后可产出面试作品集
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 目标需求：
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt; 985大学市场营销专业大四学生，2025年12月前目标，希望成为AI产品经理。
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; 掌握大模型应用设计（如客服机器人、智能文档助手）
@@ -486,7 +486,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;&lt;span class="gu"&gt;## 技能：
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;&lt;/span&gt;&lt;span class="k"&gt;-&lt;/span&gt; 当用户输入一个**药品名称**时，请你根据知识库内容输出该药品的简要使用说明书
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 要求：
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;1、所有输出内容应基于已有知识库内容生成 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;1、所有输出内容应基于已有知识库内容生成
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2、输出结果按JSON格式输出
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 任务：请帮给出克立硼罗软膏(国谈)药品说明书。
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 示例：
@@ -683,14 +683,14 @@
 &lt;h5 id="提示词范例网址参考1httpswwwaishorttopcommunity-prompts"&gt;提示词范例网址参考1：https://www.aishort.top/community-prompts&lt;/h5&gt;
 &lt;h5 id="提示词范例网址参考2httpswwwpromptgeniussite"&gt;提示词范例网址参考2：https://www.promptgenius.site/&lt;/h5&gt;
 &lt;h4 id="提示词优化器"&gt;提示词优化器&lt;/h4&gt;
-&lt;h5 id="在线体验"&gt;在线体验： &lt;a href="https://prompt.always200.com/"&gt;https://prompt.always200.com/&lt;/a&gt;&lt;/h5&gt;</description></item><item><title>docker使用笔记</title><link>https://bluespace3.github.io/post.backup/%E6%95%99%E7%A8%8B/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/%E6%95%99%E7%A8%8B/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;docker pull ubuntu 载入ubuntu 镜像&lt;/p&gt;
+&lt;h5 id="在线体验"&gt;在线体验： &lt;a href="https://prompt.always200.com/"&gt;https://prompt.always200.com/&lt;/a&gt;&lt;/h5&gt;</description></item><item><title>docker使用笔记</title><link>https://bluespace.eu.org/post.backup/%E6%95%99%E7%A8%8B/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/%E6%95%99%E7%A8%8B/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;docker pull ubuntu 载入ubuntu 镜像&lt;/p&gt;
 &lt;p&gt;docker pull training/webapp # 载入镜像&lt;/p&gt;
 &lt;p&gt;docker pull python:3.7 安装python镜像&lt;/p&gt;
 &lt;p&gt;docker pull nginx 安装nginx镜像&lt;/p&gt;
 &lt;p&gt;docker run -it python:3.7 /bin/bash 进入python镜像&lt;/p&gt;
 &lt;p&gt;连接不上时，终端输入：&lt;/p&gt;
 &lt;p&gt;1.cd &amp;ldquo;C:\Program Files\Docker\Docker&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;2.DockerCli.exe -SwitchDaemon&lt;/p&gt;</description></item><item><title>Gemma 3本地部署教程</title><link>https://bluespace3.github.io/post.backup/%E6%95%99%E7%A8%8B/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/%E6%95%99%E7%A8%8B/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid><description>&lt;p&gt;Gemma 3 被谷歌称为目前最强的开源视觉模型之一。 该模型支持超过35种语言，能够分析文本、图像和短视频。值得注意的是，Gemma 3 的视觉编码器经过升级，支持高分辨率和非方形图像，并引入了 ShieldGemma 2 图像安全分类器，用于过滤被分类为性暗示、危险或暴力的内容。这些特性使得 Gemma 3 成为当前最强大的开源视觉模型之一。&lt;/p&gt;</description></item><item><title>Git submodule</title><link>https://bluespace3.github.io/post.backup/git/git-submodule/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/git/git-submodule/</guid><description>&lt;hr&gt;
+&lt;p&gt;2.DockerCli.exe -SwitchDaemon&lt;/p&gt;</description></item><item><title>Gemma 3本地部署教程</title><link>https://bluespace.eu.org/post.backup/%E6%95%99%E7%A8%8B/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/%E6%95%99%E7%A8%8B/gemma-3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid><description>&lt;p&gt;Gemma 3 被谷歌称为目前最强的开源视觉模型之一。 该模型支持超过35种语言，能够分析文本、图像和短视频。值得注意的是，Gemma 3 的视觉编码器经过升级，支持高分辨率和非方形图像，并引入了 ShieldGemma 2 图像安全分类器，用于过滤被分类为性暗示、危险或暴力的内容。这些特性使得 Gemma 3 成为当前最强大的开源视觉模型之一。&lt;/p&gt;</description></item><item><title>Git submodule</title><link>https://bluespace.eu.org/post.backup/git/git-submodule/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/git/git-submodule/</guid><description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;Git submodule&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;git&amp;rdquo;, &amp;ldquo;hugo&amp;rdquo;]&lt;/p&gt;
 &lt;p&gt;date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
@@ -706,7 +706,7 @@
 &lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue"&gt;添加&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f"&gt;删除&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;输入“/”快速插入内容&lt;/p&gt;</description></item><item><title>md格式笔记使用指南</title><link>https://bluespace3.github.io/post.backup/%E6%95%99%E7%A8%8B/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/%E6%95%99%E7%A8%8B/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid><description>&lt;h2 id="一核心语法精要"&gt;一、核心语法精要&lt;/h2&gt;
+&lt;p&gt;输入“/”快速插入内容&lt;/p&gt;</description></item><item><title>md格式笔记使用指南</title><link>https://bluespace.eu.org/post.backup/%E6%95%99%E7%A8%8B/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/%E6%95%99%E7%A8%8B/md%E6%A0%BC%E5%BC%8F%E7%AC%94%E8%AE%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid><description>&lt;h2 id="一核心语法精要"&gt;一、核心语法精要&lt;/h2&gt;
 &lt;h3 id="1-标题与段落"&gt;1. 标题与段落&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 主标题（H1）
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;&lt;/span&gt;&lt;span class="gu"&gt;## 二级标题（H2）
@@ -735,7 +735,7 @@ alt=&amp;ldquo;Markdown示例&amp;rdquo;
 caption=&amp;ldquo;图1. 文档结构示意图&amp;rdquo;
 width=&amp;ldquo;80%&amp;rdquo;
 &lt;blockquote&gt;
-&lt;p&gt;}}&lt;/p&gt;</description></item><item><title>MySQL -- 复合查询</title><link>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;}}&lt;/p&gt;</description></item><item><title>MySQL -- 复合查询</title><link>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql----%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%BA%93&amp;amp;spm=1001.2101.3001.7020"&gt;数据库&lt;/a&gt;的查询是数据库使用中比较重要的环节，前面的基础查询比较简单，不做介绍，可自行查阅。本文主要介绍复合查询，并结合用例进行讲解。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
@@ -805,8 +805,8 @@ width=&amp;ldquo;80%&amp;rdquo;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3000&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9999&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;12345678910111213141516171819202122232425262728293031&lt;/span&gt;&lt;span class="n"&gt;AI写代码&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建好以后，如果表的内容和下图一样，那基本就没问题了&lt;/p&gt;</description></item><item><title>python非同级目录调用报错</title><link>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid><description>&lt;h2 id="项目结构"&gt;项目结构：&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=N2E4ZjQ0N2I5MmEwYWExMjg1YmVmOTcyZTBhNTk1ZTlfdXlaSzZjU09wSE5mR1AyYTBuYVg1SElQcHJIUENSVWpfVG9rZW46S3AyMmI4bFN1b2VjeG54V251Q2NzMHBhbm5nXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA" alt=""&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建好以后，如果表的内容和下图一样，那基本就没问题了&lt;/p&gt;</description></item><item><title>python非同级目录调用报错</title><link>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%9D%9E%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%B0%83%E7%94%A8%E6%8A%A5%E9%94%99/</guid><description>&lt;h2 id="项目结构"&gt;项目结构：&lt;/h2&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=N2E4ZjQ0N2I5MmEwYWExMjg1YmVmOTcyZTBhNTk1ZTlfdXlaSzZjU09wSE5mR1AyYTBuYVg1SElQcHJIUENSVWpfVG9rZW46S3AyMmI4bFN1b2VjeG54V251Q2NzMHBhbm5nXzE3NDI0NjExMTk6MTc0MjQ2NDcxOV9WNA"&gt;&lt;/p&gt;
 &lt;h2 id="问题"&gt;问题：&lt;/h2&gt;
 &lt;p&gt;执行文件调用dir1，间接调用dir2。执行时报错：“ModuleNotFoundError: No module named &amp;lsquo;dir1.dir2&amp;rsquo;;”&lt;/p&gt;
 &lt;h2 id="解决方法"&gt;解决方法：&lt;/h2&gt;
@@ -814,17 +814,17 @@ width=&amp;ldquo;80%&amp;rdquo;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;主函数加入这四行，将项目的根目录(webapp)的路径加入到系统PATH中；
-import os,sys&lt;/p&gt;</description></item><item><title>scrapy爬柚子网示例</title><link>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid><description>&lt;p&gt;柚子网https://www.uu-zz.com/&lt;/p&gt;
+import os,sys&lt;/p&gt;</description></item><item><title>scrapy爬柚子网示例</title><link>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/scrapy%E7%88%AC%E6%9F%9A%E5%AD%90%E7%BD%91%E7%A4%BA%E4%BE%8B/</guid><description>&lt;p&gt;柚子网https://www.uu-zz.com/&lt;/p&gt;
 &lt;p&gt;爬取页码&lt;/p&gt;
 &lt;p&gt;遍历页面内对应的视频集的链接&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/O1YCbvbQBoiZYHxxbO7cqOi6nKb?preview_type=16" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/O1YCbvbQBoiZYHxxbO7cqOi6nKb?preview_type=16"&gt;&lt;/p&gt;
 &lt;p&gt;遍历视频内子视频链接&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/CKMPbtR4souEnDxWowNcxAuenNc?preview_type=16" alt=""&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/CKMPbtR4souEnDxWowNcxAuenNc?preview_type=16"&gt;!&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://security.feishu.cn/link/safety?target=https%3A%2F%2Fwww.uu-zz.com%2F%2B%E5%AD%90%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5&amp;amp;scene=ccm&amp;amp;logParams=%7B%22location%22%3A%22ccm_mindnote%22%7D&amp;amp;lang=zh-CN"&gt;https://www.uu-zz.com/+子视频链接&lt;/a&gt;，发送get请求&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/ClLDbx3s5o29xpxWKrncnG3Enzg?preview_type=16" alt=""&gt;!&lt;/p&gt;
-&lt;p&gt;获得m3u8文件，储存在数据库&lt;/p&gt;</description></item><item><title>使用GiHub作为图床</title><link>https://bluespace3.github.io/post.backup/git/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace3.github.io/post.backup/git/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid><description>&lt;h2 id="使用-github-作为免费图床的文档"&gt;使用 GitHub 作为免费图床的文档&lt;/h2&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/preview/ClLDbx3s5o29xpxWKrncnG3Enzg?preview_type=16"&gt;!&lt;/p&gt;
+&lt;p&gt;获得m3u8文件，储存在数据库&lt;/p&gt;</description></item><item><title>使用GiHub作为图床</title><link>https://bluespace.eu.org/post.backup/git/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</link><pubDate>Thu, 20 Nov 2025 15:58:14 +0000</pubDate><guid>https://bluespace.eu.org/post.backup/git/%E4%BD%BF%E7%94%A8gihub%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/</guid><description>&lt;h2 id="使用-github-作为免费图床的文档"&gt;使用 GitHub 作为免费图床的文档&lt;/h2&gt;
 &lt;p&gt;最近就想找一款免费的图床来放置自己的图片，逛了一圈下来发现GitHub可以白嫖，于是乎，就有了这篇文章。&lt;/p&gt;
-&lt;p&gt;GitHub 是一个非常流行的代码托管平台，除了代码存储外，你还可以使用 GitHub 来托管静态资源，比如图片。通过将图片上传到 GitHub 的仓库，你可以轻松获取图片的 URL，从而在网页或文档中嵌入这些图片。以下是如何使用 GitHub 作为免费图床的详细步骤。&lt;/p&gt;</description></item><item><title>Neon配置教程</title><link>https://bluespace3.github.io/post.backup/neon%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link><pubDate>Sun, 27 Apr 2025 11:59:32 +0800</pubDate><guid>https://bluespace3.github.io/post.backup/neon%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid><description>&lt;ol&gt;
+&lt;p&gt;GitHub 是一个非常流行的代码托管平台，除了代码存储外，你还可以使用 GitHub 来托管静态资源，比如图片。通过将图片上传到 GitHub 的仓库，你可以轻松获取图片的 URL，从而在网页或文档中嵌入这些图片。以下是如何使用 GitHub 作为免费图床的详细步骤。&lt;/p&gt;</description></item><item><title>Neon配置教程</title><link>https://bluespace.eu.org/post.backup/neon%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link><pubDate>Sun, 27 Apr 2025 11:59:32 +0800</pubDate><guid>https://bluespace.eu.org/post.backup/neon%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid><description>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;创建Neon实例&lt;/strong&gt;
 登录Neon控制台（官网：&lt;strong&gt;&lt;a href="https://neon.tech"&gt;https://neon.tech&lt;/a&gt;&lt;/strong&gt;），点击创建免费的Serverless Postgres实例，选择配置（如地区、分支、计算/存储规格）&lt;/p&gt;
