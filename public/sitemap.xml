@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bluespace.eu.org/categories/</loc>
-    <lastmod>2026-03-04T02:26:58+08:00</lastmod>
+    <lastmod>2026-03-04T02:35:35+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace.eu.org/post/</loc>
+    <lastmod>2026-03-04T02:35:35+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</loc>
+    <lastmod>2026-03-04T02:35:35+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace.eu.org/</loc>
+    <lastmod>2026-03-04T02:35:35+08:00</lastmod>
+  </url><url>
+    <loc>https://bluespace.eu.org/categories/%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2026-03-04T02:35:35+08:00</lastmod>
   </url><url>
     <loc>https://bluespace.eu.org/post/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2026-03-04T02:26:58+08:00</lastmod>
@@ -11,16 +23,7 @@
     <loc>https://bluespace.eu.org/categories/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7.md/</loc>
     <lastmod>2026-03-04T02:26:58+08:00</lastmod>
   </url><url>
-    <loc>https://bluespace.eu.org/post/</loc>
-    <lastmod>2026-03-04T02:26:58+08:00</lastmod>
-  </url><url>
-    <loc>https://bluespace.eu.org/</loc>
-    <lastmod>2026-03-04T02:26:58+08:00</lastmod>
-  </url><url>
     <loc>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</loc>
-    <lastmod>2026-03-04T01:46:36+08:00</lastmod>
-  </url><url>
-    <loc>https://bluespace.eu.org/categories/%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2026-03-04T01:46:36+08:00</lastmod>
   </url><url>
     <loc>https://bluespace.eu.org/post/nextcloud/migration-summary/</loc>
@@ -94,9 +97,6 @@
   </url><url>
     <loc>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/clawdbot/</loc>
     <lastmod>2026-02-27T09:56:24+08:00</lastmod>
-  </url><url>
-    <loc>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</loc>
-    <lastmod>2026-02-25T21:36:52+08:00</lastmod>
   </url><url>
     <loc>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/terminus/</loc>
     <lastmod>2026-02-25T11:23:31+08:00</lastmod>
