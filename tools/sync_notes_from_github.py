@@ -78,13 +78,51 @@ class NotesSyncManager:
 
             lines = content.split('\n')
 
-            # Sanity check - warn if too many dashes in Front Matter (indicates duplication bug)
-            # Only check first 30 lines to avoid counting section separators
-            header_lines = lines[:30]
-            dash_count = sum(1 for line in header_lines if line.strip() == '---')
-            if dash_count > 2:
-                print(f"  ⚠️  警告：{file_path.name} 前 30 行有 {dash_count} 个 --- 标记")
-                print(f"     建议检查：python tools/clean_duplicate_frontmatter.py {file_path.parent}")
+            # Sanity check - detect duplicate Front Matter blocks
+            # Duplicate Front Matter looks like: ---<fm1>---<fm2>--- (consecutive blocks)
+            # A valid Markdown separator is: ---\n\n<content> (with empty lines around)
+            has_duplicate_frontmatter = False
+
+            # Check if file starts with Front Matter
+            if lines and lines[0].strip() == '---':
+                # Find first Front Matter end position
+                first_fm_end = -1
+                for i, line in enumerate(lines[1:], 1):
+                    if line.strip() == '---':
+                        first_fm_end = i
+                        break
+
+                if first_fm_end > 0:
+                    # Check for another Front Matter block immediately after (within 3 lines)
+                    # Look for another '---' marker followed by frontmatter-like content
+                    check_range = min(first_fm_end + 5, len(lines))
+                    second_fm_start = -1
+
+                    for i in range(first_fm_end + 1, check_range):
+                        if lines[i].strip() == '---':
+                            second_fm_start = i
+                            break
+
+                    if second_fm_start > 0:
+                        # Verify this is likely a Front Matter block (not just a separator)
+                        # Check for key: value pattern in the following lines
+                        has_kv_pattern = False
+                        for i in range(second_fm_start + 1, min(second_fm_start + 10, len(lines))):
+                            line = lines[i].strip()
+                            if line == '---':
+                                # Found end marker, check if we saw any key: value
+                                break
+                            # Check for YAML key: value pattern
+                            if re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*:\s*\S', line):
+                                has_kv_pattern = True
+                                break
+
+                        if has_kv_pattern:
+                            has_duplicate_frontmatter = True
+
+            if has_duplicate_frontmatter:
+                print(f"  ⚠️  警告：{file_path.name} 检测到可能重复的 Front Matter 块")
+                print(f"     建议运行：python3 tools/clean_duplicate_frontmatter.py {file_path.parent}")
                 # In dry_run mode, ask for confirmation; in auto mode, just warn and continue
                 if dry_run:
                     response = input("     是否继续？[y/N] ")
