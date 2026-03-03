@@ -13,7 +13,7 @@
       <link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link>
       <pubDate>Wed, 04 Mar 2026 02:52:02 +0800</pubDate>
       <guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid>
-      <description>&lt;p&gt;date: 2026-02-25T21:36:52+08:00&#xA;lastmod: 2026-02-25T21:36:52+08:00&#xA;encrypted: false&lt;/p&gt;&#xA;&lt;h1 id=&#34;通过密钥连接服务器踩坑配置正确但是连接失败&#34;&gt;通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;初始状态&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;已成功生成SSH密钥对（ed25519）&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;已将公钥添加到服务器的 ~/.ssh/authorized_keys                                            - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;通过密钥连接服务器踩坑配置正确但是连接失败&#34;&gt;通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;初始状态&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;已成功生成SSH密钥对（ed25519）&lt;/li&gt;&#xA;&lt;li&gt;已将公钥添加到服务器的 ~/.ssh/authorized_keys                                            - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;问题表现&#xA;ssh -o BatchMode=yes -o PasswordAuthentication=no &lt;a href=&#34;mailto:username@ip&#34;&gt;username@ip&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;结果permission-denied-password&#34;&gt;结果：Permission denied (password)&lt;/h2&gt;&#xA;&lt;p&gt;即使公钥已在服务器上，公钥认证仍然失败。&lt;/p&gt;</description>
     </item>
     <item>
       <title>ACP-Claude-Code快捷指令</title>
