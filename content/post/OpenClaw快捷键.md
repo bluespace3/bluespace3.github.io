@@ -3,7 +3,6 @@ title: 'OpenClaw快捷键'
 categories: ["OpenClaw快捷键.md"]
 date: 2026-02-28T03:17:58+08:00
 lastmod: 2026-02-28T03:17:58+08:00
-encrypted: false
 ---
 
 ## 斜杠命令

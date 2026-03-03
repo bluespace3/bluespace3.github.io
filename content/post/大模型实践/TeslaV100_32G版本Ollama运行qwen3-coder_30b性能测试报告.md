@@ -3,7 +3,6 @@ title: 'TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告'
 categories: ["大模型实践"]
 date: 2026-02-13T01:22:05+08:00
 lastmod: 2026-02-13T01:22:05+08:00
-encrypted: false
 ---
 date: 2026-02-13T01:22:05+08:00
 lastmod: 2026-02-13T01:22:05+08:00
