@@ -78,12 +78,15 @@ class NotesSyncManager:
 
             lines = content.split('\n')
 
-            # Sanity check - warn if too many dashes (indicates duplication bug)
-            dash_count = sum(1 for line in lines if line.strip() == '---')
+            # Sanity check - warn if too many dashes in Front Matter (indicates duplication bug)
+            # Only check first 30 lines to avoid counting section separators
+            header_lines = lines[:30]
+            dash_count = sum(1 for line in header_lines if line.strip() == '---')
             if dash_count > 2:
-                print(f"  ⚠️  警告：{file_path.name} 有 {dash_count} 个 --- 标记")
-                print(f"     建议先运行：python tools/clean_duplicate_frontmatter.py {file_path.parent}")
-                if not dry_run:
+                print(f"  ⚠️  警告：{file_path.name} 前 30 行有 {dash_count} 个 --- 标记")
+                print(f"     建议检查：python tools/clean_duplicate_frontmatter.py {file_path.parent}")
+                # In dry_run mode, ask for confirmation; in auto mode, just warn and continue
+                if dry_run:
                     response = input("     是否继续？[y/N] ")
                     if response.lower() != 'y':
                         return False

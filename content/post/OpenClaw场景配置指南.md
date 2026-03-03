@@ -1,3 +1,9 @@
+---
+title: 'OpenClaw场景配置指南'
+categories: ["OpenClaw场景配置指南.md"]
+date: 2026-03-04T01:34:21+08:00
+lastmod: 2026-03-04T01:34:21+08:00
+---
 # OpenClaw 场景配置指南
 
 本文档介绍如何配置和使用 OpenClaw 的高价值场景，包括 AI 新闻日报、技术新闻聚合、播客自动化等内容生成。
