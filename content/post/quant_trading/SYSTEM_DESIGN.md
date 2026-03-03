@@ -1,8 +1,8 @@
 ---
 title: 'SYSTEM_DESIGN'
 categories: ["quant_trading"]
-date: 2025-09-07T00:22:06+08:00
-lastmod: 2025-09-07T00:22:06+08:00
+date: 2026-03-04T02:48:21+08:00
+lastmod: 2026-03-04T02:48:21+08:00
 ---
 
 ### 2.7. 实现状态与验证
