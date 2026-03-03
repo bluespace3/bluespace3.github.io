@@ -324,30 +324,33 @@ lastmod: {lastmod_hugo}
                 stats['copied'] += 1
 
         # 同步 assets 目录（如果有图片等资源）
-        assets_dir = note_repo_path / 'assets'
-        if assets_dir.exists() and assets_dir.is_dir():
-            static_assets_dir = self.project_root / 'static' / 'assets'
-            print(f"\n  📁 同步 assets 目录...")
+        import shutil
 
-            if dry_run:
-                print(f"  [DRY RUN] 将复制 assets 到 static/")
-            else:
-                # 如果 static/assets 不存在，创建它
-                if not static_assets_dir.exists():
-                    static_assets_dir.mkdir(parents=True, exist_ok=True)
+        # 同步多个资源目录
+        resource_dirs = ['assets', 'images']
+        for resource_dir_name in resource_dirs:
+            source_dir = note_repo_path / resource_dir_name
+            if source_dir.exists() and source_dir.is_dir():
+                static_dir = self.project_root / 'static' / resource_dir_name
+                print(f"\n  📁 同步 {resource_dir_name} 目录...")
 
-                # 复制 assets 目录的内容
-                import shutil
-                for asset_file in assets_dir.rglob('*'):
-                    if asset_file.is_file():
-                        rel_path = asset_file.relative_to(assets_dir)
-                        target_asset = static_assets_dir / rel_path
+                if dry_run:
+                    print(f"  [DRY RUN] 将复制 {resource_dir_name} 到 static/")
+                else:
+                    # 如果 static/{resource_dir_name} 不存在，创建它
+                    if not static_dir.exists():
+                        static_dir.mkdir(parents=True, exist_ok=True)
 
-                        # 创建目标目录
-                        target_asset.parent.mkdir(parents=True, exist_ok=True)
+                    # 复制目录的内容
+                    for asset_file in source_dir.rglob('*'):
+                        if asset_file.is_file():
+                            rel_path = asset_file.relative_to(source_dir)
+                            target_asset = static_dir / rel_path
 
-                        # 检查是否已存在
-                        if not target_asset.exists():
+                            # 创建目标目录
+                            target_asset.parent.mkdir(parents=True, exist_ok=True)
+
+                            # 总是复制，覆盖已存在的文件
                             shutil.copy2(asset_file, target_asset)
                             stats['copied'] += 1
 
