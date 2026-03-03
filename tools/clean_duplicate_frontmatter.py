@@ -52,7 +52,7 @@ class FrontMatterCleaner:
         check_limit = min(20, len(lines))
         dash_positions = [i for i in range(check_limit) if lines[i].strip() == '---']
 
-        # 找出所有完整的 Front Matter 块（只在前 20 行内）
+        # 找出所有连续的 Front Matter 块（只在前 20 行内）
         frontmatter_blocks = []
         has_duplicate = False
 
@@ -62,15 +62,19 @@ class FrontMatterCleaner:
             # 检查是否有配对的结束标记
             if i + 1 < len(dash_positions):
                 end_pos = dash_positions[i + 1]
-                # 验证是否是有效的 Front Matter（检查是否有 title 或 categories）
+                # 验证是否是有效的 Front Matter（检查是否有常见的 YAML 字段）
                 block_content = '\n'.join(lines[start_pos + 1:end_pos])
                 if self._is_valid_frontmatter(block_content):
                     if frontmatter_blocks:
                         # 已有一个 Front Matter，这是重复的
                         has_duplicate = True
                     frontmatter_blocks.append((start_pos, end_pos))
-                    i += 2  # 跳过结束标记
-                    continue
+                    # 检查是否还有连续的 Front Matter 块
+                    i += 2  # 跳到下一个可能的起始标记
+                    if i < len(dash_positions):
+                        # 尝试检测下一个块
+                        continue
+                    break  # 没有更多标记，结束
             i += 1
 
         return dash_positions, frontmatter_blocks, has_duplicate

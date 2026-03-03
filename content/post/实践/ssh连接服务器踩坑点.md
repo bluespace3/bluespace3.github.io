@@ -3,24 +3,24 @@ title: 'ssh连接服务器踩坑点'
 categories: ["实践"]
 date: 2026-03-04T02:52:02+08:00
 lastmod: 2026-03-04T02:52:02+08:00
+encrypted: false
 ---
 # 通过密钥连接服务器踩坑——配置正确但是连接失败
 
 1. 初始状态
 
 - 已成功生成SSH密钥对（ed25519）
-
 - 已将公钥添加到服务器的 ~/.ssh/authorized_keys                                            - 权限设置正确（.ssh 目录700，authorized_keys 文件600）
 
 2. 问题表现
-   ssh -o BatchMode=yes -o PasswordAuthentication=no root@38.55.39.104
+  ssh -o BatchMode=yes -o PasswordAuthentication=no [username@ip](mailto:username@ip)
 
 ## 结果：Permission denied (password)
 
 即使公钥已在服务器上，公钥认证仍然失败。
 
 3. 根本原因
-   检查服务器SSH配置：
+  检查服务器SSH配置：
    grep PubkeyAuthentication /etc/ssh/sshd_config
 
 ## 输出：PubkeyAuthentication no
@@ -38,7 +38,7 @@ systemctl restart sshd
 使配置生效
 
 步骤3：验证修复
-ssh -o PasswordAuthentication=no root@38.55.39.104
+ssh -o PasswordAuthentication=no username@ip
 
 ## 结果：✓ 公钥认证成功！无需输入密码！
 
