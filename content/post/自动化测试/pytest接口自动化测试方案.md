@@ -3,6 +3,7 @@ title: 'pytest接口自动化测试方案'
 categories: ["自动化测试"]
 date: 2026-03-04T02:48:21+08:00
 lastmod: 2026-03-04T02:48:21+08:00
+draft: false
 ---
 ## 背景
 

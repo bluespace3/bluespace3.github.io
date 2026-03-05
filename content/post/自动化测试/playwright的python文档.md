@@ -3,6 +3,7 @@ title: 'playwright的python文档'
 categories: ["自动化测试"]
 date: 2025-09-07T00:20:26+08:00
 lastmod: 2025-09-07T00:20:26+08:00
+draft: false
 ---
 date: 2025-09-07T00:20:26+08:00
 lastmod: 2025-09-07T00:20:26+08:00

@@ -3,6 +3,7 @@ title: '配置代理加速github访问'
 categories: ["配置代理加速github访问.md"]
 date: 2026-03-04T02:48:21+08:00
 lastmod: 2026-03-04T02:48:21+08:00
+draft: false
 ---
 
 ## 第一部分：服务端配置（海外服务器）

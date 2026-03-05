@@ -3,6 +3,7 @@ title: 'SYSTEM_DESIGN'
 categories: ["quant_trading"]
 date: 2026-03-04T02:48:21+08:00
 lastmod: 2026-03-04T02:48:21+08:00
+draft: false
 ---
 
 ### 2.7. 实现状态与验证

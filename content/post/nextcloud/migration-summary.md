@@ -3,6 +3,7 @@ title: 'migration-summary'
 categories: ["nextcloud"]
 date: 2026-03-04T02:48:21+08:00
 lastmod: 2026-03-04T02:48:21+08:00
+draft: false
 ---
 # Nextcloud 数据库迁移总结
 
