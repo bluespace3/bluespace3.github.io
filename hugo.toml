@@ -21,6 +21,13 @@ mainSections = ["post", "archives"]
     weight = 1
     title = '蓝色空间号'
 
+# Taxonomy 配置（修复 Hugo 0.124+ Social 弃用问题）
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+  series = 'series'
+  social = 'social'
+
 # Markdown 配置
 [markup]
   [markup.highlight]
