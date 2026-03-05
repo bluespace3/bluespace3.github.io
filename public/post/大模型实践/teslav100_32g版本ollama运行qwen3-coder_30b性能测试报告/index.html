@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告 | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="date: 2026-02-13T01:22:05&#43;08:00
+lastmod: 2026-02-13T01:22:05&#43;08:00
+encrypted: false
+Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告
+测试概要
+模型: zdolny/qwen3-coder58k-tools:latest（尺寸为30b）
+上下文窗口: 58,000 tokens
+测试环境: Windows &#43; Tesla V100-SXM2-32GB GPU
+测试日期: 2025-12-13">
+<meta name="author" content="新人类">
+<link rel="canonical" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://bluespace.eu.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://bluespace.eu.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告" />
+<meta property="og:description" content="date: 2026-02-13T01:22:05&#43;08:00
+lastmod: 2026-02-13T01:22:05&#43;08:00
+encrypted: false
+Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告
+测试概要
+模型: zdolny/qwen3-coder58k-tools:latest（尺寸为30b）
+上下文窗口: 58,000 tokens
+测试环境: Windows &#43; Tesla V100-SXM2-32GB GPU
+测试日期: 2025-12-13" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-02-13T01:22:05+08:00" />
+<meta property="article:modified_time" content="2026-02-13T01:22:05+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告"/>
+<meta name="twitter:description" content="date: 2026-02-13T01:22:05&#43;08:00
+lastmod: 2026-02-13T01:22:05&#43;08:00
+encrypted: false
+Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告
+测试概要
+模型: zdolny/qwen3-coder58k-tools:latest（尺寸为30b）
+上下文窗口: 58,000 tokens
+测试环境: Windows &#43; Tesla V100-SXM2-32GB GPU
+测试日期: 2025-12-13"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://bluespace.eu.org/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告",
+      "item": "https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告",
+  "name": "TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告",
+  "description": "date: 2026-02-13T01:22:05+08:00 lastmod: 2026-02-13T01:22:05+08:00 encrypted: false\nTesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告 测试概要 模型: zdolny/qwen3-coder58k-tools:latest（尺寸为30b） 上下文窗口: 58,000 tokens 测试环境: Windows + Tesla V100-SXM2-32GB GPU 测试日期: 2025-12-13\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "date: 2026-02-13T01:22:05+08:00 lastmod: 2026-02-13T01:22:05+08:00 encrypted: false\nTesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告 测试概要 模型: zdolny/qwen3-coder58k-tools:latest（尺寸为30b） 上下文窗口: 58,000 tokens 测试环境: Windows + Tesla V100-SXM2-32GB GPU 测试日期: 2025-12-13\n本报告详细测试了模型在不同上下文长度和并发场景下的性能表现，重点关注首个 Token 时间和 Token 生成速率两个关键指标。\n系统环境信息 项目 配置 GPU Tesla V100-SXM2-32GB GPU 显存使用 22,910MiB / 32,768MiB (70% 利用率) 驱动版本 572.83 CUDA 版本 12.8 GPU 温度 35°C GPU TDP 300W (最大功耗) 详细性能测试结果 1. 不同上下文长度性能对比 测试场景 上下文长度 首个 Token 时间 Token 生成速率 生成 Token 数量 短提示 ~9 tokens 82ms 84.7 tokens/秒 10 tokens 中等提示 ~13 tokens 291ms 75.3 tokens/秒 270 tokens 高上下文 3,015 tokens 5.42 秒 75.3 tokens/秒 64 tokens 大上下文 15,018 tokens 17.43 秒 71.8 tokens/秒 19 tokens 2. 并发性能测试 指标 结果 并发请求数 3 成功率 3/3 (100%) 总测试耗时 16.56 秒 平均首个 Token 时间 0.18 秒 平均 Token 生成速率 75.6 tokens/秒 总生成 Token 数量 1,060 tokens 3. 最大上下文长度性能推测 基于实测数据的线性外推：\n上下文长度 预计首个 Token 时间 预计提示处理时间 3,015 tokens 5.42 秒 2.10 秒 15,018 tokens 17.43 秒 14.14 秒 58,000 tokens ~67 秒 ~54 秒 关键性能洞察 🚀 首个 Token 延迟分析 极短提示: ~82ms（接近实时响应） 中等提示: ~291ms（用户可接受范围） 高上下文提示 (3K tokens): ~5.42 秒 大上下文提示 (15K tokens): ~17.43 秒 最大上下文推测 (58K tokens): ~67 秒 结论: 首个 Token 时间与上下文长度近似线性增长，这是 Transformer 架构的正常特性。\n⚡ Token 生成吞吐量 性能稳定性: 71-85 tokens/秒 上下文长度影响: 几乎无影响，生成速率保持稳定 并发场景表现: 75.6 tokens/秒（与单请求基本一致） 整体评价: 对于 58K 上下文窗口的大模型，这是优秀的性能表现 🔧 模型加载性能 短提示加载: ~44ms（GPU 内存管理高效） 高上下文加载: ~3.3 秒（稳定表现） 内存管理: 模型在内存中保持加载状态，便于后续请求 📈 上下文长度影响 提示处理时间: 与上下文长度近似线性增长 3,015 tokens: 2.10 秒处理时间 15,018 tokens: 14.14 秒处理时间 58,000 tokens 推测: ~54 秒处理时间 🔄 并发性能表现 并发处理能力: Ollama 能够有效处理多请求并发 资源利用率: 3个并发请求全部成功完成 性能保持: 平均首个 Token 时间仅 0.18 秒，Token 生成速率稳定 💻 GPU 利用效率 Tesla V100 GPU: 使用效率高 显存利用率: 70% 表明资源分配良好 散热性能: 35°C 低温运行，散热优秀 性能建议 1. 应用场景选择 实时交互应用: 适合短到中等上下文（\u003c 1K tokens），首个 Token 时间 \u003c 300ms 长文档处理: 可处理大上下文，但需考虑 ~17 秒的首个 Token 延迟 批量处理: 并发性能优秀，适合多任务并行处理 2. 性能优化建议 上下文管理: 合理控制上下文长度，避免不必要的长上下文 缓存策略: 利用模型在内存中的持久化特性，减少重复加载 并发调度: 可安全使用并发请求，Ollama 具备良好的并发处理能力 3. 硬件配置建议 GPU 显存: 32GB 显存可轻松处理 58K 上下文模型 散热要求: 即使高负载下温度也保持在 35°C，散热需求适中 电源需求: 300W 电源足够支持 Tesla V100 运行 测试方法说明 数据采集方式 API 端点: POST /api/generate (stream=false) 性能指标: 直接从 Ollama API 响应中提取内置性能数据 关键指标计算: 首个 Token 时间 = load_duration + prompt_eval_duration Token 生成速率 = eval_count / eval_duration 测试脚本 单请求测试: Python requests 库直接调用 API 并发测试: ThreadPoolExecutor 实现 3 线程并发 大上下文生成: 重复句子构造指定长度上下文 测试限制 最大上下文测试: 由于时间限制，未直接测试 58K tokens，采用线性外推 硬件环境: 单 GPU 测试，未测试多 GPU 扩展性 网络环境: 本地回环测试，未考虑网络延迟影响 结论 zdolny/qwen3-coder58k-tools:latest 模型在 Tesla V100 GPU 上表现出色：\nGLM-4.7-Flash: ███████████████████████ 31.02 tokens/s (基准) Qwen3-Coder: ████████░░░░░░░░░░░░░ 10.31 tokens/s (33% of GLM) Minimax M2.1: ███████░░░░░░░░░░░░░░ 9.30 tokens/s (30% of GLM)\n✅ 优势:\n稳定的 Token 生成速率 (71-85 tokens/秒) 优秀的并发处理能力 高效的 GPU 显存利用 良好的散热和功耗表现 ⚠️ 注意事项:\n大上下文场景下首个 Token 延迟显著增加 58K tokens 上下文预计需要 ~67 秒首个 Token 时间 建议根据应用场景合理选择上下文长度 该模型非常适合需要大上下文窗口的应用场景，在保证长上下文能力的同时，维持了优秀的 Token 生成性能和并发处理能力。\n",
+  "wordCount" : "1622",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-02-13T01:22:05+08:00",
+  "dateModified": "2026-02-13T01:22:05+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "新人类"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "蓝色空间号",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluespace.eu.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bluespace.eu.org/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/post/">Posts</a></div>
+    <h1 class="post-title">
+      TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告
+    </h1>
+    <div class="post-meta">&lt;span title=&#39;2026-02-13 01:22:05 &#43;0800 CST&#39;&gt;2026-02-13&lt;/span&gt;&amp;nbsp;·&amp;nbsp;4 min&amp;nbsp;·&amp;nbsp;1622 words&amp;nbsp;·&amp;nbsp;新人类
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#测试概要">测试概要</a></li>
+    <li><a href="#系统环境信息">系统环境信息</a></li>
+    <li><a href="#详细性能测试结果">详细性能测试结果</a>
+      <ul>
+        <li><a href="#1-不同上下文长度性能对比">1. 不同上下文长度性能对比</a></li>
+        <li><a href="#2-并发性能测试">2. 并发性能测试</a></li>
+        <li><a href="#3-最大上下文长度性能推测">3. 最大上下文长度性能推测</a></li>
+      </ul>
+    </li>
+    <li><a href="#关键性能洞察">关键性能洞察</a>
+      <ul>
+        <li><a href="#-首个-token-延迟分析">🚀 首个 Token 延迟分析</a></li>
+        <li><a href="#-token-生成吞吐量">⚡ Token 生成吞吐量</a></li>
+        <li><a href="#-模型加载性能">🔧 模型加载性能</a></li>
+        <li><a href="#-上下文长度影响">📈 上下文长度影响</a></li>
+        <li><a href="#-并发性能表现">🔄 并发性能表现</a></li>
+        <li><a href="#-gpu-利用效率">💻 GPU 利用效率</a></li>
+      </ul>
+    </li>
+    <li><a href="#性能建议">性能建议</a>
+      <ul>
+        <li><a href="#1-应用场景选择">1. 应用场景选择</a></li>
+        <li><a href="#2-性能优化建议">2. 性能优化建议</a></li>
+        <li><a href="#3-硬件配置建议">3. 硬件配置建议</a></li>
+      </ul>
+    </li>
+    <li><a href="#测试方法说明">测试方法说明</a>
+      <ul>
+        <li><a href="#数据采集方式">数据采集方式</a></li>
+        <li><a href="#测试脚本">测试脚本</a></li>
+        <li><a href="#测试限制">测试限制</a></li>
+      </ul>
+    </li>
+    <li><a href="#结论">结论</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>date: 2026-02-13T01:22:05+08:00
+lastmod: 2026-02-13T01:22:05+08:00
+encrypted: false</p>
+<h1 id="tesla-v10032g版本ollama-运行qwen3-coder30b性能测试报告">Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告<a hidden class="anchor" aria-hidden="true" href="#tesla-v10032g版本ollama-运行qwen3-coder30b性能测试报告">#</a></h1>
+<h2 id="测试概要">测试概要<a hidden class="anchor" aria-hidden="true" href="#测试概要">#</a></h2>
+<p><strong>模型</strong>: <code>zdolny/qwen3-coder58k-tools:latest</code>（尺寸为30b）
+<strong>上下文窗口</strong>: 58,000 tokens
+<strong>测试环境</strong>: Windows + Tesla V100-SXM2-32GB GPU
+<strong>测试日期</strong>: 2025-12-13</p>
+<p>本报告详细测试了模型在不同上下文长度和并发场景下的性能表现，重点关注首个 Token 时间和 Token 生成速率两个关键指标。</p>
+<h2 id="系统环境信息">系统环境信息<a hidden class="anchor" aria-hidden="true" href="#系统环境信息">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>配置</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>GPU</strong></td>
+          <td>Tesla V100-SXM2-32GB</td>
+      </tr>
+      <tr>
+          <td><strong>GPU 显存使用</strong></td>
+          <td>22,910MiB / 32,768MiB (70% 利用率)</td>
+      </tr>
+      <tr>
+          <td><strong>驱动版本</strong></td>
+          <td>572.83</td>
+      </tr>
+      <tr>
+          <td><strong>CUDA 版本</strong></td>
+          <td>12.8</td>
+      </tr>
+      <tr>
+          <td><strong>GPU 温度</strong></td>
+          <td>35°C</td>
+      </tr>
+      <tr>
+          <td><strong>GPU TDP</strong></td>
+          <td>300W (最大功耗)</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="详细性能测试结果">详细性能测试结果<a hidden class="anchor" aria-hidden="true" href="#详细性能测试结果">#</a></h2>
+<h3 id="1-不同上下文长度性能对比">1. 不同上下文长度性能对比<a hidden class="anchor" aria-hidden="true" href="#1-不同上下文长度性能对比">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>测试场景</th>
+          <th>上下文长度</th>
+          <th>首个 Token 时间</th>
+          <th>Token 生成速率</th>
+          <th>生成 Token 数量</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>短提示</strong></td>
+          <td>~9 tokens</td>
+          <td><strong>82ms</strong></td>
+          <td><strong>84.7 tokens/秒</strong></td>
+          <td>10 tokens</td>
+      </tr>
+      <tr>
+          <td><strong>中等提示</strong></td>
+          <td>~13 tokens</td>
+          <td><strong>291ms</strong></td>
+          <td><strong>75.3 tokens/秒</strong></td>
+          <td>270 tokens</td>
+      </tr>
+      <tr>
+          <td><strong>高上下文</strong></td>
+          <td>3,015 tokens</td>
+          <td><strong>5.42 秒</strong></td>
+          <td><strong>75.3 tokens/秒</strong></td>
+          <td>64 tokens</td>
+      </tr>
+      <tr>
+          <td><strong>大上下文</strong></td>
+          <td>15,018 tokens</td>
+          <td><strong>17.43 秒</strong></td>
+          <td><strong>71.8 tokens/秒</strong></td>
+          <td>19 tokens</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="2-并发性能测试">2. 并发性能测试<a hidden class="anchor" aria-hidden="true" href="#2-并发性能测试">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>结果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>并发请求数</strong></td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td><strong>成功率</strong></td>
+          <td>3/3 (100%)</td>
+      </tr>
+      <tr>
+          <td><strong>总测试耗时</strong></td>
+          <td>16.56 秒</td>
+      </tr>
+      <tr>
+          <td><strong>平均首个 Token 时间</strong></td>
+          <td><strong>0.18 秒</strong></td>
+      </tr>
+      <tr>
+          <td><strong>平均 Token 生成速率</strong></td>
+          <td><strong>75.6 tokens/秒</strong></td>
+      </tr>
+      <tr>
+          <td><strong>总生成 Token 数量</strong></td>
+          <td>1,060 tokens</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="3-最大上下文长度性能推测">3. 最大上下文长度性能推测<a hidden class="anchor" aria-hidden="true" href="#3-最大上下文长度性能推测">#</a></h3>
+<p>基于实测数据的线性外推：</p>
+<table>
+  <thead>
+      <tr>
+          <th>上下文长度</th>
+          <th>预计首个 Token 时间</th>
+          <th>预计提示处理时间</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>3,015 tokens</td>
+          <td>5.42 秒</td>
+          <td>2.10 秒</td>
+      </tr>
+      <tr>
+          <td>15,018 tokens</td>
+          <td>17.43 秒</td>
+          <td>14.14 秒</td>
+      </tr>
+      <tr>
+          <td><strong>58,000 tokens</strong></td>
+          <td><strong>~67 秒</strong></td>
+          <td><strong>~54 秒</strong></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="关键性能洞察">关键性能洞察<a hidden class="anchor" aria-hidden="true" href="#关键性能洞察">#</a></h2>
+<h3 id="-首个-token-延迟分析">🚀 首个 Token 延迟分析<a hidden class="anchor" aria-hidden="true" href="#-首个-token-延迟分析">#</a></h3>
+<ul>
+<li><strong>极短提示</strong>: ~82ms（接近实时响应）</li>
+<li><strong>中等提示</strong>: ~291ms（用户可接受范围）</li>
+<li><strong>高上下文提示 (3K tokens)</strong>: ~5.42 秒</li>
+<li><strong>大上下文提示 (15K tokens)</strong>: ~17.43 秒</li>
+<li><strong>最大上下文推测 (58K tokens)</strong>: <strong>~67 秒</strong></li>
+</ul>
+<blockquote>
+<p><strong>结论</strong>: 首个 Token 时间与上下文长度近似线性增长，这是 Transformer 架构的正常特性。</p>
+</blockquote>
+<h3 id="-token-生成吞吐量">⚡ Token 生成吞吐量<a hidden class="anchor" aria-hidden="true" href="#-token-生成吞吐量">#</a></h3>
+<ul>
+<li><strong>性能稳定性</strong>: 71-85 tokens/秒</li>
+<li><strong>上下文长度影响</strong>: 几乎无影响，生成速率保持稳定</li>
+<li><strong>并发场景表现</strong>: 75.6 tokens/秒（与单请求基本一致）</li>
+<li><strong>整体评价</strong>: 对于 58K 上下文窗口的大模型，这是优秀的性能表现</li>
+</ul>
+<h3 id="-模型加载性能">🔧 模型加载性能<a hidden class="anchor" aria-hidden="true" href="#-模型加载性能">#</a></h3>
+<ul>
+<li><strong>短提示加载</strong>: ~44ms（GPU 内存管理高效）</li>
+<li><strong>高上下文加载</strong>: ~3.3 秒（稳定表现）</li>
+<li><strong>内存管理</strong>: 模型在内存中保持加载状态，便于后续请求</li>
+</ul>
+<h3 id="-上下文长度影响">📈 上下文长度影响<a hidden class="anchor" aria-hidden="true" href="#-上下文长度影响">#</a></h3>
+<ul>
+<li><strong>提示处理时间</strong>: 与上下文长度近似线性增长</li>
+<li><strong>3,015 tokens</strong>: 2.10 秒处理时间</li>
+<li><strong>15,018 tokens</strong>: 14.14 秒处理时间</li>
+<li><strong>58,000 tokens 推测</strong>: ~54 秒处理时间</li>
+</ul>
+<h3 id="-并发性能表现">🔄 并发性能表现<a hidden class="anchor" aria-hidden="true" href="#-并发性能表现">#</a></h3>
+<ul>
+<li><strong>并发处理能力</strong>: Ollama 能够有效处理多请求并发</li>
+<li><strong>资源利用率</strong>: 3个并发请求全部成功完成</li>
+<li><strong>性能保持</strong>: 平均首个 Token 时间仅 0.18 秒，Token 生成速率稳定</li>
+</ul>
+<h3 id="-gpu-利用效率">💻 GPU 利用效率<a hidden class="anchor" aria-hidden="true" href="#-gpu-利用效率">#</a></h3>
+<ul>
+<li><strong>Tesla V100 GPU</strong>: 使用效率高</li>
+<li><strong>显存利用率</strong>: 70% 表明资源分配良好</li>
+<li><strong>散热性能</strong>: 35°C 低温运行，散热优秀</li>
+</ul>
+<h2 id="性能建议">性能建议<a hidden class="anchor" aria-hidden="true" href="#性能建议">#</a></h2>
+<h3 id="1-应用场景选择">1. 应用场景选择<a hidden class="anchor" aria-hidden="true" href="#1-应用场景选择">#</a></h3>
+<ul>
+<li><strong>实时交互应用</strong>: 适合短到中等上下文（&lt; 1K tokens），首个 Token 时间 &lt; 300ms</li>
+<li><strong>长文档处理</strong>: 可处理大上下文，但需考虑 ~17 秒的首个 Token 延迟</li>
+<li><strong>批量处理</strong>: 并发性能优秀，适合多任务并行处理</li>
+</ul>
+<h3 id="2-性能优化建议">2. 性能优化建议<a hidden class="anchor" aria-hidden="true" href="#2-性能优化建议">#</a></h3>
+<ul>
+<li><strong>上下文管理</strong>: 合理控制上下文长度，避免不必要的长上下文</li>
+<li><strong>缓存策略</strong>: 利用模型在内存中的持久化特性，减少重复加载</li>
+<li><strong>并发调度</strong>: 可安全使用并发请求，Ollama 具备良好的并发处理能力</li>
+</ul>
+<h3 id="3-硬件配置建议">3. 硬件配置建议<a hidden class="anchor" aria-hidden="true" href="#3-硬件配置建议">#</a></h3>
+<ul>
+<li><strong>GPU 显存</strong>: 32GB 显存可轻松处理 58K 上下文模型</li>
+<li><strong>散热要求</strong>: 即使高负载下温度也保持在 35°C，散热需求适中</li>
+<li><strong>电源需求</strong>: 300W 电源足够支持 Tesla V100 运行</li>
+</ul>
+<h2 id="测试方法说明">测试方法说明<a hidden class="anchor" aria-hidden="true" href="#测试方法说明">#</a></h2>
+<h3 id="数据采集方式">数据采集方式<a hidden class="anchor" aria-hidden="true" href="#数据采集方式">#</a></h3>
+<ul>
+<li><strong>API 端点</strong>: <code>POST /api/generate</code> (stream=false)</li>
+<li><strong>性能指标</strong>: 直接从 Ollama API 响应中提取内置性能数据</li>
+<li><strong>关键指标计算</strong>:
+<ul>
+<li>首个 Token 时间 = <code>load_duration</code> + <code>prompt_eval_duration</code></li>
+<li>Token 生成速率 = <code>eval_count</code> / <code>eval_duration</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="测试脚本">测试脚本<a hidden class="anchor" aria-hidden="true" href="#测试脚本">#</a></h3>
+<ul>
+<li><strong>单请求测试</strong>: Python requests 库直接调用 API</li>
+<li><strong>并发测试</strong>: ThreadPoolExecutor 实现 3 线程并发</li>
+<li><strong>大上下文生成</strong>: 重复句子构造指定长度上下文</li>
+</ul>
+<h3 id="测试限制">测试限制<a hidden class="anchor" aria-hidden="true" href="#测试限制">#</a></h3>
+<ul>
+<li><strong>最大上下文测试</strong>: 由于时间限制，未直接测试 58K tokens，采用线性外推</li>
+<li><strong>硬件环境</strong>: 单 GPU 测试，未测试多 GPU 扩展性</li>
+<li><strong>网络环境</strong>: 本地回环测试，未考虑网络延迟影响</li>
+</ul>
+<h2 id="结论">结论<a hidden class="anchor" aria-hidden="true" href="#结论">#</a></h2>
+<p><code>zdolny/qwen3-coder58k-tools:latest</code> 模型在 Tesla V100 GPU 上表现出色：</p>
+<p>GLM-4.7-Flash: ███████████████████████ 31.02 tokens/s (基准)
+Qwen3-Coder:     ████████░░░░░░░░░░░░░ 10.31 tokens/s (33% of GLM)
+Minimax M2.1:     ███████░░░░░░░░░░░░░░  9.30 tokens/s (30% of GLM)</p>
+<p>✅ <strong>优势</strong>:</p>
+<ul>
+<li>稳定的 Token 生成速率 (71-85 tokens/秒)</li>
+<li>优秀的并发处理能力</li>
+<li>高效的 GPU 显存利用</li>
+<li>良好的散热和功耗表现</li>
+</ul>
+<p>⚠️ <strong>注意事项</strong>:</p>
+<ul>
+<li>大上下文场景下首个 Token 延迟显著增加</li>
+<li>58K tokens 上下文预计需要 ~67 秒首个 Token 时间</li>
+<li>建议根据应用场景合理选择上下文长度</li>
+</ul>
+<p>该模型非常适合需要大上下文窗口的应用场景，在保证长上下文能力的同时，维持了优秀的 Token 生成性能和并发处理能力。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/">
+    <span class="title">« </span>
+    <br>
+    <span>机顶盒刷机linux系统</span>
+  </a>
+  <a class="next" href="https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/">
+    <span class="title"> »</span>
+    <br>
+    <span>vllm</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告 on twitter"
+        href="https://twitter.com/intent/tweet/?text=TeslaV100_32G%e7%89%88%e6%9c%acOllama%e8%bf%90%e8%a1%8cqwen3-coder_30b%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E8%25B7%25B5%2fteslav100_32g%25E7%2589%2588%25E6%259C%25ACollama%25E8%25BF%2590%25E8%25A1%258Cqwen3-coder_30b%25E6%2580%25A7%25E8%2583%25BD%25E6%25B5%258B%25E8%25AF%2595%25E6%258A%25A5%25E5%2591%258A%2f&amp;hashtags=">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告 on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E8%25B7%25B5%2fteslav100_32g%25E7%2589%2588%25E6%259C%25ACollama%25E8%25BF%2590%25E8%25A1%258Cqwen3-coder_30b%25E6%2580%25A7%25E8%2583%25BD%25E6%25B5%258B%25E8%25AF%2595%25E6%258A%25A5%25E5%2591%258A%2f&amp;title=TeslaV100_32G%e7%89%88%e6%9c%acOllama%e8%bf%90%e8%a1%8cqwen3-coder_30b%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a&amp;summary=TeslaV100_32G%e7%89%88%e6%9c%acOllama%e8%bf%90%e8%a1%8cqwen3-coder_30b%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E8%25B7%25B5%2fteslav100_32g%25E7%2589%2588%25E6%259C%25ACollama%25E8%25BF%2590%25E8%25A1%258Cqwen3-coder_30b%25E6%2580%25A7%25E8%2583%25BD%25E6%25B5%258B%25E8%25AF%2595%25E6%258A%25A5%25E5%2591%258A%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告 on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E8%25B7%25B5%2fteslav100_32g%25E7%2589%2588%25E6%259C%25ACollama%25E8%25BF%2590%25E8%25A1%258Cqwen3-coder_30b%25E6%2580%25A7%25E8%2583%25BD%25E6%25B5%258B%25E8%25AF%2595%25E6%258A%25A5%25E5%2591%258A%2f&title=TeslaV100_32G%e7%89%88%e6%9c%acOllama%e8%bf%90%e8%a1%8cqwen3-coder_30b%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告 on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E8%25B7%25B5%2fteslav100_32g%25E7%2589%2588%25E6%259C%25ACollama%25E8%25BF%2590%25E8%25A1%258Cqwen3-coder_30b%25E6%2580%25A7%25E8%2583%25BD%25E6%25B5%258B%25E8%25AF%2595%25E6%258A%25A5%25E5%2591%258A%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告 on whatsapp"
+        href="https://api.whatsapp.com/send?text=TeslaV100_32G%e7%89%88%e6%9c%acOllama%e8%bf%90%e8%a1%8cqwen3-coder_30b%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E8%25B7%25B5%2fteslav100_32g%25E7%2589%2588%25E6%259C%25ACollama%25E8%25BF%2590%25E8%25A1%258Cqwen3-coder_30b%25E6%2580%25A7%25E8%2583%25BD%25E6%25B5%258B%25E8%25AF%2595%25E6%258A%25A5%25E5%2591%258A%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告 on telegram"
+        href="https://telegram.me/share/url?text=TeslaV100_32G%e7%89%88%e6%9c%acOllama%e8%bf%90%e8%a1%8cqwen3-coder_30b%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B%25E5%25AE%259E%25E8%25B7%25B5%2fteslav100_32g%25E7%2589%2588%25E6%259C%25ACollama%25E8%25BF%2590%25E8%25A1%258Cqwen3-coder_30b%25E6%2580%25A7%25E8%2583%25BD%25E6%25B5%258B%25E8%25AF%2595%25E6%258A%25A5%25E5%2591%258A%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

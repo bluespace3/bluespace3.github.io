@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>xiaomi-speaker-openclaw-integration | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="OpenClaw 接入小米音响研究方案
+研究结论
+OpenClaw 目前没有原生的小米音响集成，但可以通过以下几种方式实现接入：
+
+方案对比
+方案1：使用 miio 库（⭐ 推荐）
+优点：
+
+直接控制小米设备，响应快
+轻量级，无需额外系统
+完全开源，MIT 许可证
+支持大多数小米生态设备
+
+缺点：">
+<meta name="author" content="新人类">
+<link rel="canonical" href="https://bluespace.eu.org/post/xiaomi-speaker-openclaw-integration/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://bluespace.eu.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://bluespace.eu.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/post/xiaomi-speaker-openclaw-integration/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="xiaomi-speaker-openclaw-integration" />
+<meta property="og:description" content="OpenClaw 接入小米音响研究方案
+研究结论
+OpenClaw 目前没有原生的小米音响集成，但可以通过以下几种方式实现接入：
+
+方案对比
+方案1：使用 miio 库（⭐ 推荐）
+优点：
+
+直接控制小米设备，响应快
+轻量级，无需额外系统
+完全开源，MIT 许可证
+支持大多数小米生态设备
+
+缺点：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluespace.eu.org/post/xiaomi-speaker-openclaw-integration/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-03-04T02:48:21+08:00" />
+<meta property="article:modified_time" content="2026-03-04T02:48:21+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="xiaomi-speaker-openclaw-integration"/>
+<meta name="twitter:description" content="OpenClaw 接入小米音响研究方案
+研究结论
+OpenClaw 目前没有原生的小米音响集成，但可以通过以下几种方式实现接入：
+
+方案对比
+方案1：使用 miio 库（⭐ 推荐）
+优点：
+
+直接控制小米设备，响应快
+轻量级，无需额外系统
+完全开源，MIT 许可证
+支持大多数小米生态设备
+
+缺点："/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://bluespace.eu.org/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "xiaomi-speaker-openclaw-integration",
+      "item": "https://bluespace.eu.org/post/xiaomi-speaker-openclaw-integration/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "xiaomi-speaker-openclaw-integration",
+  "name": "xiaomi-speaker-openclaw-integration",
+  "description": "OpenClaw 接入小米音响研究方案 研究结论 OpenClaw 目前没有原生的小米音响集成，但可以通过以下几种方式实现接入：\n方案对比 方案1：使用 miio 库（⭐ 推荐） 优点：\n直接控制小米设备，响应快 轻量级，无需额外系统 完全开源，MIT 许可证 支持大多数小米生态设备 缺点：\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "OpenClaw 接入小米音响研究方案 研究结论 OpenClaw 目前没有原生的小米音响集成，但可以通过以下几种方式实现接入：\n方案对比 方案1：使用 miio 库（⭐ 推荐） 优点：\n直接控制小米设备，响应快 轻量级，无需额外系统 完全开源，MIT 许可证 支持大多数小米生态设备 缺点：\n需要自己编写集成代码 需要获取设备 Token 维护成本 实现方式：\n安装 miio 库 npm install miio 获取小米音响信息 const miio = require('miio'); // 发现设备 miio.devices().then(devices =\u003e { devices.on('available', device =\u003e { console.log('Found:', device.model); }); }); // 连接设备 const speaker = await miio.device({ address: '192.168.x.x', // 小米音响 IP token: 'token_as_hex' // 设备 Token }); 创建 OpenClaw 技能/插件 在 ~/.openclaw/workspace/skills/ 创建新技能 封装小米音响控制逻辑 提供简洁的命令接口 方案2：Home Assistant 中间件 优点：\nHome Assistant 生态成熟，设备支持完善 可视化界面配置 社区活跃，问题易解决 支持自动化和场景 缺点：\n需要额外部署 Home Assistant 架构更复杂 资源占用较大 实现方式：\n┌─────────────┐ HTTP API ┌─────────────────┐ │ OpenClaw │ ────────────────\u003e │ Home Assistant │ │ (Assistant) │ │ (Hub) │ └─────────────┘ └─────────────────┘ │ │ miio/Zigbee ▼ ┌─────────────┐ │ 小米音响 │ └─────────────┘ 步骤：\n部署 Home Assistant（推荐 Docker） 添加小米网关/音响集成 启用 Home Assistant REST API 在 OpenClaw 中创建 HTTP 请求工具 方案3：Matter/Thread 生态（未来方案） 小米正在逐步支持 Matter 协议，未来可能：\n通过 Matter 控制小米音响 OpenClaw 添加 Matter 支持 与其他智能家居平台互通 当前状态： 部分小米设备已支持 Matter，但音响类设备支持有限\n推荐实施路径 阶段1：验证可行性（1-2天） 安装 miio 库测试连接 获取小米音响 Token 测试基本控制（播放/暂停/音量） 评估延迟和稳定性 阶段2：开发集成（3-5天） 创建 OpenClaw 技能封装 定义命令接口（如：/speaker play, /speaker stop） 实现错误处理和状态查询 测试语音指令集成 阶段3：功能完善（持续优化） 支持播放列表控制 集成音乐服务（网易云音乐、QQ音乐等） 场景化控制（早晨模式、睡眠模式） 多设备支持 技术细节 获取小米音响 Token 方法1：使用 miio CLI\nnpm install -g miio miio discover miio tokens # 查看已存储的 Token 方法2：抓包分析\n使用 tcpdump 或 Wireshark 抓取局域网流量 连接音响时查看握手包 提取 Token（32位十六进制字符串） 方法3：小米设备调试\n部分设备可通过调试接口获取 需要 Root 权限和开发者模式 小米音响常用控制命令 // 播放/暂停 await speaker.call('play', ['']); // 播放 await speaker.call('pause', []); // 暂停 // 音量控制 await speaker.setVolume(50); // 设置音量 0-100 // 播放指定内容 await speaker.call('player_play', [ 'http://example.com/music.mp3' ]); // 状态查询 const status = await speaker.status(); console.log(status); // { power: true, volume: 50, ... } OpenClaw 技能示例 创建技能目录结构 ~/.openclaw/workspace/skills/xiaomi-speaker/ ├── SKILL.md ├── package.json ├── index.js └── README.md SKILL.md # 小米音响控制技能 ## 功能 控制小米小爱音响的播放、音量、播放列表等 ## 命令 - `play` - 播放音乐 - `pause` - 暂停 - `volume [0-100]` - 设置音量 - `next` - 下一首 - `previous` - 上一首 ## 依赖 - miio 库 - 小米音响设备 Token index.js（简化示例） const miio = require('miio'); let speaker = null; async function init() { if (!speaker) { speaker = await miio.device({ address: process.env.SPEAKER_IP || '192.168.x.x', token: process.env.SPEAKER_TOKEN || 'token' }); } return speaker; } async function play() { const device = await init(); await device.call('play', ['']); return '开始播放'; } async function pause() { const device = await init(); await device.call('pause', []); return '已暂停'; } async function setVolume(level) { const device = await init(); await device.setVolume(level); return `音量设置为 ${level}`; } module.exports = { play, pause, setVolume }; 配置 OpenClaw 在 ~/.openclaw/openclaw.json 中添加技能配置：\n{ \"skills\": { \"xiaomi-speaker\": { \"enabled\": true, \"config\": { \"speakerIp\": \"192.168.x.x\", \"speakerToken\": \"your_token_here\" } } } } 注意事项 安全性 Token 是敏感信息，不要泄露 仅在局域网内使用，避免暴露到公网 建议使用防火墙限制访问 稳定性 小米音响固件更新可能改变协议 建议测试不同型号的兼容性 实现错误重试机制 合规性 仅控制自己拥有的设备 遵守小米服务条款 用于个人学习目的 扩展方向 语音指令集成：通过 OpenClaw 的语音控制功能 音乐服务：对接网易云音乐、QQ音乐 API 场景自动化：结合 OpenClaw 的 cron 功能 多设备管理：支持多个小米音响 状态同步：与智能家居系统联动 参考资料 miio GitHub 小米 IoT 文档 OpenClaw 技能开发 Home Assistant 小米集成 最后更新： 2025-06-20\n状态： 研究完成，待实施验证\n",
+  "wordCount" : "1487",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-03-04T02:48:21+08:00",
+  "dateModified": "2026-03-04T02:48:21+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "新人类"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bluespace.eu.org/post/xiaomi-speaker-openclaw-integration/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "蓝色空间号",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluespace.eu.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bluespace.eu.org/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/post/">Posts</a></div>
+    <h1 class="post-title">
+      xiaomi-speaker-openclaw-integration
+    </h1>
+    <div class="post-meta">&lt;span title=&#39;2026-03-04 02:48:21 &#43;0800 CST&#39;&gt;2026-03-04&lt;/span&gt;&amp;nbsp;·&amp;nbsp;3 min&amp;nbsp;·&amp;nbsp;1487 words&amp;nbsp;·&amp;nbsp;新人类
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#研究结论">研究结论</a></li>
+    <li><a href="#方案对比">方案对比</a>
+      <ul>
+        <li><a href="#方案1使用-miio-库-推荐">方案1：使用 miio 库（⭐ 推荐）</a></li>
+        <li><a href="#方案2home-assistant-中间件">方案2：Home Assistant 中间件</a></li>
+        <li><a href="#方案3matterthread-生态未来方案">方案3：Matter/Thread 生态（未来方案）</a></li>
+      </ul>
+    </li>
+    <li><a href="#推荐实施路径">推荐实施路径</a>
+      <ul>
+        <li><a href="#阶段1验证可行性1-2天">阶段1：验证可行性（1-2天）</a></li>
+        <li><a href="#阶段2开发集成3-5天">阶段2：开发集成（3-5天）</a></li>
+        <li><a href="#阶段3功能完善持续优化">阶段3：功能完善（持续优化）</a></li>
+      </ul>
+    </li>
+    <li><a href="#技术细节">技术细节</a>
+      <ul>
+        <li><a href="#获取小米音响-token">获取小米音响 Token</a></li>
+        <li><a href="#小米音响常用控制命令">小米音响常用控制命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#openclaw-技能示例">OpenClaw 技能示例</a>
+      <ul>
+        <li><a href="#创建技能目录结构">创建技能目录结构</a></li>
+        <li><a href="#skillmd">SKILL.md</a></li>
+        <li><a href="#indexjs简化示例">index.js（简化示例）</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置-openclaw">配置 OpenClaw</a></li>
+    <li><a href="#注意事项">注意事项</a>
+      <ul>
+        <li><a href="#安全性">安全性</a></li>
+        <li><a href="#稳定性">稳定性</a></li>
+        <li><a href="#合规性">合规性</a></li>
+      </ul>
+    </li>
+    <li><a href="#扩展方向">扩展方向</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="openclaw-接入小米音响研究方案">OpenClaw 接入小米音响研究方案<a hidden class="anchor" aria-hidden="true" href="#openclaw-接入小米音响研究方案">#</a></h1>
+<h2 id="研究结论">研究结论<a hidden class="anchor" aria-hidden="true" href="#研究结论">#</a></h2>
+<p>OpenClaw 目前<strong>没有原生</strong>的小米音响集成，但可以通过以下几种方式实现接入：</p>
+<hr>
+<h2 id="方案对比">方案对比<a hidden class="anchor" aria-hidden="true" href="#方案对比">#</a></h2>
+<h3 id="方案1使用-miio-库-推荐">方案1：使用 miio 库（⭐ 推荐）<a hidden class="anchor" aria-hidden="true" href="#方案1使用-miio-库-推荐">#</a></h3>
+<p><strong>优点：</strong></p>
+<ul>
+<li>直接控制小米设备，响应快</li>
+<li>轻量级，无需额外系统</li>
+<li>完全开源，MIT 许可证</li>
+<li>支持大多数小米生态设备</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>需要自己编写集成代码</li>
+<li>需要获取设备 Token</li>
+<li>维护成本</li>
+</ul>
+<p><strong>实现方式：</strong></p>
+<ol>
+<li><strong>安装 miio 库</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install miio
+</span></span></code></pre></div><ol start="2">
+<li><strong>获取小米音响信息</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">miio</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;miio&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 发现设备
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">miio</span><span class="p">.</span><span class="nx">devices</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">devices</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">devices</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;available&#39;</span><span class="p">,</span> <span class="nx">device</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Found:&#39;</span><span class="p">,</span> <span class="nx">device</span><span class="p">.</span><span class="nx">model</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 连接设备
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">speaker</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">miio</span><span class="p">.</span><span class="nx">device</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">address</span><span class="o">:</span> <span class="s1">&#39;192.168.x.x&#39;</span><span class="p">,</span>  <span class="c1">// 小米音响 IP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">token</span><span class="o">:</span> <span class="s1">&#39;token_as_hex&#39;</span>      <span class="c1">// 设备 Token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">});</span>
+</span></span></code></pre></div><ol start="3">
+<li><strong>创建 OpenClaw 技能/插件</strong>
+<ul>
+<li>在 <code>~/.openclaw/workspace/skills/</code> 创建新技能</li>
+<li>封装小米音响控制逻辑</li>
+<li>提供简洁的命令接口</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="方案2home-assistant-中间件">方案2：Home Assistant 中间件<a hidden class="anchor" aria-hidden="true" href="#方案2home-assistant-中间件">#</a></h3>
+<p><strong>优点：</strong></p>
+<ul>
+<li>Home Assistant 生态成熟，设备支持完善</li>
+<li>可视化界面配置</li>
+<li>社区活跃，问题易解决</li>
+<li>支持自动化和场景</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>需要额外部署 Home Assistant</li>
+<li>架构更复杂</li>
+<li>资源占用较大</li>
+</ul>
+<p><strong>实现方式：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌─────────────┐      HTTP API      ┌─────────────────┐
+</span></span><span class="line"><span class="cl">│  OpenClaw   │ ────────────────&gt; │ Home Assistant  │
+</span></span><span class="line"><span class="cl">│  (Assistant) │                   │   (Hub)         │
+</span></span><span class="line"><span class="cl">└─────────────┘                   └─────────────────┘
+</span></span><span class="line"><span class="cl">                                         │
+</span></span><span class="line"><span class="cl">                                         │ miio/Zigbee
+</span></span><span class="line"><span class="cl">                                         ▼
+</span></span><span class="line"><span class="cl">                                  ┌─────────────┐
+</span></span><span class="line"><span class="cl">                                  │ 小米音响    │
+</span></span><span class="line"><span class="cl">                                  └─────────────┘
+</span></span></code></pre></div><p><strong>步骤：</strong></p>
+<ol>
+<li>部署 Home Assistant（推荐 Docker）</li>
+<li>添加小米网关/音响集成</li>
+<li>启用 Home Assistant REST API</li>
+<li>在 OpenClaw 中创建 HTTP 请求工具</li>
+</ol>
+<hr>
+<h3 id="方案3matterthread-生态未来方案">方案3：Matter/Thread 生态（未来方案）<a hidden class="anchor" aria-hidden="true" href="#方案3matterthread-生态未来方案">#</a></h3>
+<p>小米正在逐步支持 Matter 协议，未来可能：</p>
+<ul>
+<li>通过 Matter 控制小米音响</li>
+<li>OpenClaw 添加 Matter 支持</li>
+<li>与其他智能家居平台互通</li>
+</ul>
+<p><strong>当前状态：</strong> 部分小米设备已支持 Matter，但音响类设备支持有限</p>
+<hr>
+<h2 id="推荐实施路径">推荐实施路径<a hidden class="anchor" aria-hidden="true" href="#推荐实施路径">#</a></h2>
+<h3 id="阶段1验证可行性1-2天">阶段1：验证可行性（1-2天）<a hidden class="anchor" aria-hidden="true" href="#阶段1验证可行性1-2天">#</a></h3>
+<ol>
+<li>安装 miio 库测试连接</li>
+<li>获取小米音响 Token</li>
+<li>测试基本控制（播放/暂停/音量）</li>
+<li>评估延迟和稳定性</li>
+</ol>
+<h3 id="阶段2开发集成3-5天">阶段2：开发集成（3-5天）<a hidden class="anchor" aria-hidden="true" href="#阶段2开发集成3-5天">#</a></h3>
+<ol>
+<li>创建 OpenClaw 技能封装</li>
+<li>定义命令接口（如：<code>/speaker play</code>, <code>/speaker stop</code>）</li>
+<li>实现错误处理和状态查询</li>
+<li>测试语音指令集成</li>
+</ol>
+<h3 id="阶段3功能完善持续优化">阶段3：功能完善（持续优化）<a hidden class="anchor" aria-hidden="true" href="#阶段3功能完善持续优化">#</a></h3>
+<ol>
+<li>支持播放列表控制</li>
+<li>集成音乐服务（网易云音乐、QQ音乐等）</li>
+<li>场景化控制（早晨模式、睡眠模式）</li>
+<li>多设备支持</li>
+</ol>
+<hr>
+<h2 id="技术细节">技术细节<a hidden class="anchor" aria-hidden="true" href="#技术细节">#</a></h2>
+<h3 id="获取小米音响-token">获取小米音响 Token<a hidden class="anchor" aria-hidden="true" href="#获取小米音响-token">#</a></h3>
+<p><strong>方法1：使用 miio CLI</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install -g miio
+</span></span><span class="line"><span class="cl">miio discover
+</span></span><span class="line"><span class="cl">miio tokens  <span class="c1"># 查看已存储的 Token</span>
+</span></span></code></pre></div><p><strong>方法2：抓包分析</strong></p>
+<ol>
+<li>使用 tcpdump 或 Wireshark 抓取局域网流量</li>
+<li>连接音响时查看握手包</li>
+<li>提取 Token（32位十六进制字符串）</li>
+</ol>
+<p><strong>方法3：小米设备调试</strong></p>
+<ul>
+<li>部分设备可通过调试接口获取</li>
+<li>需要 Root 权限和开发者模式</li>
+</ul>
+<h3 id="小米音响常用控制命令">小米音响常用控制命令<a hidden class="anchor" aria-hidden="true" href="#小米音响常用控制命令">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 播放/暂停
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">await</span> <span class="nx">speaker</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;play&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]);</span>  <span class="c1">// 播放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">await</span> <span class="nx">speaker</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;pause&#39;</span><span class="p">,</span> <span class="p">[]);</span>   <span class="c1">// 暂停
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 音量控制
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">await</span> <span class="nx">speaker</span><span class="p">.</span><span class="nx">setVolume</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>       <span class="c1">// 设置音量 0-100
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 播放指定内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">await</span> <span class="nx">speaker</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;player_play&#39;</span><span class="p">,</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;http://example.com/music.mp3&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 状态查询
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">status</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">speaker</span><span class="p">.</span><span class="nx">status</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">status</span><span class="p">);</span>  <span class="c1">// { power: true, volume: 50, ... }
+</span></span></span></code></pre></div><hr>
+<h2 id="openclaw-技能示例">OpenClaw 技能示例<a hidden class="anchor" aria-hidden="true" href="#openclaw-技能示例">#</a></h2>
+<h3 id="创建技能目录结构">创建技能目录结构<a hidden class="anchor" aria-hidden="true" href="#创建技能目录结构">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">~/.openclaw/workspace/skills/xiaomi-speaker/
+</span></span><span class="line"><span class="cl">├── SKILL.md
+</span></span><span class="line"><span class="cl">├── package.json
+</span></span><span class="line"><span class="cl">├── index.js
+</span></span><span class="line"><span class="cl">└── README.md
+</span></span></code></pre></div><h3 id="skillmd">SKILL.md<a hidden class="anchor" aria-hidden="true" href="#skillmd">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gh"># 小米音响控制技能
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl"><span class="gu">## 功能
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>控制小米小爱音响的播放、音量、播放列表等
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## 命令
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span><span class="k">-</span> <span class="sb">`play`</span> - 播放音乐
+</span></span><span class="line"><span class="cl"><span class="k">-</span> <span class="sb">`pause`</span> - 暂停
+</span></span><span class="line"><span class="cl"><span class="k">-</span> <span class="sb">`volume [0-100]`</span> - 设置音量
+</span></span><span class="line"><span class="cl"><span class="k">-</span> <span class="sb">`next`</span> - 下一首
+</span></span><span class="line"><span class="cl"><span class="k">-</span> <span class="sb">`previous`</span> - 上一首
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## 依赖
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span><span class="k">-</span> miio 库
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 小米音响设备 Token
+</span></span></code></pre></div><h3 id="indexjs简化示例">index.js（简化示例）<a hidden class="anchor" aria-hidden="true" href="#indexjs简化示例">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">miio</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;miio&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">speaker</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">speaker</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">speaker</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">miio</span><span class="p">.</span><span class="nx">device</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">address</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SPEAKER_IP</span> <span class="o">||</span> <span class="s1">&#39;192.168.x.x&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">token</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SPEAKER_TOKEN</span> <span class="o">||</span> <span class="s1">&#39;token&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">speaker</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">play</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">device</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">await</span> <span class="nx">device</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;play&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;开始播放&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">pause</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">device</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">await</span> <span class="nx">device</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;pause&#39;</span><span class="p">,</span> <span class="p">[]);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;已暂停&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">setVolume</span><span class="p">(</span><span class="nx">level</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">device</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">await</span> <span class="nx">device</span><span class="p">.</span><span class="nx">setVolume</span><span class="p">(</span><span class="nx">level</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="sb">`音量设置为 </span><span class="si">${</span><span class="nx">level</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">play</span><span class="p">,</span> <span class="nx">pause</span><span class="p">,</span> <span class="nx">setVolume</span> <span class="p">};</span>
+</span></span></code></pre></div><hr>
+<h2 id="配置-openclaw">配置 OpenClaw<a hidden class="anchor" aria-hidden="true" href="#配置-openclaw">#</a></h2>
+<p>在 <code>~/.openclaw/openclaw.json</code> 中添加技能配置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;skills&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;xiaomi-speaker&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;config&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;speakerIp&#34;</span><span class="p">:</span> <span class="s2">&#34;192.168.x.x&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;speakerToken&#34;</span><span class="p">:</span> <span class="s2">&#34;your_token_here&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="注意事项">注意事项<a hidden class="anchor" aria-hidden="true" href="#注意事项">#</a></h2>
+<h3 id="安全性">安全性<a hidden class="anchor" aria-hidden="true" href="#安全性">#</a></h3>
+<ul>
+<li>Token 是敏感信息，不要泄露</li>
+<li>仅在局域网内使用，避免暴露到公网</li>
+<li>建议使用防火墙限制访问</li>
+</ul>
+<h3 id="稳定性">稳定性<a hidden class="anchor" aria-hidden="true" href="#稳定性">#</a></h3>
+<ul>
+<li>小米音响固件更新可能改变协议</li>
+<li>建议测试不同型号的兼容性</li>
+<li>实现错误重试机制</li>
+</ul>
+<h3 id="合规性">合规性<a hidden class="anchor" aria-hidden="true" href="#合规性">#</a></h3>
+<ul>
+<li>仅控制自己拥有的设备</li>
+<li>遵守小米服务条款</li>
+<li>用于个人学习目的</li>
+</ul>
+<hr>
+<h2 id="扩展方向">扩展方向<a hidden class="anchor" aria-hidden="true" href="#扩展方向">#</a></h2>
+<ol>
+<li><strong>语音指令集成</strong>：通过 OpenClaw 的语音控制功能</li>
+<li><strong>音乐服务</strong>：对接网易云音乐、QQ音乐 API</li>
+<li><strong>场景自动化</strong>：结合 OpenClaw 的 cron 功能</li>
+<li><strong>多设备管理</strong>：支持多个小米音响</li>
+<li><strong>状态同步</strong>：与智能家居系统联动</li>
+</ol>
+<hr>
+<h2 id="参考资料">参考资料<a hidden class="anchor" aria-hidden="true" href="#参考资料">#</a></h2>
+<ul>
+<li><a href="https://github.com/aholstenson/miio">miio GitHub</a></li>
+<li><a href="https://iot.mi.com">小米 IoT 文档</a></li>
+<li><a href="https://docs.openclaw.ai/tools/creating-skills">OpenClaw 技能开发</a></li>
+<li><a href="https://www.home-assistant.io/integrations/xiaomi">Home Assistant 小米集成</a></li>
+</ul>
+<hr>
+<p><strong>最后更新：</strong> 2025-06-20<br>
+<strong>状态：</strong> 研究完成，待实施验证</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/">
+    <span class="title">« </span>
+    <br>
+    <span>wsl</span>
+  </a>
+  <a class="next" href="https://bluespace.eu.org/post/%E7%88%AC%E8%99%AB/%E8%A7%A3%E5%86%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8D%E8%B0%83%E8%AF%95%E6%9C%BA%E5%88%B6/">
+    <span class="title"> »</span>
+    <br>
+    <span>解决浏览器反调试机制</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share xiaomi-speaker-openclaw-integration on twitter"
+        href="https://twitter.com/intent/tweet/?text=xiaomi-speaker-openclaw-integration&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2fxiaomi-speaker-openclaw-integration%2f&amp;hashtags=">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share xiaomi-speaker-openclaw-integration on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2fxiaomi-speaker-openclaw-integration%2f&amp;title=xiaomi-speaker-openclaw-integration&amp;summary=xiaomi-speaker-openclaw-integration&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2fxiaomi-speaker-openclaw-integration%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share xiaomi-speaker-openclaw-integration on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2fxiaomi-speaker-openclaw-integration%2f&title=xiaomi-speaker-openclaw-integration">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share xiaomi-speaker-openclaw-integration on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2fxiaomi-speaker-openclaw-integration%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share xiaomi-speaker-openclaw-integration on whatsapp"
+        href="https://api.whatsapp.com/send?text=xiaomi-speaker-openclaw-integration%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2fxiaomi-speaker-openclaw-integration%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share xiaomi-speaker-openclaw-integration on telegram"
+        href="https://telegram.me/share/url?text=xiaomi-speaker-openclaw-integration&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2fxiaomi-speaker-openclaw-integration%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
