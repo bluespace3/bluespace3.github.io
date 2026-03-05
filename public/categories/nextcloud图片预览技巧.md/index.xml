@@ -4,22 +4,8 @@
     <title>Nextcloud图片预览技巧.md on 蓝色空间号</title>
     <link>https://bluespace.eu.org/categories/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7.md/</link>
     <description>Recent content in Nextcloud图片预览技巧.md on 蓝色空间号</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 04 Mar 2026 02:26:58 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7.md/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Nextcloud图片预览技巧</title>
-      <link>https://bluespace.eu.org/post/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</link>
-      <pubDate>Wed, 04 Mar 2026 02:26:58 +0800</pubDate>
-      
-      <guid>https://bluespace.eu.org/post/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</guid>
-      <description>&lt;h1 id=&#34;nextcloud-图片预览技巧&#34;&gt;Nextcloud 图片预览技巧&lt;/h1&gt;
-&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
-&lt;p&gt;在 Markdown 文件中插入图片时，可以使用 Nextcloud 分享链接，并通过在链接末尾添加 &lt;code&gt;/preview&lt;/code&gt; 实现直接预览图片，而不需要下载。&lt;/p&gt;
-&lt;h2 id=&#34;使用方法&#34;&gt;使用方法&lt;/h2&gt;
-&lt;h3 id=&#34;1-获取-nextcloud-分享链接&#34;&gt;1. 获取 Nextcloud 分享链接&lt;/h3&gt;
-&lt;p&gt;在 Nextcloud 中右键点击图片 → 分享 → 复制链接&lt;/p&gt;</description>
-    </item>
-    
+    <generator>Hugo -- 0.157.0</generator>
+    <language>zh-CN</language>
+    <atom:link href="https://bluespace.eu.org/categories/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7.md/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

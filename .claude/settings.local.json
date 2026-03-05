@@ -51,7 +51,10 @@
       "Bash(xargs grep:*)",
       "Bash(git fetch:*)",
       "Bash(git submodule:*)",
-      "Bash(hugo:*)"
+      "Bash(hugo:*)",
+      "Bash(git restore:*)",
+      "Bash(git:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

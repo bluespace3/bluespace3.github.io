@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="auto">
+<html lang="zh-cn" dir="auto" data-theme="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="致敬勇于探索未知的人类！">
 <meta name="author" content="新人类">
 <link rel="canonical" href="https://bluespace.eu.org/categories/%E6%90%9E%E6%9C%BA/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://bluespace.eu.org/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://bluespace.eu.org/categories/%E6%90%9E%E6%9C%BA/index.xml">
+<link rel="alternate" type="application/rss+xml" href="https://bluespace.eu.org/categories/%E6%90%9E%E6%9C%BA/index.xml" title="rss">
 <link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/categories/%E6%90%9E%E6%9C%BA/">
 <noscript>
     <style>
@@ -37,54 +37,58 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
+            .toc {
+                background: var(--entry);
             }
+        }
 
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
             }
         }
 
     </style>
-</noscript><meta property="og:title" content="搞机" />
-<meta property="og:description" content="致敬勇于探索未知的人类！" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://bluespace.eu.org/categories/%E6%90%9E%E6%9C%BA/" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="搞机"/>
-<meta name="twitter:description" content="致敬勇于探索未知的人类！"/>
-
-</head>
-
-<body class="list" id="top">
+</noscript>
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
     } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
+       document.querySelector("html").dataset.theme = 'light';
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
+</script><meta property="og:url" content="https://bluespace.eu.org/categories/%E6%90%9E%E6%9C%BA/">
+  <meta property="og:site_name" content="蓝色空间号">
+  <meta property="og:title" content="搞机">
+  <meta property="og:description" content="致敬勇于探索未知的人类！">
+  <meta property="og:locale" content="zh-CN">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搞机">
+<meta name="twitter:description" content="致敬勇于探索未知的人类！">
 
-<header class="header">
+</head>
+<body class="list" id="top">
+    <header class="header">
     <nav class="nav">
         <div class="logo">
             <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -104,8 +108,6 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -146,7 +148,7 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/categories/">Categories</a></div>
   <h1>
     搞机
-    <a href="index.xml" title="RSS" aria-label="RSS">
+    <a href="/categories/%E6%90%9E%E6%9C%BA/index.xml" title="RSS" aria-label="RSS">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" height="23">
         <path d="M4 11a9 9 0 0 1 9 9" />
@@ -159,34 +161,21 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>v100显卡折腾笔记
+    <h2 class="entry-hint-parent">v100显卡折腾笔记
     </h2>
   </header>
   <div class="entry-content">
     <p>核显配合双卡V100对AI大模型本地部署和本地出图的性能分析 核显与双卡V100的组合对AI大模型本地部署和本地出图有显著提升，主要体现在显存池化与NVLink互联带来的算力扩展，以及核显承担显示任务释放V100资源的协同效应。这种配置方案在2025年已成为性价比极高的AI本地部署选择，特别适合预算有限但需要运行32B参数级别大模型的用户。
 ...</p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-10-23 18:15:44 &#43;0800 CST&#39;&gt;2025-10-23&lt;/span&gt;&amp;nbsp;·&amp;nbsp;7 min&amp;nbsp;·&amp;nbsp;3169 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-10-23 18:15:44 +0800 CST'>2025-10-23</span>&nbsp;·&nbsp;<span>7 min</span>&nbsp;·&nbsp;<span>3169 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to v100显卡折腾笔记" href="https://bluespace.eu.org/post.backup/%E6%90%9E%E6%9C%BA/v100%E6%98%BE%E5%8D%A1%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>v100显卡折腾笔记
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>date: 2025-10-23T18:15:44&#43;08:00 lastmod: 2025-10-23T18:15:44&#43;08:00 encrypted: false
-核显配合双卡V100对AI大模型本地部署和本地出图的性能分析 核显与双卡V100的组合对AI大模型本地部署和本地出图有显著提升，主要体现在显存池化与NVLink互联带来的算力扩展，以及核显承担显示任务释放V100资源的协同效应。这种配置方案在2025年已成为性价比极高的AI本地部署选择，特别适合预算有限但需要运行32B参数级别大模型的用户。
-...</p>
-  </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-10-23 18:15:44 &#43;0800 CST&#39;&gt;2025-10-23&lt;/span&gt;&amp;nbsp;·&amp;nbsp;7 min&amp;nbsp;·&amp;nbsp;3175 words&amp;nbsp;·&amp;nbsp;新人类</footer>
-  <a class="entry-link" aria-label="post link to v100显卡折腾笔记" href="https://bluespace.eu.org/post/%E6%90%9E%E6%9C%BA/v100%E6%98%BE%E5%8D%A1%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/"></a>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span>
+        <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
@@ -200,9 +189,14 @@
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -243,11 +237,12 @@
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })

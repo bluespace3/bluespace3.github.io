@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" dir="auto">
+<html lang="zh-cn" dir="auto" data-theme="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 <meta name="description" content="Post.backups - 蓝色空间号">
 <meta name="author" content="新人类">
 <link rel="canonical" href="https://bluespace.eu.org/post.backup/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://bluespace.eu.org/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://bluespace.eu.org/post.backup/index.xml">
+<link rel="alternate" type="application/rss+xml" href="https://bluespace.eu.org/post.backup/index.xml" title="rss">
 <link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/post.backup/">
 <noscript>
     <style>
@@ -37,33 +37,49 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
+            .toc {
+                background: var(--entry);
             }
+        }
 
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
             }
         }
 
     </style>
-</noscript><meta property="og:title" content="Post.backups" />
-<meta property="og:description" content="致敬勇于探索未知的人类！" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://bluespace.eu.org/post.backup/" />
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Post.backups"/>
-<meta name="twitter:description" content="致敬勇于探索未知的人类！"/>
+</script><meta property="og:url" content="https://bluespace.eu.org/post.backup/">
+  <meta property="og:site_name" content="蓝色空间号">
+  <meta property="og:title" content="Post.backups">
+  <meta property="og:description" content="致敬勇于探索未知的人类！">
+  <meta property="og:locale" content="zh-CN">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Post.backups">
+<meta name="twitter:description" content="致敬勇于探索未知的人类！">
 
 
 <script type="application/ld+json">
@@ -81,25 +97,13 @@
 }
 </script>
 </head>
-
 <body class="list" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
+    <header class="header">
     <nav class="nav">
         <div class="logo">
             <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -119,8 +123,6 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -161,7 +163,7 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a></div>
   <h1>
     Post.backups
-    <a href="index.xml" title="RSS" aria-label="RSS">
+    <a href="/post.backup/index.xml" title="RSS" aria-label="RSS">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" height="23">
         <path d="M4 11a9 9 0 0 1 9 9" />
@@ -174,7 +176,7 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>大模型概述笔记
+    <h2 class="entry-hint-parent">大模型概述笔记
     </h2>
   </header>
   <div class="entry-content">
@@ -183,13 +185,13 @@ deepseek r1 参数 671B 25年国内AI元年
 AGI
 ...</p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-19 21:45:58 &#43;0800 CST&#39;&gt;2025-09-19&lt;/span&gt;&amp;nbsp;·&amp;nbsp;1 min&amp;nbsp;·&amp;nbsp;324 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-19 21:45:58 +0800 CST'>2025-09-19</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>324 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to 大模型概述笔记" href="https://bluespace.eu.org/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>模型微调
+    <h2 class="entry-hint-parent">模型微调
     </h2>
   </header>
   <div class="entry-content">
@@ -197,13 +199,13 @@ AGI
 –todo
 </p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-19 21:05:28 &#43;0800 CST&#39;&gt;2025-09-19&lt;/span&gt;&amp;nbsp;·&amp;nbsp;1 min&amp;nbsp;·&amp;nbsp;35 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-19 21:05:28 +0800 CST'>2025-09-19</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>35 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to 模型微调" href="https://bluespace.eu.org/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>智能体
+    <h2 class="entry-hint-parent">智能体
     </h2>
   </header>
   <div class="entry-content">
@@ -212,13 +214,13 @@ AGI
 –todo
 </p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-19 21:03:23 &#43;0800 CST&#39;&gt;2025-09-19&lt;/span&gt;&amp;nbsp;·&amp;nbsp;1 min&amp;nbsp;·&amp;nbsp;52 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-19 21:03:23 +0800 CST'>2025-09-19</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>52 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to 智能体" href="https://bluespace.eu.org/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>机器学习
+    <h2 class="entry-hint-parent">机器学习
     </h2>
   </header>
   <div class="entry-content">
@@ -228,37 +230,37 @@ AGI
 监督学习：数据带结果/标签 无监督学习：一大堆没有标签结果，让机器自行分类检测。 自监督学习：无需人工标注，通过数据本身结果生成伪标签或辅助任务(通常办法) 强化学习：不断尝试和环境互动得到的反馈改变行为做出最有决策AIRgo。 模型训练的3大阶段
 ...</p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-19 20:42:30 &#43;0800 CST&#39;&gt;2025-09-19&lt;/span&gt;&amp;nbsp;·&amp;nbsp;1 min&amp;nbsp;·&amp;nbsp;285 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-19 20:42:30 +0800 CST'>2025-09-19</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>285 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to 机器学习" href="https://bluespace.eu.org/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>git添加子项目
+    <h2 class="entry-hint-parent">git添加子项目
     </h2>
   </header>
   <div class="entry-content">
     <p> 项目中添加子项目 1、git clone 父项目url 2、cd 父项目对应目录下：git submodule add &lt;子项目地址&gt; 3、git commit ;git push 4、此时子项目下的子项目是空的，需要cd到父目录cmd执行： git submodule update –init –recursive 或者执行：git submodule init 然后执行cd clone含嵌套项目的项目 git clone 父项目url –recurse-submodules 不加–recurse-submodules，克隆的子项目是空的 </p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-07 00:22:26 &#43;0800 CST&#39;&gt;2025-09-07&lt;/span&gt;&amp;nbsp;·&amp;nbsp;1 min&amp;nbsp;·&amp;nbsp;169 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-07 00:22:26 +0800 CST'>2025-09-07</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>169 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to git添加子项目" href="https://bluespace.eu.org/post.backup/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>git操作
+    <h2 class="entry-hint-parent">git操作
     </h2>
   </header>
   <div class="entry-content">
     <p>回滚到指定提交 git reset –hard c1ac53850b0314a20e97f669bafc8bb67a3a1124 git push 放弃变更强制提交 git reset –hard ; git pull –force 子模块的使用 </p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-07 00:22:21 &#43;0800 CST&#39;&gt;2025-09-07&lt;/span&gt;&amp;nbsp;·&amp;nbsp;1 min&amp;nbsp;·&amp;nbsp;34 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-07 00:22:21 +0800 CST'>2025-09-07</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>34 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to git操作" href="https://bluespace.eu.org/post.backup/git/git%E6%93%8D%E4%BD%9C/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Transformer的工作原理
+    <h2 class="entry-hint-parent">Transformer的工作原理
     </h2>
   </header>
   <div class="entry-content">
@@ -268,26 +270,26 @@ AGI
 2.词嵌入、词向量：将每个token进行向量化（该token和其他对象的关联关系打分）-&gt;转换成一堆数字,例如国王[0.9（权力）,0.8（城堡），0.7（严肃）….]，女儿[….]
 ...</p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-07 00:22:19 &#43;0800 CST&#39;&gt;2025-09-07&lt;/span&gt;&amp;nbsp;·&amp;nbsp;1 min&amp;nbsp;·&amp;nbsp;347 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-07 00:22:19 +0800 CST'>2025-09-07</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>347 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to Transformer的工作原理" href="https://bluespace.eu.org/post.backup/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>gitlab配置cicd工作流
+    <h2 class="entry-hint-parent">gitlab配置cicd工作流
     </h2>
   </header>
   <div class="entry-content">
     <p>GitLab CI/CD 简介 GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。
 ...</p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-07 00:22:15 &#43;0800 CST&#39;&gt;2025-09-07&lt;/span&gt;&amp;nbsp;·&amp;nbsp;3 min&amp;nbsp;·&amp;nbsp;1014 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-07 00:22:15 +0800 CST'>2025-09-07</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>1014 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to gitlab配置cicd工作流" href="https://bluespace.eu.org/post.backup/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>SYSTEM_DESIGN
+    <h2 class="entry-hint-parent">SYSTEM_DESIGN
     </h2>
   </header>
   <div class="entry-content">
@@ -295,20 +297,20 @@ AGI
 1. 系统架构 本系统采用模块化设计，主要由数据层、分析层、策略层和应用层组成。
 ...</p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-07 00:22:06 &#43;0800 CST&#39;&gt;2025-09-07&lt;/span&gt;&amp;nbsp;·&amp;nbsp;10 min&amp;nbsp;·&amp;nbsp;4744 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-07 00:22:06 +0800 CST'>2025-09-07</span>&nbsp;·&nbsp;<span>10 min</span>&nbsp;·&nbsp;<span>4744 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to SYSTEM_DESIGN" href="https://bluespace.eu.org/post.backup/quant_trading/system_design/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>strategy
+    <h2 class="entry-hint-parent">strategy
     </h2>
   </header>
   <div class="entry-content">
     <p>量化交易策略知识库 核心策略 本系统采用多因子综合评分策略，结合技术面、基本面和消息面分析。
 技术面分析指标 MACD指标：判断趋势转折点 RSI指标：判断超买超卖状态 KDJ指标：判断股价趋势 布林带：判断价格波动区间 成交量分析：确认价格变动的有效性 基本面分析要素 财务指标分析：盈利能力、偿债能力、运营能力 行业地位评估：市场份额、竞争优势 盈利能力评估：营收增长、利润增长 消息面分析方法 新闻情感分析：判断市场情绪 政策影响评估：分析政策对行业的影响 市场情绪监控：跟踪市场热点和资金流向 </p>
   </div>
-  <footer class="entry-footer">&lt;span title=&#39;2025-09-07 00:22:05 &#43;0800 CST&#39;&gt;2025-09-07&lt;/span&gt;&amp;nbsp;·&amp;nbsp;1 min&amp;nbsp;·&amp;nbsp;234 words&amp;nbsp;·&amp;nbsp;新人类</footer>
+  <footer class="entry-footer"><span title='2025-09-07 00:22:05 +0800 CST'>2025-09-07</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>234 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
   <a class="entry-link" aria-label="post link to strategy" href="https://bluespace.eu.org/post.backup/quant_trading/strategy/"></a>
 </article>
 <footer class="page-footer">
@@ -323,7 +325,8 @@ AGI
     </main>
     
 <footer class="footer">
-    <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span>
+        <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
@@ -337,9 +340,14 @@ AGI
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -380,11 +388,12 @@ AGI
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })

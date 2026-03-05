@@ -1,8 +1,8 @@
 ---
 title: 'ACP-Claude-Code快捷指令'
 categories: ["ACP-Claude-Code快捷指令.md"]
-date: 2026-03-04T02:48:21+08:00
-lastmod: 2026-03-04T02:48:21+08:00
+date: 2026-03-05T17:44:05+08:00
+lastmod: 2026-03-05T17:44:05+08:00
 draft: false
 ---
 # Claude Code 快捷指令与使用技巧
