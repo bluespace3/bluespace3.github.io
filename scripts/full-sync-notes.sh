@@ -128,9 +128,7 @@ log ""
 log "【步骤 4/5】全量复制笔记到博客..."
 
 rsync -av \
-    --include='*.md' \
-    --include='*/' \
-    --exclude='*' \
+    --exclude='INDEX.md' \
     --exclude='.git/' \
     --exclude='.data/' \
     --exclude='.settings/' \
@@ -140,7 +138,9 @@ rsync -av \
     --exclude='*.pyc' \
     --exclude='.obsidian/' \
     --exclude='工作/' \
-    --exclude='INDEX.md' \
+    --include='*.md' \
+    --include='*/' \
+    --exclude='*' \
     "$NOTE_REPO/" "content/post/" >> "$LOG_FILE" 2>&1
 
 MD_COUNT=$(find content/post -name "*.md" -type f | wc -l)
