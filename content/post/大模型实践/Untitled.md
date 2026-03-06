@@ -1,7 +1,8 @@
 ---
-title: '**v100指令**'
-categories: ['大模型实践']
-date: 2026-02-26T23:47:45+0800
+title: 'Untitled'
+categories: ["大模型实践"]
+date: 2025-12-17T01:10:50+08:00
+lastmod: 2025-12-17T01:10:50+08:00
 draft: false
 ---
 ## **v100指令**

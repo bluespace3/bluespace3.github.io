@@ -1,7 +1,8 @@
 ---
-title: 'OpenClaw 场景配置指南'
-categories: ['技术']
-date: 2026-03-02T10:26:50+0800
+title: 'OpenClaw场景配置指南'
+categories: ["OpenClaw场景配置指南.md"]
+date: 2026-03-04T02:48:21+08:00
+lastmod: 2026-03-04T02:48:21+08:00
 draft: false
 ---
 # OpenClaw 场景配置指南

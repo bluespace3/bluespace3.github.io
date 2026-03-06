@@ -1,7 +1,8 @@
 ---
-title: '量化交易策略知识库'
-categories: ['quant_trading']
-date: 2026-02-26T23:47:45+0800
+title: 'strategy'
+categories: ["quant_trading"]
+date: 2025-09-07T00:22:05+08:00
+lastmod: 2025-09-07T00:22:05+08:00
 draft: false
 ---
 # 量化交易策略知识库

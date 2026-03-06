@@ -1,7 +1,8 @@
 ---
-title: 'Node.js Shadowsocks 完整配置指南'
-categories: ['技术']
-date: 2026-02-28T03:49:20+0800
+title: '配置代理加速github访问'
+categories: ["配置代理加速github访问.md"]
+date: 2026-03-04T02:48:21+08:00
+lastmod: 2026-03-04T02:48:21+08:00
 draft: false
 ---
 # Node.js Shadowsocks 完整配置指南

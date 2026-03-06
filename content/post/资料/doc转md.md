@@ -1,7 +1,8 @@
 ---
 title: 'doc转md'
-categories: ['资料']
-date: 2026-02-26T23:47:45+0800
+categories: ["资料"]
+date: 2025-11-17T11:53:38+08:00
+lastmod: 2025-11-17T11:53:38+08:00
 draft: false
 ---
 1. Pandoc 简介
