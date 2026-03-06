@@ -1,19 +1,9 @@
 ---
-title: "pytest接口自动化测试方案"
-
-categories: ["方案"]
-
-author: "tian"
-
-date: 2025-03-28T22:43:32+08:00
-
-encrypted: true
-
-password: "123456"
-
+title: 'pytest接口自动化测试方案'
+categories: ["自动化测试"]
+date: 2026-03-04T02:48:21+08:00
+lastmod: 2026-03-04T02:48:21+08:00
 draft: false
-lastmod: 2025-04-15T11:00:00-07:00
-tags: ["pytest","方案","加密"]
 ---
 ## 背景
 

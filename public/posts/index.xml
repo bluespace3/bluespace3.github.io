@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on 蓝色空间号</title>
+    <link>https://bluespace.eu.org/posts/</link>
+    <description>Recent content in Posts on 蓝色空间号</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://bluespace.eu.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试</title>
+      <link>https://bluespace.eu.org/posts/test/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://bluespace.eu.org/posts/test/</guid>
+      <description>&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;</description>
+    </item>
+  </channel>
+</rss>

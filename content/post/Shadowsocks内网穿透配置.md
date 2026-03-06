@@ -1,3 +1,10 @@
+---
+title: 'Shadowsocks内网穿透配置'
+categories: ["Shadowsocks内网穿透配置.md"]
+date: 2026-03-04T02:48:21+08:00
+lastmod: 2026-03-04T02:48:21+08:00
+draft: false
+---
 # Shadowsocks 内网穿透配置
 
 ## 服务端配置
@@ -191,15 +198,15 @@ git config --global --get https.proxy
 1. 客户端安装：[https://github.com/shadowsocks/shadowsocks-windows.git](https://github.com/shadowsocks/shadowsocks-windows.git)
 2. 选择 [releases](https://github.com/shadowsocks/shadowsocks-windows/releases)直接下载到本地，免安装，直接使用。
 
-![配置](assets/Pastedimage20260228152426.png)
+![配置](/assets/Pastedimage20260228152426.png)
 
 3. 配置：按照下图填写你的服务端，注意加密方式一定要一致否则连接不上。
 
-![配置](assets/Pasted%20image%2020260228152732.png)
+![配置](/assets/Pasted%20image%2020260228152732.png)
 
 4.一般使用PAC模式，既智能代理，当需要代理时自动使用。
 
- ![PAC模式](assets/Pasted%20image%2020260228153454.png)
+ ![PAC模式](/assets/Pasted%20image%2020260228153454.png)
 
 ## 配置浏览器使用代理
 

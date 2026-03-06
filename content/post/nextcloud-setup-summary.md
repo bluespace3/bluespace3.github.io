@@ -1,3 +1,10 @@
+---
+title: 'nextcloud-setup-summary'
+categories: ["nextcloud-setup-summary.md"]
+date: 2026-03-06T13:42:26+08:00
+lastmod: 2026-03-06T13:42:26+08:00
+draft: false
+---
 # Nextcloud 配置与优化总结
 
 **日期**: 2026-03-05

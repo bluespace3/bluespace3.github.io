@@ -1,3 +1,10 @@
+---
+title: 'mcp-skill-a2a-agentskills对比'
+categories: ["AIGC学习笔记"]
+date: 2026-03-06T01:24:07+08:00
+lastmod: 2026-03-06T01:24:07+08:00
+draft: false
+---
 ## MCP
 
 特点：一种协议、可供ai复用的工具（与functioncalling非包含关系，但是可以利用大模型的 Function Calling 能力来触发工具调用）服务，可以视为一种大模型使用的sdk。

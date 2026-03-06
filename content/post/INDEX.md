@@ -1,3 +1,10 @@
+---
+title: 'INDEX'
+categories: ["INDEX.md"]
+date: 2026-03-06T13:42:26+08:00
+lastmod: 2026-03-06T13:42:26+08:00
+draft: false
+---
 # Nextcloud 项目文档索引
 
 ## 文档列表
