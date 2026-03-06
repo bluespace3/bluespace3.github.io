@@ -1,8 +1,7 @@
 ---
 title: 'ollama'
-categories: ["大模型实践"]
-date: 2025-12-13T22:14:15+08:00
-lastmod: 2025-12-13T22:14:15+08:00
+categories: ['大模型实践']
+date: 2026-02-26T23:47:45+0800
 draft: false
 ---
 gpt-oss:20b思考、工具

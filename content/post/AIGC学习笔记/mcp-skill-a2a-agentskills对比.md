@@ -1,8 +1,7 @@
 ---
-title: 'mcp-skill-a2a-agentskills对比'
-categories: ["AIGC学习笔记"]
-date: 2026-03-06T01:24:07+08:00
-lastmod: 2026-03-06T01:24:07+08:00
+title: 'MCP'
+categories: ['AIGC学习笔记']
+date: 2026-03-06T03:50:04+0800
 draft: false
 ---
 ## MCP

@@ -1,8 +1,7 @@
 ---
-title: 'SYSTEM_DESIGN'
-categories: ["quant_trading"]
-date: 2026-03-04T02:48:21+08:00
-lastmod: 2026-03-04T02:48:21+08:00
+title: '系统设计与开发者文档'
+categories: ['quant_trading']
+date: 2026-03-04T02:53:30+0800
 draft: false
 ---
 # 系统设计与开发者文档

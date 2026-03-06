@@ -1,8 +1,7 @@
 ---
 title: 'linux安装python'
-categories: ["编程语言"]
-date: 2025-09-07T00:20:43+08:00
-lastmod: 2025-09-07T00:20:43+08:00
+categories: ['编程语言']
+date: 2026-02-26T23:47:45+0800
 draft: false
 ---
 

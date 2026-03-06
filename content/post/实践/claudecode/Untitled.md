@@ -1,8 +1,7 @@
 ---
-title: 'Untitled'
-categories: ["实践"]
-date: 2026-01-24T22:36:25+08:00
-lastmod: 2026-01-24T22:36:25+08:00
+title: '添加本地mcp'
+categories: ['实践']
+date: 2026-02-26T23:47:45+0800
 draft: false
 ---
 ### 添加本地mcp

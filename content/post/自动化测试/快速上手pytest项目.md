@@ -1,9 +1,17 @@
 ---
-title: '快速上手pytest项目'
-categories: ["自动化测试"]
-date: 2025-09-07T00:20:43+08:00
-lastmod: 2025-09-07T00:20:43+08:00
+title: "快速上手pytest项目"
+
+categories: ["技术", "pytest"]
+
+author: "tian"
+
+date: 2025-04-18T12:59:32+08:00
+
 draft: false
+
+encrypted: true
+
+password: "tian123456"
 ---
 tags: ["pytest", "python"]
 --------------------------

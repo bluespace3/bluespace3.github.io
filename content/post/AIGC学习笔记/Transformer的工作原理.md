@@ -1,8 +1,7 @@
 ---
 title: 'Transformer的工作原理'
-categories: ["AIGC学习笔记"]
-date: 2025-09-07T00:22:19+08:00
-lastmod: 2025-09-07T00:22:19+08:00
+categories: ['AIGC学习笔记']
+date: 2026-02-26T23:47:45+0800
 draft: false
 ---
 Transformer的工作原理

@@ -1,8 +1,7 @@
 ---
-title: 'terminus'
-categories: ["实践"]
-date: 2026-02-25T11:23:31+08:00
-lastmod: 2026-02-25T11:23:31+08:00
+title: 'terminus快捷键使用合集'
+categories: ['实践']
+date: 2026-02-26T23:47:45+0800
 draft: false
 ---
 ## terminus快捷键使用合集

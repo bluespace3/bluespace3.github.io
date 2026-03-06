@@ -1,8 +1,7 @@
 ---
-title: 'Nextcloud挂载点配置指南'
-categories: ["nextcloud"]
-date: 2026-03-06T13:42:26+08:00
-lastmod: 2026-03-06T13:42:26+08:00
+title: 'Nextcloud 挂载点配置指南'
+categories: ['nextcloud']
+date: 2026-03-05T15:56:48+0800
 draft: false
 ---
 # Nextcloud 挂载点配置指南

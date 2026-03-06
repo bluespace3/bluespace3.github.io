@@ -1,8 +1,7 @@
 ---
 title: 'wsl'
-categories: ["实践"]
-date: 2026-03-06T14:00:06+08:00
-lastmod: 2026-03-06T14:00:06+08:00
+categories: ['实践']
+date: 2026-03-06T13:59:47+0800
 draft: false
 ---
 <!--more-->

@@ -1,8 +1,7 @@
 ---
-title: 'test_knowledge_base'
-categories: ["人工智能猫咪"]
-date: 2025-09-07T00:21:38+08:00
-lastmod: 2025-09-07T00:21:38+08:00
+title: '这是一个测试知识库文件'
+categories: ['人工智能猫咪']
+date: 2026-02-26T23:47:45+0800
 draft: false
 ---
 # 这是一个测试知识库文件
