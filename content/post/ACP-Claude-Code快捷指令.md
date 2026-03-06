@@ -1,326 +1,560 @@
----
-title: 'ACP-Claude-Code快捷指令'
-categories: ["ACP-Claude-Code快捷指令.md"]
-date: 2026-03-05T17:44:05+08:00
-lastmod: 2026-03-05T17:44:05+08:00
-draft: false
----
-# Claude Code 快捷指令与使用技巧
+# ACP Claude Code 使用指南
 
-> 最后更新：2026-02-28
-> ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用
+> 最后更新：2026-03-05
+> ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 等外部编码工具的标准方式
+
+---
 
 ## 什么是 ACP？
 
-ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。
+**ACP (Agent Client Protocol)** 是一种协议，让 OpenClaw 能够调用外部编码工具（Claude Code、Codex、Pi、OpenCode、Gemini CLI 等）。
 
-**在 OpenClaw 中使用 Claude Code：**
-```bash
-# 启动 Claude Code 会话
-/acp spawn claude --mode persistent
+### ACP vs 传统方式
 
-# 配置默认使用 Claude Code
-openclaw config set acp.defaultAgent claude
+| 方式 | 特点 | 适用场景 |
+|------|------|----------|
+| **ACP 运行时** | 集成到 OpenClaw 会话系统，支持线程绑定、持久化会话 | 在聊天中持续使用编码工具 |
+| **直接调用 acpx** | 通过 CLI 驱动外部会话，更底层 | 需要精细控制或调试 |
+
+---
+
+## 在 OpenClaw 中使用 Claude Code
+
+### 方法 1：通过 `sessions_spawn` 工具（推荐）
+
+这是最常用的方式，直接在聊天中启动 Claude Code ACP 会话。
+
+#### 基础用法
+
+```python
+sessions_spawn(
+    task="帮我分析这个代码库的结构",
+    runtime="acp",
+    agentId="claude",
+    thread=True,
+    mode="session"
+)
 ```
 
+#### 参数说明
 
-## Claude Code 快捷键
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| `task` | 必填 | 初始发送给 Claude Code 的任务描述 |
+| `runtime` | 必填 | 固定为 `"acp"` |
+| `agentId` | 可选 | 目标工具 ID：`"claude"`（Claude Code）、`"codex"`、`"pi"` 等 |
+| `thread` | 可选 | 是否绑定到线程（默认 `false`） |
+| `mode` | 可选 | `"session"`（持久化）或 `"run"`（一次性） |
+| `cwd` | 可选 | 工作目录路径 |
+| `label` | 可选 | 会话标签，便于识别 |
 
-### 基础快捷键
+#### 示例场景
 
-| 快捷键 | 功能 | 说明 |
-|--------|------|------|
-| `Enter` | 发送消息 | 提交当前请求 |
-| `Esc` | 停止生成 | 中断当前生成 |
-| `Ctrl+C` | 清除输入 | 按一次清除输入，按两次退出 |
+**场景 1：在 Discord 线程中启动持久化会话**
 
-### 导航快捷键
+```python
+sessions_spawn(
+    task="打开这个项目并帮我添加一个用户认证功能",
+    runtime="acp",
+    agentId="claude",
+    thread=True,
+    mode="session",
+    label="用户认证开发"
+)
+```
+
+**场景 2：一次性分析任务**
+
+```python
+sessions_spawn(
+    task="审查这个文件的安全漏洞：src/auth.py",
+    runtime="acp",
+    agentId="claude"
+)
+```
+
+**场景 3：指定工作目录**
+
+```python
+sessions_spawn(
+    task="重构这个模块，提高性能",
+    runtime="acp",
+    agentId="claude",
+    cwd="/var/www/bluespace3.github.io"
+)
+```
+
+---
+
+### 方法 2：通过 `/acp` 命令（聊天中直接使用）
+
+在支持的聊天平台（如 Discord）中，可以直接使用斜杠命令。
+
+#### 启动会话
+
+```text
+/acp spawn claude --mode persistent --thread auto
+```
+
+#### 命令参数
+
+| 参数 | 说明 |
+|------|------|
+| `--mode persistent` | 持久化模式（保持会话活跃） |
+| `--mode oneshot` | 一次性模式（执行完立即关闭） |
+| `--thread auto` | 自动绑定线程（如果有线程则绑定，没有则创建） |
+| `--thread here` | 绑定到当前线程 |
+| `--thread off` | 不绑定线程 |
+| `--cwd <路径>` | 指定工作目录 |
+| `--label <名称>` | 设置会话标签 |
+
+#### 其他常用命令
+
+```text
+# 查看状态
+/acp status
+
+# 取消当前正在执行的任务
+/acp cancel
+
+# 向运行中的会话发送新指令
+/acp steer 优化测试覆盖率
+
+# 设置工作目录
+/acp cwd /path/to/project
+
+# 设置使用的模型
+/acp model anthropic/claude-opus-4-5
+
+# 设置超时时间（秒）
+/acp timeout 300
+
+# 查看所有 ACP 会话
+/acp sessions
+
+# 关闭会话并解绑线程
+/acp close
+```
+
+---
+
+## ACP 会话管理
+
+### 线程绑定（Thread Binding）
+
+**线程绑定**允许将 ACP 会话绑定到聊天线程，后续在该线程中的消息会自动路由到该会话。
+
+#### 支持的平台
+
+- ✅ Discord（内置支持）
+- 🔄 其他平台（需插件支持）
+
+#### 配置要求
+
+```json5
+{
+  acp: {
+    enabled: true,
+    dispatch: { enabled: true }
+  },
+  channels: {
+    discord: {
+      threadBindings: {
+        enabled: true,
+        spawnAcpSessions: true
+      }
+    }
+  }
+}
+```
+
+#### 线程模式
+
+| `--thread` 值 | 行为 |
+|--------------|------|
+| `auto` | 在线程中绑定，不在线程中创建并绑定 |
+| `here` | 必须在现有线程中执行，否则失败 |
+| `off` | 不绑定，会话独立运行 |
+
+---
+
+### 会话控制
+
+#### 手动聚焦（Focus）
+
+将当前线程绑定到已有会话：
+
+```text
+/focus agent:claude:acp:abc123-def456
+```
+
+或使用标签：
+
+```text
+/focus 用户认证开发
+```
+
+#### 解绑（Unfocus）
+
+```text
+/unfocus
+```
+
+#### 查看活跃会话
+
+```text
+/agents
+```
+
+#### 设置会话 TTL（自动解绑时间）
+
+```text
+/session ttl 12h
+/session ttl off
+```
+
+---
+
+## Claude Code 快捷键与指令
+
+### 快捷键（在 Claude Code 独立运行时）
 
 | 快捷键 | 功能 |
 |--------|------|
+| `Enter` | 发送消息 |
+| `Esc` | 停止生成 |
+| `Ctrl+C` | 一次清除输入，两次退出 |
 | `↑/↓` | 浏览历史消息 |
 | `Ctrl+L` | 清屏 |
-| `Ctrl+U` | 清除到行首 |
-| `Ctrl+K` | 清除到行尾 |
 
-### 文件操作
+### 常用指令
 
-| 快捷键 | 功能 |
-|--------|------|
-| `Ctrl+O` | 打开文件 |
+**文件操作**
 
-## Claude Code 核心指令
-
-### 文件操作
-
-| 指令 | 功能 | 示例 |
-|------|------|------|
-| `read <file>` | 读取文件内容 | `read src/main.py` |
-| `write <file>` | 写入文件 | `write output.txt` |
-| `edit <file>` | 编辑文件 | `edit config.yaml` |
-| `list <dir>` | 列出目录内容 | `list src/` |
-| `search <pattern>` | 搜索文件 | `search "TODO"` |
-
-### 代码分析
-
-| 指令 | 功能 | 示例 |
-|------|------|------|
-| `analyze <file>` | 分析代码 | `analyze app.js` |
-| `explain <code>` | 解释代码 | `explain for i in range(10):` |
-| `debug <file>` | 调试代码 | `debug server.py` |
-| `refactor <file>` | 重构代码 | `refactor legacy.js` |
-
-### Git 操作
-
-| 指令 | 功能 | 示例 |
-|------|------|------|
-| `git status` | 查看 Git 状态 | `git status` |
-| `git diff` | 查看改动 | `git diff` |
-| `git commit` | 提交更改 | `git commit "fix bug"` |
-| `git log` | 查看提交历史 | `git log` |
-
-### 测试相关
-
-| 指令 | 功能 | 示例 |
-|------|------|------|
-| `test` | 运行测试 | `test` |
-| `test <file>` | 运行特定测试 | `test test_main.py` |
-
-## Claude Code 使用技巧
-
-### 1. 上下文管理
-
-**最佳实践：**
-- 先用 `read` 读取相关文件，再提出具体问题
-- 使用 `@file` 语法引用文件（如果支持）
-- 保持对话连贯，避免频繁切换无关话题
-
-**示例：**
-```
-你：read package.json
-你：读取 src/index.js
-你：分析这个项目的依赖和入口文件有什么问题？
+```text
+read <file>         # 读取文件
+write <file>        # 写入文件
+edit <file>         # 编辑文件
+list <dir>          # 列出目录
+search <pattern>    # 搜索文件
 ```
 
-### 2. 代码修改技巧
+**代码分析**
 
-**渐进式修改：**
-- 先让 Claude 理解现有代码
-- 然后提出具体修改需求
-- 检查修改结果，必要时迭代
-
-**示例：**
-```
-你：先理解这个函数的逻辑
-你：重构它，添加错误处理
-你：确保添加了日志记录
+```text
+analyze <file>      # 分析代码
+explain <code>      # 解释代码
+debug <file>        # 调试代码
+refactor <file>     # 重构代码
 ```
 
-### 3. 调试技巧
+**Git 操作**
 
-**系统化调试：**
-1. 描述问题和预期行为
-2. 提供错误信息和日志
-3. 让 Claude 分析可能的原因
-4. 根据建议逐步排查
-
-**示例：**
-```
-你：运行测试时出现这个错误：[粘贴错误]
-你：这是测试文件内容：[read test.js]
-你：帮我找出问题所在
+```text
+git status          # 查看状态
+git diff            # 查看改动
+git commit "msg"    # 提交更改
+git log             # 查看历史
 ```
 
-### 4. 代码审查
+---
 
-**高效审查：**
-- 让 Claude 检查代码质量、安全性、性能
-- 请求改进建议
-- 要求解释具体问题
+## 典型工作流程
 
-**示例：**
+### 1. 在 OpenClaw 中启动 ACP Claude Code
+
+**目标：为现有项目添加新功能**
+
+```python
+# Step 1: 启动持久化会话并绑定线程
+sessions_spawn(
+    task="帮我理解这个项目的结构，准备添加新功能",
+    runtime="acp",
+    agentId="claude",
+    thread=True,
+    mode="session",
+    cwd="/var/www/bluespace3.github.io"
+)
 ```
-你：审查这段代码的安全性
-你：指出潜在的性能问题
-你：给出改进建议
+
+**后续步骤（在绑定线程中）：**
+
+1. 让 Claude Code 分析代码库
+2. 提出新功能的需求
+3. 让 Claude Code 实现功能
+4. 审查代码质量
+5. 运行测试验证
+
+---
+
+### 2. 一次性代码审查
+
+```python
+sessions_spawn(
+    task="审查以下代码的安全性、性能和可维护性：src/auth/user.py",
+    runtime="acp",
+    agentId="claude"
+)
 ```
 
-### 5. 重构策略
+---
 
-**安全重构：**
-1. 先让 Claude 理解代码意图
-2. 讨论重构方案
-3. 执行重构并验证
-4. 确保测试通过
+### 3. 持续开发会话
 
-**示例：**
+**启动：**
+```text
+/acp spawn claude --mode persistent --thread auto --label "重构登录模块"
 ```
-你：理解这个模块的设计
-你：如何将其改为使用设计模式？
-你：执行重构，保持功能不变
+
+**在绑定线程中：**
+
+```
+你：分析当前的登录流程
+你：重构为使用 JWT
+你：添加单元测试
+你：更新文档
+```
+
+---
+
+## 技能（Skills）集成
+
+Claude Code 支持 OpenClaw 的技能系统。
+
+### 已安装技能示例
+
+**git-commit-message 技能**
+
+位置：`~/.openclaw/workspace/skills/.claude/skills/git-commit-message`
+
+当你在 ACP Claude Code 会话中使用 `git commit` 时，该技能会自动：
+
+1. 分析暂存区的变更
+2. 生成符合规范的 commit message
+3. 遵循 Conventional Commits 规范
+
+### 为其他项目安装技能
+
+```bash
+cd /path/to/project
+mkdir -p .claude/skills
+ln -s ~/.openclaw/workspace/skills/.agents/skills/git-commit-message .claude/skills/git-commit-message
+```
+
+---
+
+## 配置与安装
+
+### 1. 确保 ACP 插件已安装
+
+```bash
+# 检查插件状态
+openclaw plugins list
+
+# 如果未安装
+openclaw plugins install @openclaw/acpx
+openclaw config set plugins.entries.acpx.enabled true
+```
+
+### 2. 验证 ACP 后端
+
+```text
+/acp doctor
+```
+
+### 3. 检查配置
+
+```bash
+openclaw config get acp
+```
+
+期望输出：
+```json5
+{
+  acp: {
+    enabled: true,
+    dispatch: { enabled: true },
+    backend: "acpx",
+    defaultAgent: "claude",
+    allowedAgents: ["pi", "claude", "codex", "opencode", "gemini"]
+  }
+}
+```
+
+---
+
+## 故障排查
+
+### 常见问题
+
+**Q: 启动 ACP 会话时报 "ACP runtime backend is not configured"**
+
+A: 安装并启用 acpx 插件
+```bash
+openclaw plugins install @openclaw/acpx
+openclaw config set plugins.entries.acpx.enabled true
+openclaw gateway restart
+```
+
+---
+
+**Q: `--thread here` 报错 "requires running /acp spawn inside an active thread"**
+
+A: 你不在线程中，使用 `--thread auto` 或先进入线程
+
+---
+
+**Q: 无法启动，报 "ACP agent 'xxx' is not allowed by policy"**
+
+A: 该 agent 不在允许列表中，检查配置：
+```bash
+openclaw config get acp.allowedAgents
+```
+
+---
+
+**Q: 会话绑定丢失**
+
+A: 可能原因：
+- 会话 TTL 过期
+- 线程被关闭/存档
+- Gateway 重启
+
+重新绑定：
+```text
+/focus <session-key>
+```
+
+---
+
+**Q: Claude Code 无法识别技能**
+
+A: 检查符号链接是否正确：
+```bash
+ls -la .claude/skills/git-commit-message
+# 应该是符号链接指向技能目录
+```
+
+---
 
 ## 高级用法
 
-### 1. 多文件操作
+### 1. 多会话并行
 
-**批量操作：**
-```
-你：列出所有 Python 文件
-你：为每个文件添加类型注解
-```
+启动多个独立的 Claude Code 会话处理不同任务：
 
-**依赖关系分析：**
-```
-你：分析 src/ 目录下所有文件的依赖关系
-你：画出模块依赖图
-```
+```python
+# 会话 1：后端开发
+sessions_spawn(
+    task="实现用户 API",
+    runtime="acp",
+    agentId="claude",
+    thread=True,
+    label="后端 API"
+)
 
-### 2. 自动化脚本
-
-**生成脚本：**
-```
-你：生成一个自动化部署脚本
-你：要求：备份、构建、测试、部署
-```
-
-**重构生成：**
-```
-你：将这个重复的代码抽象为可复用的函数
+# 会话 2：前端开发
+sessions_spawn(
+    task="实现登录页面 UI",
+    runtime="acp",
+    agentId="claude",
+    thread=True,
+    label="前端 UI"
+)
 ```
 
-### 3. 文档生成
+---
 
-**自动生成文档：**
-```
-你：为这个模块生成 README
-你：包含：安装、使用、API 说明
-```
+### 2. 切换工作目录
 
-**代码注释：**
-```
-你：为所有函数添加清晰的文档字符串
+```text
+/acp cwd /var/www/bluespace3.github.io
 ```
 
-### 4. 配置管理
-
-**配置文件转换：**
-```
-你：将 XML 配置转为 YAML
-```
-
-**环境变量管理：**
-```
-你：生成 .env 文件示例
-
-## 常见任务速查
-
-### 修复 Bug
-```
-1. read <出错文件>
-2. 分析错误信息
-3. 询问 Claude 可能的原因
-4. 应用修复方案
-5. 验证修复
+或在启动时指定：
+```python
+sessions_spawn(
+    task="任务",
+    runtime="acp",
+    agentId="claude",
+    cwd="/var/www/bluespace3.github.io"
+)
 ```
 
-### 添加新功能
-```
-1. read 相关文件
-2. 解释需求和设计
-3. 让 Claude 实现功能
-4. 审查和测试代码
+---
+
+### 3. 模型切换
+
+```text
+/acp model anthropic/claude-opus-4-5
 ```
 
-### 重构代码
-```
-1. read 要重构的代码
-2. 讨论重构目标
-3. 执行重构
-4. 运行测试确保不破坏功能
+---
+
+### 4. 设置超时
+
+```text
+/acp timeout 600  # 10 分钟后自动停止
 ```
 
-### 编写测试
-```
-1. read 要测试的代码
-2. 让 Claude 编写测试用例
-3. 运行测试
-4. 根据结果调整
-```
-
-### 性能优化
-```
-1. read 性能瓶颈代码
-2. 让 Claude分析优化点
-3. 应用优化方案
-4. 验证性能提升
+---
 
 ## 最佳实践
 
 ### 对话技巧
 
-**1. 明确具体**
-- ❌ "帮我优化代码"
+**1. 先上下文，后任务**
+```text
+你：read package.json
+你：read src/index.js
+你：分析这个项目的依赖和入口文件
+```
+
+**2. 渐进式修改**
+```text
+你：理解这个函数
+你：添加错误处理
+你：添加日志
+```
+
+**3. 明确需求**
+- ❌ "优化代码"
 - ✅ "优化这个循环的时间复杂度"
 
-**2. 提供上下文**
-- 先 `read` 相关文件
-- 说明代码的目的和约束
-
-**3. 逐步迭代**
-- 不要一次提出太多要求
-- 分步骤完成复杂任务
-
-**4. 验证结果**
-- 运行测试
-- 检查代码质量
-- 确认需求满足
+---
 
 ### 工作流建议
 
-**开发新功能：**
-```
-1. read 现有代码
-2. 讨论设计方案
-3. 实现核心功能
-4. 编写测试
-5. 完善和优化
-```
+**新功能开发：**
+1. 启动持久化 ACP 会话
+2. 分析现有代码
+3. 讨论设计
+4. 实现功能
+5. 编写测试
+6. 验证和优化
 
-**修复 Bug：**
-```
+**Bug 修复：**
 1. 复现问题
-2. read 相关代码
-3. 分析根因
+2. 分析相关代码
+3. 定位根因
 4. 实施修复
 5. 验证修复
-6. 添加测试防止回归
-```
+6. 添加测试
 
 **代码审查：**
-```
-1. read 完整代码
-2. 逐层审查（逻辑、安全、性能）
-3. 记录问题
-4. 讨论改进方案
-5. 应用改进
+1. 一会话审查逻辑层
+2. 二会话审查安全层
+3. 三会话审查性能层
+
+---
 
 ## 提示词模板
 
-### 代码分析
-```
-分析这段代码：
-- 潜在的 Bug
-- 性能问题
-- 安全隐患
-- 改进建议
-```
-
 ### 功能实现
-```
+```text
 实现以下功能：
-1. [具体需求 1]
-2. [具体需求 2]
-3. [具体需求 3]
+1. [需求 1]
+2. [需求 2]
 
 约束条件：
 - 不破坏现有功能
@@ -329,7 +563,7 @@ openclaw config set acp.defaultAgent claude
 ```
 
 ### 代码重构
-```
+```text
 重构目标：
 - [目标 1]
 - [目标 2]
@@ -341,7 +575,7 @@ openclaw config set acp.defaultAgent claude
 ```
 
 ### 调试帮助
-```
+```text
 遇到的问题：
 [描述问题]
 
@@ -355,38 +589,13 @@ openclaw config set acp.defaultAgent claude
 1. 找出问题原因
 2. 提供修复方案
 3. 解释为什么会发生
+```
 
-## 常见问题
-
-### Q: 如何让 Claude Code 更好地理解我的代码？
-A:
-- 提供完整的文件内容
-- 说明代码的目的和业务逻辑
-- 解释关键设计决策
-- 提供相关配置和依赖
-
-### Q: 如何避免 Claude 产生错误代码？
-A:
-- 明确需求，避免模糊描述
-- 要求 Claude 解释生成代码的逻辑
-- 始终运行测试验证
-- 逐步迭代，不要一次要求太多
-
-### Q: 如何处理大型项目？
-A:
-- 分模块处理
-- 使用项目结构说明
-- 先处理核心模块，再处理细节
-- 保持上下文连贯
-
-### Q: Claude Code 能处理哪些语言？
-A: Claude Code 支持几乎所有编程语言，包括：
-- Python, JavaScript, TypeScript
-- Java, C++, Go, Rust
-- Ruby, PHP, Swift, Kotlin
+---
 
 ## 相关资源
 
-- **Claude 官方文档**: https://docs.anthropic.com/
 - **ACP 协议**: https://agentclientprotocol.com/
-- **OpenClaw ACP 配置**: 查看 OpenClaw 文档 ACP 部分
+- **OpenClaw 文档**: https://docs.openclaw.ai/
+- **Claude 官方文档**: https://docs.anthropic.com/
+- **Conventional Commits**: https://www.conventionalcommits.org/

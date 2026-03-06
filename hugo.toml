@@ -8,7 +8,7 @@ defaultContentLanguage = 'zh-CN'
 hasCJKLanguage = true
 
 # 主要章节
-mainSections = ["post", "archives"]
+mainSections = ["post"]
 
 # 分页配置
 [pagination]
@@ -55,6 +55,9 @@ summaryLength = 150
 
 # PaperMod 主题参数
 [params]
+  # 主要章节（用于首页显示）
+  mainSections = ["post"]
+
   # 环境变量
   env = "production"
 

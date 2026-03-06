@@ -1,0 +1,14 @@
+# Ignore hidden directories and files
+.obsidian/
+.claude/
+
+# Ignore common IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

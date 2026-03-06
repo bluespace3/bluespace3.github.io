@@ -1,13 +1,17 @@
+
 ---
-title: 'Git_submodule'
-categories: ["git"]
-date: 2026-02-27T11:05:10+08:00
-lastmod: 2026-02-27T11:05:10+08:00
+title: "Git submodule"
+
+categories: ["技术",  "git", "hugo"]
+
+date: 2025-03-20T12:59:32+08:00
+
+
 draft: false
+
+
+tags: ["submodule", "Git", "教程"]
 ---
-date: 2026-02-27T11:05:10+08:00
-lastmod: 2026-02-27T11:05:10+08:00
-encrypted: false
 
 - - [Git submodule添加子项目_库](https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe)
 - [Git归并策略](https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc)
