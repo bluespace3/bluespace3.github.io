@@ -5,6 +5,37 @@
 
 set -e  # 遇到错误立即退出
 
+# 解析命令行参数
+SYNC_MODE="incremental"
+FULL_SYNC=false
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --full-sync)
+            FULL_SYNC=true
+            SYNC_MODE="full"
+            shift
+            ;;
+        --help)
+            echo "用法: $0 [选项]"
+            echo ""
+            echo "选项:"
+            echo "  --full-sync    全量同步笔记（删除现有博客文章，重新从笔记仓库转换）"
+            echo "  --help         显示此帮助信息"
+            echo ""
+            echo "示例:"
+            echo "  $0              # 增量同步（默认）"
+            echo "  $0 --full-sync  # 全量同步"
+            exit 0
+            ;;
+        *)
+            echo "未知选项: $1"
+            echo "使用 --help 查看帮助信息"
+            exit 1
+            ;;
+    esac
+done
+
 echo "========================================"
 echo "       博客自动化部署脚本"
 echo "========================================"
@@ -14,14 +45,26 @@ echo ""
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-# -1. 后台同步笔记（不阻塞主流程）
-echo "🔄 触发后台笔记同步..."
-if [ -f "scripts/sync-notes-background.sh" ]; then
-    # 使用 nohup 在后台运行，不输出到终端
-    nohup bash scripts/sync-notes-background.sh > /dev/null 2>&1 &
-    echo "✅ 笔记同步已在后台运行（日志：/tmp/notes-sync-*.log）"
+# -1. 笔记同步
+if [ "$FULL_SYNC" = true ]; then
+    # 全量同步模式
+    echo "🔄 全量同步模式..."
+    if [ -f "scripts/full-sync-notes.sh" ]; then
+        bash scripts/full-sync-notes.sh
+        echo "✅ 全量笔记同步完成"
+    else
+        echo "⚠️  未找到全量同步脚本，跳过"
+    fi
 else
-    echo "⚠️  未找到笔记同步脚本，跳过"
+    # 增量同步模式（后台运行，不阻塞主流程）
+    echo "🔄 增量同步模式（后台运行）..."
+    if [ -f "scripts/sync-notes-background.sh" ]; then
+        # 使用 nohup 在后台运行，不输出到终端
+        nohup bash scripts/sync-notes-background.sh > /dev/null 2>&1 &
+        echo "✅ 笔记同步已在后台运行（日志：/tmp/notes-sync-*.log）"
+    else
+        echo "⚠️  未找到笔记同步脚本，跳过"
+    fi
 fi
 echo ""
 

@@ -1,16 +1,297 @@
 <!DOCTYPE html>
-<html data-theme="auto" dir="auto" lang="zh-cn"><head><meta charset="utf-8"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><meta content="index, follow" name="robots"/><title>大模型实践 | 蓝色空间号</title><meta content="" name="keywords"/><meta content="致敬勇于探索未知的人类！" name="description"/><meta content="新人类" name="author"/><link href="https://bluespace.eu.org/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/" rel="canonical"/><link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet"/><link href="https://bluespace.eu.org/favicon.ico" rel="icon"/><link href="https://bluespace.eu.org/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="https://bluespace.eu.org/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="https://bluespace.eu.org/apple-touch-icon.png" rel="apple-touch-icon"/><link href="https://bluespace.eu.org/safari-pinned-tab.svg" rel="mask-icon"/><meta content="#2e2e33" name="theme-color"/><meta content="#2e2e33" name="msapplication-TileColor"/><link href="https://bluespace.eu.org/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/index.xml" rel="alternate" title="rss" type="application/rss+xml"/><link href="https://bluespace.eu.org/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/" hreflang="zh-cn" rel="alternate"/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta content="https://bluespace.eu.org/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/" property="og:url"/><meta content="蓝色空间号" property="og:site_name"/><meta content="大模型实践" property="og:title"/><meta content="致敬勇于探索未知的人类！" property="og:description"/><meta content="zh-CN" property="og:locale"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><meta content="大模型实践" name="twitter:title"/><meta content="致敬勇于探索未知的人类！" name="twitter:description"/></head><body class="list" id="top"><header class="header"><nav class="nav"><div class="logo"><a accesskey="h" href="https://bluespace.eu.org/" title="蓝色空间号 (Alt + H)">蓝色空间号</a><div class="logo-switches"><button accesskey="t" aria-label="Toggle theme" id="theme-toggle" title="(Alt + T)">
-<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
-<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></button></div></div><ul id="menu"><li><a href="https://bluespace.eu.org/" title="首页"><span>首页</span></a></li><li><a href="https://bluespace.eu.org/post/" title="文章"><span>文章</span></a></li><li><a href="https://bluespace.eu.org/archives/" title="归档"><span>归档</span></a></li><li><a href="https://bluespace.eu.org/categories/" title="分类"><span>分类</span></a></li><li><a href="https://bluespace.eu.org/tags/" title="标签"><span>标签</span></a></li><li><a href="https://bluespace.eu.org/about/" title="关于"><span>关于</span></a></li></ul></nav></header><main class="main"><header class="page-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a> » <a href="https://bluespace.eu.org/categories/">Categories</a></div><h1>大模型实践
-<a aria-label="RSS" href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/index.xml" title="RSS"><svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 11a9 9 0 019 9"></path><path d="M4 4a16 16 0 0116 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></h1></header><article class="post-entry tag-entry"><header class="entry-header"><h2 class="entry-hint-parent">TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告</h2></header><div class="entry-content"><p>date: 2026-02-13T01:22:05+08:00 lastmod: 2026-02-13T01:22:05+08:00 encrypted: false
-Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告 测试概要 模型: zdolny/qwen3-coder58k-tools:latest（尺寸为30b） 上下文窗口: 58,000 tokens 测试环境: Windows + Tesla V100-SXM2-32GB GPU 测试日期: 2025-12-13
-...</p></div><footer class="entry-footer"><span title="2026-02-13 01:22:05 +0800 CST">2026-02-13</span> · <span>4 min</span> · <span>1622 words</span> · <span>新人类</span></footer><a aria-label="post link to TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告" class="entry-link" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/"></a></article><article class="post-entry tag-entry"><header class="entry-header"><h2 class="entry-hint-parent">大模型考试题</h2></header><div class="entry-content"><p>date: 2026-01-28T00:41:41+08:00 lastmod: 2026-01-28T00:41:41+08:00 encrypted: false 问：两人轮流从一堆 21 颗石子中取 1~3 颗，取到最后一颗者输。你先手，是否有必胜策略？
-答案：有必胜策略。 策略：始终让对手面对 1, 5, 9, 13, 17, 21颗石子（即模 4 余 1）。 第一步应取 1 颗，剩 20 颗（20 ≡ 0 mod 4 → 对手无法保持余 1）。</p></div><footer class="entry-footer"><span title="2026-01-28 00:41:41 +0800 CST">2026-01-28</span> · <span>1 min</span> · <span>111 words</span> · <span>新人类</span></footer><a aria-label="post link to 大模型考试题" class="entry-link" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%80%83%E8%AF%95%E9%A2%98/"></a></article><article class="post-entry tag-entry"><header class="entry-header"><h2 class="entry-hint-parent">Untitled</h2></header><div class="entry-content"><p>date: 2025-12-17T01:10:50+08:00 lastmod: 2025-12-17T01:10:50+08:00 encrypted: false
-v100指令 nvidia-smi -l 1动态查看v100状态</p></div><footer class="entry-footer"><span title="2025-12-17 01:10:50 +0800 CST">2025-12-17</span> · <span>1 min</span> · <span>25 words</span> · <span>新人类</span></footer><a aria-label="post link to Untitled" class="entry-link" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/untitled/"></a></article><article class="post-entry tag-entry"><header class="entry-header"><h2 class="entry-hint-parent">ollama</h2></header><div class="entry-content"><p>date: 2025-12-13T22:14:15+08:00 lastmod: 2025-12-13T22:14:15+08:00 encrypted: false gpt-oss:20b思考、工具
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>大模型实践 | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="致敬勇于探索未知的人类！">
+<meta name="author" content="新人类">
+<link rel="canonical" href="https://bluespace.eu.org/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://bluespace.eu.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://bluespace.eu.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://bluespace.eu.org/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://bluespace.eu.org/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/">
+  <meta property="og:site_name" content="蓝色空间号">
+  <meta property="og:title" content="大模型实践">
+  <meta property="og:description" content="致敬勇于探索未知的人类！">
+  <meta property="og:locale" content="zh-CN">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大模型实践">
+<meta name="twitter:description" content="致敬勇于探索未知的人类！">
+
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bluespace.eu.org/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/categories/">Categories</a></div>
+  <h1>
+    大模型实践
+    <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>date: 2026-02-13T01:22:05&#43;08:00 lastmod: 2026-02-13T01:22:05&#43;08:00 encrypted: false
+Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告 测试概要 模型: zdolny/qwen3-coder58k-tools:latest（尺寸为30b） 上下文窗口: 58,000 tokens 测试环境: Windows &#43; Tesla V100-SXM2-32GB GPU 测试日期: 2025-12-13
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-13 01:22:05 +0800 CST'>2026-02-13</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>1622 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
+  <a class="entry-link" aria-label="post link to TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">大模型考试题
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>date: 2026-01-28T00:41:41&#43;08:00 lastmod: 2026-01-28T00:41:41&#43;08:00 encrypted: false 问：两人轮流从一堆 21 颗石子中取 1~3 颗，取到最后一颗者输。你先手，是否有必胜策略？
+答案：有必胜策略。 策略：始终让对手面对 1, 5, 9, 13, 17, 21颗石子（即模 4 余 1）。 第一步应取 1 颗，剩 20 颗（20 ≡ 0 mod 4 → 对手无法保持余 1）。
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-28 00:41:41 +0800 CST'>2026-01-28</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>111 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
+  <a class="entry-link" aria-label="post link to 大模型考试题" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%80%83%E8%AF%95%E9%A2%98/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Untitled
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>date: 2025-12-17T01:10:50&#43;08:00 lastmod: 2025-12-17T01:10:50&#43;08:00 encrypted: false
+v100指令 nvidia-smi -l 1动态查看v100状态</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-17 01:10:50 +0800 CST'>2025-12-17</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>25 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
+  <a class="entry-link" aria-label="post link to Untitled" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/untitled/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ollama
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>date: 2025-12-13T22:14:15&#43;08:00 lastmod: 2025-12-13T22:14:15&#43;08:00 encrypted: false gpt-oss:20b思考、工具
 gemma3:27b 多模态、号称单gpu最强
 zdolny/qwen3-coder58k-tools:latest
-Hugging Face 国内镜像https://hf-mirror.com</p></div><footer class="entry-footer"><span title="2025-12-13 22:14:15 +0800 CST">2025-12-13</span> · <span>1 min</span> · <span>63 words</span> · <span>新人类</span></footer><a aria-label="post link to ollama" class="entry-link" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/ollama/"></a></article></main><footer class="footer"><span>© 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> ·
-<span>Powered by
-<a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
-<a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a></span></footer><a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)"><svg fill="currentColor" viewbox="0 0 12 6"><path d="M12 6H0l6-6z"></path></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>
+Hugging Face 国内镜像https://hf-mirror.com
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-13 22:14:15 +0800 CST'>2025-12-13</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>63 words</span>&nbsp;·&nbsp;<span>新人类</span></footer>
+  <a class="entry-link" aria-label="post link to ollama" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/ollama/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
