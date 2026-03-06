@@ -27,8 +27,8 @@ echo ""
 
 # 1. 生成网站
 echo "[1/5] 正在生成网站..."
-hugo --cleanDestinationDir
-echo "✅ 网站生成成功"
+hugo --cleanDestinationDir --environment production --minify
+echo "✅ 网站生成成功（环境：production）"
 echo ""
 
 # 2. 加密文章
