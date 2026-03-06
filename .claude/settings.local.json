@@ -74,7 +74,9 @@
       "Bash(/var/www/bluespace3.github.io/scripts/sync-notes-background.sh:*)",
       "Bash(bash:*)",
       "Bash(rm:*)",
-      "Bash(./deploy.sh:*)"
+      "Bash(./deploy.sh:*)",
+      "Bash(head:*)",
+      "Bash(rsync:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,170 +1,1528 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-<channel>
-<title>蓝色空间号</title>
-<link>https://bluespace.eu.org/algolia.json</link>
-<description>Recent content on 蓝色空间号</description>
-<generator>Hugo -- 0.157.0</generator>
-<language>zh-CN</language>
-<lastBuildDate>Fri, 06 Mar 2026 13:42:26 +0800</lastBuildDate>
-<atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/>
-<item>
-<title>INDEX</title>
-<link>https://bluespace.eu.org/post/</link>
-<pubDate>Fri, 06 Mar 2026 13:42:26 +0800</pubDate>
-<guid>https://bluespace.eu.org/post/</guid>
-<description>&lt;h1 id="nextcloud-项目文档索引"&gt;Nextcloud 项目文档索引&lt;/h1&gt;
-&lt;h2 id="文档列表"&gt;文档列表&lt;/h2&gt;
-&lt;h3 id="nextcloud-配置与优化总结"&gt;&lt;a href=""&gt;Nextcloud 配置与优化总结&lt;/a&gt;&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/algolia.json</link><description>Recent content on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Fri, 06 Mar 2026 16:00:00 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>最新测试</title><link>https://bluespace.eu.org/post/test-latest/</link><pubDate>Fri, 06 Mar 2026 16:00:00 +0800</pubDate><guid>https://bluespace.eu.org/post/test-latest/</guid><description>&lt;h1 id="test"&gt;Test&lt;/h1&gt;</description></item><item><title>测试文章</title><link>https://bluespace.eu.org/test/test/</link><pubDate>Fri, 06 Mar 2026 13:00:00 +0800</pubDate><guid>https://bluespace.eu.org/test/test/</guid><description>&lt;h1 id="测试"&gt;测试&lt;/h1&gt;</description></item><item><title>Test Article 1</title><link>https://bluespace.eu.org/articles/test1/</link><pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate><guid>https://bluespace.eu.org/articles/test1/</guid><description>&lt;h1 id="test-1"&gt;Test 1&lt;/h1&gt;</description></item><item><title>简单测试</title><link>https://bluespace.eu.org/post/simple-test/</link><pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate><guid>https://bluespace.eu.org/post/simple-test/</guid><description>&lt;h1 id="测试"&gt;测试&lt;/h1&gt;
+&lt;p&gt;这是一个简单测试。&lt;/p&gt;</description></item><item><title>mcp-skill-a2a-agentskills对比</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-skill-a2a-agentskills%E5%AF%B9%E6%AF%94/</link><pubDate>Fri, 06 Mar 2026 01:24:07 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-skill-a2a-agentskills%E5%AF%B9%E6%AF%94/</guid><description>&lt;h2 id="mcp"&gt;MCP&lt;/h2&gt;
+&lt;p&gt;特点：一种协议、可供ai复用的工具（与functioncalling非包含关系，但是可以利用大模型的 Function Calling 能力来触发工具调用）服务，可以视为一种大模型使用的sdk。&lt;/p&gt;</description></item><item><title>ACP-Claude-Code快捷指令</title><link>https://bluespace.eu.org/check/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Thu, 05 Mar 2026 17:44:05 +0800</pubDate><guid>https://bluespace.eu.org/check/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="claude-code-快捷指令与使用技巧"&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最后更新：2026-02-28
+ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="什么是-acp"&gt;什么是 ACP？&lt;/h2&gt;
+&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description></item><item><title>ACP-Claude-Code快捷指令</title><link>https://bluespace.eu.org/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Thu, 05 Mar 2026 17:44:05 +0800</pubDate><guid>https://bluespace.eu.org/post/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="claude-code-快捷指令与使用技巧"&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最后更新：2026-02-28
+ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="什么是-acp"&gt;什么是 ACP？&lt;/h2&gt;
+&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description></item><item><title>ACP-Claude-Code快捷指令</title><link>https://bluespace.eu.org/test/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Thu, 05 Mar 2026 17:44:05 +0800</pubDate><guid>https://bluespace.eu.org/test/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="claude-code-快捷指令与使用技巧"&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最后更新：2026-02-28
+ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="什么是-acp"&gt;什么是 ACP？&lt;/h2&gt;
+&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description></item><item><title>Nextcloud 配置与优化总结</title><link>https://bluespace.eu.org/post/nextcloud-setup-summary/</link><pubDate>Thu, 05 Mar 2026 02:26:58 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud-setup-summary/</guid><description>&lt;h1 id="nextcloud-配置与优化总结"&gt;Nextcloud 配置与优化总结&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;日期&lt;/strong&gt;: 2026-03-05
+&lt;strong&gt;任务&lt;/strong&gt;: Nextcloud 局域网/公网访问配置、SSL证书配置、性能优化&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="一项目概述"&gt;一、项目概述&lt;/h2&gt;
+&lt;h3 id="目标"&gt;目标&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;在本地Mac上通过Docker运行Nextcloud&lt;/li&gt;
+&lt;li&gt;配置局域网HTTPS访问（解决SSL初始化失败）&lt;/li&gt;
+&lt;li&gt;配置公网HTTPS访问（Let&amp;rsquo;s Encrypt证书）&lt;/li&gt;
+&lt;li&gt;优化访问性能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="环境信息"&gt;环境信息&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;创建日期&lt;/strong&gt;: 2026-03-05&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;大小&lt;/strong&gt;: 31KB&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;行数&lt;/strong&gt;: 1146行&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;内容&lt;/strong&gt;:
+&lt;li&gt;&lt;strong&gt;本地环境&lt;/strong&gt;: macOS (Darwin 25.2.0)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Docker运行时&lt;/strong&gt;: Colima&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;云服务器&lt;/strong&gt;: 38.55.39.104 (Ubuntu)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nextcloud版本&lt;/strong&gt;: 33.0.0.16&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据库&lt;/strong&gt;: MySQL 8.0 (本地)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缓存&lt;/strong&gt;: Redis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="二架构设计"&gt;二、架构设计&lt;/h2&gt;
+&lt;h3 id="网络架构"&gt;网络架构&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 访问路径 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├─────────────────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 公网访问 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────────┐ ┌──────────────┐ ┌──────────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 客户端 │───▶│ Cloudflare │───▶│ 服务器Nginx │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ (任何网络) │ │ (DNS only) │ │ (38.55.39. │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────────┘ └──────────────┘ │ 104) │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Let&amp;#39;s Encrypt│ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └──────┬─────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌──────▼─────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Tailscale VPN │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └──────┬─────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 局域网访问 ┌──────▼─────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────────┐ │ 本地Mac │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 局域网设备 │───▶────────────────────│ Docker/Colima │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ (192.168. │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 10.222) │◀───┐ │ - Nextcloud │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────────┘ │ │ - MySQL │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ - Redis │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────────┐ │ └──────┬─────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 本地Mac │───┘ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Nginx代理 │ G盘挂载 ▼ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ (:8443) │◀───/Volumes/G/nextCloud 存储层 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└─────────────────────────────────────────────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="访问方式对比"&gt;访问方式对比&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;访问方式&lt;/th&gt;
+&lt;th&gt;地址&lt;/th&gt;
+&lt;th&gt;延迟&lt;/th&gt;
+&lt;th&gt;证书类型&lt;/th&gt;
+&lt;th&gt;适用场景&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;公网HTTPS&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://nc.skyspace.eu.org"&gt;https://nc.skyspace.eu.org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;0.90秒&lt;/td&gt;
+&lt;td&gt;Let&amp;rsquo;s Encrypt&lt;/td&gt;
+&lt;td&gt;所有客户端&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;旧公网HTTPS&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://nextcloud.skyspace.eu.org"&gt;https://nextcloud.skyspace.eu.org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1.22秒&lt;/td&gt;
+&lt;td&gt;自签名&lt;/td&gt;
+&lt;td&gt;备用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;局域网HTTPS&lt;/td&gt;
+&lt;td&gt;https://192.168.10.222:8443&lt;/td&gt;
+&lt;td&gt;0.01秒&lt;/td&gt;
+&lt;td&gt;自签名&lt;/td&gt;
+&lt;td&gt;局域网设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tailscale&lt;/td&gt;
+&lt;td&gt;http://100.97.62.83:8080&lt;/td&gt;
+&lt;td&gt;0.35秒&lt;/td&gt;
+&lt;td&gt;HTTP&lt;/td&gt;
+&lt;td&gt;VPN内设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;局域网HTTP&lt;/td&gt;
+&lt;td&gt;http://192.168.10.222:8080&lt;/td&gt;
+&lt;td&gt;0.01秒&lt;/td&gt;
+&lt;td&gt;HTTP&lt;/td&gt;
+&lt;td&gt;局域网设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="三配置步骤详解"&gt;三、配置步骤详解&lt;/h2&gt;
+&lt;h3 id="31-基础环境搭建"&gt;3.1 基础环境搭建&lt;/h3&gt;
+&lt;h4 id="docker-compose配置"&gt;Docker Compose配置&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;文件&lt;/strong&gt;: &lt;code&gt;~/nextcloud/docker-compose.yml&lt;/code&gt;&lt;/p&gt;</description></item><item><title>ssh连接服务器踩坑点</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link><pubDate>Wed, 04 Mar 2026 02:52:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid><description>&lt;h1 id="通过密钥连接服务器踩坑配置正确但是连接失败"&gt;通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;初始状态&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;项目概述与环境信息&lt;/li&gt;
-&lt;li&gt;架构设计图解&lt;/li&gt;
-&lt;li&gt;详细配置步骤&lt;/li&gt;
-&lt;li&gt;性能测试结果&lt;/li&gt;
-&lt;li&gt;问题解决方案&lt;/li&gt;
-&lt;li&gt;管理脚本&lt;/li&gt;
-&lt;li&gt;客户端配置指南&lt;/li&gt;
-&lt;li&gt;维护与监控&lt;/li&gt;
-&lt;li&gt;故障排查&lt;/li&gt;
-&lt;li&gt;最佳实践&lt;/li&gt;
+&lt;li&gt;已成功生成SSH密钥对（ed25519）&lt;/li&gt;
+&lt;li&gt;已将公钥添加到服务器的 ~/.ssh/authorized_keys - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;问题表现
+ssh -o BatchMode=yes -o PasswordAuthentication=no &lt;a href="mailto:username@ip"&gt;username@ip&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="结果permission-denied-password"&gt;结果：Permission denied (password)&lt;/h2&gt;
+&lt;p&gt;即使公钥已在服务器上，公钥认证仍然失败。&lt;/p&gt;</description></item><item><title>linux常用命令</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:44+08:00
+lastmod: 2025-09-07T00:20:44+08:00
+encrypted: false&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看历史使用命令&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-Shell" data-lang="Shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;history&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;过滤与 &lt;code&gt;es&lt;/code&gt;相关命令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-Shell" data-lang="Shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;history&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep es
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;查看占用资源&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-Shell" data-lang="Shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ps -au 占用的资源是从进程启动开始，计算的平均占用资源，比如cpu等
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;top 实时占用的资源；
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;12&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;查看当前目录所占存储&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>migration-summary</title><link>https://bluespace.eu.org/post/nextcloud/migration-summary/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/migration-summary/</guid><description>&lt;h1 id="nextcloud-数据库迁移总结"&gt;Nextcloud 数据库迁移总结&lt;/h1&gt;
+&lt;p&gt;迁移日期：2026-03-04&lt;/p&gt;
+&lt;h2 id="一迁移概述"&gt;一、迁移概述&lt;/h2&gt;
+&lt;p&gt;将 Nextcloud 从本地 MariaDB 数据库迁移到 Aiven 云托管 MySQL 数据库。&lt;/p&gt;
+&lt;h3 id="迁移动机"&gt;迁移动机&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;评估云数据库延迟影响&lt;/li&gt;
+&lt;li&gt;测试分布式部署可行性&lt;/li&gt;
+&lt;li&gt;释放本地服务器资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="迁移结果"&gt;迁移结果&lt;/h3&gt;
+&lt;p&gt;✅ &lt;strong&gt;成功迁移&lt;/strong&gt; - 123/126 个表成功导入&lt;/p&gt;</description></item><item><title>OpenClaw场景配置指南</title><link>https://bluespace.eu.org/post/openclaw%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</guid><description>&lt;h1 id="openclaw-场景配置指南"&gt;OpenClaw 场景配置指南&lt;/h1&gt;
+&lt;p&gt;本文档介绍如何配置和使用 OpenClaw 的高价值场景，包括 AI 新闻日报、技术新闻聚合、播客自动化等内容生成。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-场景列表"&gt;🎯 场景列表&lt;/h2&gt;
+&lt;h3 id="1-ai-新闻日报已运行-"&gt;1. AI 新闻日报（已运行） ✅&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：每天早上 8:00 发送 AI 领域重要新闻&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态&lt;/strong&gt;：已运行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;覆盖&lt;/strong&gt;：深度 AI 新闻分析（产品发布、融资、研究突破等）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;频率&lt;/strong&gt;：每天 1 次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="2-multi-source-tech-news-digest新增-"&gt;2. Multi-Source Tech News Digest（新增） ✅&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：每天晚上 7:30 发送多源技术新闻汇总&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态&lt;/strong&gt;：待安装&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;覆盖&lt;/strong&gt;：全科技领域（Web3、SaaS、硬件、创业、监管）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据源&lt;/strong&gt;：109+ 个来源（RSS、Twitter/X、GitHub、Web 搜索）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;频率&lt;/strong&gt;：每天 1 次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="3-podcast-production-pipeline待安装"&gt;3. Podcast Production Pipeline（待安装）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：自动化播客全流程制作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态&lt;/strong&gt;：待安装&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;覆盖&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;嘉宾调研&lt;/li&gt;
+&lt;li&gt;选题研究&lt;/li&gt;
+&lt;li&gt;内容大纲生成&lt;/li&gt;
+&lt;li&gt;节目笔记&lt;/li&gt;
+&lt;li&gt;封面设计（AI 生成）&lt;/li&gt;
+&lt;li&gt;社交媒体推广素材生成&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;频率&lt;/strong&gt;：按需触发&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id="快速访问"&gt;快速访问&lt;/h2&gt;
-&lt;h3 id="配置文件"&gt;配置文件&lt;/h3&gt;
+&lt;h3 id="4-github-trending-monitor待安装"&gt;4. GitHub Trending Monitor（待安装）&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Docker Compose: ~/nextcloud/docker-compose.yml&lt;/li&gt;
-&lt;li&gt;Nextcloud配置: ~/nextcloud/config.php&lt;/li&gt;
-&lt;li&gt;Nginx配置（服务器）: /etc/nginx/sites-available/nc.skyspace.eu.org.conf&lt;/li&gt;
-&lt;li&gt;Nginx配置（本地）: /opt/homebrew/etc/nginx/servers/nextcloud-https.conf&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：监控 GitHub Trending，发现有价值的开源项目&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态&lt;/strong&gt;：待安装&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;覆盖&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;实时监控 GitHub Trending&lt;/li&gt;
+&lt;li&gt;自动 star、watch、fork&lt;/li&gt;
+&lt;li&gt;按语言、类别筛选&lt;/li&gt;
+&lt;li&gt;生成项目推荐&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="访问地址"&gt;访问地址&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;🌐 公网: &lt;a href="https://nc.skyspace.eu.org"&gt;https://nc.skyspace.eu.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🏠 局域网: https://192.168.10.222:8443&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="管理命令"&gt;管理命令&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;启动: ~/nextcloud/nextcloud.sh start&lt;/li&gt;
-&lt;li&gt;重启: ~/nextcloud/nextcloud.sh restart&lt;/li&gt;
-&lt;li&gt;状态: ~/nextcloud/nextcloud.sh status&lt;/li&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;频率&lt;/strong&gt;：按需触发&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;最后更新&lt;/strong&gt;: 2026-03-05&lt;/p&gt;</description>
-</item>
-<item>
-<title>测试文章</title>
-<link>https://bluespace.eu.org/test/test/</link>
-<pubDate>Fri, 06 Mar 2026 13:00:00 +0800</pubDate>
-<guid>https://bluespace.eu.org/test/test/</guid>
-<description>&lt;h1 id="测试"&gt;测试&lt;/h1&gt;</description>
-</item>
-<item>
-<title>Test Article 1</title>
-<link>https://bluespace.eu.org/articles/test1/</link>
-<pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-<guid>https://bluespace.eu.org/articles/test1/</guid>
-<description>&lt;h1 id="test-1"&gt;Test 1&lt;/h1&gt;</description>
-</item>
-<item>
-<title>ACP-Claude-Code快捷指令</title>
-<link>https://bluespace.eu.org/check/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link>
-<pubDate>Thu, 05 Mar 2026 17:44:05 +0800</pubDate>
-<guid>https://bluespace.eu.org/check/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid>
-<description>&lt;h1 id="claude-code-快捷指令与使用技巧"&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;最后更新：2026-02-28
-ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="什么是-acp"&gt;什么是 ACP？&lt;/h2&gt;
-&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description>
-</item>
-<item>
-<title>ACP-Claude-Code快捷指令</title>
-<link>https://bluespace.eu.org/test/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link>
-<pubDate>Thu, 05 Mar 2026 17:44:05 +0800</pubDate>
-<guid>https://bluespace.eu.org/test/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid>
-<description>&lt;h1 id="claude-code-快捷指令与使用技巧"&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;最后更新：2026-02-28
-ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="什么是-acp"&gt;什么是 ACP？&lt;/h2&gt;
-&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description>
-</item>
-<item>
-<title>Nextcloud图片预览技巧</title>
-<link>https://bluespace.eu.org/test/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</link>
-<pubDate>Wed, 04 Mar 2026 02:26:58 +0800</pubDate>
-<guid>https://bluespace.eu.org/test/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</guid>
-<description>&lt;h1 id="nextcloud-图片预览技巧"&gt;Nextcloud 图片预览技巧&lt;/h1&gt;
+&lt;h3 id="5-goal-driven-autonomous-tasks待安装"&gt;5. Goal-Driven Autonomous Tasks（待安装）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：目标驱动的自动化任务管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态&lt;/strong&gt;：待安装&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;覆盖&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;目标设定&lt;/li&gt;
+&lt;li&gt;AI 自动规划&lt;/li&gt;
+&lt;li&gt;每日任务拆解&lt;/li&gt;
+&lt;li&gt;自动执行&lt;/li&gt;
+&lt;li&gt;惊喜功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;频率&lt;/strong&gt;：每天触发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-配置步骤"&gt;🚀 配置步骤&lt;/h2&gt;
+&lt;h3 id="配置-ai-新闻日报已运行"&gt;配置 AI 新闻日报（已运行）&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：此场景已经配置并运行，无需额外配置。&lt;/p&gt;</description></item><item><title>OpenClaw快捷键</title><link>https://bluespace.eu.org/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid><description>&lt;h2 id="斜杠命令"&gt;斜杠命令&lt;/h2&gt;
+&lt;h3 id="核心命令"&gt;核心命令&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/help&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;显示帮助信息&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/help&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/status&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;显示当前状态&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/status&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/agent &amp;lt;id&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;切换智能体&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/agent research&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/agents&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;列出可用智能体&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/agents&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/session &amp;lt;key&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;切换会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/session main&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/sessions&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;列出可用会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/sessions&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/model &amp;lt;provider/model&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;选择模型&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/model claude/gpt-4&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/models&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;列出可用模型&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/models&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="会话控制"&gt;会话控制&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;选项&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/think &amp;lt;level&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;设置思考级别&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;, &lt;code&gt;minimal&lt;/code&gt;, &lt;code&gt;low&lt;/code&gt;, &lt;code&gt;medium&lt;/code&gt;, &lt;code&gt;high&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/verbose &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;详细输出模式&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;full&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/reasoning &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;推理可见性&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;, &lt;code&gt;stream&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/usage &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;使用统计显示&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;, &lt;code&gt;tokens&lt;/code&gt;, &lt;code&gt;full&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/elevated &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;提升权限模式&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;, &lt;code&gt;ask&lt;/code&gt;, &lt;code&gt;full&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/activation &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;激活模式（群组）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;mention&lt;/code&gt;, &lt;code&gt;always&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/deliver &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;消息投递开关&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;on&lt;/code&gt;, &lt;code&gt;off&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="会话生命周期"&gt;会话生命周期&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/new [model]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;新建会话&lt;/td&gt;
+&lt;td&gt;可选模型参数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/reset [model]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;重置会话&lt;/td&gt;
+&lt;td&gt;可选模型参数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/abort&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中止运行&lt;/td&gt;
+&lt;td&gt;中止当前活动&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/settings&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;打开设置面板&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/exit&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;退出 TUI&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="工具与调试"&gt;工具与调试&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/context [mode]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;显示上下文信息&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;list&lt;/code&gt;, &lt;code&gt;detail&lt;/code&gt;, &lt;code&gt;json&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/export [path]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;导出会话&lt;/td&gt;
+&lt;td&gt;导出当前会话为 HTML&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/whoami&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;显示发送者 ID&lt;/td&gt;
+&lt;td&gt;别名：&lt;code&gt;/id&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/skill &amp;lt;name&amp;gt; [input]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;运行技能&lt;/td&gt;
+&lt;td&gt;按名称运行技能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/subagents &amp;lt;action&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;子代理管理&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;list&lt;/code&gt;, &lt;code&gt;kill&lt;/code&gt;, &lt;code&gt;log&lt;/code&gt;, &lt;code&gt;info&lt;/code&gt;, &lt;code&gt;send&lt;/code&gt;, &lt;code&gt;steer&lt;/code&gt;, &lt;code&gt;spawn&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/acp &amp;lt;action&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;ACP 会话控制&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;spawn&lt;/code&gt;, &lt;code&gt;cancel&lt;/code&gt;, &lt;code&gt;steer&lt;/code&gt;, &lt;code&gt;close&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt; 等&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/agents&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;列出线程绑定代理&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="权限与配置"&gt;权限与配置&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/allowlist &amp;lt;action&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;管理允许列表&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;list&lt;/code&gt;, &lt;code&gt;add&lt;/code&gt;, &lt;code&gt;remove&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/approve &amp;lt;id&amp;gt; &amp;lt;decision&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;批准执行请求&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;allow-once&lt;/code&gt;, &lt;code&gt;allow-always&lt;/code&gt;, &lt;code&gt;deny&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/config &amp;lt;action&amp;gt; [path]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;配置管理&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;show&lt;/code&gt;, &lt;code&gt;get&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;, &lt;code&gt;unset&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/debug &amp;lt;action&amp;gt; [path]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;运行时调试覆盖&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;show&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;, &lt;code&gt;unset&lt;/code&gt;, &lt;code&gt;reset&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/session ttl &amp;lt;duration&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;会话 TTL 管理&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="多端切换"&gt;多端切换&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/dock-telegram&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;切换到 Telegram&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/dock-discord&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;切换到 Discord&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/dock-slack&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;切换到 Slack&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="文字转语音tts"&gt;文字转语音（TTS）&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/tts &amp;lt;mode&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;TTS 控制&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;off&lt;/code&gt;, &lt;code&gt;always&lt;/code&gt;, &lt;code&gt;inbound&lt;/code&gt;, &lt;code&gt;tagged&lt;/code&gt;, &lt;code&gt;status&lt;/code&gt;, &lt;code&gt;provider&lt;/code&gt;, &lt;code&gt;limit&lt;/code&gt;, &lt;code&gt;summary&lt;/code&gt;, &lt;code&gt;audio&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/voice&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Discord TTS 命令&lt;/td&gt;
+&lt;td&gt;Discord 原生命令（&lt;code&gt;/tts&lt;/code&gt; 的别名）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="本地-shell-命令"&gt;本地 Shell 命令&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;! &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;执行本地 Shell 命令&lt;/td&gt;
+&lt;td&gt;在 TUI 主机上运行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!poll&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;检查输出/状态&lt;/td&gt;
+&lt;td&gt;查看后台任务状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;!stop&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;停止运行任务&lt;/td&gt;
+&lt;td&gt;停止当前 Shell 任务&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>pytest接口自动化测试方案</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid><description>&lt;h2 id="背景"&gt;背景&lt;/h2&gt;
+&lt;p&gt;当前业务核心聚焦于 POCT 领域，设备购买和设备使用等关键功能，已成为测试工作的重点保障对象，但随着系统复杂度的提升,手工的回归测试工作很难全面覆盖。为了确保关键业务功能的质量稳定性，有必要引入自动化测试，增加测试覆盖范围，降低已有功能漏测的风险，提前发现问题。&lt;/p&gt;</description></item><item><title>Shadowsocks内网穿透配置</title><link>https://bluespace.eu.org/post/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="shadowsocks-内网穿透配置"&gt;Shadowsocks 内网穿透配置&lt;/h1&gt;
+&lt;h2 id="服务端配置"&gt;服务端配置&lt;/h2&gt;
+&lt;h3 id="1-安装-shadowsocks-服务端"&gt;1. 安装 Shadowsocks 服务端&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Ubuntu/Debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;apt install shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 启动服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl start shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-配置服务端"&gt;2. 配置服务端&lt;/h3&gt;
+&lt;p&gt;编辑配置文件 &lt;code&gt;/etc/shadowsocks-libev/config.json&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;server&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;server_port&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8388&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;password&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;lt;密码&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;timeout&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;method&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;aes-256-gcm&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="3-重启服务"&gt;3. 重启服务&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl restart shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl status shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="4-检查服务状态"&gt;4. 检查服务状态&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 检查端口监听&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;netstat -tlnp &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="m"&gt;8388&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 查看日志&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;journalctl -u shadowsocks-libev -n &lt;span class="m"&gt;50&lt;/span&gt; --no-pager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="5-检查防火墙"&gt;5. 检查防火墙&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 检查 UFW 状态&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ufw status
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 如果 UFW 启用，开放端口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ufw allow 8388/tcp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="6-云服务商安全组"&gt;6. 云服务商安全组&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;重要！&lt;/strong&gt; 必须在云服务商控制台开放 TCP 8388 端口。&lt;/p&gt;</description></item><item><title>SYSTEM_DESIGN</title><link>https://bluespace.eu.org/post/quant_trading/system_design/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/quant_trading/system_design/</guid><description>&lt;h3 id="27-实现状态与验证"&gt;2.7. 实现状态与验证&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;状态&lt;/strong&gt;: 已完成 (As of 2025-08-17)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;技术面评分 (V3, 2.2节)&lt;/strong&gt;: &lt;code&gt;strategy_engine.py&lt;/code&gt; 中的逻辑已通过 &lt;code&gt;_calculate_technical_score&lt;/code&gt; 函数完全实现，并通过 &lt;code&gt;tests/test_scoring_logic.py&lt;/code&gt; 中的 &lt;code&gt;test_technical_scoring_detailed&lt;/code&gt; 单元测试验证。&lt;strong&gt;V3版更新了RSI趋势判断和成交量评分体系&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态权重与总分计算&lt;/strong&gt;: A股的动态加权和总分计算逻辑已在 &lt;code&gt;_get_dynamic_weights&lt;/code&gt; 和 &lt;code&gt;_calculate_score&lt;/code&gt; 中实现，并通过 &lt;code&gt;test_dynamic_weight_adjustment&lt;/code&gt; 和 &lt;code&gt;test_calculate_score_with_dynamic_weights&lt;/code&gt; 验证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基本面评分 (2.3节)&lt;/strong&gt;: &lt;code&gt;strategy_engine.py&lt;/code&gt; 中的逻辑已通过 &lt;code&gt;_calculate_fundamental_score&lt;/code&gt; 函数完全实现，并通过 &lt;code&gt;tests/test_fundamental_scoring.py&lt;/code&gt; 单元测试验证。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;核心评分逻辑已实现模块化，与本文档描述的设计完全对齐。&lt;/p&gt;</description></item><item><title>wsl</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</guid><description>&lt;p&gt;date: 2026-01-15T23:25:17+08:00
+lastmod: 2026-01-15T23:25:17+08:00
+encrypted: false
+账号：dministrator&lt;/p&gt;
+&lt;p&gt;密码：123456&lt;/p&gt;
+&lt;p&gt;激活py虚拟环境：source vllm_env/bin/activate&lt;/p&gt;
+&lt;p&gt;vllm运行大模型：vllm serve .cache/modelscope/hub/models/JunHowie/Qwen3-14B-GPTQ-Int4
+&amp;ndash;trust-remote-code
+&amp;ndash;max-model-len 65536
+&amp;ndash;gpu-memory-utilization 0.95
+&amp;ndash;tensor-parallel-size 1
+&amp;ndash;max-num-seqs 1&lt;/p&gt;
+&lt;p&gt;vllm serve .cache/modelscope/hub/models/Qwen/Qwen3-VL-8B-Instruct
+&amp;ndash;trust-remote-code
+&amp;ndash;max-model-len 65536
+&amp;ndash;gpu-memory-utilization 0.95
+&amp;ndash;tensor-parallel-size 1
+&amp;ndash;max-num-seqs 1&lt;/p&gt;</description></item><item><title>xiaomi-speaker-openclaw-integration</title><link>https://bluespace.eu.org/post/xiaomi-speaker-openclaw-integration/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/xiaomi-speaker-openclaw-integration/</guid><description>&lt;h1 id="openclaw-接入小米音响研究方案"&gt;OpenClaw 接入小米音响研究方案&lt;/h1&gt;
+&lt;h2 id="研究结论"&gt;研究结论&lt;/h2&gt;
+&lt;p&gt;OpenClaw 目前&lt;strong&gt;没有原生&lt;/strong&gt;的小米音响集成，但可以通过以下几种方式实现接入：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="方案对比"&gt;方案对比&lt;/h2&gt;
+&lt;h3 id="方案1使用-miio-库-推荐"&gt;方案1：使用 miio 库（⭐ 推荐）&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;直接控制小米设备，响应快&lt;/li&gt;
+&lt;li&gt;轻量级，无需额外系统&lt;/li&gt;
+&lt;li&gt;完全开源，MIT 许可证&lt;/li&gt;
+&lt;li&gt;支持大多数小米生态设备&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;缺点：&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>解决浏览器反调试机制</title><link>https://bluespace.eu.org/post/%E7%88%AC%E8%99%AB/%E8%A7%A3%E5%86%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8D%E8%B0%83%E8%AF%95%E6%9C%BA%E5%88%B6/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%88%AC%E8%99%AB/%E8%A7%A3%E5%86%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8D%E8%B0%83%E8%AF%95%E6%9C%BA%E5%88%B6/</guid><description>&lt;p&gt;date: 2026-02-27T10:38:04+08:00
+lastmod: 2026-02-27T10:38:04+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="绕过网站反调试机制打不开f12的解决方案"&gt;绕过网站反调试机制（打不开F12的解决方案）&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>配置代理加速github访问</title><link>https://bluespace.eu.org/post/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</guid><description>&lt;h2 id="第一部分服务端配置海外服务器"&gt;第一部分：服务端配置（海外服务器）&lt;/h2&gt;
+&lt;h3 id="11-安装-shadowsocks-服务端"&gt;1.1 安装 Shadowsocks 服务端&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# SSH 连接到服务器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh root@your-server-ip
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 更新包管理器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 安装 shadowsocks-libev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;apt install shadowsocks-libev -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="12-创建配置文件"&gt;1.2 创建配置文件&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat &amp;gt; /etc/shadowsocks-libev/config.json &lt;span class="s"&gt;&amp;lt;&amp;lt; EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;server&amp;#34;: &amp;#34;0.0.0.0&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;server_port&amp;#34;: 8388,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;password&amp;#34;: &amp;#34;YourStrongPassword123!&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;timeout&amp;#34;: 300,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;method&amp;#34;: &amp;#34;aes-256-gcm&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;配置说明&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>全球房地产周期下行深度研究与中国一线城市触底路径分析：以广州市场为核心样本</title><link>https://bluespace.eu.org/post/%E5%85%A8%E7%90%83%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%91%A8%E6%9C%9F%E4%B8%8B%E8%A1%8C%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6%E4%B8%8E%E4%B8%AD%E5%9B%BD%E4%B8%80%E7%BA%BF%E5%9F%8E%E5%B8%82%E8%A7%A6%E5%BA%95%E8%B7%AF%E5%BE%84%E5%88%86%E6%9E%90%E4%BB%A5%E5%B9%BF%E5%B7%9E%E5%B8%82%E5%9C%BA%E4%B8%BA%E6%A0%B8%E5%BF%83%E6%A0%B7%E6%9C%AC/</link><pubDate>Wed, 04 Mar 2026 02:48:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%85%A8%E7%90%83%E6%88%BF%E5%9C%B0%E4%BA%A7%E5%91%A8%E6%9C%9F%E4%B8%8B%E8%A1%8C%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6%E4%B8%8E%E4%B8%AD%E5%9B%BD%E4%B8%80%E7%BA%BF%E5%9F%8E%E5%B8%82%E8%A7%A6%E5%BA%95%E8%B7%AF%E5%BE%84%E5%88%86%E6%9E%90%E4%BB%A5%E5%B9%BF%E5%B7%9E%E5%B8%82%E5%9C%BA%E4%B8%BA%E6%A0%B8%E5%BF%83%E6%A0%B7%E6%9C%AC/</guid><description>&lt;h2 id="全球房地产周期下行的历史实证与机制比较"&gt;全球房地产周期下行的历史实证与机制比较&lt;/h2&gt;
+&lt;p&gt;房地产市场作为国民经济的压舱石，其波动往往伴随着宏观经济结构的深度调整。通过对日本（1990年代）、美国（2008年次贷危机）以及韩国（2022年后加息周期）三个典型案例的审视，可以发现房价下行周期的持续时间、下跌深度及其底层逻辑存在显著的差异性，同时也遵循某些普适的经济规律。&lt;/p&gt;</description></item><item><title>Nextcloud图片预览技巧</title><link>https://bluespace.eu.org/post/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</link><pubDate>Wed, 04 Mar 2026 02:26:58 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</guid><description>&lt;h1 id="nextcloud-图片预览技巧"&gt;Nextcloud 图片预览技巧&lt;/h1&gt;
 &lt;h2 id="简介"&gt;简介&lt;/h2&gt;
 &lt;p&gt;在 Markdown 文件中插入图片时，可以使用 Nextcloud 分享链接，并通过在链接末尾添加 &lt;code&gt;/preview&lt;/code&gt; 实现直接预览图片，而不需要下载。&lt;/p&gt;
 &lt;h2 id="使用方法"&gt;使用方法&lt;/h2&gt;
 &lt;h3 id="1-获取-nextcloud-分享链接"&gt;1. 获取 Nextcloud 分享链接&lt;/h3&gt;
-&lt;p&gt;在 Nextcloud 中右键点击图片 → 分享 → 复制链接&lt;/p&gt;</description>
-</item>
-<item>
-<title>关于mac电脑系统更新崩溃的反思</title>
-<link>https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</link>
-<pubDate>Sun, 27 Apr 2025 22:59:32 +0800</pubDate>
-<guid>https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</guid>
-<description>mac系统更新崩溃的教训与反思</description>
-</item>
-<item>
-<title>关于投资的反思</title>
-<link>https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</link>
-<pubDate>Thu, 10 Apr 2025 22:59:32 +0800</pubDate>
-<guid>https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</guid>
-<description>一季度投资经历的经验教训与反思</description>
-</item>
-<item>
-<title>《金字塔原理》解析</title>
-<link>https://bluespace.eu.org/archives/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link>
-<pubDate>Thu, 10 Apr 2025 21:43:32 +0800</pubDate>
-<guid>https://bluespace.eu.org/archives/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid>
-<description>加密文章</description>
-</item>
-<item>
-<title>25年一季度汇报总结反思</title>
-<link>https://bluespace.eu.org/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link>
-<pubDate>Fri, 28 Mar 2025 22:59:32 +0800</pubDate>
-<guid>https://bluespace.eu.org/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid>
-<description>一季度工作汇报的反思与总结</description>
-</item>
-<item>
-<title>关于本博客</title>
-<link>https://bluespace.eu.org/about/</link>
-<pubDate>Sun, 09 Mar 2025 20:12:52 +0800</pubDate>
-<guid>https://bluespace.eu.org/about/</guid>
-<description>仅用于个人技术学习和分享记录，若有侵权及时联系删除。</description>
-</item>
-<item>
-<title>测试</title>
-<link>https://bluespace.eu.org/posts/test/</link>
-<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-<guid>https://bluespace.eu.org/posts/test/</guid>
-<description>&lt;h1 id="test"&gt;Test&lt;/h1&gt;</description>
-</item>
-<item>
-<title>友情链接</title>
-<link>https://bluespace.eu.org/friend/</link>
-<pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate>
-<guid>https://bluespace.eu.org/friend/</guid>
-<description>友情链接</description>
-</item>
-<item>
-<title/>
-<link>https://bluespace.eu.org/post_backup/</link>
-<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-<guid>https://bluespace.eu.org/post_backup/</guid>
-<description>&lt;h1 id="nextcloud-项目文档索引"&gt;Nextcloud 项目文档索引&lt;/h1&gt;
+&lt;p&gt;在 Nextcloud 中右键点击图片 → 分享 → 复制链接&lt;/p&gt;</description></item><item><title>Nextcloud图片预览技巧</title><link>https://bluespace.eu.org/test/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</link><pubDate>Wed, 04 Mar 2026 02:26:58 +0800</pubDate><guid>https://bluespace.eu.org/test/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</guid><description>&lt;h1 id="nextcloud-图片预览技巧"&gt;Nextcloud 图片预览技巧&lt;/h1&gt;
+&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
+&lt;p&gt;在 Markdown 文件中插入图片时，可以使用 Nextcloud 分享链接，并通过在链接末尾添加 &lt;code&gt;/preview&lt;/code&gt; 实现直接预览图片，而不需要下载。&lt;/p&gt;
+&lt;h2 id="使用方法"&gt;使用方法&lt;/h2&gt;
+&lt;h3 id="1-获取-nextcloud-分享链接"&gt;1. 获取 Nextcloud 分享链接&lt;/h3&gt;
+&lt;p&gt;在 Nextcloud 中右键点击图片 → 分享 → 复制链接&lt;/p&gt;</description></item><item><title>Pasted</title><link>https://bluespace.eu.org/post/assets/pasted/</link><pubDate>Sat, 28 Feb 2026 16:21:23 +0800</pubDate><guid>https://bluespace.eu.org/post/assets/pasted/</guid><description>&lt;p&gt;title: &amp;lsquo;Pasted&amp;rsquo;
+categories: [&amp;ldquo;assets&amp;rdquo;]
+date: 2026-02-28T16:21:23+08:00
+lastmod: 2026-02-28T16:21:23+08:00
+encrypted: false&lt;/p&gt;</description></item><item><title>Git_submodule</title><link>https://bluespace.eu.org/post/git/git_submodule/</link><pubDate>Fri, 27 Feb 2026 11:05:10 +0800</pubDate><guid>https://bluespace.eu.org/post/git/git_submodule/</guid><description>&lt;p&gt;date: 2026-02-27T11:05:10+08:00
+lastmod: 2026-02-27T11:05:10+08:00
+encrypted: false&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe"&gt;Git submodule添加子项目_库&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc"&gt;Git归并策略&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue"&gt;添加&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f"&gt;删除&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入“/”快速插入内容&lt;/p&gt;
+&lt;p&gt;添加图标&lt;/p&gt;
+&lt;p&gt;添加封面&lt;/p&gt;
+&lt;p&gt;展示文档信息&lt;/p&gt;
+&lt;p&gt;Git submodule添加子项目_库&lt;/p&gt;
+&lt;p&gt;开发过程中，经常会有一些通用的部分希望抽取出来做成一个公共库来提供给别的工程来使用，而公共代码库的版本管理是个麻烦的事情。git submodule命令就可以解决这个问题。&lt;/p&gt;</description></item><item><title>git操作</title><link>https://bluespace.eu.org/post/git/git%E6%93%8D%E4%BD%9C/</link><pubDate>Fri, 27 Feb 2026 11:05:10 +0800</pubDate><guid>https://bluespace.eu.org/post/git/git%E6%93%8D%E4%BD%9C/</guid><description>&lt;p&gt;date: 2026-02-27T11:05:10+08:00
+lastmod: 2026-02-27T11:05:10+08:00
+encrypted: false&lt;/p&gt;
+&lt;h4 id="回滚到指定提交"&gt;回滚到指定提交&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;git reset &amp;ndash;hard c1ac53850b0314a20e97f669bafc8bb67a3a1124&lt;/li&gt;
+&lt;li&gt;git push&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="放弃变更强制提交"&gt;放弃变更强制提交&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;git reset &amp;ndash;hard ; git pull &amp;ndash;force&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="子模块的使用"&gt;子模块的使用&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="子模块使用" loading="lazy" src="https://bluespace.eu.org/images/361743670309_.pic.jpg"&gt;&lt;/p&gt;</description></item><item><title>clawdbot</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/clawdbot/</link><pubDate>Fri, 27 Feb 2026 09:56:24 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/clawdbot/</guid><description>&lt;p&gt;date: 2026-02-27T09:56:24+08:00
+lastmod: 2026-02-27T09:56:24+08:00
+encrypted: false
+设置clawdbot和tailscale开机自启&lt;/p&gt;
+&lt;p&gt;PS C:\WINDOWS\system32&amp;gt; Unregister-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -&lt;/p&gt;
+&lt;p&gt;Confirm:$false -ErrorAction SilentlyContinue
+PS C:\WINDOWS\system32&amp;gt; $Action = New-ScheduledTaskAction -Execute &amp;ldquo;PowerShell.exe&amp;rdquo; -Argument &amp;ldquo;-File C:\Users\Administrator\Start-Clawdbot.ps1&amp;rdquo;
+PS C:\WINDOWS\system32&amp;gt; $Trigger = New-ScheduledTaskTrigger -AtStartup
+PS C:\WINDOWS\system32&amp;gt; $Settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+PS C:\WINDOWS\system32&amp;gt; $Principal = New-ScheduledTaskPrincipal -UserId &amp;ldquo;$env:USERNAME&amp;rdquo; -LogonType Interactive
+PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p&gt;</description></item><item><title>terminus</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/terminus/</link><pubDate>Wed, 25 Feb 2026 11:23:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/terminus/</guid><description>&lt;p&gt;date: 2026-02-25T11:23:31+08:00
+lastmod: 2026-02-25T11:23:31+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="terminus快捷键使用合集"&gt;terminus快捷键使用合集&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;macOS&lt;/th&gt;
+&lt;th&gt;Windows / Linux&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;新建标签页&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + T&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + T&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;关闭当前标签页&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + W&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + W&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;切换标签页（1-8）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + 1~8&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + 1~8&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;切换到最后标签页&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + 9&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + 9&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;下一/上一标签页&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + Tab&lt;/code&gt;/&lt;code&gt;⌘ + Shift + Tab&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + Tab&lt;/code&gt;/&lt;code&gt;Ctrl + Shift + Tab&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;全屏&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + Ctrl + F&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;F11&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;复制（需先选中文本）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + C&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + C&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;粘贴&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + V&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + V&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;全选&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + A&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查找文本&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + F&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + F&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打开设置&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + ,&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + ,&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;重连当前会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + R&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl + R&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;打开会话侧边栏&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;⌘ + B&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;`Ctrl + B&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;`&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;终端内&lt;/p&gt;</description></item><item><title>机顶盒刷机linux系统</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</link><pubDate>Wed, 25 Feb 2026 11:12:42 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p&gt;date: 2026-02-25T11:12:42+08:00
+lastmod: 2026-02-25T11:12:42+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="h96max-rk3318-464g的刷机教程"&gt;H96Max rk3318 4+64G的刷机教程&lt;/h1&gt;
+&lt;p&gt;相信很多朋友已经搜索了一大堆这个机型的刷机教程，再此之前我也搜索过，不过对我的帮助不大，所以我又连续几天在armbian官方论坛搜索查询、向大神请教。最终解决了刷机难题。 首先，我们来确认一下机型吧，看看图片和型号是否对得上。&lt;/p&gt;</description></item><item><title>TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告</title><link>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link><pubDate>Fri, 13 Feb 2026 01:22:05 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/teslav100_32g%E7%89%88%E6%9C%ACollama%E8%BF%90%E8%A1%8Cqwen3-coder_30b%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid><description>&lt;p&gt;date: 2026-02-13T01:22:05+08:00
+lastmod: 2026-02-13T01:22:05+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="tesla-v10032g版本ollama-运行qwen3-coder30b性能测试报告"&gt;Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告&lt;/h1&gt;
+&lt;h2 id="测试概要"&gt;测试概要&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;模型&lt;/strong&gt;: &lt;code&gt;zdolny/qwen3-coder58k-tools:latest&lt;/code&gt;（尺寸为30b）
+&lt;strong&gt;上下文窗口&lt;/strong&gt;: 58,000 tokens
+&lt;strong&gt;测试环境&lt;/strong&gt;: Windows + Tesla V100-SXM2-32GB GPU
+&lt;strong&gt;测试日期&lt;/strong&gt;: 2025-12-13&lt;/p&gt;</description></item><item><title>vllm</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/</link><pubDate>Mon, 02 Feb 2026 15:27:36 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/</guid><description>&lt;p&gt;date: 2026-02-02T15:27:36+08:00
+lastmod: 2026-02-02T15:27:36+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="绕过网站反调试机制打不开f12的解决方案"&gt;绕过网站反调试机制（打不开F12的解决方案）&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>大模型考试题</title><link>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%80%83%E8%AF%95%E9%A2%98/</link><pubDate>Wed, 28 Jan 2026 00:41:41 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%80%83%E8%AF%95%E9%A2%98/</guid><description>&lt;p&gt;date: 2026-01-28T00:41:41+08:00
+lastmod: 2026-01-28T00:41:41+08:00
+encrypted: false
+问：两人轮流从一堆 21 颗石子中取 1~3 颗，取到最后一颗者输。你先手，是否有必胜策略？&lt;/p&gt;
+&lt;p&gt;答案：有必胜策略。
+策略：始终让对手面对 1, 5, 9, 13, 17, 21颗石子（即模 4 余 1）。
+第一步应取 1 颗，剩 20 颗（20 ≡ 0 mod 4 → 对手无法保持余 1）。&lt;/p&gt;</description></item><item><title>aigc</title><link>https://bluespace.eu.org/post/%E9%97%AE%E9%A2%98/aigc/</link><pubDate>Sun, 25 Jan 2026 22:27:52 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%97%AE%E9%A2%98/aigc/</guid><description>&lt;p&gt;date: 2026-01-25T22:27:52+08:00
+lastmod: 2026-01-25T22:27:52+08:00
+encrypted: false
+&lt;img alt="image.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%E9%97%AE%E9%A2%98%2Fassets%2Fc127665f-c6c0-43d6-854c-d2f020c05e93.png"&gt;&lt;/p&gt;
+&lt;p&gt;红框内容是什么&lt;/p&gt;</description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link><pubDate>Sat, 24 Jan 2026 22:36:25 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid><description>&lt;p&gt;date: 2026-01-24T22:36:25+08:00
+lastmod: 2026-01-24T22:36:25+08:00
+encrypted: false&lt;/p&gt;
+&lt;h3 id="添加本地mcp"&gt;添加本地mcp&lt;/h3&gt;
+&lt;p&gt;claude mcp add &amp;ndash;transport stdio &amp;ndash;scope user mysql &amp;ndash;env MYSQL_HOST=192.168.0.203 &amp;ndash;env MYSQL_USER=tianqinghong &amp;ndash;env MYSQL_PASSWORD=&amp;ldquo;pG4QbSdb1u0KcjUQX+E=&amp;rdquo; &amp;ndash;env MYSQL_DATABASE=db_diag &amp;ndash; &amp;ldquo;npm exec &amp;ndash;yes &amp;ndash; @f4ww4z/mcp-mysql-server&amp;rdquo;&lt;/p&gt;
+&lt;h3 id="获取mcp列表"&gt;获取mcp列表&lt;/h3&gt;
+&lt;p&gt;claude mcp list&lt;/p&gt;
+&lt;h3 id="无脑接受模式"&gt;无脑接受模式&lt;/h3&gt;
+&lt;p&gt;&amp;ndash;dangerously-skip-permissions&lt;/p&gt;
+&lt;h3 id="手机无缝衔接claudecode"&gt;手机无缝衔接claudecode&lt;/h3&gt;
+&lt;p&gt;电脑端npm install -g happy-coder；然后终端输入：happy&lt;/p&gt;
+&lt;p&gt;手机端下载 &lt;strong&gt;Happy Coder&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>地址、账号和密码</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E5%9C%B0%E5%9D%80%E8%B4%A6%E5%8F%B7%E5%92%8C%E5%AF%86%E7%A0%81/</link><pubDate>Wed, 21 Jan 2026 11:36:17 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E5%9C%B0%E5%9D%80%E8%B4%A6%E5%8F%B7%E5%92%8C%E5%AF%86%E7%A0%81/</guid><description/></item><item><title>表结构</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E4%B8%9A%E5%8A%A1%E6%B5%8B%E8%AF%95/%E8%A1%A8%E7%BB%93%E6%9E%84/</link><pubDate>Wed, 21 Jan 2026 11:25:24 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E4%B8%9A%E5%8A%A1%E6%B5%8B%E8%AF%95/%E8%A1%A8%E7%BB%93%E6%9E%84/</guid><description>&lt;p&gt;本文包需要密码才能查看。&lt;/p&gt;</description></item><item><title>qodercli</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</link><pubDate>Sat, 17 Jan 2026 09:40:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</guid><description>&lt;p&gt;date: 2026-01-17T09:40:22+08:00
+lastmod: 2026-01-17T09:40:22+08:00
+encrypted: false
+终端输入qodercli启动&lt;/p&gt;</description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</link><pubDate>Wed, 14 Jan 2026 19:43:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</guid><description>&lt;p&gt;date: 2026-01-14T19:43:15+08:00
+lastmod: 2026-01-14T19:43:15+08:00
+encrypted: false
+powershell启动虚拟环境：&amp;amp; E:/AI/MinerU/.venv/Scripts/Activate.ps1&lt;/p&gt;</description></item><item><title>知识库痛点分析</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%97%9B%E7%82%B9%E5%88%86%E6%9E%90/</link><pubDate>Wed, 14 Jan 2026 12:41:59 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%97%9B%E7%82%B9%E5%88%86%E6%9E%90/</guid><description>&lt;p&gt;date: 2026-01-14T12:41:59+08:00
+lastmod: 2026-01-14T12:41:59+08:00
+encrypted: false
+&lt;img alt="Snipaste_2025-12-23_22-14-58.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2Fed1f73c7-941a-4162-9793-8674c1f87f2b.png"&gt;&lt;img alt="image.png" loading="lazy" src="undefined"&gt;&lt;/p&gt;</description></item><item><title>mineru</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</link><pubDate>Mon, 12 Jan 2026 00:38:24 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</guid><description>&lt;p&gt;date: 2026-01-12T00:38:24+08:00
+lastmod: 2026-01-12T00:38:24+08:00
+encrypted: false
+mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p&gt;</description></item><item><title>25年终总结</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/25%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link><pubDate>Tue, 06 Jan 2026 17:52:25 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/25%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid><description/></item><item><title>0909工作</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/0909%E5%B7%A5%E4%BD%9C/</link><pubDate>Tue, 06 Jan 2026 15:49:16 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/0909%E5%B7%A5%E4%BD%9C/</guid><description/></item><item><title>高级知识库</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E5%BA%93/</link><pubDate>Sun, 04 Jan 2026 11:41:38 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E5%BA%93/</guid><description>&lt;p&gt;date: 2026-01-04T11:41:38+08:00
+lastmod: 2026-01-04T11:41:38+08:00
+encrypted: false
+&lt;img alt="image.png" loading="lazy" src="https://bluespace.eu.org/assets/94884087-5bfb-4bc8-b959-baa05d039a90.png"&gt;&lt;/p&gt;</description></item><item><title>知识库痛点分析</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%97%9B%E7%82%B9%E5%88%86%E6%9E%90/</link><pubDate>Wed, 31 Dec 2025 13:04:34 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%97%9B%E7%82%B9%E5%88%86%E6%9E%90/</guid><description>&lt;p&gt;date: 2025-12-31T13:04:34+08:00
+lastmod: 2025-12-31T13:04:34+08:00
+encrypted: false
+&lt;img alt="Snipaste_2025-12-23_22-14-58.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2Fed1f73c7-941a-4162-9793-8674c1f87f2b.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="https://bluespace.eu.org/assets/df51fff9-96db-494b-a1b5-7ab32c5d4643.png"&gt;&lt;/p&gt;</description></item><item><title>事项推进</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E4%BA%8B%E9%A1%B9%E6%8E%A8%E8%BF%9B/</link><pubDate>Mon, 29 Dec 2025 19:24:46 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E4%BA%8B%E9%A1%B9%E6%8E%A8%E8%BF%9B/</guid><description/></item><item><title>langchain</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/langchain/</link><pubDate>Sun, 21 Dec 2025 00:44:38 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/langchain/</guid><description>&lt;p&gt;date: 2025-12-21T00:44:38+08:00
+lastmod: 2025-12-21T00:44:38+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="核心组件"&gt;核心组件&lt;/h2&gt;
+&lt;h3 id="模型包装器"&gt;&lt;strong&gt;模型包装器&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;内部结构：创建连接-&amp;gt;提示词模板-&amp;gt;语言模型-&amp;gt;输出解析&lt;/p&gt;
+&lt;h4 id="1创建大模型连接"&gt;1.创建大模型连接&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2Fb5d58554-4eab-4773-b6a4-695841c4c66e.png"&gt;&lt;/p&gt;
+&lt;h4 id="2提示词模板"&gt;2.提示词模板&lt;/h4&gt;
+&lt;p&gt;作用：将提示词内容进行参数化&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2F033bc311-a106-45d3-b5b2-2fb0bf547252.png"&gt;&lt;/p&gt;
+&lt;p&gt;常用提示词模板：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2F026bd779-f37c-42b9-a1fc-f8dba6b2d0ab.png"&gt;&lt;/p&gt;
+&lt;p&gt;1.字符串提示词模板&lt;/p&gt;</description></item><item><title>测试平台</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/</link><pubDate>Sat, 20 Dec 2025 14:15:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0/</guid><description>&lt;p&gt;date: 2025-12-20T14:15:08+08:00
+lastmod: 2025-12-20T14:15:08+08:00
+encrypted: false&lt;/p&gt;</description></item><item><title>番茄下载</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link><pubDate>Thu, 18 Dec 2025 23:51:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid><description>&lt;p&gt;date: 2025-12-18T23:51:04+08:00
+lastmod: 2025-12-18T23:51:04+08:00
+encrypted: false
+&lt;img alt="image.png" loading="lazy" src="undefined"&gt;&lt;/p&gt;</description></item><item><title>掌店易异构版本</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E6%8E%8C%E5%BA%97%E6%98%93%E5%BC%82%E6%9E%84%E7%89%88%E6%9C%AC/</link><pubDate>Wed, 17 Dec 2025 17:27:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E6%8E%8C%E5%BA%97%E6%98%93%E5%BC%82%E6%9E%84%E7%89%88%E6%9C%AC/</guid><description/></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/untitled/</link><pubDate>Wed, 17 Dec 2025 01:10:50 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/untitled/</guid><description>&lt;p&gt;date: 2025-12-17T01:10:50+08:00
+lastmod: 2025-12-17T01:10:50+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="v100指令"&gt;&lt;strong&gt;v100指令&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id="nvidia-smi--l-1动态查看v100状态"&gt;&lt;code&gt;nvidia-smi -l 1&lt;/code&gt;动态查看v100状态&lt;/h3&gt;</description></item><item><title>ollama</title><link>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/ollama/</link><pubDate>Sat, 13 Dec 2025 22:14:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/ollama/</guid><description>&lt;p&gt;date: 2025-12-13T22:14:15+08:00
+lastmod: 2025-12-13T22:14:15+08:00
+encrypted: false
+gpt-oss:20b思考、工具&lt;/p&gt;
+&lt;p&gt;gemma3:27b 多模态、号称单gpu最强&lt;/p&gt;
+&lt;p&gt;zdolny/qwen3-coder58k-tools:latest&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hugging Face 国内镜像&lt;/strong&gt;&lt;a href="https://hf-mirror.com"&gt;https://hf-mirror.com&lt;/a&gt;&lt;/p&gt;</description></item><item><title>仓店业务逻辑记录</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E4%BB%93%E5%BA%97%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E8%AE%B0%E5%BD%95/</link><pubDate>Fri, 12 Dec 2025 16:53:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E4%BB%93%E5%BA%97%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E8%AE%B0%E5%BD%95/</guid><description/></item><item><title>RAG</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/rag/</link><pubDate>Tue, 09 Dec 2025 21:21:48 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/rag/</guid><description>&lt;p&gt;date: 2025-12-09T21:21:48+08:00
+lastmod: 2025-12-09T21:21:48+08:00
+encrypted: false
+&lt;strong&gt;RAG定义&lt;/strong&gt;：模型的外挂知识库，解决专业领域的知识检索；可以将用户的问题与知识库检索内容结合成提示词，发给大模型给出结果。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2FAIGC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2Fassets%2F674a7cce-9e56-471c-ab09-185017d061ba.png"&gt;&lt;/p&gt;
+&lt;p&gt;PDF/PPT：使用Layout Parsing提取文本、表格、图片
+图片理解：调用MiniCPM-V2模型生成图表描述（如&amp;quot;2018-2023年电信业务收入趋势图&amp;quot;）&lt;/p&gt;</description></item><item><title>调岗事项推进</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E8%B0%83%E5%B2%97%E4%BA%8B%E9%A1%B9%E6%8E%A8%E8%BF%9B/</link><pubDate>Mon, 08 Dec 2025 10:32:13 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E8%B0%83%E5%B2%97%E4%BA%8B%E9%A1%B9%E6%8E%A8%E8%BF%9B/</guid><description/></item><item><title>RAG</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/rag/</link><pubDate>Thu, 04 Dec 2025 19:41:12 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/rag/</guid><description>&lt;p&gt;date: 2025-12-04T19:41:12+08:00
+lastmod: 2025-12-04T19:41:12+08:00
+encrypted: false
+&lt;strong&gt;RAG定义&lt;/strong&gt;：模型的外挂知识库，解决专业领域的知识检索；可以将用户的问题与知识库检索内容结合成提示词，发给大模型给出结果。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="https://bluespace.eu.org/assets/674a7cce-9e56-471c-ab09-185017d061ba.png"&gt;&lt;/p&gt;
+&lt;p&gt;PDF/PPT：使用Layout Parsing提取文本、表格、图片
+图片理解：调用MiniCPM-V2模型生成图表描述（如&amp;quot;2018-2023年电信业务收入趋势图&amp;quot;）&lt;/p&gt;</description></item><item><title>定时任务</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</link><pubDate>Tue, 02 Dec 2025 17:08:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</guid><description>&lt;p&gt;date: 2025-12-02T17:08:31+08:00
+lastmod: 2025-12-02T17:08:31+08:00
+encrypted: false
+lastmod: 2025-12-02T17:08:31+08:00
+encrypted: false&lt;/p&gt;
+&lt;p&gt;✅ &lt;strong&gt;结论：&lt;/strong&gt;
+红框内应填写：&lt;code&gt;0 0 * * 3&lt;/code&gt;
+（即每周三 0 点触发自动构建）&lt;/p&gt;</description></item><item><title>java快速生成接口自动化测试用例项目</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java-testng/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 22 Nov 2025 00:04:32 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java-testng/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid><description>&lt;p&gt;date: 2025-11-22T00:04:32+08:00
+lastmod: 2025-11-22T00:04:32+08:00
+encrypted: false
+lastmod: 2025-11-22T00:04:32+08:00
+encrypted: false&lt;/p&gt;
+&lt;p&gt;本框架旨在提供一个灵活、可维护、功能强大的API自动化测试解决方案，帮助团队提高测试效率和软件质量。通过HAR文件自动化转换、智能依赖管理、数据驱动测试等特性，您可以快速构建完整的API测试套件。&lt;/p&gt;</description></item><item><title>java快速生成接口自动化测试用例项目</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link><pubDate>Thu, 20 Nov 2025 23:59:32 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid><description>&lt;p&gt;date: 2025-11-20T23:59:32+08:00
+lastmod: 2025-11-20T23:59:32+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="java快速生成接口自动化测试用例项目"&gt;java快速生成接口自动化测试用例项目&lt;/h1&gt;
+&lt;p&gt;这是一个示例项目，演示如何使用 TestNG 和 REST Assured 进行 API 测试，并支持测试用例与接口逻辑分离的架构。&lt;/p&gt;
+&lt;h2 id="har文件自动化测试生成"&gt;HAR文件自动化测试生成&lt;/h2&gt;
+&lt;p&gt;项目支持将浏览器录制的HAR文件自动转换为完整的自动化测试套件：&lt;/p&gt;</description></item><item><title>doc转md</title><link>https://bluespace.eu.org/post/%E8%B5%84%E6%96%99/doc%E8%BD%ACmd/</link><pubDate>Mon, 17 Nov 2025 11:53:38 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%84%E6%96%99/doc%E8%BD%ACmd/</guid><description>&lt;p&gt;date: 2025-11-17T11:53:38+08:00
+lastmod: 2025-11-17T11:53:38+08:00
+encrypted: false&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Pandoc 简介&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description></item><item><title>aigc教程链接</title><link>https://bluespace.eu.org/post/%E8%B5%84%E6%96%99/aigc%E6%95%99%E7%A8%8B%E9%93%BE%E6%8E%A5/</link><pubDate>Mon, 17 Nov 2025 11:53:19 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%84%E6%96%99/aigc%E6%95%99%E7%A8%8B%E9%93%BE%E6%8E%A5/</guid><description>&lt;p&gt;date: 2025-11-17T11:53:19+08:00
+lastmod: 2025-11-17T11:53:19+08:00
+encrypted: false
+【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href="https://itingnao.com/s/2722352/1ddnb1krx5r/w"&gt;https://itingnao.com/s/2722352/1ddnb1krx5r/w&lt;/a&gt;
+【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href="https://itingnao.com/s/2733974/1dhiaryfdjo/w"&gt;https://itingnao.com/s/2733974/1dhiaryfdjo/w&lt;/a&gt;
+【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href="https://itingnao.com/s/2733997/1dhjq2rct1x/w"&gt;https://itingnao.com/s/2733997/1dhjq2rct1x/w&lt;/a&gt;
+【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href="https://itingnao.com/s/2742868/1dokzokvxhb/w"&gt;https://itingnao.com/s/2742868/1dokzokvxhb/w&lt;/a&gt;
+【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href="https://itingnao.com/s/2762642/1e44ayzf9uw/w"&gt;https://itingnao.com/s/2762642/1e44ayzf9uw/w&lt;/a&gt;&lt;/p&gt;</description></item><item><title>药品编码定义</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E8%8D%AF%E5%93%81%E7%BC%96%E7%A0%81%E5%AE%9A%E4%B9%89/</link><pubDate>Mon, 17 Nov 2025 10:59:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/%E8%8D%AF%E5%93%81%E7%BC%96%E7%A0%81%E5%AE%9A%E4%B9%89/</guid><description/></item><item><title>v100显卡折腾笔记</title><link>https://bluespace.eu.org/post/%E6%90%9E%E6%9C%BA/v100%E6%98%BE%E5%8D%A1%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 23 Oct 2025 18:15:44 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%90%9E%E6%9C%BA/v100%E6%98%BE%E5%8D%A1%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;date: 2025-10-23T18:15:44+08:00
+lastmod: 2025-10-23T18:15:44+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="核显配合双卡v100对ai大模型本地部署和本地出图的性能分析"&gt;核显配合双卡V100对AI大模型本地部署和本地出图的性能分析&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;核显与双卡V100的组合对AI大模型本地部署和本地出图有显著提升，主要体现在显存池化与NVLink互联带来的算力扩展，以及核显承担显示任务释放V100资源的协同效应&lt;/strong&gt;。这种配置方案在2025年已成为性价比极高的AI本地部署选择，特别适合预算有限但需要运行32B参数级别大模型的用户。&lt;/p&gt;</description></item><item><title>1017</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/1017/</link><pubDate>Fri, 17 Oct 2025 15:37:55 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E4%BD%9C/1017/</guid><description/></item><item><title>绩效、行为</title><link>https://bluespace.eu.org/post/%E7%AE%A1%E7%90%86/%E7%BB%A9%E6%95%88%E8%A1%8C%E4%B8%BA/</link><pubDate>Tue, 14 Oct 2025 01:53:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%AE%A1%E7%90%86/%E7%BB%A9%E6%95%88%E8%A1%8C%E4%B8%BA/</guid><description>&lt;p&gt;date: 2025-10-14T01:53:15+08:00
+lastmod: 2025-10-14T01:53:15+08:00
+encrypted: false
+&lt;strong&gt;监督目标执行三步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;第一步.对比结果，发现问题&lt;/p&gt;
+&lt;p&gt;第二步.遇见偏差，分析原因&lt;/p&gt;
+&lt;p&gt;第三部.补充计划，纠正偏差&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;四种跟踪方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1.管理岗的个人观察&lt;/p&gt;
+&lt;p&gt;2、统计报告;数据&lt;/p&gt;</description></item><item><title>提示词技巧</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</link><pubDate>Sun, 28 Sep 2025 16:28:38 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E5%B7%A7/</guid><description>&lt;h2 id="提示词调试进阶"&gt;提示词调试进阶&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;零样本提示（不提供示例）：能直接满足需求时，如翻译、情感分析等任务。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;少样本提示（提供少量示例：Few-Shot）：当0样本达不到要求或者格式不满足要求时，提供少量示例引导模型理解任务模式&lt;/p&gt;</description></item><item><title>doc转md</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link><pubDate>Sun, 28 Sep 2025 16:23:36 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid><description>&lt;p&gt;date: 2025-09-28T16:23:36+08:00
+lastmod: 2025-09-28T16:23:36+08:00
+encrypted: false&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Pandoc 简介&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description></item><item><title>防止提示词注入技巧</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%98%B2%E6%AD%A2%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%E6%8A%80%E5%B7%A7/</link><pubDate>Thu, 25 Sep 2025 20:26:51 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%98%B2%E6%AD%A2%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%E6%8A%80%E5%B7%A7/</guid><description>&lt;p&gt;date: 2025-09-25T20:26:51+08:00
+lastmod: 2025-09-25T20:26:51+08:00
+encrypted: false
+1.系统提示词设置固定角色和现在工作范围。例如：&lt;img alt="image.png" loading="lazy" src="https://cdn.jsdelivr.net/gh/bluespace3/note-gen-image-sync@main/7829a1ec-feba-463e-ab1c-a50f1c78db6c.png"&gt;&lt;/p&gt;</description></item><item><title>大模型概述笔记</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/</link><pubDate>Fri, 19 Sep 2025 21:45:58 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A6%82%E8%BF%B0%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;date: 2025-09-19T21:45:58+08:00
+lastmod: 2025-09-19T21:45:58+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="大模型通识"&gt;&lt;strong&gt;大模型通识&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;大模型（LLM）：lage langrage model，基本都是基于transformer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;deepseek r1 参数 671B 25年国内AI元年&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>模型微调</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</link><pubDate>Fri, 19 Sep 2025 21:05:28 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</guid><description>&lt;p&gt;date: 2025-09-19T21:05:28+08:00
+lastmod: 2025-09-19T21:05:28+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="模型微调"&gt;模型微调&lt;/h1&gt;
+&lt;p&gt;定义:在开源模型上，用领域内专业数据调整参数以适应特定任务。&lt;/p&gt;</description></item><item><title>智能体</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/</link><pubDate>Fri, 19 Sep 2025 21:03:23 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93/</guid><description>&lt;p&gt;date: 2025-09-19T21:03:23+08:00
+lastmod: 2025-09-19T21:03:23+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="智能体"&gt;智能体&lt;/h1&gt;
+&lt;p&gt;定义：自主执行任务的AI系统，可协调多个子代理完成复杂流程&lt;/p&gt;
+&lt;p&gt;具备：工具调用、记忆、规划、行动等能力&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="https://cdn.jsdelivr.net/gh/bluespace3/note-gen-image-sync@main/ca721bff-d9f7-40bd-84f6-c0ebffdae590.png"&gt;&lt;/p&gt;</description></item><item><title>机器学习</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link><pubDate>Fri, 19 Sep 2025 20:42:30 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid><description>&lt;p&gt;date: 2025-09-19T20:42:30+08:00
+lastmod: 2025-09-19T20:42:30+08:00
+encrypted: false
+&lt;strong&gt;机器学习&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;p&gt;准备历史数据-&amp;gt;创建模型并训练历史数据-&amp;gt;新数据输入预测结果&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;机器学习的分类&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;监督学习：数据带结果/标签&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无监督学习：一大堆没有标签结果，让机器自行分类检测。&lt;/p&gt;</description></item><item><title>大模型通识</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%AF%86/</link><pubDate>Fri, 19 Sep 2025 20:29:24 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%AF%86/</guid><description>&lt;p&gt;date: 2025-09-19T20:29:24+08:00
+lastmod: 2025-09-19T20:29:24+08:00
+encrypted: false
+&lt;strong&gt;大模型（LLM）：lage langrage model，基本都是基于transformer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;deepseek r1 参数 671B 25年国内AI元年&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>git添加子项目</title><link>https://bluespace.eu.org/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</link><pubDate>Sun, 07 Sep 2025 00:22:26 +0800</pubDate><guid>https://bluespace.eu.org/post/git/git%E6%B7%BB%E5%8A%A0%E5%AD%90%E9%A1%B9%E7%9B%AE/</guid><description>&lt;p&gt;date: 2025-09-07T00:22:26+08:00
+lastmod: 2025-09-07T00:22:26+08:00
+encrypted: false&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;项目中添加子项目
+&lt;ul&gt;
+&lt;li&gt;1、git clone 父项目url&lt;/li&gt;
+&lt;li&gt;2、cd 父项目对应目录下：git submodule add &amp;lt;子项目地址&amp;gt;&lt;/li&gt;
+&lt;li&gt;3、git commit ;git push&lt;/li&gt;
+&lt;li&gt;4、此时子项目下的子项目是空的，需要cd到父目录cmd执行：
+git submodule update &amp;ndash;init &amp;ndash;recursive
+或者执行：git submodule init 然后执行cd&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;clone含嵌套项目的项目
+&lt;ul&gt;
+&lt;li&gt;git clone 父项目url &amp;ndash;recurse-submodules
+不加&amp;ndash;recurse-submodules，克隆的子项目是空的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Transformer的工作原理</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link><pubDate>Sun, 07 Sep 2025 00:22:19 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/transformer%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid><description>&lt;p&gt;date: 2025-09-07T00:22:19+08:00
+lastmod: 2025-09-07T00:22:19+08:00
+encrypted: false
+Transformer的工作原理&lt;/p&gt;
+&lt;p&gt;拿到句子：从前有个国王，他有个女儿&lt;/p&gt;
+&lt;p&gt;1.Token化：分词为得到token:从前|有个|国王|，|他|有个|女儿&lt;/p&gt;</description></item><item><title>gitlab配置cicd工作流</title><link>https://bluespace.eu.org/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Sun, 07 Sep 2025 00:22:15 +0800</pubDate><guid>https://bluespace.eu.org/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;p&gt;date: 2025-09-07T00:22:15+08:00
+lastmod: 2025-09-07T00:22:15+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="gitlab-cicd-简介"&gt;GitLab CI/CD 简介&lt;/h2&gt;
+&lt;p&gt;GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p&gt;</description></item><item><title>strategy</title><link>https://bluespace.eu.org/post/quant_trading/strategy/</link><pubDate>Sun, 07 Sep 2025 00:22:05 +0800</pubDate><guid>https://bluespace.eu.org/post/quant_trading/strategy/</guid><description>&lt;p&gt;date: 2025-09-07T00:22:05+08:00
+lastmod: 2025-09-07T00:22:05+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="量化交易策略知识库"&gt;量化交易策略知识库&lt;/h1&gt;
+&lt;h2 id="核心策略"&gt;核心策略&lt;/h2&gt;
+&lt;p&gt;本系统采用多因子综合评分策略，结合技术面、基本面和消息面分析。&lt;/p&gt;
+&lt;h3 id="技术面分析指标"&gt;技术面分析指标&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;MACD指标：判断趋势转折点&lt;/li&gt;
+&lt;li&gt;RSI指标：判断超买超卖状态&lt;/li&gt;
+&lt;li&gt;KDJ指标：判断股价趋势&lt;/li&gt;
+&lt;li&gt;布林带：判断价格波动区间&lt;/li&gt;
+&lt;li&gt;成交量分析：确认价格变动的有效性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="基本面分析要素"&gt;基本面分析要素&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;财务指标分析：盈利能力、偿债能力、运营能力&lt;/li&gt;
+&lt;li&gt;行业地位评估：市场份额、竞争优势&lt;/li&gt;
+&lt;li&gt;盈利能力评估：营收增长、利润增长&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="消息面分析方法"&gt;消息面分析方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;新闻情感分析：判断市场情绪&lt;/li&gt;
+&lt;li&gt;政策影响评估：分析政策对行业的影响&lt;/li&gt;
+&lt;li&gt;市场情绪监控：跟踪市场热点和资金流向&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>test_knowledge_base</title><link>https://bluespace.eu.org/post/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8C%AB%E5%92%AA/test_knowledge_base/</link><pubDate>Sun, 07 Sep 2025 00:21:38 +0800</pubDate><guid>https://bluespace.eu.org/post/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8C%AB%E5%92%AA/test_knowledge_base/</guid><description>&lt;p&gt;date: 2025-09-07T00:21:38+08:00
+lastmod: 2025-09-07T00:21:38+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="这是一个测试知识库文件"&gt;这是一个测试知识库文件&lt;/h1&gt;
+&lt;p&gt;这是一个关于人工智能的段落。人工智能是计算机科学的一个分支，旨在创建能够像人类一样思考和学习的智能机器。&lt;/p&gt;
+&lt;p&gt;另一个关于机器学习的段落。机器学习是人工智能的一个子集，它使系统能够从数据中学习，而无需明确编程。山咪爱黏人。山咪名字的来源是为了纪念他的两个主人是登上认识的。山咪完成了两针疫苗，还没有绝育。&lt;/p&gt;</description></item><item><title>mac电脑使用速记</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</link><pubDate>Sun, 07 Sep 2025 00:20:55 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:55+08:00
+lastmod: 2025-09-07T00:20:55+08:00
+encrypted: false
+在Mac终端中，有几种方法可以连续删除命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 Ctrl + W ：删除光标前的一个单词&lt;/li&gt;
+&lt;li&gt;使用 Ctrl + U ：删除光标前的整行内容&lt;/li&gt;
+&lt;li&gt;使用 Ctrl + K ：删除光标后的整行内容&lt;/li&gt;
+&lt;li&gt;使用 Option + Delete ：删除光标前的一个单词（与 Ctrl + W 类似）
+这些快捷键可以帮助你快速删除命令内容，提高终端操作效率。&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>python中的os函数用法</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Sun, 07 Sep 2025 00:20:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:47+08:00
+lastmod: 2025-09-07T00:20:47+08:00
+encrypted: false&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;os.listdir(path)
+获取文件夹下全部文件，的列表&lt;/li&gt;
+&lt;li&gt;os.path.join(path1,path2)
+将路径path1和路径path2拼接成新的路径，path1//path2&lt;/li&gt;
+&lt;li&gt;base_dir = os.path.dirname(os.path.abspath(&lt;strong&gt;file&lt;/strong&gt;))
+获取当前文件的绝对路径&lt;/li&gt;
+&lt;li&gt;input_file = os.path.join(base_dir, &lt;strong&gt;&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Hugo静态网站生成器入门指南</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</link><pubDate>Sun, 07 Sep 2025 00:20:46 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:46+08:00
+lastmod: 2025-09-07T00:20:46+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="什么是hugo"&gt;什么是Hugo？&lt;/h2&gt;
+&lt;p&gt;Hugo是一个用Go语言编写的快速、现代的静态网站生成器。它可以将Markdown文件转换为HTML页面，非常适合构建文档网站、博客等。&lt;/p&gt;</description></item><item><title>Gemma_3本地部署教程</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/gemma_3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link><pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/gemma_3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:45+08:00
+lastmod: 2025-09-07T00:20:45+08:00
+encrypted: false
+Gemma 3 被谷歌称为目前最强的开源视觉模型之一。 该模型支持超过35种语言，能够分析文本、图像和短视频。值得注意的是，Gemma 3 的视觉编码器经过升级，支持高分辨率和非方形图像，并引入了 ShieldGemma 2 图像安全分类器，用于过滤被分类为性暗示、危险或暴力的内容。这些特性使得 Gemma 3 成为当前最强大的开源视觉模型之一。&lt;/p&gt;</description></item><item><title>MySQL_--_复合查询</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql_--_%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</link><pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/mysql_--_%E5%A4%8D%E5%90%88%E6%9F%A5%E8%AF%A2/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:45+08:00
+lastmod: 2025-09-07T00:20:45+08:00
+encrypted: false&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%BA%93&amp;amp;spm=1001.2101.3001.7020"&gt;数据库&lt;/a&gt;的查询是数据库使用中比较重要的环节，前面的基础查询比较简单，不做介绍，可自行查阅。本文主要介绍复合查询，并结合用例进行讲解。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文的用例依据Soctt模式的经典测试表，可以自行下载，也可以自己创建
+链接：点这里跳转
+自行创建步骤如下：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="0预备工作"&gt;0、预备工作&lt;/h2&gt;
+&lt;h3 id="01-建表"&gt;0.1 建表&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;创建&lt;/span&gt; &lt;span class="n"&gt;dept&lt;/span&gt; &lt;span class="err"&gt;表（部门表）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;TABLE&lt;/span&gt; &lt;span class="nf"&gt;dept&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;deptno&lt;/span&gt; &lt;span class="n"&gt;INT&lt;/span&gt; &lt;span class="n"&gt;PRIMARY&lt;/span&gt; &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;部门编号&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;dname&lt;/span&gt; &lt;span class="nf"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;部门名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;loc&lt;/span&gt; &lt;span class="nf"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;部门位置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;创建&lt;/span&gt; &lt;span class="n"&gt;emp&lt;/span&gt; &lt;span class="err"&gt;表（员工表）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;TABLE&lt;/span&gt; &lt;span class="nf"&gt;emp&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;empno&lt;/span&gt; &lt;span class="n"&gt;INT&lt;/span&gt; &lt;span class="n"&gt;PRIMARY&lt;/span&gt; &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;员工编号&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;ename&lt;/span&gt; &lt;span class="nf"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;员工姓名&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;job&lt;/span&gt; &lt;span class="nf"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;职位&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;mgr&lt;/span&gt; &lt;span class="n"&gt;INT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;上级经理编号&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;hiredate&lt;/span&gt; &lt;span class="n"&gt;DATE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;入职日期&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;sal&lt;/span&gt; &lt;span class="nf"&gt;DECIMAL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;工资&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;comm&lt;/span&gt; &lt;span class="nf"&gt;DECIMAL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;奖金&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;deptno&lt;/span&gt; &lt;span class="n"&gt;INT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;部门编号&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;FOREIGN&lt;/span&gt; &lt;span class="nf"&gt;KEY&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deptno&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;REFERENCES&lt;/span&gt; &lt;span class="nf"&gt;dept&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deptno&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;创建&lt;/span&gt; &lt;span class="n"&gt;salgrade&lt;/span&gt; &lt;span class="err"&gt;表（工资等级表）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;TABLE&lt;/span&gt; &lt;span class="nf"&gt;salgrade&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;grade&lt;/span&gt; &lt;span class="n"&gt;INT&lt;/span&gt; &lt;span class="n"&gt;PRIMARY&lt;/span&gt; &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;工资等级&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;losal&lt;/span&gt; &lt;span class="nf"&gt;DECIMAL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;最低工资&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;hisal&lt;/span&gt; &lt;span class="nf"&gt;DECIMAL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;最高工资&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;1234567891011121314151617181920212223242526&lt;/span&gt;&lt;span class="n"&gt;AI写代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="02-插入测试数据"&gt;0.2 插入测试数据&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;插入&lt;/span&gt; &lt;span class="n"&gt;dept&lt;/span&gt; &lt;span class="err"&gt;表数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;INSERT&lt;/span&gt; &lt;span class="n"&gt;INTO&lt;/span&gt; &lt;span class="nf"&gt;dept&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deptno&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dname&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;VALUES&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;ACCOUNTING&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;NEW&lt;/span&gt; &lt;span class="n"&gt;YORK&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;RESEARCH&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;DALLAS&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SALES&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;CHICAGO&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;OPERATIONS&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;BOSTON&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;插入&lt;/span&gt; &lt;span class="n"&gt;emp&lt;/span&gt; &lt;span class="err"&gt;表数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;INSERT&lt;/span&gt; &lt;span class="n"&gt;INTO&lt;/span&gt; &lt;span class="nf"&gt;emp&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;empno&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mgr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hiredate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sal&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;comm&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;deptno&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;VALUES&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7369&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SMITH&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;CLERK&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7902&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1980&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;800.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7499&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;ALLEN&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SALESMAN&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7698&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;02&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1600.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;300.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7521&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;WARD&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SALESMAN&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7698&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;02&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1250.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;500.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7566&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;JONES&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;MANAGER&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7839&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;04&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;02&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;2975.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7654&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;MARTIN&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SALESMAN&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7698&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1250.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1400.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7698&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;BLAKE&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;MANAGER&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7839&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;05&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;01&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;2850.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7782&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;CLARK&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;MANAGER&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7839&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;06&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;2450.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7788&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SCOTT&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;ANALYST&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7566&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1982&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;3000.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7839&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;KING&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;PRESIDENT&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;17&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;5000.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7844&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;TURNER&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SALESMAN&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7698&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;08&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1500.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7876&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;ADAMS&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;CLERK&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7788&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1983&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;01&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1100.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7900&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;JAMES&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;CLERK&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7698&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;03&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;950.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7902&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;FORD&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;ANALYST&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7566&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1981&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;03&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;3000.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;7934&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;MILLER&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;CLERK&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7782&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="mi"&gt;1982&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mo"&gt;01&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1300.00&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;插入&lt;/span&gt; &lt;span class="n"&gt;salgrade&lt;/span&gt; &lt;span class="err"&gt;表数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;INSERT&lt;/span&gt; &lt;span class="n"&gt;INTO&lt;/span&gt; &lt;span class="nf"&gt;salgrade&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;losal&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hisal&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nf"&gt;VALUES&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;700&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1200&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1201&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1400&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1401&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2000&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3000&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9999&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mi"&gt;12345678910111213141516171819202122232425262728293031&lt;/span&gt;&lt;span class="n"&gt;AI写代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建好以后，如果表的内容和下图一样，那基本就没问题了&lt;/p&gt;</description></item><item><title>构建fastapi+vue项目dockerfile</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%9E%84%E5%BB%BAfastapi+vue%E9%A1%B9%E7%9B%AEdockerfile/</link><pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E6%9E%84%E5%BB%BAfastapi+vue%E9%A1%B9%E7%9B%AEdockerfile/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:45+08:00
+lastmod: 2025-09-07T00:20:45+08:00
+encrypted: false&lt;/p&gt;
+&lt;h3 id="构建fastapi步骤"&gt;构建fastapi步骤&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="err"&gt;在&lt;/span&gt;&lt;span class="n"&gt;fast_api项目下&lt;/span&gt;&lt;span class="err"&gt;，创建文件&lt;/span&gt;&lt;span class="n"&gt;gunicorn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;其内容如下：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;workers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# 定义同时开启的处理请求的进程数量，根据网站流量适当调整&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;worker_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;gevent&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;# 采用gevent库，支持异步处理请求，提高吞吐量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0.0.0.0:80&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;# 监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;2.&lt;/span&gt;&lt;span class="n"&gt;python依赖存于项目requirements&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt文件内&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;3.&lt;/span&gt;&lt;span class="n"&gt;fast_api项目下&lt;/span&gt;&lt;span class="err"&gt;，构建&lt;/span&gt;&lt;span class="n"&gt;Dockerfile&lt;/span&gt;&lt;span class="err"&gt;，其内容如下：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;3.7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;WORKDIR&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;COPY&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="o"&gt;./&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;RUN&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;no&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;pypi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tuna&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tsinghua&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cn&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;simple&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;COPY&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;CMD&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;gunicorn&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;fast_api:app&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;-c&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;./gunicorn.conf.py&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;4.&lt;/span&gt;&lt;span class="n"&gt;fast_api项目根目录终端&lt;/span&gt;&lt;span class="err"&gt;，执行：&lt;/span&gt; &lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;tools_flask&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="err"&gt;打包为镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#此处的fast_api为后端项目文件名称含fastapi的实现逻辑，注意文件名不要用“api.py”与已有模块冲突，运行不起来。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;5.&lt;/span&gt;&lt;span class="err"&gt;运行&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="mi"&gt;5000&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="n"&gt;tools&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;flask&lt;/span&gt; &lt;span class="n"&gt;tools_flask&lt;/span&gt; &lt;span class="err"&gt;启动为容器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="dockerfile内容"&gt;&lt;strong&gt;dockerfile内容&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;3.9&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;WORKDIR&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tools&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tools_flask&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;ENV&lt;/span&gt; &lt;span class="n"&gt;TZ&lt;/span&gt; &lt;span class="n"&gt;Asia&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Shanghai&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;RUN&lt;/span&gt; &lt;span class="n"&gt;ln&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fs&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;zoneinfo&lt;/span&gt;&lt;span class="o"&gt;/$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;TZ&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;localtime&lt;/span&gt; \
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;TZ&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;timezone&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;COPY&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="o"&gt;./&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;RUN&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;no&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;pypi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tuna&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tsinghua&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cn&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;simple&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;COPY&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;CMD&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;uvicorn&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;fastapi_index:app&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;--host&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;--port&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;80&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="构建vue的步骤"&gt;&lt;strong&gt;构建vue的步骤&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="err"&gt;在项目&lt;/span&gt;&lt;span class="n"&gt;tools_vue根目录&lt;/span&gt;&lt;span class="err"&gt;，创建&lt;/span&gt;&lt;span class="n"&gt;nginx夹&lt;/span&gt;&lt;span class="err"&gt;，该文件夹下新建文件&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf内容如下&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;server_name&lt;/span&gt; &lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#charset koi8-r;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;access_log&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;access&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;error_log&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;htm&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#error_page 404 /404.html;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# redirect server error pages to the static page /50x.html&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;error_page&lt;/span&gt; &lt;span class="mi"&gt;500&lt;/span&gt; &lt;span class="mi"&gt;502&lt;/span&gt; &lt;span class="mi"&gt;503&lt;/span&gt; &lt;span class="mi"&gt;504&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;location&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;2.&lt;/span&gt;&lt;span class="n"&gt;tools_vue项目根目录终端&lt;/span&gt;&lt;span class="err"&gt;，执行&lt;/span&gt;&lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="err"&gt;，打包生成&lt;/span&gt;&lt;span class="n"&gt;dist文件夹&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;3.&lt;/span&gt;&lt;span class="err"&gt;在项目&lt;/span&gt;&lt;span class="n"&gt;tools_vue根目录构建Dockerfile文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;COPY&lt;/span&gt; &lt;span class="n"&gt;dist&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;efctools&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;COPY&lt;/span&gt; &lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;4.&lt;/span&gt;&lt;span class="n"&gt;tools_vue项目根目录终端&lt;/span&gt;&lt;span class="err"&gt;，执行：&lt;/span&gt; &lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;tools_vue2&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="err"&gt;打包为镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;5.&lt;/span&gt;&lt;span class="err"&gt;运行&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="mi"&gt;3002&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="n"&gt;tools&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;vue&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v2&lt;/span&gt; &lt;span class="n"&gt;tools_vue2&lt;/span&gt; &lt;span class="err"&gt;启动为容器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="dockerfile内容-1"&gt;dockerfile内容&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;FROM nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;COPY dist/ /usr/share/nginx/html/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>linux安装python</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Sun, 07 Sep 2025 00:20:43 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:43+08:00
+lastmod: 2025-09-07T00:20:43+08:00
+encrypted: false&lt;/p&gt;
+&lt;p&gt;#依赖包&lt;/p&gt;
+&lt;p&gt;yum -y groupinstall &amp;ldquo;Development tools&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel&lt;/p&gt;
+&lt;p&gt;#下载 Python3&lt;/p&gt;
+&lt;p&gt;wget &lt;a href="https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz"&gt;https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#创建文件夹&lt;/p&gt;
+&lt;p&gt;mkdir /usr/local/python3&lt;/p&gt;
+&lt;p&gt;#解压编译安装&lt;/p&gt;
+&lt;p&gt;tar -xvJf Python-3.6.2.tar.xz&lt;/p&gt;
+&lt;p&gt;cd Python-3.6.2&lt;/p&gt;
+&lt;p&gt;./configure &amp;ndash;prefix=/usr/local/python3&lt;/p&gt;
+&lt;p&gt;make &amp;amp;&amp;amp; make install&lt;/p&gt;
+&lt;p&gt;#给个软链&lt;/p&gt;
+&lt;p&gt;ln -sf /usr/local/python3/bin/python3 /usr/bin/python3&lt;/p&gt;
+&lt;p&gt;ln -sf /usr/local/python3/bin/pip3 /usr/bin/pip3&lt;/p&gt;</description></item><item><title>快速上手pytest项目</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</link><pubDate>Sun, 07 Sep 2025 00:20:43 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h2 id="tags-pytest-python"&gt;date: 2025-09-07T00:20:43+08:00
+lastmod: 2025-09-07T00:20:43+08:00
+encrypted: false
+tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]&lt;/h2&gt;
+&lt;h1 id="快速上手pytest接口测试"&gt;快速上手Pytest接口测试&lt;/h1&gt;
+&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
+&lt;p&gt;以前有分享过httprunner+pytest相关的使用方法，并且一直使用httprunner编写用自动化脚本，以前的经验可以快速帮我们上手pytest框架。为了快速上手pytest，HttpRunner 与Pytest 在编写自动化脚本异同点对比：&lt;/p&gt;</description></item><item><title>Go语言--安装和环境搭配</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</link><pubDate>Sun, 07 Sep 2025 00:20:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go%E8%AF%AD%E8%A8%80--%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:31+08:00
+lastmod: 2025-09-07T00:20:31+08:00
+encrypted: false&lt;/p&gt;
+&lt;h3 id="一go简介"&gt;一.Go简介&lt;/h3&gt;
+&lt;p&gt;Go 语言（又称 Golang）是由 Google 开发的一种开源&lt;a href="https://so.csdn.net/so/search?q=%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80&amp;amp;spm=1001.2101.3001.7020"&gt;编程语言&lt;/a&gt;，于 2009 年正式对外发布。下面从多个方面为你介绍它：&lt;/p&gt;
+&lt;h4 id="设计目标"&gt;设计目标&lt;/h4&gt;
+&lt;p&gt;Go 语言的设计初衷是为了解决大规模&lt;a href="https://so.csdn.net/so/search?q=%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91&amp;amp;spm=1001.2101.3001.7020"&gt;软件开发&lt;/a&gt;中的一些问题，比如编译速度慢、并发编程复杂、代码可维护性差等。所以它结合了静态语言的性能优势和动态语言的开发效率。&lt;/p&gt;</description></item><item><title>unnitest笔记</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/unnitest%E7%AC%94%E8%AE%B0/</link><pubDate>Sun, 07 Sep 2025 00:20:30 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/unnitest%E7%AC%94%E8%AE%B0/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:30+08:00
+lastmod: 2025-09-07T00:20:30+08:00
+encrypted: false&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一、引入
+&lt;ul&gt;
+&lt;li&gt;1.导包，import unnitest&lt;/li&gt;
+&lt;li&gt;2.编写测试类，继承unnitest&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;二、运行
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.unnitest.main(),运行全部用例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.测试套：testsuite&lt;/p&gt;</description></item><item><title>pytest-intro</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link><pubDate>Sun, 07 Sep 2025 00:20:27 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:27+08:00
+lastmod: 2025-09-07T00:20:27+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="什么是pytest"&gt;什么是pytest？&lt;/h2&gt;
+&lt;p&gt;pytest是一个功能强大且易于使用的Python测试框架。它可以帮助开发者编写简洁、可读性强的测试代码，并提供丰富的插件支持。&lt;/p&gt;</description></item><item><title>playwright的python文档</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</link><pubDate>Sun, 07 Sep 2025 00:20:26 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/playwright%E7%9A%84python%E6%96%87%E6%A1%A3/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:26+08:00
+lastmod: 2025-09-07T00:20:26+08:00
+encrypted: false&lt;/p&gt;
+&lt;h1 id="安装"&gt;安装&lt;/h1&gt;
+&lt;h2 id="引言"&gt;引言&lt;/h2&gt;
+&lt;p&gt;Playwright 是专门为满足端到端测试的需求而创建的。Playwright 支持包括 Chromium、WebKit 和 Firefox 在内的所有现代渲染引擎。在 Windows、Linux 和 macOS 上进行测试，无论是本地还是在 CI 上，无论是无头模式还是有头模式，都可以使用原生移动设备仿真。&lt;/p&gt;</description></item><item><title>AI量化交易决策系统方案</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</link><pubDate>Sun, 07 Sep 2025 00:20:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/</guid><description>&lt;h2 id="一-技术面分析-总权重-40分"&gt;一、 技术面分析 (总权重: 40分)&lt;/h2&gt;
+&lt;p&gt;技术面分析旨在捕捉市场的短期趋势和动量。它由四个核心指标构成，各自有独立的评分和权重。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;指标&lt;/th&gt;
+&lt;th style="text-align: left"&gt;权重&lt;/th&gt;
+&lt;th style="text-align: left"&gt;触发条件&lt;/th&gt;
+&lt;th style="text-align: left"&gt;得分&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;MACD趋势&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;15分&lt;/td&gt;
+&lt;td style="text-align: left"&gt;看涨金叉 (DIF上穿DEA，且DIF&amp;gt;0)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;+15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;看跌死叉 (DIF下穿DEA，且DIF&amp;lt;0)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;-15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;多头排列 (DIF&amp;gt;DEA)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;+8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;空头排列 (DIF&amp;lt;DEA)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;-8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;RSI动量&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;10分&lt;/td&gt;
+&lt;td style="text-align: left"&gt;RSI &amp;lt; 30 (超卖区)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;+10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;RSI &amp;gt; 70 (超买区)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;-10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;RSI &amp;lt; 40 (偏弱)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;+5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;RSI &amp;gt; 60 (偏强)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;-5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;布林带&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;8分&lt;/td&gt;
+&lt;td style="text-align: left"&gt;价格触及下轨&lt;/td&gt;
+&lt;td style="text-align: left"&gt;+8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;价格触及上轨&lt;/td&gt;
+&lt;td style="text-align: left"&gt;-8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;价格在中轨下方&lt;/td&gt;
+&lt;td style="text-align: left"&gt;+3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;价格在中轨上方&lt;/td&gt;
+&lt;td style="text-align: left"&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;KDJ指标&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;7分&lt;/td&gt;
+&lt;td style="text-align: left"&gt;KDJ超卖 (K&amp;lt;20, D&amp;lt;20)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;+7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;KDJ超买 (K&amp;gt;80, D&amp;gt;80)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;-7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;KDJ金叉 (K&amp;gt;D)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;+3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;KDJ死叉 (K&amp;lt;D)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;最终报告形式&lt;/strong&gt;: &lt;code&gt;技术面得分: [总分] | 原因: [综合原因] (MACD: [得分], RSI: [得分], 布林带: [得分], KDJ: [得分])&lt;/code&gt;&lt;/p&gt;</description></item><item><title>AI量化交易决策系统技术文档</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</link><pubDate>Sun, 07 Sep 2025 00:20:07 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/ai%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E5%86%B3%E7%AD%96%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</guid><description>&lt;p&gt;date: 2025-09-07T00:20:07+08:00
+lastmod: 2025-09-07T00:20:07+08:00
+encrypted: false
+lastmod: 2025-09-07T00:20:07+08:00
+encrypted: false&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;API版本&lt;/strong&gt;: v2.0
+&lt;strong&gt;最后更新&lt;/strong&gt;: 2025-01-13
+&lt;strong&gt;维护者&lt;/strong&gt;: 量化交易系统团队&lt;/p&gt;</description></item><item><title>mcp-intro</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</link><pubDate>Sun, 07 Sep 2025 00:04:28 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</guid><description>&lt;p&gt;date: 2025-09-07T00:04:28+08:00
+lastmod: 2025-09-07T00:04:28+08:00
+encrypted: false&lt;/p&gt;
+&lt;h2 id="什么是mcp"&gt;什么是MCP？&lt;/h2&gt;
+&lt;p&gt;MCP（Model Context Protocol）是一种用于扩展和增强开发工具功能的协议。它允许开发者创建和使用MCP服务器，这些服务器可以提供额外的工具和资源，以提高开发效率和灵活性。&lt;/p&gt;</description></item><item><title>课程目标</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87/</link><pubDate>Sat, 06 Sep 2025 03:17:26 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87/</guid><description>&lt;p&gt;date: 2025-09-06T03:17:26+08:00
+lastmod: 2025-09-06T03:17:26+08:00
+encrypted: false
+把握好转行的机会！&lt;/p&gt;</description></item><item><title>关于mac电脑系统更新崩溃的反思</title><link>https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</link><pubDate>Sun, 27 Apr 2025 22:59:32 +0800</pubDate><guid>https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/</guid><description>mac系统更新崩溃的教训与反思</description></item><item><title>关于投资的反思</title><link>https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</link><pubDate>Thu, 10 Apr 2025 22:59:32 +0800</pubDate><guid>https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8E%E6%8A%95%E8%B5%84%E7%9A%84%E5%8F%8D%E6%80%9D_%E5%89%AF%E6%9C%AC/</guid><description>一季度投资经历的经验教训与反思</description></item><item><title>《金字塔原理》解析</title><link>https://bluespace.eu.org/archives/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</link><pubDate>Thu, 10 Apr 2025 21:43:32 +0800</pubDate><guid>https://bluespace.eu.org/archives/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/</guid><description>加密文章</description></item><item><title>25年一季度汇报总结反思</title><link>https://bluespace.eu.org/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</link><pubDate>Fri, 28 Mar 2025 22:59:32 +0800</pubDate><guid>https://bluespace.eu.org/archives/25%E5%B9%B4%E4%B8%80%E5%AD%A3%E5%BA%A6%E6%80%BB%E7%BB%93%E5%8F%8D%E6%80%9D/</guid><description>一季度工作汇报的反思与总结</description></item><item><title>关于本博客</title><link>https://bluespace.eu.org/about/</link><pubDate>Sun, 09 Mar 2025 20:12:52 +0800</pubDate><guid>https://bluespace.eu.org/about/</guid><description>仅用于个人技术学习和分享记录，若有侵权及时联系删除。</description></item><item><title>测试文章 2024</title><link>https://bluespace.eu.org/post/test-2024/</link><pubDate>Mon, 01 Jan 2024 10:00:00 +0800</pubDate><guid>https://bluespace.eu.org/post/test-2024/</guid><description>&lt;h1 id="测试"&gt;测试&lt;/h1&gt;
+&lt;p&gt;这是一篇测试文章。&lt;/p&gt;</description></item><item><title>测试</title><link>https://bluespace.eu.org/posts/test/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://bluespace.eu.org/posts/test/</guid><description>&lt;h1 id="test"&gt;Test&lt;/h1&gt;</description></item><item><title>友情链接</title><link>https://bluespace.eu.org/friend/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://bluespace.eu.org/friend/</guid><description>友情链接</description></item><item><title/><link>https://bluespace.eu.org/post/nextcloud-architecture-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bluespace.eu.org/post/nextcloud-architecture-guide/</guid><description>&lt;h1 id="nextcloud-私有云盘架构与搭建实战指南"&gt;Nextcloud 私有云盘架构与搭建实战指南&lt;/h1&gt;
+&lt;h2 id="一项目概述"&gt;一、项目概述&lt;/h2&gt;
+&lt;h3 id="11-需求场景"&gt;1.1 需求场景&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;在本地Mac上搭建个人云盘，数据存储在外接G盘&lt;/li&gt;
+&lt;li&gt;支持局域网HTTPS访问（速度优先）&lt;/li&gt;
+&lt;li&gt;支持公网HTTPS访问（随时随地访问）&lt;/li&gt;
+&lt;li&gt;支持多客户端同步（iOS、Android、桌面客户端）&lt;/li&gt;
+&lt;li&gt;大文件上传支持（10GB级别）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="12-最终架构"&gt;1.2 最终架构&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Nextcloud 访问架构 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├─────────────────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ iOS/Android │ │ 桌面客户端 │ │ Web浏览器 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ App客户端 │ │ (Mac/Win) │ │ (HTTPS) │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └──────┬───────┘ └──────┬───────┘ └──────┬───────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └────────────────────┼────────────────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌──────────▼───────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 公网HTTPS访问 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ nc.skyspace.eu.org │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └──────────┬───────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌────────────────┴────────────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────▼─────────┐ ┌──────────▼─────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Cloudflare DNS │ │ 局域网访问 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ (DNS only模式) │ │ 192.168.10.222 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────┬─────────┘ │ :8443 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────┬─────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────▼──────────────────────┐ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 云服务器 Nginx │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 38.55.39.104 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Let&amp;#39;s Encrypt证书 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────┬──────────────────────┘ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌───────────────────────┐│ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Tailscale VPN ││ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ 100.97.62.83 ││ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────┬───────────┘│ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └───────────────┼────────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌───────────────▼──────────────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 本地Mac (Colima Docker) │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌──────────────────────┐ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Nginx (本地) │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ :8443 (自签名证书) │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────┬───────────┘ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌──────────▼───────────┐ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Nextcloud容器 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Apache (:80) │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────┬───────────┘ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌──────────▼───────────┐ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ MySQL 8.0容器 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Redis容器 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────────────────┘ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └──────────────┬───────────────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌────────▼────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ G盘外接存储 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ /Volumes/G/ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ nextCloud │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └──────────────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└─────────────────────────────────────────────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="二技术栈选型"&gt;二、技术栈选型&lt;/h2&gt;
+&lt;h3 id="21-基础设施"&gt;2.1 基础设施&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;组件&lt;/th&gt;
+&lt;th&gt;选型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Docker运行时&lt;/td&gt;
+&lt;td&gt;Colima&lt;/td&gt;
+&lt;td&gt;Mac上最稳定的Docker Desktop替代方案&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;容器编排&lt;/td&gt;
+&lt;td&gt;Docker Compose&lt;/td&gt;
+&lt;td&gt;轻量级，适合单机部署&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据库&lt;/td&gt;
+&lt;td&gt;MySQL 8.0&lt;/td&gt;
+&lt;td&gt;成熟稳定，性能好&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;缓存&lt;/td&gt;
+&lt;td&gt;Redis&lt;/td&gt;
+&lt;td&gt;用于会话、分布式缓存和文件锁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;反向代理&lt;/td&gt;
+&lt;td&gt;Nginx&lt;/td&gt;
+&lt;td&gt;高性能，支持HTTP/2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VPN&lt;/td&gt;
+&lt;td&gt;Tailscale&lt;/td&gt;
+&lt;td&gt;内网穿透，安全稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="22-web服务器"&gt;2.2 Web服务器&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;公网&lt;/strong&gt;：服务器上Nginx + Let&amp;rsquo;s Encrypt证书&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;局域网&lt;/strong&gt;：本地Mac Nginx + 自签名证书&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-关键技术决策"&gt;2.3 关键技术决策&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;为什么选择Colima而不是Docker Desktop？&lt;/strong&gt;&lt;/p&gt;</description></item><item><title/><link>https://bluespace.eu.org/post/nextcloud/nextcloud%E6%8C%82%E8%BD%BD%E7%82%B9%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bluespace.eu.org/post/nextcloud/nextcloud%E6%8C%82%E8%BD%BD%E7%82%B9%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</guid><description>&lt;h1 id="nextcloud-挂载点配置指南"&gt;Nextcloud 挂载点配置指南&lt;/h1&gt;
+&lt;h2 id="当前存储路径"&gt;当前存储路径&lt;/h2&gt;
+&lt;h3 id="容器内路径"&gt;容器内路径&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据目录&lt;/strong&gt;: &lt;code&gt;/var/www/html/data&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配置文件&lt;/strong&gt;: &lt;code&gt;/Users/tianqinghong/nextcloud/config.php&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="docker-卷"&gt;Docker 卷&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;卷名称&lt;/strong&gt;: &lt;code&gt;nextcloud_nextcloud_data&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;挂载点&lt;/strong&gt;: 容器内的 &lt;code&gt;/var/www/html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;本地管理&lt;/strong&gt;: macOS Docker Desktop 虚拟机内部&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="外部挂载只读"&gt;外部挂载（只读）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;宿主机路径&lt;/strong&gt;: &lt;code&gt;/Volumes/G/nextCloud&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;容器内路径&lt;/strong&gt;: &lt;code&gt;/mnt/g-drive&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权限&lt;/strong&gt;: 只读 (ro)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="增加挂载点的方法"&gt;增加挂载点的方法&lt;/h2&gt;
+&lt;h3 id="方法-1-nextcloud-external-storage-应用推荐---支持热插拔"&gt;方法 1: Nextcloud External Storage 应用（推荐 - 支持热插拔）&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;:&lt;/p&gt;</description></item><item><title/><link>https://bluespace.eu.org/post_backup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bluespace.eu.org/post_backup/</guid><description>&lt;h1 id="nextcloud-项目文档索引"&gt;Nextcloud 项目文档索引&lt;/h1&gt;
 &lt;h2 id="文档列表"&gt;文档列表&lt;/h2&gt;
 &lt;h3 id="nextcloud-配置与优化总结"&gt;&lt;a href=""&gt;Nextcloud 配置与优化总结&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
@@ -207,7 +1565,4 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;li&gt;状态: ~/nextcloud/nextcloud.sh status&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;最后更新&lt;/strong&gt;: 2026-03-05&lt;/p&gt;</description>
-</item>
-</channel>
-</rss>
+&lt;p&gt;&lt;strong&gt;最后更新&lt;/strong&gt;: 2026-03-05&lt;/p&gt;</description></item></channel></rss>

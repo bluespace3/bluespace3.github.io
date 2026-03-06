@@ -5,6 +5,9 @@ date: 2025-09-07T00:22:26+08:00
 lastmod: 2025-09-07T00:22:26+08:00
 draft: false
 ---
+date: 2025-09-07T00:22:26+08:00
+lastmod: 2025-09-07T00:22:26+08:00
+encrypted: false
 * 项目中添加子项目
   * 1、git clone 父项目url
   * 2、cd 父项目对应目录下：git submodule add <子项目地址>

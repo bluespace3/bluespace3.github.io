@@ -5,6 +5,9 @@ date: 2025-09-07T00:20:45+08:00
 lastmod: 2025-09-07T00:20:45+08:00
 draft: false
 ---
+date: 2025-09-07T00:20:45+08:00
+lastmod: 2025-09-07T00:20:45+08:00
+encrypted: false
 
 ### 构建fastapi步骤
 
@@ -82,9 +85,9 @@ error_page   500 502 503 504  /50x.html;
 location = /50x.html {
     root   /usr/share/nginx/html;
 }
-} 
+}
 
-2.tools_vue项目根目录终端，执行npm run build，打包生成dist文件夹 
+2.tools_vue项目根目录终端，执行npm run build，打包生成dist文件夹
 
 3.在项目tools_vue根目录构建Dockerfile文件
 FROM nginx

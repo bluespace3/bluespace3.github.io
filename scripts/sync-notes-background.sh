@@ -105,7 +105,10 @@ cd "$BLOG_DIR" || {
     exit 1
 }
 
-if rsync -av --delete \
+# 注意：使用 --ignore-existing 保留博客中已有的文件（避免覆盖已有的 front matter）
+# 只添加笔记仓库中新增的文件
+if rsync -av \
+    --ignore-existing \
     --exclude='.git/' \
     --exclude='.data/' \
     --exclude='.settings/' \
@@ -116,9 +119,78 @@ if rsync -av --delete \
     --exclude='.obsidian/' \
     --exclude='工作/' \
     "$NOTE_REPO/" "content/post/" >> "$LOG_FILE" 2>&1; then
-    log "✅ 笔记已复制到博客"
+    log "✅ 新笔记已添加到博客（已存在文件未被覆盖）"
 else
-    log "⚠️  笔记复制失败"
+    log "⚠️  笔记同步失败"
+fi
+
+# 5. 如果没有 GITHUB_TOKEN，使用简单的 front matter 添加工具
+if [ -z "$GITHUB_TOKEN" ]; then
+    log "正在为无 front matter 的文件添加基础 front matter..."
+    cd "$BLOG_DIR"
+
+    # 使用简单的 Python 脚本添加基础 front matter
+    ADDED_COUNT=$(python3 << 'PYTHON_EOF'
+import os
+from pathlib import Path
+from datetime import datetime, timezone, timedelta
+
+post_dir = Path("content/post")
+added_count = 0
+
+for md_file in post_dir.rglob("*.md"):
+    # 跳过 _index.md
+    if md_file.name == "_index.md":
+        continue
+
+    try:
+        content = md_file.read_text(encoding='utf-8')
+        lines = content.split('\n')
+
+        # 检查是否已有 front matter
+        if len(lines) > 0 and lines[0].strip() == '---':
+            # 已有 front matter，跳过
+            continue
+
+        # 提取标题（第一行 # 开头的内容）
+        title = None
+        for line in lines:
+            line = line.strip()
+            if line.startswith('#'):
+                title = line.lstrip('#').strip()
+                break
+            elif line.strip():
+                # 遇到非空非标题行，说明没有标题
+                break
+
+        if not title:
+            title = md_file.stem
+
+        # 生成当前时间（东八区）
+        tz = timezone(timedelta(hours=8))
+        now = datetime.now(tz).strftime('%Y-%m-%dT%H:%M:%S%z')
+
+        # 构建简单的 front matter
+        frontmatter = f"""---
+title: '{title}'
+categories: ['技术']
+date: {now}
+draft: false
+---
+"""
+
+        # 写入文件
+        md_file.write_text(frontmatter + content, encoding='utf-8')
+        added_count += 1
+
+    except Exception as e:
+        print(f"处理文件 {md_file} 时出错: {e}", file=sys.stderr)
+
+print(added_count)
+PYTHON_EOF
+)
+
+    log "✅ 为 ${ADDED_COUNT} 个文件添加了基础 front matter"
 fi
 
 log "========================================"

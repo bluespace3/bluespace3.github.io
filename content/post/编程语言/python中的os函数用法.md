@@ -5,19 +5,9 @@ date: 2025-09-07T00:20:47+08:00
 lastmod: 2025-09-07T00:20:47+08:00
 draft: false
 ---
-
----
-title: "python的os模块使用"
-
-categories: ["技术", "编程", "python"]
-date: 2025-03-20T12:59:32+08:00
-
-
-draft: false
-
-
-tags: ["os", "python", "教程"]
----
+date: 2025-09-07T00:20:47+08:00
+lastmod: 2025-09-07T00:20:47+08:00
+encrypted: false
 
 * os.listdir(path)
   获取文件夹下全部文件，的列表

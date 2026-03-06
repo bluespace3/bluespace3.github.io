@@ -5,6 +5,9 @@ date: 2025-12-13T22:14:15+08:00
 lastmod: 2025-12-13T22:14:15+08:00
 draft: false
 ---
+date: 2025-12-13T22:14:15+08:00
+lastmod: 2025-12-13T22:14:15+08:00
+encrypted: false
 gpt-oss:20b思考、工具
 
 gemma3:27b 多模态、号称单gpu最强

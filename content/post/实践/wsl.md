@@ -1,15 +1,17 @@
 ---
 title: 'wsl'
 categories: ["实践"]
-date: 2026-03-06T14:00:06+08:00
-lastmod: 2026-03-06T14:00:06+08:00
+date: 2026-03-04T02:48:21+08:00
+lastmod: 2026-03-04T02:48:21+08:00
 draft: false
 ---
-<!--more-->
-{{% hugo-encryptor "admin12345~" %}}
+date: 2026-01-15T23:25:17+08:00
+lastmod: 2026-01-15T23:25:17+08:00
+encrypted: false
 账号：dministrator
+
 密码：123456
-{{% /hugo-encryptor %}}
+
 激活py虚拟环境：source vllm_env/bin/activate
 
 vllm运行大模型：vllm serve .cache/modelscope/hub/models/JunHowie/Qwen3-14B-GPTQ-Int4
