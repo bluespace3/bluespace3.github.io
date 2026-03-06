@@ -1,8 +1,7 @@
 ---
-title: 'INDEX'
-categories: ["INDEX.md"]
-date: 2026-03-06T13:42:26+08:00
-lastmod: 2026-03-06T13:42:26+08:00
+title: 'Nextcloud 项目文档索引'
+categories: ['技术']
+date: 2026-03-07T00:57:41+0800
 draft: false
 ---
 # Nextcloud 项目文档索引
