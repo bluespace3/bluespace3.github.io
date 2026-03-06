@@ -111,13 +111,13 @@ fi
 log ""
 log "【步骤 3/5】全量删除存量博客文件..."
 
-cd "$BLOG_DIR/content/post"
+cd "$BLOG_DIR"
 
 # 保留 _index.md 和其他特殊文件
-find . -type f -name "*.md" ! -name "_index.md" -delete
+find content/post -type f -name "*.md" ! -name "_index.md" -delete 2>/dev/null || true
 
 # 删除空目录
-find . -type d -empty -delete 2>/dev/null || true
+find content/post -type d -empty -delete 2>/dev/null || true
 
 log "✅ 已删除所有存量文章（保留 _index.md）"
 
@@ -140,6 +140,7 @@ rsync -av \
     --exclude='*.pyc' \
     --exclude='.obsidian/' \
     --exclude='工作/' \
+    --exclude='INDEX.md' \
     "$NOTE_REPO/" "content/post/" >> "$LOG_FILE" 2>&1
 
 MD_COUNT=$(find content/post -name "*.md" -type f | wc -l)

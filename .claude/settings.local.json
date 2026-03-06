@@ -76,7 +76,8 @@
       "Bash(rm:*)",
       "Bash(./deploy.sh:*)",
       "Bash(head:*)",
-      "Bash(rsync:*)"
+      "Bash(rsync:*)",
+      "Bash(/tmp/notes-sync-quickref.md:*)"
     ],
     "deny": [],
     "ask": []

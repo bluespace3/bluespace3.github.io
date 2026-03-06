@@ -6,30 +6,32 @@
     <description>Recent content in 工具 on 蓝色空间号</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 18 Dec 2025 23:51:04 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 23:47:45 +0800</lastBuildDate>
     <atom:link href="https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>番茄下载</title>
-      <link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link>
-      <pubDate>Thu, 18 Dec 2025 23:51:04 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid>
-      <description>&lt;p&gt;date: 2025-12-18T23:51:04+08:00
-lastmod: 2025-12-18T23:51:04+08:00
-encrypted: false
-&lt;img alt=&#34;image.png&#34; loading=&#34;lazy&#34; src=&#34;undefined&#34;&gt;&lt;/p&gt;</description>
-    </item>
     <item>
       <title>doc转md</title>
       <link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link>
-      <pubDate>Sun, 28 Sep 2025 16:23:36 +0800</pubDate>
+      <pubDate>Thu, 26 Feb 2026 23:47:45 +0800</pubDate>
       <guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid>
-      <description>&lt;p&gt;date: 2025-09-28T16:23:36+08:00
-lastmod: 2025-09-28T16:23:36+08:00
-encrypted: false&lt;/p&gt;
-&lt;ol&gt;
+      <description>&lt;ol&gt;
 &lt;li&gt;Pandoc 简介&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>番茄下载</title>
+      <link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Thu, 26 Feb 2026 23:47:45 +0800</pubDate>
+      <guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image.png&#34; loading=&#34;lazy&#34; src=&#34;undefined&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MCP入门指南</title>
+      <link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</link>
+      <pubDate>Thu, 20 Mar 2025 13:48:29 +0800</pubDate>
+      <guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</guid>
+      <description>&lt;h2 id=&#34;什么是mcp&#34;&gt;什么是MCP？&lt;/h2&gt;
+&lt;p&gt;MCP（Model Context Protocol）是一种用于扩展和增强开发工具功能的协议。它允许开发者创建和使用MCP服务器，这些服务器可以提供额外的工具和资源，以提高开发效率和灵活性。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>测试 on 蓝色空间号</title>
+    <link>https://bluespace.eu.org/tags/%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 测试 on 蓝色空间号</description>
+    <generator>Hugo -- 0.157.0</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 20 Mar 2025 13:42:48 +0800</lastBuildDate>
+    <atom:link href="https://bluespace.eu.org/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pytest入门指南</title>
+      <link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link>
+      <pubDate>Thu, 20 Mar 2025 13:42:48 +0800</pubDate>
+      <guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid>
+      <description>&lt;h2 id=&#34;什么是pytest&#34;&gt;什么是pytest？&lt;/h2&gt;
+&lt;p&gt;pytest是一个功能强大且易于使用的Python测试框架。它可以帮助开发者编写简洁、可读性强的测试代码，并提供丰富的插件支持。&lt;/p&gt;
+&lt;h2 id=&#34;pytest的主要特点&#34;&gt;pytest的主要特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;简洁的测试用例编写方式&lt;/li&gt;
+&lt;li&gt;自动发现测试用例&lt;/li&gt;
+&lt;li&gt;支持参数化测试&lt;/li&gt;
+&lt;li&gt;强大的断言功能&lt;/li&gt;
+&lt;li&gt;丰富的插件生态系统&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装pytest&#34;&gt;安装pytest&lt;/h2&gt;
+&lt;p&gt;使用以下命令安装pytest：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,13 +1,14 @@
 ---
-title: 'git操作'
-categories: ["git"]
-date: 2026-02-27T11:05:10+08:00
-lastmod: 2026-02-27T11:05:10+08:00
+title: "Git 常用命令记录"
+
+date: 2025-04-06T09:59:32+08:00
+
 draft: false
+
+tags: ["Git", "教程"]
+
+categories: ["技术笔记"]
 ---
-date: 2026-02-27T11:05:10+08:00
-lastmod: 2026-02-27T11:05:10+08:00
-encrypted: false
 #### 回滚到指定提交
 
 1. git reset --hard c1ac53850b0314a20e97f669bafc8bb67a3a1124

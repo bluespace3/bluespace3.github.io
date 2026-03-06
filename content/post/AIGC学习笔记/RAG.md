@@ -1,13 +1,9 @@
 ---
 title: 'RAG'
-categories: ["AIGC学习笔记"]
-date: 2025-12-04T19:41:12+08:00
-lastmod: 2025-12-04T19:41:12+08:00
+categories: ['AIGC学习笔记']
+date: 2026-02-26T23:47:45+0800
 draft: false
 ---
-date: 2025-12-04T19:41:12+08:00
-lastmod: 2025-12-04T19:41:12+08:00
-encrypted: false
 **RAG定义**：模型的外挂知识库，解决专业领域的知识检索；可以将用户的问题与知识库检索内容结合成提示词，发给大模型给出结果。
 
 ![image.png](/assets/674a7cce-9e56-471c-ab09-185017d061ba.png)

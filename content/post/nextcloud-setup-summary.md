@@ -1,8 +1,7 @@
 ---
 title: 'Nextcloud 配置与优化总结'
-categories: ["Nextcloud"]
-date: 2026-03-05T02:26:58+08:00
-lastmod: 2026-03-05T02:26:58+08:00
+categories: ['技术']
+date: 2026-03-05T03:25:32+0800
 draft: false
 ---
 # Nextcloud 配置与优化总结

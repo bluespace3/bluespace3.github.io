@@ -1,8 +1,7 @@
 ---
-title: 'xiaomi-speaker-openclaw-integration'
-categories: ["xiaomi-speaker-openclaw-integration.md"]
-date: 2026-03-04T02:48:21+08:00
-lastmod: 2026-03-04T02:48:21+08:00
+title: 'OpenClaw 接入小米音响研究方案'
+categories: ['技术']
+date: 2026-03-02T21:50:23+0800
 draft: false
 ---
 # OpenClaw 接入小米音响研究方案
