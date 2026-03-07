@@ -38,4 +38,4 @@ ollama run gemma3:27b
 ```
 
 2、通过Cherry Studio,添加本地大模型后使用
-![Gemma3本地部署教程_1743944257267](/images/Gemma3本地部署教程_1743944257267.png)
+![Gemma3本地部署教程_1743944257267](/assets/Gemma3本地部署教程_1743944257267.png)

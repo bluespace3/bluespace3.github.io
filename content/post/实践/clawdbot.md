@@ -1,7 +1,7 @@
 ---
 title: 'clawdbot'
 categories: ['实践']
-date: 2026-02-27T10:12:26+0800
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 设置clawdbot和tailscale开机自启

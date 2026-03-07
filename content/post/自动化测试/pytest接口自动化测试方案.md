@@ -66,7 +66,7 @@ tags: ["pytest","方案","加密"]
 * 自动化测试框架-pytest + Requests
   * 几款常见接口测试框架对比详情：
 
-    ![1743173315631](/images/pytest接口自动化测试方案/1743173315631.png)
+    ![1743173315631](/assets/pytest接口自动化测试方案/1743173315631.png)
   * pytest + Requests
 
     * 语法简洁容易上手-接入成本低
@@ -166,7 +166,7 @@ tags: ["pytest","方案","加密"]
   * 代码仓库https://gitlab.guangpuyun.cn/clinic-diag/test/poct_api_test
   * 项目结构
 
-    ![1743176486423](/images/pytest接口自动化测试方案/1743176486423.png)
+    ![1743176486423](/assets/pytest接口自动化测试方案/1743176486423.png)
 * 文档
   * 初始化文档[快速编写Pytest接口测试](https://guangpuyun.feishu.cn/docx/SQi7d8NV4opR8OxYDh9cxVG3nmg?from=from_copylink)
   * 自动化用例设计文档[接口自动化测试用例](https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink)

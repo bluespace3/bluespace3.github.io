@@ -8,5 +8,5 @@
 &lt;li&gt;git reset &amp;ndash;hard ; git pull &amp;ndash;force&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id="子模块的使用"&gt;子模块的使用&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="子模块使用" loading="lazy" src="https://bluespace.eu.org/images/361743670309_.pic.jpg"&gt;&lt;/p&gt;</description></item><item><title>gitlab配置cicd工作流</title><link>https://bluespace.eu.org/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace.eu.org/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介"&gt;GitLab CI/CD 简介&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="子模块使用" loading="lazy" src="https://bluespace.eu.org/assets/361743670309_.pic.jpg"&gt;&lt;/p&gt;</description></item><item><title>gitlab配置cicd工作流</title><link>https://bluespace.eu.org/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</link><pubDate>Tue, 25 Mar 2025 12:00:00 +0800</pubDate><guid>https://bluespace.eu.org/post/git/gitlab%E9%85%8D%E7%BD%AEcicd%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid><description>&lt;h2 id="gitlab-cicd-简介"&gt;GitLab CI/CD 简介&lt;/h2&gt;
 &lt;p&gt;GitLab CI/CD 是 GitLab 内置的持续集成/持续部署工具，它允许开发者在代码提交后自动执行一系列任务，如构建、测试和部署。通过配置 CI/CD 流程，可以大大提高开发效率，减少人为错误，并确保代码质量。&lt;/p&gt;</description></item></channel></rss>

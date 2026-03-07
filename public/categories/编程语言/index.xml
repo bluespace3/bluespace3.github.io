@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>编程语言 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link><description>Recent content in 编程语言 on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Mar 2026 02:53:30 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml"/><item><title>linux常用命令</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Wed, 04 Mar 2026 02:53:30 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;hr&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>编程语言 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link><description>Recent content in 编程语言 on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Sat, 07 Mar 2026 08:43:34 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml"/><item><title>linux安装python</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;hr&gt;
+&lt;p&gt;title: &amp;ldquo;linux安装python&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;linux&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
+date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
+&lt;p&gt;draft: false&lt;/p&gt;
+&lt;h2 id="tags-linux-python-教程"&gt;tags: [&amp;ldquo;linux&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;教程&amp;rdquo;]&lt;/h2&gt;
+&lt;p&gt;#依赖包&lt;/p&gt;</description></item><item><title>linux常用命令</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid><description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;linux常用命令&amp;rdquo;
 categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;linux&amp;rdquo;]
 date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
@@ -59,13 +65,7 @@ date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;十六、文章PDF版本&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Linux 系统目录&lt;/p&gt;</description></item><item><title>linux安装python</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</link><pubDate>Thu, 26 Feb 2026 23:47:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/linux%E5%AE%89%E8%A3%85python/</guid><description>&lt;hr&gt;
-&lt;p&gt;title: &amp;ldquo;linux安装python&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;linux&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
-date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
-&lt;p&gt;draft: false&lt;/p&gt;
-&lt;h2 id="tags-linux-python-教程"&gt;tags: [&amp;ldquo;linux&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;教程&amp;rdquo;]&lt;/h2&gt;
-&lt;p&gt;#依赖包&lt;/p&gt;</description></item><item><title>python中的os函数用法</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Thu, 26 Feb 2026 23:47:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;hr&gt;
+&lt;p&gt;Linux 系统目录&lt;/p&gt;</description></item><item><title>python中的os函数用法</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84os%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</guid><description>&lt;hr&gt;
 &lt;p&gt;title: &amp;ldquo;python的os模块使用&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;categories: [&amp;ldquo;技术&amp;rdquo;, &amp;ldquo;编程&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]
 date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
@@ -79,4 +79,4 @@ date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
 &lt;li&gt;base_dir = os.path.dirname(os.path.abspath(&lt;strong&gt;file&lt;/strong&gt;))
 获取当前文件的绝对路径&lt;/li&gt;
 &lt;li&gt;input_file = os.path.join(base_dir, &lt;strong&gt;&amp;quot;../resource/swaggerApi/clinic-ysb-app_OpenAPI.json&amp;quot;&lt;/strong&gt;)&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</link><pubDate>Thu, 26 Feb 2026 23:47:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</guid><description>&lt;p&gt;powershell启动虚拟环境：&amp;amp; E:/AI/MinerU/.venv/Scripts/Activate.ps1&lt;/p&gt;</description></item></channel></rss>
+&lt;/ul&gt;</description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</guid><description>&lt;p&gt;powershell启动虚拟环境：&amp;amp; E:/AI/MinerU/.venv/Scripts/Activate.ps1&lt;/p&gt;</description></item></channel></rss>

@@ -1,7 +1,7 @@
 ---
 title: 'wsl'
 categories: ['实践']
-date: 2026-03-06T13:59:47+0800
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 <!--more-->

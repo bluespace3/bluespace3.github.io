@@ -1,7 +1,7 @@
 ---
 title: 'OpenClaw 快捷键速查表'
 categories: ['实践']
-date: 2026-02-28T03:49:20+0800
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 # OpenClaw 快捷键速查表

@@ -1,7 +1,7 @@
 ---
 title: 'MCP'
 categories: ['AIGC学习笔记']
-date: 2026-03-06T03:50:04+0800
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 ## MCP
