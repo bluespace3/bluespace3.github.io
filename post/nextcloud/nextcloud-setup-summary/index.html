@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html data-theme="auto" dir="auto" lang="zh-cn"><head><meta charset="utf-8"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><meta content="index, follow" name="robots"/><title>Nextcloud 配置与优化总结 | 蓝色空间号</title><meta content="" name="keywords"/><meta content="Nextcloud 配置与优化总结
+日期: 2026-03-05
+任务: Nextcloud 局域网/公网访问配置、SSL证书配置、性能优化
+
+一、项目概述
+目标
+
+在本地Mac上通过Docker运行Nextcloud
+配置局域网HTTPS访问（解决SSL初始化失败）
+配置公网HTTPS访问（Let’s Encrypt证书）
+优化访问性能
+
+环境信息
+
+本地环境: macOS (Darwin 25.2.0)
+Docker运行时: Colima
+云服务器: 38.55.39.104 (Ubuntu)
+Nextcloud版本: 33.0.0.16
+数据库: MySQL 8.0 (本地)
+缓存: Redis
+
+
+二、架构设计
+网络架构
+┌─────────────────────────────────────────────────────────────────┐
+│                         访问路径                                │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  公网访问                                                       │
+│  ┌─────────────┐    ┌──────────────┐    ┌──────────────┐       │
+│  │ 客户端      │───▶│ Cloudflare   │───▶│ 服务器Nginx  │       │
+│  │ (任何网络)  │    │ (DNS only)   │    │ (38.55.39.   │       │
+│  └─────────────┘    └──────────────┘    │ 104)         │       │
+│                                         │  Let's Encrypt│      │
+│                                         └──────┬─────────┘       │
+│                                                │                 │
+│                                         ┌──────▼─────────┐       │
+│                                         │ Tailscale VPN  │       │
+│                                         └──────┬─────────┘       │
+│                                                │                 │
+│  局域网访问                               ┌──────▼─────────┐       │
+│  ┌─────────────┐                        │ 本地Mac        │       │
+│  │ 局域网设备  │───▶────────────────────│ Docker/Colima │       │
+│  │ (192.168.   │                        │                │       │
+│  │ 10.222)     │◀───┐                   │  - Nextcloud  │       │
+│  └─────────────┘    │                   │  - MySQL      │       │
+│                     │                   │  - Redis      │       │
+│  ┌─────────────┐   │                   └──────┬─────────┘       │
+│  │ 本地Mac     │───┘                          │                 │
+│  │ Nginx代理   │    G盘挂载                   ▼                 │
+│  │ (:8443)     │◀───/Volumes/G/nextCloud    存储层              │
+│  └─────────────┘                                                 │
+└─────────────────────────────────────────────────────────────────┘
+访问方式对比
+
+  
+      
+          访问方式
+          地址
+          延迟
+          证书类型
+          适用场景
+      
+  
+  
+      
+          公网HTTPS
+          https://nc.skyspace.eu.org
+          0.90秒
+          Let’s Encrypt
+          所有客户端
+      
+      
+          旧公网HTTPS
+          https://nextcloud.skyspace.eu.org
+          1.22秒
+          自签名
+          备用
+      
+      
+          局域网HTTPS
+          https://192.168.10.222:8443
+          0.01秒
+          自签名
+          局域网设备
+      
+      
+          Tailscale
+          http://100.97.62.83:8080
+          0.35秒
+          HTTP
+          VPN内设备
+      
+      
+          局域网HTTP
+          http://192.168.10.222:8080
+          0.01秒
+          HTTP
+          局域网设备
+      
+  
+
+
+三、配置步骤详解
+3.1 基础环境搭建
+Docker Compose配置
+文件: ~/nextcloud/docker-compose.yml" name="description"/><meta content="新人类" name="author"/><link href="https://bluespace.eu.org/post/nextcloud/nextcloud-setup-summary/" rel="canonical"/><link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet"/><link href="https://bluespace.eu.org/favicon.ico" rel="icon"/><link href="https://bluespace.eu.org/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="https://bluespace.eu.org/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="https://bluespace.eu.org/apple-touch-icon.png" rel="apple-touch-icon"/><link href="https://bluespace.eu.org/safari-pinned-tab.svg" rel="mask-icon"/><meta content="#2e2e33" name="theme-color"/><meta content="#2e2e33" name="msapplication-TileColor"/><link href="https://bluespace.eu.org/post/nextcloud/nextcloud-setup-summary/" hreflang="zh-cn" rel="alternate"/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta content="https://bluespace.eu.org/post/nextcloud/nextcloud-setup-summary/" property="og:url"/><meta content="蓝色空间号" property="og:site_name"/><meta content="Nextcloud 配置与优化总结" property="og:title"/><meta content="Nextcloud 配置与优化总结 日期: 2026-03-05 任务: Nextcloud 局域网/公网访问配置、SSL证书配置、性能优化
+一、项目概述 目标 在本地Mac上通过Docker运行Nextcloud 配置局域网HTTPS访问（解决SSL初始化失败） 配置公网HTTPS访问（Let’s Encrypt证书） 优化访问性能 环境信息 本地环境: macOS (Darwin 25.2.0) Docker运行时: Colima 云服务器: 38.55.39.104 (Ubuntu) Nextcloud版本: 33.0.0.16 数据库: MySQL 8.0 (本地) 缓存: Redis 二、架构设计 网络架构 ┌─────────────────────────────────────────────────────────────────┐ │ 访问路径 │ ├─────────────────────────────────────────────────────────────────┤ │ │ │ 公网访问 │ │ ┌─────────────┐ ┌──────────────┐ ┌──────────────┐ │ │ │ 客户端 │───▶│ Cloudflare │───▶│ 服务器Nginx │ │ │ │ (任何网络) │ │ (DNS only) │ │ (38.55.39. │ │ │ └─────────────┘ └──────────────┘ │ 104) │ │ │ │ Let's Encrypt│ │ │ └──────┬─────────┘ │ │ │ │ │ ┌──────▼─────────┐ │ │ │ Tailscale VPN │ │ │ └──────┬─────────┘ │ │ │ │ │ 局域网访问 ┌──────▼─────────┐ │ │ ┌─────────────┐ │ 本地Mac │ │ │ │ 局域网设备 │───▶────────────────────│ Docker/Colima │ │ │ │ (192.168. │ │ │ │ │ │ 10.222) │◀───┐ │ - Nextcloud │ │ │ └─────────────┘ │ │ - MySQL │ │ │ │ │ - Redis │ │ │ ┌─────────────┐ │ └──────┬─────────┘ │ │ │ 本地Mac │───┘ │ │ │ │ Nginx代理 │ G盘挂载 ▼ │ │ │ (:8443) │◀───/Volumes/G/nextCloud 存储层 │ │ └─────────────┘ │ └─────────────────────────────────────────────────────────────────┘ 访问方式对比 访问方式 地址 延迟 证书类型 适用场景 公网HTTPS https://nc.skyspace.eu.org 0.90秒 Let’s Encrypt 所有客户端 旧公网HTTPS https://nextcloud.skyspace.eu.org 1.22秒 自签名 备用 局域网HTTPS https://192.168.10.222:8443 0.01秒 自签名 局域网设备 Tailscale http://100.97.62.83:8080 0.35秒 HTTP VPN内设备 局域网HTTP http://192.168.10.222:8080 0.01秒 HTTP 局域网设备 三、配置步骤详解 3.1 基础环境搭建 Docker Compose配置 文件: ~/nextcloud/docker-compose.yml" property="og:description"/><meta content="zh-CN" property="og:locale"/><meta content="article" property="og:type"/><meta content="post" property="article:section"/><meta content="2026-03-07T08:43:34+08:00" property="article:published_time"/><meta content="2026-03-07T08:43:34+08:00" property="article:modified_time"/><meta content="summary" name="twitter:card"/><meta content="Nextcloud 配置与优化总结" name="twitter:title"/><meta content="Nextcloud 配置与优化总结
+日期: 2026-03-05
+任务: Nextcloud 局域网/公网访问配置、SSL证书配置、性能优化
+
+一、项目概述
+目标
+
+在本地Mac上通过Docker运行Nextcloud
+配置局域网HTTPS访问（解决SSL初始化失败）
+配置公网HTTPS访问（Let’s Encrypt证书）
+优化访问性能
+
+环境信息
+
+本地环境: macOS (Darwin 25.2.0)
+Docker运行时: Colima
+云服务器: 38.55.39.104 (Ubuntu)
+Nextcloud版本: 33.0.0.16
+数据库: MySQL 8.0 (本地)
+缓存: Redis
+
+
+二、架构设计
+网络架构
+┌─────────────────────────────────────────────────────────────────┐
+│                         访问路径                                │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  公网访问                                                       │
+│  ┌─────────────┐    ┌──────────────┐    ┌──────────────┐       │
+│  │ 客户端      │───▶│ Cloudflare   │───▶│ 服务器Nginx  │       │
+│  │ (任何网络)  │    │ (DNS only)   │    │ (38.55.39.   │       │
+│  └─────────────┘    └──────────────┘    │ 104)         │       │
+│                                         │  Let's Encrypt│      │
+│                                         └──────┬─────────┘       │
+│                                                │                 │
+│                                         ┌──────▼─────────┐       │
+│                                         │ Tailscale VPN  │       │
+│                                         └──────┬─────────┘       │
+│                                                │                 │
+│  局域网访问                               ┌──────▼─────────┐       │
+│  ┌─────────────┐                        │ 本地Mac        │       │
+│  │ 局域网设备  │───▶────────────────────│ Docker/Colima │       │
+│  │ (192.168.   │                        │                │       │
+│  │ 10.222)     │◀───┐                   │  - Nextcloud  │       │
+│  └─────────────┘    │                   │  - MySQL      │       │
+│                     │                   │  - Redis      │       │
+│  ┌─────────────┐   │                   └──────┬─────────┘       │
+│  │ 本地Mac     │───┘                          │                 │
+│  │ Nginx代理   │    G盘挂载                   ▼                 │
+│  │ (:8443)     │◀───/Volumes/G/nextCloud    存储层              │
+│  └─────────────┘                                                 │
+└─────────────────────────────────────────────────────────────────┘
+访问方式对比
+
+  
+      
+          访问方式
+          地址
+          延迟
+          证书类型
+          适用场景
+      
+  
+  
+      
+          公网HTTPS
+          https://nc.skyspace.eu.org
+          0.90秒
+          Let’s Encrypt
+          所有客户端
+      
+      
+          旧公网HTTPS
+          https://nextcloud.skyspace.eu.org
+          1.22秒
+          自签名
+          备用
+      
+      
+          局域网HTTPS
+          https://192.168.10.222:8443
+          0.01秒
+          自签名
+          局域网设备
+      
+      
+          Tailscale
+          http://100.97.62.83:8080
+          0.35秒
+          HTTP
+          VPN内设备
+      
+      
+          局域网HTTP
+          http://192.168.10.222:8080
+          0.01秒
+          HTTP
+          局域网设备
+      
+  
+
+
+三、配置步骤详解
+3.1 基础环境搭建
+Docker Compose配置
+文件: ~/nextcloud/docker-compose.yml" name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章","item":"https://bluespace.eu.org/post/"},{"@type":"ListItem","position":2,"name":"Nextcloud 配置与优化总结","item":"https://bluespace.eu.org/post/nextcloud/nextcloud-setup-summary/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Nextcloud 配置与优化总结","name":"Nextcloud 配置与优化总结","description":"Nextcloud 配置与优化总结 日期: 2026-03-05 任务: Nextcloud 局域网/公网访问配置、SSL证书配置、性能优化\n一、项目概述 目标 在本地Mac上通过Docker运行Nextcloud 配置局域网HTTPS访问（解决SSL初始化失败） 配置公网HTTPS访问（Let\u0026rsquo;s Encrypt证书） 优化访问性能 环境信息 本地环境: macOS (Darwin 25.2.0) Docker运行时: Colima 云服务器: 38.55.39.104 (Ubuntu) Nextcloud版本: 33.0.0.16 数据库: MySQL 8.0 (本地) 缓存: Redis 二、架构设计 网络架构 ┌─────────────────────────────────────────────────────────────────┐ │ 访问路径 │ ├─────────────────────────────────────────────────────────────────┤ │ │ │ 公网访问 │ │ ┌─────────────┐ ┌──────────────┐ ┌──────────────┐ │ │ │ 客户端 │───▶│ Cloudflare │───▶│ 服务器Nginx │ │ │ │ (任何网络) │ │ (DNS only) │ │ (38.55.39. │ │ │ └─────────────┘ └──────────────┘ │ 104) │ │ │ │ Let\u0026#39;s Encrypt│ │ │ └──────┬─────────┘ │ │ │ │ │ ┌──────▼─────────┐ │ │ │ Tailscale VPN │ │ │ └──────┬─────────┘ │ │ │ │ │ 局域网访问 ┌──────▼─────────┐ │ │ ┌─────────────┐ │ 本地Mac │ │ │ │ 局域网设备 │───▶────────────────────│ Docker/Colima │ │ │ │ (192.168. │ │ │ │ │ │ 10.222) │◀───┐ │ - Nextcloud │ │ │ └─────────────┘ │ │ - MySQL │ │ │ │ │ - Redis │ │ │ ┌─────────────┐ │ └──────┬─────────┘ │ │ │ 本地Mac │───┘ │ │ │ │ Nginx代理 │ G盘挂载 ▼ │ │ │ (:8443) │◀───/Volumes/G/nextCloud 存储层 │ │ └─────────────┘ │ └─────────────────────────────────────────────────────────────────┘ 访问方式对比 访问方式 地址 延迟 证书类型 适用场景 公网HTTPS https://nc.skyspace.eu.org 0.90秒 Let\u0026rsquo;s Encrypt 所有客户端 旧公网HTTPS https://nextcloud.skyspace.eu.org 1.22秒 自签名 备用 局域网HTTPS https://192.168.10.222:8443 0.01秒 自签名 局域网设备 Tailscale http://100.97.62.83:8080 0.35秒 HTTP VPN内设备 局域网HTTP http://192.168.10.222:8080 0.01秒 HTTP 局域网设备 三、配置步骤详解 3.1 基础环境搭建 Docker Compose配置 文件: ~/nextcloud/docker-compose.yml\n","keywords":[],"articleBody":"Nextcloud 配置与优化总结 日期: 2026-03-05 任务: Nextcloud 局域网/公网访问配置、SSL证书配置、性能优化\n一、项目概述 目标 在本地Mac上通过Docker运行Nextcloud 配置局域网HTTPS访问（解决SSL初始化失败） 配置公网HTTPS访问（Let’s Encrypt证书） 优化访问性能 环境信息 本地环境: macOS (Darwin 25.2.0) Docker运行时: Colima 云服务器: 38.55.39.104 (Ubuntu) Nextcloud版本: 33.0.0.16 数据库: MySQL 8.0 (本地) 缓存: Redis 二、架构设计 网络架构 ┌─────────────────────────────────────────────────────────────────┐ │ 访问路径 │ ├─────────────────────────────────────────────────────────────────┤ │ │ │ 公网访问 │ │ ┌─────────────┐ ┌──────────────┐ ┌──────────────┐ │ │ │ 客户端 │───▶│ Cloudflare │───▶│ 服务器Nginx │ │ │ │ (任何网络) │ │ (DNS only) │ │ (38.55.39. │ │ │ └─────────────┘ └──────────────┘ │ 104) │ │ │ │ Let's Encrypt│ │ │ └──────┬─────────┘ │ │ │ │ │ ┌──────▼─────────┐ │ │ │ Tailscale VPN │ │ │ └──────┬─────────┘ │ │ │ │ │ 局域网访问 ┌──────▼─────────┐ │ │ ┌─────────────┐ │ 本地Mac │ │ │ │ 局域网设备 │───▶────────────────────│ Docker/Colima │ │ │ │ (192.168. │ │ │ │ │ │ 10.222) │◀───┐ │ - Nextcloud │ │ │ └─────────────┘ │ │ - MySQL │ │ │ │ │ - Redis │ │ │ ┌─────────────┐ │ └──────┬─────────┘ │ │ │ 本地Mac │───┘ │ │ │ │ Nginx代理 │ G盘挂载 ▼ │ │ │ (:8443) │◀───/Volumes/G/nextCloud 存储层 │ │ └─────────────┘ │ └─────────────────────────────────────────────────────────────────┘ 访问方式对比 访问方式 地址 延迟 证书类型 适用场景 公网HTTPS https://nc.skyspace.eu.org 0.90秒 Let’s Encrypt 所有客户端 旧公网HTTPS https://nextcloud.skyspace.eu.org 1.22秒 自签名 备用 局域网HTTPS https://192.168.10.222:8443 0.01秒 自签名 局域网设备 Tailscale http://100.97.62.83:8080 0.35秒 HTTP VPN内设备 局域网HTTP http://192.168.10.222:8080 0.01秒 HTTP 局域网设备 三、配置步骤详解 3.1 基础环境搭建 Docker Compose配置 文件: ~/nextcloud/docker-compose.yml\nversion: '3.8' services: nextcloud: image: nextcloud:latest container_name: nextcloud ports: - \"8080:80\" volumes: - nextcloud_data:/var/www/html - ./config.php:/var/www/html/config/config.php - ./optimizations/00-opcache.ini:/usr/local/etc/php/conf.d/00-opcache.ini:ro - ./optimizations/99-timeouts.ini:/usr/local/etc/php/conf.d/99-timeouts.ini:ro - ./optimizations/http2.conf:/etc/apache2/conf-available/http2.conf:ro - /Volumes/G/nextCloud:/mnt/g-drive:ro environment: - MYSQL_HOST=db - MYSQL_DATABASE=nextcloud - MYSQL_USER=nextcloud - MYSQL_PASSWORD=nextcloud123 - REDIS_HOST=redis - REDIS_PORT=6379 - PHP_MEMORY_LIMIT=512M - PHP_UPLOAD_LIMIT=10G - PHP_MAX_EXECUTION_TIME=3600 - APACHE_BODY_LIMIT=10737418240 - APACHE_TIMEOUT_LIMIT=3600 depends_on: db: condition: service_healthy redis: condition: service_started restart: unless-stopped networks: - nextcloud-network healthcheck: test: [\"CMD\", \"curl\", \"-f\", \"http://localhost/80\"] interval: 10s timeout: 5s retries: 3 start_period: 30s db: image: mysql:8.0 container_name: nextcloud-mysql volumes: - mysql_data:/var/lib/mysql - ./optimizations/mysql.cnf:/etc/mysql/conf.d/custom.cnf:ro environment: - MYSQL_ROOT_PASSWORD=rootpassword - MYSQL_DATABASE=nextcloud - MYSQL_USER=nextcloud - MYSQL_PASSWORD=nextcloud123 restart: unless-stopped networks: - nextcloud-network healthcheck: test: [\"CMD\", \"mysqladmin\", \"ping\", \"-h\", \"localhost\", \"-u\", \"root\", \"-prootpassword\"] interval: 10s timeout: 5s retries: 5 start_period: 30s redis: image: redis:alpine container_name: nextcloud-redis command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru restart: unless-stopped networks: - nextcloud-network networks: nextcloud-network: driver: bridge volumes: nextcloud_data: driver: local mysql_data: driver: local 3.2 性能优化配置 MySQL 8.0优化 文件: ~/nextcloud/optimizations/mysql.cnf\n[mysqld] # 性能调优 max_connections = 200 innodb_buffer_pool_size = 256M innodb_redo_log_capacity = 128M innodb_flush_log_at_trx_commit = 2 innodb_flush_method = O_DIRECT # 快速启动 innodb_fast_shutdown = 2 innodb_doublewrite = 0 skip_name_resolve # 连接设置 max_allowed_packet = 64M connect_timeout = 5 wait_timeout = 600 # 禁用二进制日志以加快启动 skip_log_bin disable_log_bin # SSD优化 innodb_io_capacity = 200 innodb_io_capacity_max = 2000 PHP OPcache配置 文件: ~/nextcloud/optimizations/00-opcache.ini\nopcache.enable=1 opcache.enable_cli=1 opcache.memory_consumption=256 opcache.interned_strings_buffer=32 opcache.max_accelerated_files=20000 opcache.revalidate_freq=60 opcache.fast_shutdown=1 opcache.jit_buffer_size=128M PHP超时配置（大文件上传） 文件: ~/nextcloud/optimizations/99-timeouts.ini\nmax_execution_time = 3600 max_input_time = 3600 memory_limit = 512M file_uploads = On upload_max_filesize = 10G post_max_size = 10G max_file_uploads = 20 default_socket_timeout = 3600 mysql.connect_timeout = 3600 3.3 局域网HTTPS配置 安装Nginx（Mac） brew install nginx 生成自签名证书 openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \\ -keyout ~/nextcloud/ssl/nextcloud-local.key \\ -out ~/nextcloud/ssl/nextcloud-local.crt \\ -subj '/CN=192.168.10.222' Nginx配置 文件: /opt/homebrew/etc/nginx/servers/nextcloud-https.conf\nserver { listen 8443 ssl; server_name 192.168.10.222; ssl_certificate /Users/tianqinghong/nextcloud/ssl/nextcloud-local.crt; ssl_certificate_key /Users/tianqinghong/nextcloud/ssl/nextcloud-local.key; ssl_protocols TLSv1.2 TLSv1.3; ssl_ciphers HIGH:!aNULL:!MD5; ssl_prefer_server_ciphers on; location / { proxy_pass http://127.0.0.1:8080; proxy_http_version 1.1; proxy_set_header Host $host:$server_port; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto https; proxy_set_header X-Forwarded-Host $host:$server_port; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection \"upgrade\"; proxy_connect_timeout 3600s; proxy_send_timeout 3600s; proxy_read_timeout 3600s; proxy_buffering off; client_max_body_size 10G; } } Nextcloud配置更新 docker exec nextcloud php occ config:system:set trusted_domains 7 --value=\"192.168.10.222:8443\" docker exec nextcloud php occ config:system:set overwritehost --value=\"192.168.10.222:8443\" docker exec nextcloud php occ config:system:set overwriteprotocol --value=\"https\" 3.4 公网HTTPS配置（Let’s Encrypt） 前置条件 在Cloudflare中将nc.skyspace.eu.org的代理模式关闭（DNS only） 确保DNS解析到服务器IP（38.55.39.104） 服务器已安装Tailscale并可访问本地Mac（100.97.62.83:8080） 获取Let’s Encrypt证书 # 在服务器上执行 ssh server # 创建验证目录 mkdir -p /var/www/html/.well-known/acme-challenge chown -R www-data:www-data /var/www/html # 获取证书 certbot certonly --webroot \\ -w /var/www/html \\ -d nc.skyspace.eu.org \\ --email admin@skyspace.eu.org \\ --agree-tos \\ --non-interactive Nginx配置（服务器） 文件: /etc/nginx/sites-available/nc.skyspace.eu.org.conf\n# HTTP重定向到HTTPS server { listen 80; server_name nc.skyspace.eu.org; return 301 https://$server_name$request_uri; } # HTTPS配置 server { listen 443 ssl http2; server_name nc.skyspace.eu.org; # Let's Encrypt证书 ssl_certificate /etc/letsencrypt/live/nc.skyspace.eu.org/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/nc.skyspace.eu.org/privkey.pem; # SSL配置 ssl_protocols TLSv1.2 TLSv1.3; ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384; ssl_prefer_server_ciphers off; ssl_session_cache shared:SSL:10m; ssl_session_timeout 10m; # 日志 access_log /var/log/nginx/nc.skyspace.eu.org.access.log; error_log /var/log/nginx/nc.skyspace.eu.org.error.log; # 反向代理到Nextcloud（通过Tailscale） location / { proxy_pass http://100.97.62.83:8080; proxy_http_version 1.1; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto https; proxy_set_header X-Forwarded-Host $host; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection \"upgrade\"; proxy_connect_timeout 3600s; proxy_send_timeout 3600s; proxy_read_timeout 3600s; proxy_buffering off; proxy_request_buffering off; client_max_body_size 10G; client_body_timeout 3600s; } # WebDAV支持 location /remote.php/webdav/ { proxy_pass http://100.97.62.83:8080; proxy_http_version 1.1; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto https; proxy_connect_timeout 3600s; proxy_send_timeout 3600s; proxy_read_timeout 3600s; proxy_buffering off; client_max_body_size 10G; } } 证书自动续期 Certbot会自动设置定时任务，可通过以下命令验证：\ncertbot renew --dry-run systemctl list-timers | grep certbot 四、Nextcloud配置详解 4.1 完整配置文件 文件: ~/nextcloud/config.php\n\u003c?php $CONFIG = array ( 'memcache.local' =\u003e '\\\\OC\\\\Memcache\\\\APCu', 'memcache.distributed' =\u003e '\\\\OC\\\\Memcache\\\\Redis', 'memcache.locking' =\u003e '\\\\OC\\\\Memcache\\\\Redis', 'filelocking.enabled' =\u003e 'true', 'redis' =\u003e array ( 'host' =\u003e 'redis', 'port' =\u003e 6379, 'timeout' =\u003e 0.0, 'compression' =\u003e 'none', ), 'trusted_domains' =\u003e array ( 0 =\u003e 'localhost', 1 =\u003e 'localhost:8080', 2 =\u003e 'nextcloud.skyspace.eu.org', 3 =\u003e '192.168.10.222:8080', 4 =\u003e '100.97.62.83:8080', 5 =\u003e 'nc.skyspace.eu.org', 6 =\u003e '192.168.10.222:8443', ), 'datadirectory' =\u003e '/var/www/html/data', 'dbtype' =\u003e 'mysql', 'version' =\u003e '33.0.0.16', 'overwrite.cli.url' =\u003e 'http://localhost:8080', 'overwriteprotocol' =\u003e false, // 自动检测协议 'dbname' =\u003e 'nextcloud', 'dbhost' =\u003e 'db', 'dbtableprefix' =\u003e 'oc_', 'mysql.utf8mb4' =\u003e true, 'dbuser' =\u003e 'nextcloud', 'dbpassword' =\u003e 'nextcloud123', 'installed' =\u003e true, 'instanceid' =\u003e 'ocnkmggsliuq', 'htaccess.RewriteBase' =\u003e '/', 'default_language' =\u003e 'zh_CN', 'default_locale' =\u003e 'zh_CN', 'knowledgebaseenabled' =\u003e false, 'check_for_working_htaccess' =\u003e false, 'simpleSignUpLink.shown' =\u003e false, 'trashbin_retention_obligation' =\u003e 'auto, 30', 'versions_retention_obligation' =\u003e 'auto, 30', 'activity_expire_days' =\u003e 30, 'allow_local_remote_servers' =\u003e true, 'debug' =\u003e false, 'loglevel' =\u003e 2, 'upgrade.disable-web' =\u003e false, 'app.disable_background' =\u003e false, 'chunk_file_size' =\u003e 10485760, 'max_chunk_size' =\u003e 10485760, ); 4.2 关键配置说明 trusted_domains（可信域名） 用于Nextcloud识别允许访问的域名 需要包含所有访问方式（HTTP/HTTPS，不同端口） 修改后需重启容器生效 overwriteprotocol false: 自动检测（推荐） https: 强制使用HTTPS http: 强制使用HTTP 本配置中使用false以支持多种访问方式 Redis缓存配置 memcache.local: 本地缓存（APCu） memcache.distributed: 分布式缓存（Redis） memcache.locking: 文件锁缓存（Redis） 五、性能测试结果 5.1 首页加载性能（status.php） 域名 平均延迟 最快 最慢 标准差 nextcloud.skyspace.eu.org 1.22秒 0.89秒 1.39秒 0.15秒 nc.skyspace.eu.org 0.90秒 - - - 192.168.10.222:8443 0.01秒 - - - 性能提升 26% - - - 5.2 WebDAV操作性能（文件列表） 域名 平均延迟 性能对比 nextcloud.skyspace.eu.org 1.08秒 基准 nc.skyspace.eu.org 0.83秒 ✅ 快23% 192.168.10.222:8443 0.02秒 ✅ 极快 5.3 文件上传性能 小文件上传（1MB） 域名 平均耗时 平均速度 状态 nextcloud.skyspace.eu.org ~4秒 256KB/s ✅ nc.skyspace.eu.org ~3-5秒 200-350KB/s ✅ 192.168.10.222:8443 \u003c1秒 \u003e2MB/s ✅ 大文件上传（10MB） 域名 耗时 平均速度 状态 nc.skyspace.eu.org ~37秒 280KB/s ✅ 192.168.10.222:8443 ~15秒 700KB/s ✅ 5.4 性能瓶颈分析 延迟组成（公网访问） 总延迟: 0.90秒 ├── 客户端 → Cloudflare DNS: ~50ms ├── Cloudflare → 服务器: ~100ms ├── 服务器处理: ~50ms ├── 服务器 → Tailscale → 本地Mac: ~350ms └── Nextcloud处理: ~350ms 优化效果 ✅ 使用Let’s Encrypt证书：减少握手时间 ✅ 配置Redis缓存：减少数据库查询 ✅ 启用OPcache：加速PHP执行 ✅ HTTP/2支持：多路复用连接 ✅ 本地nginx代理：局域网访问极快 六、问题解决方案 6.1 SSL初始化失败 问题描述 客户端（iOS/Android）无法连接 错误提示：“SSL初始化失败” 原因：使用自签名证书，客户端不信任 解决方案 公网访问：\n获取Let’s Encrypt证书（可信CA） 配置nginx使用新证书 客户端自动信任证书 局域网访问：\n安装本地nginx 生成自签名证书 首次访问时手动信任 6.2 局域网访问报错\"不被信任的域名\" 问题描述 访问 https://192.168.10.222:8443 报错 提示：“通过不被信任的域名访问” 解决步骤 添加到trusted_domains： docker exec nextcloud php occ config:system:set trusted_domains 7 --value=\"192.168.10.222:8443\" 配置overwritehost和overwriteprotocol： docker exec nextcloud php occ config:system:set overwritehost --value=\"192.168.10.222:8443\" docker exec nextcloud php occ config:system:set overwriteprotocol --value=\"https\" 重启容器： ~/nextcloud/nextcloud.sh restart 确保nginx正确传递Host header： proxy_set_header Host $host:$server_port; proxy_set_header X-Forwarded-Proto https; 6.3 大文件上传失败 问题描述 上传大文件时失败 错误：网络中断、超时 解决方案 增加PHP超时设置（已在99-timeouts.ini配置）： max_execution_time = 3600 max_input_time = 3600 default_socket_timeout = 3600 增加nginx超时： proxy_connect_timeout 3600s; proxy_send_timeout 3600s; proxy_read_timeout 3600s; 配置分块上传（config.php）： 'chunk_file_size' =\u003e 10485760, // 10MB 'max_chunk_size' =\u003e 10485760, 6.4 MySQL 8.0配置错误 问题描述 MySQL容器启动失败 错误：unknown variable 'query_cache_size=0' 原因 MySQL 8.0已移除query cache功能 配置文件使用了旧版本参数 解决方案 移除已弃用的参数： # 删除以下配置 # query_cache_size = 0 # query_cache_type = 1 # innodb_log_file_size = 256M # 改用innodb_redo_log_capacity 使用新参数： innodb_redo_log_capacity = 128M 6.5 Docker容器启动慢 问题描述 容器重启耗时20-30秒 MySQL初始化时间长 优化方案 MySQL快速启动： innodb_fast_shutdown = 2 innodb_doublewrite = 0 skip_log_bin 减少buffer pool： innodb_buffer_pool_size = 256M # 从512M降低 添加健康检查： healthcheck: test: [\"CMD\", \"mysqladmin\", \"ping\", \"-h\", \"localhost\", \"-u\", \"root\", \"-prootpassword\"] interval: 10s timeout: 5s retries: 5 start_period: 30s 效果：启动时间缩短至5-10秒\n七、管理脚本 7.1 快速管理脚本 文件: ~/nextcloud/nextcloud.sh\n#!/bin/bash # Nextcloud 快速管理脚本 case \"$1\" in start) echo \"🚀 启动 Nextcloud...\" cd ~/nextcloud \u0026\u0026 docker compose up -d echo \"✅ Nextcloud 已启动\" echo \"访问地址: http://localhost:8080\" ;; stop) echo \"⏹️ 停止 Nextcloud...\" cd ~/nextcloud \u0026\u0026 docker compose down echo \"✅ Nextcloud 已停止\" ;; restart) echo \"🔄 快速重启 Nextcloud（仅重启服务）...\" cd ~/nextcloud \u0026\u0026 docker compose restart nextcloud echo \"✅ Nextcloud 已重启（耗时约 5秒）\" ;; full-restart) echo \"🔄 完全重启 Nextcloud（包含数据库）...\" cd ~/nextcloud \u0026\u0026 docker compose down \u0026\u0026 docker compose up -d echo \"✅ Nextcloud 已完全重启（耗时约 15-20秒）\" ;; status) echo \"📊 Nextcloud 状态:\" docker ps --filter \"name=nextcloud\" --format \"table {{.Names}}\\t{{.Status}}\\t{{.Ports}}\" ;; logs) echo \"📋 Nextcloud 日志（最后 30 行）:\" docker logs nextcloud --tail 30 ;; update) echo \"🔄 更新 Nextcloud 镜像...\" cd ~/nextcloud \u0026\u0026 docker compose pull \u0026\u0026 docker compose up -d --force-recreate echo \"✅ Nextcloud 已更新并重启\" ;; *) echo \"Nextcloud 快速管理脚本\" echo \"\" echo \"用法: ./nextcloud.sh [命令]\" echo \"\" echo \"命令:\" echo \" start - 启动服务\" echo \" stop - 停止服务\" echo \" restart - 快速重启（推荐）\" echo \" full-restart - 完全重启\" echo \" status - 查看状态\" echo \" logs - 查看日志\" echo \" update - 更新镜像\" echo \"\" echo \"示例:\" echo \" ./nextcloud.sh restart\" echo \" ./nextcloud.sh logs\" ;; esac 7.2 使用方法 # 启动服务 ~/nextcloud/nextcloud.sh start # 快速重启 ~/nextcloud/nextcloud.sh restart # 查看状态 ~/nextcloud/nextcloud.sh status # 查看日志 ~/nextcloud/nextcloud.sh logs 八、客户端配置指南 8.1 iOS客户端 配置步骤 下载Nextcloud官方App 创建新连接： 服务器地址: https://nc.skyspace.eu.org 用户名: admin 密码: tianz728~ 点击\"登录\" 局域网访问（可选） 服务器地址: https://192.168.10.222:8443 首次连接时点击\"高级\" → “访问此网站” 8.2 Android客户端 配置步骤 下载Nextcloud官方App 创建新连接： 服务器地址: https://nc.skyspace.eu.org 用户名: admin 密码: tianz728~ 点击\"登录\" 局域网访问（可选） 服务器地址: https://192.168.10.222:8443 勾选\"忽略SSL验证\" 8.3 桌面客户端（macOS/Windows/Linux） 配置步骤 下载Nextcloud官方客户端 创建新账户： 服务器地址: https://nc.skyspace.eu.org 用户名: admin 密码: tianz728~ 选择同步文件夹 点击\"连接\" 8.4 Web浏览器访问 直接访问：https://nc.skyspace.eu.org\n局域网访问：https://192.168.10.222:8443（首次需信任证书）\n九、维护与监控 9.1 日常维护 查看日志 # Nextcloud日志 docker logs nextcloud --tail 50 # MySQL日志 docker logs nextcloud-mysql --tail 50 # Nginx日志（本地） tail -f /opt/homebrew/var/log/nextcloud-https.error.log # Nginx日志（服务器） ssh server \"tail -f /var/log/nginx/nc.skyspace.eu.org.error.log\" 检查服务状态 # 容器状态 docker ps | grep nextcloud # 磁盘使用 df -h /Volumes/G/nextCloud # 数据库大小 docker exec nextcloud-mysql du -sh /var/lib/mysql 9.2 备份策略 数据备份位置 Nextcloud数据: /var/www/html/data → Docker volume nextcloud_data 数据库: /var/lib/mysql → Docker volume mysql_data G盘挂载: /Volumes/G/nextCloud → 物理存储 备份脚本示例 #!/bin/bash # 备份脚本 BACKUP_DIR=\"/path/to/backup\" DATE=$(date +%Y%m%d_%H%M%S) # 备份配置 cp ~/nextcloud/config.php $BACKUP_DIR/config_$DATE.php # 导出数据库 docker exec nextcloud-mysql mysqldump -u nextcloud -pnextcloud123 nextcloud \u003e $BACKUP_DIR/database_$DATE.sql # 备份Docker volumes docker run --rm \\ -v nextcloud_data:/data \\ -v $BACKUP_DIR:/backup \\ alpine tar czf /backup/nextcloud_data_$DATE.tar.gz -C /data . docker run --rm \\ -v mysql_data:/data \\ -v $BACKUP_DIR:/backup \\ alpine tar czf /backup/mysql_data_$DATE.tar.gz -C /data . 9.3 性能监控 Nextcloud OCC命令 # 检查系统状态 docker exec nextcloud php occ status # 检查文件完整性 docker exec nextcloud php occ integrity:check-core # 查看配置 docker exec nextcloud php occ config:list # 清理文件缓存 docker exec nextcloud php occ files:cleanup # 扫描文件 docker exec nextcloud php occ files:scan --all 数据库维护 # 进入MySQL docker exec -it nextcloud-mysql mysql -u nextcloud -pnextcloud123 nextcloud # 优化表 OPTIMIZE TABLE oc_filecache; OPTIMIZE TABLE oc_filecache_extended; # 查看表大小 SELECT table_name, ROUND(((data_length + index_length) / 1024 / 1024), 2) AS \"Size in MB\" FROM information_schema.TABLES WHERE table_schema = \"nextcloud\" ORDER BY (data_length + index_length) DESC; 9.4 Let’s Encrypt证书维护 查看证书信息 ssh server \"openssl x509 -in /etc/letsencrypt/live/nc.skyspace.eu.org/fullchain.pem -noout -subject -issuer -dates\" 手动续期 ssh server \"certbot renew\" 测试自动续期 ssh server \"certbot renew --dry-run\" 证书有效期 颁发日: 2026-03-04 到期日: 2026-06-02 有效期: 90天 自动续期: ✅ 已启用 十、故障排查 10.1 常见问题诊断流程 问题：无法访问Nextcloud │ ├─ 1. 检查容器状态 │ └─ docker ps | grep nextcloud │ ├─ 2. 检查网络连接 │ ├─ 局域网: curl http://192.168.10.222:8080 │ ├─ 公网: curl https://nc.skyspace.eu.org │ └─ Tailscale: curl http://100.97.62.83:8080 │ ├─ 3. 检查域名解析 │ ├─ dig nc.skyspace.eu.org │ └─ dig 192.168.10.222 │ ├─ 4. 检查trusted_domains │ └─ docker exec nextcloud php occ config:system:get trusted_domains │ ├─ 5. 检查SSL证书 │ ├─ 本地: openssl s_client -connect 192.168.10.222:8443 │ └─ 公网: openssl s_client -connect nc.skyspace.eu.org:443 │ └─ 6. 查看详细日志 ├─ docker logs nextcloud --tail 100 ├─ docker logs nextcloud-mysql --tail 100 └─ nginx error日志 10.2 日志分析 错误日志位置 Nextcloud: docker logs nextcloud MySQL: docker logs nextcloud-mysql Nginx（本地）: /opt/homebrew/var/log/nginx/error.log Nginx（服务器）: /var/log/nginx/nc.skyspace.eu.org.error.log Nextcloud内部日志: docker exec nextcloud cat /var/www/html/data/nextcloud.log 常见错误代码 502 Bad Gateway: Nextcloud容器未运行或端口错误 504 Gateway Timeout: 请求超时（检查超时配置） SSL_ERROR: 证书问题或配置错误 401 Unauthorized: 认证失败（检查用户名密码） 403 Forbidden: 权限问题（检查trusted_domains） “通过不被信任的域名访问”: 需要添加到trusted_domains 10.3 性能调优建议 如果公网访问慢 检查Tailscale连接质量 考虑使用CDN（Cloudflare代理） 优化数据库查询 增加Redis缓存 如果局域网访问慢 检查本地网络速度 优化nginx配置 确认使用HTTPS（8443端口） 检查CPU和内存使用率 如果上传失败 检查文件大小限制（配置为10GB） 检查超时设置（配置为3600秒） 检查磁盘空间 尝试使用客户端而非Web上传 十一、总结 11.1 项目成果 ✅ 完成的配置\n本地Mac上运行Nextcloud（Docker + Colima） MySQL 8.0数据库优化 Redis三级缓存 局域网HTTPS访问（自签名证书） 公网HTTPS访问（Let’s Encrypt证书） Tailscale VPN支持 大文件上传支持（10GB） 性能优化（OPcache、HTTP/2） 自动证书续期 监控和管理脚本 ✅ 性能提升\n公网访问延迟降低26%（1.22秒 → 0.90秒） 局域网访问极快（0.01秒） 大文件上传稳定 ✅ 问题解决\nSSL初始化失败 → 已修复 局域网访问报错 → 已修复 大文件上传失败 → 已修复 MySQL启动慢 → 已优化 11.2 最佳实践 推荐使用场景 公网访问: 使用 https://nc.skyspace.eu.org（Let’s Encrypt证书） 局域网访问: 使用 https://192.168.10.222:8443（速度最快） VPN访问: 使用 http://100.97.62.83:8080（Tailscale内网） 安全建议 定期更新Nextcloud版本 使用强密码 启用两步验证（待配置） 定期备份数据 监控日志文件 及时更新SSL证书 备份策略 每周自动备份数据库 每月备份配置文件 G盘物理存储作为主要备份 异地备份重要文件 11.3 未来优化方向 性能优化 配置Cloudflare CDN（可选） 启用HTTP/3（QUIC） 优化数据库索引 配置负载均衡 功能增强 配置OnlyOffice/Collabora在线编辑 启用两步验证 配置邮件通知 添加应用白名单 配置外部存储（S3、FTP等） 安全加固 配置fail2ban防暴力破解 启用审计日志 定期安全扫描 配置WAF（Web应用防火墙） 十二、参考文档 官方文档 Nextcloud官方文档: https://docs.nextcloud.com/ Docker官方文档: https://docs.docker.com/ Let’s Encrypt文档: https://letsencrypt.org/docs/ Tailscale文档: https://tailscale.com/kb/ 配置文件位置总结 文件类型 本地路径 容器内路径 服务器路径 Docker Compose ~/nextcloud/docker-compose.yml - - Nextcloud配置 ~/nextcloud/config.php /var/www/html/config/config.php - MySQL配置 ~/nextcloud/optimizations/mysql.cnf /etc/mysql/conf.d/custom.cnf - PHP OPcache ~/nextcloud/optimizations/00-opcache.ini /usr/local/etc/php/conf.d/00-opcache.ini - PHP超时 ~/nextcloud/optimizations/99-timeouts.ini /usr/local/etc/php/conf.d/99-timeouts.ini - Nginx配置（本地） /opt/homebrew/etc/nginx/servers/nextcloud-https.conf - - SSL证书（本地） ~/nextcloud/ssl/ - - Nginx配置（服务器） - - /etc/nginx/sites-available/nc.skyspace.eu.org.conf Let’s Encrypt证书 - - /etc/letsencrypt/live/nc.skyspace.eu.org/ 快速命令参考 # 启动服务 ~/nextcloud/nextcloud.sh start # 重启服务 ~/nextcloud/nextcloud.sh restart # 查看状态 ~/nextcloud/nextcloud.sh status # 查看日志 ~/nextcloud/nextcloud.sh logs # 添加trusted domain docker exec nextcloud php occ config:system:set trusted_domains 8 --value=\"new.domain.com\" # 检查更新 docker exec nextcloud php occ update:check # 扫描文件 docker exec nextcloud php occ files:scan --all # 清理缓存 docker exec nextcloud php occ maintenance:repair # 查看系统状态 docker exec nextcloud php occ status # 证书续期 ssh server \"certbot renew\" # 查看证书信息 ssh server \"openssl x509 -in /etc/letsencrypt/live/nc.skyspace.eu.org/fullchain.pem -noout -subject -issuer -dates\" 文档版本: 1.0 最后更新: 2026-03-05 维护者: admin@skyspace.eu.org\n附录：完整域名列表 当前配置的trusted_domains：\n序号 域名 协议 用途 0 localhost HTTP 本地测试 1 localhost:8080 HTTP 本地测试 2 nextcloud.skyspace.eu.org HTTPS 公网访问（旧） 3 192.168.10.222:8080 HTTP 局域网访问 4 100.97.62.83:8080 HTTP Tailscale VPN 5 nc.skyspace.eu.org HTTPS 公网访问（新，推荐） 6 192.168.10.222:8443 HTTPS 局域网HTTPS（推荐） 推荐使用:\n🌐 公网: https://nc.skyspace.eu.org 🏠 局域网: https://192.168.10.222:8443 🔐 VPN: http://100.97.62.83:8080 END OF DOCUMENT\n","wordCount":"6622","inLanguage":"zh-cn","datePublished":"2026-03-07T08:43:34+08:00","dateModified":"2026-03-07T08:43:34+08:00","author":{"@type":"Person","name":"新人类"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bluespace.eu.org/post/nextcloud/nextcloud-setup-summary/"},"publisher":{"@type":"Organization","name":"蓝色空间号","logo":{"@type":"ImageObject","url":"https://bluespace.eu.org/favicon.ico"}}}</script></head><body id="top"><header class="header"><nav class="nav"><div class="logo"><a accesskey="h" href="https://bluespace.eu.org/" title="蓝色空间号 (Alt + H)">蓝色空间号</a><div class="logo-switches"><button accesskey="t" aria-label="Toggle theme" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></button></div></div><ul id="menu"><li><a href="https://bluespace.eu.org/" title="首页"><span>首页</span></a></li><li><a href="https://bluespace.eu.org/post/" title="文章"><span>文章</span></a></li><li><a href="https://bluespace.eu.org/archives/" title="归档"><span>归档</span></a></li><li><a href="https://bluespace.eu.org/categories/" title="分类"><span>分类</span></a></li><li><a href="https://bluespace.eu.org/tags/" title="标签"><span>标签</span></a></li><li><a href="https://bluespace.eu.org/about/" title="关于"><span>关于</span></a></li></ul></nav></header><main class="main"><article class="post-single"><header class="post-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a> » <a href="https://bluespace.eu.org/post/">文章</a></div><h1 class="post-title entry-hint-parent">Nextcloud 配置与优化总结</h1><div class="post-meta"><span title="2026-03-07 08:43:34 +0800 +0800">2026-03-07</span> · <span>14 min</span> · <span>6622 words</span> · <span>新人类</span></div></header><div class="toc"><details><summary accesskey="c" title="(Alt + C)"><span class="details">Table of Contents</span></summary><div class="inner"><nav id="TableOfContents"><ul><li><a href="#一项目概述">一、项目概述</a><ul><li><a href="#目标">目标</a></li><li><a href="#环境信息">环境信息</a></li></ul></li><li><a href="#二架构设计">二、架构设计</a><ul><li><a href="#网络架构">网络架构</a></li><li><a href="#访问方式对比">访问方式对比</a></li></ul></li><li><a href="#三配置步骤详解">三、配置步骤详解</a><ul><li><a href="#31-基础环境搭建">3.1 基础环境搭建</a></li><li><a href="#32-性能优化配置">3.2 性能优化配置</a></li><li><a href="#33-局域网https配置">3.3 局域网HTTPS配置</a></li><li><a href="#34-公网https配置lets-encrypt">3.4 公网HTTPS配置（Let’s Encrypt）</a></li></ul></li><li><a href="#四nextcloud配置详解">四、Nextcloud配置详解</a><ul><li><a href="#41-完整配置文件">4.1 完整配置文件</a></li><li><a href="#42-关键配置说明">4.2 关键配置说明</a></li></ul></li><li><a href="#五性能测试结果">五、性能测试结果</a><ul><li><a href="#51-首页加载性能statusphp">5.1 首页加载性能（status.php）</a></li><li><a href="#52-webdav操作性能文件列表">5.2 WebDAV操作性能（文件列表）</a></li><li><a href="#53-文件上传性能">5.3 文件上传性能</a></li><li><a href="#54-性能瓶颈分析">5.4 性能瓶颈分析</a></li></ul></li><li><a href="#六问题解决方案">六、问题解决方案</a><ul><li><a href="#61-ssl初始化失败">6.1 SSL初始化失败</a></li><li><a href="#62-局域网访问报错不被信任的域名">6.2 局域网访问报错"不被信任的域名"</a></li><li><a href="#63-大文件上传失败">6.3 大文件上传失败</a></li><li><a href="#64-mysql-80配置错误">6.4 MySQL 8.0配置错误</a></li><li><a href="#65-docker容器启动慢">6.5 Docker容器启动慢</a></li></ul></li><li><a href="#七管理脚本">七、管理脚本</a><ul><li><a href="#71-快速管理脚本">7.1 快速管理脚本</a></li><li><a href="#72-使用方法">7.2 使用方法</a></li></ul></li><li><a href="#八客户端配置指南">八、客户端配置指南</a><ul><li><a href="#81-ios客户端">8.1 iOS客户端</a></li><li><a href="#82-android客户端">8.2 Android客户端</a></li><li><a href="#83-桌面客户端macoswindowslinux">8.3 桌面客户端（macOS/Windows/Linux）</a></li><li><a href="#84-web浏览器访问">8.4 Web浏览器访问</a></li></ul></li><li><a href="#九维护与监控">九、维护与监控</a><ul><li><a href="#91-日常维护">9.1 日常维护</a></li><li><a href="#92-备份策略">9.2 备份策略</a></li><li><a href="#93-性能监控">9.3 性能监控</a></li><li><a href="#94-lets-encrypt证书维护">9.4 Let’s Encrypt证书维护</a></li></ul></li><li><a href="#十故障排查">十、故障排查</a><ul><li><a href="#101-常见问题诊断流程">10.1 常见问题诊断流程</a></li><li><a href="#102-日志分析">10.2 日志分析</a></li><li><a href="#103-性能调优建议">10.3 性能调优建议</a></li></ul></li><li><a href="#十一总结">十一、总结</a><ul><li><a href="#111-项目成果">11.1 项目成果</a></li><li><a href="#112-最佳实践">11.2 最佳实践</a></li><li><a href="#113-未来优化方向">11.3 未来优化方向</a></li></ul></li><li><a href="#十二参考文档">十二、参考文档</a><ul><li><a href="#官方文档">官方文档</a></li><li><a href="#配置文件位置总结">配置文件位置总结</a></li><li><a href="#快速命令参考">快速命令参考</a></li></ul></li><li><a href="#附录完整域名列表">附录：完整域名列表</a></li></ul></nav></div></details></div><div class="post-content"><h1 id="nextcloud-配置与优化总结">Nextcloud 配置与优化总结<a aria-hidden="true" class="anchor" hidden="" href="#nextcloud-配置与优化总结">#</a></h1><p><strong>日期</strong>: 2026-03-05
+<strong>任务</strong>: Nextcloud 局域网/公网访问配置、SSL证书配置、性能优化</p><hr/><h2 id="一项目概述">一、项目概述<a aria-hidden="true" class="anchor" hidden="" href="#一项目概述">#</a></h2><h3 id="目标">目标<a aria-hidden="true" class="anchor" hidden="" href="#目标">#</a></h3><ol><li>在本地Mac上通过Docker运行Nextcloud</li><li>配置局域网HTTPS访问（解决SSL初始化失败）</li><li>配置公网HTTPS访问（Let’s Encrypt证书）</li><li>优化访问性能</li></ol><h3 id="环境信息">环境信息<a aria-hidden="true" class="anchor" hidden="" href="#环境信息">#</a></h3><ul><li><strong>本地环境</strong>: macOS (Darwin 25.2.0)</li><li><strong>Docker运行时</strong>: Colima</li><li><strong>云服务器</strong>: 38.55.39.104 (Ubuntu)</li><li><strong>Nextcloud版本</strong>: 33.0.0.16</li><li><strong>数据库</strong>: MySQL 8.0 (本地)</li><li><strong>缓存</strong>: Redis</li></ul><hr/><h2 id="二架构设计">二、架构设计<a aria-hidden="true" class="anchor" hidden="" href="#二架构设计">#</a></h2><h3 id="网络架构">网络架构<a aria-hidden="true" class="anchor" hidden="" href="#网络架构">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌─────────────────────────────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│                         访问路径                                │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│                                                                  │
+</span></span><span class="line"><span class="cl">│  公网访问                                                       │
+</span></span><span class="line"><span class="cl">│  ┌─────────────┐    ┌──────────────┐    ┌──────────────┐       │
+</span></span><span class="line"><span class="cl">│  │ 客户端      │───▶│ Cloudflare   │───▶│ 服务器Nginx  │       │
+</span></span><span class="line"><span class="cl">│  │ (任何网络)  │    │ (DNS only)   │    │ (38.55.39.   │       │
+</span></span><span class="line"><span class="cl">│  └─────────────┘    └──────────────┘    │ 104)         │       │
+</span></span><span class="line"><span class="cl">│                                         │  Let's Encrypt│      │
+</span></span><span class="line"><span class="cl">│                                         └──────┬─────────┘       │
+</span></span><span class="line"><span class="cl">│                                                │                 │
+</span></span><span class="line"><span class="cl">│                                         ┌──────▼─────────┐       │
+</span></span><span class="line"><span class="cl">│                                         │ Tailscale VPN  │       │
+</span></span><span class="line"><span class="cl">│                                         └──────┬─────────┘       │
+</span></span><span class="line"><span class="cl">│                                                │                 │
+</span></span><span class="line"><span class="cl">│  局域网访问                               ┌──────▼─────────┐       │
+</span></span><span class="line"><span class="cl">│  ┌─────────────┐                        │ 本地Mac        │       │
+</span></span><span class="line"><span class="cl">│  │ 局域网设备  │───▶────────────────────│ Docker/Colima │       │
+</span></span><span class="line"><span class="cl">│  │ (192.168.   │                        │                │       │
+</span></span><span class="line"><span class="cl">│  │ 10.222)     │◀───┐                   │  - Nextcloud  │       │
+</span></span><span class="line"><span class="cl">│  └─────────────┘    │                   │  - MySQL      │       │
+</span></span><span class="line"><span class="cl">│                     │                   │  - Redis      │       │
+</span></span><span class="line"><span class="cl">│  ┌─────────────┐   │                   └──────┬─────────┘       │
+</span></span><span class="line"><span class="cl">│  │ 本地Mac     │───┘                          │                 │
+</span></span><span class="line"><span class="cl">│  │ Nginx代理   │    G盘挂载                   ▼                 │
+</span></span><span class="line"><span class="cl">│  │ (:8443)     │◀───/Volumes/G/nextCloud    存储层              │
+</span></span><span class="line"><span class="cl">│  └─────────────┘                                                 │
+</span></span><span class="line"><span class="cl">└─────────────────────────────────────────────────────────────────┘
+</span></span></code></pre></div><h3 id="访问方式对比">访问方式对比<a aria-hidden="true" class="anchor" hidden="" href="#访问方式对比">#</a></h3><table><thead><tr><th>访问方式</th><th>地址</th><th>延迟</th><th>证书类型</th><th>适用场景</th></tr></thead><tbody><tr><td>公网HTTPS</td><td><a href="https://nc.skyspace.eu.org">https://nc.skyspace.eu.org</a></td><td>0.90秒</td><td>Let’s Encrypt</td><td>所有客户端</td></tr><tr><td>旧公网HTTPS</td><td><a href="https://nextcloud.skyspace.eu.org">https://nextcloud.skyspace.eu.org</a></td><td>1.22秒</td><td>自签名</td><td>备用</td></tr><tr><td>局域网HTTPS</td><td>https://192.168.10.222:8443</td><td>0.01秒</td><td>自签名</td><td>局域网设备</td></tr><tr><td>Tailscale</td><td>http://100.97.62.83:8080</td><td>0.35秒</td><td>HTTP</td><td>VPN内设备</td></tr><tr><td>局域网HTTP</td><td>http://192.168.10.222:8080</td><td>0.01秒</td><td>HTTP</td><td>局域网设备</td></tr></tbody></table><hr/><h2 id="三配置步骤详解">三、配置步骤详解<a aria-hidden="true" class="anchor" hidden="" href="#三配置步骤详解">#</a></h2><h3 id="31-基础环境搭建">3.1 基础环境搭建<a aria-hidden="true" class="anchor" hidden="" href="#31-基础环境搭建">#</a></h3><h4 id="docker-compose配置">Docker Compose配置<a aria-hidden="true" class="anchor" hidden="" href="#docker-compose配置">#</a></h4><p><strong>文件</strong>: <code>~/nextcloud/docker-compose.yml</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">'3.8'</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nextcloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nextcloud:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">nextcloud</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">"8080:80"</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">nextcloud_data:/var/www/html</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./config.php:/var/www/html/config/config.php</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./optimizations/00-opcache.ini:/usr/local/etc/php/conf.d/00-opcache.ini:ro</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./optimizations/99-timeouts.ini:/usr/local/etc/php/conf.d/99-timeouts.ini:ro</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./optimizations/http2.conf:/etc/apache2/conf-available/http2.conf:ro</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">/Volumes/G/nextCloud:/mnt/g-drive:ro</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_HOST=db</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_DATABASE=nextcloud</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_USER=nextcloud</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_PASSWORD=nextcloud123</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">REDIS_HOST=redis</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">REDIS_PORT=6379</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">PHP_MEMORY_LIMIT=512M</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">PHP_UPLOAD_LIMIT=10G</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">PHP_MAX_EXECUTION_TIME=3600</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">APACHE_BODY_LIMIT=10737418240</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">APACHE_TIMEOUT_LIMIT=3600</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">db</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l">service_healthy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">redis</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l">service_started</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">nextcloud-network</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"CMD"</span><span class="p">,</span><span class="w"> </span><span class="s2">"curl"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-f"</span><span class="p">,</span><span class="w"> </span><span class="s2">"http://localhost/80"</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l">10s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l">5s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">start_period</span><span class="p">:</span><span class="w"> </span><span class="l">30s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">db</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">mysql:8.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">nextcloud-mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">mysql_data:/var/lib/mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./optimizations/mysql.cnf:/etc/mysql/conf.d/custom.cnf:ro</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_ROOT_PASSWORD=rootpassword</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_DATABASE=nextcloud</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_USER=nextcloud</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">MYSQL_PASSWORD=nextcloud123</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">nextcloud-network</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"CMD"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mysqladmin"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ping"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-h"</span><span class="p">,</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-u"</span><span class="p">,</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-prootpassword"</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l">10s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l">5s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">start_period</span><span class="p">:</span><span class="w"> </span><span class="l">30s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">redis</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:alpine</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">nextcloud-redis</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l">redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">nextcloud-network</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nextcloud-network</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">bridge</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nextcloud_data</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">local</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mysql_data</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">local</span><span class="w">
+</span></span></span></code></pre></div><h3 id="32-性能优化配置">3.2 性能优化配置<a aria-hidden="true" class="anchor" hidden="" href="#32-性能优化配置">#</a></h3><h4 id="mysql-80优化">MySQL 8.0优化<a aria-hidden="true" class="anchor" hidden="" href="#mysql-80优化">#</a></h4><p><strong>文件</strong>: <code>~/nextcloud/optimizations/mysql.cnf</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[mysqld]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 性能调优</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_connections</span> <span class="o">=</span> <span class="s">200</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_buffer_pool_size</span> <span class="o">=</span> <span class="s">256M</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_redo_log_capacity</span> <span class="o">=</span> <span class="s">128M</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_flush_log_at_trx_commit</span> <span class="o">=</span> <span class="s">2</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_flush_method</span> <span class="o">=</span> <span class="s">O_DIRECT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 快速启动</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_fast_shutdown</span> <span class="o">=</span> <span class="s">2</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_doublewrite</span> <span class="o">=</span> <span class="s">0</span>
+</span></span><span class="line"><span class="cl"><span class="na">skip_name_resolve</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 连接设置</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_allowed_packet</span> <span class="o">=</span> <span class="s">64M</span>
+</span></span><span class="line"><span class="cl"><span class="na">connect_timeout</span> <span class="o">=</span> <span class="s">5</span>
+</span></span><span class="line"><span class="cl"><span class="na">wait_timeout</span> <span class="o">=</span> <span class="s">600</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 禁用二进制日志以加快启动</span>
+</span></span><span class="line"><span class="cl"><span class="na">skip_log_bin</span>
+</span></span><span class="line"><span class="cl"><span class="na">disable_log_bin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># SSD优化</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_io_capacity</span> <span class="o">=</span> <span class="s">200</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_io_capacity_max</span> <span class="o">=</span> <span class="s">2000</span>
+</span></span></code></pre></div><h4 id="php-opcache配置">PHP OPcache配置<a aria-hidden="true" class="anchor" hidden="" href="#php-opcache配置">#</a></h4><p><strong>文件</strong>: <code>~/nextcloud/optimizations/00-opcache.ini</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">opcache.enable</span><span class="o">=</span><span class="s">1</span>
+</span></span><span class="line"><span class="cl"><span class="na">opcache.enable_cli</span><span class="o">=</span><span class="s">1</span>
+</span></span><span class="line"><span class="cl"><span class="na">opcache.memory_consumption</span><span class="o">=</span><span class="s">256</span>
+</span></span><span class="line"><span class="cl"><span class="na">opcache.interned_strings_buffer</span><span class="o">=</span><span class="s">32</span>
+</span></span><span class="line"><span class="cl"><span class="na">opcache.max_accelerated_files</span><span class="o">=</span><span class="s">20000</span>
+</span></span><span class="line"><span class="cl"><span class="na">opcache.revalidate_freq</span><span class="o">=</span><span class="s">60</span>
+</span></span><span class="line"><span class="cl"><span class="na">opcache.fast_shutdown</span><span class="o">=</span><span class="s">1</span>
+</span></span><span class="line"><span class="cl"><span class="na">opcache.jit_buffer_size</span><span class="o">=</span><span class="s">128M</span>
+</span></span></code></pre></div><h4 id="php超时配置大文件上传">PHP超时配置（大文件上传）<a aria-hidden="true" class="anchor" hidden="" href="#php超时配置大文件上传">#</a></h4><p><strong>文件</strong>: <code>~/nextcloud/optimizations/99-timeouts.ini</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">max_execution_time</span> <span class="o">=</span> <span class="s">3600</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_input_time</span> <span class="o">=</span> <span class="s">3600</span>
+</span></span><span class="line"><span class="cl"><span class="na">memory_limit</span> <span class="o">=</span> <span class="s">512M</span>
+</span></span><span class="line"><span class="cl"><span class="na">file_uploads</span> <span class="o">=</span> <span class="s">On</span>
+</span></span><span class="line"><span class="cl"><span class="na">upload_max_filesize</span> <span class="o">=</span> <span class="s">10G</span>
+</span></span><span class="line"><span class="cl"><span class="na">post_max_size</span> <span class="o">=</span> <span class="s">10G</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_file_uploads</span> <span class="o">=</span> <span class="s">20</span>
+</span></span><span class="line"><span class="cl"><span class="na">default_socket_timeout</span> <span class="o">=</span> <span class="s">3600</span>
+</span></span><span class="line"><span class="cl"><span class="na">mysql.connect_timeout</span> <span class="o">=</span> <span class="s">3600</span>
+</span></span></code></pre></div><h3 id="33-局域网https配置">3.3 局域网HTTPS配置<a aria-hidden="true" class="anchor" hidden="" href="#33-局域网https配置">#</a></h3><h4 id="安装nginxmac">安装Nginx（Mac）<a aria-hidden="true" class="anchor" hidden="" href="#安装nginxmac">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install nginx
+</span></span></code></pre></div><h4 id="生成自签名证书">生成自签名证书<a aria-hidden="true" class="anchor" hidden="" href="#生成自签名证书">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl req -x509 -nodes -days <span class="m">3650</span> -newkey rsa:2048 <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -keyout ~/nextcloud/ssl/nextcloud-local.key <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -out ~/nextcloud/ssl/nextcloud-local.crt <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -subj <span class="s1">'/CN=192.168.10.222'</span>
+</span></span></code></pre></div><h4 id="nginx配置">Nginx配置<a aria-hidden="true" class="anchor" hidden="" href="#nginx配置">#</a></h4><p><strong>文件</strong>: <code>/opt/homebrew/etc/nginx/servers/nextcloud-https.conf</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">8443</span> <span class="s">ssl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="n">192.168.10.222</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate</span> <span class="s">/Users/tianqinghong/nextcloud/ssl/nextcloud-local.crt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate_key</span> <span class="s">/Users/tianqinghong/nextcloud/ssl/nextcloud-local.key</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_ciphers</span> <span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:8080</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host:$server_port</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="s">https</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Host</span> <span class="nv">$host:$server_port</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">"upgrade"</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_connect_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_send_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_read_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">client_max_body_size</span> <span class="s">10G</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="nextcloud配置更新">Nextcloud配置更新<a aria-hidden="true" class="anchor" hidden="" href="#nextcloud配置更新">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ config:system:set trusted_domains <span class="m">7</span> --value<span class="o">=</span><span class="s2">"192.168.10.222:8443"</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ config:system:set overwritehost --value<span class="o">=</span><span class="s2">"192.168.10.222:8443"</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ config:system:set overwriteprotocol --value<span class="o">=</span><span class="s2">"https"</span>
+</span></span></code></pre></div><h3 id="34-公网https配置lets-encrypt">3.4 公网HTTPS配置（Let’s Encrypt）<a aria-hidden="true" class="anchor" hidden="" href="#34-公网https配置lets-encrypt">#</a></h3><h4 id="前置条件">前置条件<a aria-hidden="true" class="anchor" hidden="" href="#前置条件">#</a></h4><ol><li>在Cloudflare中将nc.skyspace.eu.org的代理模式关闭（DNS only）</li><li>确保DNS解析到服务器IP（38.55.39.104）</li><li>服务器已安装Tailscale并可访问本地Mac（100.97.62.83:8080）</li></ol><h4 id="获取lets-encrypt证书">获取Let’s Encrypt证书<a aria-hidden="true" class="anchor" hidden="" href="#获取lets-encrypt证书">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 在服务器上执行</span>
+</span></span><span class="line"><span class="cl">ssh server
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建验证目录</span>
+</span></span><span class="line"><span class="cl">mkdir -p /var/www/html/.well-known/acme-challenge
+</span></span><span class="line"><span class="cl">chown -R www-data:www-data /var/www/html
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 获取证书</span>
+</span></span><span class="line"><span class="cl">certbot certonly --webroot <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -w /var/www/html <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -d nc.skyspace.eu.org <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --email admin@skyspace.eu.org <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --agree-tos <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --non-interactive
+</span></span></code></pre></div><h4 id="nginx配置服务器">Nginx配置（服务器）<a aria-hidden="true" class="anchor" hidden="" href="#nginx配置服务器">#</a></h4><p><strong>文件</strong>: <code>/etc/nginx/sites-available/nc.skyspace.eu.org.conf</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="c1"># HTTP重定向到HTTPS
+</span></span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">nc.skyspace.eu.org</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$server_name$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># HTTPS配置
+</span></span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span> <span class="s">http2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">nc.skyspace.eu.org</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Let's Encrypt证书
+</span></span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate</span> <span class="s">/etc/letsencrypt/live/nc.skyspace.eu.org/fullchain.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate_key</span> <span class="s">/etc/letsencrypt/live/nc.skyspace.eu.org/privkey.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># SSL配置
+</span></span></span><span class="line"><span class="cl">    <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_ciphers</span> <span class="s">ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_session_cache</span> <span class="s">shared:SSL:10m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_session_timeout</span> <span class="mi">10m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 日志
+</span></span></span><span class="line"><span class="cl">    <span class="kn">access_log</span> <span class="s">/var/log/nginx/nc.skyspace.eu.org.access.log</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">error_log</span> <span class="s">/var/log/nginx/nc.skyspace.eu.org.error.log</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 反向代理到Nextcloud（通过Tailscale）
+</span></span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://100.97.62.83:8080</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="s">https</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">"upgrade"</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_connect_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_send_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_read_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_request_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">client_max_body_size</span> <span class="s">10G</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">client_body_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># WebDAV支持
+</span></span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">/remote.php/webdav/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://100.97.62.83:8080</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="s">https</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_connect_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_send_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_read_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_buffering</span> <span class="no">off</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">client_max_body_size</span> <span class="s">10G</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="证书自动续期">证书自动续期<a aria-hidden="true" class="anchor" hidden="" href="#证书自动续期">#</a></h4><p>Certbot会自动设置定时任务，可通过以下命令验证：</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">certbot renew --dry-run
+</span></span><span class="line"><span class="cl">systemctl list-timers <span class="p">|</span> grep certbot
+</span></span></code></pre></div><hr/><h2 id="四nextcloud配置详解">四、Nextcloud配置详解<a aria-hidden="true" class="anchor" hidden="" href="#四nextcloud配置详解">#</a></h2><h3 id="41-完整配置文件">4.1 完整配置文件<a aria-hidden="true" class="anchor" hidden="" href="#41-完整配置文件">#</a></h3><p><strong>文件</strong>: <code>~/nextcloud/config.php</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$CONFIG</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'memcache.local'</span> <span class="o">=&gt;</span> <span class="s1">'\\OC\\Memcache\\APCu'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'memcache.distributed'</span> <span class="o">=&gt;</span> <span class="s1">'\\OC\\Memcache\\Redis'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'memcache.locking'</span> <span class="o">=&gt;</span> <span class="s1">'\\OC\\Memcache\\Redis'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'filelocking.enabled'</span> <span class="o">=&gt;</span> <span class="s1">'true'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'redis'</span> <span class="o">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">array</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'redis'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">'port'</span> <span class="o">=&gt;</span> <span class="mi">6379</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">'timeout'</span> <span class="o">=&gt;</span> <span class="mf">0.0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">'compression'</span> <span class="o">=&gt;</span> <span class="s1">'none'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'trusted_domains'</span> <span class="o">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">array</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">0</span> <span class="o">=&gt;</span> <span class="s1">'localhost'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">1</span> <span class="o">=&gt;</span> <span class="s1">'localhost:8080'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">2</span> <span class="o">=&gt;</span> <span class="s1">'nextcloud.skyspace.eu.org'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">3</span> <span class="o">=&gt;</span> <span class="s1">'192.168.10.222:8080'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">4</span> <span class="o">=&gt;</span> <span class="s1">'100.97.62.83:8080'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">5</span> <span class="o">=&gt;</span> <span class="s1">'nc.skyspace.eu.org'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">6</span> <span class="o">=&gt;</span> <span class="s1">'192.168.10.222:8443'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'datadirectory'</span> <span class="o">=&gt;</span> <span class="s1">'/var/www/html/data'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'dbtype'</span> <span class="o">=&gt;</span> <span class="s1">'mysql'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'version'</span> <span class="o">=&gt;</span> <span class="s1">'33.0.0.16'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'overwrite.cli.url'</span> <span class="o">=&gt;</span> <span class="s1">'http://localhost:8080'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'overwriteprotocol'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>  <span class="c1">// 自动检测协议
+</span></span></span><span class="line"><span class="cl">  <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'nextcloud'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'dbhost'</span> <span class="o">=&gt;</span> <span class="s1">'db'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'dbtableprefix'</span> <span class="o">=&gt;</span> <span class="s1">'oc_'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'mysql.utf8mb4'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'dbuser'</span> <span class="o">=&gt;</span> <span class="s1">'nextcloud'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'dbpassword'</span> <span class="o">=&gt;</span> <span class="s1">'nextcloud123'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'installed'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'instanceid'</span> <span class="o">=&gt;</span> <span class="s1">'ocnkmggsliuq'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'htaccess.RewriteBase'</span> <span class="o">=&gt;</span> <span class="s1">'/'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'default_language'</span> <span class="o">=&gt;</span> <span class="s1">'zh_CN'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'default_locale'</span> <span class="o">=&gt;</span> <span class="s1">'zh_CN'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'knowledgebaseenabled'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'check_for_working_htaccess'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'simpleSignUpLink.shown'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'trashbin_retention_obligation'</span> <span class="o">=&gt;</span> <span class="s1">'auto, 30'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'versions_retention_obligation'</span> <span class="o">=&gt;</span> <span class="s1">'auto, 30'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'activity_expire_days'</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'allow_local_remote_servers'</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'debug'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'loglevel'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'upgrade.disable-web'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'app.disable_background'</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'chunk_file_size'</span> <span class="o">=&gt;</span> <span class="mi">10485760</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">'max_chunk_size'</span> <span class="o">=&gt;</span> <span class="mi">10485760</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></div><h3 id="42-关键配置说明">4.2 关键配置说明<a aria-hidden="true" class="anchor" hidden="" href="#42-关键配置说明">#</a></h3><h4 id="trusted_domains可信域名">trusted_domains（可信域名）<a aria-hidden="true" class="anchor" hidden="" href="#trusted_domains可信域名">#</a></h4><ul><li>用于Nextcloud识别允许访问的域名</li><li>需要包含所有访问方式（HTTP/HTTPS，不同端口）</li><li>修改后需重启容器生效</li></ul><h4 id="overwriteprotocol">overwriteprotocol<a aria-hidden="true" class="anchor" hidden="" href="#overwriteprotocol">#</a></h4><ul><li><code>false</code>: 自动检测（推荐）</li><li><code>https</code>: 强制使用HTTPS</li><li><code>http</code>: 强制使用HTTP</li><li>本配置中使用<code>false</code>以支持多种访问方式</li></ul><h4 id="redis缓存配置">Redis缓存配置<a aria-hidden="true" class="anchor" hidden="" href="#redis缓存配置">#</a></h4><ul><li><code>memcache.local</code>: 本地缓存（APCu）</li><li><code>memcache.distributed</code>: 分布式缓存（Redis）</li><li><code>memcache.locking</code>: 文件锁缓存（Redis）</li></ul><hr/><h2 id="五性能测试结果">五、性能测试结果<a aria-hidden="true" class="anchor" hidden="" href="#五性能测试结果">#</a></h2><h3 id="51-首页加载性能statusphp">5.1 首页加载性能（status.php）<a aria-hidden="true" class="anchor" hidden="" href="#51-首页加载性能statusphp">#</a></h3><table><thead><tr><th>域名</th><th>平均延迟</th><th>最快</th><th>最慢</th><th>标准差</th></tr></thead><tbody><tr><td>nextcloud.skyspace.eu.org</td><td>1.22秒</td><td>0.89秒</td><td>1.39秒</td><td>0.15秒</td></tr><tr><td>nc.skyspace.eu.org</td><td>0.90秒</td><td>-</td><td>-</td><td>-</td></tr><tr><td>192.168.10.222:8443</td><td>0.01秒</td><td>-</td><td>-</td><td>-</td></tr><tr><td><strong>性能提升</strong></td><td><strong>26%</strong></td><td>-</td><td>-</td><td>-</td></tr></tbody></table><h3 id="52-webdav操作性能文件列表">5.2 WebDAV操作性能（文件列表）<a aria-hidden="true" class="anchor" hidden="" href="#52-webdav操作性能文件列表">#</a></h3><table><thead><tr><th>域名</th><th>平均延迟</th><th>性能对比</th></tr></thead><tbody><tr><td>nextcloud.skyspace.eu.org</td><td>1.08秒</td><td>基准</td></tr><tr><td>nc.skyspace.eu.org</td><td>0.83秒</td><td>✅ 快23%</td></tr><tr><td>192.168.10.222:8443</td><td>0.02秒</td><td>✅ 极快</td></tr></tbody></table><h3 id="53-文件上传性能">5.3 文件上传性能<a aria-hidden="true" class="anchor" hidden="" href="#53-文件上传性能">#</a></h3><h4 id="小文件上传1mb">小文件上传（1MB）<a aria-hidden="true" class="anchor" hidden="" href="#小文件上传1mb">#</a></h4><table><thead><tr><th>域名</th><th>平均耗时</th><th>平均速度</th><th>状态</th></tr></thead><tbody><tr><td>nextcloud.skyspace.eu.org</td><td>~4秒</td><td>256KB/s</td><td>✅</td></tr><tr><td>nc.skyspace.eu.org</td><td>~3-5秒</td><td>200-350KB/s</td><td>✅</td></tr><tr><td>192.168.10.222:8443</td><td>&lt;1秒</td><td>&gt;2MB/s</td><td>✅</td></tr></tbody></table><h4 id="大文件上传10mb">大文件上传（10MB）<a aria-hidden="true" class="anchor" hidden="" href="#大文件上传10mb">#</a></h4><table><thead><tr><th>域名</th><th>耗时</th><th>平均速度</th><th>状态</th></tr></thead><tbody><tr><td>nc.skyspace.eu.org</td><td>~37秒</td><td>280KB/s</td><td>✅</td></tr><tr><td>192.168.10.222:8443</td><td>~15秒</td><td>700KB/s</td><td>✅</td></tr></tbody></table><h3 id="54-性能瓶颈分析">5.4 性能瓶颈分析<a aria-hidden="true" class="anchor" hidden="" href="#54-性能瓶颈分析">#</a></h3><h4 id="延迟组成公网访问">延迟组成（公网访问）<a aria-hidden="true" class="anchor" hidden="" href="#延迟组成公网访问">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">总延迟: 0.90秒
+</span></span><span class="line"><span class="cl">├── 客户端 → Cloudflare DNS: ~50ms
+</span></span><span class="line"><span class="cl">├── Cloudflare → 服务器: ~100ms
+</span></span><span class="line"><span class="cl">├── 服务器处理: ~50ms
+</span></span><span class="line"><span class="cl">├── 服务器 → Tailscale → 本地Mac: ~350ms
+</span></span><span class="line"><span class="cl">└── Nextcloud处理: ~350ms
+</span></span></code></pre></div><h4 id="优化效果">优化效果<a aria-hidden="true" class="anchor" hidden="" href="#优化效果">#</a></h4><ul><li>✅ 使用Let’s Encrypt证书：减少握手时间</li><li>✅ 配置Redis缓存：减少数据库查询</li><li>✅ 启用OPcache：加速PHP执行</li><li>✅ HTTP/2支持：多路复用连接</li><li>✅ 本地nginx代理：局域网访问极快</li></ul><hr/><h2 id="六问题解决方案">六、问题解决方案<a aria-hidden="true" class="anchor" hidden="" href="#六问题解决方案">#</a></h2><h3 id="61-ssl初始化失败">6.1 SSL初始化失败<a aria-hidden="true" class="anchor" hidden="" href="#61-ssl初始化失败">#</a></h3><h4 id="问题描述">问题描述<a aria-hidden="true" class="anchor" hidden="" href="#问题描述">#</a></h4><ul><li>客户端（iOS/Android）无法连接</li><li>错误提示：“SSL初始化失败”</li><li>原因：使用自签名证书，客户端不信任</li></ul><h4 id="解决方案">解决方案<a aria-hidden="true" class="anchor" hidden="" href="#解决方案">#</a></h4><p><strong>公网访问</strong>：</p><ol><li>获取Let’s Encrypt证书（可信CA）</li><li>配置nginx使用新证书</li><li>客户端自动信任证书</li></ol><p><strong>局域网访问</strong>：</p><ol><li>安装本地nginx</li><li>生成自签名证书</li><li>首次访问时手动信任</li></ol><h3 id="62-局域网访问报错不被信任的域名">6.2 局域网访问报错"不被信任的域名"<a aria-hidden="true" class="anchor" hidden="" href="#62-局域网访问报错不被信任的域名">#</a></h3><h4 id="问题描述-1">问题描述<a aria-hidden="true" class="anchor" hidden="" href="#问题描述-1">#</a></h4><ul><li>访问 <code>https://192.168.10.222:8443</code> 报错</li><li>提示：“通过不被信任的域名访问”</li></ul><h4 id="解决步骤">解决步骤<a aria-hidden="true" class="anchor" hidden="" href="#解决步骤">#</a></h4><ol><li>添加到trusted_domains：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ config:system:set trusted_domains <span class="m">7</span> --value<span class="o">=</span><span class="s2">"192.168.10.222:8443"</span>
+</span></span></code></pre></div><ol start="2"><li>配置overwritehost和overwriteprotocol：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ config:system:set overwritehost --value<span class="o">=</span><span class="s2">"192.168.10.222:8443"</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ config:system:set overwriteprotocol --value<span class="o">=</span><span class="s2">"https"</span>
+</span></span></code></pre></div><ol start="3"><li>重启容器：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~/nextcloud/nextcloud.sh restart
+</span></span></code></pre></div><ol start="4"><li>确保nginx正确传递Host header：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host:$server_port</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="s">https</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="63-大文件上传失败">6.3 大文件上传失败<a aria-hidden="true" class="anchor" hidden="" href="#63-大文件上传失败">#</a></h3><h4 id="问题描述-2">问题描述<a aria-hidden="true" class="anchor" hidden="" href="#问题描述-2">#</a></h4><ul><li>上传大文件时失败</li><li>错误：网络中断、超时</li></ul><h4 id="解决方案-1">解决方案<a aria-hidden="true" class="anchor" hidden="" href="#解决方案-1">#</a></h4><ol><li><strong>增加PHP超时设置</strong>（已在99-timeouts.ini配置）：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">max_execution_time</span> <span class="o">=</span> <span class="s">3600</span>
+</span></span><span class="line"><span class="cl"><span class="na">max_input_time</span> <span class="o">=</span> <span class="s">3600</span>
+</span></span><span class="line"><span class="cl"><span class="na">default_socket_timeout</span> <span class="o">=</span> <span class="s">3600</span>
+</span></span></code></pre></div><ol start="2"><li><strong>增加nginx超时</strong>：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">proxy_connect_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">proxy_send_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">proxy_read_timeout</span> <span class="s">3600s</span><span class="p">;</span>
+</span></span></code></pre></div><ol start="3"><li><strong>配置分块上传</strong>（config.php）：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="s1">'chunk_file_size'</span> <span class="o">=&gt;</span> <span class="mi">10485760</span><span class="p">,</span>  <span class="c1">// 10MB
+</span></span></span><span class="line"><span class="cl"><span class="s1">'max_chunk_size'</span> <span class="o">=&gt;</span> <span class="mi">10485760</span><span class="p">,</span>
+</span></span></code></pre></div><h3 id="64-mysql-80配置错误">6.4 MySQL 8.0配置错误<a aria-hidden="true" class="anchor" hidden="" href="#64-mysql-80配置错误">#</a></h3><h4 id="问题描述-3">问题描述<a aria-hidden="true" class="anchor" hidden="" href="#问题描述-3">#</a></h4><ul><li>MySQL容器启动失败</li><li>错误：<code>unknown variable 'query_cache_size=0'</code></li></ul><h4 id="原因">原因<a aria-hidden="true" class="anchor" hidden="" href="#原因">#</a></h4><ul><li>MySQL 8.0已移除query cache功能</li><li>配置文件使用了旧版本参数</li></ul><h4 id="解决方案-2">解决方案<a aria-hidden="true" class="anchor" hidden="" href="#解决方案-2">#</a></h4><ol><li>移除已弃用的参数：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="c1"># 删除以下配置</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># query_cache_size = 0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># query_cache_type = 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># innodb_log_file_size = 256M  # 改用innodb_redo_log_capacity</span>
+</span></span></code></pre></div><ol start="2"><li>使用新参数：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">innodb_redo_log_capacity</span> <span class="o">=</span> <span class="s">128M</span>
+</span></span></code></pre></div><h3 id="65-docker容器启动慢">6.5 Docker容器启动慢<a aria-hidden="true" class="anchor" hidden="" href="#65-docker容器启动慢">#</a></h3><h4 id="问题描述-4">问题描述<a aria-hidden="true" class="anchor" hidden="" href="#问题描述-4">#</a></h4><ul><li>容器重启耗时20-30秒</li><li>MySQL初始化时间长</li></ul><h4 id="优化方案">优化方案<a aria-hidden="true" class="anchor" hidden="" href="#优化方案">#</a></h4><ol><li><strong>MySQL快速启动</strong>：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">innodb_fast_shutdown</span> <span class="o">=</span> <span class="s">2</span>
+</span></span><span class="line"><span class="cl"><span class="na">innodb_doublewrite</span> <span class="o">=</span> <span class="s">0</span>
+</span></span><span class="line"><span class="cl"><span class="na">skip_log_bin</span>
+</span></span></code></pre></div><ol start="2"><li><strong>减少buffer pool</strong>：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="na">innodb_buffer_pool_size</span> <span class="o">=</span> <span class="s">256M  # 从512M降低</span>
+</span></span></code></pre></div><ol start="3"><li><strong>添加健康检查</strong>：</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">healthcheck</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"CMD"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mysqladmin"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ping"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-h"</span><span class="p">,</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-u"</span><span class="p">,</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-prootpassword"</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l">10s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l">5s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">start_period</span><span class="p">:</span><span class="w"> </span><span class="l">30s</span><span class="w">
+</span></span></span></code></pre></div><p><strong>效果</strong>：启动时间缩短至5-10秒</p><hr/><h2 id="七管理脚本">七、管理脚本<a aria-hidden="true" class="anchor" hidden="" href="#七管理脚本">#</a></h2><h3 id="71-快速管理脚本">7.1 快速管理脚本<a aria-hidden="true" class="anchor" hidden="" href="#71-快速管理脚本">#</a></h3><p><strong>文件</strong>: <code>~/nextcloud/nextcloud.sh</code></p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="c1"># Nextcloud 快速管理脚本</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> in
+</span></span><span class="line"><span class="cl">  start<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"🚀 启动 Nextcloud..."</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">cd</span> ~/nextcloud <span class="o">&amp;&amp;</span> docker compose up -d
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"✅ Nextcloud 已启动"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"访问地址: http://localhost:8080"</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  stop<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"⏹️  停止 Nextcloud..."</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">cd</span> ~/nextcloud <span class="o">&amp;&amp;</span> docker compose down
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"✅ Nextcloud 已停止"</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  restart<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"🔄 快速重启 Nextcloud（仅重启服务）..."</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">cd</span> ~/nextcloud <span class="o">&amp;&amp;</span> docker compose restart nextcloud
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"✅ Nextcloud 已重启（耗时约 5秒）"</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  full-restart<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"🔄 完全重启 Nextcloud（包含数据库）..."</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">cd</span> ~/nextcloud <span class="o">&amp;&amp;</span> docker compose down <span class="o">&amp;&amp;</span> docker compose up -d
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"✅ Nextcloud 已完全重启（耗时约 15-20秒）"</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  status<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"📊 Nextcloud 状态:"</span>
+</span></span><span class="line"><span class="cl">    docker ps --filter <span class="s2">"name=nextcloud"</span> --format <span class="s2">"table {{.Names}}\t{{.Status}}\t{{.Ports}}"</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  logs<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"📋 Nextcloud 日志（最后 30 行）:"</span>
+</span></span><span class="line"><span class="cl">    docker logs nextcloud --tail <span class="m">30</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  update<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"🔄 更新 Nextcloud 镜像..."</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">cd</span> ~/nextcloud <span class="o">&amp;&amp;</span> docker compose pull <span class="o">&amp;&amp;</span> docker compose up -d --force-recreate
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"✅ Nextcloud 已更新并重启"</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  *<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"Nextcloud 快速管理脚本"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">""</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"用法: ./nextcloud.sh [命令]"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">""</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"命令:"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  start        - 启动服务"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  stop         - 停止服务"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  restart      - 快速重启（推荐）"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  full-restart - 完全重启"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  status       - 查看状态"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  logs         - 查看日志"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  update       - 更新镜像"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">""</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"示例:"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  ./nextcloud.sh restart"</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"  ./nextcloud.sh logs"</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></div><h3 id="72-使用方法">7.2 使用方法<a aria-hidden="true" class="anchor" hidden="" href="#72-使用方法">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动服务</span>
+</span></span><span class="line"><span class="cl">~/nextcloud/nextcloud.sh start
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 快速重启</span>
+</span></span><span class="line"><span class="cl">~/nextcloud/nextcloud.sh restart
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看状态</span>
+</span></span><span class="line"><span class="cl">~/nextcloud/nextcloud.sh status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看日志</span>
+</span></span><span class="line"><span class="cl">~/nextcloud/nextcloud.sh logs
+</span></span></code></pre></div><hr/><h2 id="八客户端配置指南">八、客户端配置指南<a aria-hidden="true" class="anchor" hidden="" href="#八客户端配置指南">#</a></h2><h3 id="81-ios客户端">8.1 iOS客户端<a aria-hidden="true" class="anchor" hidden="" href="#81-ios客户端">#</a></h3><h4 id="配置步骤">配置步骤<a aria-hidden="true" class="anchor" hidden="" href="#配置步骤">#</a></h4><ol><li>下载Nextcloud官方App</li><li>创建新连接：<ul><li>服务器地址: <code>https://nc.skyspace.eu.org</code></li><li>用户名: <code>admin</code></li><li>密码: <code>tianz728~</code></li></ul></li><li>点击"登录"</li></ol><h4 id="局域网访问可选">局域网访问（可选）<a aria-hidden="true" class="anchor" hidden="" href="#局域网访问可选">#</a></h4><ul><li>服务器地址: <code>https://192.168.10.222:8443</code></li><li>首次连接时点击"高级" → “访问此网站”</li></ul><h3 id="82-android客户端">8.2 Android客户端<a aria-hidden="true" class="anchor" hidden="" href="#82-android客户端">#</a></h3><h4 id="配置步骤-1">配置步骤<a aria-hidden="true" class="anchor" hidden="" href="#配置步骤-1">#</a></h4><ol><li>下载Nextcloud官方App</li><li>创建新连接：<ul><li>服务器地址: <code>https://nc.skyspace.eu.org</code></li><li>用户名: <code>admin</code></li><li>密码: <code>tianz728~</code></li></ul></li><li>点击"登录"</li></ol><h4 id="局域网访问可选-1">局域网访问（可选）<a aria-hidden="true" class="anchor" hidden="" href="#局域网访问可选-1">#</a></h4><ul><li>服务器地址: <code>https://192.168.10.222:8443</code></li><li>勾选"忽略SSL验证"</li></ul><h3 id="83-桌面客户端macoswindowslinux">8.3 桌面客户端（macOS/Windows/Linux）<a aria-hidden="true" class="anchor" hidden="" href="#83-桌面客户端macoswindowslinux">#</a></h3><h4 id="配置步骤-2">配置步骤<a aria-hidden="true" class="anchor" hidden="" href="#配置步骤-2">#</a></h4><ol><li>下载Nextcloud官方客户端</li><li>创建新账户：<ul><li>服务器地址: <code>https://nc.skyspace.eu.org</code></li><li>用户名: <code>admin</code></li><li>密码: <code>tianz728~</code></li></ul></li><li>选择同步文件夹</li><li>点击"连接"</li></ol><h3 id="84-web浏览器访问">8.4 Web浏览器访问<a aria-hidden="true" class="anchor" hidden="" href="#84-web浏览器访问">#</a></h3><p>直接访问：<code>https://nc.skyspace.eu.org</code></p><p>局域网访问：<code>https://192.168.10.222:8443</code>（首次需信任证书）</p><hr/><h2 id="九维护与监控">九、维护与监控<a aria-hidden="true" class="anchor" hidden="" href="#九维护与监控">#</a></h2><h3 id="91-日常维护">9.1 日常维护<a aria-hidden="true" class="anchor" hidden="" href="#91-日常维护">#</a></h3><h4 id="查看日志">查看日志<a aria-hidden="true" class="anchor" hidden="" href="#查看日志">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Nextcloud日志</span>
+</span></span><span class="line"><span class="cl">docker logs nextcloud --tail <span class="m">50</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># MySQL日志</span>
+</span></span><span class="line"><span class="cl">docker logs nextcloud-mysql --tail <span class="m">50</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Nginx日志（本地）</span>
+</span></span><span class="line"><span class="cl">tail -f /opt/homebrew/var/log/nextcloud-https.error.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Nginx日志（服务器）</span>
+</span></span><span class="line"><span class="cl">ssh server <span class="s2">"tail -f /var/log/nginx/nc.skyspace.eu.org.error.log"</span>
+</span></span></code></pre></div><h4 id="检查服务状态">检查服务状态<a aria-hidden="true" class="anchor" hidden="" href="#检查服务状态">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 容器状态</span>
+</span></span><span class="line"><span class="cl">docker ps <span class="p">|</span> grep nextcloud
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 磁盘使用</span>
+</span></span><span class="line"><span class="cl">df -h /Volumes/G/nextCloud
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 数据库大小</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud-mysql du -sh /var/lib/mysql
+</span></span></code></pre></div><h3 id="92-备份策略">9.2 备份策略<a aria-hidden="true" class="anchor" hidden="" href="#92-备份策略">#</a></h3><h4 id="数据备份位置">数据备份位置<a aria-hidden="true" class="anchor" hidden="" href="#数据备份位置">#</a></h4><ul><li>Nextcloud数据: <code>/var/www/html/data</code> → Docker volume <code>nextcloud_data</code></li><li>数据库: <code>/var/lib/mysql</code> → Docker volume <code>mysql_data</code></li><li>G盘挂载: <code>/Volumes/G/nextCloud</code> → 物理存储</li></ul><h4 id="备份脚本示例">备份脚本示例<a aria-hidden="true" class="anchor" hidden="" href="#备份脚本示例">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="c1"># 备份脚本</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BACKUP_DIR</span><span class="o">=</span><span class="s2">"/path/to/backup"</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date +%Y%m%d_%H%M%S<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份配置</span>
+</span></span><span class="line"><span class="cl">cp ~/nextcloud/config.php <span class="nv">$BACKUP_DIR</span>/config_<span class="nv">$DATE</span>.php
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 导出数据库</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud-mysql mysqldump -u nextcloud -pnextcloud123 nextcloud &gt; <span class="nv">$BACKUP_DIR</span>/database_<span class="nv">$DATE</span>.sql
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份Docker volumes</span>
+</span></span><span class="line"><span class="cl">docker run --rm <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -v nextcloud_data:/data <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -v <span class="nv">$BACKUP_DIR</span>:/backup <span class="se">\
+</span></span></span><span class="line"><span class="cl">  alpine tar czf /backup/nextcloud_data_<span class="nv">$DATE</span>.tar.gz -C /data .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker run --rm <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -v mysql_data:/data <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -v <span class="nv">$BACKUP_DIR</span>:/backup <span class="se">\
+</span></span></span><span class="line"><span class="cl">  alpine tar czf /backup/mysql_data_<span class="nv">$DATE</span>.tar.gz -C /data .
+</span></span></code></pre></div><h3 id="93-性能监控">9.3 性能监控<a aria-hidden="true" class="anchor" hidden="" href="#93-性能监控">#</a></h3><h4 id="nextcloud-occ命令">Nextcloud OCC命令<a aria-hidden="true" class="anchor" hidden="" href="#nextcloud-occ命令">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查系统状态</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查文件完整性</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ integrity:check-core
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看配置</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ config:list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清理文件缓存</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ files:cleanup
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 扫描文件</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ files:scan --all
+</span></span></code></pre></div><h4 id="数据库维护">数据库维护<a aria-hidden="true" class="anchor" hidden="" href="#数据库维护">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 进入MySQL</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it nextcloud-mysql mysql -u nextcloud -pnextcloud123 nextcloud
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 优化表</span>
+</span></span><span class="line"><span class="cl">OPTIMIZE TABLE oc_filecache<span class="p">;</span>
+</span></span><span class="line"><span class="cl">OPTIMIZE TABLE oc_filecache_extended<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看表大小</span>
+</span></span><span class="line"><span class="cl">SELECT table_name,
+</span></span><span class="line"><span class="cl">       ROUND<span class="o">(((</span>data_length + index_length<span class="o">)</span> / <span class="m">1024</span> / 1024<span class="o">)</span>, 2<span class="o">)</span> AS <span class="s2">"Size in MB"</span>
+</span></span><span class="line"><span class="cl">FROM information_schema.TABLES
+</span></span><span class="line"><span class="cl">WHERE <span class="nv">table_schema</span> <span class="o">=</span> <span class="s2">"nextcloud"</span>
+</span></span><span class="line"><span class="cl">ORDER BY <span class="o">(</span>data_length + index_length<span class="o">)</span> DESC<span class="p">;</span>
+</span></span></code></pre></div><h3 id="94-lets-encrypt证书维护">9.4 Let’s Encrypt证书维护<a aria-hidden="true" class="anchor" hidden="" href="#94-lets-encrypt证书维护">#</a></h3><h4 id="查看证书信息">查看证书信息<a aria-hidden="true" class="anchor" hidden="" href="#查看证书信息">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh server <span class="s2">"openssl x509 -in /etc/letsencrypt/live/nc.skyspace.eu.org/fullchain.pem -noout -subject -issuer -dates"</span>
+</span></span></code></pre></div><h4 id="手动续期">手动续期<a aria-hidden="true" class="anchor" hidden="" href="#手动续期">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh server <span class="s2">"certbot renew"</span>
+</span></span></code></pre></div><h4 id="测试自动续期">测试自动续期<a aria-hidden="true" class="anchor" hidden="" href="#测试自动续期">#</a></h4><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh server <span class="s2">"certbot renew --dry-run"</span>
+</span></span></code></pre></div><h4 id="证书有效期">证书有效期<a aria-hidden="true" class="anchor" hidden="" href="#证书有效期">#</a></h4><ul><li>颁发日: 2026-03-04</li><li>到期日: 2026-06-02</li><li>有效期: 90天</li><li>自动续期: ✅ 已启用</li></ul><hr/><h2 id="十故障排查">十、故障排查<a aria-hidden="true" class="anchor" hidden="" href="#十故障排查">#</a></h2><h3 id="101-常见问题诊断流程">10.1 常见问题诊断流程<a aria-hidden="true" class="anchor" hidden="" href="#101-常见问题诊断流程">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">问题：无法访问Nextcloud
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├─ 1. 检查容器状态
+</span></span><span class="line"><span class="cl">│   └─ docker ps | grep nextcloud
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├─ 2. 检查网络连接
+</span></span><span class="line"><span class="cl">│   ├─ 局域网: curl http://192.168.10.222:8080
+</span></span><span class="line"><span class="cl">│   ├─ 公网: curl https://nc.skyspace.eu.org
+</span></span><span class="line"><span class="cl">│   └─ Tailscale: curl http://100.97.62.83:8080
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├─ 3. 检查域名解析
+</span></span><span class="line"><span class="cl">│   ├─ dig nc.skyspace.eu.org
+</span></span><span class="line"><span class="cl">│   └─ dig 192.168.10.222
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├─ 4. 检查trusted_domains
+</span></span><span class="line"><span class="cl">│   └─ docker exec nextcloud php occ config:system:get trusted_domains
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├─ 5. 检查SSL证书
+</span></span><span class="line"><span class="cl">│   ├─ 本地: openssl s_client -connect 192.168.10.222:8443
+</span></span><span class="line"><span class="cl">│   └─ 公网: openssl s_client -connect nc.skyspace.eu.org:443
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">└─ 6. 查看详细日志
+</span></span><span class="line"><span class="cl">    ├─ docker logs nextcloud --tail 100
+</span></span><span class="line"><span class="cl">    ├─ docker logs nextcloud-mysql --tail 100
+</span></span><span class="line"><span class="cl">    └─ nginx error日志
+</span></span></code></pre></div><h3 id="102-日志分析">10.2 日志分析<a aria-hidden="true" class="anchor" hidden="" href="#102-日志分析">#</a></h3><h4 id="错误日志位置">错误日志位置<a aria-hidden="true" class="anchor" hidden="" href="#错误日志位置">#</a></h4><ul><li>Nextcloud: <code>docker logs nextcloud</code></li><li>MySQL: <code>docker logs nextcloud-mysql</code></li><li>Nginx（本地）: <code>/opt/homebrew/var/log/nginx/error.log</code></li><li>Nginx（服务器）: <code>/var/log/nginx/nc.skyspace.eu.org.error.log</code></li><li>Nextcloud内部日志: <code>docker exec nextcloud cat /var/www/html/data/nextcloud.log</code></li></ul><h4 id="常见错误代码">常见错误代码<a aria-hidden="true" class="anchor" hidden="" href="#常见错误代码">#</a></h4><ul><li><strong>502 Bad Gateway</strong>: Nextcloud容器未运行或端口错误</li><li><strong>504 Gateway Timeout</strong>: 请求超时（检查超时配置）</li><li><strong>SSL_ERROR</strong>: 证书问题或配置错误</li><li><strong>401 Unauthorized</strong>: 认证失败（检查用户名密码）</li><li><strong>403 Forbidden</strong>: 权限问题（检查trusted_domains）</li><li><strong>“通过不被信任的域名访问”</strong>: 需要添加到trusted_domains</li></ul><h3 id="103-性能调优建议">10.3 性能调优建议<a aria-hidden="true" class="anchor" hidden="" href="#103-性能调优建议">#</a></h3><h4 id="如果公网访问慢">如果公网访问慢<a aria-hidden="true" class="anchor" hidden="" href="#如果公网访问慢">#</a></h4><ol><li>检查Tailscale连接质量</li><li>考虑使用CDN（Cloudflare代理）</li><li>优化数据库查询</li><li>增加Redis缓存</li></ol><h4 id="如果局域网访问慢">如果局域网访问慢<a aria-hidden="true" class="anchor" hidden="" href="#如果局域网访问慢">#</a></h4><ol><li>检查本地网络速度</li><li>优化nginx配置</li><li>确认使用HTTPS（8443端口）</li><li>检查CPU和内存使用率</li></ol><h4 id="如果上传失败">如果上传失败<a aria-hidden="true" class="anchor" hidden="" href="#如果上传失败">#</a></h4><ol><li>检查文件大小限制（配置为10GB）</li><li>检查超时设置（配置为3600秒）</li><li>检查磁盘空间</li><li>尝试使用客户端而非Web上传</li></ol><hr/><h2 id="十一总结">十一、总结<a aria-hidden="true" class="anchor" hidden="" href="#十一总结">#</a></h2><h3 id="111-项目成果">11.1 项目成果<a aria-hidden="true" class="anchor" hidden="" href="#111-项目成果">#</a></h3><p>✅ <strong>完成的配置</strong></p><ol><li>本地Mac上运行Nextcloud（Docker + Colima）</li><li>MySQL 8.0数据库优化</li><li>Redis三级缓存</li><li>局域网HTTPS访问（自签名证书）</li><li>公网HTTPS访问（Let’s Encrypt证书）</li><li>Tailscale VPN支持</li><li>大文件上传支持（10GB）</li><li>性能优化（OPcache、HTTP/2）</li><li>自动证书续期</li><li>监控和管理脚本</li></ol><p>✅ <strong>性能提升</strong></p><ul><li>公网访问延迟降低26%（1.22秒 → 0.90秒）</li><li>局域网访问极快（0.01秒）</li><li>大文件上传稳定</li></ul><p>✅ <strong>问题解决</strong></p><ul><li>SSL初始化失败 → 已修复</li><li>局域网访问报错 → 已修复</li><li>大文件上传失败 → 已修复</li><li>MySQL启动慢 → 已优化</li></ul><h3 id="112-最佳实践">11.2 最佳实践<a aria-hidden="true" class="anchor" hidden="" href="#112-最佳实践">#</a></h3><h4 id="推荐使用场景">推荐使用场景<a aria-hidden="true" class="anchor" hidden="" href="#推荐使用场景">#</a></h4><ul><li><strong>公网访问</strong>: 使用 <code>https://nc.skyspace.eu.org</code>（Let’s Encrypt证书）</li><li><strong>局域网访问</strong>: 使用 <code>https://192.168.10.222:8443</code>（速度最快）</li><li><strong>VPN访问</strong>: 使用 <code>http://100.97.62.83:8080</code>（Tailscale内网）</li></ul><h4 id="安全建议">安全建议<a aria-hidden="true" class="anchor" hidden="" href="#安全建议">#</a></h4><ol><li>定期更新Nextcloud版本</li><li>使用强密码</li><li>启用两步验证（待配置）</li><li>定期备份数据</li><li>监控日志文件</li><li>及时更新SSL证书</li></ol><h4 id="备份策略">备份策略<a aria-hidden="true" class="anchor" hidden="" href="#备份策略">#</a></h4><ol><li>每周自动备份数据库</li><li>每月备份配置文件</li><li>G盘物理存储作为主要备份</li><li>异地备份重要文件</li></ol><h3 id="113-未来优化方向">11.3 未来优化方向<a aria-hidden="true" class="anchor" hidden="" href="#113-未来优化方向">#</a></h3><h4 id="性能优化">性能优化<a aria-hidden="true" class="anchor" hidden="" href="#性能优化">#</a></h4><ol><li>配置Cloudflare CDN（可选）</li><li>启用HTTP/3（QUIC）</li><li>优化数据库索引</li><li>配置负载均衡</li></ol><h4 id="功能增强">功能增强<a aria-hidden="true" class="anchor" hidden="" href="#功能增强">#</a></h4><ol><li>配置OnlyOffice/Collabora在线编辑</li><li>启用两步验证</li><li>配置邮件通知</li><li>添加应用白名单</li><li>配置外部存储（S3、FTP等）</li></ol><h4 id="安全加固">安全加固<a aria-hidden="true" class="anchor" hidden="" href="#安全加固">#</a></h4><ol><li>配置fail2ban防暴力破解</li><li>启用审计日志</li><li>定期安全扫描</li><li>配置WAF（Web应用防火墙）</li></ol><hr/><h2 id="十二参考文档">十二、参考文档<a aria-hidden="true" class="anchor" hidden="" href="#十二参考文档">#</a></h2><h3 id="官方文档">官方文档<a aria-hidden="true" class="anchor" hidden="" href="#官方文档">#</a></h3><ul><li>Nextcloud官方文档: <a href="https://docs.nextcloud.com/">https://docs.nextcloud.com/</a></li><li>Docker官方文档: <a href="https://docs.docker.com/">https://docs.docker.com/</a></li><li>Let’s Encrypt文档: <a href="https://letsencrypt.org/docs/">https://letsencrypt.org/docs/</a></li><li>Tailscale文档: <a href="https://tailscale.com/kb/">https://tailscale.com/kb/</a></li></ul><h3 id="配置文件位置总结">配置文件位置总结<a aria-hidden="true" class="anchor" hidden="" href="#配置文件位置总结">#</a></h3><table><thead><tr><th>文件类型</th><th>本地路径</th><th>容器内路径</th><th>服务器路径</th></tr></thead><tbody><tr><td>Docker Compose</td><td>~/nextcloud/docker-compose.yml</td><td>-</td><td>-</td></tr><tr><td>Nextcloud配置</td><td>~/nextcloud/config.php</td><td>/var/www/html/config/config.php</td><td>-</td></tr><tr><td>MySQL配置</td><td>~/nextcloud/optimizations/mysql.cnf</td><td>/etc/mysql/conf.d/custom.cnf</td><td>-</td></tr><tr><td>PHP OPcache</td><td>~/nextcloud/optimizations/00-opcache.ini</td><td>/usr/local/etc/php/conf.d/00-opcache.ini</td><td>-</td></tr><tr><td>PHP超时</td><td>~/nextcloud/optimizations/99-timeouts.ini</td><td>/usr/local/etc/php/conf.d/99-timeouts.ini</td><td>-</td></tr><tr><td>Nginx配置（本地）</td><td>/opt/homebrew/etc/nginx/servers/nextcloud-https.conf</td><td>-</td><td>-</td></tr><tr><td>SSL证书（本地）</td><td>~/nextcloud/ssl/</td><td>-</td><td>-</td></tr><tr><td>Nginx配置（服务器）</td><td>-</td><td>-</td><td>/etc/nginx/sites-available/nc.skyspace.eu.org.conf</td></tr><tr><td>Let’s Encrypt证书</td><td>-</td><td>-</td><td>/etc/letsencrypt/live/nc.skyspace.eu.org/</td></tr></tbody></table><h3 id="快速命令参考">快速命令参考<a aria-hidden="true" class="anchor" hidden="" href="#快速命令参考">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动服务</span>
+</span></span><span class="line"><span class="cl">~/nextcloud/nextcloud.sh start
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启服务</span>
+</span></span><span class="line"><span class="cl">~/nextcloud/nextcloud.sh restart
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看状态</span>
+</span></span><span class="line"><span class="cl">~/nextcloud/nextcloud.sh status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看日志</span>
+</span></span><span class="line"><span class="cl">~/nextcloud/nextcloud.sh logs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加trusted domain</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ config:system:set trusted_domains <span class="m">8</span> --value<span class="o">=</span><span class="s2">"new.domain.com"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查更新</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ update:check
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 扫描文件</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ files:scan --all
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清理缓存</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ maintenance:repair
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看系统状态</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> nextcloud php occ status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 证书续期</span>
+</span></span><span class="line"><span class="cl">ssh server <span class="s2">"certbot renew"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看证书信息</span>
+</span></span><span class="line"><span class="cl">ssh server <span class="s2">"openssl x509 -in /etc/letsencrypt/live/nc.skyspace.eu.org/fullchain.pem -noout -subject -issuer -dates"</span>
+</span></span></code></pre></div><hr/><p><strong>文档版本</strong>: 1.0
+<strong>最后更新</strong>: 2026-03-05
+<strong>维护者</strong>: <a href="mailto:admin@skyspace.eu.org">admin@skyspace.eu.org</a></p><hr/><h2 id="附录完整域名列表">附录：完整域名列表<a aria-hidden="true" class="anchor" hidden="" href="#附录完整域名列表">#</a></h2><p>当前配置的trusted_domains：</p><table><thead><tr><th>序号</th><th>域名</th><th>协议</th><th>用途</th></tr></thead><tbody><tr><td>0</td><td>localhost</td><td>HTTP</td><td>本地测试</td></tr><tr><td>1</td><td>localhost:8080</td><td>HTTP</td><td>本地测试</td></tr><tr><td>2</td><td>nextcloud.skyspace.eu.org</td><td>HTTPS</td><td>公网访问（旧）</td></tr><tr><td>3</td><td>192.168.10.222:8080</td><td>HTTP</td><td>局域网访问</td></tr><tr><td>4</td><td>100.97.62.83:8080</td><td>HTTP</td><td>Tailscale VPN</td></tr><tr><td>5</td><td>nc.skyspace.eu.org</td><td>HTTPS</td><td>公网访问（新，推荐）</td></tr><tr><td>6</td><td>192.168.10.222:8443</td><td>HTTPS</td><td>局域网HTTPS（推荐）</td></tr></tbody></table><p><strong>推荐使用</strong>:</p><ul><li>🌐 公网: <code>https://nc.skyspace.eu.org</code></li><li>🏠 局域网: <code>https://192.168.10.222:8443</code></li><li>🔐 VPN: <code>http://100.97.62.83:8080</code></li></ul><hr/><p><strong>END OF DOCUMENT</strong></p></div><footer class="post-footer"><ul class="post-tags"></ul><nav class="paginav"><a class="prev" href="https://bluespace.eu.org/post/nextcloud/nextcloud%E6%8C%82%E8%BD%BD%E7%82%B9%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"><span class="title">«</span><br/><span>Nextcloud 挂载点配置指南</span>
+</a><a class="next" href="https://bluespace.eu.org/post/nextcloud/migration-summary/"><span class="title">»</span><br/><span>Nextcloud 数据库迁移总结</span></a></nav><ul class="share-buttons"><li><a aria-label="share Nextcloud 配置与优化总结 on x" href="https://x.com/intent/tweet/?text=Nextcloud%20%e9%85%8d%e7%bd%ae%e4%b8%8e%e4%bc%98%e5%8c%96%e6%80%bb%e7%bb%93&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2fnextcloud%2fnextcloud-setup-summary%2f&amp;hashtags=" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"></path></svg></a></li><li><a aria-label="share Nextcloud 配置与优化总结 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2fnextcloud%2fnextcloud-setup-summary%2f&amp;title=Nextcloud%20%e9%85%8d%e7%bd%ae%e4%b8%8e%e4%bc%98%e5%8c%96%e6%80%bb%e7%bb%93&amp;summary=Nextcloud%20%e9%85%8d%e7%bd%ae%e4%b8%8e%e4%bc%98%e5%8c%96%e6%80%bb%e7%bb%93&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2fnextcloud%2fnextcloud-setup-summary%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"></path></svg></a></li><li><a aria-label="share Nextcloud 配置与优化总结 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2fnextcloud%2fnextcloud-setup-summary%2f&amp;title=Nextcloud%20%e9%85%8d%e7%bd%ae%e4%b8%8e%e4%bc%98%e5%8c%96%e6%80%bb%e7%bb%93" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"></path></svg></a></li><li><a aria-label="share Nextcloud 配置与优化总结 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2fnextcloud%2fnextcloud-setup-summary%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"></path></svg></a></li><li><a aria-label="share Nextcloud 配置与优化总结 on whatsapp" href="https://api.whatsapp.com/send?text=Nextcloud%20%e9%85%8d%e7%bd%ae%e4%b8%8e%e4%bc%98%e5%8c%96%e6%80%bb%e7%bb%93%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2fnextcloud%2fnextcloud-setup-summary%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"></path></svg></a></li><li><a aria-label="share Nextcloud 配置与优化总结 on telegram" href="https://telegram.me/share/url?text=Nextcloud%20%e9%85%8d%e7%bd%ae%e4%b8%8e%e4%bc%98%e5%8c%96%e6%80%bb%e7%bb%93&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2fnextcloud%2fnextcloud-setup-summary%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="2 2 28 28" width="30"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"></path></svg></a></li><li><a aria-label="share Nextcloud 配置与优化总结 on ycombinator" href="https://news.ycombinator.com/submitlink?t=Nextcloud%20%e9%85%8d%e7%bd%ae%e4%b8%8e%e4%bc%98%e5%8c%96%e6%80%bb%e7%bb%93&amp;u=https%3a%2f%2fbluespace.eu.org%2fpost%2fnextcloud%2fnextcloud-setup-summary%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"></path></svg></a></li></ul></footer></article></main><footer class="footer"><span>© 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+<a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a></span></footer><a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)"><svg fill="currentColor" viewbox="0 0 12 6"><path d="M12 6H0l6-6z"></path></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
