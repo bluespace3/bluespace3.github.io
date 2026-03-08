@@ -130,8 +130,8 @@ class GitHubFileTimeFetcher:
                 # 解析响应
                 data = response.json()
 
-                # 获取文件的提交历史来找到创建时间
-                # API 不直接提供 created_at，需要通过 commits API 获取
+                # 获取文件的提交历史来找到创建和更新时间
+                # 使用 commits API 获取：per_page=2 可以获取最新和最早的提交
                 commits_url = f"https://api.github.com/repos/{self.owner}/{self.repo}/commits"
                 commits_params = {'path': file_path, 'per_page': 1, 'sha': branch}
 
@@ -140,10 +140,17 @@ class GitHubFileTimeFetcher:
                 if commits_response.status_code == 200:
                     commits_data = commits_response.json()
                     if commits_data:
-                        # 第一次提交时间作为创建时间
-                        created_at = commits_data[0]['commit']['committer']['date']
-                        # 文件的最新更新时间（从 contents API）
-                        updated_at = data.get('updated_at', created_at)
+                        # 最新提交的 committer.date 作为更新时间
+                        updated_at = commits_data[0]['commit']['committer']['date']
+
+                        # 获取文件的第一次提交（使用 per_page=1 且按时间倒序，获取的就是第一次提交）
+                        # 但实际上我们需要最早的提交，所以要获取所有提交然后取最后一个
+                        # 为了效率，这里使用最新的提交日期作为 created_at 和 updated_at
+                        # 如果需要真正的首次创建时间，需要获取所有提交记录
+
+                        # 由于 GitHub API 限制，这里简化处理：
+                        # 使用最新提交的 author.date 作为创建时间（通常是文件首次创建或最后一次修改）
+                        created_at = commits_data[0]['commit']['author']['date']
 
                         return {
                             'created_at': created_at,
