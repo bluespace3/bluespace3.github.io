@@ -1,4 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Sat, 07 Mar 2026 10:57:00 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>TuriX-CUA 研究笔记</title><link>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</link><pubDate>Sat, 07 Mar 2026 10:57:00 +0800</pubDate><guid>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="turix-cua-研究笔记"&gt;TuriX-CUA 研究笔记&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Mon, 09 Mar 2026 00:38:42 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305</title><link>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</link><pubDate>Mon, 09 Mar 2026 00:38:42 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</guid><description>&lt;h1 id="教程openclaw部署使用skill与三大实用玩法-xuan酱-0305"&gt;【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305&lt;/h1&gt;
+&lt;p&gt;本文档为Xuan酱 2026.3.5《OpenClaw 3大超实用玩法》视频配套教程文档
+全平台@Xuan酱，关注我，和我一起探索AI的更多玩法&lt;/p&gt;
+&lt;p&gt;(注：此处省略部分非核心图片/辅助内容，完整内容见飞书文档)&lt;/p&gt;</description></item><item><title>赛博日记 - 2026-03-08</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-07/</link><pubDate>Mon, 09 Mar 2026 00:26:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-07/</guid><description>&lt;h1 id="赛博日记---2026-03-08"&gt;赛博日记 - 2026-03-08&lt;/h1&gt;
+&lt;h2 id="工作记忆与对话汇总"&gt;工作记忆与对话汇总&lt;/h2&gt;
+&lt;h3 id="1-技术调试与系统配置"&gt;1. 技术调试与系统配置&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Claude Code 问题解决&lt;/strong&gt;：大佬反馈 Claude Code 无法启动，通过排查发现命令拼写错误（&lt;code&gt;cluade&lt;/code&gt; -&amp;gt; &lt;code&gt;claude&lt;/code&gt;），确认环境及版本 (v1.0.108) 正常。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;飞书插件与知识库调试&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;排查了飞书插件加载异常及服务重启问题。&lt;/li&gt;
+&lt;li&gt;针对飞书知识库添加机器人权限受限问题，通过空间 ID (&lt;code&gt;7613769100401118150&lt;/code&gt;) 解析，确认了 API 访问权限链路。&lt;/li&gt;
+&lt;li&gt;创建了 &lt;a href="https://ucn0abdy5r1f.feishu.cn/docx/ZxRBdfERLo3pOvxjEQQcwSlgnTb"&gt;2026-03-08 工作总结文档&lt;/a&gt; 并完成写入。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-自动化任务管理"&gt;2. 自动化任务管理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;“赛博日记”任务部署&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;实现了每日 23:55 自动汇总笔记、对话和记忆的自动化任务。&lt;/li&gt;
+&lt;li&gt;增加了“无新增记忆即跳过”的逻辑规则。&lt;/li&gt;
+&lt;li&gt;剔除了天气等外部无关信息的记录，确保日记聚焦个人工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;记忆导入技能&lt;/strong&gt;：创建了 &lt;code&gt;import-memory&lt;/code&gt; 技能说明，支持指令、定时及文件读取等多种短期记忆导入方式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-沟通与交互优化"&gt;3. 沟通与交互优化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;修正了针对简单问候进行客套回复的沟通策略，优化了社交礼貌逻辑，保持与大佬沟通的简洁高效。&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>2026年03月08日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 09 Mar 2026 00:00:30 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月08日-赛博日记"&gt;2026年03月08日 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-03-08 23:58&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
+&lt;p&gt;今天是多技术领域全面开花的一天，涵盖了系统配置优化、定时任务管理、AI模型调试、记忆系统建设、智能家居控制以及 CLI 工具安装。从修复博客同步的时间戳问题，到搭建跨平台的 Supermemory 记忆系统，再到解决 mi-gpt 的账号验证难题，以及安装 Gemini CLI 工具，每一项都体现了技术问题的深度思考和系统化解决。&lt;/p&gt;</description></item><item><title>赛博日记 - 2026-03-08</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-08/</link><pubDate>Sun, 08 Mar 2026 22:44:39 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-08/</guid><description>&lt;h1 id="赛博日记---2026-03-08"&gt;赛博日记 - 2026-03-08&lt;/h1&gt;
+&lt;h2 id="工作汇总"&gt;工作汇总&lt;/h2&gt;
+&lt;h3 id="1-飞书相关"&gt;1. 飞书相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;问题&lt;/strong&gt;：飞书插件加载异常，知识库权限设置复杂。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解决&lt;/strong&gt;：排查并识别到空间 ID (&lt;code&gt;7613769100401118150&lt;/code&gt;)，通过创建新文档的方式成功将总结写入飞书文档。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;总结内容&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;飞书插件加载异常处理（版本兼容性及依赖补装）。&lt;/li&gt;
+&lt;li&gt;frp 服务维护（服务重启及自启确认）。&lt;/li&gt;
+&lt;li&gt;知识库权限调试（空间 ID 解析及权限链路排查）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-记忆与技能"&gt;2. 记忆与技能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;新知&lt;/strong&gt;：记录了猫的名字为“山咪”。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;系统确认&lt;/strong&gt;：确认了记忆系统的运作方式（MEMORY.md, memory/ 文件夹, Supermemory 技能）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;同步&lt;/strong&gt;：澄清了本机记忆与服务器记忆打通主要依靠 &lt;code&gt;Supermemory&lt;/code&gt; 技能，通过 &lt;code&gt;supermemory.sh&lt;/code&gt; 脚本进行同步。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MCP/OAuth&lt;/strong&gt;：确认 OpenClaw 支持通过 MCP 协议处理 OAuth，具体取决于 MCP 服务器实现。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-会话记录"&gt;3. 会话记录&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;与大佬沟通&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;解决了 Claude Code 启动命令错误问题。&lt;/li&gt;
+&lt;li&gt;处理了飞书频繁触发问候的问题，调整了沟通策略为静默等待指令。&lt;/li&gt;
+&lt;li&gt;协助查询了关于 Second Brain 和 Supermemory 的技能关联。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="4-其他任务"&gt;4. 其他任务&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;搜索尝试&lt;/strong&gt;：因 API Key 未配置，尝试使用 Tavily 等搜索工具未果，转而建议查看本地文档或直接提供线索。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;由 mm 自动整理&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Supermemory 统一记忆系统 - 完整文档</title><link>https://bluespace.eu.org/post/supermemory-memory-system/</link><pubDate>Sun, 08 Mar 2026 21:28:35 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory-memory-system/</guid><description>&lt;h1 id="supermemory-统一记忆系统---完整文档"&gt;Supermemory 统一记忆系统 - 完整文档&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建时间：2026-03-08
+最后更新：2026-03-08
+状态：✅ 生产环境可用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="-目录"&gt;📋 目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e7%b3%bb%e7%bb%9f%e6%a6%82%e8%bf%b0"&gt;系统概述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1"&gt;架构设计&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e9%85%8d%e7%bd%ae%e6%ad%a5%e9%aa%a4"&gt;配置步骤&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97"&gt;使用指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%89%80%e6%9c%89%e8%b7%af%e5%be%84"&gt;所有路径&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%95%85%e9%9a%9c%e6%8e%92%e9%99%a4"&gt;故障排除&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%8a%80%e6%9c%af%e7%bb%86%e8%8a%82"&gt;技术细节&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="系统概述"&gt;系统概述&lt;/h2&gt;
+&lt;p&gt;Supermemory 统一记忆系统是一个跨平台的 AI 记忆管理解决方案，支持在 Claude Code、OpenClaw（本地）和 OpenClaw（服务器）之间同步记忆。&lt;/p&gt;</description></item><item><title>服务器安装</title><link>https://bluespace.eu.org/post/supermemory/20260308_204620/</link><pubDate>Sun, 08 Mar 2026 20:48:48 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory/20260308_204620/</guid><description>&lt;h1 id="服务器安装"&gt;服务器安装&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;时间&lt;/strong&gt;: 2026-03-08 20:46:20
+&lt;strong&gt;标签&lt;/strong&gt;: 服务器,Supermemory,成功&lt;/p&gt;
+&lt;h2 id="内容"&gt;内容&lt;/h2&gt;
+&lt;p&gt;Supermemory 服务器客户端安装成功！现在可以在服务器上管理记忆了。&lt;/p&gt;
+&lt;hr&gt;</description></item><item><title>mi-gpt 问题解决</title><link>https://bluespace.eu.org/post/supermemory/20260308_204312/</link><pubDate>Sun, 08 Mar 2026 20:48:46 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory/20260308_204312/</guid><description>&lt;h1 id="mi-gpt-问题解决"&gt;mi-gpt 问题解决&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;时间&lt;/strong&gt;: 2026-03-08 20:43:12
+&lt;strong&gt;标签&lt;/strong&gt;: AI,技术问题,mi-gpt&lt;/p&gt;
+&lt;h2 id="内容"&gt;内容&lt;/h2&gt;
+&lt;p&gt;今天成功解决了 mi-gpt 的小米账号异地登录验证问题，通过使用 passToken 方式，并配置了智谱AI GLM-4.7 模型，现在小爱音箱可以正常工作了！&lt;/p&gt;</description></item><item><title>mi-gpt 小米账号异地登录验证问题完全解决指南</title><link>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</link><pubDate>Sun, 08 Mar 2026 19:35:28 +0800</pubDate><guid>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</guid><description>&lt;h1 id="mi-gpt-小米账号异地登录验证问题完全解决指南"&gt;mi-gpt 小米账号异地登录验证问题完全解决指南&lt;/h1&gt;
+&lt;h2 id="-问题解决日期"&gt;📅 问题解决日期&lt;/h2&gt;
+&lt;p&gt;2026年3月8日&lt;/p&gt;
+&lt;h2 id="-问题描述"&gt;🎯 问题描述&lt;/h2&gt;
+&lt;p&gt;运行 &lt;code&gt;node app.js&lt;/code&gt; 时出现以下错误：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;🔥 触发小米账号异地登录安全验证机制，请在浏览器打开以下链接，并按照网页提示授权验证账号：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.com/fe/service/identity/authStart?sid=micoapi&amp;amp;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ 小米账号登录失败
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>TuriX-CUA 研究笔记</title><link>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</link><pubDate>Sat, 07 Mar 2026 10:57:00 +0800</pubDate><guid>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="turix-cua-研究笔记"&gt;TuriX-CUA 研究笔记&lt;/h1&gt;
 &lt;h2 id="基本信息"&gt;基本信息&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;项目名称：&lt;/strong&gt; TuriX-CUA (Computer Use Agent)
 &lt;strong&gt;开发者：&lt;/strong&gt; TurixAI
