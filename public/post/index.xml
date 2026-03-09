@@ -1,4 +1,482 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Mon, 09 Mar 2026 00:38:42 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305</title><link>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</link><pubDate>Mon, 09 Mar 2026 00:38:42 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</guid><description>&lt;h1 id="教程openclaw部署使用skill与三大实用玩法-xuan酱-0305"&gt;【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Tue, 10 Mar 2026 01:47:55 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>仓位管理系统 - 现有工具调研报告</title><link>https://bluespace.eu.org/post/position-management-research-20260310/</link><pubDate>Tue, 10 Mar 2026 01:47:55 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-research-20260310/</guid><description>&lt;h1 id="仓位管理系统---现有工具调研报告"&gt;仓位管理系统 - 现有工具调研报告&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
+&lt;strong&gt;目的&lt;/strong&gt;: 调研市场上现有的相关工具和开源项目，避免重复造轮子&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="1-openclawclawhub-生态"&gt;1. OpenClaw/ClawHub 生态&lt;/h2&gt;
+&lt;h3 id="11-portfolio-相关-skill"&gt;1.1 Portfolio 相关 Skill&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Skill 名称&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;th&gt;匹配度&lt;/th&gt;
+&lt;th&gt;适用性&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;portfolio-manager&lt;/td&gt;
+&lt;td&gt;使用 Alpaca MCP Server 集成进行投资组合分析&lt;/td&gt;
+&lt;td&gt;⚠️ 部分匹配&lt;/td&gt;
+&lt;td&gt;需要券商 API，不适合散户&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;afrexai-investment-engine&lt;/td&gt;
+&lt;td&gt;投资分析和投资组合管理引擎&lt;/td&gt;
+&lt;td&gt;⚠️ 部分匹配&lt;/td&gt;
+&lt;td&gt;功能过重，主要是 AI 分析&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;finance-automation&lt;/td&gt;
+&lt;td&gt;金融自动化（支付、发票、费用）&lt;/td&gt;
+&lt;td&gt;❌ 不匹配&lt;/td&gt;
+&lt;td&gt;主要是企业财务管理&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;portfolio-watcher&lt;/td&gt;
+&lt;td&gt;投资组合监控&lt;/td&gt;
+&lt;td&gt;❓ 未知&lt;/td&gt;
+&lt;td&gt;需要进一步了解&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;portfolio-tracker&lt;/td&gt;
+&lt;td&gt;投资组合跟踪&lt;/td&gt;
+&lt;td&gt;❓ 未知&lt;/td&gt;
+&lt;td&gt;需要进一步了解&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;openmm-portfolio&lt;/td&gt;
+&lt;td&gt;OpenMM 投资组合&lt;/td&gt;
+&lt;td&gt;❌ 不匹配&lt;/td&gt;
+&lt;td&gt;数字货币相关&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="12-已安装-skill"&gt;1.2 已安装 Skill&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;manus-stock-analysis&lt;/strong&gt;: ✅ 已安装，可用于技术分析
+&lt;ul&gt;
+&lt;li&gt;功能: 获取股票数据、技术分析&lt;/li&gt;
+&lt;li&gt;可复用: 是，可作为分析模块&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="13-结论"&gt;1.3 结论&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ClawHub 生态现状&lt;/strong&gt;:&lt;/p&gt;</description></item><item><title>仓位管理系统 - 产品设计文档</title><link>https://bluespace.eu.org/post/position-management-design-v1.0/</link><pubDate>Tue, 10 Mar 2026 01:42:23 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-design-v1.0/</guid><description>&lt;h1 id="仓位管理系统---产品设计文档"&gt;仓位管理系统 - 产品设计文档&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;版本&lt;/strong&gt;: v1.0
+&lt;strong&gt;创建日期&lt;/strong&gt;: 2026-03-10
+&lt;strong&gt;作者&lt;/strong&gt;: 小老弟
+&lt;strong&gt;状态&lt;/strong&gt;: 设计阶段&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="1-产品概述"&gt;1. 产品概述&lt;/h2&gt;
+&lt;h3 id="11-产品定位"&gt;1.1 产品定位&lt;/h3&gt;
+&lt;p&gt;面向个人投资者的轻量级仓位管理和分析工具，支持A股和港股，提供仓位追踪、自动更新和一键分析功能。&lt;/p&gt;</description></item><item><title>股票技术面分析 - 快速开始指南</title><link>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</link><pubDate>Tue, 10 Mar 2026 01:07:46 +0800</pubDate><guid>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</guid><description>&lt;h1 id="股票技术面分析---快速开始指南"&gt;股票技术面分析 - 快速开始指南&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
+&lt;strong&gt;目标:&lt;/strong&gt; 5 分钟内开始使用 OpenClaw 进行技术面分析&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-三种方式快速开始"&gt;🚀 三种方式快速开始&lt;/h2&gt;
+&lt;h3 id="方式-1-直接使用-openclaw-最简单"&gt;方式 1: 直接使用 OpenClaw (最简单)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;无需任何安装，直接提问：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;分析 AAPL 的技术面&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;TSLA 的技术指标如何？&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;对比 AAPL 和 MSFT 的走势&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;OpenClaw 会自动使用 &lt;code&gt;manus-stock-analysis&lt;/code&gt; 技能获取 Yahoo Finance 数据。&lt;/p&gt;</description></item><item><title>OpenClaw 股票技术面分析方案研究</title><link>https://bluespace.eu.org/post/stock-technical-analysis-openclaw-research-20260310/</link><pubDate>Tue, 10 Mar 2026 01:04:16 +0800</pubDate><guid>https://bluespace.eu.org/post/stock-technical-analysis-openclaw-research-20260310/</guid><description>&lt;h1 id="openclaw-股票技术面分析方案研究"&gt;OpenClaw 股票技术面分析方案研究&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
+&lt;strong&gt;研究目标:&lt;/strong&gt; 探索如何使用 OpenClaw 进行纯技术面股票分析&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="1-openclaw-技能生态"&gt;1. OpenClaw 技能生态&lt;/h2&gt;
+&lt;h3 id="11-已安装技能"&gt;1.1 已安装技能&lt;/h3&gt;
+&lt;h4 id="manus-stock-analysis"&gt;manus-stock-analysis&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能:&lt;/strong&gt; 使用 Yahoo Finance API 进行股票和公司分析&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;核心能力:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;公司概况和基本面信息&lt;/li&gt;
+&lt;li&gt;技术指标和分析师评级&lt;/li&gt;
+&lt;li&gt;价格图表和历史数据&lt;/li&gt;
+&lt;li&gt;内部人持股和交易&lt;/li&gt;
+&lt;li&gt;SEC 文件和监管信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Yahoo/get_stock_profile&lt;/code&gt; - 公司资料&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Yahoo/get_stock_insights&lt;/code&gt; - 技术指标、估值、评级&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Yahoo/get_stock_chart&lt;/code&gt; - 历史价格数据&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Yahoo/get_stock_holders&lt;/code&gt; - 内部人持股&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Yahoo/get_stock_sec_filing&lt;/code&gt; - SEC 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="12-clawhub-发现的技能"&gt;1.2 ClawHub 发现的技能&lt;/h3&gt;
+&lt;h4 id="stock-technical-analysis"&gt;stock-technical-analysis&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能:&lt;/strong&gt; 股票技术分析工具&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持指标:&lt;/strong&gt; SMA, EMA, RSI, MACD, Bollinger Bands&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;价格:&lt;/strong&gt; 每次调用 0.001 USDT&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态:&lt;/strong&gt; 被 VirusTotal 标记为可疑，代码较简单（模拟数据）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;建议:&lt;/strong&gt; 不推荐使用，风险较高且数据质量存疑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="其他相关技能"&gt;其他相关技能&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;stock-watcher&lt;/code&gt; - 股票监控&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stock-monitor&lt;/code&gt; - 股票监控&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stock-study&lt;/code&gt; - 股票学习&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a-stock-trading-assistant&lt;/code&gt; - A股交易助手&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="2-技术面分析工具链"&gt;2. 技术面分析工具链&lt;/h2&gt;
+&lt;h3 id="21-数据获取-python-库"&gt;2.1 数据获取 (Python 库)&lt;/h3&gt;
+&lt;h4 id="yfinance"&gt;yfinance&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;仓库:&lt;/strong&gt; &lt;a href="https://github.com/ranaroussi/yfinance"&gt;https://github.com/ranaroussi/yfinance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;功能:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;从 Yahoo Finance 获取金融和市场数据&lt;/li&gt;
+&lt;li&gt;支持单只和多只股票数据&lt;/li&gt;
+&lt;li&gt;实时流数据&lt;/li&gt;
+&lt;li&gt;市场搜索和新闻&lt;/li&gt;
+&lt;li&gt;行业和板块信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安装:&lt;/strong&gt; &lt;code&gt;pip install yfinance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意:&lt;/strong&gt; 仅限个人使用和研究目的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="22-技术指标计算"&gt;2.2 技术指标计算&lt;/h3&gt;
+&lt;h4 id="pandas-ta-推荐"&gt;pandas-ta (推荐)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能:&lt;/strong&gt; 使用 Pandas 计算技术指标&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优势:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;纯 Python 实现，无需额外依赖&lt;/li&gt;
+&lt;li&gt;基于 NumPy 和 Pandas，性能优异&lt;/li&gt;
+&lt;li&gt;支持数百种技术指标&lt;/li&gt;
+&lt;li&gt;体积小，速度快&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;指标类别:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;趋势: SMA, EMA, DEMA, TEMA&lt;/li&gt;
+&lt;li&gt;动量: RSI, MACD, Stochastic, Williams %R&lt;/li&gt;
+&lt;li&gt;波动率: Bollinger Bands, ATR&lt;/li&gt;
+&lt;li&gt;成交量: OBV, Volume SMA&lt;/li&gt;
+&lt;li&gt;趋势强度: ADX, CCI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="ta-lib"&gt;TA-Lib&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能:&lt;/strong&gt; C 库的 Python 封装，包含 150+ 技术指标&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安装:&lt;/strong&gt; &lt;code&gt;pip install TA-Lib&lt;/code&gt; (需要编译，较复杂)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优势:&lt;/strong&gt; 业界标准，指标全面&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;劣势:&lt;/strong&gt; 安装复杂，依赖较多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-可视化工具"&gt;2.3 可视化工具&lt;/h3&gt;
+&lt;h4 id="plotly"&gt;Plotly&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能:&lt;/strong&gt; 交互式图表库&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;适用:&lt;/strong&gt; K 线图、技术指标图表&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优势:&lt;/strong&gt; 交互性强，Web 友好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="matplotlib"&gt;Matplotlib&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能:&lt;/strong&gt; Python 绘图标准库&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;适用:&lt;/strong&gt; 静态图表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="3-推荐技术方案"&gt;3. 推荐技术方案&lt;/h2&gt;
+&lt;h3 id="方案-a-使用-manus-stock-analysis--python-脚本"&gt;方案 A: 使用 manus-stock-analysis + Python 脚本&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;优点:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>2026年03月09日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 10 Mar 2026 00:01:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月09日-赛博日记"&gt;2026年03月09日 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-03-10 00:00:08&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
+&lt;p&gt;今天重点探索了 OpenClaw 技能系统和 Nextcloud 网络架构。安装了 Self-Improving、github-repo-search 两个重要技能，深入研究了 FRP 与 Tailscale 的性能对比，完成了 Nextcloud 双域名 CDN 加速配置，并生成了详细的 GitHub 趋势监控报告。博客系统全量更新了 83 个笔记文件。&lt;/p&gt;</description></item><item><title>赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 09 Mar 2026 23:56:06 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="赛博日记"&gt;赛博日记&lt;/h1&gt;
+&lt;h2 id="2026年3月9日周一"&gt;2026年3月9日（周一）&lt;/h2&gt;
+&lt;h3 id="技术工作"&gt;技术工作&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;01:01&lt;/strong&gt; - 测试并安装 import-memory skill&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;10:23&lt;/strong&gt; - 编程会话完成&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;12:59&lt;/strong&gt; - 编程会话完成&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;16:19&lt;/strong&gt; - 编程会话完成&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;16:21&lt;/strong&gt; - 编程会话完成&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;16:23&lt;/strong&gt; - 编程会话完成&lt;/p&gt;
+&lt;h3 id="工作总结"&gt;工作总结&lt;/h3&gt;
+&lt;p&gt;今天主要集中在编程和技能测试工作上，进行了多次编码会话，并测试了 import-memory skill 的安装和功能。&lt;/p&gt;</description></item><item><title>OpenClaw 教程笔记</title><link>https://bluespace.eu.org/post/openclaw/openclaw-tutorial-0305/</link><pubDate>Mon, 09 Mar 2026 18:31:50 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw-tutorial-0305/</guid><description>&lt;h1 id="openclaw-教程笔记"&gt;OpenClaw 教程笔记&lt;/h1&gt;
+&lt;p&gt;本文件由 OpenClaw 自动从飞书教程同步。
+原始来源：https://ycnezwebj31p.feishu.cn/docx/MVomdT4tWoeEnmxFFEAcsHGpnph&lt;/p&gt;</description></item><item><title>Nextcloud 双域名性能测试报告</title><link>https://bluespace.eu.org/post/nextcloud/%E5%8F%8C%E5%9F%9F%E5%90%8Dcdn%E5%8A%A0%E9%80%9F%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link><pubDate>Mon, 09 Mar 2026 15:52:44 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/%E5%8F%8C%E5%9F%9F%E5%90%8Dcdn%E5%8A%A0%E9%80%9F%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="nextcloud-双域名性能测试报告"&gt;Nextcloud 双域名性能测试报告&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;测试时间: 2025-03-09 15:35&lt;br&gt;
+状态: ✅ 两个域名都开启了 Cloudflare CDN&lt;br&gt;
+测试环境: macOS → Cloudflare (SIN节点) → 服务器 → 后端隧道 → Mac&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="-测试结果"&gt;📊 测试结果&lt;/h2&gt;
+&lt;h3 id="延迟对比"&gt;延迟对比&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;域名&lt;/th&gt;
+&lt;th&gt;路径&lt;/th&gt;
+&lt;th&gt;平均延迟&lt;/th&gt;
+&lt;th&gt;最小延迟&lt;/th&gt;
+&lt;th&gt;最大延迟&lt;/th&gt;
+&lt;th&gt;性能比&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;nextcloud.skyspace.eu.org&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;CDN + Tailscale&lt;/td&gt;
+&lt;td&gt;1.42 秒&lt;/td&gt;
+&lt;td&gt;1.03 秒&lt;/td&gt;
+&lt;td&gt;2.18 秒&lt;/td&gt;
+&lt;td&gt;基准 (100%)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;nc.skyspace.eu.org&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;CDN + FRP&lt;/td&gt;
+&lt;td&gt;1.50 秒&lt;/td&gt;
+&lt;td&gt;1.04 秒&lt;/td&gt;
+&lt;td&gt;2.30 秒&lt;/td&gt;
+&lt;td&gt;106% (慢6%)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="关键发现"&gt;关键发现&lt;/h3&gt;
+&lt;p&gt;✅ &lt;strong&gt;两个域名都经过 Cloudflare CDN&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>nc.skyspace.eu.org FRP 配置成功报告</title><link>https://bluespace.eu.org/post/nextcloud/nc%E5%9F%9F%E5%90%8Dfrp%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E6%8A%A5%E5%91%8A/</link><pubDate>Mon, 09 Mar 2026 15:33:31 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/nc%E5%9F%9F%E5%90%8Dfrp%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="ncskyspaceeuorg-frp-配置成功报告"&gt;nc.skyspace.eu.org FRP 配置成功报告&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;配置时间: 2025-03-09 15:12&lt;br&gt;
+状态: ✅ 配置成功并正常运行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="-配置变更"&gt;📊 配置变更&lt;/h2&gt;
+&lt;h3 id="修改前"&gt;修改前&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → Tailscale (100.97.62.83:8080) → Mac
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="修改后"&gt;修改后&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → FRP (127.0.0.1:8080) → Mac
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="-配置步骤"&gt;🔧 配置步骤&lt;/h2&gt;
+&lt;h3 id="1-备份配置"&gt;1. 备份配置&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp /etc/nginx/sites-available/nc.skyspace.eu.org.conf &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; /etc/nginx/sites-available/nc.skyspace.eu.org.conf.backup
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-修改配置"&gt;2. 修改配置&lt;/h3&gt;
+&lt;p&gt;修改前：&lt;/p&gt;</description></item><item><title>FRP vs Tailscale 最终性能测试报告</title><link>https://bluespace.eu.org/post/nextcloud/frp-vs-tailscale%E6%9C%80%E7%BB%88%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link><pubDate>Mon, 09 Mar 2026 14:53:47 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/frp-vs-tailscale%E6%9C%80%E7%BB%88%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="frp-vs-tailscale-最终性能测试报告"&gt;FRP vs Tailscale 最终性能测试报告&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;测试时间: 2025-03-09 14:50&lt;br&gt;
+测试环境: Docker 已恢复，所有服务正常运行&lt;br&gt;
+测试目的: 对比 FRP 和 Tailscale 的实际性能&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="-服务恢复确认"&gt;✅ 服务恢复确认&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Docker 服务状态&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ Colima: 运行中&lt;/li&gt;
+&lt;li&gt;✅ Nextcloud: 健康运行&lt;/li&gt;
+&lt;li&gt;✅ MySQL: 健康运行&lt;/li&gt;
+&lt;li&gt;✅ Redis: 运行中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;访问测试&lt;/strong&gt;:&lt;/p&gt;</description></item><item><title>FRP 配置完整诊断报告</title><link>https://bluespace.eu.org/post/nextcloud/frp%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%95%B4%E8%AF%8A%E6%96%AD%E6%8A%A5%E5%91%8A/</link><pubDate>Mon, 09 Mar 2026 14:38:58 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/frp%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%95%B4%E8%AF%8A%E6%96%AD%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="frp-配置完整诊断报告"&gt;FRP 配置完整诊断报告&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;诊断时间: 2025-03-09 13:55&lt;br&gt;
+状态: 配置完成，但受端口冲突影响&lt;br&gt;
+现有服务: 未受影响 ✅&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="-核心发现"&gt;📊 核心发现&lt;/h2&gt;
+&lt;h3 id="1-token-不匹配的根本原因"&gt;1. Token 不匹配的根本原因&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;: 实际运行的 FRP 客户端使用了错误的配置文件&lt;/p&gt;</description></item><item><title>FRP Token 修复指南</title><link>https://bluespace.eu.org/post/nextcloud/frp%E9%85%8D%E7%BD%AE%E8%AF%8A%E6%96%AD%E4%B8%8E%E4%BF%AE%E5%A4%8D%E6%8C%87%E5%8D%97/</link><pubDate>Mon, 09 Mar 2026 13:48:36 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/frp%E9%85%8D%E7%BD%AE%E8%AF%8A%E6%96%AD%E4%B8%8E%E4%BF%AE%E5%A4%8D%E6%8C%87%E5%8D%97/</guid><description>&lt;h1 id="frp-token-修复指南"&gt;FRP Token 修复指南&lt;/h1&gt;
+&lt;h2 id="问题"&gt;问题&lt;/h2&gt;
+&lt;p&gt;服务端和客户端 Token 不匹配导致认证失败&lt;/p&gt;
+&lt;h2 id="修复步骤"&gt;修复步骤&lt;/h2&gt;
+&lt;h3 id="1-更新客户端-token选择其中一个"&gt;1. 更新客户端 Token（选择其中一个）&lt;/h3&gt;
+&lt;h4 id="选项-a-修改客户端-token-匹配服务端"&gt;选项 A: 修改客户端 Token 匹配服务端&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 编辑客户端配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vi /Users/tianqinghong/nextcloud/frpc.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 修改这一行：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2599a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 改为：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2592a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="选项-b-修改服务端-token-匹配客户端"&gt;选项 B: 修改服务端 Token 匹配客户端&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 在服务器上&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh server
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo vi /etc/frp/frps.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 修改这一行：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2592a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 改为：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2599a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 重启服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl restart frps
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-启动-nextcloud-frp-客户端"&gt;2. 启动 Nextcloud FRP 客户端&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 A: 手动启动（测试）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 B: 后台运行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nohup /opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml &amp;gt; /tmp/frpc.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 C: 创建 systemd 服务（推荐）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 创建 ~/Library/LaunchAgents/com.github.frpc.nextcloud.plist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="3-验证连接"&gt;3. 验证连接&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 检查服务端日志&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh server &lt;span class="s2"&gt;&amp;#34;journalctl -u frps -f&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 测试连接&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -I http://38.55.39.104:8080
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="4-更新-nginx-配置如果使用-frp"&gt;4. 更新 Nginx 配置（如果使用 FRP）&lt;/h3&gt;
+&lt;p&gt;如果要让 nc.skyspace.eu.org 使用 FRP 而不是 Tailscale：&lt;/p&gt;</description></item><item><title>Tailscale vs FRP 网络延迟测试报告</title><link>https://bluespace.eu.org/post/nextcloud/tailscale-vs-frp-%E5%BB%B6%E8%BF%9F%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link><pubDate>Mon, 09 Mar 2026 13:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/tailscale-vs-frp-%E5%BB%B6%E8%BF%9F%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="tailscale-vs-frp-网络延迟测试报告"&gt;Tailscale vs FRP 网络延迟测试报告&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;测试时间: 2025-03-09&lt;br&gt;
+测试环境: macOS → 外部服务器 (38.55.39.104)&lt;br&gt;
+本地 Tailscale IP: 100.97.62.83&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="测试结果总览"&gt;测试结果总览&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;测试项目&lt;/th&gt;
+&lt;th&gt;延迟&lt;/th&gt;
+&lt;th&gt;丢包率&lt;/th&gt;
+&lt;th&gt;稳定性&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Tailscale Ping&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.517 ms&lt;/td&gt;
+&lt;td&gt;0%&lt;/td&gt;
+&lt;td&gt;优秀&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Tailscale HTTP&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;23.06 ms&lt;/td&gt;
+&lt;td&gt;0%&lt;/td&gt;
+&lt;td&gt;优秀&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;服务器直连 Ping&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.323 ms&lt;/td&gt;
+&lt;td&gt;0%&lt;/td&gt;
+&lt;td&gt;优秀&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;HTTPS (Cloudflare)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;1513.44 ms*&lt;/td&gt;
+&lt;td&gt;0%&lt;/td&gt;
+&lt;td&gt;良好&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;FRP&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;❌ 不可用&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;*注: HTTPS 延迟包含 TLS 握手时间&lt;/p&gt;</description></item><item><title>Nextcloud 完整架构指南</title><link>https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/</link><pubDate>Mon, 09 Mar 2026 13:11:13 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/</guid><description>&lt;h1 id="nextcloud-完整架构指南"&gt;Nextcloud 完整架构指南&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;更新时间: 2025-03-09&lt;br&gt;
+版本: Nextcloud 33.0.0.16&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="目录"&gt;目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/#%e9%83%a8%e7%bd%b2%e6%9e%b6%e6%9e%84"&gt;部署架构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/#%e7%bd%91%e7%bb%9c%e8%ae%bf%e9%97%ae%e6%9e%b6%e6%9e%84"&gt;网络访问架构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/#%e6%8a%80%e6%9c%af%e6%a0%88%e8%af%a6%e8%a7%a3"&gt;技术栈详解&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/#%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e6%b8%85%e5%8d%95"&gt;配置文件清单&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/#%e8%ae%bf%e9%97%ae%e6%96%b9%e5%bc%8f%e5%af%b9%e6%af%94"&gt;访问方式对比&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/#%e7%bb%b4%e6%8a%a4%e6%8c%87%e5%8d%97"&gt;维护指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="部署架构"&gt;部署架构&lt;/h2&gt;
+&lt;h3 id="整体架构图"&gt;整体架构图&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ macOS 宿主机 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ IP: 192.168.10.222 (局域网) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Tailscale IP: 100.97.62.83 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└────────────────────┬────────────────────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌────────────────────▼────────────────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Docker Desktop (虚拟机) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌──────────────────────────────────────────────────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ nextcloud-network (Bridge 网络) │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌──────────────┐ ┌──────────────┐ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Redis │ │ MySQL │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ (缓存/锁) │◄────►│ (数据库) │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ :6379 │ │ :3306 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────────┘ └──────────────┘ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ▲ ▲ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └───────────┬───────────┘ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ▼ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌──────────────┐ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Nextcloud │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ (Apache) │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ :80 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────────┘ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └──────────────────────────────────────────────────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌──────────────────────────────────────────────────────┐ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Docker Volumes (持久化存储) │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ • nextcloud_nextcloud_data → Nextcloud 数据 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ • nextcloud_mysql_data → MySQL 数据 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └──────────────────────────────────────────────────────┘ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└──────────────────────────────────────────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="三层架构设计"&gt;三层架构设计&lt;/h3&gt;
+&lt;h4 id="1-应用层-nextcloud"&gt;1. 应用层 (Nextcloud)&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;容器名&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;nextcloud&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;镜像&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;nextcloud:latest&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;端口&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;80&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;Web服务器&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Apache&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;PHP版本&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;8.4.18&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;内存限制&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;512MB&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;上传限制&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;10GB&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;执行时间&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;3600秒&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;健康检查&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;HTTP (每10秒)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="2-缓存层-redis"&gt;2. 缓存层 (Redis)&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;容器名&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;nextcloud-redis&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;镜像&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;redis:alpine&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;端口&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;6379&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;内存限制&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;256MB&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;策略&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;allkeys-lru&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;持久化&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;AOF&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;用途&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;分布式缓存&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;文件锁定&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;会话存储&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="3-数据层-mysql"&gt;3. 数据层 (MySQL)&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;容器名&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;nextcloud-mysql&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;镜像&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;mysql:8.0&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;端口&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3306&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;数据库&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;nextcloud&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;健康检查&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;MySQL ping (每10秒)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="网络访问架构"&gt;网络访问架构&lt;/h2&gt;
+&lt;h3 id="方案一-ncskyspaceeuorg-frp-方案"&gt;方案一: nc.skyspace.eu.org (FRP 方案)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;用户
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ▼
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DNS: nc.skyspace.eu.org → 38.55.39.104
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ▼
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 公网服务器 (38.55.39.104) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Nginx 反向代理 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Let&amp;#39;s Encrypt 证书 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└────────────┬────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ▼ FRP 隧道
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 你的 Mac (本地网络) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ FRP 客户端监听 :8080 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ↓ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Docker Nextcloud :8080 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└─────────────────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;FRP 配置&lt;/strong&gt;:&lt;/p&gt;</description></item><item><title>【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305</title><link>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</link><pubDate>Mon, 09 Mar 2026 00:38:42 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</guid><description>&lt;h1 id="教程openclaw部署使用skill与三大实用玩法-xuan酱-0305"&gt;【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305&lt;/h1&gt;
 &lt;p&gt;本文档为Xuan酱 2026.3.5《OpenClaw 3大超实用玩法》视频配套教程文档
 全平台@Xuan酱，关注我，和我一起探索AI的更多玩法&lt;/p&gt;
 &lt;p&gt;(注：此处省略部分非核心图片/辅助内容，完整内容见飞书文档)&lt;/p&gt;</description></item><item><title>赛博日记 - 2026-03-08</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-07/</link><pubDate>Mon, 09 Mar 2026 00:26:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-07/</guid><description>&lt;h1 id="赛博日记---2026-03-08"&gt;赛博日记 - 2026-03-08&lt;/h1&gt;
