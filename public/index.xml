@@ -1,108 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/algolia.json</link><description>Recent content on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Thu, 12 Mar 2026 00:00:05 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026年03月11日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 12 Mar 2026 00:00:05 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月11日-赛博日记"&gt;2026年03月11日 赛博日记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/algolia.json</link><description>Recent content on 蓝色空间号</description><generator>Hugo -- 0.157.0</generator><language>zh-CN</language><lastBuildDate>Fri, 13 Mar 2026 11:54:20 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026年03月12日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-12%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 13 Mar 2026 11:54:20 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-12%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月12日-赛博日记"&gt;2026年03月12日 赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;生成时间：2026-03-11 23:58:00&lt;/p&gt;
+&lt;p&gt;生成时间：2026-03-12 23:58:00&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
-&lt;p&gt;今天主要进行了系统问题排查和技术调研工作。发现并解决了 NFS 挂载导致的高负载问题，同时深入调研了 akshare 的 PE/PB 查询方法。此外，还研究了 Claude Code 中 Playwright 的集成方案，并完成了仓位管理系统到 Mac 电脑的文件传输。&lt;/p&gt;</description></item><item><title>赛博日记 - 2026-03-11</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 11 Mar 2026 23:55:19 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="赛博日记---2026-03-11"&gt;赛博日记 - 2026-03-11&lt;/h1&gt;
-&lt;h2 id="今日摘要"&gt;今日摘要&lt;/h2&gt;
-&lt;p&gt;今天主要进行了以下工作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;检查并发现 quant-trading-system 项目前端代码缺失问题&lt;/li&gt;
-&lt;li&gt;创建财务分析技能，支持支付宝和微信账单分析&lt;/li&gt;
-&lt;li&gt;设置了每月1号自动提醒上传账单&lt;/li&gt;
-&lt;li&gt;完成了2026年2月份的财务分析&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="详细记录"&gt;详细记录&lt;/h2&gt;
-&lt;h3 id="1-项目代码检查"&gt;1. 项目代码检查&lt;/h3&gt;
-&lt;p&gt;检查 quant-trading-system 项目代码时发现：&lt;/p&gt;</description></item><item><title>2026年03月10日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 11 Mar 2026 00:04:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月10日-赛博日记"&gt;2026年03月10日 赛博日记&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;生成时间：2026-03-11 00:00:47&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
-&lt;p&gt;今天是高产的一天！完成了仓位管理系统的完整开发，从需求分析到代码实现再到部署上线。使用 Spec-Driven Development (SDD) 流程，分5个阶段完成了后端API、前端界面、自动调度器和多维技术分析功能。同时，解决了Chromium浏览器安装问题，并完成了OpenClaw Gateway的模型配置切换。&lt;/p&gt;</description></item><item><title>仓位管理系统 - 现有工具调研报告</title><link>https://bluespace.eu.org/post/position-management-research-20260310/</link><pubDate>Tue, 10 Mar 2026 01:47:55 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-research-20260310/</guid><description>&lt;h1 id="仓位管理系统---现有工具调研报告"&gt;仓位管理系统 - 现有工具调研报告&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
-&lt;strong&gt;目的&lt;/strong&gt;: 调研市场上现有的相关工具和开源项目，避免重复造轮子&lt;/p&gt;
+&lt;p&gt;今天主要进行了技术排查和配置工作，解决了飞书插件不回复消息的问题，并修复了 OpenClaw Control UI 的跨域访问错误。同时研究了在 Claude Code 中集成 Playwright 的方法，并整理了相关的 API 配置信息。&lt;/p&gt;</description></item><item><title>Shadowsocks内网穿透配置</title><link>https://bluespace.eu.org/post/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</link><pubDate>Fri, 13 Mar 2026 11:54:20 +0800</pubDate><guid>https://bluespace.eu.org/post/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</guid><description/></item><item><title>模型基准测试报告</title><link>https://bluespace.eu.org/post/model_benchmark_report/</link><pubDate>Fri, 13 Mar 2026 11:54:20 +0800</pubDate><guid>https://bluespace.eu.org/post/model_benchmark_report/</guid><description>&lt;h1 id="模型基准测试报告"&gt;模型基准测试报告&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;测试时间:&lt;/strong&gt; $(date &amp;lsquo;+%Y-%m-%d %H:%M:%S&amp;rsquo;)&lt;br&gt;
+&lt;strong&gt;测试模式:&lt;/strong&gt; 无思考模式 (think: false)&lt;br&gt;
+&lt;strong&gt;统计方法:&lt;/strong&gt; 仅统计推理时间 (eval_duration)，不包含首次加载延迟&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="1-openclawclawhub-生态"&gt;1. OpenClaw/ClawHub 生态&lt;/h2&gt;
-&lt;h3 id="11-portfolio-相关-skill"&gt;1.1 Portfolio 相关 Skill&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Skill 名称&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;th&gt;匹配度&lt;/th&gt;
-&lt;th&gt;适用性&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;portfolio-manager&lt;/td&gt;
-&lt;td&gt;使用 Alpaca MCP Server 集成进行投资组合分析&lt;/td&gt;
-&lt;td&gt;⚠️ 部分匹配&lt;/td&gt;
-&lt;td&gt;需要券商 API，不适合散户&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;afrexai-investment-engine&lt;/td&gt;
-&lt;td&gt;投资分析和投资组合管理引擎&lt;/td&gt;
-&lt;td&gt;⚠️ 部分匹配&lt;/td&gt;
-&lt;td&gt;功能过重，主要是 AI 分析&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;finance-automation&lt;/td&gt;
-&lt;td&gt;金融自动化（支付、发票、费用）&lt;/td&gt;
-&lt;td&gt;❌ 不匹配&lt;/td&gt;
-&lt;td&gt;主要是企业财务管理&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;portfolio-watcher&lt;/td&gt;
-&lt;td&gt;投资组合监控&lt;/td&gt;
-&lt;td&gt;❓ 未知&lt;/td&gt;
-&lt;td&gt;需要进一步了解&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;portfolio-tracker&lt;/td&gt;
-&lt;td&gt;投资组合跟踪&lt;/td&gt;
-&lt;td&gt;❓ 未知&lt;/td&gt;
-&lt;td&gt;需要进一步了解&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;openmm-portfolio&lt;/td&gt;
-&lt;td&gt;OpenMM 投资组合&lt;/td&gt;
-&lt;td&gt;❌ 不匹配&lt;/td&gt;
-&lt;td&gt;数字货币相关&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id="12-已安装-skill"&gt;1.2 已安装 Skill&lt;/h3&gt;
+&lt;h2 id="测试环境"&gt;测试环境&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;manus-stock-analysis&lt;/strong&gt;: ✅ 已安装，可用于技术分析
-&lt;ul&gt;
-&lt;li&gt;功能: 获取股票数据、技术分析&lt;/li&gt;
-&lt;li&gt;可复用: 是，可作为分析模块&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;strong&gt;Ollama API:&lt;/strong&gt; http://172.31.224.1:11434&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;测试模型:&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;minicpm-o-4_5:latest (4.5B)&lt;/li&gt;
+&lt;li&gt;gemma3:27b (27B)&lt;/li&gt;
+&lt;li&gt;qwen3.5:35b (35B)&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="13-结论"&gt;1.3 结论&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;ClawHub 生态现状&lt;/strong&gt;:&lt;/p&gt;</description></item><item><title>仓位管理系统 - 产品设计文档</title><link>https://bluespace.eu.org/post/position-management-design-v1.0/</link><pubDate>Tue, 10 Mar 2026 01:42:23 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-design-v1.0/</guid><description>&lt;h1 id="仓位管理系统---产品设计文档"&gt;仓位管理系统 - 产品设计文档&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;版本&lt;/strong&gt;: v1.0
-&lt;strong&gt;创建日期&lt;/strong&gt;: 2026-03-10
-&lt;strong&gt;作者&lt;/strong&gt;: 小老弟
-&lt;strong&gt;状态&lt;/strong&gt;: 设计阶段&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="1-产品概述"&gt;1. 产品概述&lt;/h2&gt;
-&lt;h3 id="11-产品定位"&gt;1.1 产品定位&lt;/h3&gt;
-&lt;p&gt;面向个人投资者的轻量级仓位管理和分析工具，支持A股和港股，提供仓位追踪、自动更新和一键分析功能。&lt;/p&gt;</description></item><item><title>股票技术面分析 - 快速开始指南</title><link>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</link><pubDate>Tue, 10 Mar 2026 01:07:46 +0800</pubDate><guid>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</guid><description>&lt;h1 id="股票技术面分析---快速开始指南"&gt;股票技术面分析 - 快速开始指南&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
-&lt;strong&gt;目标:&lt;/strong&gt; 5 分钟内开始使用 OpenClaw 进行技术面分析&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="-三种方式快速开始"&gt;🚀 三种方式快速开始&lt;/h2&gt;
-&lt;h3 id="方式-1-直接使用-openclaw-最简单"&gt;方式 1: 直接使用 OpenClaw (最简单)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;无需任何安装，直接提问：&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;分析 AAPL 的技术面&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;TSLA 的技术指标如何？&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;对比 AAPL 和 MSFT 的走势&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;OpenClaw 会自动使用 &lt;code&gt;manus-stock-analysis&lt;/code&gt; 技能获取 Yahoo Finance 数据。&lt;/p&gt;</description></item><item><title>OpenClaw 股票技术面分析方案研究</title><link>https://bluespace.eu.org/post/stock-technical-analysis-openclaw-research-20260310/</link><pubDate>Tue, 10 Mar 2026 01:04:16 +0800</pubDate><guid>https://bluespace.eu.org/post/stock-technical-analysis-openclaw-research-20260310/</guid><description>&lt;h1 id="openclaw-股票技术面分析方案研究"&gt;OpenClaw 股票技术面分析方案研究&lt;/h1&gt;
+&lt;h2 id="测试问题"&gt;测试问题&lt;/h2&gt;
+&lt;h3 id="问题-1编程题"&gt;问题 1：编程题&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;问题:&lt;/strong&gt; 用Python实现快速排序算法，并解释其时间复杂度。
+&lt;strong&gt;预期难度:&lt;/strong&gt; 中等&lt;/p&gt;</description></item><item><title>赛博日记 - 2026年3月12日</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 13 Mar 2026 11:54:20 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="赛博日记---2026年3月12日"&gt;赛博日记 - 2026年3月12日&lt;/h1&gt;
+&lt;h2 id="安卓app通知服务"&gt;安卓App通知服务&lt;/h2&gt;
+&lt;p&gt;今天创建了一个有趣的通知服务，实现了从安卓设备触发Mac发送iMessage消息的功能。&lt;/p&gt;
+&lt;h3 id="架构设计"&gt;架构设计&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;安卓App → 38.55.39.104:6521 → SSH反向隧道（autossh） → Mac → iMessage
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="核心组件"&gt;核心组件&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;notify_server.py&lt;/strong&gt; - HTTP服务器&lt;/p&gt;</description></item><item><title>mi-gpt 小米账号异地登录验证问题完全解决指南</title><link>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</link><pubDate>Fri, 13 Mar 2026 11:43:52 +0800</pubDate><guid>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</guid><description>&lt;h1 id="mi-gpt-小米账号异地登录验证问题完全解决指南"&gt;mi-gpt 小米账号异地登录验证问题完全解决指南&lt;/h1&gt;
+&lt;h2 id="-问题解决日期"&gt;📅 问题解决日期&lt;/h2&gt;
+&lt;p&gt;2026年3月8日&lt;/p&gt;
+&lt;h2 id="-问题描述"&gt;🎯 问题描述&lt;/h2&gt;
+&lt;p&gt;运行 &lt;code&gt;node app.js&lt;/code&gt; 时出现以下错误：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;🔥 触发小米账号异地登录安全验证机制，请在浏览器打开以下链接，并按照网页提示授权验证账号：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.com/fe/service/identity/authStart?sid=micoapi&amp;amp;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ 小米账号登录失败
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>OpenClaw 股票技术面分析方案研究</title><link>https://bluespace.eu.org/post/stock-technical-analysis-openclaw-research-20260310/</link><pubDate>Fri, 13 Mar 2026 11:43:52 +0800</pubDate><guid>https://bluespace.eu.org/post/stock-technical-analysis-openclaw-research-20260310/</guid><description>&lt;h1 id="openclaw-股票技术面分析方案研究"&gt;OpenClaw 股票技术面分析方案研究&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
 &lt;strong&gt;研究目标:&lt;/strong&gt; 探索如何使用 OpenClaw 进行纯技术面股票分析&lt;/p&gt;
 &lt;hr&gt;
@@ -208,7 +146,117 @@
 &lt;hr&gt;
 &lt;h2 id="3-推荐技术方案"&gt;3. 推荐技术方案&lt;/h2&gt;
 &lt;h3 id="方案-a-使用-manus-stock-analysis--python-脚本"&gt;方案 A: 使用 manus-stock-analysis + Python 脚本&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;优点:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>2026年03月09日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 10 Mar 2026 00:01:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月09日-赛博日记"&gt;2026年03月09日 赛博日记&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;优点:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Supermemory 统一记忆系统 - 完整文档</title><link>https://bluespace.eu.org/post/supermemory-memory-system/</link><pubDate>Fri, 13 Mar 2026 11:43:52 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory-memory-system/</guid><description>&lt;h1 id="supermemory-统一记忆系统---完整文档"&gt;Supermemory 统一记忆系统 - 完整文档&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建时间：2026-03-08
+最后更新：2026-03-08
+状态：✅ 生产环境可用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="-目录"&gt;📋 目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e7%b3%bb%e7%bb%9f%e6%a6%82%e8%bf%b0"&gt;系统概述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1"&gt;架构设计&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e9%85%8d%e7%bd%ae%e6%ad%a5%e9%aa%a4"&gt;配置步骤&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97"&gt;使用指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%89%80%e6%9c%89%e8%b7%af%e5%be%84"&gt;所有路径&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%95%85%e9%9a%9c%e6%8e%92%e9%99%a4"&gt;故障排除&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%8a%80%e6%9c%af%e7%bb%86%e8%8a%82"&gt;技术细节&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="系统概述"&gt;系统概述&lt;/h2&gt;
+&lt;p&gt;Supermemory 统一记忆系统是一个跨平台的 AI 记忆管理解决方案，支持在 Claude Code、OpenClaw（本地）和 OpenClaw（服务器）之间同步记忆。&lt;/p&gt;</description></item><item><title>仓位管理系统 - 产品设计文档</title><link>https://bluespace.eu.org/post/position-management-design-v1.0/</link><pubDate>Fri, 13 Mar 2026 11:43:52 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-design-v1.0/</guid><description>&lt;h1 id="仓位管理系统---产品设计文档"&gt;仓位管理系统 - 产品设计文档&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;版本&lt;/strong&gt;: v1.0
+&lt;strong&gt;创建日期&lt;/strong&gt;: 2026-03-10
+&lt;strong&gt;作者&lt;/strong&gt;: 小老弟
+&lt;strong&gt;状态&lt;/strong&gt;: 设计阶段&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="1-产品概述"&gt;1. 产品概述&lt;/h2&gt;
+&lt;h3 id="11-产品定位"&gt;1.1 产品定位&lt;/h3&gt;
+&lt;p&gt;面向个人投资者的轻量级仓位管理和分析工具，支持A股和港股，提供仓位追踪、自动更新和一键分析功能。&lt;/p&gt;</description></item><item><title>仓位管理系统 - 现有工具调研报告</title><link>https://bluespace.eu.org/post/position-management-research-20260310/</link><pubDate>Fri, 13 Mar 2026 11:43:52 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-research-20260310/</guid><description>&lt;h1 id="仓位管理系统---现有工具调研报告"&gt;仓位管理系统 - 现有工具调研报告&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
+&lt;strong&gt;目的&lt;/strong&gt;: 调研市场上现有的相关工具和开源项目，避免重复造轮子&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="1-openclawclawhub-生态"&gt;1. OpenClaw/ClawHub 生态&lt;/h2&gt;
+&lt;h3 id="11-portfolio-相关-skill"&gt;1.1 Portfolio 相关 Skill&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Skill 名称&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;th&gt;匹配度&lt;/th&gt;
+&lt;th&gt;适用性&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;portfolio-manager&lt;/td&gt;
+&lt;td&gt;使用 Alpaca MCP Server 集成进行投资组合分析&lt;/td&gt;
+&lt;td&gt;⚠️ 部分匹配&lt;/td&gt;
+&lt;td&gt;需要券商 API，不适合散户&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;afrexai-investment-engine&lt;/td&gt;
+&lt;td&gt;投资分析和投资组合管理引擎&lt;/td&gt;
+&lt;td&gt;⚠️ 部分匹配&lt;/td&gt;
+&lt;td&gt;功能过重，主要是 AI 分析&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;finance-automation&lt;/td&gt;
+&lt;td&gt;金融自动化（支付、发票、费用）&lt;/td&gt;
+&lt;td&gt;❌ 不匹配&lt;/td&gt;
+&lt;td&gt;主要是企业财务管理&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;portfolio-watcher&lt;/td&gt;
+&lt;td&gt;投资组合监控&lt;/td&gt;
+&lt;td&gt;❓ 未知&lt;/td&gt;
+&lt;td&gt;需要进一步了解&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;portfolio-tracker&lt;/td&gt;
+&lt;td&gt;投资组合跟踪&lt;/td&gt;
+&lt;td&gt;❓ 未知&lt;/td&gt;
+&lt;td&gt;需要进一步了解&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;openmm-portfolio&lt;/td&gt;
+&lt;td&gt;OpenMM 投资组合&lt;/td&gt;
+&lt;td&gt;❌ 不匹配&lt;/td&gt;
+&lt;td&gt;数字货币相关&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="12-已安装-skill"&gt;1.2 已安装 Skill&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;manus-stock-analysis&lt;/strong&gt;: ✅ 已安装，可用于技术分析
+&lt;ul&gt;
+&lt;li&gt;功能: 获取股票数据、技术分析&lt;/li&gt;
+&lt;li&gt;可复用: 是，可作为分析模块&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="13-结论"&gt;1.3 结论&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ClawHub 生态现状&lt;/strong&gt;:&lt;/p&gt;</description></item><item><title>股票技术面分析 - 快速开始指南</title><link>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</link><pubDate>Fri, 13 Mar 2026 11:43:52 +0800</pubDate><guid>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</guid><description>&lt;h1 id="股票技术面分析---快速开始指南"&gt;股票技术面分析 - 快速开始指南&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
+&lt;strong&gt;目标:&lt;/strong&gt; 5 分钟内开始使用 OpenClaw 进行技术面分析&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-三种方式快速开始"&gt;🚀 三种方式快速开始&lt;/h2&gt;
+&lt;h3 id="方式-1-直接使用-openclaw-最简单"&gt;方式 1: 直接使用 OpenClaw (最简单)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;无需任何安装，直接提问：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;分析 AAPL 的技术面&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;TSLA 的技术指标如何？&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;对比 AAPL 和 MSFT 的走势&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;OpenClaw 会自动使用 &lt;code&gt;manus-stock-analysis&lt;/code&gt; 技能获取 Yahoo Finance 数据。&lt;/p&gt;</description></item><item><title>2026年03月11日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 12 Mar 2026 00:00:05 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月11日-赛博日记"&gt;2026年03月11日 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-03-11 23:58:00&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
+&lt;p&gt;今天主要进行了系统问题排查和技术调研工作。发现并解决了 NFS 挂载导致的高负载问题，同时深入调研了 akshare 的 PE/PB 查询方法。此外，还研究了 Claude Code 中 Playwright 的集成方案，并完成了仓位管理系统到 Mac 电脑的文件传输。&lt;/p&gt;</description></item><item><title>2026年03月10日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 11 Mar 2026 00:04:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月10日-赛博日记"&gt;2026年03月10日 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-03-11 00:00:47&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
+&lt;p&gt;今天是高产的一天！完成了仓位管理系统的完整开发，从需求分析到代码实现再到部署上线。使用 Spec-Driven Development (SDD) 流程，分5个阶段完成了后端API、前端界面、自动调度器和多维技术分析功能。同时，解决了Chromium浏览器安装问题，并完成了OpenClaw Gateway的模型配置切换。&lt;/p&gt;</description></item><item><title>2026年03月09日 赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 10 Mar 2026 00:01:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月09日-赛博日记"&gt;2026年03月09日 赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成时间：2026-03-10 00:00:08&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -559,25 +607,7 @@
 &lt;li&gt;&lt;strong&gt;搜索尝试&lt;/strong&gt;：因 API Key 未配置，尝试使用 Tavily 等搜索工具未果，转而建议查看本地文档或直接提供线索。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;em&gt;由 mm 自动整理&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Supermemory 统一记忆系统 - 完整文档</title><link>https://bluespace.eu.org/post/supermemory-memory-system/</link><pubDate>Sun, 08 Mar 2026 21:28:35 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory-memory-system/</guid><description>&lt;h1 id="supermemory-统一记忆系统---完整文档"&gt;Supermemory 统一记忆系统 - 完整文档&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建时间：2026-03-08
-最后更新：2026-03-08
-状态：✅ 生产环境可用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="-目录"&gt;📋 目录&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e7%b3%bb%e7%bb%9f%e6%a6%82%e8%bf%b0"&gt;系统概述&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1"&gt;架构设计&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e9%85%8d%e7%bd%ae%e6%ad%a5%e9%aa%a4"&gt;配置步骤&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97"&gt;使用指南&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%89%80%e6%9c%89%e8%b7%af%e5%be%84"&gt;所有路径&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%95%85%e9%9a%9c%e6%8e%92%e9%99%a4"&gt;故障排除&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bluespace.eu.org/post/supermemory-memory-system/#%e6%8a%80%e6%9c%af%e7%bb%86%e8%8a%82"&gt;技术细节&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id="系统概述"&gt;系统概述&lt;/h2&gt;
-&lt;p&gt;Supermemory 统一记忆系统是一个跨平台的 AI 记忆管理解决方案，支持在 Claude Code、OpenClaw（本地）和 OpenClaw（服务器）之间同步记忆。&lt;/p&gt;</description></item><item><title>服务器安装</title><link>https://bluespace.eu.org/post/supermemory/20260308_204620/</link><pubDate>Sun, 08 Mar 2026 20:48:48 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory/20260308_204620/</guid><description>&lt;h1 id="服务器安装"&gt;服务器安装&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;由 mm 自动整理&lt;/em&gt;&lt;/p&gt;</description></item><item><title>服务器安装</title><link>https://bluespace.eu.org/post/supermemory/20260308_204620/</link><pubDate>Sun, 08 Mar 2026 20:48:48 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory/20260308_204620/</guid><description>&lt;h1 id="服务器安装"&gt;服务器安装&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;时间&lt;/strong&gt;: 2026-03-08 20:46:20
 &lt;strong&gt;标签&lt;/strong&gt;: 服务器,Supermemory,成功&lt;/p&gt;
 &lt;h2 id="内容"&gt;内容&lt;/h2&gt;
@@ -586,15 +616,7 @@
 &lt;p&gt;&lt;strong&gt;时间&lt;/strong&gt;: 2026-03-08 20:43:12
 &lt;strong&gt;标签&lt;/strong&gt;: AI,技术问题,mi-gpt&lt;/p&gt;
 &lt;h2 id="内容"&gt;内容&lt;/h2&gt;
-&lt;p&gt;今天成功解决了 mi-gpt 的小米账号异地登录验证问题，通过使用 passToken 方式，并配置了智谱AI GLM-4.7 模型，现在小爱音箱可以正常工作了！&lt;/p&gt;</description></item><item><title>mi-gpt 小米账号异地登录验证问题完全解决指南</title><link>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</link><pubDate>Sun, 08 Mar 2026 19:35:28 +0800</pubDate><guid>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</guid><description>&lt;h1 id="mi-gpt-小米账号异地登录验证问题完全解决指南"&gt;mi-gpt 小米账号异地登录验证问题完全解决指南&lt;/h1&gt;
-&lt;h2 id="-问题解决日期"&gt;📅 问题解决日期&lt;/h2&gt;
-&lt;p&gt;2026年3月8日&lt;/p&gt;
-&lt;h2 id="-问题描述"&gt;🎯 问题描述&lt;/h2&gt;
-&lt;p&gt;运行 &lt;code&gt;node app.js&lt;/code&gt; 时出现以下错误：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;🔥 触发小米账号异地登录安全验证机制，请在浏览器打开以下链接，并按照网页提示授权验证账号：
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.com/fe/service/identity/authStart?sid=micoapi&amp;amp;...
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ 小米账号登录失败
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>TuriX-CUA 研究笔记</title><link>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</link><pubDate>Sat, 07 Mar 2026 10:57:00 +0800</pubDate><guid>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="turix-cua-研究笔记"&gt;TuriX-CUA 研究笔记&lt;/h1&gt;
+&lt;p&gt;今天成功解决了 mi-gpt 的小米账号异地登录验证问题，通过使用 passToken 方式，并配置了智谱AI GLM-4.7 模型，现在小爱音箱可以正常工作了！&lt;/p&gt;</description></item><item><title>TuriX-CUA 研究笔记</title><link>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</link><pubDate>Sat, 07 Mar 2026 10:57:00 +0800</pubDate><guid>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="turix-cua-研究笔记"&gt;TuriX-CUA 研究笔记&lt;/h1&gt;
 &lt;h2 id="基本信息"&gt;基本信息&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;项目名称：&lt;/strong&gt; TuriX-CUA (Computer Use Agent)
 &lt;strong&gt;开发者：&lt;/strong&gt; TurixAI
