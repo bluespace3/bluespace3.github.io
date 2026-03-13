@@ -1,118 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>工具 on 蓝色空间号</title>
-    <link>https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/</link>
-    <description>Recent content in 工具 on 蓝色空间号</description>
-    <generator>Hugo</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sat, 07 Mar 2026 08:43:34 +0800</lastBuildDate>
-    <atom:link href="https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>doc转md</title>
-      <link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link>
-      <pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid>
-      <description>&lt;ol&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>工具 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/</link><description>Recent content in 工具 on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 07 Mar 2026 08:43:34 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>doc转md</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid><description>&lt;ol&gt;
 &lt;li&gt;Pandoc 简介&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Node.js Shadowsocks 完整配置指南</title>
-      <link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</link>
-      <pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</guid>
-      <description>&lt;h1 id=&#34;nodejs-shadowsocks-完整配置指南&#34;&gt;Node.js Shadowsocks 完整配置指南&lt;/h1&gt;
-&lt;h2 id=&#34;架构说明&#34;&gt;架构说明&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;本地电脑                        海外服务器
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;┌─────────────┐               ┌──────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   浏览器    │────SOCKS5────▶│ Shadowsocks  │
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   (1080)    │               │   Server     │
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│             │               │              │
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  Node.js    │────加密──────▶│ (ss-server)  │
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  客户端     │               │              │
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└─────────────┘               └──────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      │                              │
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      └─────────────访问 GitHub ─────┘
+&lt;p&gt;Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p&gt;</description></item><item><title>Node.js Shadowsocks 完整配置指南</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</guid><description>&lt;h1 id="nodejs-shadowsocks-完整配置指南"&gt;Node.js Shadowsocks 完整配置指南&lt;/h1&gt;
+&lt;h2 id="架构说明"&gt;架构说明&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;本地电脑 海外服务器
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────┐ ┌──────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 浏览器 │────SOCKS5────▶│ Shadowsocks │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ (1080) │ │ Server │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Node.js │────加密──────▶│ (ss-server) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 客户端 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└─────────────┘ └──────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └─────────────访问 GitHub ─────┘
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;第一部分服务端配置海外服务器&#34;&gt;第一部分：服务端配置（海外服务器）&lt;/h2&gt;
-&lt;h3 id=&#34;11-安装-shadowsocks-服务端&#34;&gt;1.1 安装 Shadowsocks 服务端&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# SSH 连接到服务器&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh root@your-server-ip
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 更新包管理器&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt update
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装 shadowsocks-libev&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt install shadowsocks-libev -y
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;12-创建配置文件&#34;&gt;1.2 创建配置文件&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat &amp;gt; /etc/shadowsocks-libev/config.json &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;server&amp;#34;: &amp;#34;0.0.0.0&amp;#34;,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;server_port&amp;#34;: 8388,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;password&amp;#34;: &amp;#34;YourStrongPassword123!&amp;#34;,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;timeout&amp;#34;: 300,
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;method&amp;#34;: &amp;#34;aes-256-gcm&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;配置说明&lt;/strong&gt;：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Shadowsocks 内网穿透配置</title>
-      <link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</guid>
-      <description>&lt;h1 id=&#34;shadowsocks-内网穿透配置&#34;&gt;Shadowsocks 内网穿透配置&lt;/h1&gt;
-&lt;h2 id=&#34;服务端配置&#34;&gt;服务端配置&lt;/h2&gt;
-&lt;h3 id=&#34;1-安装-shadowsocks-服务端&#34;&gt;1. 安装 Shadowsocks 服务端&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Ubuntu/Debian&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt install shadowsocks-libev
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 启动服务&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start shadowsocks-libev
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; shadowsocks-libev
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-配置服务端&#34;&gt;2. 配置服务端&lt;/h3&gt;
+&lt;h2 id="第一部分服务端配置海外服务器"&gt;第一部分：服务端配置（海外服务器）&lt;/h2&gt;
+&lt;h3 id="11-安装-shadowsocks-服务端"&gt;1.1 安装 Shadowsocks 服务端&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# SSH 连接到服务器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh root@your-server-ip
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 更新包管理器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 安装 shadowsocks-libev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;apt install shadowsocks-libev -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="12-创建配置文件"&gt;1.2 创建配置文件&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat &amp;gt; /etc/shadowsocks-libev/config.json &lt;span class="s"&gt;&amp;lt;&amp;lt; EOF
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;server&amp;#34;: &amp;#34;0.0.0.0&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;server_port&amp;#34;: 8388,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;password&amp;#34;: &amp;#34;YourStrongPassword123!&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;timeout&amp;#34;: 300,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;method&amp;#34;: &amp;#34;aes-256-gcm&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;配置说明&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>Shadowsocks 内网穿透配置</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="shadowsocks-内网穿透配置"&gt;Shadowsocks 内网穿透配置&lt;/h1&gt;
+&lt;h2 id="服务端配置"&gt;服务端配置&lt;/h2&gt;
+&lt;h3 id="1-安装-shadowsocks-服务端"&gt;1. 安装 Shadowsocks 服务端&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Ubuntu/Debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;apt install shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 启动服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl start shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-配置服务端"&gt;2. 配置服务端&lt;/h3&gt;
 &lt;p&gt;编辑配置文件 &lt;code&gt;/etc/shadowsocks-libev/config.json&lt;/code&gt;：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;server&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;server_port&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8388&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;password&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;密码&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;timeout&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;method&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;aes-256-gcm&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-重启服务&#34;&gt;3. 重启服务&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl restart shadowsocks-libev
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status shadowsocks-libev
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;4-检查服务状态&#34;&gt;4. 检查服务状态&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 检查端口监听&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;netstat -tlnp &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep &lt;span class=&#34;m&#34;&gt;8388&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 查看日志&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;journalctl -u shadowsocks-libev -n &lt;span class=&#34;m&#34;&gt;50&lt;/span&gt; --no-pager
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;5-检查防火墙&#34;&gt;5. 检查防火墙&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 检查 UFW 状态&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ufw status
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 如果 UFW 启用，开放端口&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ufw allow 8388/tcp
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;6-云服务商安全组&#34;&gt;6. 云服务商安全组&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;重要！&lt;/strong&gt; 必须在云服务商控制台开放 TCP 8388 端口。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>番茄下载</title>
-      <link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link>
-      <pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;image.png&#34; loading=&#34;lazy&#34; src=&#34;undefined&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>MCP入门指南</title>
-      <link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</link>
-      <pubDate>Thu, 20 Mar 2025 13:48:29 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</guid>
-      <description>&lt;h2 id=&#34;什么是mcp&#34;&gt;什么是MCP？&lt;/h2&gt;
-&lt;p&gt;MCP（Model Context Protocol）是一种用于扩展和增强开发工具功能的协议。它允许开发者创建和使用MCP服务器，这些服务器可以提供额外的工具和资源，以提高开发效率和灵活性。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;server&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;server_port&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8388&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;password&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;lt;密码&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;timeout&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;method&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;aes-256-gcm&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="3-重启服务"&gt;3. 重启服务&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl restart shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;systemctl status shadowsocks-libev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="4-检查服务状态"&gt;4. 检查服务状态&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 检查端口监听&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;netstat -tlnp &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="m"&gt;8388&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 查看日志&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;journalctl -u shadowsocks-libev -n &lt;span class="m"&gt;50&lt;/span&gt; --no-pager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="5-检查防火墙"&gt;5. 检查防火墙&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 检查 UFW 状态&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ufw status
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 如果 UFW 启用，开放端口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ufw allow 8388/tcp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="6-云服务商安全组"&gt;6. 云服务商安全组&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;重要！&lt;/strong&gt; 必须在云服务商控制台开放 TCP 8388 端口。&lt;/p&gt;</description></item><item><title>番茄下载</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid><description>&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="undefined"&gt;&lt;/p&gt;</description></item><item><title>MCP入门指南</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</link><pubDate>Thu, 20 Mar 2025 13:48:29 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/mcp-intro/</guid><description>&lt;h2 id="什么是mcp"&gt;什么是MCP？&lt;/h2&gt;
+&lt;p&gt;MCP（Model Context Protocol）是一种用于扩展和增强开发工具功能的协议。它允许开发者创建和使用MCP服务器，这些服务器可以提供额外的工具和资源，以提高开发效率和灵活性。&lt;/p&gt;</description></item></channel></rss>

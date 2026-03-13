@@ -1,29 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Pytest on 蓝色空间号</title>
-    <link>https://bluespace.eu.org/tags/pytest/</link>
-    <description>Recent content in Pytest on 蓝色空间号</description>
-    <generator>Hugo</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Apr 2025 11:00:00 -0700</lastBuildDate>
-    <atom:link href="https://bluespace.eu.org/tags/pytest/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>pytest接口自动化测试方案</title>
-      <link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link>
-      <pubDate>Fri, 28 Mar 2025 22:43:32 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid>
-      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
-&lt;p&gt;当前业务核心聚焦于 POCT 领域，设备购买和设备使用等关键功能，已成为测试工作的重点保障对象，但随着系统复杂度的提升,手工的回归测试工作很难全面覆盖。为了确保关键业务功能的质量稳定性，有必要引入自动化测试，增加测试覆盖范围，降低已有功能漏测的风险，提前发现问题。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>pytest入门指南</title>
-      <link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link>
-      <pubDate>Thu, 20 Mar 2025 13:42:48 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid>
-      <description>&lt;h2 id=&#34;什么是pytest&#34;&gt;什么是pytest？&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Pytest on 蓝色空间号</title><link>https://bluespace.eu.org/tags/pytest/</link><description>Recent content in Pytest on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 15 Apr 2025 11:00:00 -0700</lastBuildDate><atom:link href="https://bluespace.eu.org/tags/pytest/index.xml" rel="self" type="application/rss+xml"/><item><title>pytest接口自动化测试方案</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 28 Mar 2025 22:43:32 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88/</guid><description>&lt;h2 id="背景"&gt;背景&lt;/h2&gt;
+&lt;p&gt;当前业务核心聚焦于 POCT 领域，设备购买和设备使用等关键功能，已成为测试工作的重点保障对象，但随着系统复杂度的提升,手工的回归测试工作很难全面覆盖。为了确保关键业务功能的质量稳定性，有必要引入自动化测试，增加测试覆盖范围，降低已有功能漏测的风险，提前发现问题。&lt;/p&gt;</description></item><item><title>pytest入门指南</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link><pubDate>Thu, 20 Mar 2025 13:42:48 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid><description>&lt;h2 id="什么是pytest"&gt;什么是pytest？&lt;/h2&gt;
 &lt;p&gt;pytest是一个功能强大且易于使用的Python测试框架。它可以帮助开发者编写简洁、可读性强的测试代码，并提供丰富的插件支持。&lt;/p&gt;
-&lt;h2 id=&#34;pytest的主要特点&#34;&gt;pytest的主要特点&lt;/h2&gt;
+&lt;h2 id="pytest的主要特点"&gt;pytest的主要特点&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;简洁的测试用例编写方式&lt;/li&gt;
 &lt;li&gt;自动发现测试用例&lt;/li&gt;
@@ -31,8 +9,5 @@
 &lt;li&gt;强大的断言功能&lt;/li&gt;
 &lt;li&gt;丰富的插件生态系统&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;安装pytest&#34;&gt;安装pytest&lt;/h2&gt;
-&lt;p&gt;使用以下命令安装pytest：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="安装pytest"&gt;安装pytest&lt;/h2&gt;
+&lt;p&gt;使用以下命令安装pytest：&lt;/p&gt;</description></item></channel></rss>

@@ -1,31 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Pytest on 蓝色空间号</title>
-    <link>https://bluespace.eu.org/categories/pytest/</link>
-    <description>Recent content in Pytest on 蓝色空间号</description>
-    <generator>Hugo</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Fri, 18 Apr 2025 12:59:32 +0800</lastBuildDate>
-    <atom:link href="https://bluespace.eu.org/categories/pytest/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>快速上手pytest项目</title>
-      <link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</link>
-      <pubDate>Fri, 18 Apr 2025 12:59:32 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</guid>
-      <description>&lt;h2 id=&#34;tags-pytest-python&#34;&gt;tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]&lt;/h2&gt;
-&lt;h1 id=&#34;快速上手pytest接口测试&#34;&gt;快速上手Pytest接口测试&lt;/h1&gt;
-&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-&lt;p&gt;以前有分享过httprunner+pytest相关的使用方法，并且一直使用httprunner编写用自动化脚本，以前的经验可以快速帮我们上手pytest框架。为了快速上手pytest，HttpRunner 与Pytest 在编写自动化脚本异同点对比：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>pytest入门指南</title>
-      <link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link>
-      <pubDate>Thu, 20 Mar 2025 13:42:48 +0800</pubDate>
-      <guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid>
-      <description>&lt;h2 id=&#34;什么是pytest&#34;&gt;什么是pytest？&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Pytest on 蓝色空间号</title><link>https://bluespace.eu.org/categories/pytest/</link><description>Recent content in Pytest on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 18 Apr 2025 12:59:32 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/pytest/index.xml" rel="self" type="application/rss+xml"/><item><title>快速上手pytest项目</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</link><pubDate>Fri, 18 Apr 2025 12:59:32 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bpytest%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h2 id="tags-pytest-python"&gt;tags: [&amp;ldquo;pytest&amp;rdquo;, &amp;ldquo;python&amp;rdquo;]&lt;/h2&gt;
+&lt;h1 id="快速上手pytest接口测试"&gt;快速上手Pytest接口测试&lt;/h1&gt;
+&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
+&lt;p&gt;以前有分享过httprunner+pytest相关的使用方法，并且一直使用httprunner编写用自动化脚本，以前的经验可以快速帮我们上手pytest框架。为了快速上手pytest，HttpRunner 与Pytest 在编写自动化脚本异同点对比：&lt;/p&gt;</description></item><item><title>pytest入门指南</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</link><pubDate>Thu, 20 Mar 2025 13:42:48 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/pytest-intro/</guid><description>&lt;h2 id="什么是pytest"&gt;什么是pytest？&lt;/h2&gt;
 &lt;p&gt;pytest是一个功能强大且易于使用的Python测试框架。它可以帮助开发者编写简洁、可读性强的测试代码，并提供丰富的插件支持。&lt;/p&gt;
-&lt;h2 id=&#34;pytest的主要特点&#34;&gt;pytest的主要特点&lt;/h2&gt;
+&lt;h2 id="pytest的主要特点"&gt;pytest的主要特点&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;简洁的测试用例编写方式&lt;/li&gt;
 &lt;li&gt;自动发现测试用例&lt;/li&gt;
@@ -33,8 +11,5 @@
 &lt;li&gt;强大的断言功能&lt;/li&gt;
 &lt;li&gt;丰富的插件生态系统&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;安装pytest&#34;&gt;安装pytest&lt;/h2&gt;
-&lt;p&gt;使用以下命令安装pytest：&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h2 id="安装pytest"&gt;安装pytest&lt;/h2&gt;
+&lt;p&gt;使用以下命令安装pytest：&lt;/p&gt;</description></item></channel></rss>
