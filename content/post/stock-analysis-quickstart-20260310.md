@@ -1,8 +1,7 @@
 ---
-title: 'stock-analysis-quickstart-20260310'
-categories: ["stock-analysis-quickstart-20260310.md"]
-date: 2026-03-10T03:00:01+08:00
-lastmod: 2026-03-10T03:00:01+08:00
+title: '股票技术面分析 - 快速开始指南'
+categories: ['技术']
+date: 2026-03-15T04:01:08+0800
 draft: false
 ---
 # 股票技术面分析 - 快速开始指南
@@ -37,7 +36,7 @@ pip3 install yfinance pandas-ta pandas numpy
 
 **步骤 2: 运行分析脚本**
 ```bash
-python3 /root/.openclaw/workspace/scripts/stock-analysis.py
+python3 /root/.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-analysis.py
 ```
 
 **步骤 3: 自定义分析**
@@ -60,7 +59,7 @@ print(f"RSI: {summary['rsi']['signal']}")
 
 创建自定义技能，让 OpenClaw 直接调用 Python 脚本。
 
-详见: `/root/.openclaw/workspace/scripts/README-stock-analysis.md`
+详见: `/root/.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-stock-analysis.md`
 
 ---
 
@@ -218,8 +217,8 @@ for period in ['1mo', '3mo', '6mo', '1y']:
 ## 📚 相关文档
 
 - **完整研究报告:** `/root/.openclaw/workspace/note-gen-sync/stock-technical-analysis-openclaw-research-20260310.md`
-- **Python 脚本:** `/root/.openclaw/workspace/scripts/stock-analysis.py`
-- **详细文档:** `/root/.openclaw/workspace/scripts/README-stock-analysis.md`
+- **Python 脚本:** `/root/.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-analysis.py`
+- **详细文档:** `/root/.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-stock-analysis.md`
 
 ---
 

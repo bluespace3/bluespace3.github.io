@@ -1,8 +1,7 @@
 ---
-title: 'nc域名FRP配置成功报告'
-categories: ["nextcloud"]
-date: 2026-03-10T03:00:01+08:00
-lastmod: 2026-03-10T03:00:01+08:00
+title: 'nc.skyspace.eu.org FRP 配置成功报告'
+categories: ['nextcloud']
+date: 2026-03-15T04:01:08+0800
 draft: false
 ---
 # nc.skyspace.eu.org FRP 配置成功报告
@@ -16,12 +15,12 @@ draft: false
 
 ### 修改前
 ```
-nc.skyspace.eu.org → 服务器 → Tailscale (100.97.62.83:8080) → Mac
+nc.skyspace.eu.org → 服务器 → Tailscale (xxx.xxx.xxx.xxx:8080) → Mac
 ```
 
 ### 修改后
 ```
-nc.skyspace.eu.org → 服务器 → FRP (127.0.0.1:8080) → Mac
+nc.skyspace.eu.org → 服务器 → FRP (xxx.xxx.xxx.xxx:8080) → Mac
 ```
 
 ---
@@ -37,12 +36,12 @@ cp /etc/nginx/sites-available/nc.skyspace.eu.org.conf \
 ### 2. 修改配置
 修改前：
 ```nginx
-proxy_pass http://100.97.62.83:8080;  # Tailscale
+proxy_pass http://xxx.xxx.xxx.xxx:8080;  # Tailscale
 ```
 
 修改后：
 ```nginx
-proxy_pass http://127.0.0.1:8080;  # FRP
+proxy_pass http://xxx.xxx.xxx.xxx:8080;  # FRP
 ```
 
 ### 3. 应用配置
@@ -81,7 +80,7 @@ curl -I https://nc.skyspace.eu.org
   ↓
 Cloudflare CDN
   ↓
-服务器 (38.55.39.104)
+服务器 (xxx.xxx.xxx.xxx)
   ↓
 Tailscale VPN
   ↓
@@ -89,7 +88,7 @@ Tailscale VPN
 
 路径2: nc.skyspace.eu.org (备用)
   ↓
-服务器 (38.55.39.104)
+服务器 (xxx.xxx.xxx.xxx)
   ↓
 FRP 隧道
   ↓

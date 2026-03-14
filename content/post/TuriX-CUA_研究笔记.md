@@ -1,8 +1,7 @@
 ---
-title: 'TuriX-CUA_研究笔记'
-categories: ["TuriX-CUA_研究笔记.md"]
-date: 2026-03-08T03:00:01+08:00
-lastmod: 2026-03-08T03:00:01+08:00
+title: 'TuriX-CUA 研究笔记'
+categories: ['技术']
+date: 2026-03-15T04:01:08+0800
 draft: false
 ---
 # TuriX-CUA 研究笔记
@@ -302,7 +301,7 @@ description: Use when navigating GitHub in a browser (searching repos, starring,
 ## 社区与支持
 
 - **Discord：** https://discord.gg/yaYrNAckb5
-- **Email：** contact@turix.ai
+- **Email：** user@example.com
 - **技术报告：** https://turix.ai/technical-report/
 - **API 平台：** https://turixapi.io
 - **开发者注册：** https://turix.ai/api-platform/（$20 信用额度）

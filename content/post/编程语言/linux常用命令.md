@@ -1,8 +1,7 @@
 ---
 title: 'linux常用命令'
-categories: ["编程语言"]
-date: 2026-03-04T02:48:21+08:00
-lastmod: 2026-03-04T02:48:21+08:00
+categories: ['编程语言']
+date: 2026-03-15T04:01:08+0800
 draft: false
 ---
 
@@ -166,7 +165,7 @@ tree test01/
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=NWY4YTU1Y2Y2MDgzMjdlNzA2NTNiYWE1YWM2MDJmMGJfRGNqcEIzZEFmZUo5Y0l5cVcxYjRHeXhDd2N0TFhFb01fVG9rZW46WVF3cWJ1TXcxb1RUREh4dnBsdmNVZEF1bkFjXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 ### 1、批量操作
 
@@ -393,7 +392,7 @@ awk [options] 'cmd' file
 * 支持对单个切片的判断，支持循环判断，默认分隔符为空格。
 * -F 指定分隔符(默认为空格)
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=NWFmNTgzNjc3YTg3NjZiNDljMzRkNjNmNWZlZTI5MzdfbFN4MmtFaGtoOURpWnpmOWJxd2c1MXVIUElmYmtNNDdfVG9rZW46RTY2NmJHNXd4b1UwZTR4dUF5bWNyUEpLbjFnXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 **1. 将****`email.out`****进行切分，打印出第1/3列内容**
 
@@ -437,9 +436,9 @@ awk '{print $1,$3}' email.out | awk '{count[$1]++} END {for(i in count) print i 
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=M2E5NWNiMTRkYjJjNWViZDRlZjBmNDU3Y2M1YzAwN2RfTnNHNVFtOERwTlREdnBnRVQzaEhGRkZzV2RDWTIwTWNfVG9rZW46SExOQWJsQkZ6b0FVOTJ4YU9nUmMxbUo0bk1jXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=YjAwYTY1Y2JiZWZmODYzYWM2NmZiMjQ4NTI1MWQzZmZfc3FlWFZ6a1NoQ2VBdTVad1E4ZlJ1U0poQWVXVU50Z2xfVG9rZW46T3RWeWJaTUdlb1U4ZHB4b3JEeWNkNnEwbmVlXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
  **7. 根据逗号**  **`,`** **切分数据，并将第一列存在文件****`test01.txt`****中**
 
@@ -480,7 +479,7 @@ sed -i 's/^Str/String/' replace.java
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=YzczNGU2YjRlN2I1MDQ4YmM2OTE3ZDA0N2RhMzRjY2FfdWxGTWV5d2N4V1I0bjhlRVZzYXlaOVBmVVVheVY1eW5fVG9rZW46WGE5eGJ6TGZOb0J5RWl4RWJwSWNzUENvbm1mXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 **2. 将末尾的.替换为；(转义.)**
 
@@ -609,7 +608,7 @@ ln -s /usr/local/app /data
 
 注意：创建软连接时，data目录后不加 / (加上后是查找其下一级目录)；
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=M2YyYzAyYWZjOWNkNzg1NDdmYmMwN2U2ODY4YWJkMzNfRkJyejVPemRsUmJhaVNqYVNBZ0FxQ0J3U2dORnlEbVNfVG9rZW46SWZSSGJveTdYb3RhbVB4M3hWSGN3TWJUbjljXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 **2、删除软连接**
 
@@ -620,13 +619,13 @@ rm -rf /data
 
 注意：取消软连接最后没有/，rm -rf 软连接。加上/是删除文件夹；
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZDU0YTUxZTc5ZDkwZDc3ZGQwMDFhZWQwMjgzYjhhZjNfamJndXNtaWxqV2hWWVRLaEhrRmJxSmZ1S3R3WmNXRFJfVG9rZW46TUtRNGJ1ZmdTb0cwT0t4WEVxU2NHdkdvbjJiXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 ## 六、压缩和解压缩
 
 **tar**
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=NGMxMzVkYjFlM2JmZjU1NjM2MzkwM2RjZjRmOTNhZmFfMFRBU1RVWXZmVTlKOUlBdENEQnR3NmE5UVFSN3hGQkdfVG9rZW46UktnM2I0U0Fsb05WbVR4MHpqd2NJeXpzbllkXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 tar
 
@@ -691,7 +690,7 @@ unzip -d /usr/app/com.lydms.english.zip                        //将`english.zip
 12345
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MDI5NGEyYzM4NWZiNWZiZTIwNjU0ZDExZmM3ODA5ZjlfYjVMY3F6RHd5UUxXTndDNzg4YUxWazZNRmtROTNwVTJfVG9rZW46Tktsa2I2MkJlb2Npekx4eFVPOGNTa0p2bjRmXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 **更改文件的权限**
 
@@ -704,7 +703,7 @@ chmod 444 web.xml （-r--r--r--）                为所有用户分类，添加
 12345
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MjQ4ZTYzYmE3MjdkOGIyMjBiNmY3NzUwNzEzYTcxYWZfbFpYWkZ0QWtUdnlCbEM0a2lmem8xUXNRdnVIemF1ZThfVG9rZW46RkVFMmJYVDZTb2E4OXR4OGR1YmN2UmFnblRnXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 ## 八、常用的docker容器的命令：
 
@@ -754,23 +753,23 @@ docker rm first
 **查看服务器是否可用**
 
 ```Shell
-ping 49.32.587.164
+ping xxx.xxx.xxx.xxx
 1
 ```
 
 **查看服务器指定端口是否可用**
 
 ```Shell
-telnet 49.32.587.164 8093
+telnet xxx.xxx.xxx.xxx 8093
 1
 ```
 
-[Telnet安装](https://blog.csdn.net/lydms/article/details/113698856)
+[Telnet安装](https://blog.csdn.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 这是我写过的一个Linux安装Telnet的文章。
 
 ```Shell
-https://blog.csdn.net/lydms/article/details/113698856
+https://blog.csdn.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 1
 ```
 
@@ -802,7 +801,7 @@ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=NDg2ZmQ0OWU3MGFhMTI4NjhmNzIxMGQxODIxNzg1ZTNfeWdWM0lFOGpzeVRGZkJVdnZJNUNpR2ZuYWZpdERRUjFfVG9rZW46RWNJWGJ3TVU3b2NDMWN4MVJjM2N1amg0bmVnXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 查看处于 `ESTABLISHED`状态连接
 
@@ -948,7 +947,7 @@ vim /etc/hosts
 在打开的文件中添加
 
 ```Shell
-49.235.32.164 www.lydms.com
+xxx.xxx.xxx.xxx www.lydms.com
 1
 ```
 
@@ -961,7 +960,7 @@ vim /etc/hosts
 
 重新加载成功：
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=NDRiMGYzYzg3ZDgzYjYxZDc0NTQ0NzJjOTczY2NmOTlfTUJyOFJHUlZVYWc2MW8zdXdIVVUxUjJLbjlFYlBvbzNfVG9rZW46UnhzVmJUU0Vnb3JsQzF4VjZJUWNqY3VkbkJlXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 ## 十、yum常用命令
 
@@ -1145,15 +1144,15 @@ curl "http://www.wangchujiang.com"
 #  普通文本
 curl -d'login=emma＆password=123' -X POST https://wangchujiang.com/login
 #  Json格式
-curl -l -H "Content-type: application/json" -X POST -d '{"phone":"13521389587","password":"test"}' http://wangchujiang.com/apis/users.json
+curl -l -H "Content-type: application/json" -X POST -d '{"phone":"138****8888","password":"test"}' http://wangchujiang.com/apis/users.json
 
 12345
 ```
 
-详细可以看我写的另一篇：[curl语法整理](https://blog.csdn.net/lydms/article/details/127655845)
+详细可以看我写的另一篇：[curl语法整理](https://blog.csdn.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 ```Plaintext
-https://blog.csdn.net/lydms/article/details/127655845
+https://blog.csdn.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 1
 ```
 
@@ -1227,7 +1226,7 @@ eses    ALL=(ALL)       ALL
 123
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=NzllYmQyYTNiMDNmNzBkZjljYTQ0MmFjODIzMTY0MjFfcVBpNjBCMm9QMkoxZk1YME9zRmNuMlViT3luSlo1MnJfVG9rZW46V2g1bmJMejg2b2hBdWN4ZTlsbWMzandobnVoXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 新建的用户在面显示
 
@@ -1236,7 +1235,7 @@ cat /etc/passwd
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=NDgwNTM1MzllNTA1N2ZhNmY5MjcxMGYzZTQ4ZDZkNjBfQ3NRNHpSV1h4SHJ2OUNHczA0V2kyNkdzRkRLTUxFdktfVG9rZW46WFFEOGJzdk83b1V0eTV4b0VKVWNrVXNWbmhmXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 切换下刚才添加的用户
 
@@ -1262,7 +1261,7 @@ usermod 选项 用户名
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=N2FmNDAzMzAwN2NmZjdjMGMzOTBjY2ViZGM3YTUzMjdfZVBRRFZHZGJ2VGlpWXU4TzRBMUlIREExMW90YVJ2dHdfVG9rZW46VVVzRGJ0c1RMb3A2WXJ4UnduQmNOVkZCbnplXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 删除用户文件夹
 
@@ -1278,7 +1277,7 @@ userdel sum
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTg5ZWU1Y2NiZjM5Nzk2YzgzZGZlNDViOTdjZTEwYTZfeFgxMWxHUTZHbngxdUV2b3RyS3hzZDc2UmRPM2NoUFlfVG9rZW46Q0k1N2J3TDNhbzVYOEF4cE1NMGNXRmRBbm9jXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 ### 2、添加组
 
@@ -1289,7 +1288,7 @@ groupadd groupname
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=YTdhNjZmOGE1MTgxNDc2ZDI5OWQzMDFlZWViYmZmYWJfczMwQmdjcUU2dm1peEV6SW5wTm5Ja0VzaEwzbGtTdjZfVG9rZW46UkdGeGJKRUhhb1RFdDJ4SlRBbmNVOVc1bm9lXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 **修改用户组**
 使用者权限：管理员用户
@@ -1306,7 +1305,7 @@ groupmod  -n new-usergroup  usergroup
 * -o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。
 * -n新用户组 将用户组的名字改为新名字
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZWQzZWIwM2RlNjQ3M2E2N2ZkOTJiNjY4ZTU3NTY0NmFfM3M0Nm9VTnZIY0tnZ1NKYnZtSFIzUzhIM1NDaVVxTFlfVG9rZW46SG02UWI2WVBtb2FSUmd4RFFwaWM5ZGNMbmpnXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 **删除用户组**
 
@@ -1342,7 +1341,7 @@ sudo   vi /etc/sysconfig/network-scripts/ifcfg-ens33
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MmFiYzIxMzA3MTdiYTIzMzlhZDJhZjgwMmM3N2ExOTVfcGdYS0dlQTFhSTJhMlVQRFVTT1ZBR3ZKUFkyN2Q0T1lfVG9rZW46S21LVmJhTWlrb2dwT1Z4UG9BTmNndlBYbm1IXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 ### 4、更换文件所有者
 
@@ -1377,7 +1376,7 @@ top
 1
 ```
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=YWUwM2U0ZTQyZTcwZWY5NTlmYmRhNzcyMmJhZGE3NmZfb2VIQ2VkTEpkR2tmV0YyMno5UzRuYU1Va01wYlRkN2xfVG9rZW46RFY5Y2JJSDJ4b2VYUDN4ZG1KT2NLdHNmbnBmXzE3NDI0NjA5ODY6MTc0MjQ2NDU4Nl9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 top命令执行结果分为两个区域：**统计信息区**和**进程信息区**
 

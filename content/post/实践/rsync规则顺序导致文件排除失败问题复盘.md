@@ -1,8 +1,7 @@
 ---
-title: 'rsync规则顺序导致文件排除失败问题复盘'
-categories: ["实践"]
-date: 2026-03-07T07:42:38+08:00
-lastmod: 2026-03-07T07:42:38+08:00
+title: 'rsync 规则顺序导致文件排除失败问题复盘'
+categories: ['实践']
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 # rsync 规则顺序导致文件排除失败问题复盘

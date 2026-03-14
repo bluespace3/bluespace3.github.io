@@ -1,8 +1,7 @@
 ---
-title: 'Untitled'
-categories: ["AIGC学习笔记"]
-date: 2026-03-07T08:37:37+08:00
-lastmod: 2026-03-07T08:37:37+08:00
+title: '**v100指令**'
+categories: ['AIGC学习笔记']
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 ## **v100指令**

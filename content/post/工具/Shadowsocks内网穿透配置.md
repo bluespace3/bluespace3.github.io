@@ -1,8 +1,7 @@
 ---
-title: 'Shadowsocks内网穿透配置'
-categories: ["工具"]
-date: 2026-03-07T07:42:38+08:00
-lastmod: 2026-03-07T07:42:38+08:00
+title: 'Shadowsocks 内网穿透配置'
+categories: ['工具']
+date: 2026-03-15T04:01:08+0800
 draft: false
 ---
 # Shadowsocks 内网穿透配置
@@ -26,7 +25,7 @@ systemctl enable shadowsocks-libev
 
 ```json
 {
-  "server": "0.0.0.0",
+  "server": "xxx.xxx.xxx.xxx",
   "server_port": 8388,
   "password": "<密码>",
   "timeout": 300,
@@ -96,7 +95,7 @@ console.log('启动 Shadowsocks 客户端...');
 
 createServer(config)
   .then(server => {
-    console.log('✓ 代理运行在 127.0.0.1:1080');
+    console.log('✓ 代理运行在 xxx.xxx.xxx.xxx:1080');
     console.log('按 Ctrl+C 退出');
   })
   .catch(err => {
@@ -147,13 +146,13 @@ telnet <服务器IP> 8388
 
 ```bash
 # 测试访问 Google
-curl --socks5 127.0.0.1:1080 https://www.google.com
+curl --socks5 xxx.xxx.xxx.xxx:1080 https://www.google.com
 
 # 测试访问 GitHub
-curl --socks5 127.0.0.1:1080 https://github.com
+curl --socks5 xxx.xxx.xxx.xxx:1080 https://github.com
 
 # 测试速度
-curl --socks5 127.0.0.1:1080 -o nul -w "状态码: %{http_code}\n速度: %{speed_download} bytes/s\n时间: %{time_total} 秒\n" https://www.google.com
+curl --socks5 xxx.xxx.xxx.xxx:1080 -o nul -w "状态码: %{http_code}\n速度: %{speed_download} bytes/s\n时间: %{time_total} 秒\n" https://www.google.com
 ```
 
 ## 配置 Git 使用代理
@@ -161,20 +160,20 @@ curl --socks5 127.0.0.1:1080 -o nul -w "状态码: %{http_code}\n速度: %{speed
 ### 方案 1：全局配置
 
 ```bash
-git config --global http.proxy socks5://127.0.0.1:1080
-git config --global https.proxy socks5://127.0.0.1:1080
+git config --global http.proxy socks5://xxx.xxx.xxx.xxx:1080
+git config --global https.proxy socks5://xxx.xxx.xxx.xxx:1080
 ```
 
 ### 方案 2：只对 GitHub 使用代理
 
 ```bash
-git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+git config --global http.https://github.com.proxy socks5://xxx.xxx.xxx.xxx:1080
 ```
 
 ### 方案 3：临时使用（不修改配置）
 
 ```bash
-git -c http.proxy=socks5://127.0.0.1:1080 clone https://github.com/xxx/xxx.git
+git -c http.proxy=socks5://xxx.xxx.xxx.xxx:1080 clone https://github.com/xxx/xxx.git
 ```
 
 ### 取消代理
@@ -198,15 +197,15 @@ git config --global --get https.proxy
 1. 客户端安装：[https://github.com/shadowsocks/shadowsocks-windows.git](https://github.com/shadowsocks/shadowsocks-windows.git)
 2. 选择 [releases](https://github.com/shadowsocks/shadowsocks-windows/releases)直接下载到本地，免安装，直接使用。
 
-![配置](/assets/Pastedimage20260228152426.png)
+![配置](xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png)
 
 3. 配置：按照下图填写你的服务端，注意加密方式一定要一致否则连接不上。
 
-![配置](/assets/Pasted%20image%2020260228152732.png)
+![配置](assets/Pasted%20image%2020260228152732.png)
 
 4.一般使用PAC模式，既智能代理，当需要代理时自动使用。
 
- ![PAC模式](/assets/Pasted%20image%2020260228153454.png)
+ ![PAC模式](assets/Pasted%20image%2020260228153454.png)
 
 ## 配置浏览器使用代理
 
@@ -214,7 +213,7 @@ git config --global --get https.proxy
 
 1. 设置 → 系统 → 打开计算机的代理设置
 2. 配置 SOCKS5 代理：
-  - 代理服务器：`127.0.0.1`
+  - 代理服务器：`xxx.xxx.xxx.xxx`
   - 端口：`1080`
 
 ### Firefox
@@ -222,7 +221,7 @@ git config --global --get https.proxy
 1. 设置 → 网络设置
 2. 选择"手动配置代理"
 3. 配置 SOCKS v5：
-  - SOCKS 主机：`127.0.0.1`
+  - SOCKS 主机：`xxx.xxx.xxx.xxx`
   - 端口：`1080`
   - 选择 "SOCKS v5"
 
@@ -300,7 +299,7 @@ journalctl -u shadowsocks-libev --since "5 minutes ago" --no-pager
   - Windows: `node start.js`
   - Python: `sslocal -s <服务器IP> -p 8388 -k <密码> -m aes-256-gcm -l 1080`
 2. **代理只对本机有效**
-  - 如需局域网共享，需要修改客户端配置为监听 `0.0.0.0`
+  - 如需局域网共享，需要修改客户端配置为监听 `xxx.xxx.xxx.xxx`
 3. **加密方式不一致会导致连接失败**
   - 客户端和服务端的加密方式必须完全一致
 4. **云服务商安全组必须开放端口**

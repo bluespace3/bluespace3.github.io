@@ -1,8 +1,7 @@
 ---
-title: 'FRP配置诊断与修复指南'
-categories: ["nextcloud"]
-date: 2026-03-10T03:00:01+08:00
-lastmod: 2026-03-10T03:00:01+08:00
+title: 'FRP Token 修复指南'
+categories: ['nextcloud']
+date: 2026-03-15T04:01:08+0800
 draft: false
 ---
 # FRP Token 修复指南
@@ -17,12 +16,12 @@ draft: false
 #### 选项 A: 修改客户端 Token 匹配服务端
 ```bash
 # 编辑客户端配置
-vi /Users/tianqinghong/nextcloud/frpc.toml
+vi /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml
 
 # 修改这一行：
-auth.token = "d5b2e506bd2599a802583acce6253226"
+auth.token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 # 改为：
-auth.token = "d5b2e506bd2592a802583acce6253226"
+auth.token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
 #### 选项 B: 修改服务端 Token 匹配客户端
@@ -32,9 +31,9 @@ ssh server
 sudo vi /etc/frp/frps.toml
 
 # 修改这一行：
-auth.token = "d5b2e506bd2592a802583acce6253226"
+auth.token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 # 改为：
-auth.token = "d5b2e506bd2599a802583acce6253226"
+auth.token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 # 重启服务
 sudo systemctl restart frps
@@ -44,10 +43,10 @@ sudo systemctl restart frps
 
 ```bash
 # 方式 A: 手动启动（测试）
-/opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml
+/opt/homebrew/opt/frpc/bin/frpc -c /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml
 
 # 方式 B: 后台运行
-nohup /opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml > /tmp/frpc.log 2>&1 &
+nohup /opt/homebrew/opt/frpc/bin/frpc -c /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml > /tmp/frpc.log 2>&1 &
 
 # 方式 C: 创建 systemd 服务（推荐）
 # 创建 ~/Library/LaunchAgents/com.github.frpc.nextcloud.plist
@@ -60,7 +59,7 @@ nohup /opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml
 ssh server "journalctl -u frps -f"
 
 # 测试连接
-curl -I http://38.55.39.104:8080
+curl -I http://xxx.xxx.xxx.xxx:8080
 ```
 
 ### 4. 更新 Nginx 配置（如果使用 FRP）
@@ -74,7 +73,7 @@ sudo vi /etc/nginx/sites-available/nc.skyspace.eu.org.conf
 
 # 修改 upstream：
 upstream nextcloud_backend {
-    server 127.0.0.1:8080;  # FRP 监听端口
+    server xxx.xxx.xxx.xxx:8080;  # FRP 监听端口
     keepalive 64;
 }
 

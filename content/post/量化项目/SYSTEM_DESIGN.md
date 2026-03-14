@@ -1,8 +1,7 @@
 ---
-title: 'SYSTEM_DESIGN'
-categories: ["量化项目"]
-date: 2026-03-07T08:37:37+08:00
-lastmod: 2026-03-07T08:37:37+08:00
+title: '系统设计与开发者文档'
+categories: ['量化项目']
+date: 2026-03-15T04:01:08+0800
 draft: false
 ---
 # 系统设计与开发者文档
@@ -307,8 +306,8 @@ Signal for 贵州茅台 (600519.SH) on 2025-01-13: 【买入】
 -   **查询参数**:
     -   `codes` (可选, string): 指定一个或多个股票代码（用逗号分隔），仅分析这些股票。如果未提供，则执行“自选股+AI推荐”的完整流程。
 -   **请求示例**:
-    -   触发完整流程: `curl "http://127.0.0.1:5000/run"`
-    -   分析指定股票: `curl "http://127.0.0.1:5000/run?codes=600519.SH,000001.SZ"`
+    -   触发完整流程: `curl "http://xxx.xxx.xxx.xxx:5000/run"`
+    -   分析指定股票: `curl "http://xxx.xxx.xxx.xxx:5000/run?codes=600519.SH,000001.SZ"`
 -   **返回**:
     -   成功时返回分析结果的JSON。
     -   失败时返回 `{"status": "fail", "msg": "错误信息"}`。

@@ -1,13 +1,17 @@
 ---
-title: 'git操作'
-categories: ["git"]
-date: 2026-03-07T08:43:51+08:00
-lastmod: 2026-03-07T08:43:51+08:00
+title: "Git 常用命令记录"
+
+date: 2025-04-06T09:59:32+08:00
+
 draft: false
+
+tags: ["Git", "教程"]
+
+categories: ["技术笔记"]
 ---
 #### 回滚到指定提交
 
-1. git reset --hard c1ac53850b0314a20e97f669bafc8bb67a3a1124
+1. git reset --hard xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 2. git push
 
 #### 放弃变更强制提交
