@@ -1,7 +1,8 @@
 ---
 title: 'doc转md'
-categories: ['工具']
-date: 2026-03-07T08:43:34+0800
+categories: ["工具"]
+date: 2025-09-28T16:23:36+08:00
+lastmod: 2025-09-28T16:23:36+08:00
 draft: false
 ---
 1. Pandoc 简介

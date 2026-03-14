@@ -1,7 +1,8 @@
 ---
-title: 'FRP vs Tailscale 最终性能测试报告'
-categories: ['nextcloud']
-date: 2026-03-09T14:53:47+0800
+title: 'FRP-vs-Tailscale最终性能测试报告'
+categories: ["nextcloud"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # FRP vs Tailscale 最终性能测试报告

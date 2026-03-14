@@ -1,7 +1,8 @@
 ---
-title: '仓位管理系统 - 现有工具调研报告'
-categories: ['技术']
-date: 2026-03-13T11:43:52+0800
+title: 'position-management-research-20260310'
+categories: ["position-management-research-20260310.md"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # 仓位管理系统 - 现有工具调研报告

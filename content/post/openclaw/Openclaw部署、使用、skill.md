@@ -1,7 +1,8 @@
 ---
-title: '【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305'
-categories: ['openclaw']
-date: 2026-03-09T00:38:42+0800
+title: 'Openclaw部署、使用、skill'
+categories: ["openclaw"]
+date: 2026-03-09T03:00:01+08:00
+lastmod: 2026-03-09T03:00:01+08:00
 draft: false
 ---
 # 【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305

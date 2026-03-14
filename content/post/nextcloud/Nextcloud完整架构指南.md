@@ -1,7 +1,8 @@
 ---
-title: 'Nextcloud 完整架构指南'
-categories: ['nextcloud']
-date: 2026-03-09T13:11:13+0800
+title: 'Nextcloud完整架构指南'
+categories: ["nextcloud"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # Nextcloud 完整架构指南

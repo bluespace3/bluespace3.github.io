@@ -20,6 +20,7 @@ if str(script_dir) not in sys.path:
 
 from github_api import GitHubFileTimeFetcher, convert_github_time_to_hugo, extract_category_from_path
 from config import SyncNotesConfig
+from content_sanitizer import ContentSanitizer, sanitize_markdown_file
 
 
 class NotesSyncManager:
@@ -255,16 +256,18 @@ draft: false
             self.stats['failed'] += 1
             return False
 
-    def sync_from_note_repo(self, note_repo_path: Path = None, dry_run: bool = False) -> dict:
+    def sync_from_note_repo(self, note_repo_path: Path = None, dry_run: bool = False,
+                           sanitize: bool = True) -> dict:
         """
         从笔记仓库同步新文件到博客目录
 
         Args:
             note_repo_path: 笔记仓库路径（如果为 None，使用默认路径）
             dry_run: 预览模式（不实际复制文件）
+            sanitize: 是否自动脱敏敏感信息
 
         Returns:
-            dict: {'copied': 复制的文件数, 'skipped': 跳过的文件数}
+            dict: {'copied': 复制的文件数, 'skipped': 跳过的文件数, 'sanitized': 脱敏的文件数}
         """
         # 默认笔记仓库路径
         if note_repo_path is None:
@@ -273,7 +276,7 @@ draft: false
         if not note_repo_path.exists():
             print(f"⚠️  笔记仓库不存在：{note_repo_path}")
             print("   跳过文件同步")
-            return {'copied': 0, 'skipped': 0}
+            return {'copied': 0, 'skipped': 0, 'sanitized': 0}
 
         # 获取忽略目录列表
         ignore_dirs = self.config.get('sync.ignore_dirs', [])
@@ -281,9 +284,10 @@ draft: false
         print(f"\n🔄 从笔记仓库同步新文件")
         print(f"   笔记仓库：{note_repo_path}")
         print(f"   目标目录：{self.content_dir}")
-        print(f"   预览模式：{'是' if dry_run else '否'}\n")
+        print(f"   预览模式：{'是' if dry_run else '否'}")
+        print(f"   自动脱敏：{'是' if sanitize else '否'}\n")
 
-        stats = {'copied': 0, 'skipped': 0}
+        stats = {'copied': 0, 'skipped': 0, 'sanitized': 0}
 
         # 查找笔记仓库中所有的 .md 文件
         for note_file in note_repo_path.rglob('*.md'):
@@ -320,8 +324,22 @@ draft: false
                 # 复制文件
                 import shutil
                 shutil.copy2(note_file, target_file)
-                print(f"  ✅ 已复制：{rel_path}")
 
+                # 自动脱敏敏感信息
+                if sanitize:
+                    try:
+                        sanitized_stats = sanitize_markdown_file(
+                            target_file,
+                            inplace=True,
+                            verbose=False
+                        )
+                        if sanitized_stats[1]['total_matches'] > 0:
+                            print(f"  🔒 已脱敏：{rel_path} ({sanitized_stats[1]['total_matches']} 处敏感信息)")
+                            stats['sanitized'] += 1
+                    except Exception as e:
+                        print(f"  ⚠️  脱敏失败：{rel_path} - {e}")
+
+                print(f"  ✅ 已复制：{rel_path}")
                 stats['copied'] += 1
 
         # 同步 assets 目录（如果有图片等资源）
@@ -358,6 +376,8 @@ draft: false
         print(f"\n  📊 同步完成：")
         print(f"     复制：{stats['copied']} 个")
         print(f"     跳过：{stats['skipped']} 个")
+        if sanitize:
+            print(f"     脱敏：{stats['sanitized']} 个")
 
         return stats
 
@@ -406,7 +426,8 @@ draft: false
 
     def process_directory(self, directory: Path, overwrite: bool = True,
                          batch_size: int = 10, batch_delay: float = 1.0,
-                         sync_files: bool = False, dry_run: bool = False) -> None:
+                         sync_files: bool = False, dry_run: bool = False,
+                         sanitize: bool = True) -> None:
         """
         批量处理目录下所有 Markdown 文件
 
@@ -417,6 +438,7 @@ draft: false
             batch_delay: 批量之间的延迟（秒）
             sync_files: 是否从笔记仓库同步新文件
             dry_run: 预览模式（不实际修改文件）
+            sanitize: 是否自动脱敏敏感信息
         """
         # 转换为 Path 对象
         directory = Path(directory)
@@ -433,6 +455,7 @@ draft: false
         print(f"   批量大小: {batch_size}")
         print(f"   批量延迟: {batch_delay}秒")
         print(f"   同步新文件: {'是' if sync_files else '否'}")
+        print(f"   自动脱敏: {'是' if sanitize else '否'}")
         print(f"   预览模式: {'是' if dry_run else '否'}")
         if ignore_dirs:
             print(f"   忽略目录: {', '.join(ignore_dirs)}\n")
@@ -441,7 +464,7 @@ draft: false
 
         # 从笔记仓库同步新文件
         if sync_files:
-            sync_stats = self.sync_from_note_repo(dry_run=dry_run)
+            sync_stats = self.sync_from_note_repo(dry_run=dry_run, sanitize=sanitize)
             if sync_stats['copied'] > 0:
                 print(f"\n  💡 新文件已同步，准备添加 Front Matter...\n")
 
@@ -505,6 +528,9 @@ def main():
 
   # 不覆盖已有 frontmatter
   python %(prog)s --batch content/post --no-overwrite
+
+  # 禁用自动脱敏
+  python %(prog)s --batch content/post --no-sanitize
         """
     )
 
@@ -514,6 +540,7 @@ def main():
     parser.add_argument('--dry-run', action='store_true', help='预览模式（不实际修改文件）')
     parser.add_argument('--no-overwrite', action='store_true', help='不覆盖已有 frontmatter')
     parser.add_argument('--sync-files', action='store_true', help='从笔记仓库同步新文件到博客目录')
+    parser.add_argument('--no-sanitize', action='store_true', help='禁用自动脱敏（默认启用）')
     parser.add_argument('--verbose', action='store_true', help='详细输出')
 
     args = parser.parse_args()
@@ -573,7 +600,8 @@ def main():
                 batch_size=manager.config.get('sync.batch_size', 10),
                 batch_delay=manager.config.get('sync.batch_delay', 1.0),
                 sync_files=args.sync_files,
-                dry_run=args.dry_run
+                dry_run=args.dry_run,
+                sanitize=not args.no_sanitize
             )
 
         # 打印最终统计

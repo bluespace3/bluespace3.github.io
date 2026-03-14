@@ -1,7 +1,8 @@
 ---
-title: '核心组件'
-categories: ['AIGC学习笔记']
-date: 2026-03-07T08:43:34+0800
+title: 'langchain'
+categories: ["AIGC学习笔记"]
+date: 2025-12-21T00:44:38+08:00
+lastmod: 2025-12-21T00:44:38+08:00
 draft: false
 ---
 ## 核心组件

@@ -1,7 +1,8 @@
 ---
-title: 'OpenClaw 教程笔记'
-categories: ['openclaw']
-date: 2026-03-09T18:31:50+0800
+title: 'openclaw-tutorial-0305'
+categories: ["openclaw"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # OpenClaw 教程笔记
