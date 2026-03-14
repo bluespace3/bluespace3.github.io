@@ -147,10 +147,10 @@ MD_COUNT=$(find content/post -name "*.md" -type f | wc -l)
 log "✅ 已复制 $MD_COUNT 个笔记文件"
 
 # ============================================
-# 第五步：为所有文件添加/更新 front matter
+# 第五步：为所有文件添加/更新 front matter 并脱敏
 # ============================================
 log ""
-log "【步骤 5/5】为所有文件添加/更新 front matter..."
+log "【步骤 5/5】为所有文件添加/更新 front matter 并脱敏..."
 
 cd "$BLOG_DIR"
 
@@ -164,6 +164,66 @@ if [ -n "$GITHUB_TOKEN" ]; then
     else
         warn "未找到 sync_notes_from_github.py，使用本地时间戳"
     fi
+fi
+
+# ============================================
+# 脱敏敏感信息
+# ============================================
+log ""
+log "正在脱敏敏感信息..."
+
+if [ -f "tools/content_sanitizer.py" ]; then
+    # 对所有 Markdown 文件进行脱敏
+    python3 << 'PYTHON_EOF'
+from tools.content_sanitizer import ContentSanitizer, sanitize_markdown_file
+from pathlib import Path
+import sys
+
+sanitizer = ContentSanitizer(verbose=False)
+post_dir = Path("content/post")
+
+total_files = 0
+sanitized_files = 0
+total_matches = 0
+
+for md_file in post_dir.rglob("*.md"):
+    # 跳过 _index.md
+    if md_file.name == "_index.md":
+        continue
+    
+    total_files += 1
+    
+    try:
+        content, stats = sanitize_markdown_file(
+            md_file,
+            inplace=True,
+            verbose=False
+        )
+        
+        if stats['total_matches'] > 0:
+            sanitized_files += 1
+            total_matches += stats['total_matches']
+            
+    except Exception as e:
+        print(f"脱敏失败 {md_file}: {e}", file=sys.stderr)
+
+print(f"扫描文件: {total_files}")
+print(f"脱敏文件: {sanitized_files}")
+print(f"敏感信息: {total_matches} 处")
+PYTHON_EOF
+    
+    SANITIZED_FILES=$(tail -3 /tmp/sanitize-$$.txt | head -1 | grep "脱敏文件:" | awk '{print $2}')
+    TOTAL_MATCHES=$(tail -3 /tmp/sanitize-$$.txt | tail -1 | grep "敏感信息:" | awk '{print $2}')
+    
+    if [ -n "$TOTAL_MATCHES" ] && [ "$TOTAL_MATCHES" != "0处" ]; then
+        log "✅ 已脱敏 $TOTAL_MATCHES 敏感信息"
+    else
+        log "✅ 未发现敏感信息"
+    fi
+    
+    rm -f /tmp/sanitize-$$.txt
+else
+    warn "未找到 content_sanitizer.py，跳过脱敏"
 fi
 
 # 为所有文件添加完整的 front matter
