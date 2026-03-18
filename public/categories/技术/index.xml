@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>技术 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Mar 2026 04:00:03 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>mi-gpt 小米账号异地登录验证问题完全解决指南</title><link>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</link><pubDate>Wed, 18 Mar 2026 04:00:03 +0800</pubDate><guid>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</guid><description>&lt;h1 id="mi-gpt-小米账号异地登录验证问题完全解决指南"&gt;mi-gpt 小米账号异地登录验证问题完全解决指南&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>技术 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 19 Mar 2026 03:00:02 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>mi-gpt 小米账号异地登录验证问题完全解决指南</title><link>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</link><pubDate>Thu, 19 Mar 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</guid><description>&lt;h1 id="mi-gpt-小米账号异地登录验证问题完全解决指南"&gt;mi-gpt 小米账号异地登录验证问题完全解决指南&lt;/h1&gt;
 &lt;h2 id="-问题解决日期"&gt;📅 问题解决日期&lt;/h2&gt;
 &lt;p&gt;2026年3月8日&lt;/p&gt;
 &lt;h2 id="-问题描述"&gt;🎯 问题描述&lt;/h2&gt;
@@ -6,7 +6,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;🔥 触发小米账号异地登录安全验证机制，请在浏览器打开以下链接，并按照网页提示授权验证账号：
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?sid=micoapi&amp;amp;...
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ 小米账号登录失败
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>Supermemory 统一记忆系统 - 完整文档</title><link>https://bluespace.eu.org/post/supermemory-memory-system/</link><pubDate>Wed, 18 Mar 2026 04:00:03 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory-memory-system/</guid><description>&lt;h1 id="supermemory-统一记忆系统---完整文档"&gt;Supermemory 统一记忆系统 - 完整文档&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>Supermemory 统一记忆系统 - 完整文档</title><link>https://bluespace.eu.org/post/supermemory-memory-system/</link><pubDate>Thu, 19 Mar 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory-memory-system/</guid><description>&lt;h1 id="supermemory-统一记忆系统---完整文档"&gt;Supermemory 统一记忆系统 - 完整文档&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;创建时间：2026-03-08
 最后更新：2026-03-08
@@ -24,7 +24,7 @@
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id="系统概述"&gt;系统概述&lt;/h2&gt;
-&lt;p&gt;Supermemory 统一记忆系统是一个跨平台的 AI 记忆管理解决方案，支持在 Claude Code、OpenClaw（本地）和 OpenClaw（服务器）之间同步记忆。&lt;/p&gt;</description></item><item><title>TuriX-CUA 研究笔记</title><link>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 18 Mar 2026 04:00:03 +0800</pubDate><guid>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="turix-cua-研究笔记"&gt;TuriX-CUA 研究笔记&lt;/h1&gt;
+&lt;p&gt;Supermemory 统一记忆系统是一个跨平台的 AI 记忆管理解决方案，支持在 Claude Code、OpenClaw（本地）和 OpenClaw（服务器）之间同步记忆。&lt;/p&gt;</description></item><item><title>TuriX-CUA 研究笔记</title><link>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</link><pubDate>Thu, 19 Mar 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/turix-cua_%E7%A0%94%E7%A9%B6%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="turix-cua-研究笔记"&gt;TuriX-CUA 研究笔记&lt;/h1&gt;
 &lt;h2 id="基本信息"&gt;基本信息&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;项目名称：&lt;/strong&gt; TuriX-CUA (Computer Use Agent)
 &lt;strong&gt;开发者：&lt;/strong&gt; TurixAI
@@ -32,7 +32,7 @@
 &lt;strong&gt;官网：&lt;/strong&gt; &lt;a href="https://turix.ai/"&gt;https://turix.ai/&lt;/a&gt;
 &lt;strong&gt;开源协议：&lt;/strong&gt; 100% 开源，个人和研究使用免费&lt;/p&gt;
 &lt;h2 id="核心概念"&gt;核心概念&lt;/h2&gt;
-&lt;p&gt;TuriX-CUA 是一个 AI 驱动的&lt;strong&gt;桌面自动化数字助手&lt;/strong&gt;，让 AI 能够像人一样&amp;quot;看&amp;quot;屏幕、&amp;ldquo;动&amp;quot;鼠标、&amp;ldquo;敲&amp;quot;键盘，直接在桌面上执行操作。&lt;/p&gt;</description></item><item><title>仓位管理系统 - 产品设计文档</title><link>https://bluespace.eu.org/post/position-management-design-v1.0/</link><pubDate>Wed, 18 Mar 2026 04:00:03 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-design-v1.0/</guid><description>&lt;h1 id="仓位管理系统---产品设计文档"&gt;仓位管理系统 - 产品设计文档&lt;/h1&gt;
+&lt;p&gt;TuriX-CUA 是一个 AI 驱动的&lt;strong&gt;桌面自动化数字助手&lt;/strong&gt;，让 AI 能够像人一样&amp;quot;看&amp;quot;屏幕、&amp;ldquo;动&amp;quot;鼠标、&amp;ldquo;敲&amp;quot;键盘，直接在桌面上执行操作。&lt;/p&gt;</description></item><item><title>仓位管理系统 - 产品设计文档</title><link>https://bluespace.eu.org/post/position-management-design-v1.0/</link><pubDate>Thu, 19 Mar 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-design-v1.0/</guid><description>&lt;h1 id="仓位管理系统---产品设计文档"&gt;仓位管理系统 - 产品设计文档&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;版本&lt;/strong&gt;: v1.0
 &lt;strong&gt;创建日期&lt;/strong&gt;: 2026-03-10
 &lt;strong&gt;作者&lt;/strong&gt;: 小老弟
@@ -40,7 +40,7 @@
 &lt;hr&gt;
 &lt;h2 id="1-产品概述"&gt;1. 产品概述&lt;/h2&gt;
 &lt;h3 id="11-产品定位"&gt;1.1 产品定位&lt;/h3&gt;
-&lt;p&gt;面向个人投资者的轻量级仓位管理和分析工具，支持A股和港股，提供仓位追踪、自动更新和一键分析功能。&lt;/p&gt;</description></item><item><title>股票技术面分析 - 快速开始指南</title><link>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</link><pubDate>Wed, 18 Mar 2026 04:00:03 +0800</pubDate><guid>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</guid><description>&lt;h1 id="股票技术面分析---快速开始指南"&gt;股票技术面分析 - 快速开始指南&lt;/h1&gt;
+&lt;p&gt;面向个人投资者的轻量级仓位管理和分析工具，支持A股和港股，提供仓位追踪、自动更新和一键分析功能。&lt;/p&gt;</description></item><item><title>股票技术面分析 - 快速开始指南</title><link>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</link><pubDate>Thu, 19 Mar 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/stock-analysis-quickstart-20260310/</guid><description>&lt;h1 id="股票技术面分析---快速开始指南"&gt;股票技术面分析 - 快速开始指南&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;日期:&lt;/strong&gt; 2026-03-10
 &lt;strong&gt;目标:&lt;/strong&gt; 5 分钟内开始使用 OpenClaw 进行技术面分析&lt;/p&gt;
 &lt;hr&gt;
@@ -50,7 +50,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;分析 AAPL 的技术面&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;TSLA 的技术指标如何？&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;对比 AAPL 和 MSFT 的走势&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;OpenClaw 会自动使用 &lt;code&gt;manus-stock-analysis&lt;/code&gt; 技能获取 Yahoo Finance 数据。&lt;/p&gt;</description></item><item><title>模型基准测试报告</title><link>https://bluespace.eu.org/post/model_benchmark_report/</link><pubDate>Wed, 18 Mar 2026 04:00:03 +0800</pubDate><guid>https://bluespace.eu.org/post/model_benchmark_report/</guid><description>&lt;h1 id="模型基准测试报告"&gt;模型基准测试报告&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;OpenClaw 会自动使用 &lt;code&gt;manus-stock-analysis&lt;/code&gt; 技能获取 Yahoo Finance 数据。&lt;/p&gt;</description></item><item><title>模型基准测试报告</title><link>https://bluespace.eu.org/post/model_benchmark_report/</link><pubDate>Thu, 19 Mar 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/model_benchmark_report/</guid><description>&lt;h1 id="模型基准测试报告"&gt;模型基准测试报告&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;测试时间:&lt;/strong&gt; $(date &amp;lsquo;+%Y-%m-%d %H:%M:%S&amp;rsquo;)&lt;br&gt;
 &lt;strong&gt;测试模式:&lt;/strong&gt; 无思考模式 (think: false)&lt;br&gt;
 &lt;strong&gt;统计方法:&lt;/strong&gt; 仅统计推理时间 (eval_duration)，不包含首次加载延迟&lt;/p&gt;
