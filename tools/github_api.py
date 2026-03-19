@@ -143,14 +143,32 @@ class GitHubFileTimeFetcher:
                         # 最新提交的 committer.date 作为更新时间
                         updated_at = commits_data[0]['commit']['committer']['date']
 
-                        # 获取文件的第一次提交（使用 per_page=1 且按时间倒序，获取的就是第一次提交）
-                        # 但实际上我们需要最早的提交，所以要获取所有提交然后取最后一个
-                        # 为了效率，这里使用最新的提交日期作为 created_at 和 updated_at
-                        # 如果需要真正的首次创建时间，需要获取所有提交记录
-
-                        # 由于 GitHub API 限制，这里简化处理：
-                        # 使用最新提交的 author.date 作为创建时间（通常是文件首次创建或最后一次修改）
-                        created_at = commits_data[0]['commit']['author']['date']
+                        # 获取文件的第一次提交（使用 commits API 的 pagination 技巧）
+                        # 通过 head 请求获取总页数，最后一页的最后一个提交就是创建时间
+                        created_at = updated_at # 默认值
+                        
+                        try:
+                            # 发起一个只获取 1 条记录的请求，用来获取 Link header
+                            first_commit_params = {'path': file_path, 'per_page': 1, 'sha': branch}
+                            first_commit_resp = self.session.head(commits_url, params=first_commit_params, timeout=10)
+                            
+                            # 解析 Link header: <...&page=N>; rel="last"
+                            link_header = first_commit_resp.headers.get('Link')
+                            if link_header and 'rel="last"' in link_header:
+                                import re
+                                last_page_match = re.search(r'page=(\d+)>; rel="last"', link_header)
+                                if last_page_match:
+                                    last_page = last_page_match.group(1)
+                                    # 请求最后一页
+                                    last_page_params = {'path': file_path, 'per_page': 1, 'page': last_page, 'sha': branch}
+                                    last_page_resp = self.session.get(commits_url, params=last_page_params, timeout=10)
+                                    if last_page_resp.status_code == 200:
+                                        last_page_data = last_page_resp.json()
+                                        if last_page_data:
+                                            # 最后一页的最后一条（由于 per_page=1，直接取第一条）就是创建时间
+                                            created_at = last_page_data[0]['commit']['author']['date']
+                        except Exception as e:
+                            print(f"⚠️  获取创建时间失败，回退到更新时间: {e}")
 
                         return {
                             'created_at': created_at,
