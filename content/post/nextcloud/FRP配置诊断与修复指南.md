@@ -1,7 +1,8 @@
 ---
-title: 'FRP Token 修复指南'
-categories: ['nextcloud']
-date: 2026-03-20T04:00:04+0800
+title: 'FRP配置诊断与修复指南'
+categories: ["nextcloud"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # FRP Token 修复指南

@@ -1,7 +1,8 @@
 ---
-title: 'nc.skyspace.eu.org FRP 配置成功报告'
-categories: ['nextcloud']
-date: 2026-03-20T04:00:04+0800
+title: 'nc域名FRP配置成功报告'
+categories: ["nextcloud"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # nc.skyspace.eu.org FRP 配置成功报告

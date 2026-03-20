@@ -62,6 +62,8 @@ class GitHubFileTimeFetcher:
         self.owner = owner
         self.repo = repo
         self.token = token or os.getenv('GITHUB_TOKEN')
+        # 修改：优先使用本地笔记仓库路径获取时间，避免 API 速率限制且支持真实创建时间
+        self.note_repo_path = Path("/root/.openclaw/workspace/note-gen-sync")
         self.base_url = f"https://api.github.com/repos/{owner}/{repo}/contents"
         self.session = requests.Session()
 
@@ -76,7 +78,8 @@ class GitHubFileTimeFetcher:
 
     def get_file_info(self, file_path: str, branch: str = 'main') -> Optional[Dict[str, str]]:
         """
-        获取文件在 GitHub 仓库的信息
+        获取文件在 GitHub 仓库或本地笔记仓库的信息
+        优先从本地仓库获取以保证准确的创建时间（Git Log）
 
         Args:
             file_path: 文件在仓库中的路径
@@ -89,6 +92,31 @@ class GitHubFileTimeFetcher:
             }
             如果获取失败则返回 None
         """
+        # 尝试从本地笔记仓库获取
+        if self.note_repo_path.exists():
+            local_file = self.note_repo_path / file_path
+            if local_file.exists():
+                try:
+                    import subprocess
+                    # 获取第一次提交时间（创建时间）
+                    cmd_created = ['git', 'log', '--follow', '--format=%aI', '--', str(local_file)]
+                    result_created = subprocess.run(cmd_created, cwd=self.note_repo_path, capture_output=True, text=True)
+                    created_at = result_created.stdout.strip().split('\n')[-1] if result_created.stdout.strip() else None
+
+                    # 获取最后一次提交时间（更新时间）
+                    cmd_updated = ['git', 'log', '-1', '--format=%aI', '--', str(local_file)]
+                    result_updated = subprocess.run(cmd_updated, cwd=self.note_repo_path, capture_output=True, text=True)
+                    updated_at = result_updated.stdout.strip() if result_updated.stdout.strip() else None
+
+                    if created_at and updated_at:
+                        return {
+                            'created_at': created_at,
+                            'updated_at': updated_at
+                        }
+                except Exception as e:
+                    print(f"⚠️  从本地仓库获取时间失败: {e}，回退到 GitHub API")
+
+        # 原有的 GitHub API 逻辑（回退）
         url = f"{self.base_url}/{file_path}"
         params = {'ref': branch}
 

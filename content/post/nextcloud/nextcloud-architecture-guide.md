@@ -1,7 +1,8 @@
 ---
-title: 'Nextcloud 私有云盘架构与搭建实战指南'
-categories: ['nextcloud']
-date: 2026-03-20T04:00:04+0800
+title: 'nextcloud-architecture-guide'
+categories: ["nextcloud"]
+date: 2026-03-06T13:42:26+08:00
+lastmod: 2026-03-07T07:42:38+08:00
 draft: false
 ---
 # Nextcloud 私有云盘架构与搭建实战指南
