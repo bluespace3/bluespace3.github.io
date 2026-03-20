@@ -1,8 +1,7 @@
 ---
-title: 'Nextcloud图片预览技巧'
-categories: ["nextcloud"]
-date: 2026-03-04T02:26:58+08:00
-lastmod: 2026-03-07T07:42:38+08:00
+title: 'Nextcloud 图片预览技巧'
+categories: ['nextcloud']
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 # Nextcloud 图片预览技巧

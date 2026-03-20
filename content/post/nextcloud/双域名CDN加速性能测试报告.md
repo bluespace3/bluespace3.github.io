@@ -1,8 +1,7 @@
 ---
-title: '双域名CDN加速性能测试报告'
-categories: ["nextcloud"]
-date: 2026-03-10T03:00:01+08:00
-lastmod: 2026-03-10T03:00:01+08:00
+title: 'Nextcloud 双域名性能测试报告'
+categories: ['nextcloud']
+date: 2026-03-21T04:00:10+0800
 draft: false
 ---
 # Nextcloud 双域名性能测试报告

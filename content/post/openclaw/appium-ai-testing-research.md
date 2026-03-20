@@ -1,8 +1,7 @@
 ---
-title: 'appium-ai-testing-research'
-categories: ["openclaw"]
-date: 2026-03-17T03:00:01+08:00
-lastmod: 2026-03-17T03:00:01+08:00
+title: 'Appium + AI 测试用例生成与执行 - 必备工具调研'
+categories: ['openclaw']
+date: 2026-03-16T19:17:34+0800
 draft: false
 ---
 # Appium + AI 测试用例生成与执行 - 必备工具调研

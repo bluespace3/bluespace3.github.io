@@ -1,8 +1,7 @@
 ---
-title: 'migration-summary'
-categories: ["nextcloud"]
-date: 2026-03-04T01:34:21+08:00
-lastmod: 2026-03-04T02:48:21+08:00
+title: 'Nextcloud 数据库迁移总结'
+categories: ['nextcloud']
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 # Nextcloud 数据库迁移总结

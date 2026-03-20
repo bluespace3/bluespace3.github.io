@@ -1,8 +1,7 @@
 ---
-title: 'TuriX-CUA_研究笔记'
-categories: ["TuriX-CUA_研究笔记.md"]
-date: 2026-03-08T03:00:01+08:00
-lastmod: 2026-03-08T03:00:01+08:00
+title: 'TuriX-CUA 研究笔记'
+categories: ['技术']
+date: 2026-03-21T04:00:09+0800
 draft: false
 ---
 # TuriX-CUA 研究笔记

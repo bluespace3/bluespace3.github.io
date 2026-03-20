@@ -1,8 +1,7 @@
 ---
-title: 'model_benchmark_report'
-categories: ["model_benchmark_report.md"]
-date: 2026-03-13T01:33:57+08:00
-lastmod: 2026-03-13T01:33:57+08:00
+title: '模型基准测试报告'
+categories: ['技术']
+date: 2026-03-21T04:00:09+0800
 draft: false
 ---
 # 模型基准测试报告

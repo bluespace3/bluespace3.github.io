@@ -1,8 +1,7 @@
 ---
-title: 'gsd-get-shit-done'
-categories: ["openclaw"]
-date: 2026-03-18T03:00:02+08:00
-lastmod: 2026-03-18T03:00:02+08:00
+title: 'GSD (Get Shit Done) - Claude Code 上下文工程系统'
+categories: ['openclaw']
+date: 2026-03-17T23:12:02+0800
 draft: false
 ---
 # GSD (Get Shit Done) - Claude Code 上下文工程系统

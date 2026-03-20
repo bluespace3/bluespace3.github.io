@@ -1,8 +1,7 @@
 ---
-title: 'Tailscale-vs-FRP-延迟测试报告'
-categories: ["nextcloud"]
-date: 2026-03-10T03:00:01+08:00
-lastmod: 2026-03-10T03:00:01+08:00
+title: 'Tailscale vs FRP 网络延迟测试报告'
+categories: ['nextcloud']
+date: 2026-03-21T04:00:10+0800
 draft: false
 ---
 # Tailscale vs FRP 网络延迟测试报告

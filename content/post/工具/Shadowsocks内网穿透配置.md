@@ -1,8 +1,7 @@
 ---
-title: 'Shadowsocks内网穿透配置'
-categories: ["工具"]
-date: 2026-02-28T13:33:41+08:00
-lastmod: 2026-03-07T07:42:38+08:00
+title: 'Shadowsocks 内网穿透配置'
+categories: ['工具']
+date: 2026-03-21T04:00:10+0800
 draft: false
 ---
 # Shadowsocks 内网穿透配置
@@ -202,11 +201,11 @@ git config --global --get https.proxy
 
 3. 配置：按照下图填写你的服务端，注意加密方式一定要一致否则连接不上。
 
-![配置](/assets/Pasted%20image%2020260228152732.png)
+![配置](assets/Pasted%20image%2020260228152732.png)
 
 4.一般使用PAC模式，既智能代理，当需要代理时自动使用。
 
- ![PAC模式](/assets/Pasted%20image%2020260228153454.png)
+ ![PAC模式](assets/Pasted%20image%2020260228153454.png)
 
 ## 配置浏览器使用代理
 

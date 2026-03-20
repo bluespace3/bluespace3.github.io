@@ -1,8 +1,7 @@
 ---
-title: 'stock-technical-analysis-openclaw-research-20260310'
-categories: ["stock-technical-analysis-openclaw-research-20260310.md"]
-date: 2026-03-10T03:00:01+08:00
-lastmod: 2026-03-10T03:00:01+08:00
+title: 'OpenClaw 股票技术面分析方案研究'
+categories: ['技术']
+date: 2026-03-13T11:43:52+0800
 draft: false
 ---
 # OpenClaw 股票技术面分析方案研究

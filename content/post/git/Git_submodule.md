@@ -1,8 +1,7 @@
 ---
 title: 'Git_submodule'
-categories: ["git"]
-date: 2025-09-07T00:22:14+08:00
-lastmod: 2026-02-27T11:05:10+08:00
+categories: ['git']
+date: 2026-03-21T04:00:10+0800
 draft: false
 ---
 

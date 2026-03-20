@@ -1,8 +1,7 @@
 ---
-title: 'SYSTEM_DESIGN'
-categories: ["量化项目"]
-date: 2025-09-07T00:22:06+08:00
-lastmod: 2026-03-07T08:37:37+08:00
+title: '系统设计与开发者文档'
+categories: ['量化项目']
+date: 2026-03-21T04:00:09+0800
 draft: false
 ---
 # 系统设计与开发者文档

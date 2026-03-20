@@ -1,8 +1,7 @@
 ---
-title: 'ACP-Claude-Code快捷指令'
-categories: ["实践"]
-date: 2026-02-28T01:35:43+08:00
-lastmod: 2026-03-07T07:42:38+08:00
+title: 'ACP Claude Code 使用指南'
+categories: ['实践']
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 # ACP Claude Code 使用指南

@@ -1,8 +1,7 @@
 ---
-title: 'nextcloud-setup-summary'
-categories: ["nextcloud"]
-date: 2026-03-06T13:42:26+08:00
-lastmod: 2026-03-07T07:42:38+08:00
+title: 'Nextcloud 配置与优化总结'
+categories: ['nextcloud']
+date: 2026-03-21T04:00:10+0800
 draft: false
 ---
 # Nextcloud 配置与优化总结

@@ -1,8 +1,7 @@
 ---
-title: 'TAPD_MCP_使用指南'
-categories: ["工具"]
-date: 2026-03-20T11:50:13+08:00
-lastmod: 2026-03-20T11:50:13+08:00
+title: 'TAPD MCP 服务器使用指南'
+categories: ['工具']
+date: 2026-03-21T04:00:10+0800
 draft: false
 ---
 # TAPD MCP 服务器使用指南

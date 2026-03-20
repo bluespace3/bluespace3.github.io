@@ -1,8 +1,7 @@
 ---
-title: 'stock-analysis-quickstart-20260310'
-categories: ["stock-analysis-quickstart-20260310.md"]
-date: 2026-03-10T03:00:01+08:00
-lastmod: 2026-03-10T03:00:01+08:00
+title: '股票技术面分析 - 快速开始指南'
+categories: ['技术']
+date: 2026-03-21T04:00:09+0800
 draft: false
 ---
 # 股票技术面分析 - 快速开始指南

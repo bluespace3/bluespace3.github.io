@@ -1,8 +1,7 @@
 ---
-title: 'TeslaV100_32G版本Ollama运行qwen3-coder_30b性能测试报告'
-categories: ["AIGC学习笔记"]
-date: 2026-02-13T01:22:05+08:00
-lastmod: 2026-03-07T08:37:37+08:00
+title: 'Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告'
+categories: ['AIGC学习笔记']
+date: 2026-03-07T08:43:34+0800
 draft: false
 ---
 # Tesla V100（32G版本）Ollama 运行qwen3-coder:30b性能测试报告
