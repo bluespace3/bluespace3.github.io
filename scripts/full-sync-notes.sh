@@ -154,6 +154,13 @@ log "【步骤 5/5】为所有文件添加/更新 front matter 并脱敏..."
 
 cd "$BLOG_DIR"
 
+# 确保加载环境变量中的 GITHUB_TOKEN
+if [ -z "$GITHUB_TOKEN" ]; then
+    if [ -f "/root/.bashrc" ]; then
+        export GITHUB_TOKEN=$(grep -oP 'export GITHUB_TOKEN="\K[^"]+' /root/.bashrc)
+    fi
+fi
+
 if [ -n "$GITHUB_TOKEN" ]; then
     log "使用 GitHub API 获取精确时间戳..."
 
@@ -164,6 +171,8 @@ if [ -n "$GITHUB_TOKEN" ]; then
     else
         warn "未找到 sync_notes_from_github.py，使用本地时间戳"
     fi
+else
+    warn "未找到 GITHUB_TOKEN，将使用本地文件修改时间作为博客日期"
 fi
 
 # ============================================

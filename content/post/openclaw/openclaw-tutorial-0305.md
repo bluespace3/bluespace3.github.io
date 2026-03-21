@@ -1,13 +1,14 @@
 ---
-title: 'OpenClaw 教程笔记'
-categories: ['openclaw']
-date: 2026-03-21T04:00:10+0800
+title: 'openclaw-tutorial-0305'
+categories: ["openclaw"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # OpenClaw 教程笔记
 
 本文件由 OpenClaw 自动从飞书教程同步。
-原始来源：https://ycnezwebj31p.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+原始来源：https://ycnezwebj31p.feishu.cn/docx/MVomdT4tWoeEnmxFFEAcsHGpnph
 
 【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305
 

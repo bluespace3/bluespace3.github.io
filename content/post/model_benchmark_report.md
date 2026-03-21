@@ -1,7 +1,8 @@
 ---
-title: '模型基准测试报告'
-categories: ['技术']
-date: 2026-03-21T04:00:09+0800
+title: 'model_benchmark_report'
+categories: ["model_benchmark_report.md"]
+date: 2026-03-13T01:33:57+08:00
+lastmod: 2026-03-13T01:33:57+08:00
 draft: false
 ---
 # 模型基准测试报告
@@ -14,7 +15,7 @@ draft: false
 
 ## 测试环境
 
-- **Ollama API:** http://xxx.xxx.xxx.xxx:11434
+- **Ollama API:** http://172.31.224.1:11434
 - **测试模型:**
   1. minicpm-o-4_5:latest (4.5B)
   2. gemma3:27b (27B)
@@ -45,7 +46,7 @@ draft: false
 \`\`\`bash
 #!/bin/bash
 
-API="http://xxx.xxx.xxx.xxx:11434"
+API="http://172.31.224.1:11434"
 PROMPT_1="用Python实现快速排序算法，并解释其时间复杂度。"
 PROMPT_2="解释量子计算的基本原理，并举一个实际应用例子。"
 PROMPT_3="2024年诺贝尔化学奖的获得者是谁？主要成就是什么？"
@@ -300,7 +301,7 @@ print("报告已生成: /tmp/benchmark_report.md")
 
 ### 关闭思考的方法
 \`\`\`bash
-curl http://xxx.xxx.xxx.xxx:11434/api/generate -d '{
+curl http://172.31.224.1:11434/api/generate -d '{
   "model": "qwen3.5:35b",
   "prompt": "问题",
   "think": false,  # 关键参数：关闭思考过程

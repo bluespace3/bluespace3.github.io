@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>实践 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E5%AE%9E%E8%B7%B5/</link><description>Recent content in 实践 on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Mar 2026 04:00:10 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenClaw 场景配置指南</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/openclaw%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</link><pubDate>Sat, 21 Mar 2026 04:00:10 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/openclaw%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</guid><description>&lt;h1 id="openclaw-场景配置指南"&gt;OpenClaw 场景配置指南&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>实践 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E5%AE%9E%E8%B7%B5/</link><description>Recent content in 实践 on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 07 Mar 2026 07:42:38 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml"/><item><title>rsync规则顺序导致文件排除失败问题复盘</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/rsync%E8%A7%84%E5%88%99%E9%A1%BA%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%96%87%E4%BB%B6%E6%8E%92%E9%99%A4%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link><pubDate>Sat, 07 Mar 2026 07:32:43 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/rsync%E8%A7%84%E5%88%99%E9%A1%BA%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%96%87%E4%BB%B6%E6%8E%92%E9%99%A4%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid><description>&lt;h1 id="rsync-规则顺序导致文件排除失败问题复盘"&gt;rsync 规则顺序导致文件排除失败问题复盘&lt;/h1&gt;
+&lt;h2 id="问题描述"&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在博客全量同步脚本中，笔记仓库的 &lt;code&gt;INDEX.md&lt;/code&gt; 文件反复被复制到 &lt;code&gt;content/post/&lt;/code&gt;，干扰 Hugo 的 section 处理，导致首页文章显示异常。&lt;/p&gt;</description></item><item><title>OpenClaw场景配置指南</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/openclaw%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</link><pubDate>Wed, 04 Mar 2026 01:34:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/openclaw%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</guid><description>&lt;h1 id="openclaw-场景配置指南"&gt;OpenClaw 场景配置指南&lt;/h1&gt;
 &lt;p&gt;本文档介绍如何配置和使用 OpenClaw 的高价值场景，包括 AI 新闻日报、技术新闻聚合、播客自动化等内容生成。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="-场景列表"&gt;🎯 场景列表&lt;/h2&gt;
@@ -69,30 +71,14 @@
 &lt;hr&gt;
 &lt;h2 id="-配置步骤"&gt;🚀 配置步骤&lt;/h2&gt;
 &lt;h3 id="配置-ai-新闻日报已运行"&gt;配置 AI 新闻日报（已运行）&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：此场景已经配置并运行，无需额外配置。&lt;/p&gt;</description></item><item><title>添加本地mcp</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link><pubDate>Sat, 21 Mar 2026 04:00:10 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid><description>&lt;h3 id="添加本地mcp"&gt;添加本地mcp&lt;/h3&gt;
-&lt;p&gt;claude mcp add &amp;ndash;transport stdio &amp;ndash;scope user mysql &amp;ndash;env MYSQL_HOST=xxx.xxx.xxx.xxx &amp;ndash;env MYSQL_USER=tianqinghong &amp;ndash;env MYSQL_PASSWORD=&amp;ldquo;pG4QbSdb1u0KcjUQX+E=&amp;rdquo; &amp;ndash;env MYSQL_DATABASE=db_diag &amp;ndash; &amp;ldquo;npm exec &amp;ndash;yes &amp;ndash; @f4ww4z/mcp-mysql-server&amp;rdquo;&lt;/p&gt;
-&lt;h3 id="获取mcp列表"&gt;获取mcp列表&lt;/h3&gt;
-&lt;p&gt;claude mcp list&lt;/p&gt;
-&lt;h3 id="无脑接受模式"&gt;无脑接受模式&lt;/h3&gt;
-&lt;p&gt;&amp;ndash;dangerously-skip-permissions&lt;/p&gt;
-&lt;h3 id="手机无缝衔接claudecode"&gt;手机无缝衔接claudecode&lt;/h3&gt;
-&lt;p&gt;电脑端npm install -g happy-coder；然后终端输入：happy&lt;/p&gt;
-&lt;p&gt;手机端下载 &lt;strong&gt;Happy Coder&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>wsl</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</link><pubDate>Sat, 21 Mar 2026 04:00:09 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</guid><description/></item><item><title>ACP Claude Code 使用指南</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="acp-claude-code-使用指南"&gt;ACP Claude Code 使用指南&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：此场景已经配置并运行，无需额外配置。&lt;/p&gt;</description></item><item><title>ACP-Claude-Code快捷指令</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Sat, 28 Feb 2026 01:35:43 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="acp-claude-code-使用指南"&gt;ACP Claude Code 使用指南&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;最后更新：2026-03-05
 ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 等外部编码工具的标准方式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id="什么是-acp"&gt;什么是 ACP？&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;ACP (Agent Client Protocol)&lt;/strong&gt; 是一种协议，让 OpenClaw 能够调用外部编码工具（Claude Code、Codex、Pi、OpenCode、Gemini CLI 等）。&lt;/p&gt;</description></item><item><title>clawdbot</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/clawdbot/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/clawdbot/</guid><description>&lt;p&gt;设置clawdbot和tailscale开机自启&lt;/p&gt;
-&lt;p&gt;PS C:\WINDOWS\system32&amp;gt; Unregister-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -&lt;/p&gt;
-&lt;p&gt;Confirm:$false -ErrorAction SilentlyContinue
-PS C:\WINDOWS\system32&amp;gt; $Action = New-ScheduledTaskAction -Execute &amp;ldquo;PowerShell.exe&amp;rdquo; -Argument &amp;ldquo;-File C:\Users\Administrator\Start-Clawdbot.ps1&amp;rdquo;
-PS C:\WINDOWS\system32&amp;gt; $Trigger = New-ScheduledTaskTrigger -AtStartup
-PS C:\WINDOWS\system32&amp;gt; $Settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
-PS C:\WINDOWS\system32&amp;gt; $Principal = New-ScheduledTaskPrincipal -UserId &amp;ldquo;$env:USERNAME&amp;rdquo; -LogonType Interactive
-PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p&gt;</description></item><item><title>H96Max rk3318 4+64G的刷机教程</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h1 id="h96max-rk3318-464g的刷机教程"&gt;H96Max rk3318 4+64G的刷机教程&lt;/h1&gt;
-&lt;p&gt;相信很多朋友已经搜索了一大堆这个机型的刷机教程，再此之前我也搜索过，不过对我的帮助不大，所以我又连续几天在armbian官方论坛搜索查询、向大神请教。最终解决了刷机难题。 首先，我们来确认一下机型吧，看看图片和型号是否对得上。&lt;/p&gt;</description></item><item><title>mineru</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</guid><description>&lt;p&gt;mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p&gt;</description></item><item><title>OpenClaw 快捷键速查表</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid><description>&lt;h1 id="openclaw-快捷键速查表"&gt;OpenClaw 快捷键速查表&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;ACP (Agent Client Protocol)&lt;/strong&gt; 是一种协议，让 OpenClaw 能够调用外部编码工具（Claude Code、Codex、Pi、OpenCode、Gemini CLI 等）。&lt;/p&gt;</description></item><item><title>OpenClaw快捷键</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</link><pubDate>Sat, 28 Feb 2026 01:35:43 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/openclaw/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid><description>&lt;h1 id="openclaw-快捷键速查表"&gt;OpenClaw 快捷键速查表&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;最后更新：2026-02-28&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -465,9 +451,21 @@ PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>qodercli</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</guid><description>&lt;p&gt;终端输入qodercli启动&lt;/p&gt;</description></item><item><title>rsync 规则顺序导致文件排除失败问题复盘</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/rsync%E8%A7%84%E5%88%99%E9%A1%BA%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%96%87%E4%BB%B6%E6%8E%92%E9%99%A4%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/rsync%E8%A7%84%E5%88%99%E9%A1%BA%E5%BA%8F%E5%AF%BC%E8%87%B4%E6%96%87%E4%BB%B6%E6%8E%92%E9%99%A4%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid><description>&lt;h1 id="rsync-规则顺序导致文件排除失败问题复盘"&gt;rsync 规则顺序导致文件排除失败问题复盘&lt;/h1&gt;
-&lt;h2 id="问题描述"&gt;问题描述&lt;/h2&gt;
-&lt;p&gt;在博客全量同步脚本中，笔记仓库的 &lt;code&gt;INDEX.md&lt;/code&gt; 文件反复被复制到 &lt;code&gt;content/post/&lt;/code&gt;，干扰 Hugo 的 section 处理，导致首页文章显示异常。&lt;/p&gt;</description></item><item><title>terminus快捷键使用合集</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/terminus/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/terminus/</guid><description>&lt;h2 id="terminus快捷键使用合集"&gt;terminus快捷键使用合集&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>ssh连接服务器踩坑点</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link><pubDate>Wed, 25 Feb 2026 21:36:52 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid><description>&lt;h1 id="通过密钥连接服务器踩坑配置正确但是连接失败"&gt;通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;初始状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;已成功生成SSH密钥对（ed25519）&lt;/li&gt;
+&lt;li&gt;已将公钥添加到服务器的 ~/.ssh/authorized_keys - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;问题表现
+ssh -o BatchMode=yes -o PasswordAuthentication=no &lt;a href="mailto:username@ip"&gt;username@ip&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="结果permission-denied-password"&gt;结果：Permission denied (password)&lt;/h2&gt;
+&lt;p&gt;即使公钥已在服务器上，公钥认证仍然失败。&lt;/p&gt;</description></item><item><title>机顶盒刷机linux系统</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</link><pubDate>Wed, 25 Feb 2026 10:41:06 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h1 id="h96max-rk3318-464g的刷机教程"&gt;H96Max rk3318 4+64G的刷机教程&lt;/h1&gt;
+&lt;p&gt;相信很多朋友已经搜索了一大堆这个机型的刷机教程，再此之前我也搜索过，不过对我的帮助不大，所以我又连续几天在armbian官方论坛搜索查询、向大神请教。最终解决了刷机难题。 首先，我们来确认一下机型吧，看看图片和型号是否对得上。&lt;/p&gt;</description></item><item><title>terminus</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/terminus/</link><pubDate>Sun, 22 Feb 2026 09:55:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/terminus/</guid><description>&lt;h2 id="terminus快捷键使用合集"&gt;terminus快捷键使用合集&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -549,18 +547,20 @@ PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;终端内&lt;/p&gt;</description></item><item><title>绕过网站反调试机制（打不开F12的解决方案）</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/</guid><description>&lt;h1 id="绕过网站反调试机制打不开f12的解决方案"&gt;绕过网站反调试机制（打不开F12的解决方案）&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>通过密钥连接服务器踩坑——配置正确但是连接失败</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link><pubDate>Sat, 07 Mar 2026 08:43:34 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid><description>&lt;h1 id="通过密钥连接服务器踩坑配置正确但是连接失败"&gt;通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;初始状态&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;已成功生成SSH密钥对（ed25519）&lt;/li&gt;
-&lt;li&gt;已将公钥添加到服务器的 ~/.ssh/authorized_keys - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start="2"&gt;
-&lt;li&gt;问题表现
-ssh -o BatchMode=yes -o PasswordAuthentication=no &lt;a href="mailto:username@ip"&gt;username@ip&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="结果permission-denied-password"&gt;结果：Permission denied (password)&lt;/h2&gt;
-&lt;p&gt;即使公钥已在服务器上，公钥认证仍然失败。&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;终端内&lt;/p&gt;</description></item><item><title>clawdbot</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/clawdbot/</link><pubDate>Tue, 27 Jan 2026 22:39:03 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/clawdbot/</guid><description>&lt;p&gt;设置clawdbot和tailscale开机自启&lt;/p&gt;
+&lt;p&gt;PS C:\WINDOWS\system32&amp;gt; Unregister-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -&lt;/p&gt;
+&lt;p&gt;Confirm:$false -ErrorAction SilentlyContinue
+PS C:\WINDOWS\system32&amp;gt; $Action = New-ScheduledTaskAction -Execute &amp;ldquo;PowerShell.exe&amp;rdquo; -Argument &amp;ldquo;-File C:\Users\Administrator\Start-Clawdbot.ps1&amp;rdquo;
+PS C:\WINDOWS\system32&amp;gt; $Trigger = New-ScheduledTaskTrigger -AtStartup
+PS C:\WINDOWS\system32&amp;gt; $Settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+PS C:\WINDOWS\system32&amp;gt; $Principal = New-ScheduledTaskPrincipal -UserId &amp;ldquo;$env:USERNAME&amp;rdquo; -LogonType Interactive
+PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p&gt;</description></item><item><title>vllm</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/</link><pubDate>Thu, 22 Jan 2026 15:50:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/</guid><description>&lt;h1 id="绕过网站反调试机制打不开f12的解决方案"&gt;绕过网站反调试机制（打不开F12的解决方案）&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>qodercli</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</link><pubDate>Sat, 17 Jan 2026 09:40:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</guid><description>&lt;p&gt;终端输入qodercli启动&lt;/p&gt;</description></item><item><title>wsl</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</link><pubDate>Wed, 14 Jan 2026 19:53:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</guid><description/></item><item><title>mineru</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</link><pubDate>Mon, 12 Jan 2026 00:38:24 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</guid><description>&lt;p&gt;mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p&gt;</description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link><pubDate>Tue, 30 Dec 2025 14:30:00 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid><description>&lt;h3 id="添加本地mcp"&gt;添加本地mcp&lt;/h3&gt;
+&lt;p&gt;claude mcp add &amp;ndash;transport stdio &amp;ndash;scope user mysql &amp;ndash;env MYSQL_HOST=192.168.0.203 &amp;ndash;env MYSQL_USER=tianqinghong &amp;ndash;env MYSQL_PASSWORD=&amp;ldquo;pG4QbSdb1u0KcjUQX+E=&amp;rdquo; &amp;ndash;env MYSQL_DATABASE=db_diag &amp;ndash; &amp;ldquo;npm exec &amp;ndash;yes &amp;ndash; @f4ww4z/mcp-mysql-server&amp;rdquo;&lt;/p&gt;
+&lt;h3 id="获取mcp列表"&gt;获取mcp列表&lt;/h3&gt;
+&lt;p&gt;claude mcp list&lt;/p&gt;
+&lt;h3 id="无脑接受模式"&gt;无脑接受模式&lt;/h3&gt;
+&lt;p&gt;&amp;ndash;dangerously-skip-permissions&lt;/p&gt;
+&lt;h3 id="手机无缝衔接claudecode"&gt;手机无缝衔接claudecode&lt;/h3&gt;
+&lt;p&gt;电脑端npm install -g happy-coder；然后终端输入：happy&lt;/p&gt;
+&lt;p&gt;手机端下载 &lt;strong&gt;Happy Coder&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,7 +1,8 @@
 ---
-title: 'FRP vs Tailscale 最终性能测试报告'
-categories: ['nextcloud']
-date: 2026-03-21T04:00:10+0800
+title: 'FRP-vs-Tailscale最终性能测试报告'
+categories: ["nextcloud"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # FRP vs Tailscale 最终性能测试报告
@@ -22,8 +23,8 @@ draft: false
 
 **访问测试**:
 - ✅ 本地访问: http://localhost:8080 → 正常
-- ✅ Tailscale: http://xxx.xxx.xxx.xxx:8080 → 正常
-- ✅ FRP: http://xxx.xxx.xxx.xxx:8080 → 正常
+- ✅ Tailscale: http://100.97.62.83:8080 → 正常
+- ✅ FRP: http://38.55.39.104:8080 → 正常
 
 ---
 
@@ -56,7 +57,7 @@ draft: false
 
 1. **直连路径**
    ```
-   Mac → 服务器 (xxx.xxx.xxx.xxx)
+   Mac → 服务器 (100.97.62.83)
    单跳，延迟: 13.86ms
    ```
 
@@ -182,7 +183,7 @@ draft: false
   ↓
 Cloudflare CDN (可选)
   ↓
-Tailscale VPN (xxx.xxx.xxx.xxx)
+Tailscale VPN (100.97.62.83)
   ↓
 Docker Nextcloud (:8080)
 

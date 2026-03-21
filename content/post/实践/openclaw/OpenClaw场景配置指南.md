@@ -1,7 +1,8 @@
 ---
-title: 'OpenClaw 场景配置指南'
-categories: ['实践']
-date: 2026-03-21T04:00:10+0800
+title: 'OpenClaw场景配置指南'
+categories: ["实践"]
+date: 2026-03-04T01:34:21+08:00
+lastmod: 2026-03-07T07:42:38+08:00
 draft: false
 ---
 # OpenClaw 场景配置指南
@@ -108,7 +109,7 @@ draft: false
       "message": "你是一个专业的技术新闻编辑。请汇总今天的科技新闻，涵盖以下领域：\n\n1. AI/大模型（产品发布、融资、研究突破）\n2. Web3/区块链（DeFi、NFT、基础设施）\n3. SaaS/云服务（产品更新、融资、并购）\n4. 创业（融资、趋势、政策）\n5. 硬件/设备（芯片、手机、可穿戴）\n6. 开发工具（框架、库、IDE）\n\n要求：\n- 覆盖全领域，不要遗漏重要新闻\n- 突出最热门的事件（标注 ⭐⭐⭐⭐⭐）\n- 标注热度等级（⭐⭐⭐⭐、⭐⭐⭐、⭐⭐）\n- 每条新闻包含标题、简要描述、来源链接\n- 总条数控制在 20-25 条\n- 格式清晰，易读，使用 emoji 适当点缀\n- 语言：中文\n- 标题：🔥 技术新闻速递（2026-MM-DD）\n\n不要回复 HEARTBEAT_OK，不要解释你是谁，直接输出新闻摘要。",
       "deliver": true,
       "channel": "qqbot",
-      "to": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      "to": "0482CAA8F5806F99754A5A4EC2832B6F"
     }
   }
 }
@@ -142,7 +143,7 @@ draft: false
       "message": "你是一个专业的播客制作人。请帮我完成以下播客制作任务：\n\n任务 1：调研嘉宾\n- 调研 [嘉宾姓名/领域] 的背景、经历、代表作品\n- 生成 10 个有价值的访谈问题\n\n任务 2：选题研究\n- 分析 [主题] 的最新趋势\n- 提供 5 个有深度的选题方向\n\n任务 3：内容大纲\n- 基于 [选题] 生成详细的节目标题\n- 每个节目标题包含：开场白、3-5 个核心讨论点、过渡语、结束语\n\n任务 4：脚本写作\n- 为 [节目标题] 撰写详细的对话脚本\n- 包含：主持人提问、嘉宾回答、互动环节\n- 控制总时长在 30-45 分钟\n\n任务 5：封面设计\n- 设计播客封面图的概念和视觉风格\n- 提供详细的 AI 提示词，用于 Midjourney/DALL-E 等工具生成封面\n\n任务 6：节目笔记\n- 生成详细的节目笔记\n- 包含：时间戳、关键点、资源链接\n\n任务 7：推广素材\n- 生成社交媒体推广文案\n- 包括：Twitter 推文（3 条）、Facebook 帖文（1 条）、Instagram 快拍文案（1 条）\n\n要求：\n- 每个任务都要详细、专业、可直接使用\n- 使用 emoji 适当点缀\n- 标题要吸引人\n- 考虑播客风格和受众偏好\n\n不要回复 HEARTBEAT_OK，不要解释你是谁，直接输出完整的制作计划。",
       "deliver": true,
       "channel": "qqbot",
-      "to": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      "to": "0482CAA8F5806F99754A5A4EC2832B6F"
     }
   }
 }
@@ -175,7 +176,7 @@ draft: false
       "message": "你是一个开源项目专家。请帮我完成以下 GitHub Trending 监控任务：\n\n任务 1：监控 Trending\n- 访问 GitHub Trending 页面\n- 按语言筛选：Python、JavaScript、TypeScript、Go、Rust\n- 找出过去 24 小时 Trending 的项目\n- 分析项目的技术栈、功能、用途\n\n任务 2：分析项目价值\n- 评估项目的代码质量、社区活跃度（stars、issues、PRs）\n- 识别是否有商业潜力或学习价值\n\n任务 3：生成推荐报告\n- 按类别整理：Web 开发、DevOps、AI/ML、工具\n- 每个项目包含：名称、简介、技术栈、star 数、推荐理由\n\n任务 4：自动行动\n- 生成可以直接使用的 CLI 命令\n  如：`git clone https://github.com/xxx/xxx`\n  `cd xxx && npm install`\n\n任务 5：持续监控设置\n- 提供如何设置持续监控的方案\n  - 使用 GitHub API\n  - 使用 Webhook\n  - 使用第三方服务\n\n要求：\n- 覆盖热门语言和领域\n- 提供可执行的建议\n- 报告格式清晰，易读\n- 使用 emoji 适当点缀\n- 不要回复 HEARTBEAT_OK，不要解释你是谁，直接输出完整的监控报告。",
       "deliver": true,
       "channel": "qqbot",
-      "to": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      "to": "0482CAA8F5806F99754A5A4EC2832B6F"
     }
   }
 }
@@ -205,7 +206,7 @@ draft: false
       "message": "你是一个目标驱动的任务管理助手。请帮我完成以下任务管理：\n\n任务 1：目标设定\n- 分析用户当前的项目和任务\n- 识别优先级（紧急、重要、中等、低）\n- 生成今天的目标列表（3-5 个目标）\n- 每个目标包含：描述、预期成果、时间预算\n\n任务 2：任务拆解\n- 将每个目标拆解为可执行的子任务\n- 子任务应该是具体的、可衡量的\n- 设置时间估算和依赖关系\n\n任务 3：执行追踪\n- 生成每日任务清单\n- 包含：任务名称、优先级、预计时间、负责人\n- 提供进度追踪方法\n\n任务 4：问题识别\n- 识别可能阻碍任务完成的因素\n- 提供解决方案和预防措施\n\n任务 5：惊喜功能\n- 生成一个小的惊喜任务或奖励机制\n  - 激励用户完成任务\n  - 增加任务的趣味性\n\n要求：\n- 目标要具体、可达成\n- 任务拆解要详细\n- 使用项目管理最佳实践\n- 考虑用户的工作节奏和偏好\n- 提供清晰的时间线\n- 使用 emoji 适当点缀\n- 标题：🎯 目标驱动任务管理（2026-MM-DD）\n\n不要回复 HEARTBEAT_OK，不要解释你是谁，直接输出完整的任务管理计划。",
       "deliver": true,
       "channel": "qqbot",
-      "to": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      "to": "0482CAA8F5806F99754A5A4EC2832B6F"
     }
   }
 }
@@ -243,7 +244,7 @@ draft: false
   "message": "你的任务描述...",
   "deliver": true,
   "channel": "qqbot",
-  "to": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  "to": "0482CAA8F5806F99754A5A4EC2832B6F"
 }
 ```
 
@@ -427,7 +428,7 @@ draft: false
 ## 📚 相关资源
 
 - **OpenClaw 文档**: https://docs.openclaw.ai/
-- **Cron 工具文档**: `/root/.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-cron/SKILL.md`
+- **Cron 工具文档**: `/root/.openclaw/extensions/qqbot/skills/qqbot-cron/SKILL.md`
 - **场景集合**: https://github.com/hesamsheikh/awesome-openclaw-usecases
 
 ---

@@ -1,9 +1,9 @@
 ---
-title: "MCP入门指南"
-categories: ["工具",  "开发"]
-date: 2025-03-20T13:48:29+08:00
+title: 'mcp-intro'
+categories: ["AIGC学习笔记"]
+date: 2025-09-07T00:04:28+08:00
+lastmod: 2025-09-07T00:04:28+08:00
 draft: false
-tags: ["MCP", "工具", "开发","插件"]
 ---
 ## 什么是MCP？
 
@@ -24,8 +24,8 @@ MCP的安装通常包括以下步骤：
 
 ```typescript
 #!/usr/bin/env node
-import { Server } from '@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.js';
-import { StdioServerTransport } from '@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.js';
+import { Server } from '@modelcontextprotocol/sdk/server/index.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 
 const server = new Server(
   {

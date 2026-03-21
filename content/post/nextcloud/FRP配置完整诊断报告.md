@@ -1,7 +1,8 @@
 ---
-title: 'FRP 配置完整诊断报告'
-categories: ['nextcloud']
-date: 2026-03-21T04:00:10+0800
+title: 'FRP配置完整诊断报告'
+categories: ["nextcloud"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # FRP 配置完整诊断报告
@@ -22,7 +23,7 @@ draft: false
 |---------|-------|------|---------|
 | `/opt/homebrew/etc/frp/frpc.toml` | 无 | SSH 转发 | ❌ 错误运行 |
 | `~/.config/frp/frpc.toml` | ✅ 匹配服务端 | Nextcloud | ✅ 已启动 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml` | ❌ 不匹配 | 备份文件 | 未使用 |
+| `/Users/tianqinghong/nextcloud/frpc.toml` | ❌ 不匹配 | 备份文件 | 未使用 |
 
 **时间线分析**:
 ```
@@ -63,7 +64,7 @@ frpc -c ~/.config/frp/frpc.toml &
 ```
 占用情况:
 - Trae 应用 (PID 6548): LISTEN :8080
-- Docker Nextcloud: xxx.xxx.xxx.xxx:8080->80/tcp (被阻止)
+- Docker Nextcloud: 0.0.0.0:8080->80/tcp (被阻止)
 ```
 
 **影响**:
@@ -86,7 +87,7 @@ curl -I http://localhost:8080
 
 **Tailscale 方案（正常工作）**:
 ```
-连接: Mac → 服务器 (xxx.xxx.xxx.xxx)
+连接: Mac → 服务器 (100.97.62.83)
 延迟: 0.507ms
 丢包率: 0%
 状态: 完全正常 ✅
@@ -94,8 +95,8 @@ curl -I http://localhost:8080
 
 **可访问地址**:
 - ✅ https://nextcloud.skyspace.eu.org (Tailscale + Cloudflare)
-- ✅ http://xxx.xxx.xxx.xxx:8080 (Tailscale 直连)
-- ⚠️ https://xxx.xxx.xxx.xxx:8443 (局域网)
+- ✅ http://100.97.62.83:8080 (Tailscale 直连)
+- ⚠️ https://192.168.10.222:8443 (局域网)
 
 ---
 

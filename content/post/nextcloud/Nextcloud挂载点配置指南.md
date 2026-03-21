@@ -1,7 +1,8 @@
 ---
-title: 'Nextcloud 挂载点配置指南'
-categories: ['nextcloud']
-date: 2026-03-21T04:00:10+0800
+title: 'Nextcloud挂载点配置指南'
+categories: ["nextcloud"]
+date: 2026-03-06T13:42:26+08:00
+lastmod: 2026-03-06T13:42:26+08:00
 draft: false
 ---
 # Nextcloud 挂载点配置指南
@@ -10,7 +11,7 @@ draft: false
 
 ### 容器内路径
 - **数据目录**: `/var/www/html/data`
-- **配置文件**: `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.php`
+- **配置文件**: `/Users/tianqinghong/nextcloud/config.php`
 
 ### Docker 卷
 - **卷名称**: `nextcloud_nextcloud_data`
@@ -148,7 +149,7 @@ docker volume inspect nextcloud_nextcloud_data
 
 ## 当前配置摘要
 
-- **Nextcloud 版本**: xxx.xxx.xxx.xxx
+- **Nextcloud 版本**: 33.0.0.16
 - **数据目录**: `/var/www/html/data`
 - **外部存储应用**: 已启用 (v1.25.1)
 - **已挂载外部存储**: G 盘 (只读)

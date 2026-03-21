@@ -1,19 +1,9 @@
 ---
-title: "pytest接口自动化测试方案"
-
-categories: ["方案"]
-
-author: "tian"
-
-date: 2025-03-28T22:43:32+08:00
-
-encrypted: true
-
-password: "123456"
-
+title: 'pytest接口自动化测试方案'
+categories: ["自动化测试"]
+date: 2025-09-07T00:20:29+08:00
+lastmod: 2026-03-07T08:43:51+08:00
 draft: false
-lastmod: 2025-04-15T11:00:00-07:00
-tags: ["pytest","方案","加密"]
 ---
 ## 背景
 
@@ -75,7 +65,7 @@ tags: ["pytest","方案","加密"]
   * 选型依据
     　　兼容性、适合复杂流程交互（设备交互）、丰富的社区支持、接入成本
 * 测试管理工具（飞书或tapd）
-  * 自动化用例管理[接口自动化测试用例](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?from=from_copylink)
+  * 自动化用例管理[接口自动化测试用例](https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink)
 * CI/CD工具
 * GitLab CI
 * uvicorn+fastapi
@@ -168,8 +158,8 @@ tags: ["pytest","方案","加密"]
 
     ![1743176486423](/assets/pytest接口自动化测试方案/1743176486423.png)
 * 文档
-  * 初始化文档[快速编写Pytest接口测试](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?from=from_copylink)
-  * 自动化用例设计文档[接口自动化测试用例](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?from=from_copylink)
+  * 初始化文档[快速编写Pytest接口测试](https://guangpuyun.feishu.cn/docx/SQi7d8NV4opR8OxYDh9cxVG3nmg?from=from_copylink)
+  * 自动化用例设计文档[接口自动化测试用例](https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink)
 
 ---
 
@@ -194,4 +184,4 @@ tags: ["pytest","方案","加密"]
     * 数据问题->使用自动化专用的数据，避免污染；
     * 脚本本身不稳定导致的运行失败，维护脚本能稳定运行，若维护成功过高可直接先注释脚本，并在对应用例做好备注“待维护”。
 * 脚本维护代办事项
-  * [接口自动化代办事项](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?from=from_copylink)
+  * [接口自动化代办事项](https://guangpuyun.feishu.cn/sheets/IrensB0Lmhi7Y5t3izhccc9wnBh?from=from_copylink)

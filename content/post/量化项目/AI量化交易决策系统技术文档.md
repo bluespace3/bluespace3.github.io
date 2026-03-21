@@ -1,13 +1,9 @@
 ---
-title: "AI量化交易决策系统技术文档"
-
-date: 2025-07-13T12:59:32+08:00
-
+title: 'AI量化交易决策系统技术文档'
+categories: ["量化项目"]
+date: 2025-09-07T00:20:07+08:00
+lastmod: 2025-09-07T00:20:07+08:00
 draft: false
-
-tags: ["AI量化交易", "文档"]
-
-categories: ["技术",  "AI", "量化交易"]
 ---
 ## 📝 2025-07-13 近期优化与变更
 
@@ -467,7 +463,7 @@ DECISION_LEVELS = {
 GEMINI_API_URL=your-api-url
 GEMINI_API_KEY=your-api-key
 SMTP_SERVER=smtp.126.com
-EMAIL_ADDRESS=user@example.com
+EMAIL_ADDRESS=your-email@126.com
 EMAIL_PASSWORD=your-password
 ```
 

@@ -1,7 +1,8 @@
 ---
-title: 'H96Max rk3318 4+64G的刷机教程'
-categories: ['实践']
-date: 2026-03-07T08:43:34+0800
+title: '机顶盒刷机linux系统'
+categories: ["实践"]
+date: 2026-02-25T10:41:06+08:00
+lastmod: 2026-02-25T11:12:42+08:00
 draft: false
 ---
 # H96Max rk3318 4+64G的刷机教程

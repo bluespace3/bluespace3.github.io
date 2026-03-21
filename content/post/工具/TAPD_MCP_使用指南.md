@@ -1,7 +1,8 @@
 ---
-title: 'TAPD MCP 服务器使用指南'
-categories: ['工具']
-date: 2026-03-21T04:00:10+0800
+title: 'TAPD_MCP_使用指南'
+categories: ["工具"]
+date: 2026-03-20T11:50:13+08:00
+lastmod: 2026-03-20T11:50:13+08:00
 draft: false
 ---
 # TAPD MCP 服务器使用指南
@@ -13,7 +14,7 @@ draft: false
 ## 前提条件
 
 1. ✅ MCP 服务器已配置在 `C:\Users\Administrator\.claude.json` 中
-2. ✅ 访问令牌已配置：`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+2. ✅ 访问令牌已配置：`38356c722f07f76b741d8a5aa722bd4fa63e5ebe`
 3. ⚠️ **需要重启 Claude Code** 使配置生效
 
 ## 可用工具列表（共 38 个）

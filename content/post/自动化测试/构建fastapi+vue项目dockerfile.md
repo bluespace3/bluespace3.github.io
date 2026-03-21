@@ -1,15 +1,9 @@
 ---
-title: "fastapi+vue测试平台项目部署案例"
-
-categories: ["测试平台","技术"]
-
-author: "tian"
-
-date: 2025-04-15T12:59:32+08:00
-
+title: '构建fastapi+vue项目dockerfile'
+categories: ["自动化测试"]
+date: 2025-09-07T00:20:45+08:00
+lastmod: 2025-09-07T00:20:45+08:00
 draft: false
-
-tags: ["测试平台", "fastapi", "vue","部署"]
 ---
 
 ### 构建fastapi步骤
@@ -19,7 +13,7 @@ tags: ["测试平台", "fastapi", "vue","部署"]
 其内容如下：
 workers = 5    # 定义同时开启的处理请求的进程数量，根据网站流量适当调整
 worker_class = "gevent"   # 采用gevent库，支持异步处理请求，提高吞吐量
-bind = "xxx.xxx.xxx.xxx:80"    # 监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信
+bind = "0.0.0.0:80"    # 监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信
 
 2.python依赖存于项目requirements.txt文件内
 
@@ -56,7 +50,7 @@ RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua
 
 COPY . .
 
-CMD ["uvicorn", "fastapi_index:app", "--host", "xxx.xxx.xxx.xxx", "--port", "80"]
+CMD ["uvicorn", "fastapi_index:app", "--host", "0.0.0.0", "--port", "80"]
 ```
 
 

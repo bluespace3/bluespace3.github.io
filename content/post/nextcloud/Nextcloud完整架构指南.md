@@ -1,13 +1,14 @@
 ---
-title: 'Nextcloud 完整架构指南'
-categories: ['nextcloud']
-date: 2026-03-21T04:00:10+0800
+title: 'Nextcloud完整架构指南'
+categories: ["nextcloud"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # Nextcloud 完整架构指南
 
 > 更新时间: 2025-03-09  
-> 版本: Nextcloud xxx.xxx.xxx.xxx
+> 版本: Nextcloud 33.0.0.16
 
 ## 目录
 - [部署架构](#部署架构)
@@ -26,8 +27,8 @@ draft: false
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    macOS 宿主机                              │
-│  IP: xxx.xxx.xxx.xxx (局域网)                               │
-│  Tailscale IP: xxx.xxx.xxx.xxx                                │
+│  IP: 192.168.10.222 (局域网)                               │
+│  Tailscale IP: 100.97.62.83                                │
 └────────────────────┬────────────────────────────────────────┘
                      │
 ┌────────────────────▼────────────────────────────────────────┐
@@ -108,11 +109,11 @@ PHP版本: 8.4.18
 用户
   │
   ▼
-DNS: nc.skyspace.eu.org → xxx.xxx.xxx.xxx
+DNS: nc.skyspace.eu.org → 38.55.39.104
   │
   ▼
 ┌─────────────────────────────────────┐
-│   公网服务器 (xxx.xxx.xxx.xxx)        │
+│   公网服务器 (38.55.39.104)        │
 │   Nginx 反向代理                   │
 │   Let's Encrypt 证书               │
 └────────────┬────────────────────────┘
@@ -128,14 +129,14 @@ DNS: nc.skyspace.eu.org → xxx.xxx.xxx.xxx
 
 **FRP 配置**:
 ```toml
-serverAddr = "xxx.xxx.xxx.xxx"
+serverAddr = "38.55.39.104"
 serverPort = 7000
-auth.token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+auth.token = "d5b2e506bd2599a802583acce6253226"
 
 [[proxies]]
 name = "nextcloud-http"
 type = "tcp"
-localIP = "xxx.xxx.xxx.xxx"
+localIP = "127.0.0.1"
 localPort = 8080
 remotePort = 8080
 ```
@@ -159,7 +160,7 @@ DNS: nextcloud.skyspace.eu.org → Cloudflare CDN
              │
              ▼
 ┌─────────────────────────────────────┐
-│   公网服务器 (xxx.xxx.xxx.xxx)        │
+│   公网服务器 (38.55.39.104)        │
 │   Nginx 反向代理                   │
 │   通配符 SSL 证书                  │
 └────────────┬────────────────────────┘
@@ -167,7 +168,7 @@ DNS: nextcloud.skyspace.eu.org → Cloudflare CDN
              ▼ Tailscale VPN (WireGuard)
 ┌─────────────────────────────────────┐
 │   你的 Mac (Tailscale IP)          │
-│   IP: xxx.xxx.xxx.xxx                 │
+│   IP: 100.97.62.83                 │
 │   ↓                                │
 │   Docker Nextcloud :8080           │
 └─────────────────────────────────────┘
@@ -176,7 +177,7 @@ DNS: nextcloud.skyspace.eu.org → Cloudflare CDN
 **服务器 Nginx 配置**:
 ```nginx
 upstream nextcloud_backend {
-    server xxx.xxx.xxx.xxx:8080;  # Tailscale IP
+    server 100.97.62.83:8080;  # Tailscale IP
     keepalive 64;
 }
 
@@ -198,7 +199,7 @@ server {
 用户 (192.168.10.x)
   │
   ▼
-https://xxx.xxx.xxx.xxx:8443
+https://192.168.10.222:8443
   │
   ▼
 ┌─────────────────────────────────────┐
@@ -215,13 +216,13 @@ Docker Nextcloud :8080
 ```nginx
 server {
     listen 8443 ssl;
-    server_name xxx.xxx.xxx.xxx;
+    server_name 192.168.10.222;
     
-    ssl_certificate /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-local.crt;
-    ssl_certificate_key /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-local.key;
+    ssl_certificate /Users/tianqinghong/nextcloud/ssl/nextcloud-local.crt;
+    ssl_certificate_key /Users/tianqinghong/nextcloud/ssl/nextcloud-local.key;
     
     location / {
-        proxy_pass http://xxx.xxx.xxx.xxx:8080;
+        proxy_pass http://127.0.0.1:8080;
         proxy_set_header X-Forwarded-Proto https;
         client_max_body_size 10G;
     }
@@ -345,15 +346,15 @@ volumes:
 
 | 文件路径 | 用途 |
 |---------|------|
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-compose.yml` | Docker Compose 配置 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.php` | Nextcloud 主配置 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml` | FRP 客户端配置 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/` | SSL 证书目录 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-opcache.ini` | PHP OPcache 配置 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-timeouts.ini` | 超时配置 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.conf` | HTTP/2 配置 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.cnf` | MySQL 优化配置 |
-| `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-https.conf` | 本地 Nginx 配置 |
+| `/Users/tianqinghong/nextcloud/docker-compose.yml` | Docker Compose 配置 |
+| `/Users/tianqinghong/nextcloud/config.php` | Nextcloud 主配置 |
+| `/Users/tianqinghong/nextcloud/frpc.toml` | FRP 客户端配置 |
+| `/Users/tianqinghong/nextcloud/ssl/` | SSL 证书目录 |
+| `/Users/tianqinghong/nextcloud/optimizations/00-opcache.ini` | PHP OPcache 配置 |
+| `/Users/tianqinghong/nextcloud/optimizations/99-timeouts.ini` | 超时配置 |
+| `/Users/tianqinghong/nextcloud/optimizations/http2.conf` | HTTP/2 配置 |
+| `/Users/tianqinghong/nextcloud/optimizations/mysql.cnf` | MySQL 优化配置 |
+| `/opt/homebrew/etc/nginx/servers/nextcloud-https.conf` | 本地 Nginx 配置 |
 | `/opt/homebrew/etc/frp/frpc.toml` | FRP 客户端主配置 |
 
 ### 服务器文件
@@ -372,7 +373,7 @@ volumes:
 
 | 特性 | nc.skyspace.eu.org | nextcloud.skyspace.eu.org | 局域网访问 |
 |------|-------------------|--------------------------|----------|
-| **DNS** | 直接到服务器 (xxx.xxx.xxx.xxx) | Cloudflare CDN | 本地网络 |
+| **DNS** | 直接到服务器 (38.55.39.104) | Cloudflare CDN | 本地网络 |
 | **代理** | FRP 内网穿透 | Tailscale VPN | Nginx 反向代理 |
 | **安全** | FRP 加密 | Cloudflare + Tailscale 双重加密 | HTTPS |
 | **加速** | 无 | 全球 CDN 加速 | 无 |
@@ -383,7 +384,7 @@ volumes:
 
 **推荐使用顺序**:
 1. `nextcloud.skyspace.eu.org` (公网，最优)
-2. `https://xxx.xxx.xxx.xxx:8443` (局域网，最快)
+2. `https://192.168.10.222:8443` (局域网，最快)
 3. `nc.skyspace.eu.org` (备用)
 
 ---
@@ -417,7 +418,7 @@ docker logs nextcloud-mysql -f
 docker logs nextcloud-redis -f
 
 # Nginx 日志
-tail -f /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-https.error.log
+tail -f /opt/homebrew/var/log/nginx/nextcloud-https.error.log
 ```
 
 ### 备份数据

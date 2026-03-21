@@ -1,14 +1,15 @@
 ---
-title: 'Tailscale vs FRP 网络延迟测试报告'
-categories: ['nextcloud']
-date: 2026-03-21T04:00:10+0800
+title: 'Tailscale-vs-FRP-延迟测试报告'
+categories: ["nextcloud"]
+date: 2026-03-10T03:00:01+08:00
+lastmod: 2026-03-10T03:00:01+08:00
 draft: false
 ---
 # Tailscale vs FRP 网络延迟测试报告
 
 > 测试时间: 2025-03-09  
-> 测试环境: macOS → 外部服务器 (xxx.xxx.xxx.xxx)  
-> 本地 Tailscale IP: xxx.xxx.xxx.xxx
+> 测试环境: macOS → 外部服务器 (38.55.39.104)  
+> 本地 Tailscale IP: 100.97.62.83
 
 ---
 
@@ -32,7 +33,7 @@ draft: false
 
 #### Ping 测试 (ICMP)
 ```
-目标: xxx.xxx.xxx.xxx (Tailscale IP)
+目标: 100.97.62.83 (Tailscale IP)
 测试次数: 100 次
 
 结果:
@@ -51,7 +52,7 @@ draft: false
 
 #### HTTP 应用层测试
 ```
-目标: http://xxx.xxx.xxx.xxx:8080
+目标: http://100.97.62.83:8080
 测试次数: 10 次
 
 结果:
@@ -68,7 +69,7 @@ draft: false
 
 #### Ping 测试
 ```
-目标: xxx.xxx.xxx.xxx (外网 IP)
+目标: 38.55.39.104 (外网 IP)
 测试次数: 20 次
 
 结果:
@@ -105,7 +106,7 @@ draft: false
 ### 4. FRP 连接测试
 
 ```
-目标: http://xxx.xxx.xxx.xxx:8080
+目标: http://38.55.39.104:8080
 状态: ❌ 不可用
 
 检查结果:
@@ -154,7 +155,7 @@ draft: false
 ## 实际应用场景建议
 
 ### 场景 1: 家庭局域网访问
-**推荐**: 直连 (https://xxx.xxx.xxx.xxx:8443)
+**推荐**: 直连 (https://192.168.10.222:8443)
 - 延迟: <1ms
 - 最快速度
 - 最稳定
@@ -227,7 +228,7 @@ draft: false
 
 #### 局域网方案
 ```yaml
-地址: https://xxx.xxx.xxx.xxx:8443
+地址: https://192.168.10.222:8443
 架构: 本地 Nginx 反向代理
 延迟: <1ms
 适用: 家庭内网

@@ -1,7 +1,8 @@
 ---
-title: 'go语言--安装和环境搭配'
-categories: ["技术", "编程", "go"]
-date: 2025-03-15T11:00:00-07:00
+title: 'Go语言--安装和环境搭配'
+categories: ["编程语言"]
+date: 2025-09-07T00:20:31+08:00
+lastmod: 2025-09-07T00:20:31+08:00
 draft: false
 ---
 
@@ -34,7 +35,7 @@ Go语言支持以下系统：Linux、Mac、Windows。
 
 安装包下载地址：[The Go Programming Language](https://go.dev/ "The Go Programming Language")
 
-![](https://i-blog.csdnimg.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png)
+![](https://i-blog.csdnimg.cn/direct/a7dff5ff7bda44cc8408d8355ec1ceb1.png)
 
 ### windows
 
@@ -70,7 +71,7 @@ source /etc/profileAI写代码
 package main import "fmt" func main() {    fmt.Println("Hello, World!")}AI写代码
 ```
 
-![](https://i-blog.csdnimg.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png)
+![](https://i-blog.csdnimg.cn/direct/18dc582244354f9883843fc711ddb6d2.png)
 
 ```cobol
 go build 文件名+ 运行程序=go run文件名AI写代码

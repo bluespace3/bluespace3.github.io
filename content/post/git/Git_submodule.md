@@ -1,7 +1,8 @@
 ---
 title: 'Git_submodule'
-categories: ['git']
-date: 2026-03-21T04:00:10+0800
+categories: ["git"]
+date: 2025-09-07T00:22:14+08:00
+lastmod: 2026-02-27T11:05:10+08:00
 draft: false
 ---
 
@@ -19,10 +20,10 @@ draft: false
 tags: ["submodule", "Git", "教程"]
 ---
 
-- - [Git submodule添加子项目_库](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#J6CDd7QvkohJ3mxEKt3czp31nOe)
-- [Git归并策略](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#doxcnEitqaRgfOoIdSuxwNhUaIc)
-- [添加](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#doxcnel4BHYYT4Lw7SQHLqNXyue)
-- [删除](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#doxcnrHxc9hpZYK1WtRbYlUQ91f)
+- - [Git submodule添加子项目_库](https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe)
+- [Git归并策略](https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc)
+- [添加](https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue)
+- [删除](https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f)
 
 输入“/”快速插入内容
 
