@@ -201,7 +201,7 @@ mvn test "-Dtest=UnifiedApiTest" "-DtestGroup=goods"
 - **TestDataSet.java**: 测试数据集模型（用于参数化测试）
 - **DataExtractor.java**: 数据提取器模型
 
-### 3. 测试服务层 (`src/main/java/com/example/service/`)
+### 3. 测试服务层 (`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/`)
 
 - **TestDataLoader.java**: 测试数据加载器（支持JSON格式）
 - **TestExecutor.java**: 测试执行器（支持参数化和数据提取）
@@ -210,7 +210,7 @@ mvn test "-Dtest=UnifiedApiTest" "-DtestGroup=goods"
 - **TestExecutionManager.java**: 测试执行管理器（处理依赖排序）
 - **UnifiedTestDataLoader.java**: 统一测试数据加载器
 
-### 4. 测试用例层 (`src/test/java/com/example/apitest/`)
+### 4. 测试用例层 (`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/`)
 
 - **BaseTest.java**: 传统测试基类
 - **UserApiTest.java**: 传统测试用例
@@ -474,7 +474,7 @@ import-har.bat your-api-recording.har
     "Content-Type": "application/json;charset=UTF-8",
     "Origin": "https://testntr.yaoshibang.cn"
   },
-  "requestBody": "{\"account\":\"admin\",\"password\":\"827ccb0eea8a706c4c34a16891f84e7b\",\"token\":\"\"}",
+  "requestBody": "{\"account\":\"admin\",\"password\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"token\":\"\"}",
   "assertions": {
     "statusCode": 200,
     "body.code": "40001"

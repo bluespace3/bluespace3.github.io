@@ -23,8 +23,8 @@ draft: false
 
 **访问测试**:
 - ✅ 本地访问: http://localhost:8080 → 正常
-- ✅ Tailscale: http://100.97.62.83:8080 → 正常
-- ✅ FRP: http://38.55.39.104:8080 → 正常
+- ✅ Tailscale: http://xxx.xxx.xxx.xxx:8080 → 正常
+- ✅ FRP: http://xxx.xxx.xxx.xxx:8080 → 正常
 
 ---
 
@@ -57,7 +57,7 @@ draft: false
 
 1. **直连路径**
    ```
-   Mac → 服务器 (100.97.62.83)
+   Mac → 服务器 (xxx.xxx.xxx.xxx)
    单跳，延迟: 13.86ms
    ```
 
@@ -183,7 +183,7 @@ draft: false
   ↓
 Cloudflare CDN (可选)
   ↓
-Tailscale VPN (100.97.62.83)
+Tailscale VPN (xxx.xxx.xxx.xxx)
   ↓
 Docker Nextcloud (:8080)
 

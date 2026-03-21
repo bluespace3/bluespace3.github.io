@@ -14,7 +14,7 @@ draft: false
 ## 前提条件
 
 1. ✅ MCP 服务器已配置在 `C:\Users\Administrator\.claude.json` 中
-2. ✅ 访问令牌已配置：`38356c722f07f76b741d8a5aa722bd4fa63e5ebe`
+2. ✅ 访问令牌已配置：`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 3. ⚠️ **需要重启 Claude Code** 使配置生效
 
 ## 可用工具列表（共 38 个）

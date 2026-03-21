@@ -11,7 +11,7 @@ draft: false
 
 ### 容器内路径
 - **数据目录**: `/var/www/html/data`
-- **配置文件**: `/Users/tianqinghong/nextcloud/config.php`
+- **配置文件**: `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.php`
 
 ### Docker 卷
 - **卷名称**: `nextcloud_nextcloud_data`
@@ -149,7 +149,7 @@ docker volume inspect nextcloud_nextcloud_data
 
 ## 当前配置摘要
 
-- **Nextcloud 版本**: 33.0.0.16
+- **Nextcloud 版本**: xxx.xxx.xxx.xxx
 - **数据目录**: `/var/www/html/data`
 - **外部存储应用**: 已启用 (v1.25.1)
 - **已挂载外部存储**: G 盘 (只读)

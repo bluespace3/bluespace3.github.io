@@ -35,7 +35,7 @@ Go语言支持以下系统：Linux、Mac、Windows。
 
 安装包下载地址：[The Go Programming Language](https://go.dev/ "The Go Programming Language")
 
-![](https://i-blog.csdnimg.cn/direct/a7dff5ff7bda44cc8408d8355ec1ceb1.png)
+![](https://i-blog.csdnimg.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png)
 
 ### windows
 
@@ -71,7 +71,7 @@ source /etc/profileAI写代码
 package main import "fmt" func main() {    fmt.Println("Hello, World!")}AI写代码
 ```
 
-![](https://i-blog.csdnimg.cn/direct/18dc582244354f9883843fc711ddb6d2.png)
+![](https://i-blog.csdnimg.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png)
 
 ```cobol
 go build 文件名+ 运行程序=go run文件名AI写代码

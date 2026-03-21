@@ -4,6 +4,6 @@
 &lt;h2 id="-问题描述"&gt;🎯 问题描述&lt;/h2&gt;
 &lt;p&gt;运行 &lt;code&gt;node app.js&lt;/code&gt; 时出现以下错误：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;🔥 触发小米账号异地登录安全验证机制，请在浏览器打开以下链接，并按照网页提示授权验证账号：
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.com/fe/service/identity/authStart?sid=micoapi&amp;amp;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?sid=micoapi&amp;amp;...
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ 小米账号登录失败
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item></channel></rss>

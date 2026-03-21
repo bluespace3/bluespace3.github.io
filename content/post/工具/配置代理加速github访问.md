@@ -44,7 +44,7 @@ apt install shadowsocks-libev -y
 ```bash
 cat > /etc/shadowsocks-libev/config.json << EOF
 {
-    "server": "0.0.0.0",
+    "server": "xxx.xxx.xxx.xxx",
     "server_port": 8388,
     "password": "YourStrongPassword123!",
     "timeout": 300,
@@ -123,7 +123,7 @@ netstat -tuln | grep 8388
 ss -tuln | grep 8388
 
 # 应该看到类似输出
-# udp   UNCONN  0  0  0.0.0.0:8388  0.0.0.0:**
+# udp   UNCONN  0  0  xxx.xxx.xxx.xxx:8388  xxx.xxx.xxx.xxx:**
 ```
 
 ---
@@ -179,7 +179,7 @@ npm install shadowsocks-node-client
 {
     "server": "your-server-ip",
     "server_port": 8388,
-    "local_address": "127.0.0.1",
+    "local_address": "xxx.xxx.xxx.xxx",
     "local_port": 1080,
     "password": "YourStrongPassword123!",
     "timeout": 300,
@@ -259,13 +259,13 @@ pm2 restart shadowsocks
 
 ```bash
 # 新开终端窗口，测试代理
-curl --proxy socks5://127.0.0.1:1080 https://www.google.com
+curl --proxy socks5://xxx.xxx.xxx.xxx:1080 https://www.google.com
 
 # 或测试 GitHub API
-curl --proxy socks5://127.0.0.1:1080 https://api.github.com
+curl --proxy socks5://xxx.xxx.xxx.xxx:1080 https://api.github.com
 
 # 查看当前 IP（应该显示服务器 IP）
-curl --proxy socks5://127.0.0.1:1080 https://api.ipify.org
+curl --proxy socks5://xxx.xxx.xxx.xxx:1080 https://api.ipify.org
 ```
 
 **成功输出示例**：
@@ -293,7 +293,7 @@ The document has moved
 2. 搜索"代理"
 3. 点击"代理服务器设置"
 4. 手动设置代理：
-  - 地址：`127.0.0.1`
+  - 地址：`xxx.xxx.xxx.xxx`
   - 端口：`1080`
   - 勾选" SOCKS 代理"
 
@@ -301,19 +301,19 @@ The document has moved
 
 ```bash
 # Chrome
-"C:\Program Files\Google\Chrome\Application\chrome.exe" --proxy-server="socks5://127.0.0.1:1080"
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --proxy-server="socks5://xxx.xxx.xxx.xxx:1080"
 
 # Edge
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --proxy-server="socks5://127.0.0.1:1080"
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --proxy-server="socks5://xxx.xxx.xxx.xxx:1080"
 ```
 
 **方法 3：SwitchyOmega 扩展（灵活切换）**
 
-1. 安装 [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega/releases)
+1. 安装 [SwitchyOmega](https://github.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 2. 配置情景模式：
   - 新建情景模式：`Shadowsocks`
   - 代理协议：`SOCKS5`
-  - 代理服务器：`127.0.0.1`
+  - 代理服务器：`xxx.xxx.xxx.xxx`
   - 端口：`1080`
   - 勾选" SOCKS v5 代理进行 DNS 查询"
 3. 点击"应用选项"
@@ -326,7 +326,7 @@ The document has moved
 3. 点击"网络设置"
 4. 选择"手动配置代理"
 5. 填写：
-  - SOCKS v5 代理：`127.0.0.1`
+  - SOCKS v5 代理：`xxx.xxx.xxx.xxx`
   - 端口：`1080`
   - ✓ SOCKS v5
   - ✓ 使用 SOCKS v5 代理进行 DNS 查询
@@ -338,8 +338,8 @@ The document has moved
 
 ```bash
 # 设置代理
-git config --global http.proxy socks5://127.0.0.1:1080
-git config --global https.proxy socks5://127.0.0.1:1080
+git config --global http.proxy socks5://xxx.xxx.xxx.xxx:1080
+git config --global https.proxy socks5://xxx.xxx.xxx.xxx:1080
 
 # 查看配置
 git config --global --get http.proxy
@@ -359,12 +359,12 @@ notepad ~/.ssh/config
 
 ```
 Host github.com
-    ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+    ProxyCommand nc -X 5 -x xxx.xxx.xxx.xxx:1080 %h %p
     Hostname ssh.github.com
     Port 443
 
 Host gist.github.com
-    ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+    ProxyCommand nc -X 5 -x xxx.xxx.xxx.xxx:1080 %h %p
     Hostname ssh.github.com
     Port 443
 ```
@@ -372,7 +372,7 @@ Host gist.github.com
 **测试 SSH 连接**：
 
 ```bash
-ssh -T git@github.com
+ssh -T user@example.com
 # 成功会显示：Hi username! You've successfully authenticated...
 ```
 
@@ -389,9 +389,9 @@ git config --global --unset https.proxy
 
 ```powershell
 # 临时设置（当前会话）
-$env:http_proxy="http://127.0.0.1:1080"
-$env:https_proxy="http://127.0.0.1:1080"
-$env:all_proxy="socks5://127.0.0.1:1080"
+$env:http_proxy="http://xxx.xxx.xxx.xxx:1080"
+$env:https_proxy="http://xxx.xxx.xxx.xxx:1080"
+$env:all_proxy="socks5://xxx.xxx.xxx.xxx:1080"
 
 # 测试
 curl https://www.google.com
@@ -405,17 +405,17 @@ notepad $PROFILE
 
 ```bash
 # 临时设置
-export http_proxy=http://127.0.0.1:1080
-export https_proxy=http://127.0.0.1:1080
-export all_proxy=socks5://127.0.0.1:1080
+export http_proxy=http://xxx.xxx.xxx.xxx:1080
+export https_proxy=http://xxx.xxx.xxx.xxx:1080
+export all_proxy=socks5://xxx.xxx.xxx.xxx:1080
 
 # 永久设置（添加到 ~/.bashrc）
 cat >> ~/.bashrc << EOF
 # Shadowsocks 代理
-export http_proxy=http://127.0.0.1:1080
-export https_proxy=http://127.0.0.1:1080
-export all_proxy=socks5://127.0.0.1:1080
-export no_proxy=localhost,127.0.0.1,::1
+export http_proxy=http://xxx.xxx.xxx.xxx:1080
+export https_proxy=http://xxx.xxx.xxx.xxx:1080
+export all_proxy=socks5://xxx.xxx.xxx.xxx:1080
+export no_proxy=localhost,xxx.xxx.xxx.xxx,::1
 EOF
 
 # 应用
@@ -426,7 +426,7 @@ source ~/.bashrc
 
 ```bash
 # 使用代理
-curl --proxy socks5://127.0.0.1:1080 https://www.google.com
+curl --proxy socks5://xxx.xxx.xxx.xxx:1080 https://www.google.com
 
 # 或使用环境变量
 curl https://www.google.com
@@ -436,7 +436,7 @@ curl https://www.google.com
 
 ```bash
 # 使用代理
-wget -e "use_proxy=yes" -e "http_proxy=127.0.0.1:1080" https://example.com
+wget -e "use_proxy=yes" -e "http_proxy=xxx.xxx.xxx.xxx:1080" https://example.com
 ```
 
 ### 3.4 包管理器配置
@@ -445,8 +445,8 @@ wget -e "use_proxy=yes" -e "http_proxy=127.0.0.1:1080" https://example.com
 
 ```bash
 # 设置代理
-npm config set proxy http://127.0.0.1:1080
-npm config set https-proxy http://127.0.0.1:1080
+npm config set proxy http://xxx.xxx.xxx.xxx:1080
+npm config set https-proxy http://xxx.xxx.xxx.xxx:1080
 
 # 查看配置
 npm config list
@@ -463,13 +463,13 @@ npm config delete https-proxy
 
 ```bash
 # 设置代理
-pip config set global.proxy http://127.0.0.1:1080
+pip config set global.proxy http://xxx.xxx.xxx.xxx:1080
 
 # 测试
 pip install requests
 
 # 临时使用
-pip install --proxy http://127.0.0.1:1080 package-name
+pip install --proxy http://xxx.xxx.xxx.xxx:1080 package-name
 
 # 取消代理
 pip config unset global.proxy
@@ -479,8 +479,8 @@ pip config unset global.proxy
 
 ```bash
 # 设置代理
-yarn config set proxy http://127.0.0.1:1080
-yarn config set https-proxy http://127.0.0.1:1080
+yarn config set proxy http://xxx.xxx.xxx.xxx:1080
+yarn config set https-proxy http://xxx.xxx.xxx.xxx:1080
 
 # 测试
 yarn add express
@@ -494,7 +494,7 @@ yarn add express
 
 ```json
 {
-  "http.proxy": "http://127.0.0.1:1080",
+  "http.proxy": "http://xxx.xxx.xxx.xxx:1080",
   "http.proxyStrictSSL": false
 }
 ```
@@ -503,8 +503,8 @@ yarn add express
 
 ```bash
 # VS Code 读取系统环境变量
-set HTTP_PROXY=http://127.0.0.1:1080
-set HTTPS_PROXY=http://127.0.0.1:1080
+set HTTP_PROXY=http://xxx.xxx.xxx.xxx:1080
+set HTTPS_PROXY=http://xxx.xxx.xxx.xxx:1080
 code .
 ```
 
@@ -520,9 +520,9 @@ notepad C:\Users\YourName\.docker\config.json
 {
   "proxies": {
     "default": {
-      "httpProxy": "http://127.0.0.1:1080",
-      "httpsProxy": "http://127.0.0.1:1080",
-      "noProxy": "localhost,127.0.0.1"
+      "httpProxy": "http://xxx.xxx.xxx.xxx:1080",
+      "httpsProxy": "http://xxx.xxx.xxx.xxx:1080",
+      "noProxy": "localhost,xxx.xxx.xxx.xxx"
     }
   }
 }
@@ -536,8 +536,8 @@ notepad C:\Users\YourName\.docker\config.json
 import requests
 
 proxies = {
-    'http': 'socks5://127.0.0.1:1080',
-    'https': 'socks5://127.0.0.1:1080'
+    'http': 'socks5://xxx.xxx.xxx.xxx:1080',
+    'https': 'socks5://xxx.xxx.xxx.xxx:1080'
 }
 
 # 需要安装 pysocks
@@ -553,8 +553,8 @@ print(response.json())
 import urllib.request
 
 proxies = {
-    'http': 'socks5://127.0.0.1:1080',
-    'https': 'socks5://127.0.0.1:1080'
+    'http': 'socks5://xxx.xxx.xxx.xxx:1080',
+    'https': 'socks5://xxx.xxx.xxx.xxx:1080'
 }
 
 proxy_handler = urllib.request.ProxyHandler(proxies)
@@ -575,13 +575,13 @@ print(response.read())
 
 ```bash
 # 测试代理连接
-curl --proxy socks5://127.0.0.1:1080 https://api.ipify.org
+curl --proxy socks5://xxx.xxx.xxx.xxx:1080 https://api.ipify.org
 
 # 测试 GitHub API
-curl --proxy socks5://127.0.0.1:1080 https://api.github.com
+curl --proxy socks5://xxx.xxx.xxx.xxx:1080 https://api.github.com
 
 # 测试 Google
-curl --proxy socks5://127.0.0.1:1080 https://www.google.com -I
+curl --proxy socks5://xxx.xxx.xxx.xxx:1080 https://www.google.com -I
 ```
 
 #### Git 测试
@@ -591,7 +591,7 @@ curl --proxy socks5://127.0.0.1:1080 https://www.google.com -I
 git ls-remote https://github.com/torvalds/linux.git
 
 # 测试 SSH
-ssh -T git@github.com
+ssh -T user@example.com
 ```
 
 ### 3.8 一键开关脚本
@@ -611,13 +611,13 @@ start /B node node_modules\shadowsocks\bin\sslocal -c C:\Users\YourName\.shadows
 timeout /t 2 >nul
 
 echo [2/3] 设置 Git 代理...
-git config --global http.proxy socks5://127.0.0.1:1080
-git config --global https.proxy socks5://127.0.0.1:1080
+git config --global http.proxy socks5://xxx.xxx.xxx.xxx:1080
+git config --global https.proxy socks5://xxx.xxx.xxx.xxx:1080
 
 echo [3/3] 设置环境变量...
-set http_proxy=http://127.0.0.1:1080
-set https_proxy=http://127.0.0.1:1080
-set all_proxy=socks5://127.0.0.1:1080
+set http_proxy=http://xxx.xxx.xxx.xxx:1080
+set https_proxy=http://xxx.xxx.xxx.xxx:1080
+set all_proxy=socks5://xxx.xxx.xxx.xxx:1080
 
 echo.
 echo ========================================
@@ -625,7 +625,7 @@ echo    代理已启动！端口：1080
 echo ========================================
 echo.
 echo 测试命令：
-echo curl --proxy socks5://127.0.0.1:1080 https://api.ipify.org
+echo curl --proxy socks5://xxx.xxx.xxx.xxx:1080 https://api.ipify.org
 echo.
 pause
 ```
@@ -670,8 +670,8 @@ if %ERRORLEVEL% equ 0 (
     echo 检测到代理未运行，正在启动...
     cd /d C:\shadowsocks-client
     start /B node node_modules\shadowsocks\bin\sslocal -c C:\Users\YourName\.shadowsocks\config.json
-    git config --global http.proxy socks5://127.0.0.1:1080
-    git config --global https.proxy socks5://127.0.0.1:1080
+    git config --global http.proxy socks5://xxx.xxx.xxx.xxx:1080
+    git config --global https.proxy socks5://xxx.xxx.xxx.xxx:1080
     echo 代理已启动
 )
 
@@ -744,7 +744,7 @@ journalctl -u shadowsocks-libev -n 50
 netstat -tuln | grep 8388
 
 # 测试本地连接
-telnet 127.0.0.1 8388
+telnet xxx.xxx.xxx.xxx 8388
 ```
 
 **检查客户端**：
@@ -810,7 +810,7 @@ sysctl -w net.ipv4.tcp_keepalive_time=600
 # 重新设置服务端密码
 cat > /etc/shadowsocks-libev/config.json << EOF
 {
-    "server": "0.0.0.0",
+    "server": "xxx.xxx.xxx.xxx",
     "server_port": 8388,
     "password": "SimplePassword123",
     "timeout": 300,
@@ -874,7 +874,7 @@ npm update -g shadowsocks
 
 ```json
 {
-    "server": "0.0.0.0",
+    "server": "xxx.xxx.xxx.xxx",
     "port_password": {
         "8388": "password1",
         "8389": "password2",
@@ -889,7 +889,7 @@ npm update -g shadowsocks
 
 ```json
 {
-    "server": "0.0.0.0",
+    "server": "xxx.xxx.xxx.xxx",
     "server_port": 8388,
     "password": "password",
     "timeout": 300,
@@ -953,7 +953,7 @@ pm2 status
 
 ```bash
 # 设置
-git config --global http.proxy socks5://127.0.0.1:1080
+git config --global http.proxy socks5://xxx.xxx.xxx.xxx:1080
 
 # 查看
 git config --global http.proxy
@@ -970,7 +970,7 @@ git config --global --unset http.proxy
 
 ```json
 {
-    "server": "0.0.0.0",
+    "server": "xxx.xxx.xxx.xxx",
     "server_port": 8388,
     "password": "CHANGE_ME_STRONG_PASSWORD",
     "timeout": 300,
@@ -986,7 +986,7 @@ git config --global --unset http.proxy
 {
     "server": "YOUR_SERVER_IP",
     "server_port": 8388,
-    "local_address": "127.0.0.1",
+    "local_address": "xxx.xxx.xxx.xxx",
     "local_port": 1080,
     "password": "CHANGE_ME_STRONG_PASSWORD",
     "timeout": 300,
@@ -1032,4 +1032,4 @@ npm install shadowsocks-node-client
 ✅ **易于管理** - PM2 进程管理
 ✅ **开机自启** - 系统服务或任务计划
 
-配置完成后，你的所有应用都可以通过 127.0.0.1:1080 的 SOCKS5 代理访问 GitHub 等海外网站。
+配置完成后，你的所有应用都可以通过 xxx.xxx.xxx.xxx:1080 的 SOCKS5 代理访问 GitHub 等海外网站。

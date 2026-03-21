@@ -302,7 +302,7 @@ description: Use when navigating GitHub in a browser (searching repos, starring,
 ## 社区与支持
 
 - **Discord：** https://discord.gg/yaYrNAckb5
-- **Email：** contact@turix.ai
+- **Email：** user@example.com
 - **技术报告：** https://turix.ai/technical-report/
 - **API 平台：** https://turixapi.io
 - **开发者注册：** https://turix.ai/api-platform/（$20 信用额度）

@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/algolia.json</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Mar 2026 03:00:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-03-20赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 21 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月20日-赛博日记"&gt;2026年03月20日 赛博日记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/algolia.json</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 22 Mar 2026 03:00:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-03-21赛博日记</title><link>https://bluespace.eu.org/post/2026-03-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 22 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/2026-03-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-03-21-赛博日记"&gt;2026-03-21 赛博日记&lt;/h1&gt;
+&lt;h2 id="今日新增内容"&gt;今日新增内容&lt;/h2&gt;
+&lt;h3 id="技术学习笔记"&gt;技术学习笔记&lt;/h3&gt;
+&lt;h4 id="1cat-vllm-安装教程---v100-32g--wsl-ubuntu"&gt;1Cat-vLLM 安装教程 - V100 32G + WSL Ubuntu&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;项目简介&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1Cat-vLLM 是专为 Tesla V100 (SM70) 优化的 vLLM 分支，支持 AWQ 4-bit 量化推理&lt;/li&gt;
+&lt;li&gt;主要特性：支持在 V100 上运行现代 AWQ 量化模型、优化了 Qwen3.5 27B/35B 等模型的多卡部署、支持 262144 token 长上下文（双卡配置）、集成 TurboMind SM70 WMMA kernels、提供 OpenAI 兼容的 API 服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;环境要求&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>2026-03-21赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 22 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月21日-赛博日记"&gt;2026年03月21日 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-03-21 23:59:15&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
+&lt;p&gt;今天主要围绕 &lt;strong&gt;数字花园维护&lt;/strong&gt; 和 &lt;strong&gt;技术笔记整理&lt;/strong&gt; 展开。成功解决了博客全量同步导致的时间戳排序混乱问题，并对 OpenClaw 部署、Appium 自动化、1Cat-vLLM 安装等技术内容进行了深度梳理。&lt;/p&gt;</description></item><item><title>v100模式切换</title><link>https://bluespace.eu.org/post/%E6%90%9E%E6%9C%BA/v100%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2/</link><pubDate>Sat, 21 Mar 2026 17:35:37 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%90%9E%E6%9C%BA/v100%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2/</guid><description>&lt;p&gt;切换&lt;strong&gt;MCDM&lt;/strong&gt; 模式：nvidia-smi -dm 2 wsl系统可识别&lt;/p&gt;
+&lt;p&gt;切换ecc模式：nvidia-smi -dm 1&lt;/p&gt;
+&lt;p&gt;切换WDDM：nvidia-smi -dm 0&lt;/p&gt;</description></item><item><title>vllm</title><link>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/vllm/</link><pubDate>Sat, 21 Mar 2026 17:02:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/vllm/</guid><description>&lt;p&gt;source 1cat-vllm/bin/activate&lt;/p&gt;
+&lt;p&gt;python -m vllm.entrypoints.openai.api_server \&lt;br&gt;
+&amp;ndash;model ~\Qwen3.5-35B-A3B-AWQ \&lt;br&gt;
+&amp;ndash;quantization awq \&lt;br&gt;
+&amp;ndash;dtype float16 \&lt;br&gt;
+&amp;ndash;gpu-memory-utilization 0.9 \&lt;br&gt;
+&amp;ndash;max-model-len 65536 \&lt;br&gt;
+&amp;ndash;tensor-parallel-size 1 \&lt;br&gt;
+&amp;ndash;max-num-seqs 4 \&lt;br&gt;
+&amp;ndash;max-num-batched-tokens 2048 \&lt;br&gt;
+&amp;ndash;attention-backend TRITON_ATTN \&lt;br&gt;
+&amp;ndash;compilation-config &amp;lsquo;{&amp;ldquo;cudagraph_mode&amp;rdquo;:&amp;ldquo;full_and_piecewise&amp;rdquo;,&amp;ldquo;cudagraph_capture_sizes&amp;rdquo;:[1]}&amp;rsquo; \&lt;br&gt;
+&amp;ndash;host xxx.xxx.xxx.xxx \&lt;br&gt;
+&amp;ndash;port 8000&lt;/p&gt;</description></item><item><title>2026-03-20赛博日记</title><link>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 21 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月20日-赛博日记"&gt;2026年03月20日 赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成时间：2026-03-20 23:58:30&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -42,7 +71,7 @@
 &lt;h2 id="前提条件"&gt;前提条件&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;✅ MCP 服务器已配置在 &lt;code&gt;C:\Users\Administrator\.claude.json&lt;/code&gt; 中&lt;/li&gt;
-&lt;li&gt;✅ 访问令牌已配置：&lt;code&gt;38356c722f07f76b741d8a5aa722bd4fa63e5ebe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;✅ 访问令牌已配置：&lt;code&gt;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;⚠️ &lt;strong&gt;需要重启 Claude Code&lt;/strong&gt; 使配置生效&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="可用工具列表共-38-个"&gt;可用工具列表（共 38 个）&lt;/h2&gt;
@@ -509,7 +538,7 @@
 &lt;hr&gt;
 &lt;h2 id="测试环境"&gt;测试环境&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Ollama API:&lt;/strong&gt; http://172.31.224.1:11434&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ollama API:&lt;/strong&gt; &lt;a href="http://xxx.xxx.xxx.xxx:11434"&gt;http://xxx.xxx.xxx.xxx:11434&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;测试模型:&lt;/strong&gt;
 &lt;ol&gt;
 &lt;li&gt;minicpm-o-4_5:latest (4.5B)&lt;/li&gt;
@@ -568,30 +597,30 @@
 &lt;h3 id="1-更新客户端-token选择其中一个"&gt;1. 更新客户端 Token（选择其中一个）&lt;/h3&gt;
 &lt;h4 id="选项-a-修改客户端-token-匹配服务端"&gt;选项 A: 修改客户端 Token 匹配服务端&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 编辑客户端配置&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vi /Users/tianqinghong/nextcloud/frpc.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vi /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 修改这一行：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2599a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 改为：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2592a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="选项-b-修改服务端-token-匹配客户端"&gt;选项 B: 修改服务端 Token 匹配客户端&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 在服务器上&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh server
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo vi /etc/frp/frps.toml
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 修改这一行：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2592a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 改为：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2599a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 重启服务&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl restart frps
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-启动-nextcloud-frp-客户端"&gt;2. 启动 Nextcloud FRP 客户端&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 A: 手动启动（测试）&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/opt/homebrew/opt/frpc/bin/frpc -c /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 B: 后台运行&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nohup /opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml &amp;gt; /tmp/frpc.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nohup /opt/homebrew/opt/frpc/bin/frpc -c /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml &amp;gt; /tmp/frpc.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 C: 创建 systemd 服务（推荐）&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 创建 ~/Library/LaunchAgents/com.github.frpc.nextcloud.plist&lt;/span&gt;
@@ -600,7 +629,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh server &lt;span class="s2"&gt;&amp;#34;journalctl -u frps -f&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 测试连接&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -I http://38.55.39.104:8080
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -I http://xxx.xxx.xxx.xxx:8080
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="4-更新-nginx-配置如果使用-frp"&gt;4. 更新 Nginx 配置（如果使用 FRP）&lt;/h3&gt;
 &lt;p&gt;如果要让 nc.skyspace.eu.org 使用 FRP 而不是 Tailscale：&lt;/p&gt;</description></item><item><title>nc域名FRP配置成功报告</title><link>https://bluespace.eu.org/post/nextcloud/nc%E5%9F%9F%E5%90%8Dfrp%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E6%8A%A5%E5%91%8A/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/nc%E5%9F%9F%E5%90%8Dfrp%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="ncskyspaceeuorg-frp-配置成功报告"&gt;nc.skyspace.eu.org FRP 配置成功报告&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -610,9 +639,9 @@
 &lt;hr&gt;
 &lt;h2 id="-配置变更"&gt;📊 配置变更&lt;/h2&gt;
 &lt;h3 id="修改前"&gt;修改前&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → Tailscale (100.97.62.83:8080) → Mac
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → Tailscale (xxx.xxx.xxx.xxx:8080) → Mac
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="修改后"&gt;修改后&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → FRP (127.0.0.1:8080) → Mac
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → FRP (xxx.xxx.xxx.xxx:8080) → Mac
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id="-配置步骤"&gt;🔧 配置步骤&lt;/h2&gt;
 &lt;h3 id="1-备份配置"&gt;1. 备份配置&lt;/h3&gt;
@@ -622,7 +651,7 @@
 &lt;p&gt;修改前：&lt;/p&gt;</description></item><item><title>Nextcloud完整架构指南</title><link>https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/</guid><description>&lt;h1 id="nextcloud-完整架构指南"&gt;Nextcloud 完整架构指南&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;更新时间: 2025-03-09&lt;br&gt;
-版本: Nextcloud 33.0.0.16&lt;/p&gt;
+版本: Nextcloud xxx.xxx.xxx.xxx&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id="目录"&gt;目录&lt;/h2&gt;
 &lt;ul&gt;
@@ -638,8 +667,8 @@
 &lt;h3 id="整体架构图"&gt;整体架构图&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────────────────────────────┐
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ macOS 宿主机 │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ IP: 192.168.10.222 (局域网) │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Tailscale IP: 100.97.62.83 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ IP: xxx.xxx.xxx.xxx (局域网) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Tailscale IP: xxx.xxx.xxx.xxx │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└────────────────────┬────────────────────────────────────────┘
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌────────────────────▼────────────────────────────────────────┐
@@ -704,11 +733,11 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;用户
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ▼
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DNS: nc.skyspace.eu.org → 38.55.39.104
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DNS: nc.skyspace.eu.org → xxx.xxx.xxx.xxx
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ▼
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 公网服务器 (38.55.39.104) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 公网服务器 (xxx.xxx.xxx.xxx) │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Nginx 反向代理 │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Let&amp;#39;s Encrypt 证书 │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└────────────┬────────────────────────┘
@@ -722,7 +751,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└─────────────────────────────────────┘
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;FRP 配置&lt;/strong&gt;:&lt;/p&gt;</description></item><item><title>openclaw-tutorial-0305</title><link>https://bluespace.eu.org/post/openclaw/openclaw-tutorial-0305/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw-tutorial-0305/</guid><description>&lt;h1 id="openclaw-教程笔记"&gt;OpenClaw 教程笔记&lt;/h1&gt;
 &lt;p&gt;本文件由 OpenClaw 自动从飞书教程同步。
-原始来源：https://ycnezwebj31p.feishu.cn/docx/MVomdT4tWoeEnmxFFEAcsHGpnph&lt;/p&gt;</description></item><item><title>position-management-design-v1.0</title><link>https://bluespace.eu.org/post/position-management-design-v1.0/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-design-v1.0/</guid><description>&lt;h1 id="仓位管理系统---产品设计文档"&gt;仓位管理系统 - 产品设计文档&lt;/h1&gt;
+原始来源：https://ycnezwebj31p.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&lt;/p&gt;</description></item><item><title>position-management-design-v1.0</title><link>https://bluespace.eu.org/post/position-management-design-v1.0/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/position-management-design-v1.0/</guid><description>&lt;h1 id="仓位管理系统---产品设计文档"&gt;仓位管理系统 - 产品设计文档&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;版本&lt;/strong&gt;: v1.0
 &lt;strong&gt;创建日期&lt;/strong&gt;: 2026-03-10
 &lt;strong&gt;作者&lt;/strong&gt;: 小老弟
@@ -913,8 +942,8 @@
 &lt;p&gt;&lt;strong&gt;优点:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Tailscale-vs-FRP-延迟测试报告</title><link>https://bluespace.eu.org/post/nextcloud/tailscale-vs-frp-%E5%BB%B6%E8%BF%9F%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/tailscale-vs-frp-%E5%BB%B6%E8%BF%9F%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="tailscale-vs-frp-网络延迟测试报告"&gt;Tailscale vs FRP 网络延迟测试报告&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;测试时间: 2025-03-09&lt;br&gt;
-测试环境: macOS → 外部服务器 (38.55.39.104)&lt;br&gt;
-本地 Tailscale IP: 100.97.62.83&lt;/p&gt;
+测试环境: macOS → 外部服务器 (xxx.xxx.xxx.xxx)&lt;br&gt;
+本地 Tailscale IP: xxx.xxx.xxx.xxx&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id="测试结果总览"&gt;测试结果总览&lt;/h2&gt;
@@ -1009,7 +1038,7 @@
 &lt;ul&gt;
 &lt;li&gt;排查了飞书插件加载异常及服务重启问题。&lt;/li&gt;
 &lt;li&gt;针对飞书知识库添加机器人权限受限问题，通过空间 ID (&lt;code&gt;7613769100401118150&lt;/code&gt;) 解析，确认了 API 访问权限链路。&lt;/li&gt;
-&lt;li&gt;创建了 &lt;a href="https://ucn0abdy5r1f.feishu.cn/docx/ZxRBdfERLo3pOvxjEQQcwSlgnTb"&gt;2026-03-08 工作总结文档&lt;/a&gt; 并完成写入。&lt;/li&gt;
+&lt;li&gt;创建了 &lt;a href="https://ucn0abdy5r1f.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"&gt;2026-03-08 工作总结文档&lt;/a&gt; 并完成写入。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1047,12 +1076,11 @@
 &lt;h2 id="-问题描述"&gt;🎯 问题描述&lt;/h2&gt;
 &lt;p&gt;运行 &lt;code&gt;node app.js&lt;/code&gt; 时出现以下错误：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;🔥 触发小米账号异地登录安全验证机制，请在浏览器打开以下链接，并按照网页提示授权验证账号：
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.com/fe/service/identity/authStart?sid=micoapi&amp;amp;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?sid=micoapi&amp;amp;...
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ 小米账号登录失败
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>Openclaw部署、使用、skill</title><link>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</link><pubDate>Mon, 09 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</guid><description>&lt;h1 id="教程openclaw部署使用skill与三大实用玩法-xuan酱-0305"&gt;【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item><item><title>Openclaw部署、使用、skill</title><link>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</link><pubDate>Mon, 09 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</guid><description>&lt;p&gt;【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305&lt;/p&gt;
 &lt;p&gt;本文档为Xuan酱 2026.3.5《OpenClaw 3大超实用玩法》视频配套教程文档
-全平台@Xuan酱，关注我，和我一起探索AI的更多玩法&lt;/p&gt;
-&lt;p&gt;(注：此处省略部分非核心图片/辅助内容，完整内容见飞书文档)&lt;/p&gt;</description></item><item><title>supermemory-memory-system</title><link>https://bluespace.eu.org/post/supermemory-memory-system/</link><pubDate>Mon, 09 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory-memory-system/</guid><description>&lt;h1 id="supermemory-统一记忆系统---完整文档"&gt;Supermemory 统一记忆系统 - 完整文档&lt;/h1&gt;
+全平台@Xuan酱，关注我，和我一起探索AI的更多玩法&lt;/p&gt;</description></item><item><title>supermemory-memory-system</title><link>https://bluespace.eu.org/post/supermemory-memory-system/</link><pubDate>Mon, 09 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/supermemory-memory-system/</guid><description>&lt;h1 id="supermemory-统一记忆系统---完整文档"&gt;Supermemory 统一记忆系统 - 完整文档&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;创建时间：2026-03-08
 最后更新：2026-03-08
@@ -1111,19 +1139,19 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────▼─────────┐ ┌──────────▼─────────┐ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Cloudflare DNS │ │ 局域网访问 │ │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ (DNS only模式) │ │ 192.168.10.222 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ (DNS only模式) │ │ xxx.xxx.xxx.xxx │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────┬─────────┘ │ :8443 │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────┬─────────┘ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────▼──────────────────────┐ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 云服务器 Nginx │ │ │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 38.55.39.104 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ xxx.xxx.xxx.xxx │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Let&amp;#39;s Encrypt证书 │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────┬──────────────────────┘ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌───────────────────────┐│ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Tailscale VPN ││ │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ 100.97.62.83 ││ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ xxx.xxx.xxx.xxx ││ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────┬───────────┘│ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └───────────────┼────────────┘ │
@@ -1221,8 +1249,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;本地环境&lt;/strong&gt;: macOS (Darwin 25.2.0)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Docker运行时&lt;/strong&gt;: Colima&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;云服务器&lt;/strong&gt;: 38.55.39.104 (Ubuntu)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Nextcloud版本&lt;/strong&gt;: 33.0.0.16&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;云服务器&lt;/strong&gt;: xxx.xxx.xxx.xxx (Ubuntu)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nextcloud版本&lt;/strong&gt;: xxx.xxx.xxx.xxx&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;数据库&lt;/strong&gt;: MySQL 8.0 (本地)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;缓存&lt;/strong&gt;: Redis&lt;/li&gt;
 &lt;/ul&gt;
@@ -1286,21 +1314,21 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;局域网HTTPS&lt;/td&gt;
-&lt;td&gt;https://192.168.10.222:8443&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://xxx.xxx.xxx.xxx:8443"&gt;https://xxx.xxx.xxx.xxx:8443&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;0.01秒&lt;/td&gt;
 &lt;td&gt;自签名&lt;/td&gt;
 &lt;td&gt;局域网设备&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Tailscale&lt;/td&gt;
-&lt;td&gt;http://100.97.62.83:8080&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://xxx.xxx.xxx.xxx:8080"&gt;http://xxx.xxx.xxx.xxx:8080&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;0.35秒&lt;/td&gt;
 &lt;td&gt;HTTP&lt;/td&gt;
 &lt;td&gt;VPN内设备&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;局域网HTTP&lt;/td&gt;
-&lt;td&gt;http://192.168.10.222:8080&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://xxx.xxx.xxx.xxx:8080"&gt;http://xxx.xxx.xxx.xxx:8080&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;0.01秒&lt;/td&gt;
 &lt;td&gt;HTTP&lt;/td&gt;
 &lt;td&gt;局域网设备&lt;/td&gt;
@@ -1316,7 +1344,7 @@
 &lt;h3 id="容器内路径"&gt;容器内路径&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;数据目录&lt;/strong&gt;: &lt;code&gt;/var/www/html/data&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;配置文件&lt;/strong&gt;: &lt;code&gt;/Users/tianqinghong/nextcloud/config.php&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配置文件&lt;/strong&gt;: &lt;code&gt;/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.php&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="docker-卷"&gt;Docker 卷&lt;/h3&gt;
 &lt;ul&gt;
@@ -1450,7 +1478,7 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-配置服务端"&gt;2. 配置服务端&lt;/h3&gt;
 &lt;p&gt;编辑配置文件 &lt;code&gt;/etc/shadowsocks-libev/config.json&lt;/code&gt;：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;server&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;server&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxx.xxx.xxx.xxx&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;server_port&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8388&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;password&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;lt;密码&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;#34;timeout&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -1498,7 +1526,7 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="12-创建配置文件"&gt;1.2 创建配置文件&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat &amp;gt; /etc/shadowsocks-libev/config.json &lt;span class="s"&gt;&amp;lt;&amp;lt; EOF
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;server&amp;#34;: &amp;#34;0.0.0.0&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;server&amp;#34;: &amp;#34;xxx.xxx.xxx.xxx&amp;#34;,
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;server_port&amp;#34;: 8388,
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;password&amp;#34;: &amp;#34;YourStrongPassword123!&amp;#34;,
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;timeout&amp;#34;: 300,
@@ -1999,8 +2027,41 @@ PS C:\WINDOWS\system32&amp;gt; $Principal = New-ScheduledTaskPrincipal -UserId &
 PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p&gt;</description></item><item><title>aigc</title><link>https://bluespace.eu.org/post/%E9%97%AE%E9%A2%98/aigc/</link><pubDate>Sun, 25 Jan 2026 22:27:52 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%97%AE%E9%A2%98/aigc/</guid><description>&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%E9%97%AE%E9%A2%98%2Fassets%2Fc127665f-c6c0-43d6-854c-d2f020c05e93.png"&gt;&lt;/p&gt;
 &lt;p&gt;红框内容是什么&lt;/p&gt;</description></item><item><title>vllm</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/</link><pubDate>Thu, 22 Jan 2026 15:50:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/vllm/</guid><description>&lt;h1 id="绕过网站反调试机制打不开f12的解决方案"&gt;绕过网站反调试机制（打不开F12的解决方案）&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>解决浏览器反调试机制</title><link>https://bluespace.eu.org/post/%E7%88%AC%E8%99%AB/%E8%A7%A3%E5%86%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8D%E8%B0%83%E8%AF%95%E6%9C%BA%E5%88%B6/</link><pubDate>Thu, 22 Jan 2026 10:19:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%88%AC%E8%99%AB/%E8%A7%A3%E5%86%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8D%E8%B0%83%E8%AF%95%E6%9C%BA%E5%88%B6/</guid><description>&lt;h1 id="绕过网站反调试机制打不开f12的解决方案"&gt;绕过网站反调试机制（打不开F12的解决方案）&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>qodercli</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</link><pubDate>Sat, 17 Jan 2026 09:40:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</guid><description>&lt;p&gt;终端输入qodercli启动&lt;/p&gt;</description></item><item><title>wsl</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</link><pubDate>Wed, 14 Jan 2026 19:53:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</guid><description/></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</link><pubDate>Wed, 14 Jan 2026 19:43:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</guid><description>&lt;p&gt;powershell启动虚拟环境：&amp;amp; E:/AI/MinerU/.venv/Scripts/Activate.ps1&lt;/p&gt;</description></item><item><title>mineru</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</link><pubDate>Mon, 12 Jan 2026 00:38:24 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</guid><description>&lt;p&gt;mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p&gt;</description></item><item><title>高级知识库</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E5%BA%93/</link><pubDate>Sun, 04 Jan 2026 11:41:38 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E5%BA%93/</guid><description>&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="https://bluespace.eu.org/assets/94884087-5bfb-4bc8-b959-baa05d039a90.png"&gt;&lt;/p&gt;</description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link><pubDate>Tue, 30 Dec 2025 14:30:00 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid><description>&lt;h3 id="添加本地mcp"&gt;添加本地mcp&lt;/h3&gt;
-&lt;p&gt;claude mcp add &amp;ndash;transport stdio &amp;ndash;scope user mysql &amp;ndash;env MYSQL_HOST=192.168.0.203 &amp;ndash;env MYSQL_USER=tianqinghong &amp;ndash;env MYSQL_PASSWORD=&amp;ldquo;pG4QbSdb1u0KcjUQX+E=&amp;rdquo; &amp;ndash;env MYSQL_DATABASE=db_diag &amp;ndash; &amp;ldquo;npm exec &amp;ndash;yes &amp;ndash; @f4ww4z/mcp-mysql-server&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>qodercli</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</link><pubDate>Sat, 17 Jan 2026 09:40:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/qodercli/</guid><description>&lt;p&gt;终端输入qodercli启动&lt;/p&gt;</description></item><item><title>wsl</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</link><pubDate>Wed, 14 Jan 2026 19:53:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/wsl/</guid><description>&lt;p&gt;
+&lt;div class="hugo-encryptor-container"&gt;
+&lt;div class="hugo-encryptor-prompt"&gt;
+&lt;p&gt;文章的部分内容被密码保护：&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="hugo-encryptor-form"&gt;
+&lt;input
+class="hugo-encryptor-input"
+placeholder='请输入密码'
+/&gt;
+&lt;input
+class="hugo-encryptor-button"
+type="button"
+value='点击验证'
+onclick="_click_handler(this)"
+/&gt;
+&lt;/div&gt;
+&lt;div
+class="hugo-encryptor-cipher-text"
+data-password="admin12345~"
+style="display: none;"
+&gt;
+&lt;span style="display: none;"&gt;--- DON'T MODIFY THIS LINE ---&lt;/span&gt;
+&lt;p&gt;账号：dministrator
+密码：123456&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+激活py虚拟环境：source vllm_env/bin/activate&lt;/p&gt;
+&lt;p&gt;vllm运行大模型：vllm serve .xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-14B-GPTQ-Int4
+&amp;ndash;trust-remote-code
+&amp;ndash;max-model-len 65536
+&amp;ndash;gpu-memory-utilization 0.95
+&amp;ndash;tensor-parallel-size 1
+&amp;ndash;max-num-seqs 1&lt;/p&gt;</description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</link><pubDate>Wed, 14 Jan 2026 19:43:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/untitled/</guid><description>&lt;p&gt;powershell启动虚拟环境：&amp;amp; E:/AI/MinerU/.venv/Scripts/Activate.ps1&lt;/p&gt;</description></item><item><title>mineru</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</link><pubDate>Mon, 12 Jan 2026 00:38:24 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mineru/</guid><description>&lt;p&gt;mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p&gt;</description></item><item><title>高级知识库</title><link>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E5%BA%93/</link><pubDate>Sun, 04 Jan 2026 11:41:38 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E5%BA%93%E7%9B%B8%E5%85%B3/%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E5%BA%93/</guid><description>&lt;p&gt;&lt;img alt="image.png" loading="lazy" src="https://bluespace.eu.org/assets/94884087-5bfb-4bc8-b959-baa05d039a90.png"&gt;&lt;/p&gt;</description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link><pubDate>Tue, 30 Dec 2025 14:30:00 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid><description>&lt;h3 id="添加本地mcp"&gt;添加本地mcp&lt;/h3&gt;
+&lt;p&gt;claude mcp add &amp;ndash;transport stdio &amp;ndash;scope user mysql &amp;ndash;env MYSQL_HOST=xxx.xxx.xxx.xxx &amp;ndash;env MYSQL_USER=tianqinghong &amp;ndash;env MYSQL_PASSWORD=&amp;ldquo;pG4QbSdb1u0KcjUQX+E=&amp;rdquo; &amp;ndash;env MYSQL_DATABASE=db_diag &amp;ndash; &amp;ldquo;npm exec &amp;ndash;yes &amp;ndash; @f4ww4z/mcp-mysql-server&amp;rdquo;&lt;/p&gt;
 &lt;h3 id="获取mcp列表"&gt;获取mcp列表&lt;/h3&gt;
 &lt;p&gt;claude mcp list&lt;/p&gt;
 &lt;h3 id="无脑接受模式"&gt;无脑接受模式&lt;/h3&gt;
@@ -2013,8 +2074,8 @@ PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start
 &lt;p&gt;gemma3:27b 多模态、号称单gpu最强&lt;/p&gt;
 &lt;p&gt;zdolny/qwen3-coder58k-tools:latest&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Hugging Face 国内镜像&lt;/strong&gt;&lt;a href="https://hf-mirror.com"&gt;https://hf-mirror.com&lt;/a&gt;&lt;/p&gt;</description></item><item><title>定时任务</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</link><pubDate>Tue, 02 Dec 2025 16:25:29 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</guid><description>&lt;h3 id="定时任务配置"&gt;定时任务配置&lt;/h3&gt;
-&lt;p&gt;示例图片&lt;img alt="定时任务配置.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%2Fassets%2Ff392ccdb-3e18-45a8-863e-7eba2191618b.png"&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.com/upload/20251202/1373329c22748de4833d5ad961f7c7c4/72500eeae68a4a9caa68db00e4e30c56/image.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.com/upload/20251202/1373329c22748de4833d5ad961f7c7c4/72500eeae68a4a9caa68db00e4e30c56/image.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.com/upload/20251202/1373329c22748de4833d5ad961f7c7c4/72500eeae68a4a9caa68db00e4e30c56/image.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.com/upload/20251202/1373329c22748de4833d5ad961f7c7c4/72500eeae68a4a9caa68db00e4e30c56/image.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.com/upload/20251202/1373329c22748de4833d5ad961f7c7c4/72500eeae68a4a9caa68db00e4e30c56/image.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;/p&gt;
+&lt;p&gt;示例图片&lt;img alt="定时任务配置.png" loading="lazy" src="http://asset.localhost/C%3A%5CUsers%5CAdministrator%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%2Fassets%2Ff392ccdb-3e18-45a8-863e-7eba2191618b.png"&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://tongyi-main.oss-accelerate.aliyuncs.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png?Expires=1827734739&amp;OSSAccessKeyId=LTAI5tL97mBYzVcjkG1cUyin&amp;Signature=lbdyc9AwJLkHpRTivNMIDgAJq1E%3D"&gt;&lt;/p&gt;
 &lt;p&gt;根据图片中的“定时配置”字段提示：“crontab表达式 例如：11 * * * *”，可以推测红框内应该填写的是一个 &lt;strong&gt;crontab 定时任务表达式&lt;/strong&gt;，用于指定任务执行的时间。&lt;/p&gt;</description></item><item><title>java快速生成接口自动化测试用例项目</title><link>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</link><pubDate>Thu, 20 Nov 2025 23:25:58 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/java%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8E%A5%E5%8F%A3%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="java快速生成接口自动化测试用例项目"&gt;java快速生成接口自动化测试用例项目&lt;/h1&gt;
 &lt;p&gt;这是一个示例项目，演示如何使用 TestNG 和 REST Assured 进行 API 测试，并支持测试用例与接口逻辑分离的架构。&lt;/p&gt;
 &lt;h2 id="har文件自动化测试生成"&gt;HAR文件自动化测试生成&lt;/h2&gt;
@@ -2089,7 +2150,7 @@ git submodule update &amp;ndash;init &amp;ndash;recursive
 &lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>git操作</title><link>https://bluespace.eu.org/post/git/git%E6%93%8D%E4%BD%9C/</link><pubDate>Sun, 07 Sep 2025 00:22:21 +0800</pubDate><guid>https://bluespace.eu.org/post/git/git%E6%93%8D%E4%BD%9C/</guid><description>&lt;h4 id="回滚到指定提交"&gt;回滚到指定提交&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;git reset &amp;ndash;hard c1ac53850b0314a20e97f669bafc8bb67a3a1124&lt;/li&gt;
+&lt;li&gt;git reset &amp;ndash;hard xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&lt;/li&gt;
 &lt;li&gt;git push&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id="放弃变更强制提交"&gt;放弃变更强制提交&lt;/h4&gt;
@@ -2110,12 +2171,12 @@ git submodule update &amp;ndash;init &amp;ndash;recursive
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#J6CDd7QvkohJ3mxEKt3czp31nOe"&gt;Git submodule添加子项目_库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#J6CDd7QvkohJ3mxEKt3czp31nOe"&gt;Git submodule添加子项目_库&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnEitqaRgfOoIdSuxwNhUaIc"&gt;Git归并策略&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnel4BHYYT4Lw7SQHLqNXyue"&gt;添加&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://guangpuyun.feishu.cn/docx/J6CDd7QvkohJ3mxEKt3czp31nOe#doxcnrHxc9hpZYK1WtRbYlUQ91f"&gt;删除&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#doxcnEitqaRgfOoIdSuxwNhUaIc"&gt;Git归并策略&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#doxcnel4BHYYT4Lw7SQHLqNXyue"&gt;添加&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#doxcnrHxc9hpZYK1WtRbYlUQ91f"&gt;删除&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;输入“/”快速插入内容&lt;/p&gt;</description></item><item><title>SYSTEM_DESIGN</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/system_design/</link><pubDate>Sun, 07 Sep 2025 00:22:06 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/system_design/</guid><description>&lt;h1 id="系统设计与开发者文档"&gt;系统设计与开发者文档&lt;/h1&gt;
 &lt;p&gt;本文档为量化交易系统的核心开发者提供全面的技术参考，涵盖了系统架构、核心模块、API接口、部署运维以及未来的发展规划。&lt;/p&gt;
@@ -2249,7 +2310,7 @@ date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="err"&gt;其内容如下：&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;workers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# 定义同时开启的处理请求的进程数量，根据网站流量适当调整&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;worker_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;gevent&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;# 采用gevent库，支持异步处理请求，提高吞吐量&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0.0.0.0:80&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;# 监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxx.xxx.xxx.xxx:80&amp;#34;&lt;/span&gt; &lt;span class="c1"&gt;# 监听IP放宽，以便于Docker之间、Docker和宿主机之间的通信&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;2.&lt;/span&gt;&lt;span class="n"&gt;python依赖存于项目requirements&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt文件内&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
@@ -2282,7 +2343,7 @@ date: 2025-03-20T12:59:32+08:00&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;COPY&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;CMD&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;uvicorn&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;fastapi_index:app&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;--host&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;--port&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;80&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;CMD&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;uvicorn&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;fastapi_index:app&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;--host&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxx.xxx.xxx.xxx&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;--port&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;80&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="构建vue的步骤"&gt;&lt;strong&gt;构建vue的步骤&lt;/strong&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="mf"&gt;1.&lt;/span&gt;&lt;span class="err"&gt;在项目&lt;/span&gt;&lt;span class="n"&gt;tools_vue根目录&lt;/span&gt;&lt;span class="err"&gt;，创建&lt;/span&gt;&lt;span class="n"&gt;nginx夹&lt;/span&gt;&lt;span class="err"&gt;，该文件夹下新建文件&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;

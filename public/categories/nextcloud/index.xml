@@ -29,30 +29,30 @@
 &lt;h3 id="1-更新客户端-token选择其中一个"&gt;1. 更新客户端 Token（选择其中一个）&lt;/h3&gt;
 &lt;h4 id="选项-a-修改客户端-token-匹配服务端"&gt;选项 A: 修改客户端 Token 匹配服务端&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 编辑客户端配置&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vi /Users/tianqinghong/nextcloud/frpc.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vi /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 修改这一行：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2599a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 改为：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2592a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="选项-b-修改服务端-token-匹配客户端"&gt;选项 B: 修改服务端 Token 匹配客户端&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 在服务器上&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh server
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo vi /etc/frp/frps.toml
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 修改这一行：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2592a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 改为：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d5b2e506bd2599a802583acce6253226&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth.token &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 重启服务&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl restart frps
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-启动-nextcloud-frp-客户端"&gt;2. 启动 Nextcloud FRP 客户端&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 A: 手动启动（测试）&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/opt/homebrew/opt/frpc/bin/frpc -c /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 B: 后台运行&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nohup /opt/homebrew/opt/frpc/bin/frpc -c /Users/tianqinghong/nextcloud/frpc.toml &amp;gt; /tmp/frpc.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nohup /opt/homebrew/opt/frpc/bin/frpc -c /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.toml &amp;gt; /tmp/frpc.log 2&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 方式 C: 创建 systemd 服务（推荐）&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 创建 ~/Library/LaunchAgents/com.github.frpc.nextcloud.plist&lt;/span&gt;
@@ -61,7 +61,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh server &lt;span class="s2"&gt;&amp;#34;journalctl -u frps -f&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 测试连接&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -I http://38.55.39.104:8080
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -I http://xxx.xxx.xxx.xxx:8080
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="4-更新-nginx-配置如果使用-frp"&gt;4. 更新 Nginx 配置（如果使用 FRP）&lt;/h3&gt;
 &lt;p&gt;如果要让 nc.skyspace.eu.org 使用 FRP 而不是 Tailscale：&lt;/p&gt;</description></item><item><title>nc域名FRP配置成功报告</title><link>https://bluespace.eu.org/post/nextcloud/nc%E5%9F%9F%E5%90%8Dfrp%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E6%8A%A5%E5%91%8A/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/nc%E5%9F%9F%E5%90%8Dfrp%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="ncskyspaceeuorg-frp-配置成功报告"&gt;nc.skyspace.eu.org FRP 配置成功报告&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -71,9 +71,9 @@
 &lt;hr&gt;
 &lt;h2 id="-配置变更"&gt;📊 配置变更&lt;/h2&gt;
 &lt;h3 id="修改前"&gt;修改前&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → Tailscale (100.97.62.83:8080) → Mac
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → Tailscale (xxx.xxx.xxx.xxx:8080) → Mac
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="修改后"&gt;修改后&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → FRP (127.0.0.1:8080) → Mac
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc.skyspace.eu.org → 服务器 → FRP (xxx.xxx.xxx.xxx:8080) → Mac
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id="-配置步骤"&gt;🔧 配置步骤&lt;/h2&gt;
 &lt;h3 id="1-备份配置"&gt;1. 备份配置&lt;/h3&gt;
@@ -83,7 +83,7 @@
 &lt;p&gt;修改前：&lt;/p&gt;</description></item><item><title>Nextcloud完整架构指南</title><link>https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/nextcloud%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97/</guid><description>&lt;h1 id="nextcloud-完整架构指南"&gt;Nextcloud 完整架构指南&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;更新时间: 2025-03-09&lt;br&gt;
-版本: Nextcloud 33.0.0.16&lt;/p&gt;
+版本: Nextcloud xxx.xxx.xxx.xxx&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id="目录"&gt;目录&lt;/h2&gt;
 &lt;ul&gt;
@@ -99,8 +99,8 @@
 &lt;h3 id="整体架构图"&gt;整体架构图&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────────────────────────────┐
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ macOS 宿主机 │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ IP: 192.168.10.222 (局域网) │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Tailscale IP: 100.97.62.83 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ IP: xxx.xxx.xxx.xxx (局域网) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Tailscale IP: xxx.xxx.xxx.xxx │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└────────────────────┬────────────────────────────────────────┘
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌────────────────────▼────────────────────────────────────────┐
@@ -165,11 +165,11 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;用户
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ▼
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DNS: nc.skyspace.eu.org → 38.55.39.104
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DNS: nc.skyspace.eu.org → xxx.xxx.xxx.xxx
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ▼
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;┌─────────────────────────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 公网服务器 (38.55.39.104) │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ 公网服务器 (xxx.xxx.xxx.xxx) │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Nginx 反向代理 │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ Let&amp;#39;s Encrypt 证书 │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└────────────┬────────────────────────┘
@@ -184,8 +184,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;FRP 配置&lt;/strong&gt;:&lt;/p&gt;</description></item><item><title>Tailscale-vs-FRP-延迟测试报告</title><link>https://bluespace.eu.org/post/nextcloud/tailscale-vs-frp-%E5%BB%B6%E8%BF%9F%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link><pubDate>Tue, 10 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/nextcloud/tailscale-vs-frp-%E5%BB%B6%E8%BF%9F%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid><description>&lt;h1 id="tailscale-vs-frp-网络延迟测试报告"&gt;Tailscale vs FRP 网络延迟测试报告&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;测试时间: 2025-03-09&lt;br&gt;
-测试环境: macOS → 外部服务器 (38.55.39.104)&lt;br&gt;
-本地 Tailscale IP: 100.97.62.83&lt;/p&gt;
+测试环境: macOS → 外部服务器 (xxx.xxx.xxx.xxx)&lt;br&gt;
+本地 Tailscale IP: xxx.xxx.xxx.xxx&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id="测试结果总览"&gt;测试结果总览&lt;/h2&gt;
@@ -302,19 +302,19 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────▼─────────┐ ┌──────────▼─────────┐ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Cloudflare DNS │ │ 局域网访问 │ │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ (DNS only模式) │ │ 192.168.10.222 │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ (DNS only模式) │ │ xxx.xxx.xxx.xxx │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────┬─────────┘ │ :8443 │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────┬─────────┘ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ ┌─────────▼──────────────────────┐ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 云服务器 Nginx │ │ │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ 38.55.39.104 │ │ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ xxx.xxx.xxx.xxx │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ Let&amp;#39;s Encrypt证书 │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └─────────┬──────────────────────┘ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ ┌───────────────────────┐│ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ Tailscale VPN ││ │
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ 100.97.62.83 ││ │
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ xxx.xxx.xxx.xxx ││ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ └──────────┬───────────┘│ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ │ │ │ │
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│ └───────────────┼────────────┘ │
@@ -412,8 +412,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;本地环境&lt;/strong&gt;: macOS (Darwin 25.2.0)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Docker运行时&lt;/strong&gt;: Colima&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;云服务器&lt;/strong&gt;: 38.55.39.104 (Ubuntu)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Nextcloud版本&lt;/strong&gt;: 33.0.0.16&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;云服务器&lt;/strong&gt;: xxx.xxx.xxx.xxx (Ubuntu)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nextcloud版本&lt;/strong&gt;: xxx.xxx.xxx.xxx&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;数据库&lt;/strong&gt;: MySQL 8.0 (本地)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;缓存&lt;/strong&gt;: Redis&lt;/li&gt;
 &lt;/ul&gt;
@@ -477,21 +477,21 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;局域网HTTPS&lt;/td&gt;
-&lt;td&gt;https://192.168.10.222:8443&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://xxx.xxx.xxx.xxx:8443"&gt;https://xxx.xxx.xxx.xxx:8443&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;0.01秒&lt;/td&gt;
 &lt;td&gt;自签名&lt;/td&gt;
 &lt;td&gt;局域网设备&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Tailscale&lt;/td&gt;
-&lt;td&gt;http://100.97.62.83:8080&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://xxx.xxx.xxx.xxx:8080"&gt;http://xxx.xxx.xxx.xxx:8080&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;0.35秒&lt;/td&gt;
 &lt;td&gt;HTTP&lt;/td&gt;
 &lt;td&gt;VPN内设备&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;局域网HTTP&lt;/td&gt;
-&lt;td&gt;http://192.168.10.222:8080&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://xxx.xxx.xxx.xxx:8080"&gt;http://xxx.xxx.xxx.xxx:8080&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;0.01秒&lt;/td&gt;
 &lt;td&gt;HTTP&lt;/td&gt;
 &lt;td&gt;局域网设备&lt;/td&gt;
@@ -507,7 +507,7 @@
 &lt;h3 id="容器内路径"&gt;容器内路径&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;数据目录&lt;/strong&gt;: &lt;code&gt;/var/www/html/data&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;配置文件&lt;/strong&gt;: &lt;code&gt;/Users/tianqinghong/nextcloud/config.php&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配置文件&lt;/strong&gt;: &lt;code&gt;/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.php&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="docker-卷"&gt;Docker 卷&lt;/h3&gt;
 &lt;ul&gt;

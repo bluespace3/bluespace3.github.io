@@ -39,19 +39,19 @@ draft: false
 │              │                                 │                 │
 │    ┌─────────▼─────────┐         ┌──────────▼─────────┐          │
 │    │  Cloudflare DNS   │         │   局域网访问       │          │
-│    │  (DNS only模式)   │         │ 192.168.10.222    │          │
+│    │  (DNS only模式)   │         │ xxx.xxx.xxx.xxx    │          │
 │    └─────────┬─────────┘         │      :8443        │          │
 │              │                   └──────────┬─────────┘          │
 │              │                              │                     │
 │    ┌─────────▼──────────────────────┐    │                     │
 │    │     云服务器 Nginx              │    │                     │
-│    │     38.55.39.104               │    │                     │
+│    │     xxx.xxx.xxx.xxx               │    │                     │
 │    │     Let's Encrypt证书           │    │                     │
 │    └─────────┬──────────────────────┘    │                     │
 │              │                              │                     │
 │              │    ┌───────────────────────┐│                     │
 │              │    │ Tailscale VPN         ││                     │
-│              │    │ 100.97.62.83          ││                     │
+│              │    │ xxx.xxx.xxx.xxx          ││                     │
 │              │    └──────────┬───────────┘│                     │
 │              │               │            │                     │
 │              └───────────────┼────────────┘                     │
@@ -310,25 +310,25 @@ brew install nginx
 openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
   -keyout ~/nextcloud/ssl/nextcloud-local.key \
   -out ~/nextcloud/ssl/nextcloud-local.crt \
-  -subj '/CN=192.168.10.222'
+  -subj '/CN=xxx.xxx.xxx.xxx'
 ```
 
 #### 3. 配置Nginx
-**文件：`/opt/homebrew/etc/nginx/servers/nextcloud-https.conf`**
+**文件：`/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-https.conf`**
 
 ```nginx
 server {
     listen 8443 ssl;
-    server_name 192.168.10.222;
+    server_name xxx.xxx.xxx.xxx;
 
-    ssl_certificate /Users/tianqinghong/nextcloud/ssl/nextcloud-local.crt;
-    ssl_certificate_key /Users/tianqinghong/nextcloud/ssl/nextcloud-local.key;
+    ssl_certificate /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-local.crt;
+    ssl_certificate_key /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-local.key;
 
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
 
     location / {
-        proxy_pass http://127.0.0.1:8080;
+        proxy_pass http://xxx.xxx.xxx.xxx:8080;
         proxy_http_version 1.1;
         proxy_set_header Host $host:$server_port;
         proxy_set_header X-Real-IP $remote_addr;
@@ -364,7 +364,7 @@ brew services start nginx
 1. 登录Cloudflare Dashboard
 2. 添加子域名：`nc.skyspace.eu.org`
 3. **重要**：关闭代理模式（DNS only，灰色云朵）
-4. A记录指向服务器IP：`38.55.39.104`
+4. A记录指向服务器IP：`xxx.xxx.xxx.xxx`
 
 #### 2. 服务器配置（Ubuntu）
 
@@ -385,7 +385,7 @@ chown -R www-data:www-data /var/www/html
 certbot certonly --webroot \
   -w /var/www/html \
   -d nc.skyspace.eu.org \
-  --email admin@skyspace.eu.org \
+  --email user@example.com \
   --agree-tos \
   --non-interactive
 ```
@@ -416,7 +416,7 @@ server {
 
     # 反向代理到Tailscale IP
     location / {
-        proxy_pass http://100.97.62.83:8080;
+        proxy_pass http://xxx.xxx.xxx.xxx:8080;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -484,10 +484,10 @@ $CONFIG = array (
     0 => 'localhost',
     1 => 'localhost:8080',
     2 => 'nextcloud.skyspace.eu.org',
-    3 => '192.168.10.222:8080',
-    4 => '100.97.62.83:8080',
+    3 => 'xxx.xxx.xxx.xxx:8080',
+    4 => 'xxx.xxx.xxx.xxx:8080',
     5 => 'nc.skyspace.eu.org',
-    6 => '192.168.10.222:8443',
+    6 => 'xxx.xxx.xxx.xxx:8443',
   ),
 
   // 性能优化
@@ -502,10 +502,10 @@ $CONFIG = array (
 docker exec -u 33 nextcloud php occ config:system:set trusted_domains 1 --value="localhost"
 docker exec -u 33 nextcloud php occ config:system:set trusted_domains 2 --value="localhost:8080"
 docker exec -u 33 nextcloud php occ config:system:set trusted_domains 3 --value="nextcloud.skyspace.eu.org"
-docker exec -u 33 nextcloud php occ config:system:set trusted_domains 4 --value="192.168.10.222:8080"
-docker exec -u 33 nextcloud php occ config:system:set trusted_domains 5 --value="100.97.62.83:8080"
+docker exec -u 33 nextcloud php occ config:system:set trusted_domains 4 --value="xxx.xxx.xxx.xxx:8080"
+docker exec -u 33 nextcloud php occ config:system:set trusted_domains 5 --value="xxx.xxx.xxx.xxx:8080"
 docker exec -u 33 nextcloud php occ config:system:set trusted_domains 6 --value="nc.skyspace.eu.org"
-docker exec -u 33 nextcloud php occ config:system:set trusted_domains 7 --value="192.168.10.222:8443"
+docker exec -u 33 nextcloud php occ config:system:set trusted_domains 7 --value="xxx.xxx.xxx.xxx:8443"
 ```
 
 ---
@@ -571,7 +571,7 @@ innodb_redo_log_capacity = 128M  # 替代 innodb_log_file_size
 certbot certonly --webroot \
   -w /var/www/html \
   -d nc.skyspace.eu.org \
-  --email admin@example.com \
+  --email user@example.com \
   --agree-tos
 ```
 
@@ -583,7 +583,7 @@ certbot certonly --webroot \
 openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
   -keyout ssl/nextcloud-local.key \
   -out ssl/nextcloud-local.crt \
-  -subj '/CN=192.168.10.222'
+  -subj '/CN=xxx.xxx.xxx.xxx'
 ```
 
 ### 4.4 "通过不被信任的域名访问"
@@ -599,7 +599,7 @@ openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
 **解决方案**：
 ```bash
 docker exec -u 33 nextcloud php occ config:system:set trusted_domains 6 --value="nc.skyspace.eu.org"
-docker exec -u 33 nextcloud php occ config:system:set trusted_domains 7 --value="192.168.10.222:8443"
+docker exec -u 33 nextcloud php occ config:system:set trusted_domains 7 --value="xxx.xxx.xxx.xxx:8443"
 
 # 重启容器
 docker compose restart nextcloud
@@ -664,7 +664,7 @@ the login URL started with HTTPS
 ### 4.8 所有域名重定向到局域网IP
 
 **问题描述**：
-访问公网域名也跳转到 `https://192.168.10.222:8443`
+访问公网域名也跳转到 `https://xxx.xxx.xxx.xxx:8443`
 
 **原因**：配置了`overwritehost`导致所有域名被强制重定向
 
@@ -752,7 +752,7 @@ healthcheck:
 **注意事项**：
 - 确保勾选"使用HTTPS"
 - 如果提示证书错误，检查是否使用了正确的域名
-- 局域网使用：`https://192.168.10.222:8443`（需信任证书）
+- 局域网使用：`https://xxx.xxx.xxx.xxx:8443`（需信任证书）
 
 ### 6.3 WebDAV配置
 
@@ -969,4 +969,4 @@ docker run --rm \
 
 **文档版本**：1.0
 **最后更新**：2026-03-05
-**适用版本**：Nextcloud 33.0.0.16, MySQL 8.0, Docker Compose v3.8
+**适用版本**：Nextcloud xxx.xxx.xxx.xxx, MySQL 8.0, Docker Compose v3.8

@@ -54,9 +54,9 @@ cf-ray: 9d987bf87ca581d7-SIN  # 新加坡节点
 │                                                         │
 │ 用户 → Cloudflare CDN (新加坡)                          │
 │        ↓                                                │
-│     服务器 (38.55.39.104)                               │
+│     服务器 (xxx.xxx.xxx.xxx)                               │
 │        ↓                                                │
-│   Tailscale VPN (100.97.62.83)                         │
+│   Tailscale VPN (xxx.xxx.xxx.xxx)                         │
 │        ↓                                                │
 │     你的Mac (Nextcloud:8080)                           │
 │                                                         │
@@ -68,9 +68,9 @@ cf-ray: 9d987bf87ca581d7-SIN  # 新加坡节点
 │                                                         │
 │ 用户 → Cloudflare CDN (新加坡)                          │
 │        ↓                                                │
-│     服务器 (38.55.39.104)                               │
+│     服务器 (xxx.xxx.xxx.xxx)                               │
 │        ↓                                                │
-│     FRP 隧道 (127.0.0.1:8080)                          │
+│     FRP 隧道 (xxx.xxx.xxx.xxx:8080)                          │
 │        ↓                                                │
 │     你的Mac (Nextcloud:8080)                           │
 │                                                         │

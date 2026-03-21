@@ -287,7 +287,7 @@ playwright codegen demo.playwright.dev/todomvc
   * `'assert text'` 断言元素包含特定文本
   * `'assert value'` 断言元素具有特定值
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=MjgxNDZhNjkyZWZiYjk3MjkwOTAxMGIyMWUyOWU0NDNfVmZrcmkwWmt0blpHMHpNMm9JaTZCUXo5OFNWZnVUQXZfVG9rZW46Vm1IM2JadUFBb2Uza3V4SUdidGNYdnpYbm5mXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 当您完成与页面的交互后，按下 `'record'` 按钮停止录制，并使用 `'copy'` 按钮将生成的代码复制到您的编辑器中。
 
@@ -305,7 +305,7 @@ playwright codegen demo.playwright.dev/todomvc
 * 然后您可以在定位器游乐场中编辑定位器以微调它，并看到匹配的元素在浏览器窗口中突出显示。
 * 使用复制按钮复制定位器并将其粘贴到您的代码中。
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=YTRiNjEwY2U4MWUwY2EwZDc1YzliNDZmZGM5NWNiYzBfbVNUNjVQNE5vbjhkZWdBUG1VSkhYR2FlRU1QaXdiZUxfVG9rZW46UFB2eGJVeEhFb05wSmN4ZkM4QmNOam94bmxmXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 ### 仿真
 
@@ -404,7 +404,7 @@ PWDEBUG=1 pytest -s -k test_get_started_link
 
 在调试时，您可以使用选择定位器按钮来选择页面上的元素，并查看 Playwright 用于查找该元素的定位器。您还可以编辑定位器并实时在浏览器窗口中看到它被高亮显示。使用复制定位器按钮将定位器复制到剪贴板，然后将其粘贴到您的测试中。
 
-![](https://guangpuyun.feishu.cn/space/api/box/stream/download/asynccode/?code=ZGM3ZjNlYjFkMDBhYWZhODQ1YzFlZDg5ZWViMjZkZDlfSnZLTUlGc1FXZUk1NWdReUx2NzhjbkJtaHlSbzRvRFRfVG9rZW46VTRXM2JndjRib3lMZVZ4YXdlcGN1N2FGbkNiXzE3NDI0NjEyOTg6MTc0MjQ2NDg5OF9WNA)
+![](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
 
 查看我们的调试指南，以了解更多关于 Playwright 检查器以及使用浏览器开发工具进行调试的信息。
 

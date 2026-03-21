@@ -23,8 +23,8 @@ draft: false
 ### 环境信息
 - **本地环境**: macOS (Darwin 25.2.0)
 - **Docker运行时**: Colima
-- **云服务器**: 38.55.39.104 (Ubuntu)
-- **Nextcloud版本**: 33.0.0.16
+- **云服务器**: xxx.xxx.xxx.xxx (Ubuntu)
+- **Nextcloud版本**: xxx.xxx.xxx.xxx
 - **数据库**: MySQL 8.0 (本地)
 - **缓存**: Redis
 
@@ -72,9 +72,9 @@ draft: false
 |---------|------|------|---------|---------|
 | 公网HTTPS | https://nc.skyspace.eu.org | 0.90秒 | Let's Encrypt | 所有客户端 |
 | 旧公网HTTPS | https://nextcloud.skyspace.eu.org | 1.22秒 | 自签名 | 备用 |
-| 局域网HTTPS | https://192.168.10.222:8443 | 0.01秒 | 自签名 | 局域网设备 |
-| Tailscale | http://100.97.62.83:8080 | 0.35秒 | HTTP | VPN内设备 |
-| 局域网HTTP | http://192.168.10.222:8080 | 0.01秒 | HTTP | 局域网设备 |
+| 局域网HTTPS | https://xxx.xxx.xxx.xxx:8443 | 0.01秒 | 自签名 | 局域网设备 |
+| Tailscale | http://xxx.xxx.xxx.xxx:8080 | 0.35秒 | HTTP | VPN内设备 |
+| 局域网HTTP | http://xxx.xxx.xxx.xxx:8080 | 0.01秒 | HTTP | 局域网设备 |
 
 ---
 
@@ -242,26 +242,26 @@ brew install nginx
 openssl req -x509 -nodes -days 3650 -newkey rsa:2048 \
   -keyout ~/nextcloud/ssl/nextcloud-local.key \
   -out ~/nextcloud/ssl/nextcloud-local.crt \
-  -subj '/CN=192.168.10.222'
+  -subj '/CN=xxx.xxx.xxx.xxx'
 ```
 
 #### Nginx配置
-**文件**: `/opt/homebrew/etc/nginx/servers/nextcloud-https.conf`
+**文件**: `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-https.conf`
 
 ```nginx
 server {
     listen 8443 ssl;
-    server_name 192.168.10.222;
+    server_name xxx.xxx.xxx.xxx;
 
-    ssl_certificate /Users/tianqinghong/nextcloud/ssl/nextcloud-local.crt;
-    ssl_certificate_key /Users/tianqinghong/nextcloud/ssl/nextcloud-local.key;
+    ssl_certificate /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-local.crt;
+    ssl_certificate_key /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-local.key;
 
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
     location / {
-        proxy_pass http://127.0.0.1:8080;
+        proxy_pass http://xxx.xxx.xxx.xxx:8080;
         proxy_http_version 1.1;
         proxy_set_header Host $host:$server_port;
         proxy_set_header X-Real-IP $remote_addr;
@@ -281,8 +281,8 @@ server {
 
 #### Nextcloud配置更新
 ```bash
-docker exec nextcloud php occ config:system:set trusted_domains 7 --value="192.168.10.222:8443"
-docker exec nextcloud php occ config:system:set overwritehost --value="192.168.10.222:8443"
+docker exec nextcloud php occ config:system:set trusted_domains 7 --value="xxx.xxx.xxx.xxx:8443"
+docker exec nextcloud php occ config:system:set overwritehost --value="xxx.xxx.xxx.xxx:8443"
 docker exec nextcloud php occ config:system:set overwriteprotocol --value="https"
 ```
 
@@ -290,8 +290,8 @@ docker exec nextcloud php occ config:system:set overwriteprotocol --value="https
 
 #### 前置条件
 1. 在Cloudflare中将nc.skyspace.eu.org的代理模式关闭（DNS only）
-2. 确保DNS解析到服务器IP（38.55.39.104）
-3. 服务器已安装Tailscale并可访问本地Mac（100.97.62.83:8080）
+2. 确保DNS解析到服务器IP（xxx.xxx.xxx.xxx）
+3. 服务器已安装Tailscale并可访问本地Mac（xxx.xxx.xxx.xxx:8080）
 
 #### 获取Let's Encrypt证书
 ```bash
@@ -306,7 +306,7 @@ chown -R www-data:www-data /var/www/html
 certbot certonly --webroot \
   -w /var/www/html \
   -d nc.skyspace.eu.org \
-  --email admin@skyspace.eu.org \
+  --email user@example.com \
   --agree-tos \
   --non-interactive
 ```
@@ -344,7 +344,7 @@ server {
 
     # 反向代理到Nextcloud（通过Tailscale）
     location / {
-        proxy_pass http://100.97.62.83:8080;
+        proxy_pass http://xxx.xxx.xxx.xxx:8080;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -364,7 +364,7 @@ server {
 
     # WebDAV支持
     location /remote.php/webdav/ {
-        proxy_pass http://100.97.62.83:8080;
+        proxy_pass http://xxx.xxx.xxx.xxx:8080;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -412,14 +412,14 @@ $CONFIG = array (
     0 => 'localhost',
     1 => 'localhost:8080',
     2 => 'nextcloud.skyspace.eu.org',
-    3 => '192.168.10.222:8080',
-    4 => '100.97.62.83:8080',
+    3 => 'xxx.xxx.xxx.xxx:8080',
+    4 => 'xxx.xxx.xxx.xxx:8080',
     5 => 'nc.skyspace.eu.org',
-    6 => '192.168.10.222:8443',
+    6 => 'xxx.xxx.xxx.xxx:8443',
   ),
   'datadirectory' => '/var/www/html/data',
   'dbtype' => 'mysql',
-  'version' => '33.0.0.16',
+  'version' => 'xxx.xxx.xxx.xxx',
   'overwrite.cli.url' => 'http://localhost:8080',
   'overwriteprotocol' => false,  // 自动检测协议
   'dbname' => 'nextcloud',
@@ -477,7 +477,7 @@ $CONFIG = array (
 |------|---------|------|------|--------|
 | nextcloud.skyspace.eu.org | 1.22秒 | 0.89秒 | 1.39秒 | 0.15秒 |
 | nc.skyspace.eu.org | 0.90秒 | - | - | - |
-| 192.168.10.222:8443 | 0.01秒 | - | - | - |
+| xxx.xxx.xxx.xxx:8443 | 0.01秒 | - | - | - |
 | **性能提升** | **26%** | - | - | - |
 
 ### 5.2 WebDAV操作性能（文件列表）
@@ -486,7 +486,7 @@ $CONFIG = array (
 |------|---------|----------|
 | nextcloud.skyspace.eu.org | 1.08秒 | 基准 |
 | nc.skyspace.eu.org | 0.83秒 | ✅ 快23% |
-| 192.168.10.222:8443 | 0.02秒 | ✅ 极快 |
+| xxx.xxx.xxx.xxx:8443 | 0.02秒 | ✅ 极快 |
 
 ### 5.3 文件上传性能
 
@@ -495,13 +495,13 @@ $CONFIG = array (
 |------|---------|---------|------|
 | nextcloud.skyspace.eu.org | ~4秒 | 256KB/s | ✅ |
 | nc.skyspace.eu.org | ~3-5秒 | 200-350KB/s | ✅ |
-| 192.168.10.222:8443 | <1秒 | >2MB/s | ✅ |
+| xxx.xxx.xxx.xxx:8443 | <1秒 | >2MB/s | ✅ |
 
 #### 大文件上传（10MB）
 | 域名 | 耗时 | 平均速度 | 状态 |
 |------|------|---------|------|
 | nc.skyspace.eu.org | ~37秒 | 280KB/s | ✅ |
-| 192.168.10.222:8443 | ~15秒 | 700KB/s | ✅ |
+| xxx.xxx.xxx.xxx:8443 | ~15秒 | 700KB/s | ✅ |
 
 ### 5.4 性能瓶颈分析
 
@@ -547,18 +547,18 @@ $CONFIG = array (
 ### 6.2 局域网访问报错"不被信任的域名"
 
 #### 问题描述
-- 访问 `https://192.168.10.222:8443` 报错
+- 访问 `https://xxx.xxx.xxx.xxx:8443` 报错
 - 提示："通过不被信任的域名访问"
 
 #### 解决步骤
 1. 添加到trusted_domains：
 ```bash
-docker exec nextcloud php occ config:system:set trusted_domains 7 --value="192.168.10.222:8443"
+docker exec nextcloud php occ config:system:set trusted_domains 7 --value="xxx.xxx.xxx.xxx:8443"
 ```
 
 2. 配置overwritehost和overwriteprotocol：
 ```bash
-docker exec nextcloud php occ config:system:set overwritehost --value="192.168.10.222:8443"
+docker exec nextcloud php occ config:system:set overwritehost --value="xxx.xxx.xxx.xxx:8443"
 docker exec nextcloud php occ config:system:set overwriteprotocol --value="https"
 ```
 
@@ -759,7 +759,7 @@ esac
 3. 点击"登录"
 
 #### 局域网访问（可选）
-- 服务器地址: `https://192.168.10.222:8443`
+- 服务器地址: `https://xxx.xxx.xxx.xxx:8443`
 - 首次连接时点击"高级" → "访问此网站"
 
 ### 8.2 Android客户端
@@ -773,7 +773,7 @@ esac
 3. 点击"登录"
 
 #### 局域网访问（可选）
-- 服务器地址: `https://192.168.10.222:8443`
+- 服务器地址: `https://xxx.xxx.xxx.xxx:8443`
 - 勾选"忽略SSL验证"
 
 ### 8.3 桌面客户端（macOS/Windows/Linux）
@@ -791,7 +791,7 @@ esac
 
 直接访问：`https://nc.skyspace.eu.org`
 
-局域网访问：`https://192.168.10.222:8443`（首次需信任证书）
+局域网访问：`https://xxx.xxx.xxx.xxx:8443`（首次需信任证书）
 
 ---
 
@@ -931,19 +931,19 @@ ssh server "certbot renew --dry-run"
 │   └─ docker ps | grep nextcloud
 │
 ├─ 2. 检查网络连接
-│   ├─ 局域网: curl http://192.168.10.222:8080
+│   ├─ 局域网: curl http://xxx.xxx.xxx.xxx:8080
 │   ├─ 公网: curl https://nc.skyspace.eu.org
-│   └─ Tailscale: curl http://100.97.62.83:8080
+│   └─ Tailscale: curl http://xxx.xxx.xxx.xxx:8080
 │
 ├─ 3. 检查域名解析
 │   ├─ dig nc.skyspace.eu.org
-│   └─ dig 192.168.10.222
+│   └─ dig xxx.xxx.xxx.xxx
 │
 ├─ 4. 检查trusted_domains
 │   └─ docker exec nextcloud php occ config:system:get trusted_domains
 │
 ├─ 5. 检查SSL证书
-│   ├─ 本地: openssl s_client -connect 192.168.10.222:8443
+│   ├─ 本地: openssl s_client -connect xxx.xxx.xxx.xxx:8443
 │   └─ 公网: openssl s_client -connect nc.skyspace.eu.org:443
 │
 └─ 6. 查看详细日志
@@ -957,7 +957,7 @@ ssh server "certbot renew --dry-run"
 #### 错误日志位置
 - Nextcloud: `docker logs nextcloud`
 - MySQL: `docker logs nextcloud-mysql`
-- Nginx（本地）: `/opt/homebrew/var/log/nginx/error.log`
+- Nginx（本地）: `/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.log`
 - Nginx（服务器）: `/var/log/nginx/nc.skyspace.eu.org.error.log`
 - Nextcloud内部日志: `docker exec nextcloud cat /var/www/html/data/nextcloud.log`
 
@@ -1022,8 +1022,8 @@ ssh server "certbot renew --dry-run"
 
 #### 推荐使用场景
 - **公网访问**: 使用 `https://nc.skyspace.eu.org`（Let's Encrypt证书）
-- **局域网访问**: 使用 `https://192.168.10.222:8443`（速度最快）
-- **VPN访问**: 使用 `http://100.97.62.83:8080`（Tailscale内网）
+- **局域网访问**: 使用 `https://xxx.xxx.xxx.xxx:8443`（速度最快）
+- **VPN访问**: 使用 `http://xxx.xxx.xxx.xxx:8080`（Tailscale内网）
 
 #### 安全建议
 1. 定期更新Nextcloud版本
@@ -1079,7 +1079,7 @@ ssh server "certbot renew --dry-run"
 | MySQL配置 | ~/nextcloud/optimizations/mysql.cnf | /etc/mysql/conf.d/custom.cnf | - |
 | PHP OPcache | ~/nextcloud/optimizations/00-opcache.ini | /usr/local/etc/php/conf.d/00-opcache.ini | - |
 | PHP超时 | ~/nextcloud/optimizations/99-timeouts.ini | /usr/local/etc/php/conf.d/99-timeouts.ini | - |
-| Nginx配置（本地） | /opt/homebrew/etc/nginx/servers/nextcloud-https.conf | - | - |
+| Nginx配置（本地） | /xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-https.conf | - | - |
 | SSL证书（本地） | ~/nextcloud/ssl/ | - | - |
 | Nginx配置（服务器） | - | - | /etc/nginx/sites-available/nc.skyspace.eu.org.conf |
 | Let's Encrypt证书 | - | - | /etc/letsencrypt/live/nc.skyspace.eu.org/ |
@@ -1125,7 +1125,7 @@ ssh server "openssl x509 -in /etc/letsencrypt/live/nc.skyspace.eu.org/fullchain.
 
 **文档版本**: 1.0
 **最后更新**: 2026-03-05
-**维护者**: admin@skyspace.eu.org
+**维护者**: user@example.com
 
 ---
 
@@ -1138,15 +1138,15 @@ ssh server "openssl x509 -in /etc/letsencrypt/live/nc.skyspace.eu.org/fullchain.
 | 0 | localhost | HTTP | 本地测试 |
 | 1 | localhost:8080 | HTTP | 本地测试 |
 | 2 | nextcloud.skyspace.eu.org | HTTPS | 公网访问（旧） |
-| 3 | 192.168.10.222:8080 | HTTP | 局域网访问 |
-| 4 | 100.97.62.83:8080 | HTTP | Tailscale VPN |
+| 3 | xxx.xxx.xxx.xxx:8080 | HTTP | 局域网访问 |
+| 4 | xxx.xxx.xxx.xxx:8080 | HTTP | Tailscale VPN |
 | 5 | nc.skyspace.eu.org | HTTPS | 公网访问（新，推荐） |
-| 6 | 192.168.10.222:8443 | HTTPS | 局域网HTTPS（推荐） |
+| 6 | xxx.xxx.xxx.xxx:8443 | HTTPS | 局域网HTTPS（推荐） |
 
 **推荐使用**:
 - 🌐 公网: `https://nc.skyspace.eu.org`
-- 🏠 局域网: `https://192.168.10.222:8443`
-- 🔐 VPN: `http://100.97.62.83:8080`
+- 🏠 局域网: `https://xxx.xxx.xxx.xxx:8443`
+- 🔐 VPN: `http://xxx.xxx.xxx.xxx:8080`
 
 ---
 

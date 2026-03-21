@@ -166,7 +166,7 @@ if [ -n "$GITHUB_TOKEN" ]; then
 
     if [ -f "tools/sync_notes_from_github.py" ]; then
         # 先备份文件，用于获取时间戳
-        python3 tools/sync_notes_from_github.py --batch content/post >> "$LOG_FILE" 2>&1
+        python3 tools/sync_notes_from_github.py --batch content/post >> "$LOG_FILE" 2>&1 || warn "sync_notes_from_github.py 执行失败，继续后续步骤"
         log "✅ GitHub API 时间戳同步完成"
     else
         warn "未找到 sync_notes_from_github.py，使用本地时间戳"
@@ -187,6 +187,7 @@ if [ -f "tools/content_sanitizer.py" ]; then
 from tools.content_sanitizer import ContentSanitizer, sanitize_markdown_file
 from pathlib import Path
 import sys
+import os
 
 sanitizer = ContentSanitizer(verbose=False)
 post_dir = Path("content/post")
@@ -216,21 +217,27 @@ for md_file in post_dir.rglob("*.md"):
     except Exception as e:
         print(f"脱敏失败 {md_file}: {e}", file=sys.stderr)
 
-print(f"扫描文件: {total_files}")
-print(f"脱敏文件: {sanitized_files}")
-print(f"敏感信息: {total_matches} 处")
+log_path = f"/tmp/sanitize-{os.getpid()}.txt"
+with open(log_path, "w") as f:
+    f.write(f"扫描文件: {total_files}\n")
+    f.write(f"脱敏文件: {sanitized_files}\n")
+    f.write(f"敏感信息: {total_matches}\n")
 PYTHON_EOF
     
-    SANITIZED_FILES=$(tail -3 /tmp/sanitize-$$.txt | head -1 | grep "脱敏文件:" | awk '{print $2}')
-    TOTAL_MATCHES=$(tail -3 /tmp/sanitize-$$.txt | tail -1 | grep "敏感信息:" | awk '{print $2}')
-    
-    if [ -n "$TOTAL_MATCHES" ] && [ "$TOTAL_MATCHES" != "0处" ]; then
-        log "✅ 已脱敏 $TOTAL_MATCHES 敏感信息"
+    LOG_TEMP="/tmp/sanitize-$$.txt"
+    if [ -f "$LOG_TEMP" ]; then
+        SANITIZED_FILES=$(grep "脱敏文件:" "$LOG_TEMP" | awk '{print $2}')
+        TOTAL_MATCHES=$(grep "敏感信息:" "$LOG_TEMP" | awk '{print $2}')
+        
+        if [ -n "$TOTAL_MATCHES" ] && [ "$TOTAL_MATCHES" != "0" ]; then
+            log "✅ 已脱敏 $TOTAL_MATCHES 处敏感信息 ($SANITIZED_FILES 个文件)"
+        else
+            log "✅ 未发现敏感信息"
+        fi
+        rm -f "$LOG_TEMP"
     else
-        log "✅ 未发现敏感信息"
+        warn "脱敏统计日志未生成"
     fi
-    
-    rm -f /tmp/sanitize-$$.txt
 else
     warn "未找到 content_sanitizer.py，跳过脱敏"
 fi

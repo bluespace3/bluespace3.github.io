@@ -7,7 +7,7 @@ draft: false
 ---
 ### 添加本地mcp
 
-claude mcp add --transport stdio --scope user mysql --env MYSQL_HOST=192.168.0.203 --env MYSQL_USER=tianqinghong --env MYSQL_PASSWORD="pG4QbSdb1u0KcjUQX+E=" --env MYSQL_DATABASE=db_diag -- "npm exec --yes -- @f4ww4z/mcp-mysql-server"
+claude mcp add --transport stdio --scope user mysql --env MYSQL_HOST=xxx.xxx.xxx.xxx --env MYSQL_USER=tianqinghong --env MYSQL_PASSWORD="pG4QbSdb1u0KcjUQX+E=" --env MYSQL_DATABASE=db_diag -- "npm exec --yes -- @f4ww4z/mcp-mysql-server"
 
 ### 获取mcp列表
 

@@ -5,7 +5,7 @@
 &lt;hr&gt;
 &lt;h2 id="测试环境"&gt;测试环境&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Ollama API:&lt;/strong&gt; http://172.31.224.1:11434&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ollama API:&lt;/strong&gt; &lt;a href="http://xxx.xxx.xxx.xxx:11434"&gt;http://xxx.xxx.xxx.xxx:11434&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;测试模型:&lt;/strong&gt;
 &lt;ol&gt;
 &lt;li&gt;minicpm-o-4_5:latest (4.5B)&lt;/li&gt;

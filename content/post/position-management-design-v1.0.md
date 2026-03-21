@@ -237,7 +237,7 @@ draft: false
 #### 4.2.6 定时任务
 - **方式**: Cron
 - **执行**: 每天收盘后（例如 23:00）
-- **脚本**: `/root/.openclaw/workspace/scripts/update-positions.py`
+- **脚本**: `/root/.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-positions.py`
 
 ### 4.3 目录结构
 
@@ -661,8 +661,8 @@ Response: {
 ## 11. 附录
 
 ### 11.1 参考项目
-- **股票分析脚本**: `/root/.openclaw/workspace/scripts/stock-analysis.py`
-- **港股分析脚本**: `/root/.openclaw/workspace/scripts/analyze-hk-tech-internet-v2.py`
+- **股票分析脚本**: `/root/.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-analysis.py`
+- **港股分析脚本**: `/root/.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-hk-tech-internet-v2.py`
 
 ### 11.2 依赖清单
 ```

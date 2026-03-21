@@ -463,7 +463,7 @@ DECISION_LEVELS = {
 GEMINI_API_URL=your-api-url
 GEMINI_API_KEY=your-api-key
 SMTP_SERVER=smtp.126.com
-EMAIL_ADDRESS=your-email@126.com
+EMAIL_ADDRESS=user@example.com
 EMAIL_PASSWORD=your-password
 ```
 

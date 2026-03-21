@@ -65,7 +65,7 @@ draft: false
   * 选型依据
     　　兼容性、适合复杂流程交互（设备交互）、丰富的社区支持、接入成本
 * 测试管理工具（飞书或tapd）
-  * 自动化用例管理[接口自动化测试用例](https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink)
+  * 自动化用例管理[接口自动化测试用例](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?from=from_copylink)
 * CI/CD工具
 * GitLab CI
 * uvicorn+fastapi
@@ -158,8 +158,8 @@ draft: false
 
     ![1743176486423](/assets/pytest接口自动化测试方案/1743176486423.png)
 * 文档
-  * 初始化文档[快速编写Pytest接口测试](https://guangpuyun.feishu.cn/docx/SQi7d8NV4opR8OxYDh9cxVG3nmg?from=from_copylink)
-  * 自动化用例设计文档[接口自动化测试用例](https://guangpuyun.feishu.cn/base/XG9ZbshkeaG2NYsdUb5cOYaQnBg?from=from_copylink)
+  * 初始化文档[快速编写Pytest接口测试](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?from=from_copylink)
+  * 自动化用例设计文档[接口自动化测试用例](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?from=from_copylink)
 
 ---
 
@@ -184,4 +184,4 @@ draft: false
     * 数据问题->使用自动化专用的数据，避免污染；
     * 脚本本身不稳定导致的运行失败，维护脚本能稳定运行，若维护成功过高可直接先注释脚本，并在对应用例做好备注“待维护”。
 * 脚本维护代办事项
-  * [接口自动化代办事项](https://guangpuyun.feishu.cn/sheets/IrensB0Lmhi7Y5t3izhccc9wnBh?from=from_copylink)
+  * [接口自动化代办事项](https://guangpuyun.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?from=from_copylink)
