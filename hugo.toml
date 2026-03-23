@@ -104,40 +104,46 @@ summaryLength = 150
 
 # 菜单配置
 [[menu.main]]
+  identifier = "search"
+  name = "搜索"
+  url = "/search/"
+  weight = 1
+
+[[menu.main]]
   identifier = "home"
   name = "首页"
   url = "/"
-  weight = 1
+  weight = 2
 
 [[menu.main]]
   identifier = "posts"
   name = "文章"
   url = "/post/"
-  weight = 2
+  weight = 3
 
 [[menu.main]]
   identifier = "archives"
   name = "归档"
   url = "/archives/"
-  weight = 3
+  weight = 4
 
 [[menu.main]]
   identifier = "categories"
   name = "分类"
   url = "/categories/"
-  weight = 4
+  weight = 5
 
 [[menu.main]]
   identifier = "tags"
   name = "标签"
   url = "/tags/"
-  weight = 5
+  weight = 6
 
 [[menu.main]]
   identifier = "about"
   name = "关于"
   url = "/about/"
-  weight = 6
+  weight = 7
 
 # 加密功能配置 - 注入自定义CSS和JS文件
 [params.injector]
@@ -148,16 +154,15 @@ summaryLength = 150
   <script src="/js/encrypted-content.js"></script>
   """
 
-# Algolia 搜索配置
-[outputFormats.Algolia]
-  baseName = "algolia"
-  isPlainText = true
-  mediaType = "application/json"
-  notAlternative = true
-
+# 搜索配置
 [outputs]
-  home = ["Algolia", "HTML", "RSS"]
+  home = ["HTML", "RSS", "JSON"]
 
-[params.algolia]
-  vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
-  params = ["categories", "tags"]
+[params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1000
+  threshold = 0.4
+  minMatchCharLength = 0
+  keys = ["title", "permalink", "summary", "content"]
