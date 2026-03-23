@@ -157,6 +157,19 @@ summaryLength = 150
   """
   body_end = """
   <script src="/js/encrypted-content.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = Array.from(document.querySelectorAll(".post-content img"));
+      images.forEach(img => {
+        mediumZoom(img, {
+          margin: 24,
+          background: 'rgba(0,0,0,0.5)',
+          scrollOffset: 0,
+        });
+      });
+    });
+  </script>
   """
 
 # 搜索配置
