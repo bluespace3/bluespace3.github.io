@@ -89,6 +89,11 @@ summaryLength = 150
     Title = "蓝色空间号"
     Content = "欢迎来到我的博客！这里记录我的学习笔记和技术心得。"
 
+  # 社交图标
+  [[languages.zh-CN.params.socialIcons]]
+    name = "github"
+    url = "https://github.com/bluespace3/"
+
   # 封面图配置
   [params.cover]
     responsiveImages = true
