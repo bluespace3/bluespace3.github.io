@@ -88,6 +88,11 @@ summaryLength = 150
     这里记录我的学习笔记和技术心得。
     """
 
+  # 封面图配置
+  [params.cover]
+    responsiveImages = true
+    linkFullImages = false
+
   # 社交图标
   [[params.socialIcons]]
     name = "github"
