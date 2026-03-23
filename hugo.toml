@@ -82,11 +82,12 @@ summaryLength = 150
   # 首页信息模式
   [params.homeInfoParams]
     Title = "蓝色空间号"
-    Content = """
-    欢迎来到我的博客！
+    Content = "欢迎来到我的博客！这里记录我的学习笔记和技术心得。"
 
-    这里记录我的学习笔记和技术心得。
-    """
+  # 强制启用 HomeInfo
+  [languages.zh-CN.params.homeInfoParams]
+    Title = "蓝色空间号"
+    Content = "欢迎来到我的博客！这里记录我的学习笔记和技术心得。"
 
   # 封面图配置
   [params.cover]
