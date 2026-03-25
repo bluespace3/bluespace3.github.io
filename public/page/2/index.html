@@ -17,6 +17,22 @@ python -m vllm.entrypoints.openai.api_server \
 –port 8000
 docker run –rm –gpus all –ipc=host -p 8000:8000 -v E:/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:/models:ro -e
 VLLM_MODEL=/models/Qwen3.5-35B-A3B-AWQ -e VLLM_SERVED_MODEL_NAME=Qwen3.5-35B-A3B-AWQ -e VLLM_TENSOR_PARALLEL_SIZE=1 -e
+VLLM_GPU_MEMORY_UTILIZATION=0.90 -e VLLM_MAX_MODEL_LEN=32768 -e VLLM_MAX_NUM_SEQS=2 1cat-vllm-sm70:0.0.2</p></div><footer class="entry-footer"><span title="2026-03-25 00:48:38 +0800 CST">2026-03-25</span> · <span>1 min</span> · <span>64 words</span> · <span>新人类</span></footer><a aria-label="post link to vllm" class="entry-link" href="https://bluespace.eu.org/post/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/vllm/"></a></article><article class="post-entry"><header class="entry-header"><h2 class="entry-hint-parent">vllm</h2></header><div class="entry-content"><p>source 1cat-vllm/bin/activate
+python -m vllm.entrypoints.openai.api_server \
+–model ~\Qwen3.5-35B-A3B-AWQ \
+–quantization awq \
+–dtype float16 \
+–gpu-memory-utilization 0.9 \
+–max-model-len 65536 \
+–tensor-parallel-size 1 \
+–max-num-seqs 4 \
+–max-num-batched-tokens 2048 \
+–attention-backend TRITON_ATTN \
+–compilation-config ‘{“cudagraph_mode”:“full_and_piecewise”,“cudagraph_capture_sizes”:[1]}’ \
+–host xxx.xxx.xxx.xxx \
+–port 8000
+docker run –rm –gpus all –ipc=host -p 8000:8000 -v E:/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:/models:ro -e
+VLLM_MODEL=/models/Qwen3.5-35B-A3B-AWQ -e VLLM_SERVED_MODEL_NAME=Qwen3.5-35B-A3B-AWQ -e VLLM_TENSOR_PARALLEL_SIZE=1 -e
 VLLM_GPU_MEMORY_UTILIZATION=0.90 -e VLLM_MAX_MODEL_LEN=32768 -e VLLM_MAX_NUM_SEQS=2 1cat-vllm-sm70:0.0.2</p></div><footer class="entry-footer"><span title="2026-03-25 00:48:38 +0800 CST">2026-03-25</span> · <span>1 min</span> · <span>64 words</span> · <span>新人类</span></footer><a aria-label="post link to vllm" class="entry-link" href="https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6%E7%9B%B8%E5%85%B3/vllm/"></a></article><article class="post-entry"><header class="entry-header"><h2 class="entry-hint-parent">2026-03-23赛博日记</h2></header><div class="entry-content"><p>2026年03月23日 赛博日记 生成时间：2026-03-23 23:59:30
 📝 今日概要 今天是一个充实的技术日。主要围绕 Second Brain 项目的安全性与性能优化、Hugo 博客的功能升级 以及 Claude Code 与 Appium 自动化的深度实践 展开。成功解决了 Second Brain 前端数据展示的异步同步问题，并建立了更高效的 AI 协作工作流。
 ...</p></div><footer class="entry-footer"><span title="2026-03-24 03:00:01 +0800 CST">2026-03-24</span> · <span>2 min</span> · <span>958 words</span> · <span>新人类</span></footer><a aria-label="post link to 2026-03-23赛博日记" class="entry-link" href="https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-23%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"></a></article><article class="post-entry"><header class="entry-header"><h2 class="entry-hint-parent">2026-03-22赛博日记</h2></header><div class="entry-content"><p>2026年03月22日 赛博日记 生成时间：2026-03-22 23:59:15
@@ -33,9 +49,7 @@ VLLM_GPU_MEMORY_UTILIZATION=0.90 -e VLLM_MAX_MODEL_LEN=32768 -e VLLM_MAX_NUM_SEQ
 启动元素定位：python -m weditor
 运行用例报错，虚拟环境运行appium启动服务。</p></div><footer class="entry-footer"><span title="2026-03-20 16:31:33 +0800 CST">2026-03-20</span> · <span>1 min</span> · <span>53 words</span> · <span>新人类</span></footer><a aria-label="post link to appuim自动化" class="entry-link" href="https://bluespace.eu.org/post/%E6%B5%8B%E8%AF%95/appuim%E8%87%AA%E5%8A%A8%E5%8C%96/"></a></article><article class="post-entry"><header class="entry-header"><h2 class="entry-hint-parent">快捷指令</h2></header><div class="entry-content"><p>快捷指令 检查连接设备adb devices
 启动元素定位：python -m weditor
-运行用例报错，虚拟环境运行appium启动服务。</p></div><footer class="entry-footer"><span title="2026-03-20 16:31:33 +0800 CST">2026-03-20</span> · <span>1 min</span> · <span>53 words</span> · <span>新人类</span></footer><a aria-label="post link to 快捷指令" class="entry-link" href="https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/appium/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/"></a></article><article class="post-entry"><header class="entry-header"><h2 class="entry-hint-parent">2026-03-14赛博日记</h2></header><div class="entry-content"><p>2026年03月14日 赛博日记 生成时间：2026-03-14 23:58:00
-📝 今日概要 今日主要完成了赛博日记脚本的修复和功能增强，包括解决重复内容问题、添加敏感信息脱敏功能、恢复定时任务配置。同时，处理了安全泄漏事件，对博客同步流程进行了全面的安全加固，确保敏感信息不会被推送到公开仓库。全天涉及 2 个 Memory 文件、0 个笔记更新、多个仓库推送，总内容量约 20K 字。
-...</p></div><footer class="entry-footer"><span title="2026-03-20 15:04:39 +0800 CST">2026-03-20</span> · <span>8 min</span> · <span>3671 words</span> · <span>新人类</span></footer><a aria-label="post link to 2026-03-14赛博日记" class="entry-link" href="https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-14%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"></a></article><footer class="page-footer"><nav class="pagination"><a class="prev" href="https://bluespace.eu.org/">«  
+运行用例报错，虚拟环境运行appium启动服务。</p></div><footer class="entry-footer"><span title="2026-03-20 16:31:33 +0800 CST">2026-03-20</span> · <span>1 min</span> · <span>53 words</span> · <span>新人类</span></footer><a aria-label="post link to 快捷指令" class="entry-link" href="https://bluespace.eu.org/post/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/appium/%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/"></a></article><footer class="page-footer"><nav class="pagination"><a class="prev" href="https://bluespace.eu.org/">«  
 </a><a class="next" href="https://bluespace.eu.org/page/3/">  »</a></nav></footer></main><footer class="footer"><span>© 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> ·
 <span>Powered by
 <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
