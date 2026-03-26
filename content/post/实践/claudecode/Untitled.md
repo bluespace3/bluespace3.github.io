@@ -2,7 +2,7 @@
 title: 'Untitled'
 categories: ["实践"]
 date: 2025-12-30T14:30:00+08:00
-lastmod: 2026-03-25T13:02:09+08:00
+lastmod: 2026-03-26T23:09:58+08:00
 draft: false
 ---
 ### 添加本地mcp
@@ -15,7 +15,7 @@ claude mcp list
 
 ### 无脑接受模式
 
---dangerously-skip-permissions
+claude --dangerously-skip-permissions
 
 ### 手机无缝衔接claudecode
 

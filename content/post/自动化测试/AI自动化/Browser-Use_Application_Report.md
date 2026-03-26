@@ -1,11 +1,10 @@
 ---
-title: "Browser-Use 在 UI 自动化测试中的应用调研报告"
-categories: ["自动化测试", "AI"]
-date: 2026-03-26T19:20:00+08:00
-lastmod: 2026-03-26T19:20:00+08:00
+title: 'Browser-Use_Application_Report'
+categories: ["自动化测试"]
+date: 2026-03-26T19:17:22+08:00
+lastmod: 2026-03-26T19:17:22+08:00
 draft: false
 ---
-
 # Browser-Use 在 UI 自动化测试中的应用调研报告
 
 ## 1. 工具概述
