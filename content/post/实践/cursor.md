@@ -2,7 +2,7 @@
 title: 'cursor'
 categories: ["实践"]
 date: 2026-03-27T14:54:21+08:00
-lastmod: 2026-03-27T18:29:48+08:00
+lastmod: 2026-03-29T00:05:03+08:00
 draft: false
 ---
 下载
@@ -11,7 +11,7 @@ draft: false
 
 安装
 
-![image.png](images/7ee6d65b-0220-480d-86b1-34efcce6b8c8.png)![image.png](images/6146fce6-30c0-4bc5-9a16-89d42769bb7f.png)![image.png](images/9a37842a-0ac5-42d4-ab28-4bbe8a950430.png)选择loginin,使用账号[user@example.com](mailto:user@example.com) 选择邮箱验证码登陆（验证码找昊雨）。
+![image.png](images/7ee6d65b-0220-480d-86b1-34efcce6b8c8.png)![image.png](images/6146fce6-30c0-4bc5-9a16-89d42769bb7f.png)![image.png](images/9a37842a-0ac5-42d4-ab28-4bbe8a950430.png)选择loginin,使用账号[user@example.com](mailto:user@example.com) 选择邮箱验证码登陆（验证码找**）。
 
 ![image.png](images/176f6039-ca70-4692-8132-df208c391508.png)使用
 

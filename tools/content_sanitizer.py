@@ -89,6 +89,11 @@ class ContentSanitizer:
             'description': '邮箱地址',
             'replacement': 'user@example.com',
         },
+        'person_name': {
+            'pattern': r'\b(姓名|人名|Author|作者)[:：\s]+([^\s\n]{2,4})\b',
+            'description': '人名',
+            'replacement': r'\1: ***',
+        },
     }
 
     def __init__(self, patterns_to_enable: List[str] = None, verbose: bool = False):
