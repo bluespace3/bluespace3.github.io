@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html data-theme="auto" dir="auto" lang="zh-cn"><head><meta charset="utf-8"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><meta content="index, follow" name="robots"/><title>OpenClaW 迁移指南 | 蓝色空间号</title><meta content="" name="keywords"/><meta content="OpenClaW 迁移指南
+
+创建时间: 2026-04-06
+适用范围: OpenClaW 管理平台迁移
+核心目标: 零配置丢失、零记忆丢失、零功能中断
+
+
+📋 目录
+
+[OpenClaW 架构理解](#openclaw 架构理解)
+迁移前准备
+[OpenClaW 组件备份](#openclaw 组件备份)
+工作空间迁移
+新环境搭建
+配置恢复与验证
+常见问题解决
+
+
+🏗️ OpenClaW 架构理解
+1.1 核心组件
+OpenClaW 由以下关键部分组成：" name="description"/><meta content="新人类" name="author"/><link href="https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/" rel="canonical"/><link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet"/><link href="https://bluespace.eu.org/favicon.ico" rel="icon"/><link href="https://bluespace.eu.org/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="https://bluespace.eu.org/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="https://bluespace.eu.org/apple-touch-icon.png" rel="apple-touch-icon"/><link href="https://bluespace.eu.org/safari-pinned-tab.svg" rel="mask-icon"/><meta content="#2e2e33" name="theme-color"/><meta content="#2e2e33" name="msapplication-TileColor"/><link href="https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/" hreflang="zh-cn" rel="alternate"/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta content="OpenClaW 迁移指南" property="og:title"/><meta content="OpenClaW 迁移指南
+
+创建时间: 2026-04-06
+适用范围: OpenClaW 管理平台迁移
+核心目标: 零配置丢失、零记忆丢失、零功能中断
+
+
+📋 目录
+
+[OpenClaW 架构理解](#openclaw 架构理解)
+迁移前准备
+[OpenClaW 组件备份](#openclaw 组件备份)
+工作空间迁移
+新环境搭建
+配置恢复与验证
+常见问题解决
+
+
+🏗️ OpenClaW 架构理解
+1.1 核心组件
+OpenClaW 由以下关键部分组成：" property="og:description"/><meta content="article" property="og:type"/><meta content="https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/" property="og:url"/><meta content="post" property="article:section"/><meta content="2026-04-06T21:21:10+08:00" property="article:published_time"/><meta content="2026-04-06T21:21:10+08:00" property="article:modified_time"/><meta content="summary" name="twitter:card"/><meta content="OpenClaW 迁移指南" name="twitter:title"/><meta content="OpenClaW 迁移指南
+
+创建时间: 2026-04-06
+适用范围: OpenClaW 管理平台迁移
+核心目标: 零配置丢失、零记忆丢失、零功能中断
+
+
+📋 目录
+
+[OpenClaW 架构理解](#openclaw 架构理解)
+迁移前准备
+[OpenClaW 组件备份](#openclaw 组件备份)
+工作空间迁移
+新环境搭建
+配置恢复与验证
+常见问题解决
+
+
+🏗️ OpenClaW 架构理解
+1.1 核心组件
+OpenClaW 由以下关键部分组成：" name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章","item":"https://bluespace.eu.org/post/"},{"@type":"ListItem","position":2,"name":"OpenClaW 迁移指南","item":"https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"OpenClaW 迁移指南","name":"OpenClaW 迁移指南","description":"OpenClaW 迁移指南 创建时间: 2026-04-06\n适用范围: OpenClaW 管理平台迁移\n核心目标: 零配置丢失、零记忆丢失、零功能中断\n📋 目录 [OpenClaW 架构理解](#openclaw 架构理解) 迁移前准备 [OpenClaW 组件备份](#openclaw 组件备份) 工作空间迁移 新环境搭建 配置恢复与验证 常见问题解决 🏗️ OpenClaW 架构理解 1.1 核心组件 OpenClaW 由以下关键部分组成：\n","keywords":[],"articleBody":"OpenClaW 迁移指南 创建时间: 2026-04-06\n适用范围: OpenClaW 管理平台迁移\n核心目标: 零配置丢失、零记忆丢失、零功能中断\n📋 目录 [OpenClaW 架构理解](#openclaw 架构理解) 迁移前准备 [OpenClaW 组件备份](#openclaw 组件备份) 工作空间迁移 新环境搭建 配置恢复与验证 常见问题解决 🏗️ OpenClaW 架构理解 1.1 核心组件 OpenClaW 由以下关键部分组成：\nGateway: 核心管理服务，处理所有通信 Workspace: 工作空间目录，包含所有记忆、配置和对话历史 Skills: 技能模块，提供扩展功能 Plugins: 插件系统，增强功能 Memory: 记忆文件，存储长期和短期记忆 1.2 目录结构 ~/.openclaw/ ├ workspace/ # 核心工作空间（最重要！） │ ├ AGENTS.md # 主配置 │ ├ SOUL.md # 角色设定 │ ├ MEMORY.md # 长期记忆 │ ├ memory/ # 每日记忆文件 │ ├ TOOLS.md # 工具配置 │ ├ USER.md # 用户信息 │ └ ...其他配置文件 ├ gateway/ # Gateway 服务配置 ├ plugins/ # 插件目录 ├ skills/ # 技能目录 ├ config/ # 全局配置 └ .env # 环境变量 🚀 迁移前准备 2.1 检查清单 确认旧 VPS 和 新 VPS 的磁盘空间 确认 Node.js 版本（OpenClaW 依赖） 确认 Docker 是否使用（如果使用了） 检查所有 API 密钥和敏感配置 记录当前 Gateway 状态 2.2 识别运行状态 在旧 VPS 上执行：\n# 查看 OpenClaW 进程 ps aux | grep openclaw # 检查 Gateway 状态 openclaw gateway status # 查看工作空间位置 echo $CLAUDE_PLUGIN_ROOT echo $OPENCLAW_WORKSPACE # 查看配置文件 ls -la ~/.openclaw/workspace/ ls -la ~/.openclaw/config/ ls -la ~/.openclaw/gateway/ 📦 OpenClaW 组件备份 3.1 备份工作空间（核心） # 找到工作空间路径 export WORKSPACE_PATH=$(echo $CLAUDE_PLUGIN_ROOT | sed 's|/plugins/.*||') echo \"WorkSpace Path: $WORKSPACE_PATH\" # 备份完整工作空间 tar czvf openclaw_workspace_backup.tar.gz \\ --exclude=node_modules \\ --exclude=.git \\ --exclude=logs \\ $WORKSPACE_PATH # 或者使用 rsync（支持增量） rsync -avzP \\ --exclude=node_modules \\ --exclude=.git \\ --exclude=logs \\ $WORKSPACE_PATH/ \\ ~/backup/openclaw_workspace/ 3.2 备份配置文件 # 备份 Gateway 配置 cp -r ~/.openclaw/gateway ~/backup/openclaw_gateway_config/ # 备份全局配置 cp -r ~/.openclaw/config ~/backup/openclaw_config/ # 备份环境变量 cp ~/.env ~/.env_backup.txt # 备份插件目录 cp -r ~/.openclaw/plugins ~/backup/openclaw_plugins/ # 备份技能目录 cp -r ~/.openclaw/skills ~/backup/openclaw_skills/ 3.3 备份记忆文件 # 备份 memory 目录（每日记忆） tar czvf memory_backup.tar.gz ~/.openclaw/workspace/memory/ # 备份长期记忆 cp ~/.openclaw/workspace/MEMORY.md ~/backup/MEMORY_backup.md # 备份所有重要配置文件 cp ~/.openclaw/workspace/*.md ~/backup/ 3.4 备份 API 密钥和敏感信息 # 导出环境变量（脱敏） env | grep -E \"(API_|KEY_|TOKEN_|SECRET_)\" \u003e api_keys_backup.txt # 或使用 openclaw 命令导出 openclaw config list \u003e config_backup.txt # 备份敏感文件（如果存在） find ~/.openclaw -name \"*.key\" -o -name \"*.token\" -o -name \"*secret*\" | xargs cp -t ~/backup/ 3.5 备份 Gateway 服务状态 # 导出 Gateway 配置 openclaw gateway dump \u003e gateway_config.yaml # 检查活跃连接 openclaw connection list \u003e connections_backup.txt # 记录服务端口 netstat -tlnp | grep openclaw 🗄 工作空间迁移 4.1 传输工作空间文件 # 方法 A：使用 rsync（推荐，支持断点续传） rsync -avzP \\ --exclude=node_modules \\ --exclude=.git \\ --exclude=logs \\ $WORKSPACE_PATH/ \\ user@new_vps:~/backup/openclaw_workspace/ # 方法 B：使用 tar 打包传输 tar czvf openclaw_workspace.tar.gz $WORKSPACE_PATH scp openclaw_workspace.tar.gz user@new_vps:~/backup/ # 方法 C：使用 scp 传输记忆文件 scp -r ~/.openclaw/workspace/memory user@new_vps:~/backup/ scp ~/.openclaw/workspace/MEMORY.md user@new_vps:~/backup/ 4.2 验证传输完整性 # 在新机器上检查文件 cd ~/backup/openclaw_workspace ls -la # 检查记忆文件完整性 find memory/ -name \"*.md\" | wc -l # 检查配置文件 ls -la *.md # 对比文件大小 stat ~/.openclaw/workspace/MEMORY.md stat ~/backup/MEMORY_backup.md 🏗️ 新环境搭建 5.1 安装 Node.js（如果尚未安装） # 安装 Node.js 18 LTS（推荐） curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - sudo apt-get install -y nodejs # 验证版本 node -v npm -v # 安装 PM2（进程管理） sudo npm install -g pm2 5.2 安装 OpenClaW CLI # 全局安装 OpenClaW（如果需要使用 CLI） sudo npm install -g openclaw # 验证安装 openclaw --version # 查看帮助 openclaw help 5.3 设置工作空间目录 # 创建工作空间目录 mkdir -p ~/.openclaw/workspace mkdir -p ~/.openclaw/gateway mkdir -p ~/.openclaw/plugins mkdir -p ~/.openclaw/skills # 解压工作空间（如果使用 tar 备份） cd ~/backup tar xzf openclaw_workspace.tar.gz -C ~/.openclaw/workspace # 或使用 rsync 传输的文件 rsync -avzP ~/backup/openclaw_workspace/ ~/.openclaw/workspace/ # 设置权限（关键步骤！） sudo chown -R $USER:$USER ~/.openclaw sudo chmod -R 755 ~/.openclaw sudo chmod 600 ~/.openclaw/workspace/MEMORY.md 2\u003e/dev/null || true 5.4 恢复配置文件 # 恢复 Gateway 配置 cp -r ~/backup/openclaw_gateway_config/* ~/.openclaw/gateway/ # 恢复全局配置 cp -r ~/backup/openclaw_config/* ~/.openclaw/config/ # 恢复环境变量 cp ~/.env_backup.txt ~/.env # 恢复插件 cp -r ~/backup/openclaw_plugins/* ~/.openclaw/plugins/ # 恢复技能 cp -r ~/backup/openclaw_skills/* ~/.openclaw/skills/ 5.5 恢复 API 密钥和敏感信息 # 重新设置敏感环境变量 export API_KEY=[您的 API 密钥] export TOKEN=[您的 Token] # ... 设置其他必要的环境变量 # 写入 .env 文件 cat \u003e\u003e ~/.env \u003c\u003c EOF API_KEY=[您的 API 密钥] TOKEN=[您的 Token] # ... 其他配置 EOF chmod 600 ~/.env 🔄 配置恢复与验证 6.1 初始化 Gateway 服务 # 启动 Gateway openclaw gateway start # 检查状态 openclaw gateway status # 查看详细日志 openclaw gateway logs --lines 50 6.2 验证工作空间 # 检查工作空间加载 ls -la ~/.openclaw/workspace/ # 检查记忆文件 ls -la ~/.openclaw/workspace/memory/ # 验证配置文件 cat ~/.openclaw/workspace/AGENTS.md | head -20 cat ~/.openclaw/workspace/MEMORY.md | head -20 # 测试工作空间功能 openclaw workspace list 6.3 验证技能插件 # 检查技能加载 openclaw skills list # 检查插件状态 openclaw plugins list # 测试技能功能 openclaw skills test 6.4 验证连接 # 检查连接状态 openclaw connection list # 测试连接健康 openclaw connection health # 查看连接日志 openclaw connection logs 6.5 测试核心功能 # 测试记忆读取 openclaw memory read --query \"测试记忆是否正常工作\" # 测试技能调用 openclaw skills run --skill search --query \"测试搜索技能\" # 测试 Gateway 响应 curl -X POST http://localhost:PORT/api/test \\ -H \"Content-Type: application/json\" \\ -d '{\"message\": \"测试连接\"}' ✅ 验证检查清单 基础验证 Gateway 服务成功启动 工作空间目录完整 所有记忆文件正确恢复 配置文件加载成功 环境变量设置正确 API 密钥已配置 功能验证 记忆读取功能正常 技能调用成功 插件加载正常 网络连接正常 对话历史可读取 配置修改可保存 性能验证 响应速度正常 无内存泄漏 无异常错误日志 服务稳定运行 ❗ 常见问题解决 问题 1：Gateway 启动失败 症状: openclaw gateway start 报错\n解决:\n# 查看详细错误 openclaw gateway logs --lines 100 # 检查端口占用 sudo netstat -tlnp | grep openclaw # 检查配置语法 openclaw gateway validate # 重置 Gateway 配置 rm -rf ~/.openclaw/gateway/* openclaw gateway init # 重新导入配置 cp -r ~/backup/openclaw_gateway_config/* ~/.openclaw/gateway/ 问题 2：工作空间加载失败 症状: 无法读取记忆文件\n解决:\n# 检查目录权限 ls -la ~/.openclaw/workspace/ ls -la ~/.openclaw/workspace/memory/ # 修复权限 sudo chown -R $USER:$USER ~/.openclaw sudo chmod -R 755 ~/.openclaw # 检查文件完整性 find ~/.openclaw/workspace/memory -name \"*.md\" | wc -l # 重新解压工作空间 tar xzf ~/backup/openclaw_workspace.tar.gz -C ~/.openclaw/workspace 问题 3：API 密钥无效 症状: API 调用失败\n解决:\n# 检查环境变量 env | grep API env | grep KEY # 重新设置环境变量 export API_KEY=[正确的 API 密钥] # 更新 .env 文件 nano ~/.env # 添加正确的密钥 # 重启 Gateway openclaw gateway restart 问题 4：技能加载失败 症状: 技能无法调用\n解决:\n# 检查技能目录 ls -la ~/.openclaw/skills/ # 检查技能配置 openclaw skills list # 重新安装技能 openclaw skills install --all # 检查技能日志 openclaw skills logs --lines 50 问题 5：端口被占用 症状: Gateway 无法启动\n解决:\n# 检查端口占用 sudo netstat -tlnp | grep [PORT] # 查找进程 sudo lsof -i :[PORT] # 结束进程 sudo kill -9 [PID] # 或更改端口 nano ~/.openclaw/config/gateway.yaml # 修改 port 配置 # 重启服务 openclaw gateway restart 📊 迁移监控脚本 7.1 创建监控脚本 cat \u003e ~/openclaw_migration_check.sh \u003c\u003c 'EOF' #!/bin/bash echo \"=== OpenClaW 迁移验证 ===\" # 检查 Gateway 状态 echo \"1. Gateway 状态:\" openclaw gateway status # 检查工作空间 echo -e \"\\n2. 工作空间文件数:\" find ~/.openclaw/workspace -name \"*.md\" | wc -l # 检查记忆文件 echo -e \"\\n3. 记忆文件列表:\" ls -la ~/.openclaw/workspace/memory/ | wc -l # 检查技能 echo -e \"\\n4. 已加载技能:\" openclaw skills list | head -10 # 检查插件 echo -e \"\\n5. 已加载插件:\" openclaw plugins list | head -10 # 检查连接 echo -e \"\\n6. 活跃连接:\" openclaw connection list # 检查日志 echo -e \"\\n7. 最近错误:\" openclaw gateway logs --lines 20 | grep -i error echo -e \"\\n=== 检查完成 ===\" EOF chmod +x ~/openclaw_migration_check.sh 7.2 运行监控 # 手动运行检查 ~/openclaw_migration_check.sh # 设置定时检查（每小时） (crontab -l 2\u003e/dev/null; echo \"0 * * * * ~/openclaw_migration_check.sh \u003e\u003e /var/log/openclaw_check.log\") | crontab - 💡 最佳实践建议 双机并行: 迁移后保留旧机器至少 48 小时，确保一切正常 分阶段验证: 先验证基础功能，再验证复杂功能 日志监控: 持续监控日志文件，及时发现异常 配置版本控制: 使用 Git 管理工作空间配置 定期备份: 建立定期自动备份机制 环境隔离: 区分测试环境和生产环境 文档记录: 记录所有迁移步骤和遇到的问题 🔧 高级技巧 自动化迁移脚本 cat \u003e auto_migrate_openclaw.sh \u003c\u003c 'EOF' #!/bin/bash set -e # 1. 备份 echo \"开始备份...\" tar czvf workspace_backup.tar.gz ~/.openclaw/workspace/ # 2. 传输 echo \"传输到新机器...\" rsync -avzP workspace_backup.tar.gz user@new_vps:~/backup/ # 3. 在新机器恢复 echo \"在新机器恢复...\" ssh user@new_vps \" cd ~/backup tar xzf workspace_backup.tar.gz -C ~/.openclaw/ openclaw gateway restart \" echo \"迁移完成！\" EOF 增量备份脚本 cat \u003e incremental_backup.sh \u003c\u003c 'EOF' #!/bin/bash TIMESTAMP=$(date +%Y%m%d_%H%M%S) BACKUP_DIR=~/backups/openclaw_$TIMESTAMP mkdir -p $BACKUP_DIR # 增量备份工作空间 tar czvf $BACKUP_DIR/workspace.tar.gz \\ --exclude=node_modules \\ --exclude=.git \\ --exclude=logs \\ ~/.openclaw/workspace/ # 备份配置 cp -r ~/.openclaw/gateway $BACKUP_DIR/ cp -r ~/.openclaw/config $BACKUP_DIR/ cp -r ~/.openclaw/plugins $BACKUP_DIR/ cp -r ~/.openclaw/skills $BACKUP_DIR/ # 备份记忆 tar czvf $BACKUP_DIR/memory.tar.gz ~/.openclaw/workspace/memory/ echo \"备份完成：$BACKUP_DIR\" EOF 配置同步工具 cat \u003e sync_config.sh \u003c\u003c 'EOF' #!/bin/bash # 同步配置到多个服务器 servers=(\"server1\" \"server2\" \"server3\") for server in \"${servers[@]}\"; do echo \"同步到 $server...\" rsync -avzP \\ ~/.openclaw/workspace/ \\ $server:~/.openclaw/workspace/ rsync -avzP \\ ~/.openclaw/config/ \\ $server:~/.openclaw/config/ ssh $server \"openclaw gateway restart\" done echo \"同步完成！\" EOF 📝 迁移后检查表 即时检查（迁移后 1 小时内） Gateway 正常运行 所有记忆文件可访问 技能插件加载成功 网络连接正常 无异常错误日志 短期检查（迁移后 24 小时内） 持续监控日志 验证所有功能 测试 API 调用 确认备份策略 长期检查（迁移后 1 周） 性能评估 资源使用情况 功能完整性 用户反馈收集 创建时间: 2026-04-06\n最后更新: 2026-04-06\n提示: 迁移完成后，建议立即更新 MEMORY.md 记录本次迁移详情！\n","wordCount":"2974","inLanguage":"zh-cn","datePublished":"2026-04-06T21:21:10+08:00","dateModified":"2026-04-06T21:21:10+08:00","author":{"@type":"Person","name":"新人类"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/"},"publisher":{"@type":"Organization","name":"蓝色空间号","logo":{"@type":"ImageObject","url":"https://bluespace.eu.org/favicon.ico"}}}</script></head><body id="top"><header class="header"><nav class="nav"><div class="logo"><a accesskey="h" href="https://bluespace.eu.org/" title="蓝色空间号 (Alt + H)">蓝色空间号</a><div class="logo-switches"><button accesskey="t" aria-label="Toggle theme" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></button></div></div><ul id="menu"><li><a accesskey="/" href="https://bluespace.eu.org/search/" title="搜索 (Alt + /)"><span>搜索</span></a></li><li><a href="https://bluespace.eu.org/" title="首页"><span>首页</span></a></li><li><a href="https://bluespace.eu.org/post/" title="文章"><span>文章</span></a></li><li><a href="https://bluespace.eu.org/archives/" title="归档"><span>归档</span></a></li><li><a href="https://bluespace.eu.org/categories/" title="分类"><span>分类</span></a></li><li><a href="https://bluespace.eu.org/tags/" title="标签"><span>标签</span></a></li><li><a href="https://bluespace.eu.org/about/" title="关于"><span>关于</span></a></li></ul></nav></header><main class="main"><article class="post-single"><header class="post-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a> » <a href="https://bluespace.eu.org/post/">文章</a></div><h1 class="post-title entry-hint-parent">OpenClaW 迁移指南</h1><div class="post-meta"><span title="2026-04-06 21:21:10 +0800 CST">2026-04-06</span> · <span>6 min</span> · <span>2974 words</span> · <span>新人类</span></div></header><div class="toc"><details><summary accesskey="c" title="(Alt + C)"><span class="details">Table of Contents</span></summary><div class="inner"><nav id="TableOfContents"><ul><li><a href="#-目录">📋 目录</a></li><li><a href="#-openclaw-架构理解">🏗️ OpenClaW 架构理解</a><ul><li><a href="#11-核心组件">1.1 核心组件</a></li><li><a href="#12-目录结构">1.2 目录结构</a></li></ul></li><li><a href="#-迁移前准备">🚀 迁移前准备</a><ul><li><a href="#21-检查清单">2.1 检查清单</a></li><li><a href="#22-识别运行状态">2.2 识别运行状态</a></li></ul></li><li><a href="#-openclaw-组件备份">📦 OpenClaW 组件备份</a><ul><li><a href="#31-备份工作空间核心">3.1 备份工作空间（核心）</a></li><li><a href="#32-备份配置文件">3.2 备份配置文件</a></li><li><a href="#33-备份记忆文件">3.3 备份记忆文件</a></li><li><a href="#34-备份-api-密钥和敏感信息">3.4 备份 API 密钥和敏感信息</a></li><li><a href="#35-备份-gateway-服务状态">3.5 备份 Gateway 服务状态</a></li></ul></li><li><a href="#-工作空间迁移">🗄 工作空间迁移</a><ul><li><a href="#41-传输工作空间文件">4.1 传输工作空间文件</a></li><li><a href="#42-验证传输完整性">4.2 验证传输完整性</a></li></ul></li><li><a href="#-新环境搭建">🏗️ 新环境搭建</a><ul><li><a href="#51-安装-nodejs如果尚未安装">5.1 安装 Node.js（如果尚未安装）</a></li><li><a href="#52-安装-openclaw-cli">5.2 安装 OpenClaW CLI</a></li><li><a href="#53-设置工作空间目录">5.3 设置工作空间目录</a></li><li><a href="#54-恢复配置文件">5.4 恢复配置文件</a></li><li><a href="#55-恢复-api-密钥和敏感信息">5.5 恢复 API 密钥和敏感信息</a></li></ul></li><li><a href="#-配置恢复与验证">🔄 配置恢复与验证</a><ul><li><a href="#61-初始化-gateway-服务">6.1 初始化 Gateway 服务</a></li><li><a href="#62-验证工作空间">6.2 验证工作空间</a></li><li><a href="#63-验证技能插件">6.3 验证技能插件</a></li><li><a href="#64-验证连接">6.4 验证连接</a></li><li><a href="#65-测试核心功能">6.5 测试核心功能</a></li></ul></li><li><a href="#-验证检查清单">✅ 验证检查清单</a><ul><li><a href="#基础验证">基础验证</a></li><li><a href="#功能验证">功能验证</a></li><li><a href="#性能验证">性能验证</a></li></ul></li><li><a href="#-常见问题解决">❗ 常见问题解决</a><ul><li><a href="#问题-1gateway-启动失败">问题 1：Gateway 启动失败</a></li><li><a href="#问题-2工作空间加载失败">问题 2：工作空间加载失败</a></li><li><a href="#问题-3api-密钥无效">问题 3：API 密钥无效</a></li><li><a href="#问题-4技能加载失败">问题 4：技能加载失败</a></li><li><a href="#问题-5端口被占用">问题 5：端口被占用</a></li></ul></li><li><a href="#-迁移监控脚本">📊 迁移监控脚本</a><ul><li><a href="#71-创建监控脚本">7.1 创建监控脚本</a></li><li><a href="#72-运行监控">7.2 运行监控</a></li></ul></li><li><a href="#-最佳实践建议">💡 最佳实践建议</a></li><li><a href="#-高级技巧">🔧 高级技巧</a><ul><li><a href="#自动化迁移脚本">自动化迁移脚本</a></li><li><a href="#增量备份脚本">增量备份脚本</a></li><li><a href="#配置同步工具">配置同步工具</a></li></ul></li><li><a href="#-迁移后检查表">📝 迁移后检查表</a><ul><li><a href="#即时检查迁移后-1-小时内">即时检查（迁移后 1 小时内）</a></li><li><a href="#短期检查迁移后-24-小时内">短期检查（迁移后 24 小时内）</a></li><li><a href="#长期检查迁移后-1-周">长期检查（迁移后 1 周）</a></li></ul></li></ul></nav></div></details></div><div class="post-content"><h1 id="openclaw-迁移指南">OpenClaW 迁移指南<a aria-hidden="true" class="anchor" hidden="" href="#openclaw-迁移指南">#</a></h1><blockquote><p><strong>创建时间</strong>: 2026-04-06<br/><strong>适用范围</strong>: OpenClaW 管理平台迁移<br/><strong>核心目标</strong>: 零配置丢失、零记忆丢失、零功能中断</p></blockquote><hr/><h2 id="-目录">📋 目录<a aria-hidden="true" class="anchor" hidden="" href="#-目录">#</a></h2><ol><li>[OpenClaW 架构理解](#openclaw 架构理解)</li><li><a href="/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/#%e8%bf%81%e7%a7%bb%e5%89%8d%e5%87%86%e5%a4%87">迁移前准备</a></li><li>[OpenClaW 组件备份](#openclaw 组件备份)</li><li><a href="/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/#%e5%b7%a5%e4%bd%9c%e7%a9%ba%e9%97%b4%e8%bf%81%e7%a7%bb">工作空间迁移</a></li><li><a href="/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/#%e6%96%b0%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba">新环境搭建</a></li><li><a href="/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/#%e9%85%8d%e7%bd%ae%e6%81%a2%e5%a4%8d%e4%b8%8e%e9%aa%8c%e8%af%81">配置恢复与验证</a></li><li><a href="/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/openclaw-%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3">常见问题解决</a></li></ol><hr/><h2 id="-openclaw-架构理解">🏗️ OpenClaW 架构理解<a aria-hidden="true" class="anchor" hidden="" href="#-openclaw-架构理解">#</a></h2><h3 id="11-核心组件">1.1 核心组件<a aria-hidden="true" class="anchor" hidden="" href="#11-核心组件">#</a></h3><p>OpenClaW 由以下关键部分组成：</p><ul><li><strong>Gateway</strong>: 核心管理服务，处理所有通信</li><li><strong>Workspace</strong>: 工作空间目录，包含所有记忆、配置和对话历史</li><li><strong>Skills</strong>: 技能模块，提供扩展功能</li><li><strong>Plugins</strong>: 插件系统，增强功能</li><li><strong>Memory</strong>: 记忆文件，存储长期和短期记忆</li></ul><h3 id="12-目录结构">1.2 目录结构<a aria-hidden="true" class="anchor" hidden="" href="#12-目录结构">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">~/.openclaw/
+</span></span><span class="line"><span class="cl">├ workspace/              # 核心工作空间（最重要！）
+</span></span><span class="line"><span class="cl">│  ├ AGENTS.md           # 主配置
+</span></span><span class="line"><span class="cl">│  ├ SOUL.md             # 角色设定
+</span></span><span class="line"><span class="cl">│  ├ MEMORY.md           # 长期记忆
+</span></span><span class="line"><span class="cl">│  ├ memory/             # 每日记忆文件
+</span></span><span class="line"><span class="cl">│  ├ TOOLS.md            # 工具配置
+</span></span><span class="line"><span class="cl">│  ├ USER.md             # 用户信息
+</span></span><span class="line"><span class="cl">│  └ ...其他配置文件
+</span></span><span class="line"><span class="cl">├ gateway/                # Gateway 服务配置
+</span></span><span class="line"><span class="cl">├ plugins/                # 插件目录
+</span></span><span class="line"><span class="cl">├ skills/                 # 技能目录
+</span></span><span class="line"><span class="cl">├ config/                 # 全局配置
+</span></span><span class="line"><span class="cl">└ .env                    # 环境变量
+</span></span></code></pre></div><hr/><h2 id="-迁移前准备">🚀 迁移前准备<a aria-hidden="true" class="anchor" hidden="" href="#-迁移前准备">#</a></h2><h3 id="21-检查清单">2.1 检查清单<a aria-hidden="true" class="anchor" hidden="" href="#21-检查清单">#</a></h3><ul><li><input disabled="" type="checkbox"/> 确认旧 VPS 和 新 VPS 的磁盘空间</li><li><input disabled="" type="checkbox"/> 确认 Node.js 版本（OpenClaW 依赖）</li><li><input disabled="" type="checkbox"/> 确认 Docker 是否使用（如果使用了）</li><li><input disabled="" type="checkbox"/> 检查所有 API 密钥和敏感配置</li><li><input disabled="" type="checkbox"/> 记录当前 Gateway 状态</li></ul><h3 id="22-识别运行状态">2.2 识别运行状态<a aria-hidden="true" class="anchor" hidden="" href="#22-识别运行状态">#</a></h3><p>在旧 VPS 上执行：</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看 OpenClaW 进程</span>
+</span></span><span class="line"><span class="cl">ps aux <span class="p">|</span> grep openclaw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查 Gateway 状态</span>
+</span></span><span class="line"><span class="cl">openclaw gateway status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看工作空间位置</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$CLAUDE_PLUGIN_ROOT</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$OPENCLAW_WORKSPACE</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看配置文件</span>
+</span></span><span class="line"><span class="cl">ls -la ~/.openclaw/workspace/
+</span></span><span class="line"><span class="cl">ls -la ~/.openclaw/config/
+</span></span><span class="line"><span class="cl">ls -la ~/.openclaw/gateway/
+</span></span></code></pre></div><hr/><h2 id="-openclaw-组件备份">📦 OpenClaW 组件备份<a aria-hidden="true" class="anchor" hidden="" href="#-openclaw-组件备份">#</a></h2><h3 id="31-备份工作空间核心">3.1 备份工作空间（核心）<a aria-hidden="true" class="anchor" hidden="" href="#31-备份工作空间核心">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 找到工作空间路径</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WORKSPACE_PATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$CLAUDE_PLUGIN_ROOT</span> <span class="p">|</span> sed <span class="s1">'s|/plugins/.*||'</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">"WorkSpace Path: </span><span class="nv">$WORKSPACE_PATH</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份完整工作空间</span>
+</span></span><span class="line"><span class="cl">tar czvf openclaw_workspace_backup.tar.gz <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>node_modules <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>.git <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>logs <span class="se">\
+</span></span></span><span class="line"><span class="cl">  <span class="nv">$WORKSPACE_PATH</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者使用 rsync（支持增量）</span>
+</span></span><span class="line"><span class="cl">rsync -avzP <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>node_modules <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>.git <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>logs <span class="se">\
+</span></span></span><span class="line"><span class="cl">  <span class="nv">$WORKSPACE_PATH</span>/ <span class="se">\
+</span></span></span><span class="line"><span class="cl">  ~/backup/openclaw_workspace/
+</span></span></code></pre></div><h3 id="32-备份配置文件">3.2 备份配置文件<a aria-hidden="true" class="anchor" hidden="" href="#32-备份配置文件">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 备份 Gateway 配置</span>
+</span></span><span class="line"><span class="cl">cp -r ~/.openclaw/gateway ~/backup/openclaw_gateway_config/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份全局配置</span>
+</span></span><span class="line"><span class="cl">cp -r ~/.openclaw/config ~/backup/openclaw_config/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份环境变量</span>
+</span></span><span class="line"><span class="cl">cp ~/.env ~/.env_backup.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份插件目录</span>
+</span></span><span class="line"><span class="cl">cp -r ~/.openclaw/plugins ~/backup/openclaw_plugins/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份技能目录</span>
+</span></span><span class="line"><span class="cl">cp -r ~/.openclaw/skills ~/backup/openclaw_skills/
+</span></span></code></pre></div><h3 id="33-备份记忆文件">3.3 备份记忆文件<a aria-hidden="true" class="anchor" hidden="" href="#33-备份记忆文件">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 备份 memory 目录（每日记忆）</span>
+</span></span><span class="line"><span class="cl">tar czvf memory_backup.tar.gz ~/.openclaw/workspace/memory/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份长期记忆</span>
+</span></span><span class="line"><span class="cl">cp ~/.openclaw/workspace/MEMORY.md ~/backup/MEMORY_backup.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份所有重要配置文件</span>
+</span></span><span class="line"><span class="cl">cp ~/.openclaw/workspace/*.md ~/backup/
+</span></span></code></pre></div><h3 id="34-备份-api-密钥和敏感信息">3.4 备份 API 密钥和敏感信息<a aria-hidden="true" class="anchor" hidden="" href="#34-备份-api-密钥和敏感信息">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 导出环境变量（脱敏）</span>
+</span></span><span class="line"><span class="cl">env <span class="p">|</span> grep -E <span class="s2">"(API_|KEY_|TOKEN_|SECRET_)"</span> &gt; api_keys_backup.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或使用 openclaw 命令导出</span>
+</span></span><span class="line"><span class="cl">openclaw config list &gt; config_backup.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份敏感文件（如果存在）</span>
+</span></span><span class="line"><span class="cl">find ~/.openclaw -name <span class="s2">"*.key"</span> -o -name <span class="s2">"*.token"</span> -o -name <span class="s2">"*secret*"</span> <span class="p">|</span> xargs cp -t ~/backup/
+</span></span></code></pre></div><h3 id="35-备份-gateway-服务状态">3.5 备份 Gateway 服务状态<a aria-hidden="true" class="anchor" hidden="" href="#35-备份-gateway-服务状态">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 导出 Gateway 配置</span>
+</span></span><span class="line"><span class="cl">openclaw gateway dump &gt; gateway_config.yaml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查活跃连接</span>
+</span></span><span class="line"><span class="cl">openclaw connection list &gt; connections_backup.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 记录服务端口</span>
+</span></span><span class="line"><span class="cl">netstat -tlnp <span class="p">|</span> grep openclaw
+</span></span></code></pre></div><hr/><h2 id="-工作空间迁移">🗄 工作空间迁移<a aria-hidden="true" class="anchor" hidden="" href="#-工作空间迁移">#</a></h2><h3 id="41-传输工作空间文件">4.1 传输工作空间文件<a aria-hidden="true" class="anchor" hidden="" href="#41-传输工作空间文件">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 方法 A：使用 rsync（推荐，支持断点续传）</span>
+</span></span><span class="line"><span class="cl">rsync -avzP <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>node_modules <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>.git <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exclude<span class="o">=</span>logs <span class="se">\
+</span></span></span><span class="line"><span class="cl">  <span class="nv">$WORKSPACE_PATH</span>/ <span class="se">\
+</span></span></span><span class="line"><span class="cl">  user@new_vps:~/backup/openclaw_workspace/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方法 B：使用 tar 打包传输</span>
+</span></span><span class="line"><span class="cl">tar czvf openclaw_workspace.tar.gz <span class="nv">$WORKSPACE_PATH</span>
+</span></span><span class="line"><span class="cl">scp openclaw_workspace.tar.gz user@new_vps:~/backup/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方法 C：使用 scp 传输记忆文件</span>
+</span></span><span class="line"><span class="cl">scp -r ~/.openclaw/workspace/memory user@new_vps:~/backup/
+</span></span><span class="line"><span class="cl">scp ~/.openclaw/workspace/MEMORY.md user@new_vps:~/backup/
+</span></span></code></pre></div><h3 id="42-验证传输完整性">4.2 验证传输完整性<a aria-hidden="true" class="anchor" hidden="" href="#42-验证传输完整性">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 在新机器上检查文件</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/backup/openclaw_workspace
+</span></span><span class="line"><span class="cl">ls -la
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查记忆文件完整性</span>
+</span></span><span class="line"><span class="cl">find memory/ -name <span class="s2">"*.md"</span> <span class="p">|</span> wc -l
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查配置文件</span>
+</span></span><span class="line"><span class="cl">ls -la *.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 对比文件大小</span>
+</span></span><span class="line"><span class="cl">stat ~/.openclaw/workspace/MEMORY.md
+</span></span><span class="line"><span class="cl">stat ~/backup/MEMORY_backup.md
+</span></span></code></pre></div><hr/><h2 id="-新环境搭建">🏗️ 新环境搭建<a aria-hidden="true" class="anchor" hidden="" href="#-新环境搭建">#</a></h2><h3 id="51-安装-nodejs如果尚未安装">5.1 安装 Node.js（如果尚未安装）<a aria-hidden="true" class="anchor" hidden="" href="#51-安装-nodejs如果尚未安装">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装 Node.js 18 LTS（推荐）</span>
+</span></span><span class="line"><span class="cl">curl -fsSL https://deb.nodesource.com/setup_18.x <span class="p">|</span> sudo -E bash -
+</span></span><span class="line"><span class="cl">sudo apt-get install -y nodejs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证版本</span>
+</span></span><span class="line"><span class="cl">node -v
+</span></span><span class="line"><span class="cl">npm -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装 PM2（进程管理）</span>
+</span></span><span class="line"><span class="cl">sudo npm install -g pm2
+</span></span></code></pre></div><h3 id="52-安装-openclaw-cli">5.2 安装 OpenClaW CLI<a aria-hidden="true" class="anchor" hidden="" href="#52-安装-openclaw-cli">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 全局安装 OpenClaW（如果需要使用 CLI）</span>
+</span></span><span class="line"><span class="cl">sudo npm install -g openclaw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证安装</span>
+</span></span><span class="line"><span class="cl">openclaw --version
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看帮助</span>
+</span></span><span class="line"><span class="cl">openclaw <span class="nb">help</span>
+</span></span></code></pre></div><h3 id="53-设置工作空间目录">5.3 设置工作空间目录<a aria-hidden="true" class="anchor" hidden="" href="#53-设置工作空间目录">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 创建工作空间目录</span>
+</span></span><span class="line"><span class="cl">mkdir -p ~/.openclaw/workspace
+</span></span><span class="line"><span class="cl">mkdir -p ~/.openclaw/gateway
+</span></span><span class="line"><span class="cl">mkdir -p ~/.openclaw/plugins
+</span></span><span class="line"><span class="cl">mkdir -p ~/.openclaw/skills
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压工作空间（如果使用 tar 备份）</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/backup
+</span></span><span class="line"><span class="cl">tar xzf openclaw_workspace.tar.gz -C ~/.openclaw/workspace
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或使用 rsync 传输的文件</span>
+</span></span><span class="line"><span class="cl">rsync -avzP ~/backup/openclaw_workspace/ ~/.openclaw/workspace/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置权限（关键步骤！）</span>
+</span></span><span class="line"><span class="cl">sudo chown -R <span class="nv">$USER</span>:<span class="nv">$USER</span> ~/.openclaw
+</span></span><span class="line"><span class="cl">sudo chmod -R <span class="m">755</span> ~/.openclaw
+</span></span><span class="line"><span class="cl">sudo chmod <span class="m">600</span> ~/.openclaw/workspace/MEMORY.md 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+</span></span></code></pre></div><h3 id="54-恢复配置文件">5.4 恢复配置文件<a aria-hidden="true" class="anchor" hidden="" href="#54-恢复配置文件">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 恢复 Gateway 配置</span>
+</span></span><span class="line"><span class="cl">cp -r ~/backup/openclaw_gateway_config/* ~/.openclaw/gateway/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 恢复全局配置</span>
+</span></span><span class="line"><span class="cl">cp -r ~/backup/openclaw_config/* ~/.openclaw/config/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 恢复环境变量</span>
+</span></span><span class="line"><span class="cl">cp ~/.env_backup.txt ~/.env
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 恢复插件</span>
+</span></span><span class="line"><span class="cl">cp -r ~/backup/openclaw_plugins/* ~/.openclaw/plugins/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 恢复技能</span>
+</span></span><span class="line"><span class="cl">cp -r ~/backup/openclaw_skills/* ~/.openclaw/skills/
+</span></span></code></pre></div><h3 id="55-恢复-api-密钥和敏感信息">5.5 恢复 API 密钥和敏感信息<a aria-hidden="true" class="anchor" hidden="" href="#55-恢复-api-密钥和敏感信息">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 重新设置敏感环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">API_KEY</span><span class="o">=[</span>您的 API 密钥<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TOKEN</span><span class="o">=[</span>您的 Token<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ... 设置其他必要的环境变量</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 写入 .env 文件</span>
+</span></span><span class="line"><span class="cl">cat &gt;&gt; ~/.env <span class="s">&lt;&lt; EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">API_KEY=[您的 API 密钥]
+</span></span></span><span class="line"><span class="cl"><span class="s">TOKEN=[您的 Token]
+</span></span></span><span class="line"><span class="cl"><span class="s"># ... 其他配置
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod <span class="m">600</span> ~/.env
+</span></span></code></pre></div><hr/><h2 id="-配置恢复与验证">🔄 配置恢复与验证<a aria-hidden="true" class="anchor" hidden="" href="#-配置恢复与验证">#</a></h2><h3 id="61-初始化-gateway-服务">6.1 初始化 Gateway 服务<a aria-hidden="true" class="anchor" hidden="" href="#61-初始化-gateway-服务">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动 Gateway</span>
+</span></span><span class="line"><span class="cl">openclaw gateway start
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查状态</span>
+</span></span><span class="line"><span class="cl">openclaw gateway status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看详细日志</span>
+</span></span><span class="line"><span class="cl">openclaw gateway logs --lines <span class="m">50</span>
+</span></span></code></pre></div><h3 id="62-验证工作空间">6.2 验证工作空间<a aria-hidden="true" class="anchor" hidden="" href="#62-验证工作空间">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查工作空间加载</span>
+</span></span><span class="line"><span class="cl">ls -la ~/.openclaw/workspace/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查记忆文件</span>
+</span></span><span class="line"><span class="cl">ls -la ~/.openclaw/workspace/memory/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证配置文件</span>
+</span></span><span class="line"><span class="cl">cat ~/.openclaw/workspace/AGENTS.md <span class="p">|</span> head -20
+</span></span><span class="line"><span class="cl">cat ~/.openclaw/workspace/MEMORY.md <span class="p">|</span> head -20
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试工作空间功能</span>
+</span></span><span class="line"><span class="cl">openclaw workspace list
+</span></span></code></pre></div><h3 id="63-验证技能插件">6.3 验证技能插件<a aria-hidden="true" class="anchor" hidden="" href="#63-验证技能插件">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查技能加载</span>
+</span></span><span class="line"><span class="cl">openclaw skills list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查插件状态</span>
+</span></span><span class="line"><span class="cl">openclaw plugins list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试技能功能</span>
+</span></span><span class="line"><span class="cl">openclaw skills <span class="nb">test</span>
+</span></span></code></pre></div><h3 id="64-验证连接">6.4 验证连接<a aria-hidden="true" class="anchor" hidden="" href="#64-验证连接">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查连接状态</span>
+</span></span><span class="line"><span class="cl">openclaw connection list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试连接健康</span>
+</span></span><span class="line"><span class="cl">openclaw connection health
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看连接日志</span>
+</span></span><span class="line"><span class="cl">openclaw connection logs
+</span></span></code></pre></div><h3 id="65-测试核心功能">6.5 测试核心功能<a aria-hidden="true" class="anchor" hidden="" href="#65-测试核心功能">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 测试记忆读取</span>
+</span></span><span class="line"><span class="cl">openclaw memory <span class="nb">read</span> --query <span class="s2">"测试记忆是否正常工作"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试技能调用</span>
+</span></span><span class="line"><span class="cl">openclaw skills run --skill search --query <span class="s2">"测试搜索技能"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试 Gateway 响应</span>
+</span></span><span class="line"><span class="cl">curl -X POST http://localhost:PORT/api/test <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -d <span class="s1">'{"message": "测试连接"}'</span>
+</span></span></code></pre></div><hr/><h2 id="-验证检查清单">✅ 验证检查清单<a aria-hidden="true" class="anchor" hidden="" href="#-验证检查清单">#</a></h2><h3 id="基础验证">基础验证<a aria-hidden="true" class="anchor" hidden="" href="#基础验证">#</a></h3><ul><li><input disabled="" type="checkbox"/> Gateway 服务成功启动</li><li><input disabled="" type="checkbox"/> 工作空间目录完整</li><li><input disabled="" type="checkbox"/> 所有记忆文件正确恢复</li><li><input disabled="" type="checkbox"/> 配置文件加载成功</li><li><input disabled="" type="checkbox"/> 环境变量设置正确</li><li><input disabled="" type="checkbox"/> API 密钥已配置</li></ul><h3 id="功能验证">功能验证<a aria-hidden="true" class="anchor" hidden="" href="#功能验证">#</a></h3><ul><li><input disabled="" type="checkbox"/> 记忆读取功能正常</li><li><input disabled="" type="checkbox"/> 技能调用成功</li><li><input disabled="" type="checkbox"/> 插件加载正常</li><li><input disabled="" type="checkbox"/> 网络连接正常</li><li><input disabled="" type="checkbox"/> 对话历史可读取</li><li><input disabled="" type="checkbox"/> 配置修改可保存</li></ul><h3 id="性能验证">性能验证<a aria-hidden="true" class="anchor" hidden="" href="#性能验证">#</a></h3><ul><li><input disabled="" type="checkbox"/> 响应速度正常</li><li><input disabled="" type="checkbox"/> 无内存泄漏</li><li><input disabled="" type="checkbox"/> 无异常错误日志</li><li><input disabled="" type="checkbox"/> 服务稳定运行</li></ul><hr/><h2 id="-常见问题解决">❗ 常见问题解决<a aria-hidden="true" class="anchor" hidden="" href="#-常见问题解决">#</a></h2><h3 id="问题-1gateway-启动失败">问题 1：Gateway 启动失败<a aria-hidden="true" class="anchor" hidden="" href="#问题-1gateway-启动失败">#</a></h3><p><strong>症状</strong>: <code>openclaw gateway start</code> 报错<br/><strong>解决</strong>:</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看详细错误</span>
+</span></span><span class="line"><span class="cl">openclaw gateway logs --lines <span class="m">100</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查端口占用</span>
+</span></span><span class="line"><span class="cl">sudo netstat -tlnp <span class="p">|</span> grep openclaw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查配置语法</span>
+</span></span><span class="line"><span class="cl">openclaw gateway validate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重置 Gateway 配置</span>
+</span></span><span class="line"><span class="cl">rm -rf ~/.openclaw/gateway/*
+</span></span><span class="line"><span class="cl">openclaw gateway init
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新导入配置</span>
+</span></span><span class="line"><span class="cl">cp -r ~/backup/openclaw_gateway_config/* ~/.openclaw/gateway/
+</span></span></code></pre></div><h3 id="问题-2工作空间加载失败">问题 2：工作空间加载失败<a aria-hidden="true" class="anchor" hidden="" href="#问题-2工作空间加载失败">#</a></h3><p><strong>症状</strong>: 无法读取记忆文件<br/><strong>解决</strong>:</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查目录权限</span>
+</span></span><span class="line"><span class="cl">ls -la ~/.openclaw/workspace/
+</span></span><span class="line"><span class="cl">ls -la ~/.openclaw/workspace/memory/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修复权限</span>
+</span></span><span class="line"><span class="cl">sudo chown -R <span class="nv">$USER</span>:<span class="nv">$USER</span> ~/.openclaw
+</span></span><span class="line"><span class="cl">sudo chmod -R <span class="m">755</span> ~/.openclaw
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查文件完整性</span>
+</span></span><span class="line"><span class="cl">find ~/.openclaw/workspace/memory -name <span class="s2">"*.md"</span> <span class="p">|</span> wc -l
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新解压工作空间</span>
+</span></span><span class="line"><span class="cl">tar xzf ~/backup/openclaw_workspace.tar.gz -C ~/.openclaw/workspace
+</span></span></code></pre></div><h3 id="问题-3api-密钥无效">问题 3：API 密钥无效<a aria-hidden="true" class="anchor" hidden="" href="#问题-3api-密钥无效">#</a></h3><p><strong>症状</strong>: API 调用失败<br/><strong>解决</strong>:</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查环境变量</span>
+</span></span><span class="line"><span class="cl">env <span class="p">|</span> grep API
+</span></span><span class="line"><span class="cl">env <span class="p">|</span> grep KEY
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新设置环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">API_KEY</span><span class="o">=[</span>正确的 API 密钥<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新 .env 文件</span>
+</span></span><span class="line"><span class="cl">nano ~/.env
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加正确的密钥</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启 Gateway</span>
+</span></span><span class="line"><span class="cl">openclaw gateway restart
+</span></span></code></pre></div><h3 id="问题-4技能加载失败">问题 4：技能加载失败<a aria-hidden="true" class="anchor" hidden="" href="#问题-4技能加载失败">#</a></h3><p><strong>症状</strong>: 技能无法调用<br/><strong>解决</strong>:</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查技能目录</span>
+</span></span><span class="line"><span class="cl">ls -la ~/.openclaw/skills/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查技能配置</span>
+</span></span><span class="line"><span class="cl">openclaw skills list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新安装技能</span>
+</span></span><span class="line"><span class="cl">openclaw skills install --all
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查技能日志</span>
+</span></span><span class="line"><span class="cl">openclaw skills logs --lines <span class="m">50</span>
+</span></span></code></pre></div><h3 id="问题-5端口被占用">问题 5：端口被占用<a aria-hidden="true" class="anchor" hidden="" href="#问题-5端口被占用">#</a></h3><p><strong>症状</strong>: Gateway 无法启动<br/><strong>解决</strong>:</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查端口占用</span>
+</span></span><span class="line"><span class="cl">sudo netstat -tlnp <span class="p">|</span> grep <span class="o">[</span>PORT<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查找进程</span>
+</span></span><span class="line"><span class="cl">sudo lsof -i :<span class="o">[</span>PORT<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 结束进程</span>
+</span></span><span class="line"><span class="cl">sudo <span class="nb">kill</span> -9 <span class="o">[</span>PID<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或更改端口</span>
+</span></span><span class="line"><span class="cl">nano ~/.openclaw/config/gateway.yaml
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改 port 配置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启服务</span>
+</span></span><span class="line"><span class="cl">openclaw gateway restart
+</span></span></code></pre></div><hr/><h2 id="-迁移监控脚本">📊 迁移监控脚本<a aria-hidden="true" class="anchor" hidden="" href="#-迁移监控脚本">#</a></h2><h3 id="71-创建监控脚本">7.1 创建监控脚本<a aria-hidden="true" class="anchor" hidden="" href="#71-创建监控脚本">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat &gt; ~/openclaw_migration_check.sh <span class="s">&lt;&lt; 'EOF'
+</span></span></span><span class="line"><span class="cl"><span class="s">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo "=== OpenClaW 迁移验证 ==="
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 检查 Gateway 状态
+</span></span></span><span class="line"><span class="cl"><span class="s">echo "1. Gateway 状态:"
+</span></span></span><span class="line"><span class="cl"><span class="s">openclaw gateway status
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 检查工作空间
+</span></span></span><span class="line"><span class="cl"><span class="s">echo -e "\n2. 工作空间文件数:"
+</span></span></span><span class="line"><span class="cl"><span class="s">find ~/.openclaw/workspace -name "*.md" | wc -l
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 检查记忆文件
+</span></span></span><span class="line"><span class="cl"><span class="s">echo -e "\n3. 记忆文件列表:"
+</span></span></span><span class="line"><span class="cl"><span class="s">ls -la ~/.openclaw/workspace/memory/ | wc -l
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 检查技能
+</span></span></span><span class="line"><span class="cl"><span class="s">echo -e "\n4. 已加载技能:"
+</span></span></span><span class="line"><span class="cl"><span class="s">openclaw skills list | head -10
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 检查插件
+</span></span></span><span class="line"><span class="cl"><span class="s">echo -e "\n5. 已加载插件:"
+</span></span></span><span class="line"><span class="cl"><span class="s">openclaw plugins list | head -10
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 检查连接
+</span></span></span><span class="line"><span class="cl"><span class="s">echo -e "\n6. 活跃连接:"
+</span></span></span><span class="line"><span class="cl"><span class="s">openclaw connection list
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 检查日志
+</span></span></span><span class="line"><span class="cl"><span class="s">echo -e "\n7. 最近错误:"
+</span></span></span><span class="line"><span class="cl"><span class="s">openclaw gateway logs --lines 20 | grep -i error
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo -e "\n=== 检查完成 ==="
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod +x ~/openclaw_migration_check.sh
+</span></span></code></pre></div><h3 id="72-运行监控">7.2 运行监控<a aria-hidden="true" class="anchor" hidden="" href="#72-运行监控">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 手动运行检查</span>
+</span></span><span class="line"><span class="cl">~/openclaw_migration_check.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置定时检查（每小时）</span>
+</span></span><span class="line"><span class="cl"><span class="o">(</span>crontab -l 2&gt;/dev/null<span class="p">;</span> <span class="nb">echo</span> <span class="s2">"0 * * * * ~/openclaw_migration_check.sh &gt;&gt; /var/log/openclaw_check.log"</span><span class="o">)</span> <span class="p">|</span> crontab -
+</span></span></code></pre></div><hr/><h2 id="-最佳实践建议">💡 最佳实践建议<a aria-hidden="true" class="anchor" hidden="" href="#-最佳实践建议">#</a></h2><ol><li><strong>双机并行</strong>: 迁移后保留旧机器至少 48 小时，确保一切正常</li><li><strong>分阶段验证</strong>: 先验证基础功能，再验证复杂功能</li><li><strong>日志监控</strong>: 持续监控日志文件，及时发现异常</li><li><strong>配置版本控制</strong>: 使用 Git 管理工作空间配置</li><li><strong>定期备份</strong>: 建立定期自动备份机制</li><li><strong>环境隔离</strong>: 区分测试环境和生产环境</li><li><strong>文档记录</strong>: 记录所有迁移步骤和遇到的问题</li></ol><hr/><h2 id="-高级技巧">🔧 高级技巧<a aria-hidden="true" class="anchor" hidden="" href="#-高级技巧">#</a></h2><h3 id="自动化迁移脚本">自动化迁移脚本<a aria-hidden="true" class="anchor" hidden="" href="#自动化迁移脚本">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat &gt; auto_migrate_openclaw.sh <span class="s">&lt;&lt; 'EOF'
+</span></span></span><span class="line"><span class="cl"><span class="s">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="s">set -e
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 1. 备份
+</span></span></span><span class="line"><span class="cl"><span class="s">echo "开始备份..."
+</span></span></span><span class="line"><span class="cl"><span class="s">tar czvf workspace_backup.tar.gz ~/.openclaw/workspace/
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 2. 传输
+</span></span></span><span class="line"><span class="cl"><span class="s">echo "传输到新机器..."
+</span></span></span><span class="line"><span class="cl"><span class="s">rsync -avzP workspace_backup.tar.gz user@new_vps:~/backup/
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 3. 在新机器恢复
+</span></span></span><span class="line"><span class="cl"><span class="s">echo "在新机器恢复..."
+</span></span></span><span class="line"><span class="cl"><span class="s">ssh user@new_vps "
+</span></span></span><span class="line"><span class="cl"><span class="s">  cd ~/backup
+</span></span></span><span class="line"><span class="cl"><span class="s">  tar xzf workspace_backup.tar.gz -C ~/.openclaw/
+</span></span></span><span class="line"><span class="cl"><span class="s">  openclaw gateway restart
+</span></span></span><span class="line"><span class="cl"><span class="s">"
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo "迁移完成！"
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></div><h3 id="增量备份脚本">增量备份脚本<a aria-hidden="true" class="anchor" hidden="" href="#增量备份脚本">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat &gt; incremental_backup.sh <span class="s">&lt;&lt; 'EOF'
+</span></span></span><span class="line"><span class="cl"><span class="s">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="s">TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+</span></span></span><span class="line"><span class="cl"><span class="s">BACKUP_DIR=~/backups/openclaw_$TIMESTAMP
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">mkdir -p $BACKUP_DIR
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 增量备份工作空间
+</span></span></span><span class="line"><span class="cl"><span class="s">tar czvf $BACKUP_DIR/workspace.tar.gz \
+</span></span></span><span class="line"><span class="cl"><span class="s">  --exclude=node_modules \
+</span></span></span><span class="line"><span class="cl"><span class="s">  --exclude=.git \
+</span></span></span><span class="line"><span class="cl"><span class="s">  --exclude=logs \
+</span></span></span><span class="line"><span class="cl"><span class="s">  ~/.openclaw/workspace/
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 备份配置
+</span></span></span><span class="line"><span class="cl"><span class="s">cp -r ~/.openclaw/gateway $BACKUP_DIR/
+</span></span></span><span class="line"><span class="cl"><span class="s">cp -r ~/.openclaw/config $BACKUP_DIR/
+</span></span></span><span class="line"><span class="cl"><span class="s">cp -r ~/.openclaw/plugins $BACKUP_DIR/
+</span></span></span><span class="line"><span class="cl"><span class="s">cp -r ~/.openclaw/skills $BACKUP_DIR/
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 备份记忆
+</span></span></span><span class="line"><span class="cl"><span class="s">tar czvf $BACKUP_DIR/memory.tar.gz ~/.openclaw/workspace/memory/
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo "备份完成：$BACKUP_DIR"
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></div><h3 id="配置同步工具">配置同步工具<a aria-hidden="true" class="anchor" hidden="" href="#配置同步工具">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat &gt; sync_config.sh <span class="s">&lt;&lt; 'EOF'
+</span></span></span><span class="line"><span class="cl"><span class="s">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="s"># 同步配置到多个服务器
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">servers=("server1" "server2" "server3")
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">for server in "${servers[@]}"; do
+</span></span></span><span class="line"><span class="cl"><span class="s">    echo "同步到 $server..."
+</span></span></span><span class="line"><span class="cl"><span class="s">    rsync -avzP \
+</span></span></span><span class="line"><span class="cl"><span class="s">      ~/.openclaw/workspace/ \
+</span></span></span><span class="line"><span class="cl"><span class="s">      $server:~/.openclaw/workspace/
+</span></span></span><span class="line"><span class="cl"><span class="s">    
+</span></span></span><span class="line"><span class="cl"><span class="s">    rsync -avzP \
+</span></span></span><span class="line"><span class="cl"><span class="s">      ~/.openclaw/config/ \
+</span></span></span><span class="line"><span class="cl"><span class="s">      $server:~/.openclaw/config/
+</span></span></span><span class="line"><span class="cl"><span class="s">    
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssh $server "openclaw gateway restart"
+</span></span></span><span class="line"><span class="cl"><span class="s">done
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">echo "同步完成！"
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></div><hr/><h2 id="-迁移后检查表">📝 迁移后检查表<a aria-hidden="true" class="anchor" hidden="" href="#-迁移后检查表">#</a></h2><h3 id="即时检查迁移后-1-小时内">即时检查（迁移后 1 小时内）<a aria-hidden="true" class="anchor" hidden="" href="#即时检查迁移后-1-小时内">#</a></h3><ul><li><input disabled="" type="checkbox"/> Gateway 正常运行</li><li><input disabled="" type="checkbox"/> 所有记忆文件可访问</li><li><input disabled="" type="checkbox"/> 技能插件加载成功</li><li><input disabled="" type="checkbox"/> 网络连接正常</li><li><input disabled="" type="checkbox"/> 无异常错误日志</li></ul><h3 id="短期检查迁移后-24-小时内">短期检查（迁移后 24 小时内）<a aria-hidden="true" class="anchor" hidden="" href="#短期检查迁移后-24-小时内">#</a></h3><ul><li><input disabled="" type="checkbox"/> 持续监控日志</li><li><input disabled="" type="checkbox"/> 验证所有功能</li><li><input disabled="" type="checkbox"/> 测试 API 调用</li><li><input disabled="" type="checkbox"/> 确认备份策略</li></ul><h3 id="长期检查迁移后-1-周">长期检查（迁移后 1 周）<a aria-hidden="true" class="anchor" hidden="" href="#长期检查迁移后-1-周">#</a></h3><ul><li><input disabled="" type="checkbox"/> 性能评估</li><li><input disabled="" type="checkbox"/> 资源使用情况</li><li><input disabled="" type="checkbox"/> 功能完整性</li><li><input disabled="" type="checkbox"/> 用户反馈收集</li></ul><hr/><blockquote><p><strong>创建时间</strong>: 2026-04-06<br/><strong>最后更新</strong>: 2026-04-06</p></blockquote><p><strong>提示</strong>: 迁移完成后，建议立即更新 <code>MEMORY.md</code> 记录本次迁移详情！</p></div><footer class="post-footer"><ul class="post-tags"></ul><nav class="paginav"><a class="prev" href="https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/node.js-%E5%BA%94%E7%94%A8%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/"><span class="title">«</span><br/><span>Node.js 应用迁移指南</span>
+</a><a class="next" href="https://bluespace.eu.org/archives/%E5%85%B3%E4%BA%8Emac%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%E5%B4%A9%E6%BA%83%E7%9A%84%E5%8F%8D%E6%80%9D/"><span class="title">»</span><br/><span>关于mac电脑系统更新崩溃的反思</span></a></nav><ul class="share-buttons"><li><a aria-label="share OpenClaW 迁移指南 on x" href="https://x.com/intent/tweet/?text=OpenClaW%20%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E5%2585%25B7%2fopenclaw-%25E8%25BF%2581%25E7%25A7%25BB%25E6%258C%2587%25E5%258D%2597%2f&amp;hashtags=" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"></path></svg></a></li><li><a aria-label="share OpenClaW 迁移指南 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E5%2585%25B7%2fopenclaw-%25E8%25BF%2581%25E7%25A7%25BB%25E6%258C%2587%25E5%258D%2597%2f&amp;title=OpenClaW%20%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97&amp;summary=OpenClaW%20%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E5%2585%25B7%2fopenclaw-%25E8%25BF%2581%25E7%25A7%25BB%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"></path></svg></a></li><li><a aria-label="share OpenClaW 迁移指南 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E5%2585%25B7%2fopenclaw-%25E8%25BF%2581%25E7%25A7%25BB%25E6%258C%2587%25E5%258D%2597%2f&amp;title=OpenClaW%20%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"></path></svg></a></li><li><a aria-label="share OpenClaW 迁移指南 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E5%2585%25B7%2fopenclaw-%25E8%25BF%2581%25E7%25A7%25BB%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"></path></svg></a></li><li><a aria-label="share OpenClaW 迁移指南 on whatsapp" href="https://api.whatsapp.com/send?text=OpenClaW%20%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E5%2585%25B7%2fopenclaw-%25E8%25BF%2581%25E7%25A7%25BB%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"></path></svg></a></li><li><a aria-label="share OpenClaW 迁移指南 on telegram" href="https://telegram.me/share/url?text=OpenClaW%20%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E5%2585%25B7%2fopenclaw-%25E8%25BF%2581%25E7%25A7%25BB%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="2 2 28 28" width="30"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"></path></svg></a></li><li><a aria-label="share OpenClaW 迁移指南 on ycombinator" href="https://news.ycombinator.com/submitlink?t=OpenClaW%20%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97&amp;u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25B7%25A5%25E5%2585%25B7%2fopenclaw-%25E8%25BF%2581%25E7%25A7%25BB%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"></path></svg></a></li></ul></footer></article></main><footer class="footer"><span>© 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+<a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a></span></footer><a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)"><svg fill="currentColor" viewbox="0 0 12 6"><path d="M12 6H0l6-6z"></path></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
