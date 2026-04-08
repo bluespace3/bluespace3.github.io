@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html data-theme="auto" dir="auto" lang="zh-cn"><head><meta charset="utf-8"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><meta content="index, follow" name="robots"/><title>TAPD_MCP_使用指南 | 蓝色空间号</title><meta content="" name="keywords"/><meta content="TAPD MCP 服务器使用指南
+概述
+mcp-server-tapd 是一个 Model Context Protocol (MCP) 服务器，用于与 TAPD（Tencent Agile Product Development）项目管理系统进行集成。
+前提条件
+
+✅ MCP 服务器已配置在 C:\Users\Administrator\.claude.json 中
+✅ 访问令牌已配置：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+⚠️ 需要重启 Claude Code 使配置生效
+
+可用工具列表（共 38 个）
+📋 项目和工作区管理
+
+get_user_participant_projects - 获取用户参与的项目列表
+get_workspace_info - 获取工作区信息
+get_iterations - 获取迭代列表
+create_iteration - 创建迭代
+update_iteration - 更新迭代
+
+📝 需求和任务管理
+
+get_stories_or_tasks - 获取需求或任务
+get_story_or_task_count - 获取需求或任务数量
+create_story_or_task - 创建需求或任务
+update_story_or_task - 更新需求或任务
+get_stories_fields_lable - 获取需求字段标签
+get_stories_fields_info - 获取需求字段信息
+
+🐛 缺陷管理
+
+get_bug - 获取缺陷
+get_bug_count - 获取缺陷数量
+create_bug - 创建缺陷
+update_bug - 更新缺陷
+get_related_bugs - 获取相关缺陷
+
+💬 评论管理
+
+get_comments - 获取评论
+create_comments - 创建评论
+update_comments - 更新评论
+
+📎 附件和媒体
+
+get_entity_attachments - 获取实体附件
+get_image - 获取图片
+
+🔧 字段和配置
+
+get_entity_custom_fields - 获取实体自定义字段
+get_workitem_types - 获取工作项类型
+
+🔄 工作流管理
+
+get_workflows_all_transitions - 获取工作流所有转换
+get_workflows_status_map - 获取工作流状态映射
+get_workflows_last_steps - 获取工作流最后步骤
+
+🧪 测试用例管理
+
+create_or_update_tcases - 创建或更新测试用例
+create_tcases_batch - 批量创建测试用例
+get_tcases - 获取测试用例
+
+📖 Wiki 管理
+
+create_wiki - 创建 Wiki
+update_wiki - 更新 Wiki
+get_wiki - 获取 Wiki
+
+✅ 待办和工时
+
+get_todo - 获取待办事项
+add_timesheets - 添加工时
+update_timesheets - 更新工时
+get_timesheets - 获取工时
+
+🚀 发布和代码
+
+get_release_info - 获取发布信息
+get_commit_msg - 获取提交消息
+
+🤖 关系和消息
+
+entity_relations - 实体关系
+send_qiwei_message - 发送企业微信消息
+
+使用方法
+方法 1：通过 Claude Code 直接使用（推荐）
+重启 Claude Code 后，你可以直接在对话中要求使用这些工具：" name="description"/><meta content="新人类" name="author"/><link href="https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/tapd_mcp_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="canonical"/><link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e+Ge/K3X9WmUVz+1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet"/><link href="https://bluespace.eu.org/favicon.ico" rel="icon"/><link href="https://bluespace.eu.org/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="https://bluespace.eu.org/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="https://bluespace.eu.org/apple-touch-icon.png" rel="apple-touch-icon"/><link href="https://bluespace.eu.org/safari-pinned-tab.svg" rel="mask-icon"/><meta content="#2e2e33" name="theme-color"/><meta content="#2e2e33" name="msapplication-TileColor"/><link href="https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/tapd_mcp_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" hreflang="zh-cn" rel="alternate"/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta content="TAPD_MCP_使用指南" property="og:title"/><meta content="TAPD MCP 服务器使用指南
+概述
+mcp-server-tapd 是一个 Model Context Protocol (MCP) 服务器，用于与 TAPD（Tencent Agile Product Development）项目管理系统进行集成。
+前提条件
+
+✅ MCP 服务器已配置在 C:\Users\Administrator\.claude.json 中
+✅ 访问令牌已配置：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+⚠️ 需要重启 Claude Code 使配置生效
+
+可用工具列表（共 38 个）
+📋 项目和工作区管理
+
+get_user_participant_projects - 获取用户参与的项目列表
+get_workspace_info - 获取工作区信息
+get_iterations - 获取迭代列表
+create_iteration - 创建迭代
+update_iteration - 更新迭代
+
+📝 需求和任务管理
+
+get_stories_or_tasks - 获取需求或任务
+get_story_or_task_count - 获取需求或任务数量
+create_story_or_task - 创建需求或任务
+update_story_or_task - 更新需求或任务
+get_stories_fields_lable - 获取需求字段标签
+get_stories_fields_info - 获取需求字段信息
+
+🐛 缺陷管理
+
+get_bug - 获取缺陷
+get_bug_count - 获取缺陷数量
+create_bug - 创建缺陷
+update_bug - 更新缺陷
+get_related_bugs - 获取相关缺陷
+
+💬 评论管理
+
+get_comments - 获取评论
+create_comments - 创建评论
+update_comments - 更新评论
+
+📎 附件和媒体
+
+get_entity_attachments - 获取实体附件
+get_image - 获取图片
+
+🔧 字段和配置
+
+get_entity_custom_fields - 获取实体自定义字段
+get_workitem_types - 获取工作项类型
+
+🔄 工作流管理
+
+get_workflows_all_transitions - 获取工作流所有转换
+get_workflows_status_map - 获取工作流状态映射
+get_workflows_last_steps - 获取工作流最后步骤
+
+🧪 测试用例管理
+
+create_or_update_tcases - 创建或更新测试用例
+create_tcases_batch - 批量创建测试用例
+get_tcases - 获取测试用例
+
+📖 Wiki 管理
+
+create_wiki - 创建 Wiki
+update_wiki - 更新 Wiki
+get_wiki - 获取 Wiki
+
+✅ 待办和工时
+
+get_todo - 获取待办事项
+add_timesheets - 添加工时
+update_timesheets - 更新工时
+get_timesheets - 获取工时
+
+🚀 发布和代码
+
+get_release_info - 获取发布信息
+get_commit_msg - 获取提交消息
+
+🤖 关系和消息
+
+entity_relations - 实体关系
+send_qiwei_message - 发送企业微信消息
+
+使用方法
+方法 1：通过 Claude Code 直接使用（推荐）
+重启 Claude Code 后，你可以直接在对话中要求使用这些工具：" property="og:description"/><meta content="article" property="og:type"/><meta content="https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/tapd_mcp_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" property="og:url"/><meta content="post" property="article:section"/><meta content="2026-03-20T11:50:13+08:00" property="article:published_time"/><meta content="2026-04-08T23:32:29+08:00" property="article:modified_time"/><meta content="summary" name="twitter:card"/><meta content="TAPD_MCP_使用指南" name="twitter:title"/><meta content="TAPD MCP 服务器使用指南
+概述
+mcp-server-tapd 是一个 Model Context Protocol (MCP) 服务器，用于与 TAPD（Tencent Agile Product Development）项目管理系统进行集成。
+前提条件
+
+✅ MCP 服务器已配置在 C:\Users\Administrator\.claude.json 中
+✅ 访问令牌已配置：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+⚠️ 需要重启 Claude Code 使配置生效
+
+可用工具列表（共 38 个）
+📋 项目和工作区管理
+
+get_user_participant_projects - 获取用户参与的项目列表
+get_workspace_info - 获取工作区信息
+get_iterations - 获取迭代列表
+create_iteration - 创建迭代
+update_iteration - 更新迭代
+
+📝 需求和任务管理
+
+get_stories_or_tasks - 获取需求或任务
+get_story_or_task_count - 获取需求或任务数量
+create_story_or_task - 创建需求或任务
+update_story_or_task - 更新需求或任务
+get_stories_fields_lable - 获取需求字段标签
+get_stories_fields_info - 获取需求字段信息
+
+🐛 缺陷管理
+
+get_bug - 获取缺陷
+get_bug_count - 获取缺陷数量
+create_bug - 创建缺陷
+update_bug - 更新缺陷
+get_related_bugs - 获取相关缺陷
+
+💬 评论管理
+
+get_comments - 获取评论
+create_comments - 创建评论
+update_comments - 更新评论
+
+📎 附件和媒体
+
+get_entity_attachments - 获取实体附件
+get_image - 获取图片
+
+🔧 字段和配置
+
+get_entity_custom_fields - 获取实体自定义字段
+get_workitem_types - 获取工作项类型
+
+🔄 工作流管理
+
+get_workflows_all_transitions - 获取工作流所有转换
+get_workflows_status_map - 获取工作流状态映射
+get_workflows_last_steps - 获取工作流最后步骤
+
+🧪 测试用例管理
+
+create_or_update_tcases - 创建或更新测试用例
+create_tcases_batch - 批量创建测试用例
+get_tcases - 获取测试用例
+
+📖 Wiki 管理
+
+create_wiki - 创建 Wiki
+update_wiki - 更新 Wiki
+get_wiki - 获取 Wiki
+
+✅ 待办和工时
+
+get_todo - 获取待办事项
+add_timesheets - 添加工时
+update_timesheets - 更新工时
+get_timesheets - 获取工时
+
+🚀 发布和代码
+
+get_release_info - 获取发布信息
+get_commit_msg - 获取提交消息
+
+🤖 关系和消息
+
+entity_relations - 实体关系
+send_qiwei_message - 发送企业微信消息
+
+使用方法
+方法 1：通过 Claude Code 直接使用（推荐）
+重启 Claude Code 后，你可以直接在对话中要求使用这些工具：" name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章","item":"https://bluespace.eu.org/post/"},{"@type":"ListItem","position":2,"name":"TAPD_MCP_使用指南","item":"https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/tapd_mcp_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"TAPD_MCP_使用指南","name":"TAPD_MCP_使用指南","description":"TAPD MCP 服务器使用指南 概述 mcp-server-tapd 是一个 Model Context Protocol (MCP) 服务器，用于与 TAPD（Tencent Agile Product Development）项目管理系统进行集成。\n前提条件 ✅ MCP 服务器已配置在 C:\\Users\\Administrator\\.claude.json 中 ✅ 访问令牌已配置：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ⚠️ 需要重启 Claude Code 使配置生效 可用工具列表（共 38 个） 📋 项目和工作区管理 get_user_participant_projects - 获取用户参与的项目列表 get_workspace_info - 获取工作区信息 get_iterations - 获取迭代列表 create_iteration - 创建迭代 update_iteration - 更新迭代 📝 需求和任务管理 get_stories_or_tasks - 获取需求或任务 get_story_or_task_count - 获取需求或任务数量 create_story_or_task - 创建需求或任务 update_story_or_task - 更新需求或任务 get_stories_fields_lable - 获取需求字段标签 get_stories_fields_info - 获取需求字段信息 🐛 缺陷管理 get_bug - 获取缺陷 get_bug_count - 获取缺陷数量 create_bug - 创建缺陷 update_bug - 更新缺陷 get_related_bugs - 获取相关缺陷 💬 评论管理 get_comments - 获取评论 create_comments - 创建评论 update_comments - 更新评论 📎 附件和媒体 get_entity_attachments - 获取实体附件 get_image - 获取图片 🔧 字段和配置 get_entity_custom_fields - 获取实体自定义字段 get_workitem_types - 获取工作项类型 🔄 工作流管理 get_workflows_all_transitions - 获取工作流所有转换 get_workflows_status_map - 获取工作流状态映射 get_workflows_last_steps - 获取工作流最后步骤 🧪 测试用例管理 create_or_update_tcases - 创建或更新测试用例 create_tcases_batch - 批量创建测试用例 get_tcases - 获取测试用例 📖 Wiki 管理 create_wiki - 创建 Wiki update_wiki - 更新 Wiki get_wiki - 获取 Wiki ✅ 待办和工时 get_todo - 获取待办事项 add_timesheets - 添加工时 update_timesheets - 更新工时 get_timesheets - 获取工时 🚀 发布和代码 get_release_info - 获取发布信息 get_commit_msg - 获取提交消息 🤖 关系和消息 entity_relations - 实体关系 send_qiwei_message - 发送企业微信消息 使用方法 方法 1：通过 Claude Code 直接使用（推荐） 重启 Claude Code 后，你可以直接在对话中要求使用这些工具：\n","keywords":[],"articleBody":"TAPD MCP 服务器使用指南 概述 mcp-server-tapd 是一个 Model Context Protocol (MCP) 服务器，用于与 TAPD（Tencent Agile Product Development）项目管理系统进行集成。\n前提条件 ✅ MCP 服务器已配置在 C:\\Users\\Administrator\\.claude.json 中 ✅ 访问令牌已配置：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ⚠️ 需要重启 Claude Code 使配置生效 可用工具列表（共 38 个） 📋 项目和工作区管理 get_user_participant_projects - 获取用户参与的项目列表 get_workspace_info - 获取工作区信息 get_iterations - 获取迭代列表 create_iteration - 创建迭代 update_iteration - 更新迭代 📝 需求和任务管理 get_stories_or_tasks - 获取需求或任务 get_story_or_task_count - 获取需求或任务数量 create_story_or_task - 创建需求或任务 update_story_or_task - 更新需求或任务 get_stories_fields_lable - 获取需求字段标签 get_stories_fields_info - 获取需求字段信息 🐛 缺陷管理 get_bug - 获取缺陷 get_bug_count - 获取缺陷数量 create_bug - 创建缺陷 update_bug - 更新缺陷 get_related_bugs - 获取相关缺陷 💬 评论管理 get_comments - 获取评论 create_comments - 创建评论 update_comments - 更新评论 📎 附件和媒体 get_entity_attachments - 获取实体附件 get_image - 获取图片 🔧 字段和配置 get_entity_custom_fields - 获取实体自定义字段 get_workitem_types - 获取工作项类型 🔄 工作流管理 get_workflows_all_transitions - 获取工作流所有转换 get_workflows_status_map - 获取工作流状态映射 get_workflows_last_steps - 获取工作流最后步骤 🧪 测试用例管理 create_or_update_tcases - 创建或更新测试用例 create_tcases_batch - 批量创建测试用例 get_tcases - 获取测试用例 📖 Wiki 管理 create_wiki - 创建 Wiki update_wiki - 更新 Wiki get_wiki - 获取 Wiki ✅ 待办和工时 get_todo - 获取待办事项 add_timesheets - 添加工时 update_timesheets - 更新工时 get_timesheets - 获取工时 🚀 发布和代码 get_release_info - 获取发布信息 get_commit_msg - 获取提交消息 🤖 关系和消息 entity_relations - 实体关系 send_qiwei_message - 发送企业微信消息 使用方法 方法 1：通过 Claude Code 直接使用（推荐） 重启 Claude Code 后，你可以直接在对话中要求使用这些工具：\n请帮我获取 TAPD 中我参与的项目列表 请查询 workspace_id 为 12345 的项目中，状态为\"进行中\"的所有需求 请在 TAPD 中创建一个新需求，标题是\"实现登录功能\" 方法 2：了解工具参数 如果需要了解具体工具的参数，可以询问：\n请告诉我 get_stories_or_tasks 工具需要哪些参数 常见使用场景 场景 1：获取项目列表 请使用 get_user_participant_projects 获取我参与的所有 TAPD 项目 场景 2：查询需求 请查询项目 ID 为 12345 中的所有需求，只查询前 10 条 场景 3：创建需求 请在项目 12345 中创建一个需求： - 标题：实现用户登录功能 - 描述：包括手机号登录和微信登录 - 优先级：高 场景 4：更新任务状态 请将任务 ID 67890 的状态更新为\"已完成\" 场景 5：获取自定义字段 请先获取项目 12345 中需求的自定义字段配置 重要提示 获取 workspace_id：大多数操作需要先调用 get_user_participant_projects 获取项目 ID 自定义字段：使用自定义字段前，必须先调用 get_entity_custom_fields 获取字段配置 分页查询：获取列表时建议使用 limit 参数限制返回数量 状态查询：支持使用中文状态名称或状态别名 工具命名规范 在 Claude Code 中，这些工具会以 mcp__mcp-server-tapd__ 前缀出现，例如：\nmcp__mcp-server-tapd__get_user_participant_projects mcp__mcp-server-tapd__get_stories_or_tasks mcp__mcp-server-tapd__create_story_or_task 故障排查 如果工具不可用：\n确认已重启 Claude Code 检查 .claude.json 中的配置是否正确 确认访问令牌是否有效 查看错误消息获取详细信息 配置位置 配置文件：C:\\Users\\Administrator\\.claude.json 服务器名称：mcp-server-tapd 类型：stdio 命令：uvx mcp-server-tapd 下一步 重启 Claude Code 尝试获取项目列表： 请帮我获取 TAPD 中我参与的项目列表 根据返回的项目 ID 进行进一步操作 最后更新：2026-03-20 TAPD MCP 服务器版本：1.26.0\n","wordCount":"1237","inLanguage":"zh-cn","datePublished":"2026-03-20T11:50:13+08:00","dateModified":"2026-04-08T23:32:29+08:00","author":{"@type":"Person","name":"新人类"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/tapd_mcp_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"},"publisher":{"@type":"Organization","name":"蓝色空间号","logo":{"@type":"ImageObject","url":"https://bluespace.eu.org/favicon.ico"}}}</script></head><body id="top"><header class="header"><nav class="nav"><div class="logo"><a accesskey="h" href="https://bluespace.eu.org/" title="蓝色空间号 (Alt + H)">蓝色空间号</a><div class="logo-switches"><button accesskey="t" aria-label="Toggle theme" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></button></div></div><ul id="menu"><li><a accesskey="/" href="https://bluespace.eu.org/search/" title="搜索 (Alt + /)"><span>搜索</span></a></li><li><a href="https://bluespace.eu.org/" title="首页"><span>首页</span></a></li><li><a href="https://bluespace.eu.org/post/" title="文章"><span>文章</span></a></li><li><a href="https://bluespace.eu.org/archives/" title="归档"><span>归档</span></a></li><li><a href="https://bluespace.eu.org/categories/" title="分类"><span>分类</span></a></li><li><a href="https://bluespace.eu.org/tags/" title="标签"><span>标签</span></a></li><li><a href="https://bluespace.eu.org/about/" title="关于"><span>关于</span></a></li></ul></nav></header><main class="main"><article class="post-single"><header class="post-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a> » <a href="https://bluespace.eu.org/post/">文章</a></div><h1 class="post-title entry-hint-parent">TAPD_MCP_使用指南</h1><div class="post-meta"><span title="2026-03-20 11:50:13 +0800 CST">2026-03-20</span> · <span>3 min</span> · <span>1237 words</span> · <span>新人类</span></div></header><div class="toc"><details><summary accesskey="c" title="(Alt + C)"><span class="details">Table of Contents</span></summary><div class="inner"><nav id="TableOfContents"><ul><li><a href="#概述">概述</a></li><li><a href="#前提条件">前提条件</a></li><li><a href="#可用工具列表共-38-个">可用工具列表（共 38 个）</a><ul><li><a href="#-项目和工作区管理">📋 项目和工作区管理</a></li><li><a href="#-需求和任务管理">📝 需求和任务管理</a></li><li><a href="#-缺陷管理">🐛 缺陷管理</a></li><li><a href="#-评论管理">💬 评论管理</a></li><li><a href="#-附件和媒体">📎 附件和媒体</a></li><li><a href="#-字段和配置">🔧 字段和配置</a></li><li><a href="#-工作流管理">🔄 工作流管理</a></li><li><a href="#-测试用例管理">🧪 测试用例管理</a></li><li><a href="#-wiki-管理">📖 Wiki 管理</a></li><li><a href="#-待办和工时">✅ 待办和工时</a></li><li><a href="#-发布和代码">🚀 发布和代码</a></li><li><a href="#-关系和消息">🤖 关系和消息</a></li></ul></li><li><a href="#使用方法">使用方法</a><ul><li><a href="#方法-1通过-claude-code-直接使用推荐">方法 1：通过 Claude Code 直接使用（推荐）</a></li><li><a href="#方法-2了解工具参数">方法 2：了解工具参数</a></li></ul></li><li><a href="#常见使用场景">常见使用场景</a><ul><li><a href="#场景-1获取项目列表">场景 1：获取项目列表</a></li><li><a href="#场景-2查询需求">场景 2：查询需求</a></li><li><a href="#场景-3创建需求">场景 3：创建需求</a></li><li><a href="#场景-4更新任务状态">场景 4：更新任务状态</a></li><li><a href="#场景-5获取自定义字段">场景 5：获取自定义字段</a></li></ul></li><li><a href="#重要提示">重要提示</a></li><li><a href="#工具命名规范">工具命名规范</a></li><li><a href="#故障排查">故障排查</a></li><li><a href="#配置位置">配置位置</a></li><li><a href="#下一步">下一步</a></li></ul></nav></div></details></div><div class="post-content"><h1 id="tapd-mcp-服务器使用指南">TAPD MCP 服务器使用指南<a aria-hidden="true" class="anchor" hidden="" href="#tapd-mcp-服务器使用指南">#</a></h1><h2 id="概述">概述<a aria-hidden="true" class="anchor" hidden="" href="#概述">#</a></h2><p><code>mcp-server-tapd</code> 是一个 Model Context Protocol (MCP) 服务器，用于与 TAPD（Tencent Agile Product Development）项目管理系统进行集成。</p><h2 id="前提条件">前提条件<a aria-hidden="true" class="anchor" hidden="" href="#前提条件">#</a></h2><ol><li>✅ MCP 服务器已配置在 <code>C:\Users\Administrator\.claude.json</code> 中</li><li>✅ 访问令牌已配置：<code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code></li><li>⚠️ <strong>需要重启 Claude Code</strong> 使配置生效</li></ol><h2 id="可用工具列表共-38-个">可用工具列表（共 38 个）<a aria-hidden="true" class="anchor" hidden="" href="#可用工具列表共-38-个">#</a></h2><h3 id="-项目和工作区管理">📋 项目和工作区管理<a aria-hidden="true" class="anchor" hidden="" href="#-项目和工作区管理">#</a></h3><ul><li><code>get_user_participant_projects</code> - 获取用户参与的项目列表</li><li><code>get_workspace_info</code> - 获取工作区信息</li><li><code>get_iterations</code> - 获取迭代列表</li><li><code>create_iteration</code> - 创建迭代</li><li><code>update_iteration</code> - 更新迭代</li></ul><h3 id="-需求和任务管理">📝 需求和任务管理<a aria-hidden="true" class="anchor" hidden="" href="#-需求和任务管理">#</a></h3><ul><li><code>get_stories_or_tasks</code> - 获取需求或任务</li><li><code>get_story_or_task_count</code> - 获取需求或任务数量</li><li><code>create_story_or_task</code> - 创建需求或任务</li><li><code>update_story_or_task</code> - 更新需求或任务</li><li><code>get_stories_fields_lable</code> - 获取需求字段标签</li><li><code>get_stories_fields_info</code> - 获取需求字段信息</li></ul><h3 id="-缺陷管理">🐛 缺陷管理<a aria-hidden="true" class="anchor" hidden="" href="#-缺陷管理">#</a></h3><ul><li><code>get_bug</code> - 获取缺陷</li><li><code>get_bug_count</code> - 获取缺陷数量</li><li><code>create_bug</code> - 创建缺陷</li><li><code>update_bug</code> - 更新缺陷</li><li><code>get_related_bugs</code> - 获取相关缺陷</li></ul><h3 id="-评论管理">💬 评论管理<a aria-hidden="true" class="anchor" hidden="" href="#-评论管理">#</a></h3><ul><li><code>get_comments</code> - 获取评论</li><li><code>create_comments</code> - 创建评论</li><li><code>update_comments</code> - 更新评论</li></ul><h3 id="-附件和媒体">📎 附件和媒体<a aria-hidden="true" class="anchor" hidden="" href="#-附件和媒体">#</a></h3><ul><li><code>get_entity_attachments</code> - 获取实体附件</li><li><code>get_image</code> - 获取图片</li></ul><h3 id="-字段和配置">🔧 字段和配置<a aria-hidden="true" class="anchor" hidden="" href="#-字段和配置">#</a></h3><ul><li><code>get_entity_custom_fields</code> - 获取实体自定义字段</li><li><code>get_workitem_types</code> - 获取工作项类型</li></ul><h3 id="-工作流管理">🔄 工作流管理<a aria-hidden="true" class="anchor" hidden="" href="#-工作流管理">#</a></h3><ul><li><code>get_workflows_all_transitions</code> - 获取工作流所有转换</li><li><code>get_workflows_status_map</code> - 获取工作流状态映射</li><li><code>get_workflows_last_steps</code> - 获取工作流最后步骤</li></ul><h3 id="-测试用例管理">🧪 测试用例管理<a aria-hidden="true" class="anchor" hidden="" href="#-测试用例管理">#</a></h3><ul><li><code>create_or_update_tcases</code> - 创建或更新测试用例</li><li><code>create_tcases_batch</code> - 批量创建测试用例</li><li><code>get_tcases</code> - 获取测试用例</li></ul><h3 id="-wiki-管理">📖 Wiki 管理<a aria-hidden="true" class="anchor" hidden="" href="#-wiki-管理">#</a></h3><ul><li><code>create_wiki</code> - 创建 Wiki</li><li><code>update_wiki</code> - 更新 Wiki</li><li><code>get_wiki</code> - 获取 Wiki</li></ul><h3 id="-待办和工时">✅ 待办和工时<a aria-hidden="true" class="anchor" hidden="" href="#-待办和工时">#</a></h3><ul><li><code>get_todo</code> - 获取待办事项</li><li><code>add_timesheets</code> - 添加工时</li><li><code>update_timesheets</code> - 更新工时</li><li><code>get_timesheets</code> - 获取工时</li></ul><h3 id="-发布和代码">🚀 发布和代码<a aria-hidden="true" class="anchor" hidden="" href="#-发布和代码">#</a></h3><ul><li><code>get_release_info</code> - 获取发布信息</li><li><code>get_commit_msg</code> - 获取提交消息</li></ul><h3 id="-关系和消息">🤖 关系和消息<a aria-hidden="true" class="anchor" hidden="" href="#-关系和消息">#</a></h3><ul><li><code>entity_relations</code> - 实体关系</li><li><code>send_qiwei_message</code> - 发送企业微信消息</li></ul><h2 id="使用方法">使用方法<a aria-hidden="true" class="anchor" hidden="" href="#使用方法">#</a></h2><h3 id="方法-1通过-claude-code-直接使用推荐">方法 1：通过 Claude Code 直接使用（推荐）<a aria-hidden="true" class="anchor" hidden="" href="#方法-1通过-claude-code-直接使用推荐">#</a></h3><p>重启 Claude Code 后，你可以直接在对话中要求使用这些工具：</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请帮我获取 TAPD 中我参与的项目列表
+</span></span></code></pre></div><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请查询 workspace_id 为 12345 的项目中，状态为"进行中"的所有需求
+</span></span></code></pre></div><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请在 TAPD 中创建一个新需求，标题是"实现登录功能"
+</span></span></code></pre></div><h3 id="方法-2了解工具参数">方法 2：了解工具参数<a aria-hidden="true" class="anchor" hidden="" href="#方法-2了解工具参数">#</a></h3><p>如果需要了解具体工具的参数，可以询问：</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请告诉我 get_stories_or_tasks 工具需要哪些参数
+</span></span></code></pre></div><h2 id="常见使用场景">常见使用场景<a aria-hidden="true" class="anchor" hidden="" href="#常见使用场景">#</a></h2><h3 id="场景-1获取项目列表">场景 1：获取项目列表<a aria-hidden="true" class="anchor" hidden="" href="#场景-1获取项目列表">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请使用 get_user_participant_projects 获取我参与的所有 TAPD 项目
+</span></span></code></pre></div><h3 id="场景-2查询需求">场景 2：查询需求<a aria-hidden="true" class="anchor" hidden="" href="#场景-2查询需求">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请查询项目 ID 为 12345 中的所有需求，只查询前 10 条
+</span></span></code></pre></div><h3 id="场景-3创建需求">场景 3：创建需求<a aria-hidden="true" class="anchor" hidden="" href="#场景-3创建需求">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请在项目 12345 中创建一个需求：
+</span></span><span class="line"><span class="cl">- 标题：实现用户登录功能
+</span></span><span class="line"><span class="cl">- 描述：包括手机号登录和微信登录
+</span></span><span class="line"><span class="cl">- 优先级：高
+</span></span></code></pre></div><h3 id="场景-4更新任务状态">场景 4：更新任务状态<a aria-hidden="true" class="anchor" hidden="" href="#场景-4更新任务状态">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请将任务 ID 67890 的状态更新为"已完成"
+</span></span></code></pre></div><h3 id="场景-5获取自定义字段">场景 5：获取自定义字段<a aria-hidden="true" class="anchor" hidden="" href="#场景-5获取自定义字段">#</a></h3><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请先获取项目 12345 中需求的自定义字段配置
+</span></span></code></pre></div><h2 id="重要提示">重要提示<a aria-hidden="true" class="anchor" hidden="" href="#重要提示">#</a></h2><ol><li><strong>获取 workspace_id</strong>：大多数操作需要先调用 <code>get_user_participant_projects</code> 获取项目 ID</li><li><strong>自定义字段</strong>：使用自定义字段前，必须先调用 <code>get_entity_custom_fields</code> 获取字段配置</li><li><strong>分页查询</strong>：获取列表时建议使用 <code>limit</code> 参数限制返回数量</li><li><strong>状态查询</strong>：支持使用中文状态名称或状态别名</li></ol><h2 id="工具命名规范">工具命名规范<a aria-hidden="true" class="anchor" hidden="" href="#工具命名规范">#</a></h2><p>在 Claude Code 中，这些工具会以 <code>mcp__mcp-server-tapd__</code> 前缀出现，例如：</p><ul><li><code>mcp__mcp-server-tapd__get_user_participant_projects</code></li><li><code>mcp__mcp-server-tapd__get_stories_or_tasks</code></li><li><code>mcp__mcp-server-tapd__create_story_or_task</code></li></ul><h2 id="故障排查">故障排查<a aria-hidden="true" class="anchor" hidden="" href="#故障排查">#</a></h2><p>如果工具不可用：</p><ol><li>确认已重启 Claude Code</li><li>检查 <code>.claude.json</code> 中的配置是否正确</li><li>确认访问令牌是否有效</li><li>查看错误消息获取详细信息</li></ol><h2 id="配置位置">配置位置<a aria-hidden="true" class="anchor" hidden="" href="#配置位置">#</a></h2><ul><li><strong>配置文件</strong>：<code>C:\Users\Administrator\.claude.json</code></li><li><strong>服务器名称</strong>：<code>mcp-server-tapd</code></li><li><strong>类型</strong>：stdio</li><li><strong>命令</strong>：uvx mcp-server-tapd</li></ul><h2 id="下一步">下一步<a aria-hidden="true" class="anchor" hidden="" href="#下一步">#</a></h2><ol><li><strong>重启 Claude Code</strong></li><li><strong>尝试获取项目列表</strong>：<div class="highlight"><pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">请帮我获取 TAPD 中我参与的项目列表
+</span></span></code></pre></div></li><li><strong>根据返回的项目 ID 进行进一步操作</strong></li></ol><hr/><p><em>最后更新：2026-03-20</em>
+<em>TAPD MCP 服务器版本：1.26.0</em></p></div><footer class="post-footer"><ul class="post-tags"></ul><nav class="paginav"><a class="prev" href="https://bluespace.eu.org/post/%E6%97%A5%E8%AE%B0/2026-03-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"><span class="title">«</span><br/><span>2026-03-19赛博日记</span>
+</a><a class="next" href="https://bluespace.eu.org/post/openclaw/gsd-get-shit-done/"><span class="title">»</span><br/><span>gsd-get-shit-done</span></a></nav><ul class="share-buttons"><li><a aria-label="share TAPD_MCP_使用指南 on x" href="https://x.com/intent/tweet/?text=TAPD_MCP_%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25B7%25A5%25E5%2585%25B7%2ftapd_mcp_%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f&amp;hashtags=" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"></path></svg></a></li><li><a aria-label="share TAPD_MCP_使用指南 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25B7%25A5%25E5%2585%25B7%2ftapd_mcp_%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f&amp;title=TAPD_MCP_%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;summary=TAPD_MCP_%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25B7%25A5%25E5%2585%25B7%2ftapd_mcp_%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"></path></svg></a></li><li><a aria-label="share TAPD_MCP_使用指南 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25B7%25A5%25E5%2585%25B7%2ftapd_mcp_%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f&amp;title=TAPD_MCP_%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"></path></svg></a></li><li><a aria-label="share TAPD_MCP_使用指南 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25B7%25A5%25E5%2585%25B7%2ftapd_mcp_%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"></path></svg></a></li><li><a aria-label="share TAPD_MCP_使用指南 on whatsapp" href="https://api.whatsapp.com/send?text=TAPD_MCP_%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25B7%25A5%25E5%2585%25B7%2ftapd_mcp_%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"></path></svg></a></li><li><a aria-label="share TAPD_MCP_使用指南 on telegram" href="https://telegram.me/share/url?text=TAPD_MCP_%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25B7%25A5%25E5%2585%25B7%2ftapd_mcp_%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="2 2 28 28" width="30"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"></path></svg></a></li><li><a aria-label="share TAPD_MCP_使用指南 on ycombinator" href="https://news.ycombinator.com/submitlink?t=TAPD_MCP_%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E5%25B7%25A5%25E5%2585%25B7%2ftapd_mcp_%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"></path></svg></a></li></ul></footer></article></main><footer class="footer"><span>© 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+<a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a></span></footer><a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)"><svg fill="currentColor" viewbox="0 0 12 6"><path d="M12 6H0l6-6z"></path></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Mi-Gpt-问题解决总结-20260308.md on 蓝色空间号</title><link>https://bluespace.eu.org/categories/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308.md/</link><description>Recent content in Mi-Gpt-问题解决总结-20260308.md on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Apr 2026 23:32:29 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308.md/index.xml" rel="self" type="application/rss+xml"/><item><title>mi-gpt-问题解决总结-20260308</title><link>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</link><pubDate>Mon, 09 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</guid><description>&lt;h1 id="mi-gpt-小米账号异地登录验证问题完全解决指南"&gt;mi-gpt 小米账号异地登录验证问题完全解决指南&lt;/h1&gt;
+&lt;h2 id="-问题解决日期"&gt;📅 问题解决日期&lt;/h2&gt;
+&lt;p&gt;2026年3月8日&lt;/p&gt;
+&lt;h2 id="-问题描述"&gt;🎯 问题描述&lt;/h2&gt;
+&lt;p&gt;运行 &lt;code&gt;node app.js&lt;/code&gt; 时出现以下错误：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;🔥 触发小米账号异地登录安全验证机制，请在浏览器打开以下链接，并按照网页提示授权验证账号：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;👉 https://account.xiaomi.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?sid=micoapi&amp;amp;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;❌ 小米账号登录失败
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;尝试过的无效方法&lt;/strong&gt;：&lt;/p&gt;</description></item></channel></rss>

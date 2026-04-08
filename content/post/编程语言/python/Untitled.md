@@ -1,0 +1,8 @@
+---
+title: 'Untitled'
+categories: ["编程语言"]
+date: 2026-01-14T19:43:15+08:00
+lastmod: 2026-04-08T23:32:29+08:00
+draft: false
+---
+powershell启动虚拟环境：& E:/AI/MinerU/.venv/Scripts/Activate.ps1
