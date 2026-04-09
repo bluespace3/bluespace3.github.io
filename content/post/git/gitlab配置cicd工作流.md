@@ -2,7 +2,7 @@
 title: 'gitlab配置cicd工作流'
 categories: ["git"]
 date: 2025-09-07T00:22:15+08:00
-lastmod: 2026-04-08T23:32:29+08:00
+lastmod: 2025-09-07T00:22:15+08:00
 draft: false
 ---
 

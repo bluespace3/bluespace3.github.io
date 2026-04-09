@@ -1,0 +1,24 @@
+---
+title: 'Untitled'
+categories: ["工具"]
+date: 2025-12-30T14:30:00+08:00
+lastmod: 2026-04-10T01:57:39+08:00
+draft: false
+---
+### 添加本地mcp
+
+claude mcp add --transport stdio --scope user mysql --env MYSQL_HOST=xxx.xxx.xxx.xxx --env MYSQL_USER=tianqinghong --env MYSQL_PASSWORD="pG4QbSdb1u0KcjUQX+E=" --env MYSQL_DATABASE=db_diag -- "npm exec --yes -- @f4ww4z/mcp-mysql-server"
+
+### 获取mcp列表
+
+claude mcp list
+
+### 无脑接受模式
+
+claude --dangerously-skip-permissions
+
+### 手机无缝衔接claudecode
+
+电脑端npm install -g happy-coder；然后终端输入：happy
+
+手机端下载	**Happy Coder**

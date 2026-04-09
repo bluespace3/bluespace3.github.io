@@ -2,7 +2,7 @@
 title: '配置代理加速github访问'
 categories: ["工具"]
 date: 2026-02-28T03:24:21+08:00
-lastmod: 2026-04-08T23:32:29+08:00
+lastmod: 2026-03-26T09:49:57+08:00
 draft: false
 ---
 # Node.js Shadowsocks 完整配置指南
