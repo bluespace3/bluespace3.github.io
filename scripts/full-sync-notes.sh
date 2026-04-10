@@ -138,6 +138,7 @@ rsync -av \
     --exclude='*.pyc' \
     --exclude='.obsidian/' \
     --exclude='工作/' \
+    --exclude='openclaw/memory/' \
     --include='*.md' \
     --include='*/' \
     --exclude='*' \
@@ -217,14 +218,14 @@ for md_file in post_dir.rglob("*.md"):
     except Exception as e:
         print(f"脱敏失败 {md_file}: {e}", file=sys.stderr)
 
-log_path = f"/tmp/sanitize-{os.getpid()}.txt"
+log_path = "/tmp/sanitize-stats.txt"
 with open(log_path, "w") as f:
     f.write(f"扫描文件: {total_files}\n")
     f.write(f"脱敏文件: {sanitized_files}\n")
     f.write(f"敏感信息: {total_matches}\n")
 PYTHON_EOF
     
-    LOG_TEMP="/tmp/sanitize-$$.txt"
+    LOG_TEMP="/tmp/sanitize-stats.txt"
     if [ -f "$LOG_TEMP" ]; then
         SANITIZED_FILES=$(grep "脱敏文件:" "$LOG_TEMP" | awk '{print $2}')
         TOTAL_MATCHES=$(grep "敏感信息:" "$LOG_TEMP" | awk '{print $2}')

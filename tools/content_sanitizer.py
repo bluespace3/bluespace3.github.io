@@ -50,17 +50,17 @@ class ContentSanitizer:
             'replacement': 'Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
         },
         'password': {
-            'pattern': r'\bpassword[[:space:]]*[=:][[:space:]]*["\']?([^"\'[:space:]]{4,})["\']?\b',
+            'pattern': r'\bpassword\s*[=:]\s*["\']?([^"\'\s]{4,})["\']?\b',
             'description': '密码字段',
             'replacement': r'password: "********"',
         },
         'secret': {
-            'pattern': r'\bsecret[[:space:]]*[=:][[:space:]]*["\']?([^"\'[:space:]]{4,})["\']?\b',
+            'pattern': r'\bsecret\s*[=:]\s*["\']?([^"\'\s]{4,})["\']?\b',
             'description': '密钥字段',
             'replacement': r'secret: "********"',
         },
         'api_key': {
-            'pattern': r'\b(api[-_]?key|apikey)[[:space:]]*[=:][[:space:]]*["\']?([^"\'[:space:]]{8,})["\']?\b',
+            'pattern': r'\b(api[-_]?key|apikey)\s*[=:]\s*["\']?([^"\'\s]{8,})["\']?\b',
             'description': 'API Key 字段',
             'replacement': r'\1: "xxxxxxxx"',
         },
@@ -72,7 +72,7 @@ class ContentSanitizer:
         'private_key': {
             'pattern': r'-----BEGIN ((RSA )?PRIVATE KEY|ENCRYPTED PRIVATE KEY)-----[\s\S]+?-----END \1-----',
             'description': '私钥',
-            'replacement': '-----BEGIN \1-----\n[REDACTED PRIVATE KEY]\n-----END \1-----',
+            'replacement': r'-----BEGIN \1-----\n[REDACTED PRIVATE KEY]\n-----END \1-----',
         },
         'ip_address': {
             'pattern': r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b(?!\.)',  # 排除 Markdown 语法

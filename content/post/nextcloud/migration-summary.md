@@ -62,7 +62,7 @@ docker exec nextcloud-db mariadb-dump \
 ### 2. 测试云数据库连接
 ```bash
 # 使用 SSL 证书连接
-mysql --user avnadmin --password=<AVN_PASSWORD> \
+mysql --user avnadmin --password: "********"> \
   --host <AVN_HOST> --port 23804 \
   --ssl-ca=/path/to/ca.pem defaultdb
 ```
@@ -74,7 +74,7 @@ mysql -e "CREATE DATABASE IF NOT EXISTS nextcloud;"
 
 # 导入数据
 mysql --host=<AVN_HOST> --port=23804 \
-  --user=avnadmin --password=<AVN_PASSWORD> \
+  --user=avnadmin --password: "********"> \
   --ssl-ca=/path/to/ca.pem nextcloud \
   < /tmp/nextcloud_backup.sql
 ```

@@ -471,6 +471,10 @@ draft: false
         # 查找所有 Markdown 文件，排除忽略的目录
         md_files = []
         for file_path in directory.rglob('*.md'):
+            # 跳过 _index.md
+            if file_path.name == '_index.md':
+                continue
+
             # 检查文件路径中是否包含忽略的目录
             skip = False
             for ignore_dir in ignore_dirs:
