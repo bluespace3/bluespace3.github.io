@@ -1,8 +1,7 @@
 ---
-title: 'SYSTEM_DESIGN'
-categories: ["工具"]
-date: 2025-09-07T00:22:06+08:00
-lastmod: 2026-04-10T01:57:39+08:00
+title: '系统设计与开发者文档'
+categories: ['工具']
+date: 2026-05-10T20:58:04+0800
 draft: false
 ---
 # 系统设计与开发者文档

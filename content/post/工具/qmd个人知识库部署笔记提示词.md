@@ -1,8 +1,7 @@
 ---
 title: 'qmd个人知识库部署笔记提示词'
-categories: ["工具"]
-date: 2026-04-10T14:29:31+08:00
-lastmod: 2026-04-10T14:29:31+08:00
+categories: ['工具']
+date: 2026-04-11T03:00:03+0800
 draft: false
 ---
  请帮我从零搭建一个基于 Karpathy LLM Wiki 思路的个人知识库系统。  

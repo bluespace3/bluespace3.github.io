@@ -1,8 +1,7 @@
 ---
-title: 'markdown语法速查'
-categories: ["编程"]
-date: 2026-04-13T10:04:32+08:00
-lastmod: 2026-04-13T10:04:32+08:00
+title: 'Markdown 常用语法笔记'
+categories: ['编程']
+date: 2026-05-10T20:58:02+0800
 draft: false
 ---
 # Markdown 常用语法笔记

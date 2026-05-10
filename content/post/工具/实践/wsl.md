@@ -1,8 +1,7 @@
 ---
 title: 'wsl'
-categories: ["工具"]
-date: 2026-01-14T19:53:18+08:00
-lastmod: 2026-04-10T01:57:39+08:00
+categories: ['工具']
+date: 2026-05-10T20:58:04+0800
 draft: false
 ---
 账号：dministrator

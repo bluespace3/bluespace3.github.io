@@ -1,8 +1,7 @@
 ---
-title: 'test_knowledge_base'
-categories: ["资料"]
-date: 2026-04-10T01:57:39+08:00
-lastmod: 2026-04-10T01:57:39+08:00
+title: '这是一个测试知识库文件'
+categories: ['资料']
+date: 2026-04-10T02:16:14+0800
 draft: false
 ---
 # 这是一个测试知识库文件

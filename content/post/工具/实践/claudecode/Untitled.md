@@ -1,8 +1,7 @@
 ---
-title: 'Untitled'
-categories: ["工具"]
-date: 2025-12-30T14:30:00+08:00
-lastmod: 2026-04-10T01:57:39+08:00
+title: '添加本地mcp'
+categories: ['工具']
+date: 2026-05-10T20:58:04+0800
 draft: false
 ---
 ### 添加本地mcp
