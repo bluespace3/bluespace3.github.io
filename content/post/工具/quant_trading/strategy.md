@@ -1,8 +1,7 @@
 ---
-title: 'strategy'
-categories: ["工具"]
-date: 2025-09-07T00:22:05+08:00
-lastmod: 2026-04-10T01:57:39+08:00
+title: '量化交易策略知识库'
+categories: ['技术']
+date: 2026-04-10T01:57:39+08:00
 draft: false
 ---
 # 量化交易策略知识库

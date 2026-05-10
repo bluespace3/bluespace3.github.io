@@ -1,23 +1,8 @@
 ---
 title: 'linux安装python'
-categories: ["编程"]
-date: 2025-09-07T00:20:43+08:00
-lastmod: 2026-04-10T01:57:39+08:00
+categories: ['技术']
+date: 2026-04-10T01:57:39+08:00
 draft: false
----
-
-
----
-title: "linux安装python"
-
-categories: ["技术",  "linux", "python"]
-date: 2025-03-20T12:59:32+08:00
-
-
-draft: false
-
-
-tags: ["linux", "python", "教程"]
 ---
 
 #依赖包

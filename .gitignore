@@ -31,3 +31,4 @@ wheels/
 
 npminstall-debug.log
 backups/
+content/post.bak.*

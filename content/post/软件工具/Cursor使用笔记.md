@@ -1,7 +1,7 @@
 ---
 title: 'Cursor 使用笔记'
 categories: ['技术']
-date: 2026-05-10T22:16:10+0800
+date: 2026-05-06T00:00:26+08:00
 draft: false
 ---
 # Cursor 使用笔记

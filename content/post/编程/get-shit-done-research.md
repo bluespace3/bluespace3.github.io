@@ -1,8 +1,7 @@
 ---
-title: 'get-shit-done-research'
-categories: ["编程"]
+title: '关于 get-shit-done (GSD) 系统的研究笔记'
+categories: ['技术']
 date: 2026-05-07T14:57:38+08:00
-lastmod: 2026-05-07T14:57:38+08:00
 draft: false
 ---
 # 关于 get-shit-done (GSD) 系统的研究笔记
