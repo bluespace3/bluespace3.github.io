@@ -129,14 +129,40 @@ if [ -z "$GITHUB_TOKEN" ]; then
     log "正在为无 front matter 的文件添加基础 front matter..."
     cd "$BLOG_DIR"
 
-    # 使用简单的 Python 脚本添加基础 front matter
-    ADDED_COUNT=$(python3 << 'PYTHON_EOF'
+    # 使用 Python 脚本添加 front matter，优先从笔记仓库 git log 获取真实时间
+    NOTE_REPO_PATH="$NOTE_REPO"
+    ADDED_COUNT=$(python3 << PYTHON_EOF
 import os
+import subprocess
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 
 post_dir = Path("content/post")
+note_repo = Path("$NOTE_REPO_PATH")
 added_count = 0
+
+def get_git_time(repo_path: Path, rel_path: str):
+    """从笔记仓库 git log 获取文件的最后更新时间"""
+    try:
+        result = subprocess.run(
+            ['git', 'log', '-1', '--format=%aI', '--', rel_path],
+            cwd=repo_path, capture_output=True, text=True, timeout=5
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return result.stdout.strip()
+    except Exception:
+        pass
+    return None
+
+def find_in_note_repo(note_repo: Path, filename: str):
+    """在笔记仓库中查找同名文件，返回相对路径"""
+    for f in note_repo.rglob(filename):
+        if f.is_file() and f.suffix == '.md':
+            try:
+                return str(f.relative_to(note_repo))
+            except ValueError:
+                pass
+    return None
 
 for md_file in post_dir.rglob("*.md"):
     # 跳过 _index.md
@@ -160,21 +186,44 @@ for md_file in post_dir.rglob("*.md"):
                 title = line.lstrip('#').strip()
                 break
             elif line.strip():
-                # 遇到非空非标题行，说明没有标题
                 break
 
         if not title:
             title = md_file.stem
 
-        # 生成当前时间（东八区）
-        tz = timezone(timedelta(hours=8))
-        now = datetime.now(tz).strftime('%Y-%m-%dT%H:%M:%S%z')
+        # 尝试从笔记仓库 git log 获取真实时间
+        date_str = None
+        if note_repo.exists():
+            # 先用博客相对路径直接匹配
+            try:
+                rel = str(md_file.relative_to(post_dir))
+                date_str = get_git_time(note_repo, rel)
+            except ValueError:
+                pass
 
-        # 构建简单的 front matter
+            # 如果直接匹配失败，用文件名在笔记仓库中查找
+            if not date_str:
+                found_rel = find_in_note_repo(note_repo, md_file.name)
+                if found_rel:
+                    date_str = get_git_time(note_repo, found_rel)
+
+        # 如果 git log 也获取不到，从文件名提取日期作为最后手段
+        if not date_str:
+            import re
+            m = re.match(r'(\d{4}-\d{2}-\d{2})', md_file.stem)
+            if m:
+                date_str = f"{m.group(1)}T22:00:00+08:00"
+
+        # 最终回退：使用当前时间（但这是不应该发生的情况）
+        if not date_str:
+            tz = timezone(timedelta(hours=8))
+            date_str = datetime.now(tz).strftime('%Y-%m-%dT%H:%M:%S%z')
+
+        # 构建 front matter
         frontmatter = f"""---
 title: '{title}'
 categories: ['技术']
-date: {now}
+date: {date_str}
 draft: false
 ---
 """
