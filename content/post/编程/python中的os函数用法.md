@@ -1,7 +1,8 @@
 ---
 title: 'python中的os函数用法'
-categories: ['编程']
-date: 2026-04-10T02:16:14+0800
+categories: ["编程"]
+date: 2025-09-07T00:20:47+08:00
+lastmod: 2026-04-10T01:57:39+08:00
 draft: false
 ---
 

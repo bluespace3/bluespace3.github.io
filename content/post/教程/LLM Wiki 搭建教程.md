@@ -1,7 +1,8 @@
 ---
 title: 'LLM Wiki 搭建教程'
-categories: ['教程']
-date: 2026-04-10T02:16:14+0800
+categories: ["教程"]
+date: 2026-04-08T23:23:51+08:00
+lastmod: 2026-04-08T23:23:51+08:00
 draft: false
 ---
 # LLM Wiki 搭建教程

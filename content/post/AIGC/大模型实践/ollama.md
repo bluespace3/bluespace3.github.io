@@ -1,7 +1,8 @@
 ---
 title: 'ollama'
-categories: ['AIGC']
-date: 2026-04-10T02:16:14+0800
+categories: ["AIGC"]
+date: 2025-12-13T12:50:30+08:00
+lastmod: 2026-04-10T01:57:39+08:00
 draft: false
 ---
 gpt-oss:20b思考、工具

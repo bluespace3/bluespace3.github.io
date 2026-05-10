@@ -1,7 +1,8 @@
 ---
-title: 'Cursor 使用笔记'
-categories: ['软件工具']
-date: 2026-05-10T20:58:02+0800
+title: 'Cursor使用笔记'
+categories: ["软件工具"]
+date: 2026-05-06T00:00:26+08:00
+lastmod: 2026-05-06T00:00:26+08:00
 draft: false
 ---
 # Cursor 使用笔记

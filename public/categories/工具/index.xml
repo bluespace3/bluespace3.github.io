@@ -1,104 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/</link><description>Recent content in 工具 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 10 May 2026 20:58:04 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>cursor</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/cursor/</link><pubDate>Sun, 10 May 2026 20:58:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/cursor/</guid><description>&lt;p>下载&lt;/p>
-&lt;p>&lt;a href="https://cursor.com/cn">Cursor: The best way to code with AI&lt;/a>&lt;/p>
-&lt;p>安装&lt;/p>
-&lt;p>&lt;img src="images/7ee6d65b-0220-480d-86b1-34efcce6b8c8.png" alt="image.png">&lt;img src="images/6146fce6-30c0-4bc5-9a16-89d42769bb7f.png" alt="image.png">&lt;img src="images/9a37842a-0ac5-42d4-ab28-4bbe8a950430.png" alt="image.png">选择loginin,使用账号&lt;a href="mailto:user@example.com">user@example.com&lt;/a> 选择邮箱验证码登陆（验证码找**）。&lt;/p>
-&lt;p>&lt;img src="images/176f6039-ca70-4692-8132-df208c391508.png" alt="image.png">使用&lt;/p>
-&lt;p>&lt;img src="images/468c60f9-9240-4c6f-9666-da3feac426ed.png" alt="image.png">&lt;img src="images/5afe4587-1c1d-4da1-88ab-302fa695b632.png" alt="image.png">然后就可以对话的方式编写项目代码了。&lt;/p>
-&lt;p>一共有4种模式&lt;/p>
-&lt;p>&lt;img src="images/894cecf4-8175-4bf3-afc7-6f2d93e48373.png" alt="image.png">1.建议在开始编码之前先使用“plan”模式进入规划，该阶段主要是澄清需求和编码设计。这个阶段非常重要不建议省略，因为前期描述清楚需求做好规划设计能有效减少返工。&lt;/p>
-&lt;p>2.在规划完成后，选择“agent”模式进入编码模式，开始正式编码。这个时候会开始自主编码，可能会涉及并增删改文件，建议提取做好git备份，方便随时回滚。&lt;/p></description></item><item><title>Node.js Shadowsocks 完整配置指南</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</link><pubDate>Sun, 10 May 2026 20:58:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</guid><description>&lt;h1 id="nodejs-shadowsocks-完整配置指南">Node.js Shadowsocks 完整配置指南&lt;/h1>
-&lt;h2 id="架构说明">架构说明&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">本地电脑 海外服务器
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">┌─────────────┐ ┌──────────────┐
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ 浏览器 │────SOCKS5────▶│ Shadowsocks │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ (1080) │ │ Server │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ │ │ │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ Node.js │────加密──────▶│ (ss-server) │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ 客户端 │ │ │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└─────────────┘ └──────────────┘
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └─────────────访问 GitHub ─────┘
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="第一部分服务端配置海外服务器">第一部分：服务端配置（海外服务器）&lt;/h2>
-&lt;h3 id="11-安装-shadowsocks-服务端">1.1 安装 Shadowsocks 服务端&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># SSH 连接到服务器&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh root@your-server-ip
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 更新包管理器&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt update
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 安装 shadowsocks-libev&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt install shadowsocks-libev -y
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="12-创建配置文件">1.2 创建配置文件&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">cat &amp;gt; /etc/shadowsocks-libev/config.json &lt;span class="s">&amp;lt;&amp;lt; EOF
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">{
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;server&amp;#34;: &amp;#34;xxx.xxx.xxx.xxx&amp;#34;,
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;server_port&amp;#34;: 8388,
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;password&amp;#34;: &amp;#34;YourStrongPassword123!&amp;#34;,
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;timeout&amp;#34;: 300,
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;method&amp;#34;: &amp;#34;aes-256-gcm&amp;#34;
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">}
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">EOF&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>配置说明&lt;/strong>：&lt;/p></description></item><item><title>Shadowsocks 内网穿透配置</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</link><pubDate>Sun, 10 May 2026 20:58:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="shadowsocks-内网穿透配置">Shadowsocks 内网穿透配置&lt;/h1>
-&lt;h2 id="服务端配置">服务端配置&lt;/h2>
-&lt;h3 id="1-安装-shadowsocks-服务端">1. 安装 Shadowsocks 服务端&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Ubuntu/Debian&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt install shadowsocks-libev
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 启动服务&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl start shadowsocks-libev
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> shadowsocks-libev
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-配置服务端">2. 配置服务端&lt;/h3>
-&lt;p>编辑配置文件 &lt;code>/etc/shadowsocks-libev/config.json&lt;/code>：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;server&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;xxx.xxx.xxx.xxx&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;server_port&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">8388&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;password&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;lt;密码&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;timeout&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">300&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;method&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;aes-256-gcm&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-重启服务">3. 重启服务&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">systemctl restart shadowsocks-libev
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl status shadowsocks-libev
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="4-检查服务状态">4. 检查服务状态&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检查端口监听&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">netstat -tlnp &lt;span class="p">|&lt;/span> grep &lt;span class="m">8388&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看日志&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">journalctl -u shadowsocks-libev -n &lt;span class="m">50&lt;/span> --no-pager
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="5-检查防火墙">5. 检查防火墙&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检查 UFW 状态&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ufw status
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 如果 UFW 启用，开放端口&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ufw allow 8388/tcp
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="6-云服务商安全组">6. 云服务商安全组&lt;/h3>
-&lt;p>&lt;strong>重要！&lt;/strong> 必须在云服务商控制台开放 TCP 8388 端口。&lt;/p></description></item><item><title>wsl</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/wsl/</link><pubDate>Sun, 10 May 2026 20:58:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/wsl/</guid><description>&lt;p>账号：dministrator&lt;/p>
-&lt;p>密码：123456&lt;/p>
-&lt;p>激活py虚拟环境：source vllm_env/bin/activate&lt;/p>
-&lt;p>vllm运行大模型：vllm serve .xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-14B-GPTQ-Int4
-&amp;ndash;trust-remote-code
-&amp;ndash;max-model-len 65536
-&amp;ndash;gpu-memory-utilization 0.95
-&amp;ndash;tensor-parallel-size 1
-&amp;ndash;max-num-seqs 1&lt;/p>
-&lt;p>vllm serve .xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-VL-8B-Instruct
-&amp;ndash;trust-remote-code
-&amp;ndash;max-model-len 65536
-&amp;ndash;gpu-memory-utilization 0.95
-&amp;ndash;tensor-parallel-size 1
-&amp;ndash;max-num-seqs 1&lt;/p></description></item><item><title>添加本地mcp</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link><pubDate>Sun, 10 May 2026 20:58:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid><description>&lt;h3 id="添加本地mcp">添加本地mcp&lt;/h3>
-&lt;p>claude mcp add &amp;ndash;transport stdio &amp;ndash;scope user mysql &amp;ndash;env MYSQL_HOST=xxx.xxx.xxx.xxx &amp;ndash;env MYSQL_USER=tianqinghong &amp;ndash;env MYSQL_PASSWORD=&amp;ldquo;pG4QbSdb1u0KcjUQX+E=&amp;rdquo; &amp;ndash;env MYSQL_DATABASE=db_diag &amp;ndash; &amp;ldquo;npm exec &amp;ndash;yes &amp;ndash; @f4ww4z/mcp-mysql-server&amp;rdquo;&lt;/p>
-&lt;h3 id="获取mcp列表">获取mcp列表&lt;/h3>
-&lt;p>claude mcp list&lt;/p>
-&lt;h3 id="无脑接受模式">无脑接受模式&lt;/h3>
-&lt;p>claude &amp;ndash;dangerously-skip-permissions&lt;/p>
-&lt;h3 id="手机无缝衔接claudecode">手机无缝衔接claudecode&lt;/h3>
-&lt;p>电脑端npm install -g happy-coder；然后终端输入：happy&lt;/p>
-&lt;p>手机端下载	&lt;strong>Happy Coder&lt;/strong>&lt;/p></description></item><item><title>系统设计与开发者文档</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/quant_trading/system_design/</link><pubDate>Sun, 10 May 2026 20:58:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/quant_trading/system_design/</guid><description>&lt;h1 id="系统设计与开发者文档">系统设计与开发者文档&lt;/h1>
-&lt;p>本文档为量化交易系统的核心开发者提供全面的技术参考，涵盖了系统架构、核心模块、API接口、部署运维以及未来的发展规划。&lt;/p>
-&lt;h2 id="1-系统架构">1. 系统架构&lt;/h2>
-&lt;p>本系统采用模块化设计，主要由数据层、分析层、策略层和应用层组成。&lt;/p></description></item><item><title>1cat大模型速度测试 - Qwen3.6-35B-A3B-AWQ</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95-qwen3.6-35b-a3b/</link><pubDate>Sun, 10 May 2026 20:58:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95-qwen3.6-35b-a3b/</guid><description>&lt;h1 id="1cat大模型速度测试---qwen36-35b-a3b-awq">1cat大模型速度测试 - Qwen3.6-35B-A3B-AWQ&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/</link><description>Recent content in 工具 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 10 May 2026 11:11:29 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>本地大模型测试工具</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link><pubDate>Sun, 10 May 2026 11:11:29 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid><description>&lt;h1 id="本地大模型测试工具">本地大模型测试工具&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;strong>记录日期:&lt;/strong> 2026-05-01
+&lt;strong>环境:&lt;/strong> Windows, OpenClaw 工作区&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="1-vllm-playground--数据测试">1. vLLM Playground — 数据测试&lt;/h2>
+&lt;p>&lt;strong>定位:&lt;/strong> 偏向于测试数据、交互调试&lt;/p>
+&lt;p>&lt;strong>启动命令:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">vllm-playground --host localhost
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>特点:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Web UI 界面，支持实时对话&lt;/li>
+&lt;li>Benchmark 面板集成 GuideLLM&lt;/li>
+&lt;li>模型管理（拉取/切换）&lt;/li>
+&lt;li>可观测性（token 计数、延迟、吞吐）&lt;/li>
+&lt;li>中英双语&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-llm_speedtest--图表趋势">2. llm_speedtest — 图表趋势&lt;/h2>
+&lt;p>&lt;strong>定位:&lt;/strong> 偏向于性能基准测试、生成图表趋势&lt;/p></description></item><item><title>速度测试-qwen3.6-35b-a3b</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95-qwen3.6-35b-a3b/</link><pubDate>Sat, 02 May 2026 00:47:38 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E9%80%9F%E5%BA%A6%E6%B5%8B%E8%AF%95-qwen3.6-35b-a3b/</guid><description>&lt;h1 id="1cat大模型速度测试---qwen36-35b-a3b-awq">1cat大模型速度测试 - Qwen3.6-35B-A3B-AWQ&lt;/h1>
 &lt;blockquote>
 &lt;p>&lt;strong>测试日期:&lt;/strong> 2026-05-01
 &lt;strong>模型:&lt;/strong> Qwen3.6-35B-A3B-AWQ
@@ -154,25 +72,7 @@
 &lt;/table>
 &lt;hr>
 &lt;h2 id="与qwen36-27b-awq对比">&lt;strong>与&lt;/strong>Qwen3.6-**27b-AWQ对比&lt;/h2>
-&lt;p>**&lt;img src="https://raw.githubusercontent.com/bluespace3/note-gen-image-sync/main/7b9dcd4a-e72d-4be2-beff-8cfb53324dc2.png" alt="Comparison_Qwen3.6-27B-AWQ_-无用户备注，接口_，模_vs_Qwen3.6-35B-A3B-AWQ_-_无用户备注，接口_OpenAI兼容接_2026-05-01_16_46_05.png">&lt;/p></description></item><item><title>本地大模型测试工具</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</link><pubDate>Sun, 10 May 2026 20:58:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</guid><description>&lt;h1 id="本地大模型测试工具">本地大模型测试工具&lt;/h1>
-&lt;blockquote>
-&lt;p>&lt;strong>记录日期:&lt;/strong> 2026-05-01
-&lt;strong>环境:&lt;/strong> Windows, OpenClaw 工作区&lt;/p>&lt;/blockquote>
-&lt;hr>
-&lt;h2 id="1-vllm-playground--数据测试">1. vLLM Playground — 数据测试&lt;/h2>
-&lt;p>&lt;strong>定位:&lt;/strong> 偏向于测试数据、交互调试&lt;/p>
-&lt;p>&lt;strong>启动命令:&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">vllm-playground --host localhost
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>特点:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Web UI 界面，支持实时对话&lt;/li>
-&lt;li>Benchmark 面板集成 GuideLLM&lt;/li>
-&lt;li>模型管理（拉取/切换）&lt;/li>
-&lt;li>可观测性（token 计数、延迟、吞吐）&lt;/li>
-&lt;li>中英双语&lt;/li>
-&lt;/ul>
-&lt;h2 id="2-llm_speedtest--图表趋势">2. llm_speedtest — 图表趋势&lt;/h2>
-&lt;p>&lt;strong>定位:&lt;/strong> 偏向于性能基准测试、生成图表趋势&lt;/p></description></item><item><title>qmd个人知识库部署笔记提示词</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/qmd%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E6%8F%90%E7%A4%BA%E8%AF%8D/</link><pubDate>Sat, 11 Apr 2026 03:00:03 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/qmd%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E6%8F%90%E7%A4%BA%E8%AF%8D/</guid><description>&lt;p>请帮我从零搭建一个基于 Karpathy LLM Wiki 思路的个人知识库系统。&lt;br>
+&lt;p>**&lt;img src="https://raw.githubusercontent.com/bluespace3/note-gen-image-sync/main/7b9dcd4a-e72d-4be2-beff-8cfb53324dc2.png" alt="Comparison_Qwen3.6-27B-AWQ_-无用户备注，接口_，模_vs_Qwen3.6-35B-A3B-AWQ_-_无用户备注，接口_OpenAI兼容接_2026-05-01_16_46_05.png">&lt;/p></description></item><item><title>qmd个人知识库部署笔记提示词</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/qmd%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E6%8F%90%E7%A4%BA%E8%AF%8D/</link><pubDate>Fri, 10 Apr 2026 14:29:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/qmd%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E6%8F%90%E7%A4%BA%E8%AF%8D/</guid><description>&lt;p>请帮我从零搭建一个基于 Karpathy LLM Wiki 思路的个人知识库系统。&lt;br>
 完整执行以下所有步骤，不要遗漏任何细节。&lt;/p>
 &lt;h2 id="一创建目录结构">一、创建目录结构&lt;/h2>
 &lt;p>创建以下目录：&lt;br>
@@ -192,18 +92,96 @@ scripts/&lt;/p>
 &lt;h2 id="二创建系统文件">二、创建系统文件&lt;/h2>
 &lt;h3 id="wikiindexmd">wiki/index.md&lt;/h3>
 &lt;p>frontmatter 包含：type: system-index, graph-excluded: true&lt;br>
-正文包含：Sources 列表（按日期倒序）、Concepts 列表、Entities 列表、Recent Synthesis 列表、Outputs 列表&lt;/p></description></item><item><title>clawdbot</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/clawdbot/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/clawdbot/</guid><description>&lt;p>设置clawdbot和tailscale开机自启&lt;/p>
-&lt;p>PS C:\WINDOWS\system32&amp;gt; Unregister-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -&lt;/p>
-&lt;p>Confirm:$false -ErrorAction SilentlyContinue
-PS C:\WINDOWS\system32&amp;gt; $Action = New-ScheduledTaskAction -Execute &amp;ldquo;PowerShell.exe&amp;rdquo; -Argument &amp;ldquo;-File C:\Users\Administrator\Start-Clawdbot.ps1&amp;rdquo;
-PS C:\WINDOWS\system32&amp;gt; $Trigger = New-ScheduledTaskTrigger -AtStartup
-PS C:\WINDOWS\system32&amp;gt; $Settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
-PS C:\WINDOWS\system32&amp;gt; $Principal = New-ScheduledTaskPrincipal -UserId &amp;ldquo;$env:USERNAME&amp;rdquo; -LogonType Interactive
-PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p></description></item><item><title>doc转md</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid><description>&lt;ol>
-&lt;li>Pandoc 简介&lt;/li>
+正文包含：Sources 列表（按日期倒序）、Concepts 列表、Entities 列表、Recent Synthesis 列表、Outputs 列表&lt;/p></description></item><item><title>cursor</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/cursor/</link><pubDate>Fri, 27 Mar 2026 14:54:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/cursor/</guid><description>&lt;p>下载&lt;/p>
+&lt;p>&lt;a href="https://cursor.com/cn">Cursor: The best way to code with AI&lt;/a>&lt;/p>
+&lt;p>安装&lt;/p>
+&lt;p>&lt;img src="images/7ee6d65b-0220-480d-86b1-34efcce6b8c8.png" alt="image.png">&lt;img src="images/6146fce6-30c0-4bc5-9a16-89d42769bb7f.png" alt="image.png">&lt;img src="images/9a37842a-0ac5-42d4-ab28-4bbe8a950430.png" alt="image.png">选择loginin,使用账号&lt;a href="mailto:user@example.com">user@example.com&lt;/a> 选择邮箱验证码登陆（验证码找**）。&lt;/p>
+&lt;p>&lt;img src="images/176f6039-ca70-4692-8132-df208c391508.png" alt="image.png">使用&lt;/p>
+&lt;p>&lt;img src="images/468c60f9-9240-4c6f-9666-da3feac426ed.png" alt="image.png">&lt;img src="images/5afe4587-1c1d-4da1-88ab-302fa695b632.png" alt="image.png">然后就可以对话的方式编写项目代码了。&lt;/p>
+&lt;p>一共有4种模式&lt;/p>
+&lt;p>&lt;img src="images/894cecf4-8175-4bf3-afc7-6f2d93e48373.png" alt="image.png">1.建议在开始编码之前先使用“plan”模式进入规划，该阶段主要是澄清需求和编码设计。这个阶段非常重要不建议省略，因为前期描述清楚需求做好规划设计能有效减少返工。&lt;/p>
+&lt;p>2.在规划完成后，选择“agent”模式进入编码模式，开始正式编码。这个时候会开始自主编码，可能会涉及并增删改文件，建议提取做好git备份，方便随时回滚。&lt;/p></description></item><item><title>Shadowsocks内网穿透配置</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 28 Feb 2026 13:33:41 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="shadowsocks-内网穿透配置">Shadowsocks 内网穿透配置&lt;/h1>
+&lt;h2 id="服务端配置">服务端配置&lt;/h2>
+&lt;h3 id="1-安装-shadowsocks-服务端">1. 安装 Shadowsocks 服务端&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Ubuntu/Debian&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt install shadowsocks-libev
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 启动服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl start shadowsocks-libev
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> shadowsocks-libev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="2-配置服务端">2. 配置服务端&lt;/h3>
+&lt;p>编辑配置文件 &lt;code>/etc/shadowsocks-libev/config.json&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;server&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;xxx.xxx.xxx.xxx&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;server_port&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">8388&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;password&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;lt;密码&amp;gt;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;timeout&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">300&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;method&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;aes-256-gcm&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-重启服务">3. 重启服务&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">systemctl restart shadowsocks-libev
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl status shadowsocks-libev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="4-检查服务状态">4. 检查服务状态&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检查端口监听&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">netstat -tlnp &lt;span class="p">|&lt;/span> grep &lt;span class="m">8388&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看日志&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">journalctl -u shadowsocks-libev -n &lt;span class="m">50&lt;/span> --no-pager
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="5-检查防火墙">5. 检查防火墙&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检查 UFW 状态&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ufw status
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 如果 UFW 启用，开放端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ufw allow 8388/tcp
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="6-云服务商安全组">6. 云服务商安全组&lt;/h3>
+&lt;p>&lt;strong>重要！&lt;/strong> 必须在云服务商控制台开放 TCP 8388 端口。&lt;/p></description></item><item><title>配置代理加速github访问</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</link><pubDate>Sat, 28 Feb 2026 03:24:21 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9Fgithub%E8%AE%BF%E9%97%AE/</guid><description>&lt;h1 id="nodejs-shadowsocks-完整配置指南">Node.js Shadowsocks 完整配置指南&lt;/h1>
+&lt;h2 id="架构说明">架构说明&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">本地电脑 海外服务器
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">┌─────────────┐ ┌──────────────┐
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ 浏览器 │────SOCKS5────▶│ Shadowsocks │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ (1080) │ │ Server │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ │ │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ Node.js │────加密──────▶│ (ss-server) │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│ 客户端 │ │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└─────────────┘ └──────────────┘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> │ │
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └─────────────访问 GitHub ─────┘
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="第一部分服务端配置海外服务器">第一部分：服务端配置（海外服务器）&lt;/h2>
+&lt;h3 id="11-安装-shadowsocks-服务端">1.1 安装 Shadowsocks 服务端&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># SSH 连接到服务器&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh root@your-server-ip
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 更新包管理器&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 安装 shadowsocks-libev&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">apt install shadowsocks-libev -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="12-创建配置文件">1.2 创建配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">cat &amp;gt; /etc/shadowsocks-libev/config.json &lt;span class="s">&amp;lt;&amp;lt; EOF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">{
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;server&amp;#34;: &amp;#34;xxx.xxx.xxx.xxx&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;server_port&amp;#34;: 8388,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;password&amp;#34;: &amp;#34;YourStrongPassword123!&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;timeout&amp;#34;: 300,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;method&amp;#34;: &amp;#34;aes-256-gcm&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>配置说明&lt;/strong>：&lt;/p></description></item><item><title>ssh连接服务器踩坑点</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link><pubDate>Wed, 25 Feb 2026 21:36:52 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid><description>&lt;h1 id="通过密钥连接服务器踩坑配置正确但是连接失败">通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1>
+&lt;ol>
+&lt;li>初始状态&lt;/li>
 &lt;/ol>
-&lt;p>Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p></description></item><item><title>H96Max rk3318 4+64G的刷机教程</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h1 id="h96max-rk3318-464g的刷机教程">H96Max rk3318 4+64G的刷机教程&lt;/h1>
-&lt;p>相信很多朋友已经搜索了一大堆这个机型的刷机教程，再此之前我也搜索过，不过对我的帮助不大，所以我又连续几天在armbian官方论坛搜索查询、向大神请教。最终解决了刷机难题。 首先，我们来确认一下机型吧，看看图片和型号是否对得上。&lt;/p></description></item><item><title>mineru</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/mineru/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/mineru/</guid><description>&lt;p>mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p></description></item><item><title>qodercli</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/qodercli/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/qodercli/</guid><description>&lt;p>终端输入qodercli启动&lt;/p></description></item><item><title>terminus快捷键使用合集</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/terminus/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/terminus/</guid><description>&lt;h2 id="terminus快捷键使用合集">terminus快捷键使用合集&lt;/h2>
+&lt;ul>
+&lt;li>已成功生成SSH密钥对（ed25519）&lt;/li>
+&lt;li>已将公钥添加到服务器的 ~/.ssh/authorized_keys - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>问题表现
+ssh -o BatchMode=yes -o PasswordAuthentication=no &lt;a href="mailto:username@ip">username@ip&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="结果permission-denied-password">结果：Permission denied (password)&lt;/h2>
+&lt;p>即使公钥已在服务器上，公钥认证仍然失败。&lt;/p></description></item><item><title>机顶盒刷机linux系统</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</link><pubDate>Wed, 25 Feb 2026 10:41:06 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BAlinux%E7%B3%BB%E7%BB%9F/</guid><description>&lt;h1 id="h96max-rk3318-464g的刷机教程">H96Max rk3318 4+64G的刷机教程&lt;/h1>
+&lt;p>相信很多朋友已经搜索了一大堆这个机型的刷机教程，再此之前我也搜索过，不过对我的帮助不大，所以我又连续几天在armbian官方论坛搜索查询、向大神请教。最终解决了刷机难题。 首先，我们来确认一下机型吧，看看图片和型号是否对得上。&lt;/p></description></item><item><title>terminus</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/terminus/</link><pubDate>Sun, 22 Feb 2026 09:55:15 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/terminus/</guid><description>&lt;h2 id="terminus快捷键使用合集">terminus快捷键使用合集&lt;/h2>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -285,7 +263,43 @@ PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;p>终端内&lt;/p></description></item><item><title>番茄下载</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid><description>&lt;p>&lt;img src="undefined" alt="image.png">&lt;/p></description></item><item><title>量化交易策略知识库</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/quant_trading/strategy/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/quant_trading/strategy/</guid><description>&lt;h1 id="量化交易策略知识库">量化交易策略知识库&lt;/h1>
+&lt;p>终端内&lt;/p></description></item><item><title>clawdbot</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/clawdbot/</link><pubDate>Tue, 27 Jan 2026 22:39:03 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/clawdbot/</guid><description>&lt;p>设置clawdbot和tailscale开机自启&lt;/p>
+&lt;p>PS C:\WINDOWS\system32&amp;gt; Unregister-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -&lt;/p>
+&lt;p>Confirm:$false -ErrorAction SilentlyContinue
+PS C:\WINDOWS\system32&amp;gt; $Action = New-ScheduledTaskAction -Execute &amp;ldquo;PowerShell.exe&amp;rdquo; -Argument &amp;ldquo;-File C:\Users\Administrator\Start-Clawdbot.ps1&amp;rdquo;
+PS C:\WINDOWS\system32&amp;gt; $Trigger = New-ScheduledTaskTrigger -AtStartup
+PS C:\WINDOWS\system32&amp;gt; $Settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 0) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+PS C:\WINDOWS\system32&amp;gt; $Principal = New-ScheduledTaskPrincipal -UserId &amp;ldquo;$env:USERNAME&amp;rdquo; -LogonType Interactive
+PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start-WSL2-Clawdbot&amp;rdquo; -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principa&lt;/p></description></item><item><title>vllm</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/vllm/</link><pubDate>Thu, 22 Jan 2026 15:50:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/vllm/</guid><description>&lt;h1 id="绕过网站反调试机制打不开f12的解决方案">绕过网站反调试机制（打不开F12的解决方案）&lt;/h1>
+&lt;p>&lt;strong>根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong>&lt;/p></description></item><item><title>qodercli</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/qodercli/</link><pubDate>Sat, 17 Jan 2026 09:40:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/qodercli/</guid><description>&lt;p>终端输入qodercli启动&lt;/p></description></item><item><title>wsl</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/wsl/</link><pubDate>Wed, 14 Jan 2026 19:53:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/wsl/</guid><description>&lt;p>账号：dministrator&lt;/p>
+&lt;p>密码：123456&lt;/p>
+&lt;p>激活py虚拟环境：source vllm_env/bin/activate&lt;/p>
+&lt;p>vllm运行大模型：vllm serve .xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-14B-GPTQ-Int4
+&amp;ndash;trust-remote-code
+&amp;ndash;max-model-len 65536
+&amp;ndash;gpu-memory-utilization 0.95
+&amp;ndash;tensor-parallel-size 1
+&amp;ndash;max-num-seqs 1&lt;/p>
+&lt;p>vllm serve .xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-VL-8B-Instruct
+&amp;ndash;trust-remote-code
+&amp;ndash;max-model-len 65536
+&amp;ndash;gpu-memory-utilization 0.95
+&amp;ndash;tensor-parallel-size 1
+&amp;ndash;max-num-seqs 1&lt;/p></description></item><item><title>mineru</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/mineru/</link><pubDate>Mon, 12 Jan 2026 00:38:24 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/mineru/</guid><description>&lt;p>mineru -p POCT下单检测流程.pdf -o ./output &amp;ndash;source modelscope&lt;/p></description></item><item><title>Untitled</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</link><pubDate>Tue, 30 Dec 2025 14:30:00 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/claudecode/untitled/</guid><description>&lt;h3 id="添加本地mcp">添加本地mcp&lt;/h3>
+&lt;p>claude mcp add &amp;ndash;transport stdio &amp;ndash;scope user mysql &amp;ndash;env MYSQL_HOST=xxx.xxx.xxx.xxx &amp;ndash;env MYSQL_USER=tianqinghong &amp;ndash;env MYSQL_PASSWORD=&amp;ldquo;pG4QbSdb1u0KcjUQX+E=&amp;rdquo; &amp;ndash;env MYSQL_DATABASE=db_diag &amp;ndash; &amp;ldquo;npm exec &amp;ndash;yes &amp;ndash; @f4ww4z/mcp-mysql-server&amp;rdquo;&lt;/p>
+&lt;h3 id="获取mcp列表">获取mcp列表&lt;/h3>
+&lt;p>claude mcp list&lt;/p>
+&lt;h3 id="无脑接受模式">无脑接受模式&lt;/h3>
+&lt;p>claude &amp;ndash;dangerously-skip-permissions&lt;/p>
+&lt;h3 id="手机无缝衔接claudecode">手机无缝衔接claudecode&lt;/h3>
+&lt;p>电脑端npm install -g happy-coder；然后终端输入：happy&lt;/p>
+&lt;p>手机端下载	&lt;strong>Happy Coder&lt;/strong>&lt;/p></description></item><item><title>番茄下载</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</link><pubDate>Thu, 18 Dec 2025 23:51:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E7%95%AA%E8%8C%84%E4%B8%8B%E8%BD%BD/</guid><description>&lt;p>&lt;img src="undefined" alt="image.png">&lt;/p></description></item><item><title>doc转md</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</link><pubDate>Mon, 22 Sep 2025 12:04:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/doc%E8%BD%ACmd/</guid><description>&lt;ol>
+&lt;li>Pandoc 简介&lt;/li>
+&lt;/ol>
+&lt;p>Pandoc 是一个由 John MacFarlane 开发的开源“瑞士军刀”，用于在不同标记语言格式之间进行转换。它支持数十种输入和输出格式，包括 DOCX、Markdown、HTML、PDF、EPUB 等。由于其强大的转换引擎和对细节的关注，它在从 DOCX 转换为 Markdown时能很好地保留格式，例如标题、列表、表格、代码块等。&lt;/p></description></item><item><title>SYSTEM_DESIGN</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/quant_trading/system_design/</link><pubDate>Sun, 07 Sep 2025 00:22:06 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/quant_trading/system_design/</guid><description>&lt;h1 id="系统设计与开发者文档">系统设计与开发者文档&lt;/h1>
+&lt;p>本文档为量化交易系统的核心开发者提供全面的技术参考，涵盖了系统架构、核心模块、API接口、部署运维以及未来的发展规划。&lt;/p>
+&lt;h2 id="1-系统架构">1. 系统架构&lt;/h2>
+&lt;p>本系统采用模块化设计，主要由数据层、分析层、策略层和应用层组成。&lt;/p></description></item><item><title>strategy</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/quant_trading/strategy/</link><pubDate>Sun, 07 Sep 2025 00:22:05 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/quant_trading/strategy/</guid><description>&lt;h1 id="量化交易策略知识库">量化交易策略知识库&lt;/h1>
 &lt;h2 id="核心策略">核心策略&lt;/h2>
 &lt;p>本系统采用多因子综合评分策略，结合技术面、基本面和消息面分析。&lt;/p>
 &lt;h3 id="技术面分析指标">技术面分析指标&lt;/h3>
@@ -307,19 +321,4 @@ PS C:\WINDOWS\system32&amp;gt; Register-ScheduledTask -TaskName &amp;ldquo;Start
 &lt;li>新闻情感分析：判断市场情绪&lt;/li>
 &lt;li>政策影响评估：分析政策对行业的影响&lt;/li>
 &lt;li>市场情绪监控：跟踪市场热点和资金流向&lt;/li>
-&lt;/ul></description></item><item><title>绕过网站反调试机制（打不开F12的解决方案）</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/vllm/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/vllm/</guid><description>&lt;h1 id="绕过网站反调试机制打不开f12的解决方案">绕过网站反调试机制（打不开F12的解决方案）&lt;/h1>
-&lt;p>&lt;strong>根据您提供的知识库信息，第8点指的是&amp;quot;反调试攻防实战：无限Debugger绕过与开发者工具检测技术解析&amp;quot;中提到的&amp;quot;0x02 第一种困难的解决方案：打不开F12怎么办？&amp;quot;。下面我将详细介绍这一解决方案，包括具体操作步骤和原理。&lt;/strong>&lt;/p></description></item><item><title>通过密钥连接服务器踩坑——配置正确但是连接失败</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</link><pubDate>Fri, 10 Apr 2026 02:16:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/ssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B8%A9%E5%9D%91%E7%82%B9/</guid><description>&lt;h1 id="通过密钥连接服务器踩坑配置正确但是连接失败">通过密钥连接服务器踩坑——配置正确但是连接失败&lt;/h1>
-&lt;ol>
-&lt;li>初始状态&lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>已成功生成SSH密钥对（ed25519）&lt;/li>
-&lt;li>已将公钥添加到服务器的 ~/.ssh/authorized_keys - 权限设置正确（.ssh 目录700，authorized_keys 文件600）&lt;/li>
-&lt;/ul>
-&lt;ol start="2">
-&lt;li>问题表现
-ssh -o BatchMode=yes -o PasswordAuthentication=no &lt;a href="mailto:username@ip">username@ip&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;h2 id="结果permission-denied-password">结果：Permission denied (password)&lt;/h2>
-&lt;p>即使公钥已在服务器上，公钥认证仍然失败。&lt;/p></description></item><item><title>MCP入门指南</title><link>https://bluespace.eu.org/post/aigc/mcp-intro/</link><pubDate>Thu, 20 Mar 2025 13:48:29 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc/mcp-intro/</guid><description>&lt;h2 id="什么是mcp">什么是MCP？&lt;/h2>
-&lt;p>MCP（Model Context Protocol）是一种用于扩展和增强开发工具功能的协议。它允许开发者创建和使用MCP服务器，这些服务器可以提供额外的工具和资源，以提高开发效率和灵活性。&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item></channel></rss>

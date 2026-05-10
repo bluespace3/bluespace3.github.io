@@ -1,7 +1,8 @@
 ---
 title: 'clawdbot'
-categories: ['工具']
-date: 2026-04-10T02:16:14+0800
+categories: ["工具"]
+date: 2026-01-27T22:39:03+08:00
+lastmod: 2026-04-10T01:57:39+08:00
 draft: false
 ---
 设置clawdbot和tailscale开机自启

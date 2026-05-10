@@ -1,7 +1,8 @@
 ---
 title: 'linux常用命令'
-categories: ['编程']
-date: 2026-05-10T20:58:04+0800
+categories: ["编程"]
+date: 2025-09-07T00:20:44+08:00
+lastmod: 2026-04-10T01:57:39+08:00
 draft: false
 ---
 
