@@ -1,7 +1,8 @@
 ---
-title: 'OpenClaw 快捷键速查表'
-categories: ['技术']
-date: 2026-04-10T01:57:39+08:00
+title: 'OpenClaw快捷键'
+categories: ["资料"]
+date: 2026-02-28T01:35:43+08:00
+lastmod: 2026-04-10T01:57:39+08:00
 draft: false
 ---
 # OpenClaw 快捷键速查表

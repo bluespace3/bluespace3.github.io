@@ -1,7 +1,8 @@
 ---
-title: '核心组件'
-categories: ['技术']
-date: 2026-04-10T01:57:39+08:00
+title: 'langchain'
+categories: ["AIGC"]
+date: 2025-09-15T23:45:36+08:00
+lastmod: 2026-04-10T01:57:39+08:00
 draft: false
 ---
 ## 核心组件

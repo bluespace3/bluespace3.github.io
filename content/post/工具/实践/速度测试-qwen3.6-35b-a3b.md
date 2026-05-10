@@ -1,7 +1,8 @@
 ---
-title: '1cat大模型速度测试 - Qwen3.6-35B-A3B-AWQ'
-categories: ['技术']
-date: 2026-05-02T00:53:22+08:00
+title: '速度测试-qwen3.6-35b-a3b'
+categories: ["工具"]
+date: 2026-05-02T00:47:38+08:00
+lastmod: 2026-05-02T00:53:22+08:00
 draft: false
 ---
 # 1cat大模型速度测试 - Qwen3.6-35B-A3B-AWQ

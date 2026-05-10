@@ -1,7 +1,8 @@
 ---
-title: '【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305'
-categories: ['技术']
-date: 2026-04-12T03:00:01+08:00
+title: 'Openclaw部署、使用、skill'
+categories: ["openclaw"]
+date: 2026-03-09T03:00:01+08:00
+lastmod: 2026-04-12T03:00:01+08:00
 draft: false
 ---
 # 【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305
@@ -11,7 +12,7 @@ draft: false
 
 B站：https://space.bilibili.com/14848367?
 抖音： https://v.douyin.com/i5Jqby5f/
-小红书：https://www.xiaohongshu.com/user/profile/583ab2525e87e729b60e3564
+小红书：https://www.xiaohongshu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 YouTube：https://www.youtube.com/@Xuan2333
 视频号、公众号：直接搜索 Xuan酱，或扫码关注👇
 qrcode_for_gh_be73fa5d5898_1280.jpg
@@ -54,28 +55,28 @@ Openclaw部署和使用常见问题速查：https://github.com/xianyu110/awesome
 
 #### 火山引擎
 
-CleanShot 2026-03-04 at 21.19.36@2x.png
+CleanShot 2026-03-04 at user@example.com
 
 火山引擎入口：一键部署OpenClaw/ClawdBot-火山引擎
 火山引擎教程：快速部署OpenClaw(原Moltbot)，集成飞书AI助手--云服务器-火山引擎
 
 #### 腾讯云
 
-CleanShot 2026-03-04 at 21.09.38@2x.png
+CleanShot 2026-03-04 at user@example.com
 
 腾讯云入口：https://cloud.tencent.com/act/pro/lighthouse-moltbot?from=29437&Is=home
 腾讯云教程：https://cloud.tencent.com/developer/article/2624973
 
 #### 阿里云
 
-CleanShot 2026-03-04 at 20.59.29@2x.png
+CleanShot 2026-03-04 at user@example.com
 
 阿里云入口：OpenClaw - 9.9元定制7*24 AI助理 - 阿里云
 阿里云教程：部署OpenClaw镜像并构建钉钉AI员工
 
 #### 百度智能云
 
-CleanShot 2026-03-04 at 21.21.05@2x.png
+CleanShot 2026-03-04 at user@example.com
 
 百度智能云入口：https://cloud.baidu.com/product/BCC/moltbot.html
 百度智能云教程：https://cloud.baidu.com/doc/LS/s/6ml9f3cvl
@@ -85,7 +86,7 @@ CleanShot 2026-03-04 at 21.21.05@2x.png
 推荐Mac，玩法更多。以下也以Mac为例。
 翻了下Windows的教程，和Mac的还不太一样。
 Windows的朋友们可以参考：awesome-openclaw-tutorial/docs/01-basics/02-installation.md at main · xianyu110/awesome-openclaw-tut
-CleanShot 2026-03-05 at 16.50.22@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 #### 环境准备
 
@@ -94,7 +95,7 @@ CleanShot 2026-03-05 at 16.50.22@2x.png
 
 ```bash
 # 下载和安装homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.sh)"
 
 # 运行完上一行命令后，如果出现Next steps，并显示以echo开头的命令，如：
 echo 'eval "$( /opt/homebrew/bin/brew shellenv )"' >> ~/.zprofile
@@ -145,7 +146,7 @@ npm install -g openclaw@latest --registry=https://registry.npmmirror.com
 openclaw onboard
 ```
 
-CleanShot 2026-03-05 at 12.05.53@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 然后会弹出配置信息：
 
@@ -162,7 +163,7 @@ CleanShot 2026-03-05 at 12.05.53@2x.png
 **Onboarding mode**
 
 选择 "QuickStart"
-CleanShot 2026-03-05 at 12.06.56@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 ### 配置底层模型
 
@@ -170,10 +171,10 @@ CleanShot 2026-03-05 at 12.06.56@2x.png
 详细API配置教程（内含Kimi、Deepseek的配置教程详细步骤）：https://github.com/xianyu110/awesome-openclaw-tutorial/blob/main/docs/01-basics/02-installation.md#api%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97
 Kimi 2.5配置教程：https://platform.moonshot.cn/docs/guide/use-kimi-in-openclaw
 
-CleanShot 2026-03-05 at 12.54.32@2x.png
-CleanShot 2026-03-05 at 13.01.06@2x.png
-CleanShot 2026-03-05 at 13.19.22@2x.png
-CleanShot 2026-03-05 at 13.19.38@2x.png
+CleanShot 2026-03-05 at user@example.com
+CleanShot 2026-03-05 at user@example.com
+CleanShot 2026-03-05 at user@example.com
+CleanShot 2026-03-05 at user@example.com
 
 视频里推荐的各家模型API申请入口：
 - Claude：https://platform.claude.com/settings/keys
@@ -192,8 +193,8 @@ CleanShot 2026-03-05 at 13.19.38@2x.png
 
 接着选「All providers」，然后「Keep current」即可
 
-CleanShot 2026-03-05 at 13.14.00@2x.png
-CleanShot 2026-03-05 at 13.15.52@2x.png
+CleanShot 2026-03-05 at user@example.com
+CleanShot 2026-03-05 at user@example.com
 
 ### 配置机器人 - 以飞书为例
 
@@ -205,8 +206,8 @@ QQ、钉钉、企业微信本地部署的话比较复杂，推荐飞书。下面
 
 还可以研究这个GitHub项目，预装了接入飞书、钉钉、QQ机器人、企业微信的插件——OpenClaw中国IM插件整合版Docker镜像 https://github.com/justlovemaki/OpenClaw-Docker-CN-IM
 
-CleanShot 2026-03-05 at 13.24.19@2x.png
-CleanShot 2026-03-05 at 13.29.12@2x.png
+CleanShot 2026-03-05 at user@example.com
+CleanShot 2026-03-05 at user@example.com
 
 以下教程部分节选自：https://cloud.tencent.com/developer/article/2626151。
 
@@ -231,14 +232,14 @@ MqBnbyaBooBcgsxhenoczGOwnEe.png
 在页面中找到 "App ID" 和 "App Secret" 两个参数，分别点击右侧 "复制" 按钮，填入终端。
 
 JMODbcnznoE9igxvA8dcCPksnXd.png
-CleanShot 2026-03-05 at 13.37.49@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 填写后，选择你的飞书所在地区，用飞书的选China，用Lark的选International。
-CleanShot 2026-03-05 at 13.38.35@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 如果Openclaw机器人只打算自用，选择"Disabled"；准备拉入群聊，选择前两个。
 我懒得配白名单，就选了"Open"。
-CleanShot 2026-03-05 at 13.40.06@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 至此，Openclaw和飞书就打通了。接着要把飞书机器人配置到自己的飞书里。
 
@@ -348,7 +349,7 @@ RZ0KbIaFcoHa9OxJ5IfcPGsKnkf.png
 （如对话时未出现可直接跳过本步骤）
 首次对话如果提示如下图所示的配对（Paring）请求，可以复制机器人回复的最后一行命令行，粘贴至终端并运行。
 3a9282d8-a957-486a-9ca2-cffe20c0d647.png
-CleanShot 2026-03-05 at 15.14.54@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 接下来继续尝试与该机器人进行对话，如果机器人以AI的方式进行回复，即说明配对成功。
 TlEgbh9T0o3rehx0HWqcaBzbnaf.png
@@ -381,12 +382,12 @@ JuKabR53topHjZxYcfycDrDVnKf.png
 想要回来安装就再运行一次「openclaw onboard」就可以，或者直接和bot对话叫它装
 
 image.png
-CleanShot 2026-03-05 at 15.29.26@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 ### 配置其他API
 
 统统选No就可以了，后面要用再配
-CleanShot 2026-03-05 at 15.59.03@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 ### 配置Hooks
 
@@ -394,7 +395,7 @@ CleanShot 2026-03-05 at 15.59.03@2x.png
 想要回来选就再运行一次「openclaw onboard」就可以
 原因可以见后面介绍
 
-CleanShot 2026-03-05 at 15.59.54@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 #### 🧠 什么是 Hook？
 
@@ -460,8 +461,8 @@ CleanShot 2026-03-05 at 15.59.54@2x.png
 - Web UI 模式：通过浏览器交互，适合咱们这些不喜欢终端的小白们
 - 如暂不启动，可选择稍后执行。
 
-CleanShot 2026-03-05 at 16.32.32@2x.png
-CleanShot 2026-03-05 at 20.13.35@2x.png
+CleanShot 2026-03-05 at user@example.com
+CleanShot 2026-03-05 at user@example.com
 
 ## 日常使用指令
 
@@ -474,7 +475,7 @@ openclaw gateway start
 # 或使用systemd（推荐，开机自启）
 openclaw gateway enable
 
-# 访问Web UI，会自动打开浏览器访问：http://127.0.0.1:18789/chat：
+# 访问Web UI，会自动打开浏览器访问：http://xxx.xxx.xxx.xxx:18789/chat：
 openclaw dashboard
 
 # 访问TUI：
@@ -503,7 +504,7 @@ Openclaw的GitHub  ClawHub：https://clawhub.ai/
 
 来源：https://x.com/Wuming_Mr_/status/2028419040847249428
 
-CleanShot 2026-03-05 at 17.11.42@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 #### 第一优先级：保命四件套（先装这 4 个）
 
@@ -596,7 +597,7 @@ image.png
 #### 🐦 社交 / 内容类
 
 **bird**
-Twitter/X 的相关skill。可以搜索推特，发推。详情介绍：https://playbooks.com/skills/openclaw/openclaw/bird。
+Twitter/X 的相关skill。可以搜索推特，发推。详情介绍：https://playbooks.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx。
 
 **blogwatcher**
 监控博客更新（RSS 监听）。
@@ -645,7 +646,7 @@ https://github.com/yunshu0909/yunshu_skillshub/tree/master/github-repo-search
 补充：刚刚又发现一个很牛的搜索工具！甚至支持搜索各大社交平台！使用方法见链接：
 https://github.com/Panniantong/Agent-Reach
 
-CleanShot 2026-03-05 at 21.35.52@2x.png
+CleanShot 2026-03-05 at user@example.com
 
 ### 收藏管理
 
@@ -908,6 +909,6 @@ GitHub上的awesome openclaw usecase项目：https://github.com/hesamsheikh/awes
 
 **文档版本信息：**
 - 文档标题：【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305
-- 飞书文档链接：https://ycnezwebj31p.feishu.cn/docx/MVomdT4tWoeEnmxFFEAcsHGpnph
+- 飞书文档链接：https://ycnezwebj31p.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - 最后同步时间：2026-04-11 06:00:00 +08:00
 - 版本号：2844

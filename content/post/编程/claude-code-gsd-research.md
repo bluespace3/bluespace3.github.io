@@ -1,7 +1,8 @@
 ---
-title: 'Claude Code 中的 GSD 插件与功能调研'
-categories: ['技术']
+title: 'claude-code-gsd-research'
+categories: ["编程"]
 date: 2026-05-07T14:57:50+08:00
+lastmod: 2026-05-07T14:57:50+08:00
 draft: false
 ---
 # Claude Code 中的 GSD 插件与功能调研

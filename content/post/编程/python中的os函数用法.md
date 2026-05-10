@@ -1,8 +1,22 @@
 ---
 title: 'python中的os函数用法'
-categories: ['技术']
-date: 2026-04-10T01:57:39+08:00
+categories: ["编程"]
+date: 2025-09-07T00:20:47+08:00
+lastmod: 2026-04-10T01:57:39+08:00
 draft: false
+---
+
+---
+title: "python的os模块使用"
+
+categories: ["技术", "编程", "python"]
+date: 2025-03-20T12:59:32+08:00
+
+
+draft: false
+
+
+tags: ["os", "python", "教程"]
 ---
 
 * os.listdir(path)
