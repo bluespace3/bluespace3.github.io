@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>资料 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%84%E6%96%99/</link><description>Recent content in 资料 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 10 Apr 2026 01:57:39 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%84%E6%96%99/index.xml" rel="self" type="application/rss+xml"/><item><title>ACP-Claude-Code快捷指令</title><link>https://bluespace.eu.org/post.bak.20260510232724/%E8%B5%84%E6%96%99/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Fri, 10 Apr 2026 01:57:39 +0800</pubDate><guid>https://bluespace.eu.org/post.bak.20260510232724/%E8%B5%84%E6%96%99/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="claude-code-快捷指令与使用技巧">Claude Code 快捷指令与使用技巧&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>资料 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%84%E6%96%99/</link><description>Recent content in 资料 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 10 Apr 2026 01:57:39 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%84%E6%96%99/index.xml" rel="self" type="application/rss+xml"/><item><title>ACP-Claude-Code快捷指令</title><link>https://bluespace.eu.org/post.bak.20260510232724/%E8%B5%84%E6%96%99/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Fri, 10 Apr 2026 01:57:39 +0800</pubDate><guid>https://bluespace.eu.org/post.bak.20260510232724/%E8%B5%84%E6%96%99/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="claude-code-快捷指令与使用技巧">Claude Code 快捷指令与使用技巧&lt;/h1>
 &lt;blockquote>
 &lt;p>最后更新：2026-02-28
 ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p>&lt;/blockquote>
@@ -20,371 +20,371 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;h2 id="tui终端界面快捷键">TUI（终端界面）快捷键&lt;/h2>
 &lt;h3 id="基础操作">基础操作&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>快捷键&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>Enter&lt;/code>&lt;/td>
- &lt;td>发送消息&lt;/td>
- &lt;td>提交当前输入&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Esc&lt;/code>&lt;/td>
- &lt;td>中止运行&lt;/td>
- &lt;td>立即停止当前活动运行&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+C&lt;/code>&lt;/td>
- &lt;td>清除输入&lt;/td>
- &lt;td>按一次清除输入，按两次退出 TUI&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+D&lt;/code>&lt;/td>
- &lt;td>退出&lt;/td>
- &lt;td>直接退出 TUI&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>快捷键&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Enter&lt;/code>&lt;/td>
+&lt;td>发送消息&lt;/td>
+&lt;td>提交当前输入&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Esc&lt;/code>&lt;/td>
+&lt;td>中止运行&lt;/td>
+&lt;td>立即停止当前活动运行&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+C&lt;/code>&lt;/td>
+&lt;td>清除输入&lt;/td>
+&lt;td>按一次清除输入，按两次退出 TUI&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+D&lt;/code>&lt;/td>
+&lt;td>退出&lt;/td>
+&lt;td>直接退出 TUI&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="选择器与面板">选择器与面板&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>快捷键&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+L&lt;/code>&lt;/td>
- &lt;td>模型选择器&lt;/td>
- &lt;td>打开模型选择器&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+G&lt;/code>&lt;/td>
- &lt;td>智能体选择器&lt;/td>
- &lt;td>打开 Agent 选择器&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+P&lt;/code>&lt;/td>
- &lt;td>会话选择器&lt;/td>
- &lt;td>打开会话选择器&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+O&lt;/code>&lt;/td>
- &lt;td>工具输出展开&lt;/td>
- &lt;td>切换工具卡片的折叠/展开状态&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+T&lt;/code>&lt;/td>
- &lt;td>思考可见性&lt;/td>
- &lt;td>切换思考模式的可见性（重新加载历史）&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>快捷键&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+L&lt;/code>&lt;/td>
+&lt;td>模型选择器&lt;/td>
+&lt;td>打开模型选择器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+G&lt;/code>&lt;/td>
+&lt;td>智能体选择器&lt;/td>
+&lt;td>打开 Agent 选择器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+P&lt;/code>&lt;/td>
+&lt;td>会话选择器&lt;/td>
+&lt;td>打开会话选择器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+O&lt;/code>&lt;/td>
+&lt;td>工具输出展开&lt;/td>
+&lt;td>切换工具卡片的折叠/展开状态&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+T&lt;/code>&lt;/td>
+&lt;td>思考可见性&lt;/td>
+&lt;td>切换思考模式的可见性（重新加载历史）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;hr>
 &lt;h2 id="斜杠命令">斜杠命令&lt;/h2>
 &lt;h3 id="核心命令">核心命令&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>示例&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/help&lt;/code>&lt;/td>
- &lt;td>显示帮助信息&lt;/td>
- &lt;td>&lt;code>/help&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/status&lt;/code>&lt;/td>
- &lt;td>显示当前状态&lt;/td>
- &lt;td>&lt;code>/status&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/agent &amp;lt;id&amp;gt;&lt;/code>&lt;/td>
- &lt;td>切换智能体&lt;/td>
- &lt;td>&lt;code>/agent research&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/agents&lt;/code>&lt;/td>
- &lt;td>列出可用智能体&lt;/td>
- &lt;td>&lt;code>/agents&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/session &amp;lt;key&amp;gt;&lt;/code>&lt;/td>
- &lt;td>切换会话&lt;/td>
- &lt;td>&lt;code>/session main&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/sessions&lt;/code>&lt;/td>
- &lt;td>列出可用会话&lt;/td>
- &lt;td>&lt;code>/sessions&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/model &amp;lt;provider/model&amp;gt;&lt;/code>&lt;/td>
- &lt;td>选择模型&lt;/td>
- &lt;td>&lt;code>/model claude/gpt-4&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/models&lt;/code>&lt;/td>
- &lt;td>列出可用模型&lt;/td>
- &lt;td>&lt;code>/models&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/help&lt;/code>&lt;/td>
+&lt;td>显示帮助信息&lt;/td>
+&lt;td>&lt;code>/help&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/status&lt;/code>&lt;/td>
+&lt;td>显示当前状态&lt;/td>
+&lt;td>&lt;code>/status&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/agent &amp;lt;id&amp;gt;&lt;/code>&lt;/td>
+&lt;td>切换智能体&lt;/td>
+&lt;td>&lt;code>/agent research&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/agents&lt;/code>&lt;/td>
+&lt;td>列出可用智能体&lt;/td>
+&lt;td>&lt;code>/agents&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/session &amp;lt;key&amp;gt;&lt;/code>&lt;/td>
+&lt;td>切换会话&lt;/td>
+&lt;td>&lt;code>/session main&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/sessions&lt;/code>&lt;/td>
+&lt;td>列出可用会话&lt;/td>
+&lt;td>&lt;code>/sessions&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/model &amp;lt;provider/model&amp;gt;&lt;/code>&lt;/td>
+&lt;td>选择模型&lt;/td>
+&lt;td>&lt;code>/model claude/gpt-4&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/models&lt;/code>&lt;/td>
+&lt;td>列出可用模型&lt;/td>
+&lt;td>&lt;code>/models&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="会话控制">会话控制&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>选项&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/think &amp;lt;level&amp;gt;&lt;/code>&lt;/td>
- &lt;td>设置思考级别&lt;/td>
- &lt;td>&lt;code>off&lt;/code>, &lt;code>minimal&lt;/code>, &lt;code>low&lt;/code>, &lt;code>medium&lt;/code>, &lt;code>high&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/verbose &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>详细输出模式&lt;/td>
- &lt;td>&lt;code>on&lt;/code>, &lt;code>full&lt;/code>, &lt;code>off&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/reasoning &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>推理可见性&lt;/td>
- &lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>, &lt;code>stream&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/usage &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>使用统计显示&lt;/td>
- &lt;td>&lt;code>off&lt;/code>, &lt;code>tokens&lt;/code>, &lt;code>full&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/elevated &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>提升权限模式&lt;/td>
- &lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>, &lt;code>ask&lt;/code>, &lt;code>full&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/activation &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>激活模式（群组）&lt;/td>
- &lt;td>&lt;code>mention&lt;/code>, &lt;code>always&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/deliver &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>消息投递开关&lt;/td>
- &lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>选项&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/think &amp;lt;level&amp;gt;&lt;/code>&lt;/td>
+&lt;td>设置思考级别&lt;/td>
+&lt;td>&lt;code>off&lt;/code>, &lt;code>minimal&lt;/code>, &lt;code>low&lt;/code>, &lt;code>medium&lt;/code>, &lt;code>high&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/verbose &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>详细输出模式&lt;/td>
+&lt;td>&lt;code>on&lt;/code>, &lt;code>full&lt;/code>, &lt;code>off&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/reasoning &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>推理可见性&lt;/td>
+&lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>, &lt;code>stream&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/usage &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>使用统计显示&lt;/td>
+&lt;td>&lt;code>off&lt;/code>, &lt;code>tokens&lt;/code>, &lt;code>full&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/elevated &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>提升权限模式&lt;/td>
+&lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>, &lt;code>ask&lt;/code>, &lt;code>full&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/activation &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>激活模式（群组）&lt;/td>
+&lt;td>&lt;code>mention&lt;/code>, &lt;code>always&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/deliver &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>消息投递开关&lt;/td>
+&lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="会话生命周期">会话生命周期&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/new [model]&lt;/code>&lt;/td>
- &lt;td>新建会话&lt;/td>
- &lt;td>可选模型参数&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/reset [model]&lt;/code>&lt;/td>
- &lt;td>重置会话&lt;/td>
- &lt;td>可选模型参数&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/abort&lt;/code>&lt;/td>
- &lt;td>中止运行&lt;/td>
- &lt;td>中止当前活动&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/settings&lt;/code>&lt;/td>
- &lt;td>打开设置面板&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/exit&lt;/code>&lt;/td>
- &lt;td>退出 TUI&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/new [model]&lt;/code>&lt;/td>
+&lt;td>新建会话&lt;/td>
+&lt;td>可选模型参数&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/reset [model]&lt;/code>&lt;/td>
+&lt;td>重置会话&lt;/td>
+&lt;td>可选模型参数&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/abort&lt;/code>&lt;/td>
+&lt;td>中止运行&lt;/td>
+&lt;td>中止当前活动&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/settings&lt;/code>&lt;/td>
+&lt;td>打开设置面板&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/exit&lt;/code>&lt;/td>
+&lt;td>退出 TUI&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="工具与调试">工具与调试&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/context [mode]&lt;/code>&lt;/td>
- &lt;td>显示上下文信息&lt;/td>
- &lt;td>&lt;code>list&lt;/code>, &lt;code>detail&lt;/code>, &lt;code>json&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/export [path]&lt;/code>&lt;/td>
- &lt;td>导出会话&lt;/td>
- &lt;td>导出当前会话为 HTML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/whoami&lt;/code>&lt;/td>
- &lt;td>显示发送者 ID&lt;/td>
- &lt;td>别名：&lt;code>/id&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/skill &amp;lt;name&amp;gt; [input]&lt;/code>&lt;/td>
- &lt;td>运行技能&lt;/td>
- &lt;td>按名称运行技能&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/subagents &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
- &lt;td>子代理管理&lt;/td>
- &lt;td>&lt;code>list&lt;/code>, &lt;code>kill&lt;/code>, &lt;code>log&lt;/code>, &lt;code>info&lt;/code>, &lt;code>send&lt;/code>, &lt;code>steer&lt;/code>, &lt;code>spawn&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/acp &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
- &lt;td>ACP 会话控制&lt;/td>
- &lt;td>&lt;code>spawn&lt;/code>, &lt;code>cancel&lt;/code>, &lt;code>steer&lt;/code>, &lt;code>close&lt;/code>, &lt;code>status&lt;/code> 等&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/agents&lt;/code>&lt;/td>
- &lt;td>列出线程绑定代理&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/context [mode]&lt;/code>&lt;/td>
+&lt;td>显示上下文信息&lt;/td>
+&lt;td>&lt;code>list&lt;/code>, &lt;code>detail&lt;/code>, &lt;code>json&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/export [path]&lt;/code>&lt;/td>
+&lt;td>导出会话&lt;/td>
+&lt;td>导出当前会话为 HTML&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/whoami&lt;/code>&lt;/td>
+&lt;td>显示发送者 ID&lt;/td>
+&lt;td>别名：&lt;code>/id&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/skill &amp;lt;name&amp;gt; [input]&lt;/code>&lt;/td>
+&lt;td>运行技能&lt;/td>
+&lt;td>按名称运行技能&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/subagents &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
+&lt;td>子代理管理&lt;/td>
+&lt;td>&lt;code>list&lt;/code>, &lt;code>kill&lt;/code>, &lt;code>log&lt;/code>, &lt;code>info&lt;/code>, &lt;code>send&lt;/code>, &lt;code>steer&lt;/code>, &lt;code>spawn&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/acp &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
+&lt;td>ACP 会话控制&lt;/td>
+&lt;td>&lt;code>spawn&lt;/code>, &lt;code>cancel&lt;/code>, &lt;code>steer&lt;/code>, &lt;code>close&lt;/code>, &lt;code>status&lt;/code> 等&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/agents&lt;/code>&lt;/td>
+&lt;td>列出线程绑定代理&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="权限与配置">权限与配置&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/allowlist &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
- &lt;td>管理允许列表&lt;/td>
- &lt;td>&lt;code>list&lt;/code>, &lt;code>add&lt;/code>, &lt;code>remove&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/approve &amp;lt;id&amp;gt; &amp;lt;decision&amp;gt;&lt;/code>&lt;/td>
- &lt;td>批准执行请求&lt;/td>
- &lt;td>&lt;code>allow-once&lt;/code>, &lt;code>allow-always&lt;/code>, &lt;code>deny&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/config &amp;lt;action&amp;gt; [path]&lt;/code>&lt;/td>
- &lt;td>配置管理&lt;/td>
- &lt;td>&lt;code>show&lt;/code>, &lt;code>get&lt;/code>, &lt;code>set&lt;/code>, &lt;code>unset&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/debug &amp;lt;action&amp;gt; [path]&lt;/code>&lt;/td>
- &lt;td>运行时调试覆盖&lt;/td>
- &lt;td>&lt;code>show&lt;/code>, &lt;code>set&lt;/code>, &lt;code>unset&lt;/code>, &lt;code>reset&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/session ttl &amp;lt;duration&amp;gt;&lt;/code>&lt;/td>
- &lt;td>会话 TTL 管理&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/allowlist &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
+&lt;td>管理允许列表&lt;/td>
+&lt;td>&lt;code>list&lt;/code>, &lt;code>add&lt;/code>, &lt;code>remove&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/approve &amp;lt;id&amp;gt; &amp;lt;decision&amp;gt;&lt;/code>&lt;/td>
+&lt;td>批准执行请求&lt;/td>
+&lt;td>&lt;code>allow-once&lt;/code>, &lt;code>allow-always&lt;/code>, &lt;code>deny&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/config &amp;lt;action&amp;gt; [path]&lt;/code>&lt;/td>
+&lt;td>配置管理&lt;/td>
+&lt;td>&lt;code>show&lt;/code>, &lt;code>get&lt;/code>, &lt;code>set&lt;/code>, &lt;code>unset&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/debug &amp;lt;action&amp;gt; [path]&lt;/code>&lt;/td>
+&lt;td>运行时调试覆盖&lt;/td>
+&lt;td>&lt;code>show&lt;/code>, &lt;code>set&lt;/code>, &lt;code>unset&lt;/code>, &lt;code>reset&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/session ttl &amp;lt;duration&amp;gt;&lt;/code>&lt;/td>
+&lt;td>会话 TTL 管理&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="多端切换">多端切换&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/dock-telegram&lt;/code>&lt;/td>
- &lt;td>切换到 Telegram&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/dock-discord&lt;/code>&lt;/td>
- &lt;td>切换到 Discord&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/dock-slack&lt;/code>&lt;/td>
- &lt;td>切换到 Slack&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/dock-telegram&lt;/code>&lt;/td>
+&lt;td>切换到 Telegram&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/dock-discord&lt;/code>&lt;/td>
+&lt;td>切换到 Discord&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/dock-slack&lt;/code>&lt;/td>
+&lt;td>切换到 Slack&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="文字转语音tts">文字转语音（TTS）&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/tts &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>TTS 控制&lt;/td>
- &lt;td>&lt;code>off&lt;/code>, &lt;code>always&lt;/code>, &lt;code>inbound&lt;/code>, &lt;code>tagged&lt;/code>, &lt;code>status&lt;/code>, &lt;code>provider&lt;/code>, &lt;code>limit&lt;/code>, &lt;code>summary&lt;/code>, &lt;code>audio&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/voice&lt;/code>&lt;/td>
- &lt;td>Discord TTS 命令&lt;/td>
- &lt;td>Discord 原生命令（&lt;code>/tts&lt;/code> 的别名）&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/tts &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>TTS 控制&lt;/td>
+&lt;td>&lt;code>off&lt;/code>, &lt;code>always&lt;/code>, &lt;code>inbound&lt;/code>, &lt;code>tagged&lt;/code>, &lt;code>status&lt;/code>, &lt;code>provider&lt;/code>, &lt;code>limit&lt;/code>, &lt;code>summary&lt;/code>, &lt;code>audio&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/voice&lt;/code>&lt;/td>
+&lt;td>Discord TTS 命令&lt;/td>
+&lt;td>Discord 原生命令（&lt;code>/tts&lt;/code> 的别名）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;hr>
 &lt;h2 id="本地-shell-命令">本地 Shell 命令&lt;/h2>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>! &amp;lt;command&amp;gt;&lt;/code>&lt;/td>
- &lt;td>执行本地 Shell 命令&lt;/td>
- &lt;td>在 TUI 主机上运行&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>!poll&lt;/code>&lt;/td>
- &lt;td>检查输出/状态&lt;/td>
- &lt;td>查看后台任务状态&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>!stop&lt;/code>&lt;/td>
- &lt;td>停止运行任务&lt;/td>
- &lt;td>停止当前 Shell 任务&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>! &amp;lt;command&amp;gt;&lt;/code>&lt;/td>
+&lt;td>执行本地 Shell 命令&lt;/td>
+&lt;td>在 TUI 主机上运行&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!poll&lt;/code>&lt;/td>
+&lt;td>检查输出/状态&lt;/td>
+&lt;td>查看后台任务状态&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!stop&lt;/code>&lt;/td>
+&lt;td>停止运行任务&lt;/td>
+&lt;td>停止当前 Shell 任务&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;p>&lt;strong>注意&lt;/strong>：&lt;/p></description></item><item><title>OpenClaw快捷键</title><link>https://bluespace.eu.org/post/%E8%B5%84%E6%96%99/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</link><pubDate>Sat, 28 Feb 2026 01:35:43 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%84%E6%96%99/openclaw%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid><description>&lt;h1 id="openclaw-快捷键速查表">OpenClaw 快捷键速查表&lt;/h1>
 &lt;blockquote>
@@ -392,371 +392,371 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;h2 id="tui终端界面快捷键">TUI（终端界面）快捷键&lt;/h2>
 &lt;h3 id="基础操作">基础操作&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>快捷键&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>Enter&lt;/code>&lt;/td>
- &lt;td>发送消息&lt;/td>
- &lt;td>提交当前输入&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Esc&lt;/code>&lt;/td>
- &lt;td>中止运行&lt;/td>
- &lt;td>立即停止当前活动运行&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+C&lt;/code>&lt;/td>
- &lt;td>清除输入&lt;/td>
- &lt;td>按一次清除输入，按两次退出 TUI&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+D&lt;/code>&lt;/td>
- &lt;td>退出&lt;/td>
- &lt;td>直接退出 TUI&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>快捷键&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Enter&lt;/code>&lt;/td>
+&lt;td>发送消息&lt;/td>
+&lt;td>提交当前输入&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Esc&lt;/code>&lt;/td>
+&lt;td>中止运行&lt;/td>
+&lt;td>立即停止当前活动运行&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+C&lt;/code>&lt;/td>
+&lt;td>清除输入&lt;/td>
+&lt;td>按一次清除输入，按两次退出 TUI&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+D&lt;/code>&lt;/td>
+&lt;td>退出&lt;/td>
+&lt;td>直接退出 TUI&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="选择器与面板">选择器与面板&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>快捷键&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+L&lt;/code>&lt;/td>
- &lt;td>模型选择器&lt;/td>
- &lt;td>打开模型选择器&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+G&lt;/code>&lt;/td>
- &lt;td>智能体选择器&lt;/td>
- &lt;td>打开 Agent 选择器&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+P&lt;/code>&lt;/td>
- &lt;td>会话选择器&lt;/td>
- &lt;td>打开会话选择器&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+O&lt;/code>&lt;/td>
- &lt;td>工具输出展开&lt;/td>
- &lt;td>切换工具卡片的折叠/展开状态&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>Ctrl+T&lt;/code>&lt;/td>
- &lt;td>思考可见性&lt;/td>
- &lt;td>切换思考模式的可见性（重新加载历史）&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>快捷键&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+L&lt;/code>&lt;/td>
+&lt;td>模型选择器&lt;/td>
+&lt;td>打开模型选择器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+G&lt;/code>&lt;/td>
+&lt;td>智能体选择器&lt;/td>
+&lt;td>打开 Agent 选择器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+P&lt;/code>&lt;/td>
+&lt;td>会话选择器&lt;/td>
+&lt;td>打开会话选择器&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+O&lt;/code>&lt;/td>
+&lt;td>工具输出展开&lt;/td>
+&lt;td>切换工具卡片的折叠/展开状态&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl+T&lt;/code>&lt;/td>
+&lt;td>思考可见性&lt;/td>
+&lt;td>切换思考模式的可见性（重新加载历史）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;hr>
 &lt;h2 id="斜杠命令">斜杠命令&lt;/h2>
 &lt;h3 id="核心命令">核心命令&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>示例&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/help&lt;/code>&lt;/td>
- &lt;td>显示帮助信息&lt;/td>
- &lt;td>&lt;code>/help&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/status&lt;/code>&lt;/td>
- &lt;td>显示当前状态&lt;/td>
- &lt;td>&lt;code>/status&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/agent &amp;lt;id&amp;gt;&lt;/code>&lt;/td>
- &lt;td>切换智能体&lt;/td>
- &lt;td>&lt;code>/agent research&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/agents&lt;/code>&lt;/td>
- &lt;td>列出可用智能体&lt;/td>
- &lt;td>&lt;code>/agents&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/session &amp;lt;key&amp;gt;&lt;/code>&lt;/td>
- &lt;td>切换会话&lt;/td>
- &lt;td>&lt;code>/session main&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/sessions&lt;/code>&lt;/td>
- &lt;td>列出可用会话&lt;/td>
- &lt;td>&lt;code>/sessions&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/model &amp;lt;provider/model&amp;gt;&lt;/code>&lt;/td>
- &lt;td>选择模型&lt;/td>
- &lt;td>&lt;code>/model claude/gpt-4&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/models&lt;/code>&lt;/td>
- &lt;td>列出可用模型&lt;/td>
- &lt;td>&lt;code>/models&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>示例&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/help&lt;/code>&lt;/td>
+&lt;td>显示帮助信息&lt;/td>
+&lt;td>&lt;code>/help&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/status&lt;/code>&lt;/td>
+&lt;td>显示当前状态&lt;/td>
+&lt;td>&lt;code>/status&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/agent &amp;lt;id&amp;gt;&lt;/code>&lt;/td>
+&lt;td>切换智能体&lt;/td>
+&lt;td>&lt;code>/agent research&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/agents&lt;/code>&lt;/td>
+&lt;td>列出可用智能体&lt;/td>
+&lt;td>&lt;code>/agents&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/session &amp;lt;key&amp;gt;&lt;/code>&lt;/td>
+&lt;td>切换会话&lt;/td>
+&lt;td>&lt;code>/session main&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/sessions&lt;/code>&lt;/td>
+&lt;td>列出可用会话&lt;/td>
+&lt;td>&lt;code>/sessions&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/model &amp;lt;provider/model&amp;gt;&lt;/code>&lt;/td>
+&lt;td>选择模型&lt;/td>
+&lt;td>&lt;code>/model claude/gpt-4&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/models&lt;/code>&lt;/td>
+&lt;td>列出可用模型&lt;/td>
+&lt;td>&lt;code>/models&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="会话控制">会话控制&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>选项&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/think &amp;lt;level&amp;gt;&lt;/code>&lt;/td>
- &lt;td>设置思考级别&lt;/td>
- &lt;td>&lt;code>off&lt;/code>, &lt;code>minimal&lt;/code>, &lt;code>low&lt;/code>, &lt;code>medium&lt;/code>, &lt;code>high&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/verbose &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>详细输出模式&lt;/td>
- &lt;td>&lt;code>on&lt;/code>, &lt;code>full&lt;/code>, &lt;code>off&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/reasoning &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>推理可见性&lt;/td>
- &lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>, &lt;code>stream&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/usage &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>使用统计显示&lt;/td>
- &lt;td>&lt;code>off&lt;/code>, &lt;code>tokens&lt;/code>, &lt;code>full&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/elevated &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>提升权限模式&lt;/td>
- &lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>, &lt;code>ask&lt;/code>, &lt;code>full&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/activation &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>激活模式（群组）&lt;/td>
- &lt;td>&lt;code>mention&lt;/code>, &lt;code>always&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/deliver &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>消息投递开关&lt;/td>
- &lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>选项&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/think &amp;lt;level&amp;gt;&lt;/code>&lt;/td>
+&lt;td>设置思考级别&lt;/td>
+&lt;td>&lt;code>off&lt;/code>, &lt;code>minimal&lt;/code>, &lt;code>low&lt;/code>, &lt;code>medium&lt;/code>, &lt;code>high&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/verbose &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>详细输出模式&lt;/td>
+&lt;td>&lt;code>on&lt;/code>, &lt;code>full&lt;/code>, &lt;code>off&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/reasoning &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>推理可见性&lt;/td>
+&lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>, &lt;code>stream&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/usage &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>使用统计显示&lt;/td>
+&lt;td>&lt;code>off&lt;/code>, &lt;code>tokens&lt;/code>, &lt;code>full&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/elevated &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>提升权限模式&lt;/td>
+&lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>, &lt;code>ask&lt;/code>, &lt;code>full&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/activation &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>激活模式（群组）&lt;/td>
+&lt;td>&lt;code>mention&lt;/code>, &lt;code>always&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/deliver &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>消息投递开关&lt;/td>
+&lt;td>&lt;code>on&lt;/code>, &lt;code>off&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="会话生命周期">会话生命周期&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/new [model]&lt;/code>&lt;/td>
- &lt;td>新建会话&lt;/td>
- &lt;td>可选模型参数&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/reset [model]&lt;/code>&lt;/td>
- &lt;td>重置会话&lt;/td>
- &lt;td>可选模型参数&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/abort&lt;/code>&lt;/td>
- &lt;td>中止运行&lt;/td>
- &lt;td>中止当前活动&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/settings&lt;/code>&lt;/td>
- &lt;td>打开设置面板&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/exit&lt;/code>&lt;/td>
- &lt;td>退出 TUI&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/new [model]&lt;/code>&lt;/td>
+&lt;td>新建会话&lt;/td>
+&lt;td>可选模型参数&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/reset [model]&lt;/code>&lt;/td>
+&lt;td>重置会话&lt;/td>
+&lt;td>可选模型参数&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/abort&lt;/code>&lt;/td>
+&lt;td>中止运行&lt;/td>
+&lt;td>中止当前活动&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/settings&lt;/code>&lt;/td>
+&lt;td>打开设置面板&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/exit&lt;/code>&lt;/td>
+&lt;td>退出 TUI&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="工具与调试">工具与调试&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/context [mode]&lt;/code>&lt;/td>
- &lt;td>显示上下文信息&lt;/td>
- &lt;td>&lt;code>list&lt;/code>, &lt;code>detail&lt;/code>, &lt;code>json&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/export [path]&lt;/code>&lt;/td>
- &lt;td>导出会话&lt;/td>
- &lt;td>导出当前会话为 HTML&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/whoami&lt;/code>&lt;/td>
- &lt;td>显示发送者 ID&lt;/td>
- &lt;td>别名：&lt;code>/id&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/skill &amp;lt;name&amp;gt; [input]&lt;/code>&lt;/td>
- &lt;td>运行技能&lt;/td>
- &lt;td>按名称运行技能&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/subagents &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
- &lt;td>子代理管理&lt;/td>
- &lt;td>&lt;code>list&lt;/code>, &lt;code>kill&lt;/code>, &lt;code>log&lt;/code>, &lt;code>info&lt;/code>, &lt;code>send&lt;/code>, &lt;code>steer&lt;/code>, &lt;code>spawn&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/acp &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
- &lt;td>ACP 会话控制&lt;/td>
- &lt;td>&lt;code>spawn&lt;/code>, &lt;code>cancel&lt;/code>, &lt;code>steer&lt;/code>, &lt;code>close&lt;/code>, &lt;code>status&lt;/code> 等&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/agents&lt;/code>&lt;/td>
- &lt;td>列出线程绑定代理&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/context [mode]&lt;/code>&lt;/td>
+&lt;td>显示上下文信息&lt;/td>
+&lt;td>&lt;code>list&lt;/code>, &lt;code>detail&lt;/code>, &lt;code>json&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/export [path]&lt;/code>&lt;/td>
+&lt;td>导出会话&lt;/td>
+&lt;td>导出当前会话为 HTML&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/whoami&lt;/code>&lt;/td>
+&lt;td>显示发送者 ID&lt;/td>
+&lt;td>别名：&lt;code>/id&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/skill &amp;lt;name&amp;gt; [input]&lt;/code>&lt;/td>
+&lt;td>运行技能&lt;/td>
+&lt;td>按名称运行技能&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/subagents &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
+&lt;td>子代理管理&lt;/td>
+&lt;td>&lt;code>list&lt;/code>, &lt;code>kill&lt;/code>, &lt;code>log&lt;/code>, &lt;code>info&lt;/code>, &lt;code>send&lt;/code>, &lt;code>steer&lt;/code>, &lt;code>spawn&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/acp &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
+&lt;td>ACP 会话控制&lt;/td>
+&lt;td>&lt;code>spawn&lt;/code>, &lt;code>cancel&lt;/code>, &lt;code>steer&lt;/code>, &lt;code>close&lt;/code>, &lt;code>status&lt;/code> 等&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/agents&lt;/code>&lt;/td>
+&lt;td>列出线程绑定代理&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="权限与配置">权限与配置&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/allowlist &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
- &lt;td>管理允许列表&lt;/td>
- &lt;td>&lt;code>list&lt;/code>, &lt;code>add&lt;/code>, &lt;code>remove&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/approve &amp;lt;id&amp;gt; &amp;lt;decision&amp;gt;&lt;/code>&lt;/td>
- &lt;td>批准执行请求&lt;/td>
- &lt;td>&lt;code>allow-once&lt;/code>, &lt;code>allow-always&lt;/code>, &lt;code>deny&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/config &amp;lt;action&amp;gt; [path]&lt;/code>&lt;/td>
- &lt;td>配置管理&lt;/td>
- &lt;td>&lt;code>show&lt;/code>, &lt;code>get&lt;/code>, &lt;code>set&lt;/code>, &lt;code>unset&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/debug &amp;lt;action&amp;gt; [path]&lt;/code>&lt;/td>
- &lt;td>运行时调试覆盖&lt;/td>
- &lt;td>&lt;code>show&lt;/code>, &lt;code>set&lt;/code>, &lt;code>unset&lt;/code>, &lt;code>reset&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/session ttl &amp;lt;duration&amp;gt;&lt;/code>&lt;/td>
- &lt;td>会话 TTL 管理&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/allowlist &amp;lt;action&amp;gt;&lt;/code>&lt;/td>
+&lt;td>管理允许列表&lt;/td>
+&lt;td>&lt;code>list&lt;/code>, &lt;code>add&lt;/code>, &lt;code>remove&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/approve &amp;lt;id&amp;gt; &amp;lt;decision&amp;gt;&lt;/code>&lt;/td>
+&lt;td>批准执行请求&lt;/td>
+&lt;td>&lt;code>allow-once&lt;/code>, &lt;code>allow-always&lt;/code>, &lt;code>deny&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/config &amp;lt;action&amp;gt; [path]&lt;/code>&lt;/td>
+&lt;td>配置管理&lt;/td>
+&lt;td>&lt;code>show&lt;/code>, &lt;code>get&lt;/code>, &lt;code>set&lt;/code>, &lt;code>unset&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/debug &amp;lt;action&amp;gt; [path]&lt;/code>&lt;/td>
+&lt;td>运行时调试覆盖&lt;/td>
+&lt;td>&lt;code>show&lt;/code>, &lt;code>set&lt;/code>, &lt;code>unset&lt;/code>, &lt;code>reset&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/session ttl &amp;lt;duration&amp;gt;&lt;/code>&lt;/td>
+&lt;td>会话 TTL 管理&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="多端切换">多端切换&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/dock-telegram&lt;/code>&lt;/td>
- &lt;td>切换到 Telegram&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/dock-discord&lt;/code>&lt;/td>
- &lt;td>切换到 Discord&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/dock-slack&lt;/code>&lt;/td>
- &lt;td>切换到 Slack&lt;/td>
- &lt;td>-&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/dock-telegram&lt;/code>&lt;/td>
+&lt;td>切换到 Telegram&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/dock-discord&lt;/code>&lt;/td>
+&lt;td>切换到 Discord&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/dock-slack&lt;/code>&lt;/td>
+&lt;td>切换到 Slack&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h3 id="文字转语音tts">文字转语音（TTS）&lt;/h3>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>/tts &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
- &lt;td>TTS 控制&lt;/td>
- &lt;td>&lt;code>off&lt;/code>, &lt;code>always&lt;/code>, &lt;code>inbound&lt;/code>, &lt;code>tagged&lt;/code>, &lt;code>status&lt;/code>, &lt;code>provider&lt;/code>, &lt;code>limit&lt;/code>, &lt;code>summary&lt;/code>, &lt;code>audio&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>/voice&lt;/code>&lt;/td>
- &lt;td>Discord TTS 命令&lt;/td>
- &lt;td>Discord 原生命令（&lt;code>/tts&lt;/code> 的别名）&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>/tts &amp;lt;mode&amp;gt;&lt;/code>&lt;/td>
+&lt;td>TTS 控制&lt;/td>
+&lt;td>&lt;code>off&lt;/code>, &lt;code>always&lt;/code>, &lt;code>inbound&lt;/code>, &lt;code>tagged&lt;/code>, &lt;code>status&lt;/code>, &lt;code>provider&lt;/code>, &lt;code>limit&lt;/code>, &lt;code>summary&lt;/code>, &lt;code>audio&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>/voice&lt;/code>&lt;/td>
+&lt;td>Discord TTS 命令&lt;/td>
+&lt;td>Discord 原生命令（&lt;code>/tts&lt;/code> 的别名）&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;hr>
 &lt;h2 id="本地-shell-命令">本地 Shell 命令&lt;/h2>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>命令&lt;/th>
- &lt;th>功能&lt;/th>
- &lt;th>说明&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>&lt;code>! &amp;lt;command&amp;gt;&lt;/code>&lt;/td>
- &lt;td>执行本地 Shell 命令&lt;/td>
- &lt;td>在 TUI 主机上运行&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>!poll&lt;/code>&lt;/td>
- &lt;td>检查输出/状态&lt;/td>
- &lt;td>查看后台任务状态&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>&lt;code>!stop&lt;/code>&lt;/td>
- &lt;td>停止运行任务&lt;/td>
- &lt;td>停止当前 Shell 任务&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>功能&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>! &amp;lt;command&amp;gt;&lt;/code>&lt;/td>
+&lt;td>执行本地 Shell 命令&lt;/td>
+&lt;td>在 TUI 主机上运行&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!poll&lt;/code>&lt;/td>
+&lt;td>检查输出/状态&lt;/td>
+&lt;td>查看后台任务状态&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>!stop&lt;/code>&lt;/td>
+&lt;td>停止运行任务&lt;/td>
+&lt;td>停止当前 Shell 任务&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;p>&lt;strong>注意&lt;/strong>：&lt;/p></description></item><item><title>aigc教程链接</title><link>https://bluespace.eu.org/post.bak.20260510232724/%E8%B5%84%E6%96%99/aigc%E6%95%99%E7%A8%8B%E9%93%BE%E6%8E%A5/</link><pubDate>Mon, 17 Nov 2025 11:53:19 +0800</pubDate><guid>https://bluespace.eu.org/post.bak.20260510232724/%E8%B5%84%E6%96%99/aigc%E6%95%99%E7%A8%8B%E9%93%BE%E6%8E%A5/</guid><description>&lt;p>【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href="https://itingnao.com/s/2722352/1ddnb1krx5r/w">https://itingnao.com/s/2722352/1ddnb1krx5r/w&lt;/a>
 【飓风】向您分享了《AI大模型与Agent技术培训&amp;hellip;》，点击下方链接查看 &lt;a href="https://itingnao.com/s/2733974/1dhiaryfdjo/w">https://itingnao.com/s/2733974/1dhiaryfdjo/w&lt;/a>
