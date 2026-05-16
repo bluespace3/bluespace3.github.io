@@ -2,7 +2,7 @@
 title: 'Openclaw部署、使用、skill'
 categories: ["openclaw"]
 date: 2026-03-09T03:00:01+08:00
-lastmod: 2026-04-12T03:00:01+08:00
+lastmod: 2026-05-16T23:55:53+08:00
 draft: false
 ---
 # 【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305
@@ -104,7 +104,9 @@ eval "$( /opt/homebrew/bin/brew shellenv )"
 
 # 确认brew版本（运行后应该出现版本号，无所谓哪个版本，确认安装成功即可）:
 brew --version
+```
 
+```bash
 # 下载和安装nvm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
@@ -115,10 +117,10 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 nvm install 22
 
 # 确认Node.js版本（运行后应该出现"v22.22.1"）:
-node -v 
+node -v
 
 # 确认npm版本（运行后应该出现"10.9.4"）:
-npm -v 
+npm -v
 ```
 
 #### 安装Openclaw
@@ -150,22 +152,14 @@ CleanShot 2026-03-05 at user@example.com
 
 然后会弹出配置信息：
 
-### 配置项
+| 配置项 | 配置信息 |
+|--------|----------|
+| I understand this is personal-by-default and shared/multi-user use requires lock-down. Continue? | 选择 "Yes" |
+| Onboarding mode | 选择 "QuickStart" |
 
-配置信息
-
-```
- I understand this is personal-by-default and shared/multi-user use requires lock-down. Continue?
-```
-
-选择 "Yes"
-
-**Onboarding mode**
-
-选择 "QuickStart"
 CleanShot 2026-03-05 at user@example.com
 
-### 配置底层模型
+#### 配置底层模型
 
 选择你的AI供应商，选择你要用的模型，填入API key即可。也可以先跳过。
 详细API配置教程（内含Kimi、Deepseek的配置教程详细步骤）：https://github.com/xianyu110/awesome-openclaw-tutorial/blob/main/docs/01-basics/02-installation.md#api%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97
@@ -176,13 +170,14 @@ CleanShot 2026-03-05 at user@example.com
 CleanShot 2026-03-05 at user@example.com
 CleanShot 2026-03-05 at user@example.com
 
-视频里推荐的各家模型API申请入口：
-- Claude：https://platform.claude.com/settings/keys
-- ChatGPT：https://platform.openai.com/
-- Gemini：https://aistudio.google.com/api-keys
-- Kimi：https://platform.moonshot.cn/console/api-keys
-- Minimax：https://platform.minimaxi.com/user-center/basic-information
-- 智谱：https://bigmodel.cn/usercenter/proj-mgmt/apikeys
+> 视频里推荐的各家模型API申请入口：
+>
+> - Claude：https://platform.claude.com/settings/keys
+> - ChatGPT：https://platform.openai.com/
+> - Gemini：https://aistudio.google.com/api-keys
+> - Kimi：https://platform.moonshot.cn/console/api-keys
+> - Minimax：https://platform.minimaxi.com/user-center/basic-information
+> - 智谱：https://bigmodel.cn/usercenter/proj-mgmt/apikeys
 
 如果只是想低成本试玩试跑一下，可以尝试阿里云百炼计划，首月7.9RMB。
 支持的模型：qwen3.5-plus（支持图片理解）、kimi-k2.5（支持图片理解）、glm-5、MiniMax-M2.5、qwen3-max-2026-01-23、qwen3-coder-next、qwen3-coder-plus、glm-4.7。
@@ -196,7 +191,7 @@ CleanShot 2026-03-05 at user@example.com
 CleanShot 2026-03-05 at user@example.com
 CleanShot 2026-03-05 at user@example.com
 
-### 配置机器人 - 以飞书为例
+#### 配置机器人 - 以飞书为例
 
 国内可以选择飞书、QQ、钉钉、企业微信。
 QQ、钉钉、企业微信本地部署的话比较复杂，推荐飞书。下面以飞书为例。
@@ -211,9 +206,9 @@ CleanShot 2026-03-05 at user@example.com
 
 以下教程部分节选自：https://cloud.tencent.com/developer/article/2626151。
 
-#### 接入飞书
+##### 接入飞书
 
-##### 创建飞书企业自建应用
+###### 创建飞书企业自建应用
 
 登录飞书开放平台。登录成功后，点击创建企业自建应用。
 填写应用名称、应用描述，选择应用图标，点击创建按钮，进入应用管理页面。
@@ -221,12 +216,13 @@ CleanShot 2026-03-05 at user@example.com
 image.png
 K1SabrX7SoasRTxkxPacbbFUnLb.png
 
-##### 添加机器人
+###### 添加机器人
 
 在前一步所创建应用的管理页面，左侧导航栏中找到并点击"添加应用能力"，在弹出的列表中选择机器人，点击添加。
+
 MqBnbyaBooBcgsxhenoczGOwnEe.png
 
-##### 查询AppID和AppSecret
+###### 查询AppID和AppSecret
 
 在左侧导航栏找到"凭据与基础信息" ，点击进入。
 在页面中找到 "App ID" 和 "App Secret" 两个参数，分别点击右侧 "复制" 按钮，填入终端。
@@ -243,34 +239,40 @@ CleanShot 2026-03-05 at user@example.com
 
 至此，Openclaw和飞书就打通了。接着要把飞书机器人配置到自己的飞书里。
 
-#### 飞书机器人相关配置（完成网关启动后再倒回来做）
+##### 飞书机器人相关配置（完成网关启动后再倒回来做）
 
-##### 事件配置
+###### 事件配置
 
 在飞书应用管理页，左侧导航栏找到 "事件与回调" ，点击进入页面。在"事件配置"页签中选择 "长连接接收事件"，点击保存。
+
 UkFjbnf8mo5F4mx81Ayc67Izn8g.png
 
 ⚠️注意：如果这一步报错提示"应用未建立长连接"，请检查前面步骤中的机器人App ID和App Secret是否已正确配置。
 
-##### 添加事件
+###### 添加事件
 
 点击"事件配置"页面中的 "添加事件"，在弹出的列表中，搜索并添加 "接收消息"，点击 "确认添加"，按照指引确认开通权限。
+
 NaTSbqssTo5RLoxfdRdcJEFfnWh.png
 
 （推荐）若期望将飞书机器人添加进聊天群组中使用，可以参考前述步骤继续添加更多群组相关权限，主要包括"消息已读"、"机器人进群"、"机器人被移出群"。否则，请跳过本步骤。
+
 Hf0bbEbtCoYDyex49kocr8BLnsd.png
 
 完成添加后，可以在当前页面的列表中查看到已添加的事件。
+
 PIVlbb2LToiK2WxdbjCcAYV3nGf.png
 
-##### 回调配置
+###### 回调配置
 
 在"事件与回调-回调配置"页面中，订阅方式选择 "使用长连接接收回调"，点击保存，无需填写其他地址，配置自动生效。
+
 Kcg1bDb32oyV1LxwJV3cl0YenZd.png
 
-##### 权限配置
+###### 权限配置
 
 在飞书应用管理页，左侧导航栏找到 "权限管理" ，点击进入页面。点击页面中的 "批量导入权限" 按钮，弹出权限导入窗口。
+
 FwpmbAyLCofNfAxjyn0cHobondz.png
 HiTybWCd0oXtBVxDs32cOpNynMb.png
 
@@ -280,14 +282,12 @@ HiTybWCd0oXtBVxDs32cOpNynMb.png
 {
   "scopes": {
     "tenant": [
-      
       "im:message",
       "im:message.p2p_msg:readonly",
       "im:message.group_at_msg:readonly",
       "im:message:send_as_bot",
       "im:resource",
 
-      
       "contact:user.base:readonly",
       "im:message.group_msg",
       "im:message:readonly",
@@ -295,7 +295,6 @@ HiTybWCd0oXtBVxDs32cOpNynMb.png
       "im:message:recall",
       "im:message.reactions:read",
 
-   
       "docx:document:readonly",
       "drive:drive:readonly",
       "wiki:wiki:readonly",
@@ -322,7 +321,7 @@ HiTybWCd0oXtBVxDs32cOpNynMb.png
 SWHOb034bonGvdxPovkcmUq8n1b.png
 KKTebCUWWoVnFexWCaic1jo4nNc.png
 
-##### 创建版本并发布
+###### 创建版本并发布
 
 在飞书应用管理页，左侧导航栏找到 "版本管理与发布" ，点击进入页面。点击右上角的创建版本。
 填写应用版本号（此处以1.0.0为例，您可以自行定义版本号）和更新说明，点击保存并确认发布。
@@ -332,11 +331,11 @@ ZVVTbHMsao0endxzoEYcNmoFn7c.png
 GWKnbW4kgoFdldxfSj4c3LGinyb.png
 KFQ1b1MADoPMp9xIodwcUUJbn3c.png
 
-#### 与飞书机器人交互
+##### 与飞书机器人交互
 
 完成Openclaw部署后，您可以与飞书机器人进行单独聊天，或者将飞书机器人添加进群聊。
 
-##### 单独聊天
+###### 单独聊天
 
 以电脑版飞书软件为例（手机端飞书的操作类似），登录飞书后，点击搜索框。
 在搜索框中输入前面步骤中创建并发布的飞书机器人的应用名称，输入回车进行搜索。
@@ -348,17 +347,19 @@ RZ0KbIaFcoHa9OxJ5IfcPGsKnkf.png
 单击搜索到的机器人，进入私聊页面，即可开始与已经接入OpenClaw的飞书机器人进行对话。
 （如对话时未出现可直接跳过本步骤）
 首次对话如果提示如下图所示的配对（Paring）请求，可以复制机器人回复的最后一行命令行，粘贴至终端并运行。
+
 3a9282d8-a957-486a-9ca2-cffe20c0d647.png
 CleanShot 2026-03-05 at user@example.com
 
 接下来继续尝试与该机器人进行对话，如果机器人以AI的方式进行回复，即说明配对成功。
+
 TlEgbh9T0o3rehx0HWqcaBzbnaf.png
 
-##### 群聊添加飞书机器人
+###### 群聊添加飞书机器人
 
 对于群组聊天的场景，可以点击飞书搜索框上方的加号，选择创建群组，并完成创建。
 
-AwZUbQKaloLbGRx5XHFca1u9n7b.png
+AwZUbQKaloLbGRx5XHFca1u9n7d.png
 HXuTbGyUEo22uTxhoC0cv43anfc.png
 
 进入新创建的群组，点击右上角的设置。
@@ -375,7 +376,7 @@ PinqbJcsGoxqDyx5nhzcaq7TnRf.png
 LOotb49DZoeYmIxajcZcpK5pn6b.png
 JuKabR53topHjZxYcfycDrDVnKf.png
 
-### 安装skill
+#### 安装skill
 
 因为我已经装了，所以截了一个别人的skill表，可能和现在安装弹出的skill表的细节不一样，但大部分是一样的。
 这里可以先只装一个Clawdhub（OpenClaw 自家 skill 市场），然后跳过。剩下的在skill章节里详细介绍。
@@ -384,12 +385,13 @@ JuKabR53topHjZxYcfycDrDVnKf.png
 image.png
 CleanShot 2026-03-05 at user@example.com
 
-### 配置其他API
+#### 配置其他API
 
 统统选No就可以了，后面要用再配
+
 CleanShot 2026-03-05 at user@example.com
 
-### 配置Hooks
+#### 配置Hooks
 
 勾选 session-memory 、 command-logger，其他可以先不选。
 想要回来选就再运行一次「openclaw onboard」就可以
@@ -397,8 +399,7 @@ CleanShot 2026-03-05 at user@example.com
 
 CleanShot 2026-03-05 at user@example.com
 
-#### 🧠 什么是 Hook？
-
+🧠 什么是 Hook？
 在 OpenClaw 里，Hook 是一种自动化触发机制
 当某些 Agent 命令或事件发生时，系统会自动执行你预先设置的动作。
 类似：
@@ -410,9 +411,9 @@ CleanShot 2026-03-05 at user@example.com
 
 可以理解成：给机器人装"自动行为插件"
 
-#### 📦 截图里的 4 个 Hook 解释
+📦 截图里的 4 个 Hook 解释
 
-**🚀 boot-md**
+🚀 boot-md
 当 Gateway 启动时，自动执行 BOOT.md 文件。
 相当于启动时加载 AI 的"系统说明书"。
 通常 BOOT.md 里会放：
@@ -420,14 +421,14 @@ CleanShot 2026-03-05 at user@example.com
 - 初始化配置
 - Agent 行为规则
 
-**📎 bootstrap-extra-files**
+📎 bootstrap-extra-files
 启动时加载额外文件，注入给 AI 作为上下文。适合高级用户。小白可以不选。
 比如：
 - 额外 prompt 文件
 - 外部配置
 - 额外规则说明
 
-**📝 command-logger**
+📝 command-logger
 记录命令日志。开启后可以查看机器人每一步干了什么。
 会：
 - 记录用户输入
@@ -439,34 +440,35 @@ CleanShot 2026-03-05 at user@example.com
 - 分析 Agent 行为
 - 统计使用情况
 
-**💾 session-memory**
+💾 session-memory
 这是最重要的一个。不开启的话，每次对话都像新开一个窗口；开启后，机器人会"记得"之前内容。
 作用：
 - 保存会话上下文
 - 让机器人记住之前说过的话
 
-### 网关（Gateway）自启动
+#### 网关（Gateway）自启动
 
 配置完成后，会自动启动Gateway服务
 
-#### 网关是什么？
-
+网关是什么？
 是 OpenClaw 的核心服务，它像一个"中央调度站"。负责：
 - 连接各个聊天平台（飞书、企微、QQ、Telegram等）
 - 管理会话和消息路由：将消息转发给 AI 智能体处理，把 AI 的回复发送回对应平台
 
-**"你想如何启动你的机器人？"**
-
+"你想如何启动你的机器人？"
 - TUI 模式：在终端内运行，适合服务器部署
 - Web UI 模式：通过浏览器交互，适合咱们这些不喜欢终端的小白们
-- 如暂不启动，可选择稍后执行。
+
+如暂不启动，可选择稍后执行。
 
 CleanShot 2026-03-05 at user@example.com
 CleanShot 2026-03-05 at user@example.com
 
-## 日常使用指令
+### 日常使用指令
 
 常见问题速查：https://github.com/xianyu110/awesome-openclaw-tutorial/blob/main/appendix/E-common-problems.md#%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98
+
+启动OpenClaw：
 
 ```bash
 # 启动Gateway服务
@@ -474,93 +476,121 @@ openclaw gateway start
 
 # 或使用systemd（推荐，开机自启）
 openclaw gateway enable
+```
 
-# 访问Web UI，会自动打开浏览器访问：http://xxx.xxx.xxx.xxx:18789/chat：
+访问Web UI，会自动打开浏览器访问：http://xxx.xxx.xxx.xxx:18789/chat：
+
+```bash
 openclaw dashboard
+```
 
-# 访问TUI：
+访问TUI：
+
+```bash
 openclaw tui
+```
 
-# 停止服务：
+停止服务：
+
+```bash
 openclaw gateway stop
+```
 
-# 出现问题的时候可以重启Gateway：
+出现问题的时候可以重启Gateway：
+
+```bash
 openclaw gateway restart
+```
 
-# 更新Openclaw：
+更新Openclaw：
+
+```bash
 openclaw update
+```
 
-# 卸载Openclaw：
+卸载Openclaw：
+
+```bash
 openclaw uninstall
 ```
 
-## skill安装
+### skill安装
 
 Openclaw的GitHub  ClawHub：https://clawhub.ai/
-
 如前所述，不要一口气装很多个skill，一定要一个一个装。
 
-### 普通人必备skill推荐
+#### 普通人必备skill推荐
 
 来源：https://x.com/Wuming_Mr_/status/2028419040847249428
 
 CleanShot 2026-03-05 at user@example.com
 
-#### 第一优先级：保命四件套（先装这 4 个）
+##### 第一优先级：保命四件套（先装这 4 个）
 
-**Skill Vetter（安全审计）**
+###### Skill Vetter（安全审计）
+
 这玩意必须第一个装。
 安装新 skill 前自动扫描风险指令，相当于给 Agent 装个"防毒软件"。
 ClawHub 现在下载量≠安全，别太天真。
 
-**Tavily / SerpAPI（联网搜索）**
+###### Tavily / SerpAPI（联网搜索）
+
 没联网的 Agent，本质是信息孤岛。
 装完之后才真正"活过来"。查实时资讯、验证信息、抓最新数据，全靠它。
 
-**Browser / Playwright（浏览器自动化）**
+###### Browser / Playwright（浏览器自动化）
+
 能自己开网页、点按钮、填表单、截图。
 我现在很多重复性网页操作都丢给它，效率翻倍。
 做爬取、自动提交、监控页面变化都很好用。
 
-**Code Interpreter（Python 执行）**
+###### Code Interpreter（Python 执行）
+
 这是核心生产力引擎。
 数据分析、画图、处理文件、跑脚本，没有它很多复杂任务根本落不了地。
 
-#### 第二阶段：让它真正参与工作流
+##### 第二阶段：让它真正参与工作流
 
-**File Manager（文件管理）**
+###### File Manager（文件管理）
+
 读写本地文件、批量改名、处理 PDF。
 不装它，Agent 只能"想办法"，不能"动文件"。
 
-**GitHub Assistant（Git 操作）**
+###### GitHub Assistant（Git 操作）
+
 commit、PR、issue、review 一条龙。
 对开发者来说，它就是一个不摸鱼的实习生。
 
-**Notion / Obsidian 连接器（知识库）**
+###### Notion / Obsidian 连接器（知识库）
+
 自动建笔记、更新文档、查询知识库。
 装完后我开始真的把它当"第二大脑"。
 
-#### 第三阶段：从工具到"主动员工"
+##### 第三阶段：从工具到"主动员工"
 
-**Cron / Scheduler（定时任务）**
+###### Cron / Scheduler（定时任务）
+
 每天自动跑日报、周报、数据监控。
 这一步是质变——它开始主动工作。
 
-**Self-Improving / Evolver（自我优化）**
+###### Self-Improving / Evolver（自我优化）
+
 分析失败记录，优化 prompt。
 不算必需，但长期用下来会明显变聪明。
 
-**Daily Digest（主动日报）**
+###### Daily Digest（主动日报）
+
 每天自动整理工作总结、待办事项、行业动态。
 这个真的很"有陪伴感"。
 
-### 官方安装流程中的skill表介绍
+#### 官方安装流程中的skill表介绍
 
 image.png
 
-#### 🔐 账号 & 密码类
+##### 🔐 账号 & 密码类
 
-**1password**
+###### 1password
+
 对接 1Password 密码管理器，用来：
 - 读取密码
 - 自动填充凭证
@@ -569,62 +599,76 @@ image.png
 适合：自动化登录、调用私有服务。
 ⚠️注意安全问题
 
-#### 🍎 Apple 生态
+##### 🍎 Apple 生态
 
-**apple-notes**
+###### apple-notes
+
 读取 / 写入 Apple 备忘录。
 
-**apple-reminders**
+###### apple-reminders
+
 创建 / 管理 Apple 提醒事项。
 
-**things-mac**
+###### things-mac
+
 对接 Things 任务管理软件。
 
 👉 这些都需要 macOS 才能用。
 
-#### 📝 笔记类
+##### 📝 笔记类
 
-**bear-notes**
+###### bear-notes
+
 对接 Bear 笔记（macOS）。
 
-**obsidian**
+###### obsidian
+
 对接 Obsidian 笔记库（通过 obsidian-cli）。
 适合做：
 - 知识库自动整理
 - 自动写入笔记
 - Agent 记忆系统
 
-#### 🐦 社交 / 内容类
+##### 🐦 社交 / 内容类
 
-**bird**
+###### bird
+
 Twitter/X 的相关skill。可以搜索推特，发推。详情介绍：https://playbooks.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx。
 
-**blogwatcher**
+###### blogwatcher
+
 监控博客更新（RSS 监听）。
 
-#### 🤖 AI / 模型类
+##### 🤖 AI / 模型类
 
-**gemini**
+###### gemini
+
 对接 Google Gemini 模型。
 
-**openai-whisper**
+###### openai-whisper
+
 语音转文字（Whisper 本地或 API）。
 
-**model-usage**
+###### model-usage
+
 统计模型调用 token 使用量。
 
-#### 🖼️ 多媒体处理
+##### 🖼️ 多媒体处理
 
-**gifgrep**
+###### gifgrep
+
 处理 gif / 图像分析。
 
-**img**
+###### img
+
 图片处理。
 
-**video-frames**
+###### video-frames
+
 视频帧提取。
 
-**nano-pdf**
+###### nano-pdf
+
 PDF 解析。
 
 ## 实用玩法
@@ -639,9 +683,7 @@ https://github.com/yunshu0909/yunshu_skillshub/tree/master/github-repo-search
 
 发送以下提示词给你的龙虾：
 
-```
-帮我装一下这个工具，注意检查安全性：https://github.com/yunshu0909/yunshu_skillshub/tree/master/github-repo-search
-```
+> 帮我装一下这个工具，注意检查安全性：https://github.com/yunshu0909/yunshu_skillshub/tree/master/github-repo-search
 
 补充：刚刚又发现一个很牛的搜索工具！甚至支持搜索各大社交平台！使用方法见链接：
 https://github.com/Panniantong/Agent-Reach
@@ -651,6 +693,7 @@ CleanShot 2026-03-05 at user@example.com
 ### 收藏管理
 
 我的skill还不太会修改成通用版本，分享出来的话装上也大概率跑不通！装完以后修修补补不如自己搭建一个干净的～也可以学习和体会一下自己创建一个skill的过程～
+
 我的初版提示词下得太简单，后续调试花了很多功夫。大家可以试试发送以下提示词给你的龙虾：
 
 ```
@@ -801,7 +844,6 @@ reviewCount: 0
 lib/markdownStore.js
 
 负责：
-
 - 创建文件
 - 更新 frontmatter
 - 读取文件
@@ -830,7 +872,6 @@ lib/markdownStore.js
 ### 定时规则
 
 每天 09:30 触发：
-
 reviewEngine.runDailyReview()
 
 ### 要求
@@ -846,20 +887,20 @@ reviewEngine.runDailyReview()
 
 ### 添加收藏流程
 
-URL  
-→ 抓取  
-→ Readability 提取正文  
-→ LLM 生成摘要与标签  
-→ Markdown 写入  
+URL
+→ 抓取
+→ Readability 提取正文
+→ LLM 生成摘要与标签
+→ Markdown 写入
 
 ### 每日回顾流程
 
-cron 触发  
-→ 扫描 status = inbox  
-→ 筛选 nextReviewAt <= 当前时间  
-→ 推送飞书  
-→ 更新 reviewCount  
-→ 重新计算 nextReviewAt  
+cron 触发
+→ 扫描 status = inbox
+→ 筛选 nextReviewAt <= 当前时间
+→ 推送飞书
+→ 更新 reviewCount
+→ 重新计算 nextReviewAt
 
 ---
 
@@ -904,11 +945,3 @@ apple-reminders是创建 / 管理 Apple 提醒事项。
 
 GitHub上的awesome openclaw usecase项目：https://github.com/hesamsheikh/awesome-openclaw-usecases
 爬取X上用户各种Openclaw玩法的网站：https://openclaw.ai/showcase
-
----
-
-**文档版本信息：**
-- 文档标题：【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305
-- 飞书文档链接：https://ycnezwebj31p.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-- 最后同步时间：2026-04-11 06:00:00 +08:00
-- 版本号：2844
