@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 19 May 2026 23:59:30 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-05-19赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 19 May 2026 23:56:00 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-19-赛博日记">2026-05-19 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 20 May 2026 23:59:30 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-05-18赛博日记</title><link>https://bluespace.eu.org/post/cyber-diary/2026-05-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 20 May 2026 23:55:58 +0800</pubDate><guid>https://bluespace.eu.org/post/cyber-diary/2026-05-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="赛博日记-2026-05-18">赛博日记 2026-05-18&lt;/h1>
+&lt;h2 id="技术调研">技术调研&lt;/h2>
+&lt;h3 id="swagger到pytest自动化测试生成">Swagger到pytest自动化测试生成&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>用户意图&lt;/strong>: 调研AI驱动的将Swagger/OpenAPI文档转换为可直接运行的pytest接口自动化测试脚本的开源工具或框架&lt;/li>
+&lt;li>&lt;strong>调研状态&lt;/strong>: 进行中&lt;/li>
+&lt;li>&lt;strong>已尝试URL&lt;/strong>:
+&lt;ul>
+&lt;li>api-network/api-client-generator - 404&lt;/li>
+&lt;li>williancaetano/http2py - 404&lt;/li>
+&lt;li>openapi-generator/openapi-generator - 404&lt;/li>
+&lt;li>keenondrums/Swag-Tests-Generator - 404&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>下一步&lt;/strong>: 通过Web Search筛选可访问的开源项目&lt;/li>
+&lt;li>&lt;strong>评估标准&lt;/strong>:
+&lt;ol>
+&lt;li>是否开源（许可证、GitHub可用性）&lt;/li>
+&lt;li>是否支持pytest输出&lt;/li>
+&lt;li>是否开箱即用（安装/配置步骤、依赖）&lt;/li>
+&lt;li>是否支持Swagger/OpenAPI文档导入&lt;/li>
+&lt;li>是否有活跃维护与文档&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;em>自动生成于 2026-05-20 23:45&lt;/em>&lt;/p></description></item><item><title>2026-05-20赛博日记</title><link>https://bluespace.eu.org/post/cyber-diary/2026-05-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 20 May 2026 23:55:58 +0800</pubDate><guid>https://bluespace.eu.org/post/cyber-diary/2026-05-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="赛博日记-2026-05-20">赛博日记 2026-05-20&lt;/h1>
+&lt;h2 id="智能收藏每日回顾">智能收藏每日回顾&lt;/h2>
+&lt;h3 id="ai驱动的自进化测试框架">AI驱动的自进化测试框架&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>收藏时间&lt;/strong>: 2026-03-10&lt;/li>
+&lt;li>&lt;strong>回顾次数&lt;/strong>: 第4次&lt;/li>
+&lt;li>&lt;strong>下次回顾&lt;/strong>: 2026-05-23&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>核心要点：&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>自进化测试框架：通过感知、学习和优化的闭环来自动适配业务变化&lt;/li>
+&lt;li>技术栈：OpenClaw + Python + LangChain + Playwright&lt;/li>
+&lt;li>关键模块：数据采集、AI决策、自动执行&lt;/li>
+&lt;li>行业趋势：从&amp;quot;机械自动化&amp;quot;向&amp;quot;智能自进化&amp;quot;转型&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>思考与启发：&lt;/strong>&lt;/p></description></item><item><title>2026-05-20赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 20 May 2026 23:55:58 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-20-赛博日记">2026-05-20 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-05-20 23:58&lt;/p>&lt;/blockquote>
+&lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
+&lt;p>完成 Coupon API 大型改造项目的核心功能交付，包括完整的 Swagger 解析器修复、鉴权体系设计和 LLM 容错机制，解决了 FastAPI 204 错误和 Electron 国内下载超时等关键问题。&lt;/p></description></item><item><title>2026-05-19赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 19 May 2026 23:56:00 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-19-赛博日记">2026-05-19 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-05-19 23:58&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
