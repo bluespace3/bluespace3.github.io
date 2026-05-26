@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 26 May 2026 00:00:22 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-05-25赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 25 May 2026 23:56:03 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年5月25日-赛博日记"&gt;2026年5月25日 赛博日记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 26 May 2026 23:59:00 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-05-20赛博日记</title><link>https://bluespace.eu.org/post/2026-05-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 26 May 2026 23:55:48 +0800</pubDate><guid>https://bluespace.eu.org/post/2026-05-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-20-赛博日记"&gt;2026-05-20 赛博日记&lt;/h1&gt;
+&lt;h2 id="智能收藏系统运行日志"&gt;智能收藏系统运行日志&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;执行时间: 2026-05-20 09:30
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;系统状态: 正常运转
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="检测信号"&gt;检测信号&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标文章&lt;/strong&gt;: AI驱动的自进化测试框架（OpenClaw实战版）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;收藏时间&lt;/strong&gt;: 2026-03-10&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;回顾次数&lt;/strong&gt;: 4次&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a href="https://mp.weixin.qq.com/s/1aD0c-QumWNpe50kdnZwdw"&gt;https://mp.weixin.qq.com/s/1aD0c-QumWNpe50kdnZwdw&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="知识沉淀"&gt;知识沉淀&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;自进化测试框架核心要点：&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>2026-05-21赛博日记</title><link>https://bluespace.eu.org/post/2026-05-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 26 May 2026 23:55:48 +0800</pubDate><guid>https://bluespace.eu.org/post/2026-05-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-21-赛博日记"&gt;2026-05-21 赛博日记&lt;/h1&gt;
+&lt;h2 id="智能收藏系统运行日志"&gt;智能收藏系统运行日志&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;触发时间: 2026-05-21 09:30
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;系统状态: 正常运转
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="检测信号"&gt;检测信号&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标文章&lt;/strong&gt;: Agent+MCP+Skills 接口自动化智能体平台全解析&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;回顾次数&lt;/strong&gt;: 3次&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a href="https://mp.weixin.qq.com/s/TO42RpTyGFRJEtFd8t6-yw"&gt;https://mp.weixin.qq.com/s/TO42RpTyGFRJEtFd8t6-yw&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="知识架构"&gt;知识架构&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;四层接口自动化架构：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;接入层&lt;/strong&gt;: 统一接口管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通信层&lt;/strong&gt;: MCP作为通信枢纽&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能层&lt;/strong&gt;: Agent决策引擎&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;技能层&lt;/strong&gt;: Skills能力插件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="实践路径"&gt;实践路径&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;四步走落地策略：&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>2026-05-24赛博日记</title><link>https://bluespace.eu.org/post/2026-05-24%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 26 May 2026 23:55:48 +0800</pubDate><guid>https://bluespace.eu.org/post/2026-05-24%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-24-赛博日记"&gt;2026-05-24 赛博日记&lt;/h1&gt;
+&lt;h2 id="智能收藏系统运行日志"&gt;智能收藏系统运行日志&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;执行时间: 2026-05-24 09:30
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;系统状态: 正常运转
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="检测信号"&gt;检测信号&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标文章&lt;/strong&gt;: AI驱动的自进化测试框架（OpenClaw实战版）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;回顾次数&lt;/strong&gt;: 4次&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;过期状态&lt;/strong&gt;: 已过期1天&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a href="https://mp.weixin.qq.com/s/1aD0c-QumWNpe50kdnZwdw"&gt;https://mp.weixin.qq.com/s/1aD0c-QumWNpe50kdnZwdw&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="知识巩固"&gt;知识巩固&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;自进化测试框架核心架构：&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>2026-05-25赛博日记</title><link>https://bluespace.eu.org/post/2026-05-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 26 May 2026 23:55:48 +0800</pubDate><guid>https://bluespace.eu.org/post/2026-05-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-25-赛博日记"&gt;2026-05-25 赛博日记&lt;/h1&gt;
+&lt;h2 id="智能收藏系统运行日志"&gt;智能收藏系统运行日志&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;执行时间: 2026-05-25 09:30
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;系统状态: 正常运转
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="检测信号"&gt;检测信号&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标文章&lt;/strong&gt;: AI驱动的自进化测试框架（OpenClaw实战版）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;过期状态&lt;/strong&gt;: 已过期2天&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a href="https://mp.weixin.qq.com/s/1aD0c-QumWNpe50kdnZwdw"&gt;https://mp.weixin.qq.com/s/1aD0c-QumWNpe50kdnZwdw&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="知识提取"&gt;知识提取&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;自进化测试框架核心理念：&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>2026-05-26赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 26 May 2026 23:55:48 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年05月26日-赛博日记"&gt;2026年05月26日 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-05-26 23:58&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
+&lt;p&gt;深度优化测试用例库与自动化测试框架，攻克 Vue 3 IPC 序列化难题，统一 Rule/LLM 断言策略，显著提升测试用例管理与自动化执行体验。&lt;/p&gt;</description></item><item><title>2026-05-25赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 25 May 2026 23:56:03 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年5月25日-赛博日记"&gt;2026年5月25日 赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成时间：2026-05-25 23:58&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
