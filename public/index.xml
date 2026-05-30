@@ -1,5 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 29 May 2026 23:59:53 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-05-29赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 29 May 2026 23:55:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年05月29日-赛博日记"&gt;2026年05月29日 赛博日记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 31 May 2026 03:00:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-05-30赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-30%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 30 May 2026 23:55:37 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-30%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-30-赛博日记"&gt;2026-05-30 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-05-30 23:58&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
+&lt;p&gt;完成 TAPD 用例同步功能修复，从本地 SQLite 迁移至 Web API，并实现标签同步与 Cookie 自动刷新机制。&lt;/p&gt;
+&lt;h2 id="-核心技术进展"&gt;🔍 核心技术进展&lt;/h2&gt;
+&lt;h3 id="tapd-用例同步架构迁移"&gt;TAPD 用例同步架构迁移&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;问题定位&lt;/strong&gt;：用例库已迁移至 Web API，但同步代码仍从本地 SQLite 读取，导致&amp;quot;本地用例不存在&amp;quot;错误&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;技术方案&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;Electron testcase.service.ts 改为通过 webTestDataApi.getTestcase / updateTestcase 读写&lt;/li&gt;
+&lt;li&gt;使用 metadata.tapd_case_uid 建立与 TAPD 的数字 UID 关联&lt;/li&gt;
+&lt;li&gt;从 TAPD 拉取后自动写入 tapd_case_uid 关联字段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;来源&lt;/strong&gt;：memory/2026-05-30.md、claude_2026-05-30.md&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="标签同步格式修复"&gt;标签同步格式修复&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;硬核发现&lt;/strong&gt;：TAPD API 的 Labels 字段不接受字符串展示名，必须使用标签库的数字 UID
+&lt;ul&gt;
+&lt;li&gt;错误格式：&lt;code&gt;{&amp;quot;Name&amp;quot;: &amp;quot;已整理&amp;quot;, &amp;quot;DisplayName&amp;quot;: &amp;quot;已整理&amp;quot;}&lt;/code&gt; → HTTP 200 但标签不落库&lt;/li&gt;
+&lt;li&gt;正确格式：&lt;code&gt;{&amp;quot;Name&amp;quot;: &amp;quot;34451&amp;quot;, &amp;quot;DisplayName&amp;quot;: &amp;quot;已整理&amp;quot;}&lt;/code&gt; → 标签正确同步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实现方案&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;新增 tapd_browser/testx_api.py 中的 search_case_labels / resolve_labels_patch 方法&lt;/li&gt;
+&lt;li&gt;从 TAPD 标签库按 DisplayName 匹配本地标签名&lt;/li&gt;
+&lt;li&gt;推送前自动解析标签，不存在的标签跳过并给出警告&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;来源&lt;/strong&gt;：memory/2026-05-30.md、claude_2026-05-30.md&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="cookie-自动刷新与同步体验优化"&gt;Cookie 自动刷新与同步体验优化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自动刷新机制&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;同步失败时检测 403、鉴权错误等疑似 Cookie 过期&lt;/li&gt;
+&lt;li&gt;自动执行 refresh_cookies.py 从本机 Chrome 读取&lt;/li&gt;
+&lt;li&gt;刷新成功后自动重试同步一次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用户体验改进&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;同步过程全屏半透明遮罩 + 旋转 loading 动画&lt;/li&gt;
+&lt;li&gt;文案动态变化：&amp;ldquo;正在从 TAPD 拉取&amp;hellip;&amp;rdquo; / &amp;ldquo;TAPD 凭证可能已过期，正在从 Chrome 刷新 Cookie&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;成功后提示&amp;quot;（已自动刷新 Cookie）&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cookie 有效期分析&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;以最短字段为准：_wt 约 1～2 天，t_i_token 约 3 天，tapdsession 不定&lt;/li&gt;
+&lt;li&gt;建议每 1～2 天主动刷新一次，或同步失败时再刷新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;来源&lt;/strong&gt;：memory/2026-05-30.md、claude_2026-05-30.md&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="cookie-存储性能与安全权衡"&gt;Cookie 存储性能与安全权衡&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;性能分析&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;读取 cookies.txt（738 字节）耗时 &amp;lt; 1ms，瓶颈在网络请求（数百 ms～数秒）和 Chrome 刷新（秒级）&lt;/li&gt;
+&lt;li&gt;迁移至 config.json 不会带来可感知加速&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;架构决策&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;继续使用 cookies.txt，职责清晰（登录凭证与界面设置分离）&lt;/li&gt;
+&lt;li&gt;cookies.txt 已在 .gitignore，减少误提交风险&lt;/li&gt;
+&lt;li&gt;主进程内存缓存 Cookie 可略微优化，但体感差异不大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;来源&lt;/strong&gt;：memory/2026-05-30.md&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-深度洞察与经验教训"&gt;💡 深度洞察与经验教训&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;洞察：API 格式陷阱&lt;/strong&gt;
+TAPD API 返回 HTTP 200 并不表示请求成功。Labels 字段即使返回 200，格式错误时数据不会落库，导致&amp;quot;静默失败&amp;quot;。需要结合实际返回数据验证，而不能只看 HTTP 状态码。&lt;/p&gt;</description></item><item><title>2026-05-29赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 29 May 2026 23:55:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年05月29日-赛博日记"&gt;2026年05月29日 赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成时间：2026-05-29 23:58&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id="-今日概要"&gt;📝 今日概要&lt;/h2&gt;
