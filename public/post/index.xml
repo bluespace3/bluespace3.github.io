@@ -1,73 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 07 Jun 2026 23:58:44 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-06-01赛博日记</title><link>https://bluespace.eu.org/post/2026-06-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 07 Jun 2026 23:55:49 +0800</pubDate><guid>https://bluespace.eu.org/post/2026-06-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-01-赛博日记">2026-06-01 赛博日记&lt;/h1>
-&lt;h2 id="核心工作记忆">核心工作记忆&lt;/h2>
-&lt;h3 id="智能收藏系统执行与同步状态">智能收藏系统执行与同步状态&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 08 Jun 2026 23:58:52 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-06-05赛博日记</title><link>https://bluespace.eu.org/post/cyber-diary/2026-06-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 08 Jun 2026 23:56:07 +0800</pubDate><guid>https://bluespace.eu.org/post/cyber-diary/2026-06-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-05-赛博日记">2026-06-05 赛博日记&lt;/h1>
+&lt;h2 id="智能收藏每日回顾">智能收藏每日回顾&lt;/h2>
 &lt;ul>
-&lt;li>&lt;strong>执行时间&lt;/strong>: 09:30&lt;/li>
-&lt;li>&lt;strong>执行脚本&lt;/strong>: &lt;code>~/Obsidian/shoucang/smart-collect.js&lt;/code>&lt;/li>
-&lt;li>&lt;strong>状态&lt;/strong>: ✅ 本地执行成功&lt;/li>
-&lt;li>&lt;strong>问题&lt;/strong>: ❌ 远程同步失败（SSH连接被拒绝，端口2222）&lt;/li>
-&lt;li>&lt;strong>待办&lt;/strong>: 需手动执行同步命令&lt;/li>
-&lt;/ul>
-&lt;h3 id="知识回顾ai驱动的自进化测试框架">知识回顾：AI驱动的自进化测试框架&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>文章ID&lt;/strong>: 20260310-001&lt;/li>
-&lt;li>&lt;strong>主题&lt;/strong>: AI驱动的自进化测试框架（OpenClaw实战版）&lt;/li>
-&lt;li>&lt;strong>来源&lt;/strong>: 微信公众号&lt;/li>
-&lt;li>&lt;strong>回顾状态&lt;/strong>:
-&lt;ul>
-&lt;li>回顾次数: 4次&lt;/li>
-&lt;li>下次回顾时间: 2026-05-23&lt;/li>
-&lt;li>当前标签: inbox&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h4 id="核心要点">核心要点&lt;/h4>
-&lt;ol>
-&lt;li>自进化测试框架核心理念：感知、学习、优化的闭环&lt;/li>
-&lt;li>三大关键模块：
-&lt;ul>
-&lt;li>数据采集&lt;/li>
-&lt;li>AI决策&lt;/li>
-&lt;li>自动执行&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>技术栈组合：OpenClaw + Python + LangChain + Playwright&lt;/li>
-&lt;li>2026年测试开发进阶建议：
-&lt;ul>
-&lt;li>掌握 OpenClaw&lt;/li>
-&lt;li>掌握 Playwright&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ol>
-&lt;h4 id="待思考">待思考&lt;/h4>
-&lt;ul>
-&lt;li>如何将自进化理念结合到当前工作实际中落地&lt;/li>
-&lt;li>评估是否将此内容标记为done或归档&lt;/li>
-&lt;/ul>
-&lt;h2 id="技术问题记录">技术问题记录&lt;/h2>
-&lt;ul>
-&lt;li>SSH远程同步问题：连接被拒绝（端口2222）&lt;/li>
-&lt;li>影响：智能收藏回顾内容无法自动推送到远程仓库&lt;/li>
-&lt;li>根因：待排查（SSH配置/网络/服务器状态）&lt;/li>
-&lt;/ul></description></item><item><title>2026-06-05赛博日记</title><link>https://bluespace.eu.org/post/2026-06-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 07 Jun 2026 23:55:49 +0800</pubDate><guid>https://bluespace.eu.org/post/2026-06-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-05-赛博日记">2026-06-05 赛博日记&lt;/h1>
-&lt;h2 id="核心工作记忆">核心工作记忆&lt;/h2>
-&lt;h3 id="智能收藏系统执行">智能收藏系统执行&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>执行时间&lt;/strong>: 09:30&lt;/li>
-&lt;li>&lt;strong>执行脚本&lt;/strong>: &lt;code>~/Obsidian/shoucang/smart-collect.js&lt;/code>&lt;/li>
-&lt;li>&lt;strong>状态&lt;/strong>: ✅ 本地执行成功&lt;/li>
-&lt;li>&lt;strong>推送内容&lt;/strong>:
+&lt;li>&lt;strong>时间&lt;/strong>: 9:30&lt;/li>
+&lt;li>&lt;strong>任务&lt;/strong>: 运行 &lt;code>~/Obsidian/shoucang/smart-collect.js&lt;/code> 脚本&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>: 准备推送回顾文章
 &lt;ul>
 &lt;li>20260310-001.md&lt;/li>
 &lt;li>20260310-002.md&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul>
-&lt;h3 id="任务状态">任务状态&lt;/h3>
+&lt;li>&lt;strong>状态&lt;/strong>: 任务完成&lt;/li>
+&lt;/ul></description></item><item><title>2026-06-08赛博日记</title><link>https://bluespace.eu.org/post/cyber-diary/2026-06-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 08 Jun 2026 23:56:07 +0800</pubDate><guid>https://bluespace.eu.org/post/cyber-diary/2026-06-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-08-赛博日记">2026-06-08 赛博日记&lt;/h1>
+&lt;h2 id="nginx-配置与-cloudflare-ssl-调整">Nginx 配置与 Cloudflare SSL 调整&lt;/h2>
 &lt;ul>
-&lt;li>每日回顾任务正常执行&lt;/li>
-&lt;li>两个回顾文件已准备推送&lt;/li>
-&lt;/ul></description></item><item><title>2026-06-07赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 07 Jun 2026 23:55:49 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-07-赛博日记">2026-06-07 赛博日记&lt;/h1>
+&lt;li>&lt;strong>会话&lt;/strong>: webchat (2026-06-08 13:47:54 GMT+8)&lt;/li>
+&lt;li>&lt;strong>主要工作&lt;/strong>: 调整 OpenClaw 通过 Nginx 和 Cloudflare 的对外访问配置&lt;/li>
+&lt;/ul>
+&lt;h3 id="关键操作步骤">关键操作步骤&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>Nginx 更新&lt;/strong>: 已完成相关配置调整&lt;/li>
+&lt;li>&lt;strong>域名变更&lt;/strong>: 从 &lt;code>bluespace.eu.org&lt;/code> 改为 &lt;code>mm.skyspace.eu.org&lt;/code>
+&lt;ul>
+&lt;li>原因: 可复用已有的 &lt;code>*.skyspace.eu.org&lt;/code> Origin CA 证书&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>SSL 配置&lt;/strong>:
+&lt;ul>
+&lt;li>Cloudflare SSL 模式: Full/Full Strict&lt;/li>
+&lt;li>服务器: 使用 skyspace.eu.org 的 Origin CA 证书&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>认证方式&lt;/strong>: 改为密码认证
+&lt;ul>
+&lt;li>密码: Tianz728~&lt;/li>
+&lt;li>配置文件: &lt;code>~/.openclaw/openclaw.json&lt;/code> 中的 &lt;code>gateway.auth&lt;/code> 部分&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="配置链路">配置链路&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">https://mm.skyspace.eu.org
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Cloudflare
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">服务器 Nginx (443, Origin CA)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ↓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Mac OpenClaw (xxx.xxx.xxx.xxx:18789)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="状态验证">状态验证&lt;/h3>
+&lt;ul>
+&lt;li>DNS 已生效&lt;/li>
+&lt;li>HTTP 200 返回&lt;/li>
+&lt;li>页面正常访问&lt;/li>
+&lt;/ul>
+&lt;h3 id="配置要点">配置要点&lt;/h3>
+&lt;ul>
+&lt;li>需手动修改 &lt;code>~/.openclaw/openclaw.json&lt;/code> 的 &lt;code>gateway.auth&lt;/code> 为密码模式&lt;/li>
+&lt;li>修改完成后需重启 OpenClaw 服务生效&lt;/li>
+&lt;/ul></description></item><item><title>2026-06-08赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 08 Jun 2026 23:56:07 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-08-赛博日记">2026-06-08 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-06-08 23:58&lt;/p>&lt;/blockquote>
+&lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
+&lt;p>完成了自动化测试指标体系的核心开发，包含覆盖率、通过率、修复时长三大维度的可视化呈现，并修复了链式前置用例执行逻辑和数据一致性问题。&lt;/p></description></item><item><title>2026-06-07赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 07 Jun 2026 23:55:49 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-07-赛博日记">2026-06-07 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-06-07 23:58&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
