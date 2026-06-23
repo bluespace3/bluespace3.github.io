@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 23 Jun 2026 00:00:57 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-06-22赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-22%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 22 Jun 2026 23:55:58 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-22%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年06月22日-赛博日记">2026年06月22日 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 23 Jun 2026 23:59:37 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-06-23赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-23%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 23 Jun 2026 23:55:57 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-23%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年06月23日-赛博日记">2026年06月23日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-06-23 23:58:00&lt;/p>&lt;/blockquote>
+&lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
+&lt;p>Windows C盘清理定档，鸿蒙识别修复，企微日报与自动登录全链路升级。&lt;/p>
+&lt;h2 id="-核心技术进展">🔍 核心技术进展&lt;/h2>
+&lt;ul>
+&lt;li>磁盘清理方案（来源：memory/2026-06-23.md，claude_2026-06-23.md）：定位 C 盘已用 136GB/149GB；扫描识别开发工具缓存（uv 8.4GB、npm-cache 5.5GB、JetBrains 6.7GB 等）为最大可清理项，制定三档方案，预估首档释放约22GB。&lt;/li>
+&lt;li>鸿蒙设备识别（来源：claude_2026-06-23.md）：修改为从 Windows 注册表读取完整 PATH，解决 Electron 未继承用户环境变量导致 hdc 无法识别的问题。&lt;/li>
+&lt;li>企微日报优化（来源：claude_2026-06-23.md）：移除具体失败明细，改为汇总统计+日志链接；同时修复传统 UI 自动化日报文件名格式解析问题，现支持 &lt;code>{平台}-{环境}-{YYYYMMDDHHmm}.html&lt;/code>。&lt;/li>
+&lt;li>失败日志与权限关联（来源：claude_2026-06-23.md）：扩展 &lt;code>users&lt;/code> 表并关联 TAPD userid/姓名/邮箱；失败日志支持按用例去重并按负责人过滤，默认展示疑似 Bug（AI 筛选）。&lt;/li>
+&lt;li>自动登录升级（来源：claude_2026-06-23.md）：移除人工接管；引擎层拦截 &lt;code>Take_over&lt;/code> 为自动登录；针对密码输入框 FLAG_SECURE 黑屏场景，通过 ADB 自动输入密码并向模型发送上一帧正常截图；登录凭据设为用例&amp;gt;设置页兜底，不填不兜底；修复 &lt;code>execSync&lt;/code> 超时问题改用 &lt;code>spawn&lt;/code>；修复了引用错误与依赖注入错误，确保容器正常启动。&lt;/li>
+&lt;/ul>
+&lt;h2 id="-深度洞察与经验教训">💡 深度洞察与经验教训&lt;/h2>
+&lt;ul>
+&lt;li>洞察：Electron 子进程不会自动继承用户更新后的环境变量，从注册表重新读取 PATH 可兼容新安装工具与工具路径变更；符号链接会导致磁盘扫描重复计算，统计时需剔除。&lt;/li>
+&lt;li>教训：Windows 上使用 &lt;code>execSync&lt;/code> 拼字符串命令易受 &lt;code>cmd.exe&lt;/code> 超时影响，改用 &lt;code>spawn&lt;/code> 传参数数组更稳定；密码框触发 FLAG_SECURE 后截图变黑，仅靠提示词难以覆盖模型内置安全策略，需在引擎层自动输入并替换截图。&lt;/li>
+&lt;/ul>
+&lt;h2 id="-未来行动设想">🚀 未来行动设想&lt;/h2>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> 按档位执行 C 盘清理方案，优先处理开发工具缓存（约22GB），后续评估 Playwright 与微信/企业微信数据清理计划。&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 对未绑定 TAPD userid 的账号完善人员映射或提示关联，提升负责人覆盖率（当前约22%）。&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 推广 FLAG_SECURE 黑屏自动化处理至支付页等类似场景。&lt;/li>
+&lt;/ul>
+&lt;h2 id="-自动化统计">📊 自动化统计&lt;/h2>
+&lt;ul>
+&lt;li>捕获 Memory 数：2（memory/2026-06-23.md、claude_2026-06-23.md）&lt;/li>
+&lt;li>笔记更新数：0（note-gen-sync/ 目录下未发现最近24小时修改的非日记 .md 文件）&lt;/li>
+&lt;/ul></description></item><item><title>2026-06-22赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-22%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 22 Jun 2026 23:55:58 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-22%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年06月22日-赛博日记">2026年06月22日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-06-22 23:58&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
