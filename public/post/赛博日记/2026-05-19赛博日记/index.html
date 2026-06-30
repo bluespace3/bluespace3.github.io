@@ -1,21 +1,585 @@
 <!DOCTYPE html>
-<html data-theme="auto" dir="auto" lang="zh-cn"><head><meta charset="utf-8"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><meta content="index, follow" name="robots"/><title>2026-05-19赛博日记 | 蓝色空间号</title><meta content="" name="keywords"/><meta content="2026-05-19 赛博日记
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>2026-05-19赛博日记 | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="2026-05-19 赛博日记
 
 生成时间：2026-05-19 23:58
 📝 今日概要
-今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。" name="description"/><meta content="新人类" name="author"/><link href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/" rel="canonical"/><link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.c2189e7d36d72767de292f8b9d897e4a464aa5bc7eb692cda50064f5eb9eeece.css" integrity="sha256-whiefTbXJ2feKS+LnYl+SkZKpbx+tpLNpQBk9eue7s4=" rel="preload stylesheet"/><link href="https://bluespace.eu.org/favicon.ico" rel="icon"/><link href="https://bluespace.eu.org/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="https://bluespace.eu.org/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="https://bluespace.eu.org/apple-touch-icon.png" rel="apple-touch-icon"/><link href="https://bluespace.eu.org/safari-pinned-tab.svg" rel="mask-icon"/><meta content="#2e2e33" name="theme-color"/><meta content="#2e2e33" name="msapplication-TileColor"/><link href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/" hreflang="zh-cn" rel="alternate"/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta content="2026-05-19赛博日记" property="og:title"/><meta content="2026-05-19 赛博日记
+今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。">
+<meta name="author" content="新人类">
+<link rel="canonical" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c2189e7d36d72767de292f8b9d897e4a464aa5bc7eb692cda50064f5eb9eeece.css" integrity="sha256-whiefTbXJ2feKS&#43;LnYl&#43;SkZKpbx&#43;tpLNpQBk9eue7s4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://bluespace.eu.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://bluespace.eu.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:title" content="2026-05-19赛博日记" />
+<meta property="og:description" content="2026-05-19 赛博日记
 
 生成时间：2026-05-19 23:58
 📝 今日概要
-今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。" property="og:description"/><meta content="article" property="og:type"/><meta content="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/" property="og:url"/><meta content="post" property="article:section"/><meta content="2026-05-19T23:56:00+08:00" property="article:published_time"/><meta content="2026-05-19T23:59:30+08:00" property="article:modified_time"/><meta content="summary" name="twitter:card"/><meta content="2026-05-19赛博日记" name="twitter:title"/><meta content="2026-05-19 赛博日记
+今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-05-19T23:56:00+08:00" />
+<meta property="article:modified_time" content="2026-05-19T23:59:30+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2026-05-19赛博日记"/>
+<meta name="twitter:description" content="2026-05-19 赛博日记
 
 生成时间：2026-05-19 23:58
 📝 今日概要
-今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。" name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章","item":"https://bluespace.eu.org/post/"},{"@type":"ListItem","position":2,"name":"2026-05-19赛博日记","item":"https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"2026-05-19赛博日记","name":"2026-05-19赛博日记","description":"2026-05-19 赛博日记 生成时间：2026-05-19 23:58\n📝 今日概要 今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。\n","keywords":[],"articleBody":"2026-05-19 赛博日记 生成时间：2026-05-19 23:58\n📝 今日概要 今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。\n🔍 核心技术进展 ysbaiiautotest 项目 测试用例停止按钮修复\n问题：执行测试用例时点击停止按钮无法终断 根因：runningTestcaseProcess 仅在 Python 启动后赋值，步骤增强阶段停止会返回「没有正在运行的测试用例」；停止后 close 仍会等待步级裁判完成；前端 stopRunCase 未递增 currentExecutionId，导致 testcase:complete 覆盖停止状态 解决：增加 testcaseRunSessionActive/testcaseRunAbortRequested 状态标记；增强阶段可停止；停止后跳过裁判等待并快速结束 IPC；停止时 currentExecutionId++；runTasks 返回后若已停止则不再更新为成功/失败 Chrome 配置路径保存清空问题修复\n问题：Chrome 可执行文件路径和用户数据目录保存后，再次打开会清空 根因：settings.service.ts 在加载配置时，若路径与旧版默认路径完全一致（如 C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe），会强制清空 解决：删除「每次加载都清空」的逻辑；保存 Web 设置时对 Chrome 路径相关字段统一按字符串写入；更新设置时做字符串规范化 Electron 打包快捷方式迁移（Squirrel → NSIS）\n问题：从 Squirrel 安装器切换到 NSIS 后，升级时桌面快捷方式指向旧版本，新快捷方式无法继承历史版本 根因：不同安装器的快捷方式目标不同（Squirrel 指向 Update.exe --processStart，NSIS 直接指向 exe），升级时 NSIS 不会自动改写 Squirrel 创建的 .lnk 解决：创建 build/installer.nsh 自定义安装脚本；在 customInstall 阶段删除桌面/开始菜单中名为「药师帮 AI 自动化测试」的旧快捷方式；对桌面快捷方式先调用 WinShell::UninstShortcut 解除固定，再删除；调用 SHChangeNotify 刷新桌面 Electron 打包产物分发规范化\n澄清：npm run package 产物是绿色文件夹（约 765 MB），适合本机自测；正式分发应用应使用 npm run make:bundle:win 生成的 NSIS 安装包 问题：绿色文件夹发给别的电脑「不行」，多半是没整夹、没解压到本地、传不全或被安全软件拦截 指导：正式分发请使用 NSIS 安装包；若必须发绿色目录，需整夹打包 zip、解压到本地磁盘运行，不要在压缩包里直接双击 用例负责人显示优化（中文映射 + 下拉选择）\n需求：用例负责人显示为中文（当前显示 TAPD userid），且支持下拉选择，存储仍用 userid 实现： 使用 resources/userid.csv 映射文件（表头 userid/name） 后端 normalizeCaseOwnerToUserid 统一存 userid，界面显示中文名 下拉选项来自 CSV 中的姓名 + 数据库已有负责人（去重） 支持可选（首项为「不指定（可选）」） Docker 部署修复：构建上下文改为仓库根目录，确保 resources/userid.csv 能被打包进镜像；运行时通过环境变量 TAPD_USERID_CSV=/app/resources/userid.csv 指定路径；未找到文件时打印警告日志 LLM-api-test-tool 项目 Coupon API 改造计划（大型重构）\n背景：88 个 POST 接口，7 个 tag，253 个 schema，大量循环 $ref 阻塞项：解析器 SwaggerParser._resolve_schema 遇循环 $ref 导致 RecursionError 技术选型： 解析器修复：引入引用栈 + 深度上限（max_depth=8），遇到循环 $ref 时返回标记或部分信息 Tag 筛选：实现 TagFilter 组件，支持按 tag 筛选 endpoints 鉴权注入：实现 CouponAuthInjector，支持 BaseInModelAuth（appId/authCode/token）在请求体中注入 路径参数：实现 PathParamResolver，替换 {version} 等路径参数（从 operation.description 提取默认值） LLM 分批生成：按 tag 分组多次调用 LLM，合并结果并重编号，避免单次调用超时 Rule 模式 body 增强：基于 schema/example 生成请求体，替代占位 {} 自修复能力：实现 CaseRepairer，失败用例根据 swagger 自修复 pytest 报告：添加 HTML 报告生成，失败用例可点击查看完整日志弹窗 前端体验优化\nBase URL 配置：从 .env 改为前端配置，存储在 localStorage，页面刷新不丢失 认证管理：从弹窗改为设置页，使用左右分栏布局，包含完整的 CRUD 功能（环境配置 Tab + 认证管理 Tab） 页面背景统一白色：将暗色主题改为白色背景（.app-shell 背景从 radial-gradient 改为 #ffffff） 合并推送 Skill\n自动化流程：创建 .claude/skills/merge-push.md，封装「检查变更 → 自动生成 commit 消息 → 暂存并提交 → 推送当前分支 → 合并到 dev/main → 推送 → 切回原分支 → 输出汇总报告」流程 使用方式：在对话中输入 /merge-push 或说「合并推送」即可自动执行 💡 深度洞察与经验教训 洞察：Docker 构建上下文很重要。如果配置文件在仓库根目录，但构建上下文只有子目录，会导致文件未打包。构建上下文应包含所有需要打包的文件。 洞察：Electron 打包产物有 package（绿色文件夹）和 make（安装包）两种，前者适合本机自测，后者适合正式分发。不同安装器（Squirrel/NSIS）的快捷方式目标不同，升级时需要迁移旧快捷方式。 洞察：Chrome 路径配置问题根因在「每次加载配置时，若路径与旧版默认路径完全一致，会强制清空」，而不是保存逻辑问题。这种「强制清空」逻辑容易误删用户自定义配置。 教训：配置管理应避免「硬编码路径匹配后强制清空」的逻辑，应该用户填什么就存什么，启动时原样加载。必要时可以在加载时做规范化（如字符串 trim），但不应该凭空清空。 教训：OpenAPI 解析器需要处理循环引用问题，引入引用栈和深度上限是有效方案，但需要权衡深度上限的值（太小可能导致解析不完整，太大可能导致栈溢出）。 教训：大规模接口文档可以按 tag 或接口数分批处理，避免单次 LLM 调用超时或失败。分批后需要合并结果并重编号，保证用例 ID 连续。 教训：鉴权注入逻辑使用 setdefault 无法覆盖占位值，应该直接覆盖。需要检查用例的 use_auth 标记，确保鉴权只注入到需要鉴权的用例中。 🚀 未来行动设想 考虑将「合并推送」skill 推广到其他项目，提升开发效率 Docker 部署时，可以将配置文件通过 ConfigMap 或 Secret 管理，提升安全性 pytest 报告可以添加更多定制化选项，如失败截图、性能指标等 OpenAPI 解析器可以进一步优化，支持更多 OpenAPI 版本和特性 LLM 分批生成可以考虑并行化处理，提升生成速度 📊 自动化统计 捕获 Memory 数：2（2026-05-19.md + claude_2026-05-19.md） 笔记更新数：0（note-gen-sync 目录下最近24小时无 .md 文件更新） ","wordCount":"2554","inLanguage":"zh-cn","datePublished":"2026-05-19T23:56:00+08:00","dateModified":"2026-05-19T23:59:30+08:00","author":{"@type":"Person","name":"新人类"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"},"publisher":{"@type":"Organization","name":"蓝色空间号","logo":{"@type":"ImageObject","url":"https://bluespace.eu.org/favicon.ico"}}}</script></head><body id="top"><header class="header"><nav class="nav"><div class="logo"><a accesskey="h" href="https://bluespace.eu.org/" title="蓝色空间号 (Alt + H)">蓝色空间号</a><div class="logo-switches"><button accesskey="t" aria-label="Toggle theme" id="theme-toggle" title="(Alt + T)">
-<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
-<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></button></div></div><ul id="menu"><li><a accesskey="/" href="https://bluespace.eu.org/search/" title="搜索 (Alt + /)"><span>搜索</span></a></li><li><a href="https://bluespace.eu.org/" title="首页"><span>首页</span></a></li><li><a href="https://bluespace.eu.org/post/" title="文章"><span>文章</span></a></li><li><a href="https://bluespace.eu.org/archives/" title="归档"><span>归档</span></a></li><li><a href="https://bluespace.eu.org/categories/" title="分类"><span>分类</span></a></li><li><a href="https://bluespace.eu.org/tags/" title="标签"><span>标签</span></a></li><li><a href="https://bluespace.eu.org/about/" title="关于"><span>关于</span></a></li></ul></nav></header><main class="main"><article class="post-single"><header class="post-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a> » <a href="https://bluespace.eu.org/post/">文章</a></div><h1 class="post-title entry-hint-parent">2026-05-19赛博日记</h1><div class="post-meta"><span title="2026-05-19 23:56:00 +0800 CST">2026-05-19</span> · <span>6 min</span> · <span>2554 words</span> · <span>新人类</span></div></header><div class="toc"><details><summary accesskey="c" title="(Alt + C)"><span class="details">Table of Contents</span></summary><div class="inner"><nav id="TableOfContents"><ul><li><a href="#-今日概要">📝 今日概要</a></li><li><a href="#-核心技术进展">🔍 核心技术进展</a><ul><li><a href="#ysbaiiautotest-项目">ysbaiiautotest 项目</a></li><li><a href="#llm-api-test-tool-项目">LLM-api-test-tool 项目</a></li></ul></li><li><a href="#-深度洞察与经验教训">💡 深度洞察与经验教训</a></li><li><a href="#-未来行动设想">🚀 未来行动设想</a></li><li><a href="#-自动化统计">📊 自动化统计</a></li></ul></nav></div></details></div><div class="post-content"><h1 id="2026-05-19-赛博日记">2026-05-19 赛博日记<a aria-hidden="true" class="anchor" hidden="" href="#2026-05-19-赛博日记">#</a></h1><blockquote><p>生成时间：2026-05-19 23:58</p></blockquote><h2 id="-今日概要">📝 今日概要<a aria-hidden="true" class="anchor" hidden="" href="#-今日概要">#</a></h2><p>今日核心工作聚焦于 <strong>ysbaiautotest</strong> 项目多个关键问题的修复与 <strong>LLM-api-test-tool</strong> 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。</p><h2 id="-核心技术进展">🔍 核心技术进展<a aria-hidden="true" class="anchor" hidden="" href="#-核心技术进展">#</a></h2><h3 id="ysbaiiautotest-项目">ysbaiiautotest 项目<a aria-hidden="true" class="anchor" hidden="" href="#ysbaiiautotest-项目">#</a></h3><ol><li><p><strong>测试用例停止按钮修复</strong></p><ul><li><strong>问题</strong>：执行测试用例时点击停止按钮无法终断</li><li><strong>根因</strong>：<code>runningTestcaseProcess</code> 仅在 Python 启动后赋值，步骤增强阶段停止会返回「没有正在运行的测试用例」；停止后 <code>close</code> 仍会等待步级裁判完成；前端 <code>stopRunCase</code> 未递增 <code>currentExecutionId</code>，导致 <code>testcase:complete</code> 覆盖停止状态</li><li><strong>解决</strong>：增加 <code>testcaseRunSessionActive</code>/<code>testcaseRunAbortRequested</code> 状态标记；增强阶段可停止；停止后跳过裁判等待并快速结束 IPC；停止时 <code>currentExecutionId++</code>；<code>runTasks</code> 返回后若已停止则不再更新为成功/失败</li></ul></li><li><p><strong>Chrome 配置路径保存清空问题修复</strong></p><ul><li><strong>问题</strong>：Chrome 可执行文件路径和用户数据目录保存后，再次打开会清空</li><li><strong>根因</strong>：<code>settings.service.ts</code> 在加载配置时，若路径与旧版默认路径完全一致（如 <code>C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chrome.exe</code>），会强制清空</li><li><strong>解决</strong>：删除「每次加载都清空」的逻辑；保存 Web 设置时对 Chrome 路径相关字段统一按字符串写入；更新设置时做字符串规范化</li></ul></li><li><p><strong>Electron 打包快捷方式迁移（Squirrel → NSIS）</strong></p><ul><li><strong>问题</strong>：从 Squirrel 安装器切换到 NSIS 后，升级时桌面快捷方式指向旧版本，新快捷方式无法继承历史版本</li><li><strong>根因</strong>：不同安装器的快捷方式目标不同（Squirrel 指向 <code>Update.exe --processStart</code>，NSIS 直接指向 exe），升级时 NSIS 不会自动改写 Squirrel 创建的 <code>.lnk</code></li><li><strong>解决</strong>：创建 <code>build/installer.nsh</code> 自定义安装脚本；在 <code>customInstall</code> 阶段删除桌面/开始菜单中名为「药师帮 AI 自动化测试」的旧快捷方式；对桌面快捷方式先调用 <code>WinShell::UninstShortcut</code> 解除固定，再删除；调用 <code>SHChangeNotify</code> 刷新桌面</li></ul></li><li><p><strong>Electron 打包产物分发规范化</strong></p><ul><li><strong>澄清</strong>：<code>npm run package</code> 产物是绿色文件夹（约 765 MB），适合本机自测；正式分发应用应使用 <code>npm run make:bundle:win</code> 生成的 NSIS 安装包</li><li><strong>问题</strong>：绿色文件夹发给别的电脑「不行」，多半是没整夹、没解压到本地、传不全或被安全软件拦截</li><li><strong>指导</strong>：正式分发请使用 NSIS 安装包；若必须发绿色目录，需整夹打包 zip、解压到本地磁盘运行，不要在压缩包里直接双击</li></ul></li><li><p><strong>用例负责人显示优化（中文映射 + 下拉选择）</strong></p><ul><li><strong>需求</strong>：用例负责人显示为中文（当前显示 TAPD userid），且支持下拉选择，存储仍用 userid</li><li><strong>实现</strong>：<ul><li>使用 <code>resources/userid.csv</code> 映射文件（表头 <code>userid</code>/<code>name</code>）</li><li>后端 <code>normalizeCaseOwnerToUserid</code> 统一存 userid，界面显示中文名</li><li>下拉选项来自 CSV 中的姓名 + 数据库已有负责人（去重）</li><li>支持可选（首项为「不指定（可选）」）</li></ul></li><li><strong>Docker 部署修复</strong>：构建上下文改为仓库根目录，确保 <code>resources/userid.csv</code> 能被打包进镜像；运行时通过环境变量 <code>TAPD_USERID_CSV=/app/resources/userid.csv</code> 指定路径；未找到文件时打印警告日志</li></ul></li></ol><h3 id="llm-api-test-tool-项目">LLM-api-test-tool 项目<a aria-hidden="true" class="anchor" hidden="" href="#llm-api-test-tool-项目">#</a></h3><ol><li><p><strong>Coupon API 改造计划（大型重构）</strong></p><ul><li><strong>背景</strong>：88 个 POST 接口，7 个 tag，253 个 schema，大量循环 <code>$ref</code></li><li><strong>阻塞项</strong>：解析器 <code>SwaggerParser._resolve_schema</code> 遇循环 <code>$ref</code> 导致 <code>RecursionError</code></li><li><strong>技术选型</strong>：<ul><li><strong>解析器修复</strong>：引入引用栈 + 深度上限（<code>max_depth=8</code>），遇到循环 <code>$ref</code> 时返回标记或部分信息</li><li><strong>Tag 筛选</strong>：实现 <code>TagFilter</code> 组件，支持按 tag 筛选 endpoints</li><li><strong>鉴权注入</strong>：实现 <code>CouponAuthInjector</code>，支持 <code>BaseInModelAuth</code>（<code>appId</code>/<code>authCode</code>/<code>token</code>）在请求体中注入</li><li><strong>路径参数</strong>：实现 <code>PathParamResolver</code>，替换 <code>{version}</code> 等路径参数（从 <code>operation.description</code> 提取默认值）</li><li><strong>LLM 分批生成</strong>：按 tag 分组多次调用 LLM，合并结果并重编号，避免单次调用超时</li><li><strong>Rule 模式 body 增强</strong>：基于 schema/example 生成请求体，替代占位 <code>{}</code></li><li><strong>自修复能力</strong>：实现 <code>CaseRepairer</code>，失败用例根据 swagger 自修复</li><li><strong>pytest 报告</strong>：添加 HTML 报告生成，失败用例可点击查看完整日志弹窗</li></ul></li></ul></li><li><p><strong>前端体验优化</strong></p><ul><li><strong>Base URL 配置</strong>：从 <code>.env</code> 改为前端配置，存储在 <code>localStorage</code>，页面刷新不丢失</li><li><strong>认证管理</strong>：从弹窗改为设置页，使用左右分栏布局，包含完整的 CRUD 功能（环境配置 Tab + 认证管理 Tab）</li><li><strong>页面背景统一白色</strong>：将暗色主题改为白色背景（<code>.app-shell</code> 背景从 <code>radial-gradient</code> 改为 <code>#ffffff</code>）</li></ul></li><li><p><strong>合并推送 Skill</strong></p><ul><li><strong>自动化流程</strong>：创建 <code>.claude/skills/merge-push.md</code>，封装「检查变更 → 自动生成 commit 消息 → 暂存并提交 → 推送当前分支 → 合并到 dev/main → 推送 → 切回原分支 → 输出汇总报告」流程</li><li><strong>使用方式</strong>：在对话中输入 <code>/merge-push</code> 或说「合并推送」即可自动执行</li></ul></li></ol><h2 id="-深度洞察与经验教训">💡 深度洞察与经验教训<a aria-hidden="true" class="anchor" hidden="" href="#-深度洞察与经验教训">#</a></h2><ul><li><strong>洞察</strong>：Docker 构建上下文很重要。如果配置文件在仓库根目录，但构建上下文只有子目录，会导致文件未打包。构建上下文应包含所有需要打包的文件。</li><li><strong>洞察</strong>：Electron 打包产物有 <code>package</code>（绿色文件夹）和 <code>make</code>（安装包）两种，前者适合本机自测，后者适合正式分发。不同安装器（Squirrel/NSIS）的快捷方式目标不同，升级时需要迁移旧快捷方式。</li><li><strong>洞察</strong>：Chrome 路径配置问题根因在「每次加载配置时，若路径与旧版默认路径完全一致，会强制清空」，而不是保存逻辑问题。这种「强制清空」逻辑容易误删用户自定义配置。</li><li><strong>教训</strong>：配置管理应避免「硬编码路径匹配后强制清空」的逻辑，应该用户填什么就存什么，启动时原样加载。必要时可以在加载时做规范化（如字符串 trim），但不应该凭空清空。</li><li><strong>教训</strong>：OpenAPI 解析器需要处理循环引用问题，引入引用栈和深度上限是有效方案，但需要权衡深度上限的值（太小可能导致解析不完整，太大可能导致栈溢出）。</li><li><strong>教训</strong>：大规模接口文档可以按 tag 或接口数分批处理，避免单次 LLM 调用超时或失败。分批后需要合并结果并重编号，保证用例 ID 连续。</li><li><strong>教训</strong>：鉴权注入逻辑使用 <code>setdefault</code> 无法覆盖占位值，应该直接覆盖。需要检查用例的 <code>use_auth</code> 标记，确保鉴权只注入到需要鉴权的用例中。</li></ul><h2 id="-未来行动设想">🚀 未来行动设想<a aria-hidden="true" class="anchor" hidden="" href="#-未来行动设想">#</a></h2><ul><li><input disabled="" type="checkbox"/> 考虑将「合并推送」skill 推广到其他项目，提升开发效率</li><li><input disabled="" type="checkbox"/> Docker 部署时，可以将配置文件通过 ConfigMap 或 Secret 管理，提升安全性</li><li><input disabled="" type="checkbox"/> pytest 报告可以添加更多定制化选项，如失败截图、性能指标等</li><li><input disabled="" type="checkbox"/> OpenAPI 解析器可以进一步优化，支持更多 OpenAPI 版本和特性</li><li><input disabled="" type="checkbox"/> LLM 分批生成可以考虑并行化处理，提升生成速度</li></ul><h2 id="-自动化统计">📊 自动化统计<a aria-hidden="true" class="anchor" hidden="" href="#-自动化统计">#</a></h2><ul><li>捕获 Memory 数：2（2026-05-19.md + claude_2026-05-19.md）</li><li>笔记更新数：0（note-gen-sync 目录下最近24小时无 .md 文件更新）</li></ul></div><footer class="post-footer"><ul class="post-tags"></ul><nav class="paginav"><a class="prev" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"><span class="title">«</span><br/><span>2026-05-20赛博日记</span>
-</a><a class="next" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"><span class="title">»</span><br/><span>2026-05-18赛博日记</span></a></nav><ul class="share-buttons"><li><a aria-label="share 2026-05-19赛博日记 on x" href="https://x.com/intent/tweet/?text=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;hashtags=" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"></path></svg></a></li><li><a aria-label="share 2026-05-19赛博日记 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;title=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;summary=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"></path></svg></a></li><li><a aria-label="share 2026-05-19赛博日记 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;title=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"></path></svg></a></li><li><a aria-label="share 2026-05-19赛博日记 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"></path></svg></a></li><li><a aria-label="share 2026-05-19赛博日记 on whatsapp" href="https://api.whatsapp.com/send?text=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"></path></svg></a></li><li><a aria-label="share 2026-05-19赛博日记 on telegram" href="https://telegram.me/share/url?text=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="2 2 28 28" width="30"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"></path></svg></a></li><li><a aria-label="share 2026-05-19赛博日记 on ycombinator" href="https://news.ycombinator.com/submitlink?t=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"></path></svg></a></li></ul></footer></article></main><footer class="footer"><span>© 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> ·
-<span>Powered by
-<a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
-<a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a></span></footer><a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)"><svg fill="currentColor" viewbox="0 0 12 6"><path d="M12 6H0l6-6z"></path></svg>
-</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
+今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://bluespace.eu.org/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "2026-05-19赛博日记",
+      "item": "https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2026-05-19赛博日记",
+  "name": "2026-05-19赛博日记",
+  "description": "2026-05-19 赛博日记 生成时间：2026-05-19 23:58\n📝 今日概要 今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "2026-05-19 赛博日记 生成时间：2026-05-19 23:58\n📝 今日概要 今日核心工作聚焦于 ysbaiautotest 项目多个关键问题的修复与 LLM-api-test-tool 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。\n🔍 核心技术进展 ysbaiiautotest 项目 测试用例停止按钮修复\n问题：执行测试用例时点击停止按钮无法终断 根因：runningTestcaseProcess 仅在 Python 启动后赋值，步骤增强阶段停止会返回「没有正在运行的测试用例」；停止后 close 仍会等待步级裁判完成；前端 stopRunCase 未递增 currentExecutionId，导致 testcase:complete 覆盖停止状态 解决：增加 testcaseRunSessionActive/testcaseRunAbortRequested 状态标记；增强阶段可停止；停止后跳过裁判等待并快速结束 IPC；停止时 currentExecutionId++；runTasks 返回后若已停止则不再更新为成功/失败 Chrome 配置路径保存清空问题修复\n问题：Chrome 可执行文件路径和用户数据目录保存后，再次打开会清空 根因：settings.service.ts 在加载配置时，若路径与旧版默认路径完全一致（如 C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe），会强制清空 解决：删除「每次加载都清空」的逻辑；保存 Web 设置时对 Chrome 路径相关字段统一按字符串写入；更新设置时做字符串规范化 Electron 打包快捷方式迁移（Squirrel → NSIS）\n问题：从 Squirrel 安装器切换到 NSIS 后，升级时桌面快捷方式指向旧版本，新快捷方式无法继承历史版本 根因：不同安装器的快捷方式目标不同（Squirrel 指向 Update.exe --processStart，NSIS 直接指向 exe），升级时 NSIS 不会自动改写 Squirrel 创建的 .lnk 解决：创建 build/installer.nsh 自定义安装脚本；在 customInstall 阶段删除桌面/开始菜单中名为「药师帮 AI 自动化测试」的旧快捷方式；对桌面快捷方式先调用 WinShell::UninstShortcut 解除固定，再删除；调用 SHChangeNotify 刷新桌面 Electron 打包产物分发规范化\n澄清：npm run package 产物是绿色文件夹（约 765 MB），适合本机自测；正式分发应用应使用 npm run make:bundle:win 生成的 NSIS 安装包 问题：绿色文件夹发给别的电脑「不行」，多半是没整夹、没解压到本地、传不全或被安全软件拦截 指导：正式分发请使用 NSIS 安装包；若必须发绿色目录，需整夹打包 zip、解压到本地磁盘运行，不要在压缩包里直接双击 用例负责人显示优化（中文映射 + 下拉选择）\n需求：用例负责人显示为中文（当前显示 TAPD userid），且支持下拉选择，存储仍用 userid 实现： 使用 resources/userid.csv 映射文件（表头 userid/name） 后端 normalizeCaseOwnerToUserid 统一存 userid，界面显示中文名 下拉选项来自 CSV 中的姓名 + 数据库已有负责人（去重） 支持可选（首项为「不指定（可选）」） Docker 部署修复：构建上下文改为仓库根目录，确保 resources/userid.csv 能被打包进镜像；运行时通过环境变量 TAPD_USERID_CSV=/app/resources/userid.csv 指定路径；未找到文件时打印警告日志 LLM-api-test-tool 项目 Coupon API 改造计划（大型重构）\n背景：88 个 POST 接口，7 个 tag，253 个 schema，大量循环 $ref 阻塞项：解析器 SwaggerParser._resolve_schema 遇循环 $ref 导致 RecursionError 技术选型： 解析器修复：引入引用栈 + 深度上限（max_depth=8），遇到循环 $ref 时返回标记或部分信息 Tag 筛选：实现 TagFilter 组件，支持按 tag 筛选 endpoints 鉴权注入：实现 CouponAuthInjector，支持 BaseInModelAuth（appId/authCode/token）在请求体中注入 路径参数：实现 PathParamResolver，替换 {version} 等路径参数（从 operation.description 提取默认值） LLM 分批生成：按 tag 分组多次调用 LLM，合并结果并重编号，避免单次调用超时 Rule 模式 body 增强：基于 schema/example 生成请求体，替代占位 {} 自修复能力：实现 CaseRepairer，失败用例根据 swagger 自修复 pytest 报告：添加 HTML 报告生成，失败用例可点击查看完整日志弹窗 前端体验优化\nBase URL 配置：从 .env 改为前端配置，存储在 localStorage，页面刷新不丢失 认证管理：从弹窗改为设置页，使用左右分栏布局，包含完整的 CRUD 功能（环境配置 Tab + 认证管理 Tab） 页面背景统一白色：将暗色主题改为白色背景（.app-shell 背景从 radial-gradient 改为 #ffffff） 合并推送 Skill\n自动化流程：创建 .claude/skills/merge-push.md，封装「检查变更 → 自动生成 commit 消息 → 暂存并提交 → 推送当前分支 → 合并到 dev/main → 推送 → 切回原分支 → 输出汇总报告」流程 使用方式：在对话中输入 /merge-push 或说「合并推送」即可自动执行 💡 深度洞察与经验教训 洞察：Docker 构建上下文很重要。如果配置文件在仓库根目录，但构建上下文只有子目录，会导致文件未打包。构建上下文应包含所有需要打包的文件。 洞察：Electron 打包产物有 package（绿色文件夹）和 make（安装包）两种，前者适合本机自测，后者适合正式分发。不同安装器（Squirrel/NSIS）的快捷方式目标不同，升级时需要迁移旧快捷方式。 洞察：Chrome 路径配置问题根因在「每次加载配置时，若路径与旧版默认路径完全一致，会强制清空」，而不是保存逻辑问题。这种「强制清空」逻辑容易误删用户自定义配置。 教训：配置管理应避免「硬编码路径匹配后强制清空」的逻辑，应该用户填什么就存什么，启动时原样加载。必要时可以在加载时做规范化（如字符串 trim），但不应该凭空清空。 教训：OpenAPI 解析器需要处理循环引用问题，引入引用栈和深度上限是有效方案，但需要权衡深度上限的值（太小可能导致解析不完整，太大可能导致栈溢出）。 教训：大规模接口文档可以按 tag 或接口数分批处理，避免单次 LLM 调用超时或失败。分批后需要合并结果并重编号，保证用例 ID 连续。 教训：鉴权注入逻辑使用 setdefault 无法覆盖占位值，应该直接覆盖。需要检查用例的 use_auth 标记，确保鉴权只注入到需要鉴权的用例中。 🚀 未来行动设想 考虑将「合并推送」skill 推广到其他项目，提升开发效率 Docker 部署时，可以将配置文件通过 ConfigMap 或 Secret 管理，提升安全性 pytest 报告可以添加更多定制化选项，如失败截图、性能指标等 OpenAPI 解析器可以进一步优化，支持更多 OpenAPI 版本和特性 LLM 分批生成可以考虑并行化处理，提升生成速度 📊 自动化统计 捕获 Memory 数：2（2026-05-19.md + claude_2026-05-19.md） 笔记更新数：0（note-gen-sync 目录下最近24小时无 .md 文件更新） ",
+  "wordCount" : "2554",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-05-19T23:56:00+08:00",
+  "dateModified": "2026-05-19T23:59:30+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "新人类"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "蓝色空间号",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluespace.eu.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bluespace.eu.org/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/post/">文章</a></div>
+    <h1 class="post-title entry-hint-parent">
+      2026-05-19赛博日记
+    </h1>
+    <div class="post-meta"><span title='2026-05-19 23:56:00 +0800 CST'>2026-05-19</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>2554 words</span>&nbsp;·&nbsp;<span>新人类</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-今日概要">📝 今日概要</a></li>
+    <li><a href="#-核心技术进展">🔍 核心技术进展</a>
+      <ul>
+        <li><a href="#ysbaiiautotest-项目">ysbaiiautotest 项目</a></li>
+        <li><a href="#llm-api-test-tool-项目">LLM-api-test-tool 项目</a></li>
+      </ul>
+    </li>
+    <li><a href="#-深度洞察与经验教训">💡 深度洞察与经验教训</a></li>
+    <li><a href="#-未来行动设想">🚀 未来行动设想</a></li>
+    <li><a href="#-自动化统计">📊 自动化统计</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="2026-05-19-赛博日记">2026-05-19 赛博日记<a hidden class="anchor" aria-hidden="true" href="#2026-05-19-赛博日记">#</a></h1>
+<blockquote>
+<p>生成时间：2026-05-19 23:58</p></blockquote>
+<h2 id="-今日概要">📝 今日概要<a hidden class="anchor" aria-hidden="true" href="#-今日概要">#</a></h2>
+<p>今日核心工作聚焦于 <strong>ysbaiautotest</strong> 项目多个关键问题的修复与 <strong>LLM-api-test-tool</strong> 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。</p>
+<h2 id="-核心技术进展">🔍 核心技术进展<a hidden class="anchor" aria-hidden="true" href="#-核心技术进展">#</a></h2>
+<h3 id="ysbaiiautotest-项目">ysbaiiautotest 项目<a hidden class="anchor" aria-hidden="true" href="#ysbaiiautotest-项目">#</a></h3>
+<ol>
+<li>
+<p><strong>测试用例停止按钮修复</strong></p>
+<ul>
+<li><strong>问题</strong>：执行测试用例时点击停止按钮无法终断</li>
+<li><strong>根因</strong>：<code>runningTestcaseProcess</code> 仅在 Python 启动后赋值，步骤增强阶段停止会返回「没有正在运行的测试用例」；停止后 <code>close</code> 仍会等待步级裁判完成；前端 <code>stopRunCase</code> 未递增 <code>currentExecutionId</code>，导致 <code>testcase:complete</code> 覆盖停止状态</li>
+<li><strong>解决</strong>：增加 <code>testcaseRunSessionActive</code>/<code>testcaseRunAbortRequested</code> 状态标记；增强阶段可停止；停止后跳过裁判等待并快速结束 IPC；停止时 <code>currentExecutionId++</code>；<code>runTasks</code> 返回后若已停止则不再更新为成功/失败</li>
+</ul>
+</li>
+<li>
+<p><strong>Chrome 配置路径保存清空问题修复</strong></p>
+<ul>
+<li><strong>问题</strong>：Chrome 可执行文件路径和用户数据目录保存后，再次打开会清空</li>
+<li><strong>根因</strong>：<code>settings.service.ts</code> 在加载配置时，若路径与旧版默认路径完全一致（如 <code>C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chrome.exe</code>），会强制清空</li>
+<li><strong>解决</strong>：删除「每次加载都清空」的逻辑；保存 Web 设置时对 Chrome 路径相关字段统一按字符串写入；更新设置时做字符串规范化</li>
+</ul>
+</li>
+<li>
+<p><strong>Electron 打包快捷方式迁移（Squirrel → NSIS）</strong></p>
+<ul>
+<li><strong>问题</strong>：从 Squirrel 安装器切换到 NSIS 后，升级时桌面快捷方式指向旧版本，新快捷方式无法继承历史版本</li>
+<li><strong>根因</strong>：不同安装器的快捷方式目标不同（Squirrel 指向 <code>Update.exe --processStart</code>，NSIS 直接指向 exe），升级时 NSIS 不会自动改写 Squirrel 创建的 <code>.lnk</code></li>
+<li><strong>解决</strong>：创建 <code>build/installer.nsh</code> 自定义安装脚本；在 <code>customInstall</code> 阶段删除桌面/开始菜单中名为「药师帮 AI 自动化测试」的旧快捷方式；对桌面快捷方式先调用 <code>WinShell::UninstShortcut</code> 解除固定，再删除；调用 <code>SHChangeNotify</code> 刷新桌面</li>
+</ul>
+</li>
+<li>
+<p><strong>Electron 打包产物分发规范化</strong></p>
+<ul>
+<li><strong>澄清</strong>：<code>npm run package</code> 产物是绿色文件夹（约 765 MB），适合本机自测；正式分发应用应使用 <code>npm run make:bundle:win</code> 生成的 NSIS 安装包</li>
+<li><strong>问题</strong>：绿色文件夹发给别的电脑「不行」，多半是没整夹、没解压到本地、传不全或被安全软件拦截</li>
+<li><strong>指导</strong>：正式分发请使用 NSIS 安装包；若必须发绿色目录，需整夹打包 zip、解压到本地磁盘运行，不要在压缩包里直接双击</li>
+</ul>
+</li>
+<li>
+<p><strong>用例负责人显示优化（中文映射 + 下拉选择）</strong></p>
+<ul>
+<li><strong>需求</strong>：用例负责人显示为中文（当前显示 TAPD userid），且支持下拉选择，存储仍用 userid</li>
+<li><strong>实现</strong>：
+<ul>
+<li>使用 <code>resources/userid.csv</code> 映射文件（表头 <code>userid</code>/<code>name</code>）</li>
+<li>后端 <code>normalizeCaseOwnerToUserid</code> 统一存 userid，界面显示中文名</li>
+<li>下拉选项来自 CSV 中的姓名 + 数据库已有负责人（去重）</li>
+<li>支持可选（首项为「不指定（可选）」）</li>
+</ul>
+</li>
+<li><strong>Docker 部署修复</strong>：构建上下文改为仓库根目录，确保 <code>resources/userid.csv</code> 能被打包进镜像；运行时通过环境变量 <code>TAPD_USERID_CSV=/app/resources/userid.csv</code> 指定路径；未找到文件时打印警告日志</li>
+</ul>
+</li>
+</ol>
+<h3 id="llm-api-test-tool-项目">LLM-api-test-tool 项目<a hidden class="anchor" aria-hidden="true" href="#llm-api-test-tool-项目">#</a></h3>
+<ol>
+<li>
+<p><strong>Coupon API 改造计划（大型重构）</strong></p>
+<ul>
+<li><strong>背景</strong>：88 个 POST 接口，7 个 tag，253 个 schema，大量循环 <code>$ref</code></li>
+<li><strong>阻塞项</strong>：解析器 <code>SwaggerParser._resolve_schema</code> 遇循环 <code>$ref</code> 导致 <code>RecursionError</code></li>
+<li><strong>技术选型</strong>：
+<ul>
+<li><strong>解析器修复</strong>：引入引用栈 + 深度上限（<code>max_depth=8</code>），遇到循环 <code>$ref</code> 时返回标记或部分信息</li>
+<li><strong>Tag 筛选</strong>：实现 <code>TagFilter</code> 组件，支持按 tag 筛选 endpoints</li>
+<li><strong>鉴权注入</strong>：实现 <code>CouponAuthInjector</code>，支持 <code>BaseInModelAuth</code>（<code>appId</code>/<code>authCode</code>/<code>token</code>）在请求体中注入</li>
+<li><strong>路径参数</strong>：实现 <code>PathParamResolver</code>，替换 <code>{version}</code> 等路径参数（从 <code>operation.description</code> 提取默认值）</li>
+<li><strong>LLM 分批生成</strong>：按 tag 分组多次调用 LLM，合并结果并重编号，避免单次调用超时</li>
+<li><strong>Rule 模式 body 增强</strong>：基于 schema/example 生成请求体，替代占位 <code>{}</code></li>
+<li><strong>自修复能力</strong>：实现 <code>CaseRepairer</code>，失败用例根据 swagger 自修复</li>
+<li><strong>pytest 报告</strong>：添加 HTML 报告生成，失败用例可点击查看完整日志弹窗</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>前端体验优化</strong></p>
+<ul>
+<li><strong>Base URL 配置</strong>：从 <code>.env</code> 改为前端配置，存储在 <code>localStorage</code>，页面刷新不丢失</li>
+<li><strong>认证管理</strong>：从弹窗改为设置页，使用左右分栏布局，包含完整的 CRUD 功能（环境配置 Tab + 认证管理 Tab）</li>
+<li><strong>页面背景统一白色</strong>：将暗色主题改为白色背景（<code>.app-shell</code> 背景从 <code>radial-gradient</code> 改为 <code>#ffffff</code>）</li>
+</ul>
+</li>
+<li>
+<p><strong>合并推送 Skill</strong></p>
+<ul>
+<li><strong>自动化流程</strong>：创建 <code>.claude/skills/merge-push.md</code>，封装「检查变更 → 自动生成 commit 消息 → 暂存并提交 → 推送当前分支 → 合并到 dev/main → 推送 → 切回原分支 → 输出汇总报告」流程</li>
+<li><strong>使用方式</strong>：在对话中输入 <code>/merge-push</code> 或说「合并推送」即可自动执行</li>
+</ul>
+</li>
+</ol>
+<h2 id="-深度洞察与经验教训">💡 深度洞察与经验教训<a hidden class="anchor" aria-hidden="true" href="#-深度洞察与经验教训">#</a></h2>
+<ul>
+<li><strong>洞察</strong>：Docker 构建上下文很重要。如果配置文件在仓库根目录，但构建上下文只有子目录，会导致文件未打包。构建上下文应包含所有需要打包的文件。</li>
+<li><strong>洞察</strong>：Electron 打包产物有 <code>package</code>（绿色文件夹）和 <code>make</code>（安装包）两种，前者适合本机自测，后者适合正式分发。不同安装器（Squirrel/NSIS）的快捷方式目标不同，升级时需要迁移旧快捷方式。</li>
+<li><strong>洞察</strong>：Chrome 路径配置问题根因在「每次加载配置时，若路径与旧版默认路径完全一致，会强制清空」，而不是保存逻辑问题。这种「强制清空」逻辑容易误删用户自定义配置。</li>
+<li><strong>教训</strong>：配置管理应避免「硬编码路径匹配后强制清空」的逻辑，应该用户填什么就存什么，启动时原样加载。必要时可以在加载时做规范化（如字符串 trim），但不应该凭空清空。</li>
+<li><strong>教训</strong>：OpenAPI 解析器需要处理循环引用问题，引入引用栈和深度上限是有效方案，但需要权衡深度上限的值（太小可能导致解析不完整，太大可能导致栈溢出）。</li>
+<li><strong>教训</strong>：大规模接口文档可以按 tag 或接口数分批处理，避免单次 LLM 调用超时或失败。分批后需要合并结果并重编号，保证用例 ID 连续。</li>
+<li><strong>教训</strong>：鉴权注入逻辑使用 <code>setdefault</code> 无法覆盖占位值，应该直接覆盖。需要检查用例的 <code>use_auth</code> 标记，确保鉴权只注入到需要鉴权的用例中。</li>
+</ul>
+<h2 id="-未来行动设想">🚀 未来行动设想<a hidden class="anchor" aria-hidden="true" href="#-未来行动设想">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> 考虑将「合并推送」skill 推广到其他项目，提升开发效率</li>
+<li><input disabled="" type="checkbox"> Docker 部署时，可以将配置文件通过 ConfigMap 或 Secret 管理，提升安全性</li>
+<li><input disabled="" type="checkbox"> pytest 报告可以添加更多定制化选项，如失败截图、性能指标等</li>
+<li><input disabled="" type="checkbox"> OpenAPI 解析器可以进一步优化，支持更多 OpenAPI 版本和特性</li>
+<li><input disabled="" type="checkbox"> LLM 分批生成可以考虑并行化处理，提升生成速度</li>
+</ul>
+<h2 id="-自动化统计">📊 自动化统计<a hidden class="anchor" aria-hidden="true" href="#-自动化统计">#</a></h2>
+<ul>
+<li>捕获 Memory 数：2（2026-05-19.md + claude_2026-05-19.md）</li>
+<li>笔记更新数：0（note-gen-sync 目录下最近24小时无 .md 文件更新）</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title">« </span>
+    <br>
+    <span>2026-05-20赛博日记</span>
+  </a>
+  <a class="next" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title"> »</span>
+    <br>
+    <span>2026-05-18赛博日记</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-05-19赛博日记 on x"
+            href="https://x.com/intent/tweet/?text=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-05-19赛博日记 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;title=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;summary=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-05-19赛博日记 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&title=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-05-19赛博日记 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-05-19赛博日记 on whatsapp"
+            href="https://api.whatsapp.com/send?text=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-05-19赛博日记 on telegram"
+            href="https://telegram.me/share/url?text=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-05-19赛博日记 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=2026-05-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-05-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

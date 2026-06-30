@@ -1,29 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>软件工具 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/</link><description>Recent content in 软件工具 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 06 May 2026 00:00:26 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>Cursor使用笔记</title><link>https://bluespace.eu.org/post.bak.20260510232724/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/cursor%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 06 May 2026 00:00:26 +0800</pubDate><guid>https://bluespace.eu.org/post.bak.20260510232724/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/cursor%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="cursor-使用笔记">Cursor 使用笔记&lt;/h1>
-&lt;h2 id="插件gitgraph">插件：gitgraph&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>功能：&lt;/strong> Git 提交历史可视化（画提交图/分支图）&lt;/li>
-&lt;li>&lt;strong>用途：&lt;/strong> 在 Cursor 中直观查看 git commit 历史&lt;/li>
-&lt;/ul>
-&lt;h2 id="drawio-格式输出飞书兼容">draw.io 格式输出（飞书兼容）&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>做法：&lt;/strong> 要求 AI 输出 draw.io 格式的 XML 图表&lt;/li>
-&lt;li>&lt;strong>优势：&lt;/strong> 输出内容可直接复制粘贴到飞书，飞书自动渲染为可编辑的流程图&lt;/li>
-&lt;li>&lt;strong>适用场景：&lt;/strong> 流程图、架构图、时序图等&lt;/li>
-&lt;/ul>
-&lt;h2 id="经验教训">经验教训&lt;/h2>
-&lt;blockquote>
-&lt;p>&lt;strong>Agent 犯错 → 沉淀为规则/工具 → 避免再犯&lt;/strong>&lt;/p></description></item><item><title>Cursor使用笔记</title><link>https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/cursor%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 06 May 2026 00:00:26 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/cursor%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="cursor-使用笔记">Cursor 使用笔记&lt;/h1>
-&lt;h2 id="插件gitgraph">插件：gitgraph&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>功能：&lt;/strong> Git 提交历史可视化（画提交图/分支图）&lt;/li>
-&lt;li>&lt;strong>用途：&lt;/strong> 在 Cursor 中直观查看 git commit 历史&lt;/li>
-&lt;/ul>
-&lt;h2 id="drawio-格式输出飞书兼容">draw.io 格式输出（飞书兼容）&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>做法：&lt;/strong> 要求 AI 输出 draw.io 格式的 XML 图表&lt;/li>
-&lt;li>&lt;strong>优势：&lt;/strong> 输出内容可直接复制粘贴到飞书，飞书自动渲染为可编辑的流程图&lt;/li>
-&lt;li>&lt;strong>适用场景：&lt;/strong> 流程图、架构图、时序图等&lt;/li>
-&lt;/ul>
-&lt;h2 id="经验教训">经验教训&lt;/h2>
-&lt;blockquote>
-&lt;p>&lt;strong>Agent 犯错 → 沉淀为规则/工具 → 避免再犯&lt;/strong>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>软件工具 on 蓝色空间号</title>
+    <link>https://bluespace.eu.org/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 软件工具 on 蓝色空间号</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 06 May 2026 00:00:26 +0800</lastBuildDate>
+    <atom:link href="https://bluespace.eu.org/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cursor使用笔记</title>
+      <link>https://bluespace.eu.org/post.bak.20260510232724/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/cursor%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 06 May 2026 00:00:26 +0800</pubDate>
+      <guid>https://bluespace.eu.org/post.bak.20260510232724/%E5%B7%A5%E5%85%B7/%E5%AE%9E%E8%B7%B5/cursor%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h1 id=&#34;cursor-使用笔记&#34;&gt;Cursor 使用笔记&lt;/h1&gt;
+&lt;h2 id=&#34;插件gitgraph&#34;&gt;插件：gitgraph&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能：&lt;/strong&gt; Git 提交历史可视化（画提交图/分支图）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用途：&lt;/strong&gt; 在 Cursor 中直观查看 git commit 历史&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;drawio-格式输出飞书兼容&#34;&gt;draw.io 格式输出（飞书兼容）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;做法：&lt;/strong&gt; 要求 AI 输出 draw.io 格式的 XML 图表&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优势：&lt;/strong&gt; 输出内容可直接复制粘贴到飞书，飞书自动渲染为可编辑的流程图&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;适用场景：&lt;/strong&gt; 流程图、架构图、时序图等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;经验教训&#34;&gt;经验教训&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Agent 犯错 → 沉淀为规则/工具 → 避免再犯&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cursor使用笔记</title>
+      <link>https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/cursor%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 06 May 2026 00:00:26 +0800</pubDate>
+      <guid>https://bluespace.eu.org/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/cursor%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h1 id=&#34;cursor-使用笔记&#34;&gt;Cursor 使用笔记&lt;/h1&gt;
+&lt;h2 id=&#34;插件gitgraph&#34;&gt;插件：gitgraph&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能：&lt;/strong&gt; Git 提交历史可视化（画提交图/分支图）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用途：&lt;/strong&gt; 在 Cursor 中直观查看 git commit 历史&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;drawio-格式输出飞书兼容&#34;&gt;draw.io 格式输出（飞书兼容）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;做法：&lt;/strong&gt; 要求 AI 输出 draw.io 格式的 XML 图表&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优势：&lt;/strong&gt; 输出内容可直接复制粘贴到飞书，飞书自动渲染为可编辑的流程图&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;适用场景：&lt;/strong&gt; 流程图、架构图、时序图等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;经验教训&#34;&gt;经验教训&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Agent 犯错 → 沉淀为规则/工具 → 避免再犯&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
