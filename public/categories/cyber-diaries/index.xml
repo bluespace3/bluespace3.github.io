@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Cyber-Diaries on 蓝色空间号</title><link>https://bluespace.eu.org/categories/cyber-diaries/</link><description>Recent content in Cyber-Diaries on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 02 Jul 2026 23:59:16 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/cyber-diaries/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-02赛博日记</title><link>https://bluespace.eu.org/post/cyber-diaries/2026-07-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 02 Jul 2026 23:59:16 +0800</pubDate><guid>https://bluespace.eu.org/post/cyber-diaries/2026-07-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年7月2日-赛博日记">2026年7月2日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-07-02 23:58&lt;/p>&lt;/blockquote>
+&lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
+&lt;p>完成 Nextcloud/Colima 本地服务全线恢复与博客全量自动化同步，同时排查域名访问链路问题。&lt;/p>
+&lt;h2 id="-核心技术进展">🔍 核心技术进展&lt;/h2>
+&lt;h3 id="-本地服务修复nextcloud--colima">🔧 本地服务修复：Nextcloud + Colima&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>根因定位&lt;/strong>：Colima 未开机自启导致 Docker 引擎未运行，三大容器全挂；Docker 虚拟磁盘使用率接近 97%（94.8G/97.9G），MySQL 反复崩溃&lt;/li>
+&lt;li>&lt;strong>修复措施&lt;/strong>：
+&lt;ul>
+&lt;li>清理 Docker 无用资源释放约 25.6GB&lt;/li>
+&lt;li>按序重启 MySQL → Nextcloud → Redis，全线恢复&lt;/li>
+&lt;li>创建 &lt;code>~/Library/LaunchAgents/com.colima.autostart.plist&lt;/code> 实现开机自启&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 全部恢复&lt;/li>
+&lt;/ul>
+&lt;h3 id="-域名访问链路排查mmskyspaceeuorg">🌐 域名访问链路排查：mm.skyspace.eu.org&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>排查链路&lt;/strong>：OpenClaw 本地服务 (18789) ✅ → LAN 访问 (xxx.xxx.xxx.xxx:18789) ✅ → DNS/Cloudflare ✅ → Cloudflare → 源站 ❌&lt;/li>
+&lt;li>&lt;strong>深入定位&lt;/strong>：服务器 nginx 反代到 Tailscale IP &lt;code>xxx.xxx.xxx.xxx:18789&lt;/code>，但 Tailscale 隧道实际断裂（&lt;code>tx 21528 rx 0&lt;/code>，Mac 端 offline 约 26 分钟）&lt;/li>
+&lt;li>&lt;strong>结论&lt;/strong>：Tailscale 隧道断裂导致服务器无法转发请求到 Mac&lt;/li>
+&lt;/ul>
+&lt;h3 id="-博客全量自动化同步">🤖 博客全量自动化同步&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>同步指标&lt;/strong>：162 个笔记文件，自动脱敏 224 处敏感信息（覆盖 28 个文件），生成 688 页面、73 分页、96 静态文件，文章加密成功&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：无新的 git 变更，跳过部署&lt;/li>
+&lt;/ul>
+&lt;h2 id="-深度洞察与经验教训">💡 深度洞察与经验教训&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>洞察&lt;/strong>：Docker 磁盘空间不足会连锁导致容器异常；MySQL 崩溃的根因并非配置问题，而是磁盘空间耗尽&lt;/li>
+&lt;li>&lt;strong>洞察&lt;/strong>：Tailscale 的 &lt;code>active&lt;/code> 状态不等于连通，&lt;code>rx 0&lt;/code> 才是真实的断连指标&lt;/li>
+&lt;li>&lt;strong>教训&lt;/strong>：Colima 开机自启需预先配置；自动化脱敏已覆盖 28 个文件中的 224 处敏感信息&lt;/li>
+&lt;/ul>
+&lt;h2 id="-未来行动设想">🚀 未来行动设想&lt;/h2>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> 持续观察 Colima 开机自启稳定性&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 建立磁盘空间监控与告警，避免再次因空间不足导致服务异常&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 优化 Tailscale 隧道健康检查机制&lt;/li>
+&lt;/ul>
+&lt;h2 id="-自动化统计">📊 自动化统计&lt;/h2>
+&lt;ul>
+&lt;li>捕获 Memory 数：1&lt;/li>
+&lt;li>笔记更新数：0&lt;/li>
+&lt;/ul></description></item></channel></rss>
