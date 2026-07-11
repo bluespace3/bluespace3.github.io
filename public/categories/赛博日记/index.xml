@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 10 Jul 2026 23:59:04 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-10赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 10 Jul 2026 23:59:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-07-10-赛博日记">2026-07-10 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 11 Jul 2026 23:59:18 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-11赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 11 Jul 2026 23:59:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年7月11日-赛博日记">2026年7月11日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-07-11 23:58&lt;/p>&lt;/blockquote>
+&lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
+&lt;p>博客系统例行全量同步，207个笔记文件成功生成735页面，系统运行稳定无异常。&lt;/p>
+&lt;h2 id="-核心技术进展">🔍 核心技术进展&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>博客全量自动更新&lt;/strong>（来源：memory/2026-07-11.md）
+&lt;ul>
+&lt;li>执行全量同步操作，同步笔记文件207个&lt;/li>
+&lt;li>网站成功生成735个页面&lt;/li>
+&lt;li>自动脱敏敏感信息244处（涉及41个文件）&lt;/li>
+&lt;li>检测无新更改，跳过部署步骤&lt;/li>
+&lt;li>脚本位置：&lt;code>/var/www/bluespace3.github.io/deploy.sh&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="-今日待办完成">✅ 今日待办完成&lt;/h2>
+&lt;p>暂无记录&lt;/p></description></item><item><title>2026-07-10赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 10 Jul 2026 23:59:04 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-07-10-赛博日记">2026-07-10 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-07-10 23:58&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
