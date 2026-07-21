@@ -139,6 +139,8 @@ rsync -av \
     --exclude='.obsidian/' \
     --exclude='工作/' \
     --exclude='openclaw/memory/' \
+    --exclude='cyber-diaries/' \
+    --exclude='cyber-diary/' \
     --include='*.md' \
     --include='*/' \
     --exclude='*' \
