@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 24 Jul 2026 23:52:25 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-24赛博日记</title><link>https://bluespace.eu.org/post/openclaw/2026-07-24%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 24 Jul 2026 23:52:25 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/2026-07-24%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="-2026-07-24-赛博日记">📅 2026-07-24 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 26 Jul 2026 03:00:02 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-25赛博日记</title><link>https://bluespace.eu.org/post/openclaw/2026-07-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 26 Jul 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/2026-07-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="-2026-07-25-赛博日记">📅 2026-07-25 赛博日记&lt;/h1>
+&lt;h2 id="-每日代办推送">📋 每日代办推送&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>: 00:46 CST&lt;/li>
+&lt;li>&lt;strong>渠道&lt;/strong>: 飞书（Webchat heartbeat）&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>: 推送今日代办（共 31 项进行中）
+&lt;ul>
+&lt;li>LangGraph 学习 Day 4-28 系列（25 项，长期停滞）&lt;/li>
+&lt;li>回归用例自动化维护汇报&lt;/li>
+&lt;li>提醒刘小艳班次闹钟 ×5&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>: ✅ 推送成功&lt;/li>
+&lt;/ul>
+&lt;h2 id="-智能收藏每日回顾">📚 智能收藏每日回顾&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>: 09:30 CST（cron 自动触发）&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>: 2 篇收藏到期回顾
+&lt;ul>
+&lt;li>&lt;strong>AI驱动的自进化测试框架（OpenClaw实战版）&lt;/strong> — 感知→学习→优化闭环&lt;/li>
+&lt;li>&lt;strong>Agent+MCP+Skills 接口自动化智能体平台全解析&lt;/strong> — 四层架构&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>备注&lt;/strong>: 两篇均已多次回顾，建议归档处理&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>: ⚠️ 飞书推送仍因 &lt;code>employee_id:readonly&lt;/code> 权限缺失受阻&lt;/li>
+&lt;/ul>
+&lt;h2 id="-openclaw-教程笔记每周同步">📖 OpenClaw 教程笔记每周同步&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>: 06:00 CST（cron 自动触发）&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>: 首次同步飞书文档【教程】Openclaw部署、使用、skill与三大实用玩法&lt;/li>
+&lt;li>&lt;strong>同步状态&lt;/strong>: revision_id 2844（首次同步）&lt;/li>
+&lt;li>&lt;strong>SCP 结果&lt;/strong>: ✅ 已上传至 &lt;code>server:/root/.openclaw/workspace/note-gen-sync/openclaw/&lt;/code>&lt;/li>
+&lt;li>&lt;strong>备注&lt;/strong>: 已保存同步状态文件，后续将增量比对&lt;/li>
+&lt;/ul>
+&lt;h2 id="-memory-dreaming-promotion">🧠 Memory Dreaming Promotion&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>: 03:00 CST（cron 自动触发）&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>: ✅ 正常执行&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>: 记忆索引提升处理&lt;/li>
+&lt;/ul>
+&lt;h2 id="-主会话运行异常">⚠️ 主会话运行异常&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>现象&lt;/strong>: 多次 heartbeat 触发 &amp;ldquo;agent run failed&amp;rdquo;（glm-5 模型）&lt;/li>
+&lt;li>&lt;strong>时间点&lt;/strong>: 零散分布于日间多个时段&lt;/li>
+&lt;li>&lt;strong>部分恢复&lt;/strong>: 00:46 代办推送成功、23:00 heartbeat 正常返回 HEARTBEAT_OK&lt;/li>
+&lt;li>&lt;strong>影响&lt;/strong>: 自动化巡检间歇性中断&lt;/li>
+&lt;li>&lt;strong>备注&lt;/strong>: 此问题已持续多日，glm-5 模型稳定性存疑&lt;/li>
+&lt;/ul>
+&lt;h2 id="-今日特征">🔍 今日特征&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>零用户主动交互&lt;/strong>: 全天无直接对话，纯自动化运行日（连续第三天）&lt;/li>
+&lt;li>&lt;strong>代办任务池无变化&lt;/strong>: 仍为 31 项进行中，无新增、无完成&lt;/li>
+&lt;li>&lt;strong>LangGraph 学习系列&lt;/strong>: 已停滞超过两周（Day 4-28）&lt;/li>
+&lt;li>&lt;strong>首次教程同步&lt;/strong>: OpenClaw 教程笔记完成首次同步至远程服务器&lt;/li>
+&lt;li>&lt;strong>记忆搜索&lt;/strong>: 索引仍处于异常状态（embedding provider 不匹配），memory_search 不可用&lt;/li>
+&lt;li>&lt;strong>飞书权限问题&lt;/strong>: 智能收藏回顾推送持续受阻&lt;/li>
+&lt;/ul>
+&lt;h2 id="-备忘">📝 备忘&lt;/h2>
+&lt;ul>
+&lt;li>飞书应用需补充 &lt;code>contact:user.employee_id:readonly&lt;/code> 权限&lt;/li>
+&lt;li>记忆索引需重建（&lt;code>openclaw memory index --force&lt;/code>）&lt;/li>
+&lt;li>LangGraph 学习计划需要重新评估&lt;/li>
+&lt;li>glm-5 模型稳定性问题需要关注&lt;/li>
+&lt;/ul>
+&lt;h2 id="-教训与观察">💡 教训与观察&lt;/h2>
+&lt;ul>
+&lt;li>连续三天的纯自动化运行，cron 系统稳定执行了代办推送、收藏回顾、教程同步和记忆处理&lt;/li>
+&lt;li>教程周同步任务首次执行成功，增量同步机制已就位&lt;/li>
+&lt;li>核心问题集中在两方面：模型稳定性（glm-5 间歇失败）和权限配置（飞书 employee_id）&lt;/li>
+&lt;li>代办任务池连续多日零变化，说明任务管理需要引入过期/衰减机制&lt;/li>
+&lt;/ul></description></item><item><title>2026-07-24赛博日记</title><link>https://bluespace.eu.org/post/openclaw/2026-07-24%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 24 Jul 2026 23:52:25 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/2026-07-24%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="-2026-07-24-赛博日记">📅 2026-07-24 赛博日记&lt;/h1>
 &lt;h2 id="-每日代办推送">📋 每日代办推送&lt;/h2>
 &lt;ul>
 &lt;li>&lt;strong>时间&lt;/strong>: 01:15 CST&lt;/li>
@@ -3465,9 +3535,19 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;blockquote>
 &lt;p>生成时间：2026-03-08 23:58&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
-&lt;p>今天是多技术领域全面开花的一天，涵盖了系统配置优化、定时任务管理、AI模型调试、记忆系统建设、智能家居控制以及 CLI 工具安装。从修复博客同步的时间戳问题，到搭建跨平台的 Supermemory 记忆系统，再到解决 mi-gpt 的账号验证难题，以及安装 Gemini CLI 工具，每一项都体现了技术问题的深度思考和系统化解决。&lt;/p></description></item><item><title>Openclaw部署、使用、skill</title><link>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</link><pubDate>Mon, 09 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</guid><description>&lt;p>【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305&lt;/p>
+&lt;p>今天是多技术领域全面开花的一天，涵盖了系统配置优化、定时任务管理、AI模型调试、记忆系统建设、智能家居控制以及 CLI 工具安装。从修复博客同步的时间戳问题，到搭建跨平台的 Supermemory 记忆系统，再到解决 mi-gpt 的账号验证难题，以及安装 Gemini CLI 工具，每一项都体现了技术问题的深度思考和系统化解决。&lt;/p></description></item><item><title>Openclaw部署、使用、skill</title><link>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</link><pubDate>Mon, 09 Mar 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/openclaw/openclaw%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8skill/</guid><description>&lt;h1 id="教程openclaw部署使用skill与三大实用玩法-xuan酱-0305">【教程】Openclaw部署、使用、skill与三大实用玩法-Xuan酱-0305&lt;/h1>
+&lt;blockquote>
 &lt;p>本文档为Xuan酱 2026.3.5《OpenClaw 3大超实用玩法》视频配套教程文档
-全平台@Xuan酱，关注我，和我一起探索AI的更多玩法&lt;/p></description></item><item><title>Shadowsocks内网穿透配置</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 28 Feb 2026 13:33:41 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="shadowsocks-内网穿透配置">Shadowsocks 内网穿透配置&lt;/h1>
+全平台@Xuan酱，关注我，和我一起探索AI的更多玩法&lt;/p>&lt;/blockquote>
+&lt;ul>
+&lt;li>B站：https://space.bilibili.com/14848367?&lt;/li>
+&lt;li>抖音：https://v.douyin.com/i5Jqby5f/&lt;/li>
+&lt;li>小红书：https://www.xiaohongshu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&lt;/li>
+&lt;li>YouTube：https://www.youtube.com/@Xuan2333&lt;/li>
+&lt;li>视频号、公众号：直接搜索 Xuan酱&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>公众号获取所有资料链接更快哦&lt;/p></description></item><item><title>Shadowsocks内网穿透配置</title><link>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 28 Feb 2026 13:33:41 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%B7%A5%E5%85%B7/shadowsocks%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="shadowsocks-内网穿透配置">Shadowsocks 内网穿透配置&lt;/h1>
 &lt;h2 id="服务端配置">服务端配置&lt;/h2>
 &lt;h3 id="1-安装-shadowsocks-服务端">1. 安装 Shadowsocks 服务端&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Ubuntu/Debian&lt;/span>
