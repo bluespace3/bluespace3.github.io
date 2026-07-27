@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 26 Jul 2026 23:53:19 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-26赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 26 Jul 2026 23:53:19 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-07-26-赛博日记">2026-07-26 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 28 Jul 2026 03:00:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-27赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-27%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 28 Jul 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-27%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年7月27日-赛博日记">2026年7月27日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-07-27 23:50&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;h4 id="接口自动化项目配置查询">接口自动化项目配置查询&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：10:00&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong>：&lt;code>e/code/interfaceAuto-master&lt;/code>&lt;/li>
+&lt;li>&lt;strong>会话&lt;/strong>：定位 Apifox 用例存放位置与配置&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：6&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>：
+&lt;ul>
+&lt;li>定位到 Apifox 自动化用例位于 &lt;code>testcases/saleout/test_saleout.py&lt;/code> 第 47 行&lt;/li>
+&lt;li>接口封装位于 &lt;code>api/wms/OmsApi.py&lt;/code> 的 &lt;code>OmsCrtOrder&lt;/code> 方法&lt;/li>
+&lt;li>配置位于 &lt;code>config/setting.ini&lt;/code> 的 &lt;code>[apifox]&lt;/code> 节点&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;h4 id="testhub-本地环境修复">TestHub 本地环境修复&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：11:33&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong>：&lt;code>testhub-master&lt;/code>&lt;/li>
+&lt;li>&lt;strong>会话&lt;/strong>：启动服务与环境修复&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：42&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>：
+&lt;ul>
+&lt;li>修复 Python 3.10 兼容性问题：将 &lt;code>typing.Self&lt;/code> 改为从 &lt;code>typing_extensions&lt;/code> 导入&lt;/li>
+&lt;li>修复前端模块导出问题：&lt;code>GitSourcesPage&lt;/code> 组件默认导出与命名导入不一致&lt;/li>
+&lt;li>处理端口冲突：终止占用 8000 端口的残留 Python 进程（PID 96752）&lt;/li>
+&lt;li>成功启动前端（http://xxx.xxx.xxx.xxx:5173）和后端（http://xxx.xxx.xxx.xxx:8000）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>关键发现&lt;/strong>：
+&lt;ul>
+&lt;li>终端会话中断不等于杀掉后台子进程，需手动清理残留进程&lt;/li>
+&lt;li>Python 3.10 需使用 &lt;code>typing_extensions&lt;/code> 导入 &lt;code>typing.Self&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;h4 id="ai-自动化测试-p0-冒烟门禁设计">AI 自动化测试 P0 冒烟门禁设计&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：20:06&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong>：&lt;code>AI_TEST&lt;/code>&lt;/li>
+&lt;li>&lt;strong>会话&lt;/strong>：P0 冒烟门禁与本地提交拦截功能设计落地&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：175&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;strong>架构隔离&lt;/strong>：创建 Worktree &lt;code>AI_TEST-p0-smoke&lt;/code> 和分支 &lt;code>feat/p0-smoke-gate&lt;/code>&lt;/li>
+&lt;li>&lt;strong>双流程设计&lt;/strong>：开发走自动化冒烟，测试走人工阶段 2-5&lt;/li>
+&lt;li>&lt;strong>用例数据契约&lt;/strong>：强制包含 &lt;code>priority&lt;/code>（P0）和 &lt;code>platform&lt;/code>（APP/WEB/API）字段&lt;/li>
+&lt;li>&lt;strong>代码补充用例&lt;/strong>：新增 &lt;code>p0-smoke-gate&lt;/code> Skill，支持提交前根据代码 diff 补充 P0 用例&lt;/li>
+&lt;li>&lt;strong>运行时迁移&lt;/strong>：从 &lt;code>ysbaiautotest&lt;/code> 裁剪最小运行时（&lt;code>electron.py&lt;/code>, &lt;code>web_electron.py&lt;/code>, &lt;code>phone_agent&lt;/code> 等）&lt;/li>
+&lt;li>&lt;strong>门禁脚本&lt;/strong>：编写 &lt;code>tools/smoke/run_p0_gate.py&lt;/code>，支持模块过滤、并行执行、90% 通过率校验&lt;/li>
+&lt;li>&lt;strong>Cursor Hook&lt;/strong>：实现 &lt;code>beforeShellExecution&lt;/code> Hook，仅拦截 Agent 发起的 &lt;code>git commit/push&lt;/code>&lt;/li>
+&lt;li>&lt;strong>接入模板&lt;/strong>：创建 &lt;code>templates/business-repo/&lt;/code>，包含 Hook 配置和示例&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>架构决策&lt;/strong>：
+&lt;ul>
+&lt;li>采用「双 Skill 编排 + 薄运行时」方案&lt;/li>
+&lt;li>提交时若涉及 App 冒烟但无设备/模拟器，视为门禁失败&lt;/li>
+&lt;li>&lt;code>platform=API&lt;/code> 的用例不纳入 UI 冒烟门禁分母&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;h3 id="-代办推送">📋 代办推送&lt;/h3>
+&lt;p>无&lt;/p></description></item><item><title>2026-07-26赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 26 Jul 2026 23:53:19 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-07-26-赛博日记">2026-07-26 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-07-26 23:51 CST&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
