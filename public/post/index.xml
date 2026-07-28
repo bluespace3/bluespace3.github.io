@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 28 Jul 2026 03:00:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-27赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-27%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 28 Jul 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-27%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年7月27日-赛博日记">2026年7月27日 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 28 Jul 2026 23:51:36 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-28赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 28 Jul 2026 23:51:36 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-07-28-赛博日记">2026-07-28 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-07-28 23:50&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：无&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong>：无&lt;/li>
+&lt;li>&lt;strong>会话&lt;/strong>：无&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：0&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>：今日无 Claude Code 工作记录&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：⚠️ 无记录&lt;/li>
+&lt;/ul>
+&lt;h3 id="-赛博日记系统维护">🔧 赛博日记系统维护&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>问题发现&lt;/strong>：赛博日记标题格式回归，丢失了总结性标题后缀&lt;/li>
+&lt;li>&lt;strong>期望格式&lt;/strong>：&lt;code>2026-07-23赛博日记-AI自动化优化与用例生成探索&lt;/code>&lt;/li>
+&lt;li>&lt;strong>当前格式&lt;/strong>：&lt;code>2026-07-23赛博日记&lt;/code>&lt;/li>
+&lt;li>&lt;strong>影响范围&lt;/strong>：所有近期生成的赛博日记&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;h3 id="-日记系统改进">🤖 日记系统改进&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>标题格式问题&lt;/strong>：需要修复赛博日记生成逻辑，确保包含总结性标题&lt;/li>
+&lt;li>&lt;strong>建议方案&lt;/strong>：
+&lt;ol>
+&lt;li>分析今日素材，自动提取2-3个核心关键词&lt;/li>
+&lt;li>组合为简短的总结性标题（10-15字）&lt;/li>
+&lt;li>格式：&lt;code>{日期}赛博日记-{总结标题}&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>&lt;strong>示例&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;code>2026-07-28赛博日记-日记标题格式修复&lt;/code>&lt;/li>
+&lt;li>&lt;code>2026-07-28赛博日记-系统优化&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>今日工作主要围绕赛博日记系统维护，发现标题格式丢失总结性后缀的问题。通过一次会话记录，用户反馈了标题格式需要改进，从简单的日期格式回归到包含总结性标题的完整格式，以便更好地回顾和归档每日工作内容。&lt;/p></description></item><item><title>2026-07-27赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-27%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 28 Jul 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-27%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年7月27日-赛博日记">2026年7月27日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-07-27 23:50&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
