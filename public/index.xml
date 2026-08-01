@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 31 Jul 2026 23:50:55 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-07-31赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 31 Jul 2026 23:50:55 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年07月31日-赛博日记"&gt;2026年07月31日 赛博日记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 01 Aug 2026 23:51:07 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-01赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 01 Aug 2026 23:51:07 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年08月01日-赛博日记"&gt;2026年08月01日 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-08-01 23:50&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="核心工作"&gt;核心工作&lt;/h2&gt;
+&lt;h3 id="-自动化运维"&gt;📋 自动化运维&lt;/h3&gt;
+&lt;p&gt;今日为&lt;strong&gt;静默日&lt;/strong&gt;，无主动开发工作。系统自动化任务正常运行：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Second Brain 记忆整理&lt;/strong&gt;：定时任务按期触发，扫描当日记忆源并执行整理流程&lt;/li&gt;
+&lt;li&gt;无异常告警，系统运行平稳&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-claude-code-工作记录"&gt;💻 Claude Code 工作记录&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;今日无 Claude Code / Cursor 会话记录&lt;/strong&gt;（&lt;code&gt;claude_2026-08-01.md&lt;/code&gt; 不存在）&lt;/p&gt;</description></item><item><title>2026-07-31赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 31 Jul 2026 23:50:55 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年07月31日-赛博日记"&gt;2026年07月31日 赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成时间：2026-07-31 23:50&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id="核心工作"&gt;核心工作&lt;/h2&gt;
