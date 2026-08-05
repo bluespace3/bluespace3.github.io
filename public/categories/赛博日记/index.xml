@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 04 Aug 2026 23:51:08 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-04赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 04 Aug 2026 23:51:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月4日-赛博日记">2026年8月4日 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 05 Aug 2026 23:50:45 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-05赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 05 Aug 2026 23:50:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月5日-赛博日记">2026年8月5日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-08-05 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;p>今日共 &lt;strong>8 个会话&lt;/strong>，&lt;strong>117 条消息&lt;/strong>，主要集中在测试框架搭建和 Skills 迁移。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：10:28 ~ 16:19&lt;/li>
+&lt;li>&lt;strong>机器&lt;/strong>：Windows 11 本机&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常（部分会话遇到 API 503/400 错误，非致命）&lt;/li>
+&lt;/ul>
+&lt;h4 id="关键工作线">关键工作线&lt;/h4>
+&lt;p>&lt;strong>1. 沙盒(Sandbox)配置排查&lt;/strong> (10:28, 84条消息)&lt;/p></description></item><item><title>2026-08-04赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 04 Aug 2026 23:51:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月4日-赛博日记">2026年8月4日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-08-04 23:50&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
