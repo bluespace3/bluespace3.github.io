@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 06 Aug 2026 23:50:49 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-06赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 06 Aug 2026 23:50:49 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月6日-赛博日记">2026年8月6日 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 07 Aug 2026 23:50:38 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-07赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 07 Aug 2026 23:50:38 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月7日-赛博日记">2026年8月7日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-08-07 23:50&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;p>今日共 &lt;strong>6 个 Claude Code 会话&lt;/strong>，&lt;strong>126 条消息&lt;/strong>，主要围绕以下工作：&lt;/p>
+&lt;h4 id="1-browser-use-环境搭建1003">1. Browser-use 环境搭建（10:03）&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>目标&lt;/strong>：使用 uv + Python 3.12 安装升级 browser-use 到最新稳定版，注册 skill 并连接浏览器&lt;/li>
+&lt;li>&lt;strong>关键进展&lt;/strong>：登录凭据已注入 Agent，但在登录环节被滑块验证码拦截&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：970 条（深度调试会话）&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：⚠️ 验证码问题未解决&lt;/li>
+&lt;/ul>
+&lt;h4 id="2-windows-系统清理1350">2. Windows 系统清理（13:50）&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>目标&lt;/strong>：删除 &lt;code>C:\Windows.old&lt;/code> 目录&lt;/li>
+&lt;li>&lt;strong>关键结论&lt;/strong>：&lt;code>rmdir /s /q&lt;/code> 是 CMD 语法，PowerShell 中 &lt;code>robocopy&lt;/code> 对 &lt;code>NUL&lt;/code> 处理有问题，最终推荐使用 Windows 内置磁盘清理工具&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：9 条&lt;/li>
+&lt;/ul>
+&lt;h4 id="3-测试用例结构标准化1818">3. 测试用例结构标准化（18:18）&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>目标&lt;/strong>：测试用例前置条件新增【测试数据】字段，完成标准文档和生成用例 skill 适配&lt;/li>
+&lt;li>&lt;strong>关键进展&lt;/strong>：全部 5 个文件已合并到目标目录，验证通过无智能引号污染&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：210 条&lt;/li>
+&lt;/ul>
+&lt;h4 id="4-6-简短交互21372139">4-6. 简短交互（21:37~21:39）&lt;/h4>
+&lt;ul>
+&lt;li>JSON 输出测试 × 2&lt;/li>
+&lt;li>&amp;ldquo;Reply exactly hi&amp;rdquo; 测试&lt;/li>
+&lt;li>均为 1 轮交互的快速测试&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Browser-use 验证码问题&lt;/strong>：滑块验证码仍然是自动化测试的硬骨头，需要考虑验证码绕过策略或人工辅助方案&lt;/li>
+&lt;li>&lt;strong>测试用例标准化推进顺利&lt;/strong>：5 个文件一次性合并完成，流程趋于成熟&lt;/li>
+&lt;li>&lt;strong>今日工作重心&lt;/strong>：主要集中在自动化测试相关工具链的维护和改进上&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>今天的工作以自动化测试基础设施为主线。上午深入调试 browser-use 环境搭建，遇到验证码拦截问题；下午处理了 Windows 系统清理的小问题；傍晚推进测试用例结构标准化，完成了【测试数据】字段的新增和 skill 适配，5 个文件全部合并通过验证。晚间有几个简短的交互测试。整体来看是工具链打磨和测试规范化的扎实推进日。&lt;/p></description></item><item><title>2026-08-06赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 06 Aug 2026 23:50:49 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月6日-赛博日记">2026年8月6日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-08-06 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
