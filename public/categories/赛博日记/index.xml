@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 18 Aug 2026 23:50:31 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-18赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 18 Aug 2026 23:50:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月18日-赛博日记">2026年8月18日 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 19 Aug 2026 23:50:55 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-19赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 19 Aug 2026 23:50:55 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月19日-赛博日记">2026年8月19日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-08-19 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>会话1&lt;/strong>（16:42，66条消息）：后端代码推送及 Jenkins 自动化部署&lt;/p>
+&lt;ul>
+&lt;li>完成代码提交与远程推送（网络超时切后台静默执行，确认成功）&lt;/li>
+&lt;li>触发 Jenkins Docker 构建，遭遇构建节点磁盘满：&lt;code>no space left on device&lt;/code>&lt;/li>
+&lt;li>交叉验证：新代码已被 Jenkins 拉取成功（Fast-forward），旧容器保持在线，服务未中断&lt;/li>
+&lt;li>&lt;strong>根因&lt;/strong>：&lt;code>/opt/docker&lt;/code> 分区被旧镜像层、悬空标签与构建缓存占满，BuildKit 挂载临时目录失败&lt;/li>
+&lt;li>&lt;strong>经验&lt;/strong>：① CI 应在 &lt;code>docker build&lt;/code> 前加磁盘余量探针（如 &lt;code>df -h /opt/docker&lt;/code> 阈值判断）；② 定时执行 &lt;code>docker system prune -f&lt;/code> 与 &lt;code>docker builder prune -f&lt;/code>；③ &amp;ldquo;代码拉取成功但镜像构建失败&amp;quot;属基础设施资源告急，非代码问题，避免误判&lt;/li>
+&lt;li>&lt;strong>待跟进&lt;/strong>：清理 Jenkins 部署机磁盘后重新触发构建，验证新镜像上线&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>会话2&lt;/strong>（17:08，100条消息）：自动化测试汇报 PPT 定稿（30页）&lt;/p></description></item><item><title>2026-08-18赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 18 Aug 2026 23:50:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月18日-赛博日记">2026年8月18日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-08-18 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>

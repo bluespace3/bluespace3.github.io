@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 18 Aug 2026 23:50:31 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-18赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 18 Aug 2026 23:50:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月18日-赛博日记"&gt;2026年8月18日 赛博日记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 19 Aug 2026 23:50:55 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-19赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 19 Aug 2026 23:50:55 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月19日-赛博日记"&gt;2026年8月19日 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-08-19 23:50 (Asia/Shanghai)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="核心工作"&gt;核心工作&lt;/h2&gt;
+&lt;h3 id="-claude-code-工作记录"&gt;💻 Claude Code 工作记录&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;会话1&lt;/strong&gt;（16:42，66条消息）：后端代码推送及 Jenkins 自动化部署&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;完成代码提交与远程推送（网络超时切后台静默执行，确认成功）&lt;/li&gt;
+&lt;li&gt;触发 Jenkins Docker 构建，遭遇构建节点磁盘满：&lt;code&gt;no space left on device&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;交叉验证：新代码已被 Jenkins 拉取成功（Fast-forward），旧容器保持在线，服务未中断&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;根因&lt;/strong&gt;：&lt;code&gt;/opt/docker&lt;/code&gt; 分区被旧镜像层、悬空标签与构建缓存占满，BuildKit 挂载临时目录失败&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;经验&lt;/strong&gt;：① CI 应在 &lt;code&gt;docker build&lt;/code&gt; 前加磁盘余量探针（如 &lt;code&gt;df -h /opt/docker&lt;/code&gt; 阈值判断）；② 定时执行 &lt;code&gt;docker system prune -f&lt;/code&gt; 与 &lt;code&gt;docker builder prune -f&lt;/code&gt;；③ &amp;ldquo;代码拉取成功但镜像构建失败&amp;quot;属基础设施资源告急，非代码问题，避免误判&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;待跟进&lt;/strong&gt;：清理 Jenkins 部署机磁盘后重新触发构建，验证新镜像上线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;会话2&lt;/strong&gt;（17:08，100条消息）：自动化测试汇报 PPT 定稿（30页）&lt;/p&gt;</description></item><item><title>bu-30b-a3b-preview中文乱码修复微调教程</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-a3b-preview%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E4%BF%AE%E5%A4%8D%E5%BE%AE%E8%B0%83%E6%95%99%E7%A8%8B/</link><pubDate>Wed, 19 Aug 2026 17:50:53 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-a3b-preview%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E4%BF%AE%E5%A4%8D%E5%BE%AE%E8%B0%83%E6%95%99%E7%A8%8B/</guid><description>&lt;h1 id="bu-30b-a3b-preview-中文乱码修复微调教程"&gt;BU-30B-A3B-Preview 中文乱码修复微调教程&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;结论先行：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;能修&lt;/strong&gt;。这是典型的「英文为主的 Agent SFT 导致非英文语言灾难性遗忘」，不是玄学 bug。用 LoRA 微调 + 中文多模态数据修补 + 英文任务数据回放，是标准解法，社区同款问题（日语退化、中文实体编造）都指向同一根因。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;要做的事&lt;/strong&gt;：五步——①快速诊断排除部署层问题 → ②准备四类混合数据（工作量占 70%）→ ③ms-swift LoRA 训练 → ④中英双语评估防回退 → ⑤合并权重 + vLLM 重新部署。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本笔记是方案教程，未动手执行。部署相关见&lt;a href="https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-a3b-preview%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0/"&gt;《BU-30B-A3B-Preview 本地部署笔记》&lt;/a&gt;。&lt;/p&gt;</description></item><item><title>MiniMax-H3-人物情绪笔记</title><link>https://bluespace.eu.org/post/aigc/minimax-h3-%E4%BA%BA%E7%89%A9%E6%83%85%E7%BB%AA%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 19 Aug 2026 13:46:18 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc/minimax-h3-%E4%BA%BA%E7%89%A9%E6%83%85%E7%BB%AA%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="minimax-h3-人物情绪笔记"&gt;MiniMax H3 人物情绪笔记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;来源：飞书文档《纯本地 MiniMax H3 神了！1080P 10 种情绪控制实测｜同一首帧同一句台词》
+日期：2026-08-19
+链接：&lt;a href="https://c1bxgy7h3sw.feishu.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"&gt;飞书 Wiki&lt;/a&gt;
+提取范围：原文档第六点「逐条生成详情与提示词」（01–06 六种情绪）&lt;/p&gt;</description></item><item><title>2026-08-18赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 18 Aug 2026 23:50:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月18日-赛博日记"&gt;2026年8月18日 赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成时间：2026-08-18 23:50 (Asia/Shanghai)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id="核心工作"&gt;核心工作&lt;/h2&gt;
