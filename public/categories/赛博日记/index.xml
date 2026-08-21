@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 20 Aug 2026 23:50:46 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-20赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 20 Aug 2026 23:50:46 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月20日-赛博日记">2026年8月20日 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 21 Aug 2026 23:50:57 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-21赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 21 Aug 2026 23:50:57 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-08-21-赛博日记">2026-08-21 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-08-21 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>会话数&lt;/strong>：5 个（Claude 1 / Cursor 4），共 76 条消息&lt;/li>
+&lt;li>&lt;strong>主线一：自动化测试安装包分发&lt;/strong>
+&lt;ul>
+&lt;li>通过 Claude Code 将本地 &lt;code>ysb-ai-auto-test-setup-1.1.20.exe&lt;/code> 经 SSH 传输到目标设备，远程进度达 149MB/205MB（约 73%）&lt;/li>
+&lt;li>后续在飞书侧持续跟进一个大文件（1.55GB 压缩包）的 SCP 传输，全程监控传输速率（约 0.5~0.6 MB/s）与 sftp 进程状态，最终确认传输完成 ✅&lt;/li>
+&lt;li>用 Python 起了一次性 HTTP 服务生成临时下载链接（随机化 URL），方便其他设备直接下载&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>主线二：TAPD 需求用例生成&lt;/strong>
+&lt;ul>
+&lt;li>上午为需求「考拉月结：拉卡拉对接客商银行改造」生成 &lt;strong>28 条用例&lt;/strong>（TC001～TC028），落盘到指定迭代目录（APP v6.1.0）&lt;/li>
+&lt;li>下午按 tapd-testcase-generation 流程为另一条 APP 需求单独落盘（TAPD 迭代 App v6.3.0），保留旧批量用例不被覆盖&lt;/li>
+&lt;li>中午完成一版发布到中转服&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>主线三：自动化测试项目维护&lt;/strong>
+&lt;ul>
+&lt;li>在 ysb 项目中进行了 10 轮交互（166 条消息）的工作，涉及远端代码拉取与同步&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;h3 id="-代办推送">📋 代办推送&lt;/h3>
+&lt;ul>
+&lt;li>今日未捕获到代办推送记录（Todoist 工具本次不可用，无数据）&lt;/li>
+&lt;/ul>
+&lt;h3 id="-智能收藏回顾">📚 智能收藏回顾&lt;/h3>
+&lt;ul>
+&lt;li>笔记仓库近 24 小时更新：《短视频剧本-挖井得人》（B站版古风+幽默反转知识科普剧本，含分镜级 AI 视频生成提示词）&lt;/li>
+&lt;/ul>
+&lt;h3 id="-记忆系统维护">🧠 记忆系统维护&lt;/h3>
+&lt;ul>
+&lt;li>Second Brain 记忆 cron 正常运行（昨日已沉淀 SSH 配置梳理、术语标准化等条目）&lt;/li>
+&lt;li>今日会话记忆已归档：赛博日记标题格式反馈、新设备配对审批查询、大文件传输跟踪&lt;/li>
+&lt;/ul>
+&lt;h3 id="-回家通知">🏠 回家通知&lt;/h3>
+&lt;ul>
+&lt;li>今日无相关记录&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>标题格式回归问题&lt;/strong>：用户反馈赛博日记的总结性标题格式（如「2026-08-21赛博日记-XXX」）又退回了旧格式，需要在 cron 提示词中固化此要求——本篇已恢复带主题的标题&lt;/li>
+&lt;li>&lt;strong>大文件传输经验&lt;/strong>：SCP 慢速传输（0.5MB/s 级）时，用「文件大小是否持续增长 + sftp 进程是否存活」双重判断比单点检查更可靠；传完后用一次性 HTTP 服务分发是轻量好方案&lt;/li>
+&lt;li>&lt;strong>机器环境差异&lt;/strong>：目标机器没装 7z 导致校验误报 &amp;ldquo;command not found&amp;rdquo;，跨机操作前先确认工具链存在&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>今天是「分发+生成」的一天：上午用 AI 为两条 TAPD 需求生成共 30+ 条测试用例并完成中转服发布；下午到晚上围绕自动化测试安装包的分发，完成了 SSH/SCP 大文件传输的全程监控、一次性下载链接分发，以及 Claude Code 侧的安装包传输任务。&lt;/p></description></item><item><title>2026-08-20赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 20 Aug 2026 23:50:46 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月20日-赛博日记">2026年8月20日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-08-20 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
