@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 23 Aug 2026 23:50:59 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-23赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-23%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 23 Aug 2026 23:50:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-23%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月23日-赛博日记">2026年8月23日 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 24 Aug 2026 23:50:42 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-24赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-24%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 24 Aug 2026 23:50:42 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-24%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月24日-赛博日记">2026年8月24日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-08-24 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：14:46 / 20:29&lt;/li>
+&lt;li>&lt;strong>会话数&lt;/strong>：Claude 0 个 / Cursor 2 个，共 2 个会话、134 条消息&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>：
+&lt;ul>
+&lt;li>下午在项目 &lt;code>d/code/ysbapitest&lt;/code> 处理&lt;strong>文件重复问题&lt;/strong>（Resolving file duplication），68 条消息&lt;/li>
+&lt;li>晚间在 &lt;code>e/code/ysbaiautotest&lt;/code> 中进行&lt;strong>任务模式判定&lt;/strong>相关调试，207 条消息&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常（两次会话均为自动兜底摘要，无 LLM 深度提炼内容）&lt;/li>
+&lt;/ul>
+&lt;h3 id="-学习笔记">📚 学习笔记&lt;/h3>
+&lt;ul>
+&lt;li>整理 B 站视频笔记《30天，夺回你的身体控制权（精力重启终极指南）》：
+&lt;ul>
+&lt;li>核心理念：疲惫多为&lt;strong>假性疲劳&lt;/strong>，解法是系统化减法（断污染源 → 重建能量 → 固化本能）&lt;/li>
+&lt;li>三阶段：第 1-10 天断舍离（戒糖/精制碳水/种子油 + 数字日落）；第 11-20 天能量重构（4-7-8 呼吸法 + 16+8 轻断食 + 15 分钟 HIIT）；第 21-30 天习惯固化（心理锚点 + 8-2 法则弹性执行）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;ul>
+&lt;li>今天的 Cursor 会话集中在自动化测试项目上（文件去重、任务模式判定），看起来是在持续打磨测试基建&lt;/li>
+&lt;li>精力管理笔记值得实践：先从「数字日落」和晨起晒太阳这两个零成本习惯开始&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>技术侧以自动化测试项目的维护调试为主（2 个 Cursor 会话）；学习侧完成了一篇高质量精力管理视频笔记的系统整理。整体是轻量的一天，无重大架构决策。&lt;/p></description></item><item><title>2026-08-23赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-23%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 23 Aug 2026 23:50:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-23%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月23日-赛博日记">2026年8月23日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-08-23 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
