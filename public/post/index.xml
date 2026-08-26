@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Aug 2026 23:50:38 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-25赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 25 Aug 2026 23:50:38 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月25日周二赛博日记">2026年8月25日（周二）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 26 Aug 2026 23:51:14 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-26赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 26 Aug 2026 23:51:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月26日周三赛博日记">2026年8月26日（周三）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-08-26 23:50&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>会话1&lt;/strong>（Claude，14:54）：克隆 &lt;code>pytest-o2on&lt;/code> 测试工具仓库，梳理项目结构。消息数 11。&lt;/li>
+&lt;li>&lt;strong>会话2&lt;/strong>（Cursor，17:15，项目 &lt;code>ysbaiautotest&lt;/code>，182 条消息 / 16 轮提问）：自动化测试项目的大块工作，最终提交并推送完成。是今日主力会话。&lt;/li>
+&lt;li>&lt;strong>会话3&lt;/strong>（Cursor，17:48，项目 &lt;code>AI-TEST&lt;/code>，13 条消息 / 2 轮提问）：小改动，已提交 &lt;code>da97a0f&lt;/code>，main 领先远程 1 个提交（待 push 同步）。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>状态&lt;/strong>：✅ 正常，共 3 个会话（Claude 1 / Cursor 2），约 73 条消息。&lt;/p></description></item><item><title>12-factor-agents笔记</title><link>https://bluespace.eu.org/post/aigc/12-factor-agents%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 26 Aug 2026 14:01:22 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc/12-factor-agents%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="12-factor-agents-阅读笔记">12-Factor Agents 阅读笔记&lt;/h1>
+&lt;blockquote>
+&lt;p>仓库地址：&lt;a href="https://github.com/humanlayer/12-factor-agents">https://github.com/humanlayer/12-factor-agents&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h2 id="一句话概括">一句话概括&lt;/h2>
+&lt;p>由 HumanLayer 创始人 Dex (Dexter Horthy) 发起的开源指南，模仿经典的 &lt;a href="https://12factor.net/">12 Factor Apps&lt;/a>，总结出 &lt;strong>12 条构建&amp;quot;足以交付给生产客户&amp;quot;的 LLM 应用（AI Agent）的工程原则&lt;/strong>。&lt;/p></description></item><item><title>2026-08-25赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 25 Aug 2026 23:50:38 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月25日周二赛博日记">2026年8月25日（周二）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-08-25 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
