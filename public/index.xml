@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 28 Aug 2026 23:50:45 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-28赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 28 Aug 2026 23:50:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月28日周五赛博日记"&gt;2026年8月28日（周五）赛博日记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 30 Aug 2026 01:48:50 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>八补丁流水线并行-PP3-MTP-vLLM实测报告笔记</title><link>https://bluespace.eu.org/post/aigc/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/%E5%85%AB%E8%A1%A5%E4%B8%81%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%B9%B6%E8%A1%8C-pp3-mtp-vllm%E5%AE%9E%E6%B5%8B%E6%8A%A5%E5%91%8A%E7%AC%94%E8%AE%B0/</link><pubDate>Sun, 30 Aug 2026 01:48:50 +0800</pubDate><guid>https://bluespace.eu.org/post/aigc/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/%E5%85%AB%E8%A1%A5%E4%B8%81%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%B9%B6%E8%A1%8C-pp3-mtp-vllm%E5%AE%9E%E6%B5%8B%E6%8A%A5%E5%91%8A%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="eight-patches-to-pipeline-parallel--实测笔记"&gt;Eight Patches to Pipeline Parallel — 实测笔记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;来源：Claude Artifact · FIELD REPORT · 2026-08-27
+原文链接：https://claude.ai/code/artifact/2aea33f6-93dc-40aa-8c8e-215ed068a486&lt;/p&gt;</description></item><item><title>2026-08-29赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 29 Aug 2026 23:50:35 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月29日周六-赛博日记"&gt;2026年8月29日（周六） 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-08-29 23:50 (Asia/Shanghai)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="核心工作"&gt;核心工作&lt;/h2&gt;
+&lt;h3 id="-记忆系统维护"&gt;🧠 记忆系统维护&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;今日仅有一条 cron 记录：05:00 的笔记仓库自动整理任务&lt;strong&gt;失败&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;原因：脚本 &lt;code&gt;scripts/tidy-notes-repo.sh&lt;/code&gt; 不存在（scripts/ 目录内无此文件，全工作区搜索也未找到）&lt;/li&gt;
+&lt;li&gt;待处理：需补写该脚本，或直接移除对应的 cron 任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-claude-code-工作记录"&gt;💻 Claude Code 工作记录&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;今日无 Claude Code 工作记录文件（&lt;code&gt;memory/claude_2026-08-29.md&lt;/code&gt; 不存在）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="思考与备忘"&gt;思考与备忘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;自动化任务出现&amp;quot;配置在、脚本不在&amp;quot;的空转情况，说明 cron 任务的创建缺少对依赖文件的校验。后续新增 cron 任务时应同步确认脚本存在并可执行&lt;/li&gt;
+&lt;li&gt;周六整体为低活动日，无代码会话、无代办推送、无收藏回顾&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="今日摘要"&gt;今日摘要&lt;/h2&gt;
+&lt;p&gt;安静的周六。唯一的事件是凌晨 5 点的笔记仓库自动整理 cron 失败——脚本文件缺失。需要在下次工作日决定：补写 &lt;code&gt;tidy-notes-repo.sh&lt;/code&gt; 或清理该定时任务。&lt;/p&gt;</description></item><item><title>2026-08-28赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 28 Aug 2026 23:50:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月28日周五赛博日记"&gt;2026年8月28日（周五）赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成时间：2026-08-28 23:50 (Asia/Shanghai)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id="素材收集完整性报告"&gt;素材收集完整性报告&lt;/h2&gt;
