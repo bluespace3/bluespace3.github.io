@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 31 Aug 2026 23:50:49 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-08-31赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 31 Aug 2026 23:50:49 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月31日-赛博日记">2026年8月31日 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 01 Sep 2026 23:50:51 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-09-01赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 01 Sep 2026 23:50:51 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月1日周二赛博日记">2026年9月1日（周二）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-09-01 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：14:35&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong>：&lt;code>Administrator/.claude/projects&lt;/code>&lt;/li>
+&lt;li>&lt;strong>会话&lt;/strong>：清理垃圾&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：9 条（共 1 会话：Claude 1 / Cursor 0）&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>：一次轻量清理会话，1 轮用户提问，由自动兜底摘要完成（未调用 LLM），清理完成。&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;h3 id="-记忆系统维护">🧠 记忆系统维护&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>05:00&lt;/strong> 修复笔记仓库自动整理 cron：&lt;code>scripts/tidy-notes-repo.sh&lt;/code> 缺失导致连续 3 天失败，已补写脚本（流程：pull → 清理垃圾文件/空 md → 有变更则自动 commit+push）。首次运行正常，仓库本就干净无变更。&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;ul>
+&lt;li>补写 cron 依赖脚本时的坑：&lt;code>find&lt;/code> 的 &lt;code>-delete&lt;/code> 与 &lt;code>-prune&lt;/code> 不兼容，需改用 &lt;code>! -path './.git/*'&lt;/code> 排除目录。&lt;/li>
+&lt;li>今日整体偏维护日：无新功能开发，主要是自动化链路修复与垃圾清理。&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>今天是一次典型的&amp;quot;还技术债&amp;quot;日：修复了缺失 3 天的笔记仓库整理脚本，Claude Code 侧做了一次垃圾清理会话。自动化链路恢复健康。&lt;/p></description></item><item><title>2026-08-31赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 31 Aug 2026 23:50:49 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年8月31日-赛博日记">2026年8月31日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-08-31 23:51 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
