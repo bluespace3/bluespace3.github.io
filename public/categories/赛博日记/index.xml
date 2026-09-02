@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 01 Sep 2026 23:50:51 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-09-01赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 01 Sep 2026 23:50:51 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月1日周二赛博日记">2026年9月1日（周二）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 02 Sep 2026 23:50:41 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-09-02赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 02 Sep 2026 23:50:41 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月2日周三赛博日记">2026年9月2日（周三）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-09-02 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>会话数&lt;/strong>：Claude 0 个 / Cursor 2 个，共 11 条消息&lt;/li>
+&lt;li>&lt;strong>会话 1&lt;/strong>（14:43 | 项目X接口测试工程）
+&lt;ul>
+&lt;li>按 &lt;code>interface-auto-project-standard&lt;/code> 的「新增用例最小流程」强制规范生成 draw.io 流程图&lt;/li>
+&lt;li>状态：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>会话 2&lt;/strong>（17:36 | 项目Y AI 测试工程）
+&lt;ul>
+&lt;li>写入用例生成 Skill，后续迭代会按该 Skill 的两条规范执行&lt;/li>
+&lt;li>状态：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="-技术笔记双模型-pp2-共存部署落地">📚 技术笔记：双模型 PP2 共存部署落地&lt;/h3>
+&lt;p>今日完成双 CMP 170HX（各 64GB）上 &lt;strong>BU-30B-A3B + AutoGLM-Phone-9B 双模型同时常驻、各自跨双卡 PP2&lt;/strong> 的部署，打包为 systemd 服务 &lt;code>automodels-x2pp&lt;/code>。核心经验：&lt;/p></description></item><item><title>2026-09-01赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 01 Sep 2026 23:50:51 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月1日周二赛博日记">2026年9月1日（周二）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-09-01 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
