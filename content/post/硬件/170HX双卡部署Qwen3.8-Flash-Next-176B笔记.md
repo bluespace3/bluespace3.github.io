@@ -2,13 +2,13 @@
 title: '170HX双卡部署Qwen3.8-Flash-Next-176B笔记'
 categories: ["硬件"]
 date: 2026-08-30T20:31:01+08:00
-lastmod: 2026-08-30T23:57:46+08:00
+lastmod: 2026-09-04T16:35:51+08:00
 draft: false
 ---
 # 双 CMP 170HX 部署 Qwen3.8-Flash-Next 176B：最佳策略与最终结果
 
-> 2026-08-30 定稿。硬件：MSI B850M-P / Ryzen7 9800X3D / 60G 内存 / CMP 170HX 64G ×2。
-> 模型：Qwen3.8-Flash-Next 176B（MoE），W4A16 权重 ~15.5G + FP8 PLE n-gram 表 48G。
+> 2026-08-30 定稿，09-04 更新PLE精度结论。硬件：MSI B850M-P / Ryzen7 9800X3D / 60G 内存 / CMP 170HX 64G ×2。
+> 模型：Qwen3.8-Flash-Next 176B（MoE），W4A16 权重 ~15.5G + PLE n-gram 表（**09-04 起默认 BF16 不量化 102G**，FP8 版已删，见《FlashNext-PLE表精度AB-BF16vsFP8-含1M长上下文》）。
 > 服务：vLLM 0.29（/root/vllm029-venv），端口 8000，兼容别名 Qwen3.8-27B-INT8（客户端零改动）。
 
 ## 一、核心矛盾与解法（部署策略的骨架）
@@ -25,9 +25,8 @@ draft: false
 | YaRN 位置编码 | hf-overrides | factor 4.0 + orig_max 262144 → 1M 上下文 |
 
 ```
-模型目录: /mnt/nvme0/llm_models/Qwen3.8-Flash-Next-W4A16-fp8ple/
-PLE 表 = model-00016-of-00017.safetensors（48G，NVMe）
-启动器: tools/model-launcher/start-flashnext.sh pp1m [chunk] [spec]
+模型目录: /mnt/nvme0/llm_models/Qwen3.8-Flash-Next-W4A16-AutoRound/   (09-04起默认, BF16表102G)
+启动器: tools/model-launcher/start-flashnext-bf16ple.sh(pp) | start-flashnext-bf16ple-1m.sh(pp1m)
 ```
 
 ## 二、最终配置（pp1m 模式）
@@ -118,6 +117,7 @@ llm_speedtest 前端，1/1 并发，OpenAI 兼容接口（2026-08-30）：
 
 ## 六、遗留与下一步
 
-- 512K/1M 两档 prefill 未测（外推 ~112s / ~286s）。
+- ~~512K/1M 两档 prefill 未测~~ → 09-04 已测（BF16 表）：500K 4242 t/s / 117.9s，900K 2035 t/s / 442.2s，decode 61.5/66.8 t/s。详见 PLE A/B 笔记。
+- ~~PLE 表 FP8 vs BF16~~ → 09-04 已测：BF16 甜区 decode +12~32%，FP8 表已删，默认 AutoRound 版。
 - `--max-num-batched-tokens` 提到 4096/8192 的 prefill 收益未实测（坑 3 提示的方向）。
 - 服务定位：**单请求 + 超长上下文第一优先**，prefill 速度可让位；并发吞吐不做。
