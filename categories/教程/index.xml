@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>教程 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E6%95%99%E7%A8%8B/</link><description>Recent content in 教程 on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 02 Sep 2026 00:14:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>双模型PP2共存部署-自动化模型x2pp</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/%E5%8F%8C%E6%A8%A1%E5%9E%8Bpp2%E5%85%B1%E5%AD%98%E9%83%A8%E7%BD%B2-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A8%A1%E5%9E%8Bx2pp/</link><pubDate>Wed, 02 Sep 2026 00:14:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/%E5%8F%8C%E6%A8%A1%E5%9E%8Bpp2%E5%85%B1%E5%AD%98%E9%83%A8%E7%BD%B2-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A8%A1%E5%9E%8Bx2pp/</guid><description>&lt;h1 id="双模型-pp2-共存部署bu-30b--autoglm-各自跨双卡自动化模型x2pp"&gt;双模型 PP2 共存部署：BU-30B + AutoGLM 各自跨双卡（自动化模型x2pp）&lt;/h1&gt;
+&lt;p&gt;在双 CMP 170HX（各 64GB）上让 BU-30B-A3B（browser-use 模型）与 AutoGLM-Phone-9B（手机 agent 模型）&lt;strong&gt;同时常驻，且都跑 PP2 流水线并行&lt;/strong&gt;——两个 vLLM 实例各自把模型切层跨双卡。最终形态打包为 systemd 服务 &lt;code&gt;automodels-x2pp&lt;/code&gt;，纳入启动器交互与开机自启管理。&lt;/p&gt;</description></item><item><title>bu-30b-pp2-vs-single-gpu实测笔记</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-pp2-vs-single-gpu%E5%AE%9E%E6%B5%8B%E7%AC%94%E8%AE%B0/</link><pubDate>Tue, 01 Sep 2026 19:01:43 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-pp2-vs-single-gpu%E5%AE%9E%E6%B5%8B%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="bu-30b-pp2-对比单卡prefilldecode-ab-实测与-pp-启动崩溃修复"&gt;BU-30B PP2 对比单卡：prefill/decode A/B 实测与 PP 启动崩溃修复&lt;/h1&gt;
+&lt;p&gt;BU-30B-A3B（Qwen3-VL MoE 底座，30B 总参/3B 激活，AWQ 8bit 量化 32GB）在双 CMP 170HX 上的单卡 vs PP2 双卡 A/B 对比。核心问题：&lt;strong&gt;这个 32GB 的模型单卡放得下，PP2 到底值不值？&lt;/strong&gt; 答案分场景——长 prompt prefill 和 decode 稳定性 PP2 赢，短 prompt 极速首 token 单卡赢。&lt;/p&gt;</description></item><item><title>bu-30b-a3b-preview中文乱码修复微调教程</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-a3b-preview%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E4%BF%AE%E5%A4%8D%E5%BE%AE%E8%B0%83%E6%95%99%E7%A8%8B/</link><pubDate>Wed, 19 Aug 2026 17:50:53 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-a3b-preview%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E4%BF%AE%E5%A4%8D%E5%BE%AE%E8%B0%83%E6%95%99%E7%A8%8B/</guid><description>&lt;h1 id="bu-30b-a3b-preview-中文乱码修复微调教程"&gt;BU-30B-A3B-Preview 中文乱码修复微调教程&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;结论先行：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;能修&lt;/strong&gt;。这是典型的「英文为主的 Agent SFT 导致非英文语言灾难性遗忘」，不是玄学 bug。用 LoRA 微调 + 中文多模态数据修补 + 英文任务数据回放，是标准解法，社区同款问题（日语退化、中文实体编造）都指向同一根因。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;要做的事&lt;/strong&gt;：五步——①快速诊断排除部署层问题 → ②准备四类混合数据（工作量占 70%）→ ③ms-swift LoRA 训练 → ④中英双语评估防回退 → ⑤合并权重 + vLLM 重新部署。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本笔记是方案教程，未动手执行。部署相关见&lt;a href="https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-a3b-preview%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0/"&gt;《BU-30B-A3B-Preview 本地部署笔记》&lt;/a&gt;。&lt;/p&gt;</description></item><item><title>bu-30b-a3b-preview部署笔记</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-a3b-preview%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0/</link><pubDate>Mon, 17 Aug 2026 15:57:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/bu-30b-a3b-preview%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="bu-30b-a3b-preview-本地部署笔记"&gt;BU-30B-A3B-Preview 本地部署笔记&lt;/h1&gt;
+&lt;p&gt;Browser-use 官方的第一个开源模型，专为浏览器自动化 Agent 场景训练。本文记录模型信息、显存需求评估、各精度部署方案、browser-use 接入方式，以及自量化和加速优化的结论。&lt;/p&gt;</description></item><item><title>LLM Wiki 搭建教程</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/llm-wiki-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</link><pubDate>Wed, 08 Apr 2026 23:23:51 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/llm-wiki-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</guid><description>&lt;h1 id="llm-wiki-搭建教程"&gt;LLM Wiki 搭建教程&lt;/h1&gt;
+&lt;p&gt;基于 Andrej Karpathy llm-wiki 模式的个人知识库系统。
+核心理念：你只负责剪藏，LLM 负责理解和沉淀。&lt;/p&gt;
+&lt;h2 id="核心思想"&gt;核心思想&lt;/h2&gt;
+&lt;p&gt;与传统 RAG 的根本区别在于，它将知识「编译一次、持续维护」，而非「每次查询时重新推导」。&lt;/p&gt;</description></item><item><title>mac电脑使用速记</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</link><pubDate>Sun, 07 Sep 2025 00:20:55 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/mac%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E9%80%9F%E8%AE%B0/</guid><description>&lt;p&gt;在Mac终端中，有几种方法可以连续删除命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 Ctrl + W ：删除光标前的一个单词&lt;/li&gt;
+&lt;li&gt;使用 Ctrl + U ：删除光标前的整行内容&lt;/li&gt;
+&lt;li&gt;使用 Ctrl + K ：删除光标后的整行内容&lt;/li&gt;
+&lt;li&gt;使用 Option + Delete ：删除光标前的一个单词（与 Ctrl + W 类似）
+这些快捷键可以帮助你快速删除命令内容，提高终端操作效率。&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>Hugo静态网站生成器入门指南</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</link><pubDate>Sun, 07 Sep 2025 00:20:46 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/hugo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E7%94%9F%E6%88%90%E5%99%A8%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</guid><description>&lt;h2 id="什么是hugo"&gt;什么是Hugo？&lt;/h2&gt;
+&lt;p&gt;Hugo是一个用Go语言编写的快速、现代的静态网站生成器。它可以将Markdown文件转换为HTML页面，非常适合构建文档网站、博客等。&lt;/p&gt;
+&lt;h2 id="hugo的主要特点"&gt;Hugo的主要特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;极快的构建速度&lt;/li&gt;
+&lt;li&gt;丰富的主题支持&lt;/li&gt;
+&lt;li&gt;简单的Markdown内容管理&lt;/li&gt;
+&lt;li&gt;强大的模板系统&lt;/li&gt;
+&lt;li&gt;内置的短代码功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="安装hugo"&gt;安装Hugo&lt;/h2&gt;
+&lt;p&gt;在Windows上安装Hugo的步骤：&lt;/p&gt;</description></item><item><title>Gemma_3本地部署教程</title><link>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/gemma_3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link><pubDate>Sun, 07 Sep 2025 00:20:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E6%95%99%E7%A8%8B/gemma_3%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid><description>&lt;p&gt;Gemma 3 被谷歌称为目前最强的开源视觉模型之一。 该模型支持超过35种语言，能够分析文本、图像和短视频。值得注意的是，Gemma 3 的视觉编码器经过升级，支持高分辨率和非方形图像，并引入了 ShieldGemma 2 图像安全分类器，用于过滤被分类为性暗示、危险或暴力的内容。这些特性使得 Gemma 3 成为当前最强大的开源视觉模型之一。&lt;/p&gt;</description></item></channel></rss>
