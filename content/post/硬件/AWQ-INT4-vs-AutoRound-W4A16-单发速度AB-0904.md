@@ -2,7 +2,7 @@
 title: 'AWQ-INT4-vs-AutoRound-W4A16-单发速度AB-0904'
 categories: ["硬件"]
 date: 2026-09-04T23:02:35+08:00
-lastmod: 2026-09-04T23:02:35+08:00
+lastmod: 2026-09-05T14:06:44+08:00
 draft: false
 ---
 # Qwen3.8-Flash-Next：AWQ-INT4 vs AutoRound W4A16 单发速度 A/B（2026-09-04）
@@ -48,7 +48,9 @@ cd ~/llm_speedtest/python && .venv/bin/python /tmp/ws_bench_1m.py 1 | tee result
 # 基线记录: results/qwen38flash_bf16ple_1m_c1_500k900k_0904.log
 ```
 
-## 后续建议
+## 后续决定（09-05 用户定案）
 
-- 切回 AutoRound 常驻服务（1M 窗口完整、KV 更大）：`start-flashnext-bf16ple-1m.sh`
-- 若要定质量，需另做评测（评测集未定）；速度维度本 A/B 已闭环。
+- **AWQ-INT4 定为常驻**：速度持平 + g32 理论质量略优，选 AWQ。
+- 窗口固化 512K（YaRN factor 2.0 + MTP spec3 + max-num-batched-tokens 4096，与当日并发 ITL 调优口径一致）。
+- 启动脚本 `start-flashnext-awq.sh`（systemd flashnext.service 与 model-launcher.sh 已切换）；AutoRound 旧脚本（start-flashnext.sh / -bf16ple / -bf16ple-1m）已删；`start-flashnext-awq-1m.sh`（921600）保留备用。
+- 质量 g32 vs g128 评测仍未做（如需再定夺）。
