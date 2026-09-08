@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 07 Sep 2026 23:50:59 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-09-07赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 07 Sep 2026 23:50:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月7日周一赛博日记">2026年9月7日（周一）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 08 Sep 2026 23:50:53 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-09-08赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 08 Sep 2026 23:50:53 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月8日周二赛博日记">2026年9月8日（周二）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-09-08 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：09:52 ~ 19:02&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong>：&lt;code>d/code/AI-TEST&lt;/code>（项目X 主力仓库）+ Claude Code 本地配置目录&lt;/li>
+&lt;li>&lt;strong>会话数&lt;/strong>：Claude 1 个 / Cursor 29 个，共 30 个会话、485 条消息&lt;/li>
+&lt;li>&lt;strong>主要工作摘要&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;strong>版本发布&lt;/strong>：完成两次提交并推送 &lt;code>origin/main&lt;/code>，版本 1.0.4 发布上传成功，工作区收尾干净&lt;/li>
+&lt;li>&lt;strong>需求文档提取&lt;/strong>：从飞书知识库 PRD（外部关联文档）提取功能规格「药品商业非药活动上架限制」，落盘 534 行 / 约 1.1 万字到 &lt;code>docs/&lt;/code> 目录；另确认了一个分销系统相关的背景 Epic（parent story），因不在本迭代内归档到 &lt;code>stories/related/&lt;/code>&lt;/li>
+&lt;li>&lt;strong>通知交互改造&lt;/strong>：确认需求——把「生成用例完成」「AI 初审完成」通知从右下角 toast/系统通知改为页面居中弹窗，必须点「确定」才能关闭（161 条消息的大会话，9 轮提问）&lt;/li>
+&lt;li>&lt;strong>服务排查&lt;/strong>：8787 端口后台进程退出排查——发现另一进程已正常监听，&lt;code>/api/auth/status&lt;/code> 响应正常（2 个 Key），按要求未重启服务&lt;/li>
+&lt;li>&lt;strong>环境排查&lt;/strong>：定位到安装器将 &lt;code>cursor-agent&lt;/code> 目录写入了用户 PATH&lt;/li>
+&lt;li>&lt;strong>权限受阻记录&lt;/strong>：15:08 会话中 Shell 与 TAPD MCP（拉迭代/需求）均被拒绝，流程无法继续&lt;/li>
+&lt;li>其余大量会话为 PING/PONG 连通性测试（约 20 个短会话），说明在测试 agent 通道稳定性&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常（部分会话受权限限制）&lt;/li>
+&lt;/ul>
+&lt;h3 id="-代办推送">📋 代办推送&lt;/h3>
+&lt;ul>
+&lt;li>无素材（今日代办推送记录缺失）&lt;/li>
+&lt;/ul>
+&lt;h3 id="-智能收藏回顾">📚 智能收藏回顾&lt;/h3>
+&lt;ul>
+&lt;li>无素材&lt;/li>
+&lt;/ul>
+&lt;h3 id="-记忆系统维护">🧠 记忆系统维护&lt;/h3>
+&lt;ul>
+&lt;li>无素材&lt;/li>
+&lt;/ul>
+&lt;h3 id="-回家通知">🏠 回家通知&lt;/h3>
+&lt;ul>
+&lt;li>无素材&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;ul>
+&lt;li>今日有约 20 个 PING/PONG 短会话，集中在 AI-TEST 项目，疑似在做 agent 连通性/保活测试——如果这是常态行为，值得看看是否可以减少噪音（这些会话污染了 Claude Code 工作记录的统计）&lt;/li>
+&lt;li>15:08 的会话提示 Shell 与 TAPD MCP 权限被拒，自动化流程中有权限断点，待排查&lt;/li>
+&lt;li>「通知改居中强提醒弹窗」这个交互改动值得关注：AI 完成通知如果都改为强制确认弹窗，可能造成打断疲劳，后续可观察使用反馈&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>今天是围绕项目X 的迭代日：上午完成 1.0.4 版本发布，下午提取分销/药品上架相关 PRD 并归档 Epic，晚上推进「AI 通知改为居中确认弹窗」的需求实现。穿插排查了 8787 服务端口与 cursor-agent PATH 污染问题。全天 30 个会话、485 条消息，消息量集中在两个大会话（通知改造 161 条、代码 patch 审查 96 条）。&lt;/p></description></item><item><title>2026-09-07赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 07 Sep 2026 23:50:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-07%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月7日周一赛博日记">2026年9月7日（周一）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-09-07 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
