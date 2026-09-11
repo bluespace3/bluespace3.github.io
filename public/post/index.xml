@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 10 Sep 2026 23:50:45 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-09-10赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 10 Sep 2026 23:50:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月10日周四赛博日记">2026年9月10日（周四）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 11 Sep 2026 23:50:32 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-09-11赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 11 Sep 2026 23:50:32 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月11日周五赛博日记">2026年9月11日（周五）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-09-11 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>会话统计&lt;/strong>：Claude 0 个 / Cursor 5 个，共 5 个会话、125 条消息&lt;/li>
+&lt;li>&lt;strong>主要内容&lt;/strong>：
+&lt;ol>
+&lt;li>&lt;strong>Cursor 全局规则沉淀&lt;/strong>（10:13，5 条消息）：建立 &lt;code>reuse-first.mdc&lt;/code> 全局规则文件（目录为新建），将「优先复用」原则固化到 Cursor 规则体系。&lt;/li>
+&lt;li>&lt;strong>自动化测试项目清理&lt;/strong>（11:46，&lt;code>e/code/ysbaiautotest&lt;/code>，83 条消息）：完成入口改动调整，ESLint 全量通过、零告警，清理临时文件。&lt;/li>
+&lt;li>&lt;strong>磁盘空间排查&lt;/strong>（11:49，68 条消息）：定位到 &lt;code>reports&lt;/code>（历史测试报告）目录占用 84.6 GB；确认相关工具（Electron 应用）当天仍在活跃使用（配置文件刚更新）。执行了已确认的远程微信/QQ 聊天文件清理。&lt;/li>
+&lt;li>&lt;strong>tapd-mcp-server 配置排查&lt;/strong>（14:33）：确认其配置位于 Cursor 全局（用户级）MCP 配置文件中，而非项目级。&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;h3 id="-代办推送">📋 代办推送&lt;/h3>
+&lt;ul>
+&lt;li>Todoist 工具本次不可用（todoist MCP 未接入当前运行时），无法查询当日完成/到期任务。&lt;/li>
+&lt;/ul>
+&lt;h3 id="-智能收藏回顾">📚 智能收藏回顾&lt;/h3>
+&lt;ul>
+&lt;li>无素材。&lt;/li>
+&lt;/ul>
+&lt;h3 id="-记忆系统维护">🧠 记忆系统维护&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>memory/2026-09-11.md&lt;/code> 不存在，今日无主记忆记录；仅有 Claude 工作记录文件。&lt;/li>
+&lt;/ul>
+&lt;h3 id="-回家通知">🏠 回家通知&lt;/h3>
+&lt;ul>
+&lt;li>无相关素材。&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;ul>
+&lt;li>磁盘清理是个持续战：84.6 GB 的历史测试报告堆积说明 CI/测试报告缺乏保留策略，建议给 reports 目录设置自动滚动清理（如保留最近 N 份）。&lt;/li>
+&lt;li>「reuse-first」规则入 Cursor 是个好信号：把工程习惯从口头约定升级为工具强约束。&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>今天以工程效率治理为主：完成测试项目入口改动并通过 ESLint、清理 84.6 GB 历史测试报告与远程聊天文件、沉淀 Cursor 全局复用规则、排查 tapd-mcp-server 配置位置。&lt;/p></description></item><item><title>2026-09-10赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 10 Sep 2026 23:50:45 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年9月10日周四赛博日记">2026年9月10日（周四）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-09-10 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
