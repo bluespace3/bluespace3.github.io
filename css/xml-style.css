@@ -1,0 +1,82 @@
+/* XML文档树样式 */
+xml {
+  display: block;
+  margin: 1em;
+  font-family: monospace;
+  white-space: pre;
+  color: #333;
+}
+
+/* XML标签样式 */
+xml > * {
+  display: block;
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* XML属性样式 - 选择带有常见属性的元素 */
+xml *[class], xml *[id], xml *[style], xml *[href], xml *[src], xml *[type], xml *[name], xml *[value] {
+  margin-left: 0.5em;
+  color: #666;
+}
+
+/* XML文本内容样式 */
+/* 注意：这种 ::before 和 ::after 的方式可能无法在所有浏览器中按预期工作 */
+/* 浏览器通常有自己的XML渲染方式，直接用CSS选择器可能更可靠 */
+/* 例如，直接为 <rss>, <channel>, <item> 等标签定义样式 */
+/* 但保留你原有的意图，可以尝试如下 */
+/* 以下选择器可能更通用，但浏览器对XML应用CSS的支持有限 */
+rss, channel, item, title, link, description, pubDate /* 添加你XML中实际的标签 */ {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+title {
+    font-weight: bold;
+    color: #2196F3;
+}
+
+link {
+    color: green;
+}
+
+/* 你原有的 ::before/::after 逻辑可能无法按预期工作，注释掉或移除 */
+/*
+xml::before {
+  content: '<' attr(tag) '>';
+  color: #2196F3;
+}
+
+xml::after {
+  content: '</' attr(tag) '>';
+  color: #2196F3;
+}
+*/
+
+/* XML注释样式 */
+xml comment { /* 这个选择器可能无效，浏览器通常有自己的注释渲染 */
+  color: #888;
+  font-style: italic;
+}
+
+/* 尝试为具体XML元素添加样式 */
+channel > title {
+  font-size: 1.5em;
+  color: navy;
+}
+
+item > title {
+  font-size: 1.2em;
+  color: darkred;
+}
+
+item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1em;
+  margin-left: 2em; /* 保持缩进感 */
+}
+
+description {
+    margin-left: 1em; /* 描述内容缩进 */
+    color: #555;
+}
