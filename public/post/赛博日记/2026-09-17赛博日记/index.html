@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html data-theme="auto" dir="auto" lang="zh-cn"><head><meta charset="utf-8"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><meta content="index, follow" name="robots"/><title>2026-09-17赛博日记 | 蓝色空间号</title><meta content="" name="keywords"/><meta content='2026-09-17 赛博日记
+
+生成时间：2026-09-17 23:50（合并更新，含 Hermes 本机事项同步首次接入）
+核心工作
+💻 Claude Code / Cursor 工作记录
+
+会话数：Cursor 3 个（共 42 条消息），项目均为 API 测试平台（项目X）
+主线：API 用例编辑保存闭环收尾——确认 main 与 origin/main 已同步至 22bd929
+Token 缓存链路确认：跑用例所用的 token 并非「覆盖手机号 + 获取 Token」那套缓存，直觉验证成立
+SSE 探测脚本：退出码为 1 但生成实际成功，服务端已落库 4 条（id 86–89），退出码语义待修
+
+🖥️ Hermes 本机事项（首次纳入日记，10 个活跃会话）
+
+vLLM 双卡性能调优（主线，393 条消息）：
+
+单卡吞吐疑问入手 → 定位 pclk 1395（时钟被锁 1400，上限 1935）为关键约束
+PLE prep 窗口暴露：step 22.9ms 中 prep 占 1.66ms（7.2%），与 dmon SM 利用率 92-93% 互相印证；通过注入法（+8ms 干扰）独立复现：注入态掉 28-30%，长跑/短跑两种方法结论一致
+draft_int8 落地 +7.4%，readahead 256→1024 调优，终态：0.97 显存 + draft_int8 + readahead 1024，服务 ready，KV 池 116 万 tokens，无诊断注入残留
+稳态口径 ≈ 120 t/s / 8.0 ms per token；纠正两处早前错判（d2h 等待口径、WORKERS 消融无效）
+AWQ 全部退场：5 个启动脚本归档至 /root/awq-retired-0917/，systemd unit/drop-in/启动器全链清理并验证，作废"删 60-nvfp4-prod.conf 回滚 AWQ"死剧本，全程未重启服务
+残留：技能卡沉淀（draft_int8 落地过程、注入实验方法论、吞吐口径纪律）未写
+
+
+GPU1 识别失败取证（70 条消息）：根因是 GSP 固件 Xid 1（load address misaligned）崩溃 → 签名表 32 格被重试风暴填满（table full ×56）→ 后续全部死在 0x40。澄清 GSP（GPU 大管家固件，绕不开）≠ GDS（可选直存通道，已判死不用）。方案：安全窗口重启清表
+Hermes 运行时升级：0.19.0-cn.7 → 0.20.0-cn.9（sha256 校验 5021 文件通过），飞书 disconnected→connected 根治，回滚点保留，完整 playbook 沉淀技能卡；规避 pip 安装劫持 CLI 的"双运行时"坑
+云服务器中转站搭建（189 条消息）：SSH 免密就绪（别名 server）；发现服务器日记任务缺 git pull 步骤导致设备推送漏采（已补全链路）；Todoist MCP OAuth 未完成的根因定位与两套修法；脱敏规则引擎上线——首测即抓到消息原文含 SSH 密码和 Todoist token 明文，长hex/sk-/ghp_/Bearer/密码字段全部替换 [已脱敏]
+博客构建器 build.py：笔记→文章流水线，92 篇 / 840KB，日期四级回退、站内互链重写、三道安全防线（逮到一篇 MYSQL 明文密码）
+WoL 远程开机闭环：三层开关（驱动/NetworkManager/内核）+ ToDesk 自启，手机 ToDesk 当唤醒器；BIOS ErP 供电待实测
+Todoist MCP 接入 Hermes：官方托管端点，47 工具全启用，api.todoist.com 直连无代理依赖
+
+📚 智能收藏每日回顾（第 5 次 · 毕业）
+
+2 篇 5 月收藏文章完成第 5 次回顾，艾宾浩斯周期（1/2/4/7/15 天）全部收官，不再重复推送：
+
+AI 驱动的自进化测试框架：感知→学习→优化闭环，OpenClaw + Python + LangChain + Playwright
+Agent+MCP+Skills 接口自动化智能体平台：四层架构，Skills 层封装鉴权/断言/自愈，四步融入 CI/CD
+
+
+
+🔧 问题排查与记录
+
+飞书跨域推送权限：回顾消息推送失败——用户为飞书内微信外部联系人（跨域 ID），应用缺 contact:user.employee_id:readonly 权限，改为运行时自动投递
+memory_search 索引不可用：索引由不同 embedding 配置构建，需 openclaw memory index --force 重建
+教程笔记同步检查：飞书《Xuan酱教程》revision 2844 与远程一致，无更新
+
+自动化运转
+
+05:10 博客全量自动更新：293 个笔记文件，脱敏 258 处/58 文件，Hugo 819 页构建成功，内容无差异无需部署
+09:01 心跳代办检查 → 微信推送；09:06 Memory Dreaming Promotion 正常
+18:31 / 18:51 回家通知触发两次
+23:30 Hermes 本机事项首次同步至 note-gen-sync（本日記素材链路补全的成果）
+
+思考与备忘
+
+日记链路闭环：今日起 Hermes 事项同步（23:30）+ 服务器生成前 git pull 双补丁生效，多设备素材不再漏采
+口径纪律（GPU 调优沉淀）：吞吐数字必须同时标注内容 + 上下文长度 + 阶段；引擎 10s 窗口日志切不干净预填/解码
+待办：vLLM 调优技能卡沉淀；GPU1 重启验证；BIOS ErP 关机实测；SSE 探测脚本退出码语义修复
+
+今日摘要
+信息量很大的一天：vLLM 双卡调优收官（draft_int8 +7.4%、AWQ 退场、PLE prep 两次独立验证）、GPU1 故障完成根因取证（GSP 崩溃 + 签名表填满）、Hermes 升级 0.20、日记多设备同步链路补全且脱敏引擎首战立功。API 测试平台用例编辑闭环、智能收藏艾宾浩斯毕业，各自动化全线正常。' name="description"/><meta content="新人类" name="author"/><link href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/" rel="canonical"/><link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.c2189e7d36d72767de292f8b9d897e4a464aa5bc7eb692cda50064f5eb9eeece.css" integrity="sha256-whiefTbXJ2feKS+LnYl+SkZKpbx+tpLNpQBk9eue7s4=" rel="preload stylesheet"/><link href="https://bluespace.eu.org/favicon.ico" rel="icon"/><link href="https://bluespace.eu.org/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="https://bluespace.eu.org/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="https://bluespace.eu.org/apple-touch-icon.png" rel="apple-touch-icon"/><link href="https://bluespace.eu.org/safari-pinned-tab.svg" rel="mask-icon"/><meta content="#2e2e33" name="theme-color"/><meta content="#2e2e33" name="msapplication-TileColor"/><link href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/" hreflang="zh-cn" rel="alternate"/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}@media(prefers-color-scheme:light){.list::-webkit-scrollbar-thumb{border-color:var(--code-bg)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><meta content="2026-09-17赛博日记" property="og:title"/><meta content='2026-09-17 赛博日记
+
+生成时间：2026-09-17 23:50（合并更新，含 Hermes 本机事项同步首次接入）
+核心工作
+💻 Claude Code / Cursor 工作记录
+
+会话数：Cursor 3 个（共 42 条消息），项目均为 API 测试平台（项目X）
+主线：API 用例编辑保存闭环收尾——确认 main 与 origin/main 已同步至 22bd929
+Token 缓存链路确认：跑用例所用的 token 并非「覆盖手机号 + 获取 Token」那套缓存，直觉验证成立
+SSE 探测脚本：退出码为 1 但生成实际成功，服务端已落库 4 条（id 86–89），退出码语义待修
+
+🖥️ Hermes 本机事项（首次纳入日记，10 个活跃会话）
+
+vLLM 双卡性能调优（主线，393 条消息）：
+
+单卡吞吐疑问入手 → 定位 pclk 1395（时钟被锁 1400，上限 1935）为关键约束
+PLE prep 窗口暴露：step 22.9ms 中 prep 占 1.66ms（7.2%），与 dmon SM 利用率 92-93% 互相印证；通过注入法（+8ms 干扰）独立复现：注入态掉 28-30%，长跑/短跑两种方法结论一致
+draft_int8 落地 +7.4%，readahead 256→1024 调优，终态：0.97 显存 + draft_int8 + readahead 1024，服务 ready，KV 池 116 万 tokens，无诊断注入残留
+稳态口径 ≈ 120 t/s / 8.0 ms per token；纠正两处早前错判（d2h 等待口径、WORKERS 消融无效）
+AWQ 全部退场：5 个启动脚本归档至 /root/awq-retired-0917/，systemd unit/drop-in/启动器全链清理并验证，作废"删 60-nvfp4-prod.conf 回滚 AWQ"死剧本，全程未重启服务
+残留：技能卡沉淀（draft_int8 落地过程、注入实验方法论、吞吐口径纪律）未写
+
+
+GPU1 识别失败取证（70 条消息）：根因是 GSP 固件 Xid 1（load address misaligned）崩溃 → 签名表 32 格被重试风暴填满（table full ×56）→ 后续全部死在 0x40。澄清 GSP（GPU 大管家固件，绕不开）≠ GDS（可选直存通道，已判死不用）。方案：安全窗口重启清表
+Hermes 运行时升级：0.19.0-cn.7 → 0.20.0-cn.9（sha256 校验 5021 文件通过），飞书 disconnected→connected 根治，回滚点保留，完整 playbook 沉淀技能卡；规避 pip 安装劫持 CLI 的"双运行时"坑
+云服务器中转站搭建（189 条消息）：SSH 免密就绪（别名 server）；发现服务器日记任务缺 git pull 步骤导致设备推送漏采（已补全链路）；Todoist MCP OAuth 未完成的根因定位与两套修法；脱敏规则引擎上线——首测即抓到消息原文含 SSH 密码和 Todoist token 明文，长hex/sk-/ghp_/Bearer/密码字段全部替换 [已脱敏]
+博客构建器 build.py：笔记→文章流水线，92 篇 / 840KB，日期四级回退、站内互链重写、三道安全防线（逮到一篇 MYSQL 明文密码）
+WoL 远程开机闭环：三层开关（驱动/NetworkManager/内核）+ ToDesk 自启，手机 ToDesk 当唤醒器；BIOS ErP 供电待实测
+Todoist MCP 接入 Hermes：官方托管端点，47 工具全启用，api.todoist.com 直连无代理依赖
+
+📚 智能收藏每日回顾（第 5 次 · 毕业）
+
+2 篇 5 月收藏文章完成第 5 次回顾，艾宾浩斯周期（1/2/4/7/15 天）全部收官，不再重复推送：
+
+AI 驱动的自进化测试框架：感知→学习→优化闭环，OpenClaw + Python + LangChain + Playwright
+Agent+MCP+Skills 接口自动化智能体平台：四层架构，Skills 层封装鉴权/断言/自愈，四步融入 CI/CD
+
+
+
+🔧 问题排查与记录
+
+飞书跨域推送权限：回顾消息推送失败——用户为飞书内微信外部联系人（跨域 ID），应用缺 contact:user.employee_id:readonly 权限，改为运行时自动投递
+memory_search 索引不可用：索引由不同 embedding 配置构建，需 openclaw memory index --force 重建
+教程笔记同步检查：飞书《Xuan酱教程》revision 2844 与远程一致，无更新
+
+自动化运转
+
+05:10 博客全量自动更新：293 个笔记文件，脱敏 258 处/58 文件，Hugo 819 页构建成功，内容无差异无需部署
+09:01 心跳代办检查 → 微信推送；09:06 Memory Dreaming Promotion 正常
+18:31 / 18:51 回家通知触发两次
+23:30 Hermes 本机事项首次同步至 note-gen-sync（本日記素材链路补全的成果）
+
+思考与备忘
+
+日记链路闭环：今日起 Hermes 事项同步（23:30）+ 服务器生成前 git pull 双补丁生效，多设备素材不再漏采
+口径纪律（GPU 调优沉淀）：吞吐数字必须同时标注内容 + 上下文长度 + 阶段；引擎 10s 窗口日志切不干净预填/解码
+待办：vLLM 调优技能卡沉淀；GPU1 重启验证；BIOS ErP 关机实测；SSE 探测脚本退出码语义修复
+
+今日摘要
+信息量很大的一天：vLLM 双卡调优收官（draft_int8 +7.4%、AWQ 退场、PLE prep 两次独立验证）、GPU1 故障完成根因取证（GSP 崩溃 + 签名表填满）、Hermes 升级 0.20、日记多设备同步链路补全且脱敏引擎首战立功。API 测试平台用例编辑闭环、智能收藏艾宾浩斯毕业，各自动化全线正常。' property="og:description"/><meta content="article" property="og:type"/><meta content="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/" property="og:url"/><meta content="post" property="article:section"/><meta content="2026-09-17T23:51:06+08:00" property="article:published_time"/><meta content="2026-09-17T23:51:06+08:00" property="article:modified_time"/><meta content="summary" name="twitter:card"/><meta content="2026-09-17赛博日记" name="twitter:title"/><meta content='2026-09-17 赛博日记
+
+生成时间：2026-09-17 23:50（合并更新，含 Hermes 本机事项同步首次接入）
+核心工作
+💻 Claude Code / Cursor 工作记录
+
+会话数：Cursor 3 个（共 42 条消息），项目均为 API 测试平台（项目X）
+主线：API 用例编辑保存闭环收尾——确认 main 与 origin/main 已同步至 22bd929
+Token 缓存链路确认：跑用例所用的 token 并非「覆盖手机号 + 获取 Token」那套缓存，直觉验证成立
+SSE 探测脚本：退出码为 1 但生成实际成功，服务端已落库 4 条（id 86–89），退出码语义待修
+
+🖥️ Hermes 本机事项（首次纳入日记，10 个活跃会话）
+
+vLLM 双卡性能调优（主线，393 条消息）：
+
+单卡吞吐疑问入手 → 定位 pclk 1395（时钟被锁 1400，上限 1935）为关键约束
+PLE prep 窗口暴露：step 22.9ms 中 prep 占 1.66ms（7.2%），与 dmon SM 利用率 92-93% 互相印证；通过注入法（+8ms 干扰）独立复现：注入态掉 28-30%，长跑/短跑两种方法结论一致
+draft_int8 落地 +7.4%，readahead 256→1024 调优，终态：0.97 显存 + draft_int8 + readahead 1024，服务 ready，KV 池 116 万 tokens，无诊断注入残留
+稳态口径 ≈ 120 t/s / 8.0 ms per token；纠正两处早前错判（d2h 等待口径、WORKERS 消融无效）
+AWQ 全部退场：5 个启动脚本归档至 /root/awq-retired-0917/，systemd unit/drop-in/启动器全链清理并验证，作废"删 60-nvfp4-prod.conf 回滚 AWQ"死剧本，全程未重启服务
+残留：技能卡沉淀（draft_int8 落地过程、注入实验方法论、吞吐口径纪律）未写
+
+
+GPU1 识别失败取证（70 条消息）：根因是 GSP 固件 Xid 1（load address misaligned）崩溃 → 签名表 32 格被重试风暴填满（table full ×56）→ 后续全部死在 0x40。澄清 GSP（GPU 大管家固件，绕不开）≠ GDS（可选直存通道，已判死不用）。方案：安全窗口重启清表
+Hermes 运行时升级：0.19.0-cn.7 → 0.20.0-cn.9（sha256 校验 5021 文件通过），飞书 disconnected→connected 根治，回滚点保留，完整 playbook 沉淀技能卡；规避 pip 安装劫持 CLI 的"双运行时"坑
+云服务器中转站搭建（189 条消息）：SSH 免密就绪（别名 server）；发现服务器日记任务缺 git pull 步骤导致设备推送漏采（已补全链路）；Todoist MCP OAuth 未完成的根因定位与两套修法；脱敏规则引擎上线——首测即抓到消息原文含 SSH 密码和 Todoist token 明文，长hex/sk-/ghp_/Bearer/密码字段全部替换 [已脱敏]
+博客构建器 build.py：笔记→文章流水线，92 篇 / 840KB，日期四级回退、站内互链重写、三道安全防线（逮到一篇 MYSQL 明文密码）
+WoL 远程开机闭环：三层开关（驱动/NetworkManager/内核）+ ToDesk 自启，手机 ToDesk 当唤醒器；BIOS ErP 供电待实测
+Todoist MCP 接入 Hermes：官方托管端点，47 工具全启用，api.todoist.com 直连无代理依赖
+
+📚 智能收藏每日回顾（第 5 次 · 毕业）
+
+2 篇 5 月收藏文章完成第 5 次回顾，艾宾浩斯周期（1/2/4/7/15 天）全部收官，不再重复推送：
+
+AI 驱动的自进化测试框架：感知→学习→优化闭环，OpenClaw + Python + LangChain + Playwright
+Agent+MCP+Skills 接口自动化智能体平台：四层架构，Skills 层封装鉴权/断言/自愈，四步融入 CI/CD
+
+
+
+🔧 问题排查与记录
+
+飞书跨域推送权限：回顾消息推送失败——用户为飞书内微信外部联系人（跨域 ID），应用缺 contact:user.employee_id:readonly 权限，改为运行时自动投递
+memory_search 索引不可用：索引由不同 embedding 配置构建，需 openclaw memory index --force 重建
+教程笔记同步检查：飞书《Xuan酱教程》revision 2844 与远程一致，无更新
+
+自动化运转
+
+05:10 博客全量自动更新：293 个笔记文件，脱敏 258 处/58 文件，Hugo 819 页构建成功，内容无差异无需部署
+09:01 心跳代办检查 → 微信推送；09:06 Memory Dreaming Promotion 正常
+18:31 / 18:51 回家通知触发两次
+23:30 Hermes 本机事项首次同步至 note-gen-sync（本日記素材链路补全的成果）
+
+思考与备忘
+
+日记链路闭环：今日起 Hermes 事项同步（23:30）+ 服务器生成前 git pull 双补丁生效，多设备素材不再漏采
+口径纪律（GPU 调优沉淀）：吞吐数字必须同时标注内容 + 上下文长度 + 阶段；引擎 10s 窗口日志切不干净预填/解码
+待办：vLLM 调优技能卡沉淀；GPU1 重启验证；BIOS ErP 关机实测；SSE 探测脚本退出码语义修复
+
+今日摘要
+信息量很大的一天：vLLM 双卡调优收官（draft_int8 +7.4%、AWQ 退场、PLE prep 两次独立验证）、GPU1 故障完成根因取证（GSP 崩溃 + 签名表填满）、Hermes 升级 0.20、日记多设备同步链路补全且脱敏引擎首战立功。API 测试平台用例编辑闭环、智能收藏艾宾浩斯毕业，各自动化全线正常。' name="twitter:description"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"文章","item":"https://bluespace.eu.org/post/"},{"@type":"ListItem","position":2,"name":"2026-09-17赛博日记","item":"https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"2026-09-17赛博日记","name":"2026-09-17赛博日记","description":"2026-09-17 赛博日记 生成时间：2026-09-17 23:50（合并更新，含 Hermes 本机事项同步首次接入）\n核心工作 💻 Claude Code / Cursor 工作记录 会话数：Cursor 3 个（共 42 条消息），项目均为 API 测试平台（项目X） 主线：API 用例编辑保存闭环收尾——确认 main 与 origin/main 已同步至 22bd929 Token 缓存链路确认：跑用例所用的 token 并非「覆盖手机号 + 获取 Token」那套缓存，直觉验证成立 SSE 探测脚本：退出码为 1 但生成实际成功，服务端已落库 4 条（id 86–89），退出码语义待修 🖥️ Hermes 本机事项（首次纳入日记，10 个活跃会话） vLLM 双卡性能调优（主线，393 条消息）： 单卡吞吐疑问入手 → 定位 pclk 1395（时钟被锁 1400，上限 1935）为关键约束 PLE prep 窗口暴露：step 22.9ms 中 prep 占 1.66ms（7.2%），与 dmon SM 利用率 92-93% 互相印证；通过注入法（+8ms 干扰）独立复现：注入态掉 28-30%，长跑/短跑两种方法结论一致 draft_int8 落地 +7.4%，readahead 256→1024 调优，终态：0.97 显存 + draft_int8 + readahead 1024，服务 ready，KV 池 116 万 tokens，无诊断注入残留 稳态口径 ≈ 120 t/s / 8.0 ms per token；纠正两处早前错判（d2h 等待口径、WORKERS 消融无效） AWQ 全部退场：5 个启动脚本归档至 /root/awq-retired-0917/，systemd unit/drop-in/启动器全链清理并验证，作废\u0026quot;删 60-nvfp4-prod.conf 回滚 AWQ\u0026quot;死剧本，全程未重启服务 残留：技能卡沉淀（draft_int8 落地过程、注入实验方法论、吞吐口径纪律）未写 GPU1 识别失败取证（70 条消息）：根因是 GSP 固件 Xid 1（load address misaligned）崩溃 → 签名表 32 格被重试风暴填满（table full ×56）→ 后续全部死在 0x40。澄清 GSP（GPU 大管家固件，绕不开）≠ GDS（可选直存通道，已判死不用）。方案：安全窗口重启清表 Hermes 运行时升级：0.19.0-cn.7 → 0.20.0-cn.9（sha256 校验 5021 文件通过），飞书 disconnected→connected 根治，回滚点保留，完整 playbook 沉淀技能卡；规避 pip 安装劫持 CLI 的\u0026quot;双运行时\u0026quot;坑 云服务器中转站搭建（189 条消息）：SSH 免密就绪（别名 server）；发现服务器日记任务缺 git pull 步骤导致设备推送漏采（已补全链路）；Todoist MCP OAuth 未完成的根因定位与两套修法；脱敏规则引擎上线——首测即抓到消息原文含 SSH 密码和 Todoist token 明文，长hex/sk-/ghp_/Bearer/密码字段全部替换 [已脱敏] 博客构建器 build.py：笔记→文章流水线，92 篇 / 840KB，日期四级回退、站内互链重写、三道安全防线（逮到一篇 MYSQL 明文密码） WoL 远程开机闭环：三层开关（驱动/NetworkManager/内核）+ ToDesk 自启，手机 ToDesk 当唤醒器；BIOS ErP 供电待实测 Todoist MCP 接入 Hermes：官方托管端点，47 工具全启用，api.todoist.com 直连无代理依赖 📚 智能收藏每日回顾（第 5 次 · 毕业） 2 篇 5 月收藏文章完成第 5 次回顾，艾宾浩斯周期（1/2/4/7/15 天）全部收官，不再重复推送： AI 驱动的自进化测试框架：感知→学习→优化闭环，OpenClaw + Python + LangChain + Playwright Agent+MCP+Skills 接口自动化智能体平台：四层架构，Skills 层封装鉴权/断言/自愈，四步融入 CI/CD 🔧 问题排查与记录 飞书跨域推送权限：回顾消息推送失败——用户为飞书内微信外部联系人（跨域 ID），应用缺 contact:user.employee_id:readonly 权限，改为运行时自动投递 memory_search 索引不可用：索引由不同 embedding 配置构建，需 openclaw memory index --force 重建 教程笔记同步检查：飞书《Xuan酱教程》revision 2844 与远程一致，无更新 自动化运转 05:10 博客全量自动更新：293 个笔记文件，脱敏 258 处/58 文件，Hugo 819 页构建成功，内容无差异无需部署 09:01 心跳代办检查 → 微信推送；09:06 Memory Dreaming Promotion 正常 18:31 / 18:51 回家通知触发两次 23:30 Hermes 本机事项首次同步至 note-gen-sync（本日記素材链路补全的成果） 思考与备忘 日记链路闭环：今日起 Hermes 事项同步（23:30）+ 服务器生成前 git pull 双补丁生效，多设备素材不再漏采 口径纪律（GPU 调优沉淀）：吞吐数字必须同时标注内容 + 上下文长度 + 阶段；引擎 10s 窗口日志切不干净预填/解码 待办：vLLM 调优技能卡沉淀；GPU1 重启验证；BIOS ErP 关机实测；SSE 探测脚本退出码语义修复 今日摘要 信息量很大的一天：vLLM 双卡调优收官（draft_int8 +7.4%、AWQ 退场、PLE prep 两次独立验证）、GPU1 故障完成根因取证（GSP 崩溃 + 签名表填满）、Hermes 升级 0.20、日记多设备同步链路补全且脱敏引擎首战立功。API 测试平台用例编辑闭环、智能收藏艾宾浩斯毕业，各自动化全线正常。\n","keywords":[],"articleBody":"2026-09-17 赛博日记 生成时间：2026-09-17 23:50（合并更新，含 Hermes 本机事项同步首次接入）\n核心工作 💻 Claude Code / Cursor 工作记录 会话数：Cursor 3 个（共 42 条消息），项目均为 API 测试平台（项目X） 主线：API 用例编辑保存闭环收尾——确认 main 与 origin/main 已同步至 22bd929 Token 缓存链路确认：跑用例所用的 token 并非「覆盖手机号 + 获取 Token」那套缓存，直觉验证成立 SSE 探测脚本：退出码为 1 但生成实际成功，服务端已落库 4 条（id 86–89），退出码语义待修 🖥️ Hermes 本机事项（首次纳入日记，10 个活跃会话） vLLM 双卡性能调优（主线，393 条消息）： 单卡吞吐疑问入手 → 定位 pclk 1395（时钟被锁 1400，上限 1935）为关键约束 PLE prep 窗口暴露：step 22.9ms 中 prep 占 1.66ms（7.2%），与 dmon SM 利用率 92-93% 互相印证；通过注入法（+8ms 干扰）独立复现：注入态掉 28-30%，长跑/短跑两种方法结论一致 draft_int8 落地 +7.4%，readahead 256→1024 调优，终态：0.97 显存 + draft_int8 + readahead 1024，服务 ready，KV 池 116 万 tokens，无诊断注入残留 稳态口径 ≈ 120 t/s / 8.0 ms per token；纠正两处早前错判（d2h 等待口径、WORKERS 消融无效） AWQ 全部退场：5 个启动脚本归档至 /root/awq-retired-0917/，systemd unit/drop-in/启动器全链清理并验证，作废\"删 60-nvfp4-prod.conf 回滚 AWQ\"死剧本，全程未重启服务 残留：技能卡沉淀（draft_int8 落地过程、注入实验方法论、吞吐口径纪律）未写 GPU1 识别失败取证（70 条消息）：根因是 GSP 固件 Xid 1（load address misaligned）崩溃 → 签名表 32 格被重试风暴填满（table full ×56）→ 后续全部死在 0x40。澄清 GSP（GPU 大管家固件，绕不开）≠ GDS（可选直存通道，已判死不用）。方案：安全窗口重启清表 Hermes 运行时升级：0.19.0-cn.7 → 0.20.0-cn.9（sha256 校验 5021 文件通过），飞书 disconnected→connected 根治，回滚点保留，完整 playbook 沉淀技能卡；规避 pip 安装劫持 CLI 的\"双运行时\"坑 云服务器中转站搭建（189 条消息）：SSH 免密就绪（别名 server）；发现服务器日记任务缺 git pull 步骤导致设备推送漏采（已补全链路）；Todoist MCP OAuth 未完成的根因定位与两套修法；脱敏规则引擎上线——首测即抓到消息原文含 SSH 密码和 Todoist token 明文，长hex/sk-/ghp_/Bearer/密码字段全部替换 [已脱敏] 博客构建器 build.py：笔记→文章流水线，92 篇 / 840KB，日期四级回退、站内互链重写、三道安全防线（逮到一篇 MYSQL 明文密码） WoL 远程开机闭环：三层开关（驱动/NetworkManager/内核）+ ToDesk 自启，手机 ToDesk 当唤醒器；BIOS ErP 供电待实测 Todoist MCP 接入 Hermes：官方托管端点，47 工具全启用，api.todoist.com 直连无代理依赖 📚 智能收藏每日回顾（第 5 次 · 毕业） 2 篇 5 月收藏文章完成第 5 次回顾，艾宾浩斯周期（1/2/4/7/15 天）全部收官，不再重复推送： AI 驱动的自进化测试框架：感知→学习→优化闭环，OpenClaw + Python + LangChain + Playwright Agent+MCP+Skills 接口自动化智能体平台：四层架构，Skills 层封装鉴权/断言/自愈，四步融入 CI/CD 🔧 问题排查与记录 飞书跨域推送权限：回顾消息推送失败——用户为飞书内微信外部联系人（跨域 ID），应用缺 contact:user.employee_id:readonly 权限，改为运行时自动投递 memory_search 索引不可用：索引由不同 embedding 配置构建，需 openclaw memory index --force 重建 教程笔记同步检查：飞书《Xuan酱教程》revision 2844 与远程一致，无更新 自动化运转 05:10 博客全量自动更新：293 个笔记文件，脱敏 258 处/58 文件，Hugo 819 页构建成功，内容无差异无需部署 09:01 心跳代办检查 → 微信推送；09:06 Memory Dreaming Promotion 正常 18:31 / 18:51 回家通知触发两次 23:30 Hermes 本机事项首次同步至 note-gen-sync（本日記素材链路补全的成果） 思考与备忘 日记链路闭环：今日起 Hermes 事项同步（23:30）+ 服务器生成前 git pull 双补丁生效，多设备素材不再漏采 口径纪律（GPU 调优沉淀）：吞吐数字必须同时标注内容 + 上下文长度 + 阶段；引擎 10s 窗口日志切不干净预填/解码 待办：vLLM 调优技能卡沉淀；GPU1 重启验证；BIOS ErP 关机实测；SSE 探测脚本退出码语义修复 今日摘要 信息量很大的一天：vLLM 双卡调优收官（draft_int8 +7.4%、AWQ 退场、PLE prep 两次独立验证）、GPU1 故障完成根因取证（GSP 崩溃 + 签名表填满）、Hermes 升级 0.20、日记多设备同步链路补全且脱敏引擎首战立功。API 测试平台用例编辑闭环、智能收藏艾宾浩斯毕业，各自动化全线正常。\n📊 自动化统计 捕获 Memory 数：1（memory/2026-09-17-1218.md） 笔记更新数：1（hermes_2026-09-17.md，27.5KB） Todoist 完成任务数：0（今日完成 0 / 到期 0） Claude Code/Cursor 会话数：3（42 条消息）+ Hermes 本机 10 个活跃会话 ","wordCount":"2007","inLanguage":"zh-cn","datePublished":"2026-09-17T23:51:06+08:00","dateModified":"2026-09-17T23:51:06+08:00","author":{"@type":"Person","name":"新人类"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"},"publisher":{"@type":"Organization","name":"蓝色空间号","logo":{"@type":"ImageObject","url":"https://bluespace.eu.org/favicon.ico"}}}</script></head><body id="top"><header class="header"><nav class="nav"><div class="logo"><a accesskey="h" href="https://bluespace.eu.org/" title="蓝色空间号 (Alt + H)">蓝色空间号</a><div class="logo-switches"><button accesskey="t" aria-label="Toggle theme" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></button></div></div><ul id="menu"><li><a accesskey="/" href="https://bluespace.eu.org/search/" title="搜索 (Alt + /)"><span>搜索</span></a></li><li><a href="https://bluespace.eu.org/" title="首页"><span>首页</span></a></li><li><a href="https://bluespace.eu.org/post/" title="文章"><span>文章</span></a></li><li><a href="https://bluespace.eu.org/archives/" title="归档"><span>归档</span></a></li><li><a href="https://bluespace.eu.org/categories/" title="分类"><span>分类</span></a></li><li><a href="https://bluespace.eu.org/tags/" title="标签"><span>标签</span></a></li><li><a href="https://bluespace.eu.org/about/" title="关于"><span>关于</span></a></li></ul></nav></header><main class="main"><article class="post-single"><header class="post-header"><div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a> » <a href="https://bluespace.eu.org/post/">文章</a></div><h1 class="post-title entry-hint-parent">2026-09-17赛博日记</h1><div class="post-meta"><span title="2026-09-17 23:51:06 +0800 CST">2026-09-17</span> · <span>5 min</span> · <span>2007 words</span> · <span>新人类</span></div></header><div class="toc"><details><summary accesskey="c" title="(Alt + C)"><span class="details">Table of Contents</span></summary><div class="inner"><nav id="TableOfContents"><ul><li><a href="#核心工作">核心工作</a><ul><li><a href="#-claude-code--cursor-工作记录">💻 Claude Code / Cursor 工作记录</a></li><li><a href="#-hermes-本机事项首次纳入日记10-个活跃会话">🖥️ Hermes 本机事项（首次纳入日记，10 个活跃会话）</a></li><li><a href="#-智能收藏每日回顾第-5-次--毕业">📚 智能收藏每日回顾（第 5 次 · 毕业）</a></li><li><a href="#-问题排查与记录">🔧 问题排查与记录</a></li></ul></li><li><a href="#自动化运转">自动化运转</a></li><li><a href="#思考与备忘">思考与备忘</a></li><li><a href="#今日摘要">今日摘要</a></li><li><a href="#-自动化统计">📊 自动化统计</a></li></ul></nav></div></details></div><div class="post-content"><h1 id="2026-09-17-赛博日记">2026-09-17 赛博日记<a aria-hidden="true" class="anchor" hidden="" href="#2026-09-17-赛博日记">#</a></h1><blockquote><p>生成时间：2026-09-17 23:50（合并更新，含 Hermes 本机事项同步首次接入）</p></blockquote><h2 id="核心工作">核心工作<a aria-hidden="true" class="anchor" hidden="" href="#核心工作">#</a></h2><h3 id="-claude-code--cursor-工作记录">💻 Claude Code / Cursor 工作记录<a aria-hidden="true" class="anchor" hidden="" href="#-claude-code--cursor-工作记录">#</a></h3><ul><li><strong>会话数</strong>：Cursor 3 个（共 42 条消息），项目均为 API 测试平台（项目X）</li><li><strong>主线</strong>：API 用例编辑保存闭环收尾——确认 <code>main</code> 与 <code>origin/main</code> 已同步至 <code>22bd929</code></li><li><strong>Token 缓存链路确认</strong>：跑用例所用的 token 并非「覆盖手机号 + 获取 Token」那套缓存，直觉验证成立</li><li><strong>SSE 探测脚本</strong>：退出码为 1 但生成实际成功，服务端已落库 4 条（id 86–89），退出码语义待修</li></ul><h3 id="-hermes-本机事项首次纳入日记10-个活跃会话">🖥️ Hermes 本机事项（首次纳入日记，10 个活跃会话）<a aria-hidden="true" class="anchor" hidden="" href="#-hermes-本机事项首次纳入日记10-个活跃会话">#</a></h3><ul><li><strong>vLLM 双卡性能调优（主线，393 条消息）</strong>：<ul><li>单卡吞吐疑问入手 → 定位 <code>pclk 1395</code>（时钟被锁 1400，上限 1935）为关键约束</li><li><strong>PLE prep 窗口暴露</strong>：step 22.9ms 中 prep 占 1.66ms（7.2%），与 dmon SM 利用率 92-93% 互相印证；通过<strong>注入法</strong>（+8ms 干扰）独立复现：注入态掉 28-30%，长跑/短跑两种方法结论一致</li><li><strong>draft_int8 落地 +7.4%</strong>，readahead 256→1024 调优，终态：0.97 显存 + draft_int8 + readahead 1024，服务 ready，KV 池 116 万 tokens，无诊断注入残留</li><li>稳态口径 ≈ 120 t/s / 8.0 ms per token；纠正两处早前错判（d2h 等待口径、WORKERS 消融无效）</li><li><strong>AWQ 全部退场</strong>：5 个启动脚本归档至 <code>/root/awq-retired-0917/</code>，systemd unit/drop-in/启动器全链清理并验证，作废"删 60-nvfp4-prod.conf 回滚 AWQ"死剧本，全程未重启服务</li><li>残留：技能卡沉淀（draft_int8 落地过程、注入实验方法论、吞吐口径纪律）未写</li></ul></li><li><strong>GPU1 识别失败取证（70 条消息）</strong>：根因是 GSP 固件 Xid 1（load address misaligned）崩溃 → 签名表 32 格被重试风暴填满（table full ×56）→ 后续全部死在 0x40。澄清 GSP（GPU 大管家固件，绕不开）≠ GDS（可选直存通道，已判死不用）。方案：安全窗口重启清表</li><li><strong>Hermes 运行时升级</strong>：0.19.0-cn.7 → 0.20.0-cn.9（sha256 校验 5021 文件通过），飞书 disconnected→connected 根治，回滚点保留，完整 playbook 沉淀技能卡；规避 pip 安装劫持 CLI 的"双运行时"坑</li><li><strong>云服务器中转站搭建（189 条消息）</strong>：SSH 免密就绪（别名 <code>server</code>）；发现服务器日记任务缺 git pull 步骤导致设备推送漏采（已补全链路）；Todoist MCP OAuth 未完成的根因定位与两套修法；<strong>脱敏规则引擎上线</strong>——首测即抓到消息原文含 SSH 密码和 Todoist token 明文，长hex/sk-/ghp_/Bearer/密码字段全部替换 [已脱敏]</li><li><strong>博客构建器 build.py</strong>：笔记→文章流水线，92 篇 / 840KB，日期四级回退、站内互链重写、三道安全防线（逮到一篇 MYSQL 明文密码）</li><li><strong>WoL 远程开机闭环</strong>：三层开关（驱动/NetworkManager/内核）+ ToDesk 自启，手机 ToDesk 当唤醒器；BIOS ErP 供电待实测</li><li><strong>Todoist MCP 接入 Hermes</strong>：官方托管端点，47 工具全启用，api.todoist.com 直连无代理依赖</li></ul><h3 id="-智能收藏每日回顾第-5-次--毕业">📚 智能收藏每日回顾（第 5 次 · 毕业）<a aria-hidden="true" class="anchor" hidden="" href="#-智能收藏每日回顾第-5-次--毕业">#</a></h3><ul><li>2 篇 5 月收藏文章完成第 5 次回顾，艾宾浩斯周期（1/2/4/7/15 天）全部收官，不再重复推送：<ol><li><strong>AI 驱动的自进化测试框架</strong>：感知→学习→优化闭环，OpenClaw + Python + LangChain + Playwright</li><li><strong>Agent+MCP+Skills 接口自动化智能体平台</strong>：四层架构，Skills 层封装鉴权/断言/自愈，四步融入 CI/CD</li></ol></li></ul><h3 id="-问题排查与记录">🔧 问题排查与记录<a aria-hidden="true" class="anchor" hidden="" href="#-问题排查与记录">#</a></h3><ul><li><strong>飞书跨域推送权限</strong>：回顾消息推送失败——用户为飞书内微信外部联系人（跨域 ID），应用缺 <code>contact:user.employee_id:readonly</code> 权限，改为运行时自动投递</li><li><strong>memory_search 索引不可用</strong>：索引由不同 embedding 配置构建，需 <code>openclaw memory index --force</code> 重建</li><li><strong>教程笔记同步检查</strong>：飞书《Xuan酱教程》revision 2844 与远程一致，无更新</li></ul><h2 id="自动化运转">自动化运转<a aria-hidden="true" class="anchor" hidden="" href="#自动化运转">#</a></h2><ul><li>05:10 博客全量自动更新：293 个笔记文件，脱敏 258 处/58 文件，Hugo 819 页构建成功，内容无差异无需部署</li><li>09:01 心跳代办检查 → 微信推送；09:06 Memory Dreaming Promotion 正常</li><li>18:31 / 18:51 回家通知触发两次</li><li>23:30 Hermes 本机事项首次同步至 note-gen-sync（本日記素材链路补全的成果）</li></ul><h2 id="思考与备忘">思考与备忘<a aria-hidden="true" class="anchor" hidden="" href="#思考与备忘">#</a></h2><ul><li><strong>日记链路闭环</strong>：今日起 Hermes 事项同步（23:30）+ 服务器生成前 git pull 双补丁生效，多设备素材不再漏采</li><li><strong>口径纪律</strong>（GPU 调优沉淀）：吞吐数字必须同时标注内容 + 上下文长度 + 阶段；引擎 10s 窗口日志切不干净预填/解码</li><li>待办：vLLM 调优技能卡沉淀；GPU1 重启验证；BIOS ErP 关机实测；SSE 探测脚本退出码语义修复</li></ul><h2 id="今日摘要">今日摘要<a aria-hidden="true" class="anchor" hidden="" href="#今日摘要">#</a></h2><p>信息量很大的一天：vLLM 双卡调优收官（draft_int8 +7.4%、AWQ 退场、PLE prep 两次独立验证）、GPU1 故障完成根因取证（GSP 崩溃 + 签名表填满）、Hermes 升级 0.20、日记多设备同步链路补全且脱敏引擎首战立功。API 测试平台用例编辑闭环、智能收藏艾宾浩斯毕业，各自动化全线正常。</p><h2 id="-自动化统计">📊 自动化统计<a aria-hidden="true" class="anchor" hidden="" href="#-自动化统计">#</a></h2><ul><li>捕获 Memory 数：1（memory/2026-09-17-1218.md）</li><li>笔记更新数：1（hermes_2026-09-17.md，27.5KB）</li><li>Todoist 完成任务数：0（今日完成 0 / 到期 0）</li><li>Claude Code/Cursor 会话数：3（42 条消息）+ Hermes 本机 10 个活跃会话</li></ul></div><footer class="post-footer"><ul class="post-tags"></ul><nav class="paginav"><a class="next" href="https://bluespace.eu.org/post/memory/hermes_2026-09-17/"><span class="title">»</span><br/><span>hermes_2026-09-17</span></a></nav><ul class="share-buttons"><li><a aria-label="share 2026-09-17赛博日记 on x" href="https://x.com/intent/tweet/?text=2026-09-17%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-09-17%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;hashtags=" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"></path></svg></a></li><li><a aria-label="share 2026-09-17赛博日记 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-09-17%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;title=2026-09-17%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;summary=2026-09-17%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-09-17%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"></path></svg></a></li><li><a aria-label="share 2026-09-17赛博日记 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-09-17%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;title=2026-09-17%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"></path></svg></a></li><li><a aria-label="share 2026-09-17赛博日记 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-09-17%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"></path></svg></a></li><li><a aria-label="share 2026-09-17赛博日记 on whatsapp" href="https://api.whatsapp.com/send?text=2026-09-17%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-09-17%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"></path></svg></a></li><li><a aria-label="share 2026-09-17赛博日记 on telegram" href="https://telegram.me/share/url?text=2026-09-17%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-09-17%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="2 2 28 28" width="30"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"></path></svg></a></li><li><a aria-label="share 2026-09-17赛博日记 on ycombinator" href="https://news.ycombinator.com/submitlink?t=2026-09-17%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-09-17%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="30" viewbox="0 0 512 512" width="30"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"></path></svg></a></li></ul></footer></article></main><footer class="footer"><span>© 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+<a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a></span></footer><a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)"><svg fill="currentColor" viewbox="0 0 12 6"><path d="M12 6H0l6-6z"></path></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
