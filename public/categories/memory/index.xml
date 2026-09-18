@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Memory on 蓝色空间号</title><link>https://bluespace.eu.org/categories/memory/</link><description>Recent content in Memory on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 17 Sep 2026 22:22:55 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/memory/index.xml" rel="self" type="application/rss+xml"/><item><title>hermes_2026-09-17</title><link>https://bluespace.eu.org/post/memory/hermes_2026-09-17/</link><pubDate>Thu, 17 Sep 2026 22:11:57 +0800</pubDate><guid>https://bluespace.eu.org/post/memory/hermes_2026-09-17/</guid><description>&lt;h1 id="2026-09-17-hermes-本机事项">2026-09-17 Hermes 本机事项&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Memory on 蓝色空间号</title><link>https://bluespace.eu.org/categories/memory/</link><description>Recent content in Memory on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 18 Sep 2026 23:45:14 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/memory/index.xml" rel="self" type="application/rss+xml"/><item><title>hermes_2026-09-18</title><link>https://bluespace.eu.org/post/memory/hermes_2026-09-18/</link><pubDate>Fri, 18 Sep 2026 23:44:08 +0800</pubDate><guid>https://bluespace.eu.org/post/memory/hermes_2026-09-18/</guid><description>&lt;h1 id="2026-09-18-hermes-本机事项">2026-09-18 Hermes 本机事项&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-09-18 23:45 (自动采集)&lt;/p>&lt;/blockquote>
+&lt;ul>
+&lt;li>活跃会话数：6&lt;/li>
+&lt;/ul>
+&lt;h3 id="未命名--cli676-条消息">(未命名) （cli，676 条消息）&lt;/h3>
+&lt;ul>
+&lt;li>指令：还记得之前腾讯那个知识库吗？&lt;/li>
+&lt;li>指令：查进度，顺便抽查下质量怎么样&lt;/li>
+&lt;li>指令：有没有可能本地llm同时并发参与呢？&lt;/li>
+&lt;li>指令：按照你说的来&lt;/li>
+&lt;li>指令：检查下跑的怎么样？两个llm都有生效，且推进正常吧？预计什么时候完成？&lt;/li>
+&lt;li>指令：期间若glm触发限流，会影响qwen继续跑吗？&lt;/li>
+&lt;li>指令：刚才不是说下午6点完成吗，怎么又到20:00了？全部完成到底还要多久？&lt;/li>
+&lt;li>指令：为什么每次停止都需要从头开始不能续跑？&lt;/li>
+&lt;li>指令：看看进度&lt;/li>
+&lt;li>指令：怎么了？&lt;/li>
+&lt;li>指令：所以23:33时候会全部完成对吧？&lt;/li>
+&lt;li>指令：以后再次中断的任务可以续跑不用从头开始了吧？&lt;/li>
+&lt;li>指令：进度怎么样了&lt;/li>
+&lt;li>指令：做&lt;/li>
+&lt;li>指令：有个问题，远程笔记仓库新增，还是不能丢进去。得先同步到本地？&lt;/li>
+&lt;li>指令：那我为什么不直接每天同步一次远程更新不就行了？&lt;/li>
+&lt;li>指令：时间改为每天23:25&lt;/li>
+&lt;li>指令：确认下，你的同步是指拉取笔记仓库，然后合并到本地再触发有变更的文档，而不是无脑覆盖本地吧？&lt;/li>
+&lt;li>指令：[CONTEXT COMPACTION — REFERENCE ONLY] Earlier turns were compacted into the summary below. This is a handoff from a previous context window — treat it as background reference, NOT as active instructio…&lt;/li>
+&lt;li>指令：所以本地知识库算是搭建好了吗？怎么用起来？&lt;/li>
+&lt;li>指令：接mcp&lt;/li>
+&lt;li>指令：奇怪，为什么hermes有时候才几十k就触发自动压缩上下文了。 要不要我现在就把 MCP 那条（第 4 层）配进 Hermes？改 config.yaml 前会照例备份。 ╰──────────────────────────────────────────────────────────────────────────────╯ ⚙️ /compact ⏳ Compressing context…&lt;/li>
+&lt;li>结论：抽查完了，质量结论先说：&lt;strong>很好，没有编造痕迹&lt;/strong>。下面是进度+抽查详情。&lt;/li>
+&lt;li>结论：- 失败仅 4 次（累计 1152 次是历史轮次的），原因全是 GLM 内容安全拦截：「系统检测到输入或生成内容可能包含不安全或敏感内容」，涉及 2026-03-15、05-10 等几篇赛博日记——这几篇可能最终缺页，跑完后可单独确认&lt;/li>
+&lt;li>结论：结论先说：技术上可行（本地 vLLM 就是 OpenAI 兼容接口），但&lt;strong>本轮不值得动&lt;/strong>，账算下来是亏的。依据：&lt;/li>
+&lt;li>结论：- 致命点：改配置必须重启进程，而阶段1 的抽取结果全在内存——重启 = toIngest:301 全量重抽（今天 15:27 看门狗重启已经验证过一次，前 2 小时白跑）。为了省 68 源的时间，赔进去 233 源的进度。&lt;/li>
+&lt;li>结论：两个注意点：本地 vLLM 并发闸我会看回归实测调（GPU 现在 93% 被双卡推理顶着，ingest 流量混进去会和我这个会话抢资源，必要时 LLM2_CONCURRENCY 降 1）；GLM 内容安全拦截的 4 篇日记类源，切双上游后正好分流到本地模型跑，不受拦。&lt;/li>
+&lt;li>结论：不过要让双上游真正生效，光加副上游不够——瓶颈其实在源码级并发：&lt;code>INGEST_CONCURRENCY=2&lt;/code> 和 &lt;code>GLOBAL=2&lt;/code> 把同时 in-flight 的 LLM 调用卡死在 2，只加副上游它们也只是分流、总量不变。现在有了池的&lt;strong>每上游硬闸&lt;/strong>兜底 GLM≤2，才敢把总量提到 4。验证补丁编译 + 写 .env：&lt;/li>
+&lt;li>结论：看门狗由 systemd 服务 &lt;code>tdai-watcher.service&lt;/code> 托管。备份已做。现在打补丁——解决最致命的风险点：&lt;strong>阶段2 merge 若被 2h 占空比腰斩，整个阶段1 全白跑&lt;/strong>。改成检测到 merge 信号后进入宽限期不强切：&lt;/li>
+&lt;li>结论：看门狗新 PID=15235 已加载新逻辑，但重启丢了内存态（rest_until 归零），它没等到 20:27 就提前把服务拉起来了——现在 18:10，得确认 GLM 此刻有没有额度，否则 half 流量撞额度墙会误触发熔断。探针实测 GLM + 看 ingest 是否已被触发：&lt;/li>
+&lt;li>残留：- 踩过的大坑：GLM 关 thinking 后 &lt;code>&amp;lt;&amp;lt;&amp;lt;FILE&amp;gt;&amp;gt;&amp;gt;&lt;/code> 格式漂移导致&amp;quot;抽取完成但 0 页面&amp;quot;，已打 v4 容错补丁；以及&amp;quot;断点续跑&amp;quot;其实是假象——阶段1崩了 candidates 全在内存，重启就全量重抽（已落盘页面保留）&lt;/li>
+&lt;li>残留：- 风险提醒：按已知架构，阶段1 若在 merge 前崩 = 全部重抽，目前还剩 1 小时窗口，别在这期间重启/占 GLM&lt;/li>
+&lt;li>残留：- 注意：现在磁盘上的 96 页还是 9月8日 上轮的产物，本轮成果要等阶段2 merge 才落盘&lt;/li>
+&lt;li>残留：【质量抽查】（3 类页面 + 溯源比对） 1. source 页《RAG技术笔记》：五步流程、Layout Parsing、MiniCPM-V2 图表描述——逐条对上原笔记 AIGC/RAG.md 原文，无 hallucination 2. concept 页《流水线并行 PP》：关键数字 10,156 tok/s、904,109 KV池、5.2× ——全部 grep 溯源到你原始实测报告笔记，数字准确，还正确关联了 PR#46994、PLE offload 守卫条件这类细节 3. entity 页《CMP 170HX》：跨 4 个源（实测报告+部署笔记+两天日记）聚合，SM80 无 FP8、Gen2 x4 窄互联、槽位 x1 降级坑、ITL ~31.5ms——与本机事实完全一致，front…&lt;/li>
+&lt;li>收尾：真相查清了，两件事都不是故障： 1）自动压缩其实没在几十K触发。今天所有&lt;strong>自动&lt;/strong>压缩都在 ~270K tokens 才动手（日志原文：&lt;code>~269,922 tokens &amp;gt;= 262,144 threshold (ctx 524,288)&lt;/code>），threshold=50% 执行得很准。你看到的 49,676 tokens 那次压缩是 &lt;strong>23:20 你手动敲的 /compact&lt;/strong>——手动压缩不看阈值，叫了就压。 2）状态栏那行 &lt;code>38.8K/524.3K 7%&lt;/code> 是&lt;strong>压缩完成后的水位&lt;/strong>（44条消息→37条，摘要产物约 41.6K），不是触发点。所以视觉印象成了&amp;quot;才几十K就压了&amp;quot;，实际触发前是 27 万，压完才落到 3.9 万——这恰恰说明压缩正常工作。 真正&amp;quot;看着像卡住&amp;quot;的是另一件：那条 10 分钟的 ingest 轮询（每 55 秒 curl 一次等 27 源转 ready），加上你手动 /compact 耗时 245 秒（本地 qwen 做摘要比较慢，日志里&amp;quot;still streaming after 240s&amp;quot;），两件事叠一起终端就安静了。以后这类等待我挂后台哨兵，不再前台转圈。 顺带报 MCP（上一条你问的）：&lt;strong>已经配好了&lt;/strong>，中间还揪出一个桌面版打包 bug： - 桌面版对 stdio 型 MCP 有个内部 watchdog 拼接 bug（&lt;code>hermes&lt;/code> 把自己当解释器去跑 &lt;code>mcp_stdio_watchdog.py&lt;/code>，命令行直接报错 Connection closed）——所以 stdio 直连这条死路 - 绕行：mcp-proxy 把 stdio 桥成 HTTP（&lt;code>http://xxx.xxx.xxx.xxx:8430/mcp&lt;/code>），注册 &lt;code>hermes mcp add knowledge --url ...&lt;/code>，&lt;strong>12/12 工具注册成功&lt;/strong>（wiki_search/read/list/graph + 8 个 code_graph） - 桥挂了 systemd 用户服务 &lt;code>knowledge-mcp-bridge&lt;/code>（linger 已开，开机自启） - 生效边界同 todoist：&lt;strong>新开会话&lt;/strong>才有 mcp_knowledge_* 工具；微信/飞书会话要 gateway restart - 注意：ingest 那轮还在 processing，期间 se…&lt;/li>
+&lt;/ul>
+&lt;h3 id="未命名--cli99-条消息">(未命名) （cli，99 条消息）&lt;/h3>
+&lt;ul>
+&lt;li>指令：dsh如何启动，我想从局域网访问&lt;/li>
+&lt;li>指令：dsh是开机自启吗？&lt;/li>
+&lt;li>指令：做成开机自启服务器，局域网可访问。&lt;/li>
+&lt;li>指令：tailscale局域网可直接访问使用网页了版了吧？&lt;/li>
+&lt;li>指令：crypto.randomUUID is not a function dsh内部添加工作区报错&lt;/li>
+&lt;li>指令：关闭 无法加载 Agent 预设。 crypto.randomUUID is not a function 还是报上面错误。&lt;/li>
+&lt;li>结论：dsh-ops 技能已加载。我先确认了本机 dsh 源码里的 LAN 支持情况，结论如下：&lt;/li>
+&lt;li>结论：- dsh web 本身&lt;strong>支持局域网服务&lt;/strong>（代码里有完整的 LAN 信任链路），但 CLI 故意拦截了 &lt;code>--host xxx.xxx.xxx.xxx&lt;/code>（担心把远程代码执行暴露到网络，需显式确认）&lt;/li>
+&lt;li>结论：- /api 带 tailscale IP 的 Host 能通过信任围栏（返回 404 是路由本身没这个精确路径，说明不是被 403 拦的）✓&lt;/li>
+&lt;li>结论：一句话总结：开机自启 ✓、局域网 ✓、tailscale 远程 ✓，都验证过了。&lt;/li>
+&lt;li>结论：&lt;strong>报错根因（不是 dsh 的 bug，是浏览器安全策略）&lt;/strong> &lt;code>crypto.randomUUID&lt;/code> 只在&amp;quot;安全上下文&amp;quot;里存在——即 HTTPS 页面或 localhost。你之前用 &lt;code>http://xxx.xxx.xxx.xxx:3080&lt;/code> 或 &lt;code>http://xxx.xxx.xxx.xxx:3080&lt;/code>（HTTP+IP）访问，浏览器判定为不安全上下文，直接不提供这个函数，dsh 前端调它就报 &lt;code>not a function&lt;/code>。纯 HTTP 的 IP 访问永远躲不过这个限制，必须上 HTTPS。&lt;/li>
+&lt;li>结论：&lt;strong>修复：Tailscale Serve 自动签发 TLS（已实测）&lt;/strong>&lt;/li>
+&lt;li>残留：两点提醒： 1. 当前这个实例是我在后台拉起来验证的，Hermes 会话回收时可能被杀掉；要长期用，请你在自己终端里跑 &lt;code>dsh web --no-open&lt;/code>。 2. 这等于把 dsh（带代码执行的 agent）开放给整个局域网，Host 围栏只防 DNS rebinding，不防内网其他设备直接访问——按你之前&amp;quot;局域网弱密码自判风险&amp;quot;的习惯，属你自定范围。&lt;/li>
+&lt;li>残留：&lt;strong>注意区分两种&amp;quot;访问者&amp;quot;&lt;/strong> 1. 家里局域网设备（手机、其他电脑连家里 WiFi）→ 用 &lt;a href="http://xxx.xxx.xxx.xxx:3080">http://xxx.xxx.xxx.xxx:3080&lt;/a> 2. Tailscale 组网内的设备（比如你的 MacBook Air，人在外面用 4G 也行）→ 用 &lt;a href="http://xxx.xxx.xxx.xxx:3080">http://xxx.xxx.xxx.xxx:3080&lt;/a>&lt;/li>
+&lt;li>收尾：HTTPS 那条如果用户还在用 HTTP 的 IP 地址访问就还是会报这个错。我先确认 ts.net 能完整加载，同时看有没有更稳的办法（给 HTTP 访问也兜底）。&lt;/li>
+&lt;/ul>
+&lt;h3 id="未命名--weixin85-条消息">(未命名) （weixin，85 条消息）&lt;/h3>
+&lt;ul>
+&lt;li>指令：https://mp.weixin.qq.com/s/kzXeg4Ce1TEPf5V6WP4lEQ?mpshare=1&amp;amp;scene=1&amp;amp;srcid=0917HfXVozv4qM9tX8AcXzAK&amp;amp;sharer_shareinfo=[已脱敏]&amp;amp;sharer_shareinfo_first=7e8c460565decdbc4604d4a5d8fe…&lt;/li>
+&lt;li>指令：https://clawhub.ai/cassianran/skills/test-case-design#files&lt;/li>
+&lt;li>指令：通过tailscale把大模型测速的地址发我&lt;/li>
+&lt;li>指令：不是模型地址，是llm-speed-test 那个服务的前端页面地址发我&lt;/li>
+&lt;li>指令：研究下这个https://clawhub.ai/cassianran/skills/test-case-design#files的内容&lt;/li>
+&lt;li>结论：测速地址（Tailscale 网内已实测可达 ✓）：&lt;/li>
+&lt;li>结论：- 刚才用 tailnet IP 直连 &lt;code>/v1/models&lt;/code> 验证过，返回正常&lt;/li>
+&lt;li>结论：- 已实测 tailnet IP 访问返回 HTTP 200 ✓&lt;/li>
+&lt;li>残留：- 注意并发 ≤2，测速端记得设 max_tokens，防无限复读&lt;/li>
+&lt;li>收尾：研究完了。这是 ClawHub（OpenClaw 生态的技能市场）上的一个中文测试用例生成技能，我把 14 个核心文件全部拉下来读过了（存在 /tmp/tcd/），纪要如下： &lt;strong>基本盘&lt;/strong> - &lt;code>@cassianran/test-case-design&lt;/code>，v1.0.8，MIT-0，下载 1499 / 安装 32 / 9 个版本，3 个月前更新 - 定位极窄：&lt;strong>只生成标准化测试用例&lt;/strong>，明确拒绝测试计划/策略/自动化脚本/压测/渗透 - 安全审计 Pass，纯 Markdown 知识库型 skill，&lt;strong>无任何可执行代码&lt;/strong>（零脚本、零 MCP、零外部调用）——供应链角度是安全的 &lt;strong>架构：路由器 + 按需加载&lt;/strong> SKILL.md 是个 3.9KB 的调度器，按关键词三路分发： 1. 类型识别：API→api-testing.md；Agent→agent-testing.md（+借用功能测试的一二部分）；默认→functional-testing.md 2. 平台叠加：mobile-app / mini-program / mobile-web / desktop / pc-web 五份，API 测试不叠加 3. 生成后强制走对应 checklist 自查，最后按 format-spec.md 的统一表格输出 这是标准的 progressive disclosure 设计，常驻上下文只有 4KB，用到才加载 4-12KB 的文件，[已脱敏] &lt;strong>内容有真货，不是水货&lt;/strong>，最值钱的是这几条： - &lt;strong>可执行性铁律&lt;/strong>（common-rules.md）：步骤必须给具体数据，&lt;code>输入 ' OR '1'='1&lt;/code> ✅ / &amp;ldquo;输入特殊字符&amp;rdquo; ❌，还定义了大例外阈值（&amp;gt;1000字符、&amp;gt;1MB文件才允许描述式写法）——这条直击 LLM 生成测试用例最大的通病（假大空步骤） - &lt;strong>Agent 测试六维&lt;/strong>：任务完成度 / 工具与记忆 / 安全边界 / 性能体验 / 内容质量 / 知识库调用，每维配&amp;quot;专项关注点+常见缺陷&amp;quot;，写得很内行（记忆一致性、上下文丢失、检索为空时编造答案等） - 功能测试 389 行：等价类/边界值/正交表等教科书方法 + 联动/路由/UI视觉/动效的速查表 &lt;strong>短板与注意点&lt;/strong> 1. &lt;strong>编号体系有冗余&lt;/strong>：完整格式和 TC_ 简化格式两套…&lt;/li>
+&lt;/ul>
+&lt;h3 id="未命名--cli35-条消息">(未命名) （cli，35 条消息）&lt;/h3>
+&lt;ul>
+&lt;li>指令：刚才23:30的定时任务执行失败了，看看什么情况&lt;/li>
+&lt;li>收尾：脚本手动跑完全正常（RC=0，静默）。确认一下这次补跑内容是否真的推上去了，再看完整运行历史：&lt;/li>
+&lt;/ul>
+&lt;h3 id="未命名--cli24-条消息">(未命名) （cli，24 条消息）&lt;/h3>
+&lt;ul>
+&lt;li>指令：检查下近期代办情况，以及哪些需要重新分配时间的&lt;/li>
+&lt;li>指令：过期到给我重新排期到下周3；其他直接忽略&lt;/li>
+&lt;li>指令：关机&lt;/li>
+&lt;li>结论：【逾期未处理】2 条（都在 Inbox，P4） 1. 测试服鸿蒙、ios、安卓互踢；解决账号互踢问题 截止 09-15，已拖 3 天（8月28日就加了，拖了近3周） 2. 回归用例-接口自动化-灰度测试和体验 截止 09-16，已拖 2 天（这条是上周&amp;quot;选接口用例-给逸川&amp;quot;完成后的接续任务，链路还活着）&lt;/li>
+&lt;li>结论：- AI自动化用例自修复（结合编程代理工具做），截止 09-30，还有12天，暂不用动&lt;/li>
+&lt;li>结论：建议重新分配： 1. 互踢问题 → 确认是否还阻塞；若还在做，推到本周内（如 09-22）并提到 P2/P3，它拖太久了，可能已实际解决只是没勾 2. 灰度测试和体验 → 推 09-19/09-22（本周，趁热接续逸川那条主流程） 3. LangGraph 28天计划 → 三个选择：归档整个section / 重启并排新日期 / 直接删掉。半年没碰，建议先归档，别让它继续占视野 4. 班次闹钟 x5 → 确认是重复后删掉，或合并成1条改成周期性任务 5. 邮件通知内嵌网页 → 有需求就给它排个日期（如 10月中旬），没需求就删 6. 回归用例维护汇报 → 如果和灰度那条是同一件事的汇报，建议设成 09-30 前有日期&lt;/li>
+&lt;li>结论：要不要我直接按上面的方案执行改期/清理？确认一下 ①互踢是否还在跟进 ②LangGraph 计划是归档还是删除 ③闹钟重复项可否删，我就批量操作。&lt;/li>
+&lt;li>收尾：已执行关机脚本，系统将在 1 分钟后（00:15:33）关机。 如需取消，登录本机执行 &lt;code>sudo shutdown -c&lt;/code>。下次见。&lt;/li>
+&lt;/ul>
+&lt;h3 id="未命名--cli19-条消息">(未命名) （cli，19 条消息）&lt;/h3>
+&lt;ul>
+&lt;li>（今日无用户消息，仅自动/工具活动）&lt;/li>
+&lt;li>残留：Gateway 又崩了（23:54 再次出现同样的 NameError，新进程 14981 也变僵尸）。这不是偶发——0.20.0-cn.9 每次启动后事件循环都会因 &lt;code>InProcessCronScheduler&lt;/code> 未定义而死掉，只是进程残留让 systemd 误以为还在运行。先定位这个 NameError 的根因：&lt;/li>
+&lt;li>收尾：问题已彻底闭环。给你完整的交代： 【真相：不是偶发，是 0.20 的必崩 bug】 晚上追查发现，今天 21:23 手升到 0.20.0-cn.9 后，网关每次启动都在几秒内事件循环崩溃（NameError: InProcessCronScheduler —— 这个类在打包的 ELF 里根本不存在）。最阴险的是：崩溃后进程不退出，systemd 显示 active、状态文件还写着 connected，但微信/飞书连接已僵死。所以之前重启一次只是&amp;quot;续命&amp;quot;，我盯着新进程复现了 300 秒后再次同样崩溃（启动后第 5 分钟，100% 复现，3/3 次）。systemd 的 Restart=always 对这种&amp;quot;假活僵尸&amp;quot;完全无效。 【已处理】 - 网关回滚到 0.19.0-cn.7（升级时留的 current.json.bak 原样可用），CLI 保持 0.20 不动 - 验证通过：跨过 5 分钟死亡窗口无异常、cron 心跳恢复每 60s 跳动、实测微信发送成功（你手机应收到两条通知） 【防复发，三层】 1. 根因隔离：网关层冻结在 0.19，等上游 Hermes-CN-Core 出修复版再试；以后任何网关升级验收标准 = 观察 &amp;gt;6 分钟 + &lt;code>hermes cron status&lt;/code> 心跳正常，不看 systemctl 脸色 2. 僵尸自愈看门狗（新装）：~/bin/hermes-gw-watchdog.sh + systemd timer 每 2 分钟查一次心跳文件，停跳超 5 分钟自动重启网关并微信通知你，含启动宽限期和 10 分钟防重启风暴锁。以后就算再出这类假活 bug，影响从&amp;quot;几小时&amp;quot;缩到 ~7 分钟自愈 3. 知识沉淀：故障指纹（9120 端口消失、ticker_heartbeat 冻结、gateway_state.json 说谎）和回滚命令已写进 hermes-cn-desktop-ops 技能卡，记忆同步更新 另外提醒：昨天 22:12 建的「Hermes每日事项同步」cron（23:30 跑）因为网关 21:28 已崩，昨晚那一次没有执行，今晚 23:30 会正常触发。&lt;/li>
+&lt;/ul>
+&lt;h3 id="本机笔记仓库今日提交">本机笔记仓库今日提交&lt;/h3>
+&lt;ul>
+&lt;li>hermes事项同步：2026-09-18&lt;/li>
+&lt;li>hermes事项同步：2026-09-18&lt;/li>
+&lt;/ul></description></item><item><title>hermes_2026-09-17</title><link>https://bluespace.eu.org/post/memory/hermes_2026-09-17/</link><pubDate>Thu, 17 Sep 2026 22:11:57 +0800</pubDate><guid>https://bluespace.eu.org/post/memory/hermes_2026-09-17/</guid><description>&lt;h1 id="2026-09-17-hermes-本机事项">2026-09-17 Hermes 本机事项&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-09-17 22:22 (自动采集)&lt;/p>&lt;/blockquote>
 &lt;ul>
