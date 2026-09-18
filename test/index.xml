@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tests on 蓝色空间号</title><link>https://bluespace.eu.org/test/</link><description>Recent content in Tests on 蓝色空间号</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 06 Mar 2026 13:00:00 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/test/index.xml" rel="self" type="application/rss+xml"/><item><title>测试文章</title><link>https://bluespace.eu.org/test/test/</link><pubDate>Fri, 06 Mar 2026 13:00:00 +0800</pubDate><guid>https://bluespace.eu.org/test/test/</guid><description>&lt;h1 id="测试"&gt;测试&lt;/h1&gt;</description></item><item><title>ACP-Claude-Code快捷指令</title><link>https://bluespace.eu.org/test/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</link><pubDate>Thu, 05 Mar 2026 17:44:05 +0800</pubDate><guid>https://bluespace.eu.org/test/acp-claude-code%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4/</guid><description>&lt;h1 id="claude-code-快捷指令与使用技巧"&gt;Claude Code 快捷指令与使用技巧&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最后更新：2026-02-28
+ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本笔记重点是 Claude Code 本身的使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="什么是-acp"&gt;什么是 ACP？&lt;/h2&gt;
+&lt;p&gt;ACP (Agent Client Protocol) 让 OpenClaw 能调用外部编码工具（Claude Code、Codex 等）。&lt;/p&gt;</description></item><item><title>Nextcloud图片预览技巧</title><link>https://bluespace.eu.org/test/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</link><pubDate>Wed, 04 Mar 2026 02:26:58 +0800</pubDate><guid>https://bluespace.eu.org/test/nextcloud%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%8A%80%E5%B7%A7/</guid><description>&lt;h1 id="nextcloud-图片预览技巧"&gt;Nextcloud 图片预览技巧&lt;/h1&gt;
+&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
+&lt;p&gt;在 Markdown 文件中插入图片时，可以使用 Nextcloud 分享链接，并通过在链接末尾添加 &lt;code&gt;/preview&lt;/code&gt; 实现直接预览图片，而不需要下载。&lt;/p&gt;
+&lt;h2 id="使用方法"&gt;使用方法&lt;/h2&gt;
+&lt;h3 id="1-获取-nextcloud-分享链接"&gt;1. 获取 Nextcloud 分享链接&lt;/h3&gt;
+&lt;p&gt;在 Nextcloud 中右键点击图片 → 分享 → 复制链接&lt;/p&gt;</description></item></channel></rss>
