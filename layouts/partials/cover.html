@@ -1,29 +1,30 @@
-{{- /* 覆盖 PaperMod partials/cover.html（2026-09-20 博客配图试点）
-       规则：① front matter 有 cover.image → 渲染真图（主题原生行为）
-             ② 否则仅对 $allow 白名单文章渲染确定性生成 SVG 封面（分类定配色、文件哈希定图案）
-       白名单验证通过后改为全量放行。内容目录不受影响，同步/加密链零改动。 */ -}}
+{{- /* 覆盖 PaperMod partials/cover.html（2026-09-20 博客配图，已全量）
+       规则：① front matter 有 cover.image → 渲染真图（主题原生行为，真图优先）
+             ② 否则渲染确定性内联 SVG：分类→配色+水印词，文件哈希→图案族/布局
+       新增文章自动生效（渲染时计算，零维护）；内容目录/同步链/加密链零改动。 */ -}}
 {{- $c := .cxt -}}
 {{- if and $c (not $.isHidden) ($c.File) -}}
-{{- $allow := slice "linux常用命令" -}}
-{{- $stem := $c.File.TranslationBaseName -}}
 {{- $coverP := default dict $c.Params.cover -}}
 {{- $trueCover := default "" $coverP.image -}}
 {{- if $trueCover -}}
 <figure class="entry-cover"><img loading="{{ cond $.IsSingle "eager" "lazy" }}" src="{{ $trueCover | absURL }}" alt="{{ $c.Title }}"></figure>
-{{- else if in $allow $stem -}}
+{{- else -}}
 {{- $cat := "其他" -}}
 {{- with $c.Params.categories -}}{{- $cat = index . 0 -}}{{- end -}}
-{{- $pal := dict "编程" (slice "#0d1b2a" "#7fb3d5") "教程" (slice "#16211a" "#a8c686") "工具" (slice "#2d2416" "#e0b352") "软件工具" (slice "#1c2733" "#f4a261") "硬件" (slice "#2a1a1a" "#d58a7f") "赛博日记" (slice "#1f1533" "#b39ddb") "量化项目" (slice "#0a1f2a" "#4db6ac") "工作" (slice "#26262e" "#c9a0dc") "资料" (slice "#2b2118" "#d4a373") "AIGC" (slice "#131a2b" "#89c2ff") -}}
-{{- $colors := default (slice "#232323" "#9aa0a6") (index $pal $cat) -}}
+{{- $pal := dict "编程" (slice "#0d1b2a" "#7fb3d5" "CODE") "教程" (slice "#16211a" "#a8c686" "GUIDE") "工具" (slice "#2d2416" "#e0b352" "TOOLS") "软件工具" (slice "#1c2733" "#f4a261" "SOFTWARE") "硬件" (slice "#2a1a1a" "#d58a7f" "HARDWARE") "赛博日记" (slice "#1f1533" "#b39ddb" "DIARY") "量化项目" (slice "#0a1f2a" "#4db6ac" "QUANT") "工作" (slice "#26262e" "#c9a0dc" "WORK") "资料" (slice "#2b2118" "#d4a373" "NOTES") "AIGC" (slice "#131a2b" "#89c2ff" "AIGC") "其他" (slice "#232323" "#9aa0a6" "POST") -}}
+{{- $colors := default (index $pal "其他") (index $pal $cat) -}}
 {{- $bg := index $colors 0 -}}
 {{- $fg := index $colors 1 -}}
-{{- $hexm := dict "0" 0 "1" 1 "2" 2 "3" 3 "4" 4 "5" 5 "6" 6 "7" 7 "8" 8 "9" 9 "a" 10 "b" 11 "c" 12 "d" 13 "e" 14 "f" 15 -}}
+{{- $word := index $colors 2 -}}
+{{- $hx := dict "0" 0 "1" 1 "2" 2 "3" 3 "4" 4 "5" 5 "6" 6 "7" 7 "8" 8 "9" 9 "a" 10 "b" 11 "c" 12 "d" 13 "e" 14 "f" 15 -}}
 {{- $uid := $c.File.UniqueID -}}
-{{- $s1 := add (mul (index $hexm (substr $uid 0 1)) 16) (index $hexm (substr $uid 1 1)) -}}
-{{- $s2 := add (mul (index $hexm (substr $uid 2 1)) 16) (index $hexm (substr $uid 3 1)) -}}
-{{- $s3 := add (mul (index $hexm (substr $uid 4 1)) 16) (index $hexm (substr $uid 5 1)) -}}
+{{- $s1 := add (mul (index $hx (substr $uid 0 1)) 16) (index $hx (substr $uid 1 1)) -}}
+{{- $s2 := add (mul (index $hx (substr $uid 2 1)) 16) (index $hx (substr $uid 3 1)) -}}
+{{- $s3 := add (mul (index $hx (substr $uid 4 1)) 16) (index $hx (substr $uid 5 1)) -}}
 {{- $kind := mod $s1 4 -}}
-{{- $glyph := substr $cat 0 1 -}}
+{{- $n := len $word -}}
+{{- $fs := 64 -}}
+{{- if gt $n 6 -}}{{- $fs = 44 -}}{{- end -}}
 <figure class="entry-cover">
 <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ $c.Title }}" style="width:100%;height:auto;display:block">
 <rect width="720" height="300" fill="{{ $bg }}"/>
@@ -48,7 +49,8 @@
 <circle cx="{{ $cx }}" cy="{{ $cy }}" r="{{ mul $i 30 }}" fill="none" stroke="{{ $fg }}" stroke-opacity="0.14" stroke-width="2"/>
   {{- end -}}
 {{- end -}}
-<text x="660" y="262" text-anchor="end" font-size="150" font-weight="700" fill="{{ $fg }}" fill-opacity="0.16" font-family="'PingFang SC','Microsoft YaHei',sans-serif">{{ $glyph }}</text>
+<text x="32" y="268" font-size="{{ $fs }}" font-weight="800" letter-spacing="{{ div (mul $fs 12) 100 }}" fill="none" stroke="{{ $fg }}" stroke-opacity="0.35" stroke-width="1.5" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">{{ $word }}</text>
+<text x="692" y="270" text-anchor="end" font-size="20" font-weight="600" letter-spacing="6" fill="{{ $fg }}" fill-opacity="0.55" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">{{ $cat }}</text>
 </svg>
 </figure>
 {{- end -}}
