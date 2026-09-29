@@ -1,8 +1,8 @@
 ---
-title: 'LLM网页UI自动化基准-Jev-laya-直选-browseruse两用例实测'
+title: 'LLM网页UI自动化六方案全录-Jev-laya-直选-browseruse-NeoHorse'
 categories: ["AIGC"]
 date: 2026-09-24T01:27:48+08:00
-lastmod: 2026-09-29T21:46:04+08:00
+lastmod: 2026-09-29T21:56:40+08:00
 draft: false
 ---
 # LLM 网页 UI 自动化六方案全录：Jev 的价值、laya 的证伪与本地平替 NeoHorse
