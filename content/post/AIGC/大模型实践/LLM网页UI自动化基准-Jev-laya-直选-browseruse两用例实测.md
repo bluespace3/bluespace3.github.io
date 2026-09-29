@@ -2,7 +2,7 @@
 title: 'LLM网页UI自动化基准-Jev-laya-直选-browseruse两用例实测'
 categories: ["AIGC"]
 date: 2026-09-24T01:27:48+08:00
-lastmod: 2026-09-24T01:43:15+08:00
+lastmod: 2026-09-29T20:46:23+08:00
 draft: false
 ---
 # Jev 决策模型在网页 UI 自动化中的价值：双用例五方案实测
@@ -84,3 +84,50 @@ bu-30 挂 Jev 后 4 步登录 5/5、10 步采购也 5/5；用例二两批独立�
 - `~/jev-laya-test/README.md` — 双用例全量数据、流程链、全部踩坑记录
 - 结果 JSON：`bench_sms_{bu30,ds,ds_pp}.json`、`bench_cart_{bu30_jev,ds_jev,ds_llm}.json`、`bench_results2.json`（laya 192 条底稿）
 - Jev 决策 API 调用样例与 bu-30 工程坑（中文乱码、格式漂移等）详见技能 `llm-ui-automation`
+
+## 附录A：延迟审计与 v2 官方姿势复测（2026-09-29）
+
+> 起因：质疑"C 组 Jev 为何没比 D 组直选更快"。先审方法，再审网络，再对照官方文档逐项修正。
+
+### 1.03s/步的构成（审计实测）
+| 成分 | 耗时 | 证据 |
+|---|---|---|
+| TLS/TCP 重握手 | ~0.40s | urllib 每步新建 opener，无 keep-alive（**基准实现缺陷**） |
+| 跨境 RTT 地板 | ~0.21s | curl keep-alive TTFB 208ms（8118→SS→US 链路，反而比直连快） |
+| 服务端推理 | ~0.24s | Session 实测 450ms − 地板 |
+- "代理网络税"说法作废：代理链中位 805ms vs 直连 1335ms——税在握手与 RTT，不在代理。
+- 公众号"原生 35~80ms"未经证实：本网络服务端实测 ~240ms。
+
+### v2 官方姿势改写（bench_cart.py，JEV_V1=1 可回旧姿势）
+结构化英文 state（app/task/page/action 四字段）+ requests.Session keep-alive + conf≥0.5 门控重试：
+**1.033s/步 → 0.461s/步（-55%）**，50 次决策全对。t_plan（ds 规划 4.7~15s 波动）是端到端噪声主源，评估决策层必须分口径（sel_time 字段）。
+
+### 官方文档核正（docs.typesafe.ai）
+- Jev 是 System One 决策模型："AI-powered software" = 代码拥有控制流 + 模型只做窄类型化判断；官方明确反对 agent while-loop——我们的四层架构与官方一致。
+- **无自托管选项**：仅 OpenRouter 云端（本文"部署位置合适还能再压一个量级"的说法作废）。
+- CJK 准确率官方文档化低于英文 → state 英文化。
+- 官方 cookbook 全是门控/级联/分类场景，无浏览器操作实现——Playwright 执行层 100% 自研，无官方参照。
+
+## 附录B：本地平替 NeoHorse-Jev-4B（2026-09-29 晚定案）
+
+跨境 RTT 地板不可消除 → 本地化决策模型消掉它：
+- **F组短信登录 5/5 PASS 均 10.8s，六方案最快**（B 12.2s / C 12.7s / D 11.8s / A 15.9s / E laya 0/15）。
+- 裸选微测 16/16=100%（zh/en × 4/26 选项），p_max 0.92~0.9997——laya 同题上限 56%，无坍缩先验。
+- 决策延迟 keep-alive 稳态 **~43ms/次**（在线 Jev v2 461ms → **-91%**）；引擎内 28ms(4选项)/79ms(26选项)。
+- TokenRhythm/NeoHorse-Jev-4B（Apache-2.0，Qwen3.5-4B 判别式），落 `/mnt/nvme1/llm_models/`，`:8080` 单并发。
+- conf 为未标定统计量 (max(p)-1/K)/(1-1/K)，非 Jev 校准置信度；0.5 门控实测可用。
+- 用例二 F 组待跑（待收银台适配收口，见附录C）。
+
+## 附录C：环境漂移与全链闭环（2026-09-29 深夜）
+
+复测撞上三连环境漂移，全部定位+修复，终以真码人机协作闭环 paySuccess：
+
+| 漂移 | 根因 | 修复 |
+|---|---|---|
+| 快照只剩2元素、fill 崩 | 「温馨提示」503 错误弹窗跨 SPA 路由残留 | snapshot() 前置 JS：只点**可见**的确认（隐藏弹窗直接跳过） |
+| 搜索页 hover/click 全 30s 超时 | **新手引导层** `custom-my-intro` 全屏遮罩（新登录态触发） | kill_intro() JS 移除引导层 DOM |
+| 提交订单后不再直达 paySuccess | 站点新增 **#/sbo 收银台**中间页（采购金默认抵扣） | settle_after 加 sbo 分支 + 断言前主动二次提交 |
+| sbo 二次提交弹「采购金支付安全校验」 | 短信风控（新登录态必触发；测试固定码（已脱敏） 固定码仅登录接口有效，支付校验被拒） | 真码人机协作：弹窗出现→打印 SMS_CODE_NEEDED→轮询 sms_code.txt→填码确认 |
+
+**闭环实录**：全链 29s——数量3@10s → sbo@25s → 短信弹窗@28s → 真码填入 → paySuccess（订单 订单号已脱敏，「下单成功」双证齐）。
+新登录态 storage_state：`.state_testd_new.json`（短信登录 测试固定码（已脱敏） 重登获得）。
