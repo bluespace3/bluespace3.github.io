@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 10 Oct 2026 03:00:02 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-09赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 10 Oct 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-09周五赛博日记">2026-10-09（周五）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 10 Oct 2026 23:52:05 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-10赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 10 Oct 2026 23:52:05 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年10月10日-赛博日记">2026年10月10日 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-10-10 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>时间&lt;/strong>：17:10 前后&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong>：&lt;code>d/code/AI-TEST&lt;/code>&lt;/li>
+&lt;li>&lt;strong>会话&lt;/strong>：Cursor 会话（图像处理相关调试）&lt;/li>
+&lt;li>&lt;strong>消息数&lt;/strong>：约 71 条（12 轮用户提问，自动兜底摘要）&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>：排查配置问题。关键结论：默认 cookie 已存在，从 &lt;code>.env.example&lt;/code> 在宿主机创建 &lt;code>.env&lt;/code> 文件即可修复（这些值不会被覆盖）。属于典型的环境变量缺失类问题，通过补齐配置文件解决。&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常（Claude 会话 0 个 / Cursor 会话 1 个）&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;ul>
+&lt;li>今日整体偏轻量：只有一段 Cursor 调试记录，无 Memory 日记、无 Hermes 本机事项汇总、无 Todoist 任务、无近期笔记更新。&lt;/li>
+&lt;li>&lt;code>.env.example → .env&lt;/code> 是常见排障套路，遇到「默认值存在但行为异常」时可优先检查宿主机环境变量文件是否缺失。&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>轻量的一天。主要工作是 AI-TEST 项目中一段 Cursor 会话的环境配置排查，通过创建 .env 文件解决 cookie 相关问题。其余素材源均为空。&lt;/p></description></item><item><title>2026-10-09赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sat, 10 Oct 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-09%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-09周五赛博日记">2026-10-09（周五）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-10-10 00:07（cron 赛博日记生成与存储，7 天窗口核查后补生成 10-09）&lt;/p>&lt;/blockquote>
 &lt;h2 id="mac-侧">Mac 侧&lt;/h2>
