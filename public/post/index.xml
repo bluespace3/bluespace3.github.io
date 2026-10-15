@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 14 Oct 2026 23:52:23 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-14赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-14%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 14 Oct 2026 23:52:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-14%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-14-赛博日记">2026-10-14 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 16 Oct 2026 03:00:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-15赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-15%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 16 Oct 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-15%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-15-赛博日记">2026-10-15 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-10-15 23:50（cron 双端合并版：Mac 侧例行活动 + 服务器 Hermes 本机日报 + Claude/Cursor 会话记录融合）&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-ysbapitest-测试平台主力10-个-cursor-会话">💻 ysbapitest 测试平台（主力，10 个 Cursor 会话）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>数据库恢复后自动验证登录&lt;/strong>：勾选数据库恢复的测试计划后，恢复任务报成功会先确认登录服务再跑用例，已推送 &lt;code>main&lt;/code>（&lt;code>540fa04&lt;/code>）&lt;/li>
+&lt;li>&lt;strong>恢复后连接池结论&lt;/strong>：任务报成功后业务连接池一般几秒内重连，无需等几分钟；空闲连接最晚约 1 分钟被清理&lt;/li>
+&lt;li>&lt;strong>空转对话根因&lt;/strong>：Codex 卡在 &lt;code>turn.started&lt;/code> 不再输出，11:27 服务重启把这次空转收成「成功但没有用例 JSON」&lt;/li>
+&lt;li>&lt;strong>指标看板重构&lt;/strong>：改为按每次上传/生成一批来列，不再按日期汇总（&lt;code>58d8a40&lt;/code> 已推送）&lt;/li>
+&lt;li>&lt;strong>需求转测试自动化方案&lt;/strong>：完整方案写入 &lt;code>docs/需求转测试自动化工作流方案.md&lt;/code> 并推送（&lt;code>54a1ac2&lt;/code>）&lt;/li>
+&lt;li>&lt;strong>代码合并&lt;/strong>：本地提交完成、远程 &lt;code>main&lt;/code> 合并回本地并推送&lt;/li>
+&lt;/ul>
+&lt;h3 id="-svc-ysbjavajava-服务仓库群2-会话">💻 SVC-ysbjava（Java 服务仓库群，2 会话）&lt;/h3>
+&lt;ul>
+&lt;li>新 clone 5 个仓库到 &lt;code>e:\code\SVC-ysbjava&lt;/code>，与已有 &lt;code>caigou&lt;/code>、&lt;code>order&lt;/code> 并列&lt;/li>
+&lt;li>autotest 实测：8 条用例全过（查询 6 + 下单 2，失败 0），已按同一 &lt;code>caseCode&lt;/code> 更新到平台&lt;/li>
+&lt;/ul>
+&lt;h3 id="-质量洞察3-会话">💻 质量洞察（3 会话）&lt;/h3>
+&lt;ul>
+&lt;li>排查提交规范：近 40 条提交中仅 1 条带具体 TAPD 需求号，其余是占位符或缺失（&lt;code>ysbapitest&lt;/code> 与 &lt;code>order&lt;/code> 仓库同样如此）&lt;/li>
+&lt;li>确认用例生成 skill 只对代码生成、不与 TAPD 需求正文核对 —— 暴露「用例与需求脱钩」的流程缺口&lt;/li>
+&lt;/ul>
+&lt;h3 id="-其他">💻 其他&lt;/h3>
+&lt;ul>
+&lt;li>AI-TEST：会话成功读取测试协同用例目录链接内容&lt;/li>
+&lt;li>ysbaiautotest：本地 Cookie 提取走通（用本机 Chrome Cookie），云端续期链路当前配置连不上&lt;/li>
+&lt;/ul>
+&lt;h2 id="服务器侧hermes">服务器侧（Hermes）&lt;/h2>
+&lt;ul>
+&lt;li>活跃会话 1 个，今日仅自动/工具活动（含一次计划内关机收尾）&lt;/li>
+&lt;li>本机笔记仓库今日无提交&lt;/li>
+&lt;/ul>
+&lt;h2 id="mac-侧">Mac 侧&lt;/h2>
+&lt;ul>
+&lt;li>例行活动：代办推送、notify_access 例行记录&lt;/li>
+&lt;li>昨日（10-14）落地的 caffeinate 保活 + pmset disablesleep 持续生效，反向隧道全时段在线&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;em>本日记由 mm 自动生成：融合 Mac 会话记录、服务器 Hermes/Claude 日报与核心工作记忆；天气等无关信息已剔除。&lt;/em>&lt;/p></description></item><item><title>2026-10-14赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-14%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 14 Oct 2026 23:52:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-14%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-14-赛博日记">2026-10-14 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-10-14 23:55（cron 合并更新版：Mac 侧日报 + Hermes 本机日报 + Claude/Cursor 会话记录 + memory 融合）&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
