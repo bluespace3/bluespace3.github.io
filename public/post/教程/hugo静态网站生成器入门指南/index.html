@@ -39,7 +39,7 @@ Hugo的主要特点
 </span></span></code></pre></div><h2 id="运行开发服务器">运行开发服务器<a aria-hidden="true" class="anchor" hidden="" href="#运行开发服务器">#</a></h2><p>使用以下命令启动开发服务器：</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo server -D --environment development <span class="c1">#如果未设置环境变量则不需要指定环境。</span>
 </span></span></code></pre></div><h2 id="部署网站">部署网站<a aria-hidden="true" class="anchor" hidden="" href="#部署网站">#</a></h2><p>使用以下命令生成静态文件：</p><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo
 </span></span></code></pre></div><ol><li>然后将public目录下的文件部署到Web服务器即可，注意每次推送前运行hugo更新public文件夹</li><li>若有更新域名，请删除public后，再运行hugo重新生成public，否则会出现路由错误的情况。</li><li>为了方便新建.sh脚本文件，命名为.command.sh</li></ol><div class="highlight"><pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 判断是否已初始化Git仓库</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">".git"</span><span class="err"> </span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">".git"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"未检测到Git仓库，正在初始化..."</span>
 </span></span><span class="line"><span class="cl">    git init
 </span></span><span class="line"><span class="cl"><span class="k">else</span>
