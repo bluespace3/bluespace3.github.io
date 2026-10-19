@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 18 Oct 2026 23:53:07 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-18赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 18 Oct 2026 23:53:07 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-18-赛博日记">2026-10-18 赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 20 Oct 2026 03:00:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-19赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 20 Oct 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-19-赛博日记">2026-10-19 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>自动生成：Mac + 服务器双端数据融合（天气等无关信息已剔除）&lt;/p>&lt;/blockquote>
+&lt;h2 id="-服务器-hermes-侧">🖥️ 服务器 Hermes 侧&lt;/h2>
+&lt;h3 id="ai-漫剧工作流移植本日主线会话-859206-条">AI 漫剧工作流移植（本日主线，会话 859+206 条）&lt;/h3>
+&lt;ul>
+&lt;li>收到《AI漫剧.rar》，解包 9 条工作流全部解析（节点/模型/参数/提示词），16 个 ComfyUI 节点包装好（WanVideoWrapper、SeedVR2、GIMM-VFI、Impact-Pack 等）&lt;/li>
+&lt;li>模型清单 128.4GB → ModelScope 直连源全部映射，新建模型库 &lt;code>/mnt/nvme1/comfy_models_manga/&lt;/code>；首批下载踩坑（URL 拼错 + curl 缺 &lt;code>-f&lt;/code>，14 个&amp;quot;成功&amp;quot;实为 404 JSON，已隔离），下载脚本 v2 修正（resolve 路径 + 尺寸校验 + safetensors 魔数验证防伪装）&lt;/li>
+&lt;li>结构校验 10/10 打通（SD3.5/定妆/三视图/场景/溶图/高清/FLF首尾帧/极速图生视频）；发现 WanVideo 系自定义节点 &lt;code>/prompt&lt;/code> 验证假通过 → 写硬标准核对器 &lt;code>manga_file_check.py&lt;/code>（当前存在 7 / 缺失 44，缺项均为下载中模型）&lt;/li>
+&lt;li>双卡并行方案定版：GPU0:8188 视频队列、GPU1:8189 图像队列；晚上模型下载到 75%（105.3/~140GB）；晚间按指令全部停止、生产零污染，留续跑入口&lt;/li>
+&lt;li>ComfyUI 局域网访问问题：冒烟实例绑了 &lt;code>--listen xxx.xxx.xxx.xxx&lt;/code> 导致 LAN 不通，零重启用 socat 把 8889 桥进 8188 临时解决；教训已写入长期记忆和 comfyui-migration-smoke 技能（默认 &lt;code>--listen xxx.xxx.xxx.xxx&lt;/code> + 启动后 ss 核对绑定）&lt;/li>
+&lt;li>MVP 样片推进中发现&amp;quot;图片正常但视频全是雪花&amp;quot;问题（路径打错重发测试）&lt;/li>
+&lt;/ul>
+&lt;h3 id="视频产线">视频产线&lt;/h3>
+&lt;ul>
+&lt;li>高性价比人生指南 E03（高血压 44.7%→7.2%，347s）首次卡写稿闸门：「限位器」口播词检测表/替换表漂移（10-14 同坑复发），s06 被反复改写烧光重试；走&amp;quot;复用已过闸稿 + 确定性替换 + rebuild_tts 重配音&amp;quot;补救成功 → &lt;code>BV16anJ6yEv2&lt;/code>，明日 11:30 上线，QC 全过&lt;/li>
+&lt;li>善后：state.json 手动推进（ep=3, ptr=9）防 cron 重产双发；事故纪律（加词先写替换表再写检测表+语境豁免+双例回归）补进 bili-series-autopublish&lt;/li>
+&lt;li>GitHub 涨星日报（opencode +1414 星，99s）→ &lt;code>BV1ULnJ6xE61&lt;/code>，明日 11:30 上线&lt;/li>
+&lt;/ul>
+&lt;h3 id="vllm--ekko-studio">vLLM / Ekko Studio&lt;/h3>
+&lt;ul>
+&lt;li>排查&amp;quot;缓存命中率 0%&amp;quot;：Ekko Studio 读的是响应里的 &lt;code>usage.prompt_tokens_details.cached_tokens&lt;/code>，服务未开对应上报；已给 flashnext 启动脚本加 &lt;code>--enable-prompt-tokens-details&lt;/code>（备份后修改，永久生效）并挂看门狗重启验证&lt;/li>
+&lt;li>Token 速度口径确认：65.9 tok/s 是&amp;quot;输出 token ÷ 模型请求总耗时&amp;quot;的端到端口径（含 TTFT、不含工具执行），非纯 decode 速度&lt;/li>
+&lt;li>硬件盘点：AMD 9800X3D + 64GB DDR5 + 双 CMP 170HX（各 64GB HBM2e，bayley 破解栈，PLX 拓扑 P2P 6.7GB/s）&lt;/li>
+&lt;/ul>
+&lt;h2 id="-mac--工作机-cursor-侧14-个会话">💻 Mac / 工作机 Cursor 侧（14 个会话）&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>AI-TEST（主战场，~10 个会话）&lt;/strong>：skills 发布 1.1.9；排查测试设计孤儿重复——四条重复设计死在「创建后、重命名前」，新旧版本均复现；用例评审页签与 &lt;code>testcase-ai-review.md&lt;/code> 链路核对；迭代路径规范化（3/4 段路径 norm_iter_rel）；修复 git commit 未 add 即提交的操作问题；testx-case-import / tapd-handoff 文档更新&lt;/li>
+&lt;li>&lt;strong>regression-cases&lt;/strong>：提交推送 &lt;code>107348a6&lt;/code>&lt;/li>
+&lt;li>&lt;strong>ysbapitest&lt;/strong>：临时预览服务收尾；四节方案定稿（消除原方案挡实现的矛盾）&lt;/li>
+&lt;/ul>
+&lt;h2 id="-小结">📊 小结&lt;/h2>
+&lt;p>漫剧产线移植一天内完成解包→节点→结构校验→双卡排程的大头，模型下载过半；人生指南 E03 限位器事故再次验证&amp;quot;检测/替换表同步&amp;quot;纪律的重要性；测试平台侧 skills 1.1.9 发版并揪出设计重命名前崩溃的重复创建根因。&lt;/p></description></item><item><title>2026-10-18赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 18 Oct 2026 23:53:07 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-18-赛博日记">2026-10-18 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-10-18 23:50（合并更新，含 Hermes 本机事项）&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
