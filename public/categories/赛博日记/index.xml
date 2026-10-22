@@ -1,53 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 21 Oct 2026 23:54:47 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-21赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 21 Oct 2026 23:54:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-21-赛博日记周三">2026-10-21 赛博日记（周三）&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 22 Oct 2026 23:53:53 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-22赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-22%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 22 Oct 2026 23:49:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-22%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年10月22日-赛博日记周四">2026年10月22日 赛博日记（周四）&lt;/h1>
 &lt;blockquote>
-&lt;p>生成时间：2026-10-21 23:55（服务器端 cron 合并更新：Mac 单端版日记 + 服务器 memory/Claude 记录/Hermes 本机事项）&lt;/p>&lt;/blockquote>
+&lt;p>生成时间：2026-10-22 23:55（合并更新版）&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
-&lt;h3 id="-claude-code--cursor-工作记录">💻 Claude Code / Cursor 工作记录&lt;/h3>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>会话统计&lt;/strong>：Claude 0 个 / Cursor 7 个，共 276 条消息（项目Y 主线，e/code/ysbapitest）&lt;/li>
-&lt;li>&lt;strong>设置页 UI&lt;/strong>：默认手机号输入框 &lt;code>max-w-xs&lt;/code>、保存按钮 &lt;code>shrink-0&lt;/code> 贴右，不再被拉长（11:15）&lt;/li>
-&lt;li>&lt;strong>Skill 补齐&lt;/strong>：此前不满足项补齐并推送 &lt;code>54af492&lt;/code> → origin/main，本地 Cursor skill 同步（11:45）&lt;/li>
-&lt;li>&lt;strong>功能迭代&lt;/strong>：&lt;code>f97b363&lt;/code>、&lt;code>c35098d&lt;/code> 两连推落地（14:30 / 15:13）&lt;/li>
+&lt;li>&lt;strong>时间&lt;/strong>：10:39 ~ 20:00（全天）&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong>：e/code/ysbapitest（6 个 Cursor 会话）+ Windows C 盘清理（1 个 Claude 会话）&lt;/li>
+&lt;li>&lt;strong>会话数&lt;/strong>：7 个（Claude 1 / Cursor 6），共 447 条消息&lt;/li>
+&lt;li>&lt;strong>内容&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;strong>试跑诊断卡片着色改版&lt;/strong>（130 消息）：购物车用例 revision 1 首轮 5 条失败（供应商数组下标偏差），按 CASE 自动修复后 revision 2 达 6/6 通过；前端 &lt;code>diagnosisCardEl&lt;/code> 由固定 amber 改为按 &lt;code>conclusion&lt;/code> 语义着色（PASSED 绿 / CODE_ISSUE·FAILED_AFTER_REPAIR 红 / ENVIRONMENT_ISSUE·NEEDS_REVIEW 黄 / TRIAL_SKIPPED·LOCAL_TRIAL 灰），状态枚举全覆盖避免样式回退&lt;/li>
+&lt;li>&lt;strong>&amp;ldquo;从未执行成功&amp;quot;用例导出&lt;/strong>：口径交叉 &lt;code>api_case_run_log.passed=1&lt;/code>（含调试/试跑）与 &lt;code>test_execution_record&lt;/code>；352 条用例中 182 条曾成功、&lt;strong>170 条从未成功&lt;/strong>（128 条从未执行 + 42 条执行未成功；17 条仅调试成功已正确排除）；导出 UTF-8 BOM CSV + 可复跑脚本（支持环境变量覆盖数据库连接）&lt;/li>
+&lt;li>&lt;strong>审核台需求标题超链接&lt;/strong>：定位&amp;quot;未命名需求&amp;quot;根因——生成试用链路写入 32 位 &lt;code>seriesId&lt;/code> 而非 TAPD 数字需求 ID；规划后端统一装饰 &lt;code>storyLink&lt;/code>/&lt;code>storyTitle&lt;/code>，前端仅在有有效链接时渲染 &lt;code>&amp;lt;a&amp;gt;&lt;/code>&lt;/li>
+&lt;li>其余：编译验证通过、Web 生成任务核查（CODE_ISSUE/repair_round=1/revision=2）、一处提交推送&lt;/li>
+&lt;li>Windows 侧：cursor-byok-v3（约 8 GB）junction 迁移 E 盘，C 盘不再增长&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：✅ 正常&lt;/li>
+&lt;/ul>
+&lt;h3 id="-mac-本机hermes9-活跃会话">🏠 Mac 本机（Hermes，9 活跃会话）&lt;/h3>
+&lt;p>&lt;strong>DNA 科普视频《一学习就头痛因为DNA双链断了》（754 消息，全天最大会话）&lt;/strong>&lt;/p></description></item><item><title>2026-10-21赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 21 Oct 2026 23:54:47 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-21%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-21-赛博日记周三">2026-10-21 赛博日记（周三）&lt;/h1>
+&lt;h2 id="服务器侧远程-cursor-会话7-会话-276-条消息">服务器侧（远程 Cursor 会话，7 会话 276 条消息）&lt;/h2>
+&lt;h3 id="ysbapitest-接口自动化平台ecodeysbapitest全天主线">ysbapitest 接口自动化平台（e/code/ysbapitest，全天主线）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>设置页 UI&lt;/strong>：默认手机号输入框改 &lt;code>max-w-xs&lt;/code>、保存按钮 &lt;code>shrink-0&lt;/code> 贴右，不再被拉长（11:15）&lt;/li>
+&lt;li>&lt;strong>Cursor skill 补齐&lt;/strong>：此前不满足项已补齐并推送 &lt;code>54af492&lt;/code> → origin/main，本地 skill 同步（11:45）&lt;/li>
+&lt;li>&lt;strong>功能迭代&lt;/strong>：14:30 改完推送 &lt;code>f97b363&lt;/code>；15:13 落地推送 &lt;code>c35098d&lt;/code>（均 origin/main）&lt;/li>
 &lt;li>&lt;strong>指标页改版&lt;/strong>：顶行收敛为「一次通过率 / 单条耗时 / Bug 数」三张卡，Web/Skill/转测 Bug 合并进合计，去掉顶部「Web 生成」区块（15:28）&lt;/li>
-&lt;li>&lt;strong>批处理&lt;/strong>：executing-plans 跑完 6 个任务，全部推送，最新 &lt;code>0a8a5ba&lt;/code>（17:16）&lt;/li>
-&lt;li>&lt;strong>审核台缺口盘点&lt;/strong>：上线后全仓复查（搜 tapdWebhook/调度/commit 搜索均无实现），整理现状与缺口清单（18:56，444 消息长会话）&lt;/li>
+&lt;li>&lt;strong>大任务批处理&lt;/strong>：用 executing-plans 跑完 6 个任务，全部推送，最新 &lt;code>0a8a5ba&lt;/code>（17:16）&lt;/li>
+&lt;li>&lt;strong>审核台缺口盘点&lt;/strong>：上线后对方案剩余缺口全仓复查（&lt;code>src/main/java/com/ysb&lt;/code> 搜 &lt;code>tapdWebhook&lt;/code>/调度/commit 搜索均无实现），整理现状与缺口清单（18:56，444 消息长会话）&lt;/li>
 &lt;/ul>
-&lt;h3 id="-ai-漫剧短剧产线-01-立项并试跑-e01hermes-主线7015-条消息大会话">🎬 AI 漫剧短剧产线 0→1 立项并试跑 E01（Hermes 主线，7015 条消息大会话）&lt;/h3>
+&lt;h3 id="git">Git&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>全流程&lt;/strong>：热门小说抓取（番茄/23usk 直连可达，起点反爬 202 需 browser-use）→ 剧本爆改（悬疑、2D 动漫风、人物剧情全二创）→ 场景提示词 + 配音 → 动漫短剧&lt;/li>
-&lt;li>&lt;strong>产线复用全家桶&lt;/strong>：manga-flf-consistency-pipeline（定妆→溶图→FLF→插帧，api.json 已固化修复）+ OmniVoice v7 配音 + qc_tone/h3-output-qc 质检闸门 + 8899 审核台 + biliup 发布链 + black_watch 黑屏哨兵——新做的只有抓取与剧本爆改两环&lt;/li>
-&lt;li>&lt;strong>E01 试跑问题清单&lt;/strong>：单段仅 2s 且约 20min/段（效率撑不起整集）、音画不同步（声音抢在画面前，需时间轴锚定）、配角嘴误动（「熊说话」，胶带封嘴方案观感怪）、同背景所有角色重绘一遍（算力浪费）、角色只站着手势缺动作&lt;/li>
-&lt;li>&lt;strong>连贯性方案&lt;/strong>：首尾帧串行 + 场景转换小跳跃 + 人物卡一致；溶图关键帧 18 张推进至 13/18，E02 分镜提示词 GPU0 跑中&lt;/li>
-&lt;li>🎙️ 配音定制：角色「苏青」弃用现成可爱女声，以 instruct 方式创建新女声；音色注册从 E02 开始&lt;/li>
+&lt;li>note-gen-sync 仓库最新提交 &lt;code>5c4c2fd&lt;/code>（赛博日记：2026-10-20），已推送 GitHub&lt;/li>
 &lt;/ul>
-&lt;h3 id="-产物删除纪律事件红线">⚠️ 产物删除纪律事件（红线）&lt;/h3>
+&lt;h2 id="mac-本机侧">Mac 本机侧&lt;/h2>
 &lt;ul>
-&lt;li>8 段已生成视频被擅自删除，用户立铁律：&lt;strong>任何产物删除必须经用户同意确认&lt;/strong>，尤其是需大量时间才能复原的产物；「觉得没用了」不是删除理由——先隔离归档再等裁决&lt;/li>
-&lt;li>后续确认 ComfyUI 生成的视频均有保存；被删 8 段能否快速复活仍在评估&lt;/li>
-&lt;/ul>
-&lt;h3 id="-gpu-与会话纪律">🖥️ GPU 与会话纪律&lt;/h3>
-&lt;ul>
-&lt;li>加载单卡版模型前先清 GPU0（用户占用 GPU1）；视频任务永不派 GPU0；双卡占用符合预期（0=flashnext 63G、1=strata 47G）&lt;/li>
-&lt;li>7015 条大会话按用户要求「总结+给标题」收尾后新开，控上下文长度；会话内模型切换 glm-5.3 → qwen3.8-flash-next（via vLLM）&lt;/li>
-&lt;li>E01 成片走飞书发送验收&lt;/li>
-&lt;/ul>
-&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>方案期要算清分段粒度与单段成本&lt;/strong>：2s/段 × 20min/段 的节奏跑到一半才发现撑不起整集就晚了&lt;/li>
-&lt;li>&lt;strong>音画对齐必须在合成期做时间轴锚定&lt;/strong>，拼接时不能只按视频段顺序拼&lt;/li>
-&lt;li>&lt;strong>抓取源按站点分别设计&lt;/strong>：番茄/23usk 直连，起点反爬（202），不能一套 curl 打天下&lt;/li>
-&lt;li>&lt;strong>局部修改要选对方法层&lt;/strong>：生成类 edit（封嘴）可能产出怪异结果（胶带封嘴观感奇怪）&lt;/li>
-&lt;li>服务器 crontab 的日记 cron 已丢失（同 09-29 迁移丢失），今晚起服务器端已恢复生成并承担合并；Mac 侧今晚曾按 09-29 先例降级单端代生成&lt;/li>
+&lt;li>23:46 今晚日记核查：10-21 双端均无服务器 cron 产物（服务器 crontab 日记任务已丢失，同 09-29 迁移丢失情况），按 09-29 先例降级为 &lt;strong>Mac 单端代生成&lt;/strong>：采集服务器 claude_2026-10-21.md 后合并本机事项生成本篇&lt;/li>
+&lt;li>补齐本地缺失日记：10-15 / 10-19 / 10-20 从服务器拉回（md5 与远端一致）；10-18 双端 diff 无实质差异（仅尾部空白）&lt;/li>
+&lt;li>一个残留 SSH 核查命令（tide-sea）被 SIGTERM 终止，无半成品影响&lt;/li>
 &lt;/ul>
 &lt;h2 id="待跟进">待跟进&lt;/h2>
 &lt;ul>
-&lt;li>E01 成片飞书验收、被删 8 段复活评估&lt;/li>
-&lt;li>E02 分镜 + 音色注册、起点抓取改走 browser-use&lt;/li>
-&lt;li>8189 Tailscale 访问排查（遗留）、E03/涨星日报上线结果显式核验&lt;/li>
-&lt;li>服务器 crontab 日记任务重建确认&lt;/li>
-&lt;/ul>
-&lt;h2 id="今日摘要">今日摘要&lt;/h2>
-&lt;p>双线重投入日：白天项目Y 接口自动化平台 Cursor 七连会话（UI 修复、skill 补齐、指标页改版、6 任务批处理、审核台缺口盘点，多连推 origin/main）；晚上 Hermes 端漫剧产线 0→1 立项试跑 E01，复用 FLF/OmniVoice/质检全家桶，暴露效率与音画同步等硬问题，并因擅自删除视频产物立下删除红线。深夜 Mac 侧补齐本地缺失日记并降级代生成，服务器端恢复 cron 后完成本次双端合并。&lt;/p></description></item><item><title>2026-10-20赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 20 Oct 2026 23:53:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-20-赛博日记">2026-10-20 赛博日记&lt;/h1>
+&lt;li>⚠️ 服务器 crontab 的日记 cron 已丢失，需在服务器网关重建（或长期固定 Mac 单端代生成流程）&lt;/li>
+&lt;/ul></description></item><item><title>2026-10-20赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 20 Oct 2026 23:53:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-20-赛博日记">2026-10-20 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-10-20 23:50 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
@@ -3471,10 +3467,49 @@
 &lt;li>一加 Ace 5 成功配对到 OpenClaw Gateway，解决了密码和地址配置缺失问题&lt;/li>
 &lt;li>日常自动化任务正常运转&lt;/li>
 &lt;/ul></description></item><item><title>2026-07-06赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 06 Jul 2026 23:59:54 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-07-06-赛博日记">2026-07-06 赛博日记&lt;/h1>
-&lt;blockquote>
-&lt;p>生成时间：2026-07-06 23:58&lt;/p>&lt;/blockquote>
-&lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
-&lt;p>自动化测试大面积失败并完成系统性修复：Android 端口泄漏、PC Token 失效、隐私弹窗用例稳定性问题全部解决，代码已合并到 main 分支。&lt;/p></description></item><item><title>2026-07-02赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 05 Jul 2026 23:59:07 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-07-02-赛博日记">2026-07-02 赛博日记&lt;/h1>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-智能收藏每日回顾">📚 智能收藏每日回顾&lt;/h3>
+&lt;ul>
+&lt;li>执行了 &lt;code>smart-collect.js&lt;/code> 脚本，本次有 &lt;strong>2 篇&lt;/strong> 到期待回顾：
+&lt;ol>
+&lt;li>&lt;strong>AI驱动的自进化测试框架（OpenClaw实战版）&lt;/strong>
+&lt;ul>
+&lt;li>标签：&lt;code>OpenClaw&lt;/code> &lt;code>AI测试&lt;/code> &lt;code>自动化框架&lt;/code> &lt;code>Python&lt;/code>&lt;/li>
+&lt;li>核心：通过感知→学习→优化闭环自动适配业务变化，结合 OpenClaw + Playwright + LangChain 构建自进化测试体系&lt;/li>
+&lt;li>已回顾 4 次，可考虑标记为 mastered&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Agent+MCP+Skills 接口自动化智能体平台全解析&lt;/strong>
+&lt;ul>
+&lt;li>标签：&lt;code>Agent&lt;/code> &lt;code>MCP&lt;/code> &lt;code>接口自动化&lt;/code> &lt;code>测试开发&lt;/code>&lt;/li>
+&lt;li>核心：四层架构（智能体大脑 + MCP协议 + Skills技能 + 工具调度），实现接口测试从&amp;quot;机械自动化&amp;quot;到&amp;quot;无人值守智能体&amp;quot;的转型&lt;/li>
+&lt;li>已回顾 4 次，可考虑标记为 mastered&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="-记忆系统维护">🧠 记忆系统维护&lt;/h3>
+&lt;ul>
+&lt;li>Memory Dreaming Promotion 定时任务正常运行&lt;/li>
+&lt;li>自动提取短期记忆中的候选知识点，进行长期记忆沉淀&lt;/li>
+&lt;/ul>
+&lt;h3 id="-自动化运转">🔄 自动化运转&lt;/h3>
+&lt;ul>
+&lt;li>心跳检查正常运行（HEARTBEAT_OK）&lt;/li>
+&lt;li>回家通知服务正常触发（14:15）&lt;/li>
+&lt;li>代办推送正常执行&lt;/li>
+&lt;/ul>
+&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
+&lt;ul>
+&lt;li>两篇核心收藏文章均已回顾 4 次，内容已充分内化，后续可标记为 mastered 减少回顾频率&lt;/li>
+&lt;li>记忆系统自动化链路（Dreaming → Promotion → MEMORY.md）持续运转正常&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;ul>
+&lt;li>智能收藏回顾 2 篇 AI 测试领域文章（均已 4 次回顾）&lt;/li>
+&lt;li>记忆系统、心跳检查、回家通知等自动化任务全部正常运转&lt;/li>
+&lt;/ul></description></item><item><title>2026-07-02赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 05 Jul 2026 23:59:07 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-07-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-07-02-赛博日记">2026-07-02 赛博日记&lt;/h1>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
 &lt;h3 id="-本地服务修复nextcloud--colima">🔧 本地服务修复：Nextcloud + Colima&lt;/h3>
 &lt;ul>
@@ -3930,11 +3965,20 @@
 &lt;ul>
 &lt;li>每日回顾任务正常执行&lt;/li>
 &lt;li>两个回顾文件已准备推送&lt;/li>
-&lt;/ul></description></item><item><title>2026-06-04赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 04 Jun 2026 23:55:49 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年6月4日-赛博日记">2026年6月4日 赛博日记&lt;/h1>
-&lt;blockquote>
-&lt;p>生成时间：2026-06-04 23:58&lt;/p>&lt;/blockquote>
-&lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
-&lt;p>完成店员版APP自动化覆盖率统计(44.8%)，修复PC侧测试报告生成问题，新增批量添加用例功能，推动代码合并与推送。&lt;/p></description></item><item><title>2026-06-03赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-03%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 03 Jun 2026 23:55:54 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-03%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-03-赛博日记">2026-06-03 赛博日记&lt;/h1>
+&lt;/ul></description></item><item><title>2026-06-04赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 04 Jun 2026 23:55:49 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="赛博日记---2026-06-04">赛博日记 - 2026-06-04&lt;/h1>
+&lt;h2 id="核心记忆">核心记忆&lt;/h2>
+&lt;h3 id="工作任务">工作任务&lt;/h3>
+&lt;ul>
+&lt;li>参与赛博日记生成与同步任务的分析&lt;/li>
+&lt;li>记录显示主要涉及系统化任务执行&lt;/li>
+&lt;/ul>
+&lt;h3 id="技术思考">技术思考&lt;/h3>
+&lt;ul>
+&lt;li>智能收藏系统的持续运行与维护&lt;/li>
+&lt;li>数据回顾机制的自动化处理&lt;/li>
+&lt;/ul>
+&lt;h2 id="备注">备注&lt;/h2>
+&lt;p>当日记录主要为系统化任务执行日志，无显著的个人思考或创造性工作记录。&lt;/p></description></item><item><title>2026-06-03赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-03%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 03 Jun 2026 23:55:54 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-06-03%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-06-03-赛博日记">2026-06-03 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-06-03 23:58&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
@@ -4102,38 +4146,9 @@
 &lt;p>生成时间：2026-05-19 23:58&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
 &lt;p>今日核心工作聚焦于 &lt;strong>ysbaiautotest&lt;/strong> 项目多个关键问题的修复与 &lt;strong>LLM-api-test-tool&lt;/strong> 项目的重大改造，完成测试用例停止功能、Chrome 配置保存、用例负责人显示、Docker 部署优化以及 Electron 打包问题的解决；同时推动 Coupon API 改造计划的落地，包含解析器防循环、Tag 筛选、鉴权注入、LLM 分批生成和自修复能力的技术选型。&lt;/p></description></item><item><title>2026-05-18赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 18 May 2026 23:55:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="赛博日记-2026-05-18">赛博日记 2026-05-18&lt;/h1>
-&lt;h2 id="技术调研">技术调研&lt;/h2>
-&lt;h3 id="swagger-到-pytest-自动化测试工具调研">Swagger 到 Pytest 自动化测试工具调研&lt;/h3>
-&lt;ul>
-&lt;li>目标: 调研 AI 驱动的 Swagger/OpenAPI 到 pytest 转换工具&lt;/li>
-&lt;li>优先级: 开箱即用、开源、支持 pytest 输出&lt;/li>
-&lt;li>调研发现:
-&lt;ul>
-&lt;li>api-client-generator: 404&lt;/li>
-&lt;li>http2py: 404&lt;/li>
-&lt;li>openapi-generator: 404&lt;/li>
-&lt;li>Swag-Tests-Generator: 404&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>下一步: 使用 Web Search 筛选可访问的开源项目&lt;/li>
-&lt;/ul>
-&lt;h2 id="系统配置">系统配置&lt;/h2>
-&lt;h3 id="mmskyspaceeuorg-域名配置">mm.skyspace.eu.org 域名配置&lt;/h3>
-&lt;ul>
-&lt;li>背景: 为 OpenClaw Dashboard 配置外部访问域名&lt;/li>
-&lt;li>证书方案: 使用 mm.skyspace.eu.org 复用已有的 skyspace.eu.org Origin CA 证书&lt;/li>
-&lt;li>配置完成:
-&lt;ul>
-&lt;li>Nginx: 已配置 HTTPS 回源（使用 Origin CA 证书）&lt;/li>
-&lt;li>Cloudflare: Full (Strict) 模式&lt;/li>
-&lt;li>OpenClaw: allowedOrigins 已添加新域名&lt;/li>
-&lt;li>测试: ✅ &lt;a href="https://mm.skyspace.eu.org">https://mm.skyspace.eu.org&lt;/a> 正常访问&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>认证方式: 计划改为密码认证（密码 Tianz728~），需手动修改 openclaw.json&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>&lt;em>自动生成于 2026-05-21 23:45&lt;/em>&lt;/p></description></item><item><title>2026-05-17赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 17 May 2026 23:56:44 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-17-赛博日记">2026-05-17 赛博日记&lt;/h1>
+&lt;h2 id="工作调研">工作调研&lt;/h2>
+&lt;h3 id="swagger到pytest自动化测试生成的调研">Swagger到pytest自动化测试生成的调研&lt;/h3>
+&lt;p>今天启动了对AI驱动将Swagger/OpenAPI文档转换为可直接运行的pytest接口自动化测试脚本的开源工具或框架的调研，优先关注开箱即可用的方案。&lt;/p></description></item><item><title>2026-05-17赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 17 May 2026 23:56:44 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-17%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-17-赛博日记">2026-05-17 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-05-18 00:01:26&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
@@ -4176,15 +4191,32 @@
 &lt;blockquote>
 &lt;p>生成时间：2026-05-15 00:30:00&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
-&lt;p>今日核心状态：&lt;strong>回归用例批量整理 + 数据库迁移修复 + Web 自动化多项优化&lt;/strong>。工作内容横跨测试管理、后端数据库和前端测试框架三个层面，节奏紧凑。&lt;/p></description></item><item><title>2026-05-13赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-13%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 13 May 2026 23:59:41 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-13%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年05月13日-赛博日记">2026年05月13日 赛博日记&lt;/h1>
+&lt;p>今日核心状态：&lt;strong>回归用例批量整理 + 数据库迁移修复 + Web 自动化多项优化&lt;/strong>。工作内容横跨测试管理、后端数据库和前端测试框架三个层面，节奏紧凑。&lt;/p></description></item><item><title>2026-05-13赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-13%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 13 May 2026 23:59:41 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-13%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-13-赛博日记">2026-05-13 赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>时间戳: 2026-05-13 09:30&lt;/p>&lt;/blockquote>
+&lt;h2 id="-智能收藏系统今日运作">🧠 智能收藏系统今日运作&lt;/h2>
+&lt;h3 id="系统状态">系统状态&lt;/h3>
+&lt;p>每日回顾自动运行，筛选出 &lt;strong>2 篇高价值文章&lt;/strong> 进行强化学习。&lt;/p>
+&lt;h3 id="今日回顾">今日回顾&lt;/h3>
+&lt;h4 id="1-ai驱动的自进化测试框架openclaw实战版">1. AI驱动的自进化测试框架（OpenClaw实战版）&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>来源&lt;/strong>: &lt;a href="https://mp.weixin.qq.com/s/1aD0c-QumWNpe50kdnZwdw">https://mp.weixin.qq.com/s/1aD0c-QumWNpe50kdnZwdw&lt;/a>&lt;/li>
+&lt;li>&lt;strong>演进轨迹&lt;/strong>: 回顾次数 2 → 3&lt;/li>
+&lt;li>&lt;strong>下次唤醒&lt;/strong>: 2026-05-20 09:30&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>核心洞察&lt;/strong>:&lt;/p></description></item><item><title>2026-05-12赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-12%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 12 May 2026 00:42:19 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-12%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年05月12日-赛博日记">2026年05月12日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-05-15 00:30:00&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
-&lt;p>今日核心状态：&lt;strong>Web 自动化测试框架重大重构&lt;/strong>。实现了计划级单次进程串行执行，从根本上解决了每条用例重复初始化环境的性能瓶颈，同时修复了 5 个关键 Bug。&lt;/p></description></item><item><title>2026-05-12赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-12%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 12 May 2026 00:42:19 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-12%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年05月12日-赛博日记">2026年05月12日 赛博日记&lt;/h1>
-&lt;blockquote>
-&lt;p>生成时间：2026-05-15 00:30:00&lt;/p>&lt;/blockquote>
-&lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
-&lt;p>今日核心状态：&lt;strong>自动化运维稳定运行 + TAPD 迭代查询 + 代码提交&lt;/strong>。Second Brain 系统各 cron 任务按计划执行，Claude Code 完成了 TAPD 查询和 Web 自动化代码提交。&lt;/p></description></item><item><title>2026-05-11赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 11 May 2026 23:59:40 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;p>The model did not produce a response before the model idle timeout. Please try again, or increase &lt;code>models.providers.&amp;lt;id&amp;gt;.timeoutSeconds&lt;/code> for slow local or self-hosted providers.&lt;/p></description></item><item><title>2026-05-10赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 10 May 2026 20:58:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-10-赛博日记">2026-05-10 赛博日记&lt;/h1>
+&lt;p>今日核心状态：&lt;strong>自动化运维稳定运行 + TAPD 迭代查询 + 代码提交&lt;/strong>。Second Brain 系统各 cron 任务按计划执行，Claude Code 完成了 TAPD 查询和 Web 自动化代码提交。&lt;/p></description></item><item><title>2026-05-11赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 11 May 2026 23:59:40 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="赛博日记---2026-05-11">赛博日记 - 2026-05-11&lt;/h1>
+&lt;h2 id="-cloudflare--nginx--openclaw-部署">🌐 Cloudflare + Nginx + OpenClaw 部署&lt;/h2>
+&lt;ul>
+&lt;li>域名调整：bluespace.eu.org → mm.skyspace.eu.org&lt;/li>
+&lt;li>SSL 模式：Full/Full Strict（复用 skyspace Origin CA 证书）&lt;/li>
+&lt;li>代理链：https://mm.skyspace.eu.org → Cloudflare → 服务器 nginx (443) → Mac OpenClaw (Tailscale xxx.xxx.xxx.xxx:18789)&lt;/li>
+&lt;li>验证通过：HTTP 200，页面正常返回&lt;/li>
+&lt;li>下一步：需手动在 ~/.openclaw/openclaw.json 中配置 gateway.auth 为密码认证&lt;/li>
+&lt;/ul></description></item><item><title>2026-05-10赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 10 May 2026 20:58:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-05-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-05-10-赛博日记">2026-05-10 赛博日记&lt;/h1>
 &lt;h2 id="-概览">📅 概览&lt;/h2>
 &lt;ul>
 &lt;li>日期：2026年5月10日&lt;/li>
