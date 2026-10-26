@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 25 Oct 2026 23:52:14 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-25赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 25 Oct 2026 23:52:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年10月25日-赛博日记"&gt;2026年10月25日 赛博日记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>蓝色空间号</title><link>https://bluespace.eu.org/</link><description>Recent content on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 27 Oct 2026 03:00:01 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-26赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 27 Oct 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-26%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-26-赛博日记"&gt;2026-10-26 赛博日记&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成时间：2026-10-26 23:50（cron 自动生成，合并更新版）&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id="核心工作"&gt;核心工作&lt;/h2&gt;
+&lt;h3 id="-claude-code--cursor-工作记录"&gt;💻 Claude Code / Cursor 工作记录&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;时间&lt;/strong&gt;：10:06 ~ 19:59&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;项目&lt;/strong&gt;：项目X（接口测试平台，13 个 Cursor 会话，共 371 条消息）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;会话数&lt;/strong&gt;：Cursor 13 / Claude 0&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内容&lt;/strong&gt;（按主题归并）：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;补贴数据链路&lt;/strong&gt;：发现目录里没有补贴表的边、物理外键不覆盖（bind 表在从库整表为空说明闭包没带上），走路径 B 给 &lt;code&gt;seed_sync.py&lt;/code&gt; 加通用整行同步预设 &lt;code&gt;wholesale_subsidy_chain&lt;/code&gt;，主从两库都灌&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用例治理&lt;/strong&gt;：服务间内部 Controller 不再被写成外部网关用例，已落库的 &lt;code&gt;DEV_LIMIT_SUBSIDY_002&lt;/code&gt; 从列表隐藏；审核台原先只在诊断里出现产品缺陷（CODE）时才落库，导致通过/环境问题的整轮试跑被跳过不进「用例执行记录」——修复&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提示词精简&lt;/strong&gt;：用例生成提示词只剩用例、传参、响应 + 末尾中文现象归类说明，查代码/读文件/调工具交给模型自主决定&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;转测事件解析&lt;/strong&gt;：自动化任务报文的 &lt;code&gt;event&lt;/code&gt; 是对象，现在按 &lt;code&gt;event.event_key = story::status_change&lt;/code&gt; 识别并携带需求 ID / event_id / 项目 ID 进编排，原扁平 webhook 仍按根字段读取&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单测与提交&lt;/strong&gt;：CoverageBoardTest、GenerationTrialServiceTest 重跑通过；多次提交推送（其中一次主域不可达走备用域名 origin-backup）；用例详情/运行记录的可复制链接与运行按钮落在提交 &lt;code&gt;9657863&lt;/code&gt;；通过 JumpServer 登录 ceshi83 绕过页面锁触发部署成功&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;回滚&lt;/strong&gt;：加在另一个接口测试仓库上的分享链接/运行按钮改动全部撤掉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态&lt;/strong&gt;：✅ 正常&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-知识视频产线hermes-本机"&gt;🎬 知识视频产线（Hermes 本机）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;《涌现》全片上线 B 站&lt;/strong&gt;（BV1nJno6EEMj，开放浏览）：调研确认同类爆款是「Claude Opus 写代码→代码渲染动画」路线（抽帧 VLM 实证：笔画完美/矢量帧间一致）；端到端 &amp;lt;5 分钟全本地零 API 成本（配音 3.9s GPU、765 帧渲染 2min、合成 10s）；沉淀 &lt;code&gt;opus-knowledge-motion&lt;/code&gt; skill（暗黑荧光视觉规范、五幕叙事、全链 7 步、6 条实战坑表）
+&lt;ul&gt;
+&lt;li&gt;踩坑：faster-whisper 喂 24k 音频时间戳膨胀至 36.9s，必须 ffmpeg 重采样 16k；playwright 需显式 executable_path；同句字幕+金句禁交叉淡化&lt;/li&gt;
+&lt;li&gt;封面坑：3:4 竖版被 B 站 16:9 居中裁切切掉上下各 25%，重出 16:10 横版锁安全带后在线换封面成功（state=0 不重审）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简笔画知识流水线定稿 v7&lt;/strong&gt;：竖屏 step4 模板新增 draw/pop/spin/jolt/flow 五种句锚定动画（51 条指令 CSS 内联）；qc_selfcheck R1~R5 五闸；新增运行时探针（tl.seek + getBoundingClientRect dump-dom）；为「渲染管线平反」——v4 硬渲≈v5 软渲墨量一致，历次&amp;quot;元素消失&amp;quot;全是坐标算错；配音换男声（可爱女声太机械化），GPU 上 5 场景 10 秒合成完；发现 pgrep -f 看门狗匹配到自身命令行空转的坑；固化进 &lt;code&gt;knowledge-video-visuals §4.5&lt;/code&gt; 与 &lt;code&gt;hyperframes-kf-pipeline&lt;/code&gt;，下一步量产只换 script.json&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI 视频工作台（本机平台）&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;根因确认：Strata 流式 bug——response_format 模式下攒完整包再校验，SSE 只发 keep-alive，平台判定&amp;quot;无输出&amp;quot;杀任务（内容其实生成成功）；切 vLLM 后裸流式/json_object/json_schema 三形态全部正常（约束解码 vs 提示词+事后校验的差异）&lt;/li&gt;
+&lt;li&gt;反编译平台 WAR 实锤：工作流 Resolver 硬编码只认 krea2_turbo / qwen_image_2_1 / qwen_image2512 三个 key，z_image 不存在分支；建议补 qwen_image2512 两件模型（~12.6G，本机已有 text encoder + VAE）&lt;/li&gt;
+&lt;li&gt;坑：改 DB 的模型配置必须重启 Tomcat 才生效（JVM 内存缓存）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;其他&lt;/strong&gt;：GPU 解锁开源项目调研（Zagitta/gpu-unlock，★7085，30 系重写速度选择器寄存器，3090 Ti BF16 +80%）；本机 CMP 170HX 不在支持名单；取消了今晚定时关机（cron 任务本身保留）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-运维"&gt;🔧 运维&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;探活脚本 &lt;code&gt;ping_watchdog.sh&lt;/code&gt; 告警逻辑优化：离线状态改为「只通知一次」，删除 down&amp;gt;3 分钟的 30 分钟重申告警分支，保留首次 3 分钟离线告警与恢复通知；语法校验通过&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="思考与备忘"&gt;思考与备忘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;知识视频两条产线已分叉成型：复杂解说走 opus-knowledge-motion（暗黑荧光横屏），科普走 kf-pipeline（暖白竖屏简笔画 v7 定稿）；说选题即可开工&lt;/li&gt;
+&lt;li&gt;「AI 写代码→代码渲染动画」是被 B 站验证过的路线，文字完美/矢量精确是其天然特征，生成式视频做不到&lt;/li&gt;
+&lt;li&gt;平台（AI 视频工作台）模型配置的硬编码三选一 + 改库需重启 Tomcat，是后续排障的固定 checklist&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="今日摘要"&gt;今日摘要&lt;/h2&gt;
+&lt;p&gt;两条主线：白天在项目X（接口测试平台）做了补贴数据链路、用例治理、转测事件解析等 13 轮会话的迭代与部署；晚上知识视频产线全面收口——《涌现》全片上线、简笔画流水线 v7 固化、Strata 流式 bug 根因定位 + vLLM 切换。另有探活脚本告警降噪。Todoist 今日无任务记录。&lt;/p&gt;</description></item><item><title>2026-10-25赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 25 Oct 2026 23:52:14 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年10月25日-赛博日记"&gt;2026年10月25日 赛博日记&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;生成时间：2026-10-25 23:50 (Asia/Shanghai)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id="核心工作"&gt;核心工作&lt;/h2&gt;
