@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>实践 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E5%AE%9E%E8%B7%B5/</link><description>Recent content in 实践 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 28 Oct 2026 05:02:08 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml"/><item><title>mi-gpt-问题解决总结-20260308</title><link>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</link><pubDate>Wed, 28 Oct 2026 05:02:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E5%AE%9E%E8%B7%B5/mi-gpt-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%80%BB%E7%BB%93-20260308/</guid><description>&lt;h1 id="mi-gpt-小米账号异地登录验证问题完全解决指南">mi-gpt 小米账号异地登录验证问题完全解决指南&lt;/h1>
+&lt;h2 id="-问题解决日期">📅 问题解决日期&lt;/h2>
+&lt;p>2026年3月8日&lt;/p>
+&lt;h2 id="-问题描述">🎯 问题描述&lt;/h2>
+&lt;p>运行 &lt;code>node app.js&lt;/code> 时出现以下错误：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">🔥 触发小米账号异地登录安全验证机制，请在浏览器打开以下链接，并按照网页提示授权验证账号：
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">👉 https://account.xiaomi.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx?sid=micoapi&amp;amp;...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">❌ 小米账号登录失败
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>尝试过的无效方法&lt;/strong>：&lt;/p></description></item></channel></rss>

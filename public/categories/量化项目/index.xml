@@ -1,4 +1,192 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>量化项目 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/</link><description>Recent content in 量化项目 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 10 May 2026 23:39:25 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>SYSTEM_DESIGN</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/system_design/</link><pubDate>Sun, 07 Sep 2025 00:22:06 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/system_design/</guid><description>&lt;h1 id="系统设计与开发者文档">系统设计与开发者文档&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>量化项目 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/</link><description>Recent content in 量化项目 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 28 Oct 2026 05:02:08 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>position-management-design-v1.0</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/position-management-design-v1.0/</link><pubDate>Wed, 28 Oct 2026 05:02:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/position-management-design-v1.0/</guid><description>&lt;h1 id="仓位管理系统---产品设计文档">仓位管理系统 - 产品设计文档&lt;/h1>
+&lt;p>&lt;strong>版本&lt;/strong>: v1.0
+&lt;strong>创建日期&lt;/strong>: 2026-03-10
+&lt;strong>作者&lt;/strong>: 小老弟
+&lt;strong>状态&lt;/strong>: 设计阶段&lt;/p>
+&lt;hr>
+&lt;h2 id="1-产品概述">1. 产品概述&lt;/h2>
+&lt;h3 id="11-产品定位">1.1 产品定位&lt;/h3>
+&lt;p>面向个人投资者的轻量级仓位管理和分析工具，支持A股和港股，提供仓位追踪、自动更新和一键分析功能。&lt;/p></description></item><item><title>position-management-research-20260310</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/position-management-research-20260310/</link><pubDate>Wed, 28 Oct 2026 05:02:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/position-management-research-20260310/</guid><description>&lt;h1 id="仓位管理系统---现有工具调研报告">仓位管理系统 - 现有工具调研报告&lt;/h1>
+&lt;p>&lt;strong>日期:&lt;/strong> 2026-03-10
+&lt;strong>目的&lt;/strong>: 调研市场上现有的相关工具和开源项目，避免重复造轮子&lt;/p>
+&lt;hr>
+&lt;h2 id="1-openclawclawhub-生态">1. OpenClaw/ClawHub 生态&lt;/h2>
+&lt;h3 id="11-portfolio-相关-skill">1.1 Portfolio 相关 Skill&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Skill 名称&lt;/th>
+&lt;th>描述&lt;/th>
+&lt;th>匹配度&lt;/th>
+&lt;th>适用性&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>portfolio-manager&lt;/td>
+&lt;td>使用 Alpaca MCP Server 集成进行投资组合分析&lt;/td>
+&lt;td>⚠️ 部分匹配&lt;/td>
+&lt;td>需要券商 API，不适合散户&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>afrexai-investment-engine&lt;/td>
+&lt;td>投资分析和投资组合管理引擎&lt;/td>
+&lt;td>⚠️ 部分匹配&lt;/td>
+&lt;td>功能过重，主要是 AI 分析&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>finance-automation&lt;/td>
+&lt;td>金融自动化（支付、发票、费用）&lt;/td>
+&lt;td>❌ 不匹配&lt;/td>
+&lt;td>主要是企业财务管理&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>portfolio-watcher&lt;/td>
+&lt;td>投资组合监控&lt;/td>
+&lt;td>❓ 未知&lt;/td>
+&lt;td>需要进一步了解&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>portfolio-tracker&lt;/td>
+&lt;td>投资组合跟踪&lt;/td>
+&lt;td>❓ 未知&lt;/td>
+&lt;td>需要进一步了解&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>openmm-portfolio&lt;/td>
+&lt;td>OpenMM 投资组合&lt;/td>
+&lt;td>❌ 不匹配&lt;/td>
+&lt;td>数字货币相关&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="12-已安装-skill">1.2 已安装 Skill&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>manus-stock-analysis&lt;/strong>: ✅ 已安装，可用于技术分析
+&lt;ul>
+&lt;li>功能: 获取股票数据、技术分析&lt;/li>
+&lt;li>可复用: 是，可作为分析模块&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="13-结论">1.3 结论&lt;/h3>
+&lt;p>&lt;strong>ClawHub 生态现状&lt;/strong>:&lt;/p></description></item><item><title>stock-analysis-quickstart-20260310</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/stock-analysis-quickstart-20260310/</link><pubDate>Wed, 28 Oct 2026 05:02:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/stock-analysis-quickstart-20260310/</guid><description>&lt;h1 id="股票技术面分析---快速开始指南">股票技术面分析 - 快速开始指南&lt;/h1>
+&lt;p>&lt;strong>日期:&lt;/strong> 2026-03-10
+&lt;strong>目标:&lt;/strong> 5 分钟内开始使用 OpenClaw 进行技术面分析&lt;/p>
+&lt;hr>
+&lt;h2 id="-三种方式快速开始">🚀 三种方式快速开始&lt;/h2>
+&lt;h3 id="方式-1-直接使用-openclaw-最简单">方式 1: 直接使用 OpenClaw (最简单)&lt;/h3>
+&lt;p>&lt;strong>无需任何安装，直接提问：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;#34;分析 AAPL 的技术面&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;TSLA 的技术指标如何？&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&amp;#34;对比 AAPL 和 MSFT 的走势&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>OpenClaw 会自动使用 &lt;code>manus-stock-analysis&lt;/code> 技能获取 Yahoo Finance 数据。&lt;/p></description></item><item><title>stock-technical-analysis-openclaw-research-20260310</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/stock-technical-analysis-openclaw-research-20260310/</link><pubDate>Wed, 28 Oct 2026 05:02:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/stock-technical-analysis-openclaw-research-20260310/</guid><description>&lt;h1 id="openclaw-股票技术面分析方案研究">OpenClaw 股票技术面分析方案研究&lt;/h1>
+&lt;p>&lt;strong>日期:&lt;/strong> 2026-03-10
+&lt;strong>研究目标:&lt;/strong> 探索如何使用 OpenClaw 进行纯技术面股票分析&lt;/p>
+&lt;hr>
+&lt;h2 id="1-openclaw-技能生态">1. OpenClaw 技能生态&lt;/h2>
+&lt;h3 id="11-已安装技能">1.1 已安装技能&lt;/h3>
+&lt;h4 id="manus-stock-analysis">manus-stock-analysis&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>功能:&lt;/strong> 使用 Yahoo Finance API 进行股票和公司分析&lt;/li>
+&lt;li>&lt;strong>核心能力:&lt;/strong>
+&lt;ul>
+&lt;li>公司概况和基本面信息&lt;/li>
+&lt;li>技术指标和分析师评级&lt;/li>
+&lt;li>价格图表和历史数据&lt;/li>
+&lt;li>内部人持股和交易&lt;/li>
+&lt;li>SEC 文件和监管信息&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>API:&lt;/strong>
+&lt;ul>
+&lt;li>&lt;code>Yahoo/get_stock_profile&lt;/code> - 公司资料&lt;/li>
+&lt;li>&lt;code>Yahoo/get_stock_insights&lt;/code> - 技术指标、估值、评级&lt;/li>
+&lt;li>&lt;code>Yahoo/get_stock_chart&lt;/code> - 历史价格数据&lt;/li>
+&lt;li>&lt;code>Yahoo/get_stock_holders&lt;/code> - 内部人持股&lt;/li>
+&lt;li>&lt;code>Yahoo/get_stock_sec_filing&lt;/code> - SEC 文件&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="12-clawhub-发现的技能">1.2 ClawHub 发现的技能&lt;/h3>
+&lt;h4 id="stock-technical-analysis">stock-technical-analysis&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>功能:&lt;/strong> 股票技术分析工具&lt;/li>
+&lt;li>&lt;strong>支持指标:&lt;/strong> SMA, EMA, RSI, MACD, Bollinger Bands&lt;/li>
+&lt;li>&lt;strong>价格:&lt;/strong> 每次调用 0.001 USDT&lt;/li>
+&lt;li>&lt;strong>状态:&lt;/strong> 被 VirusTotal 标记为可疑，代码较简单（模拟数据）&lt;/li>
+&lt;li>&lt;strong>建议:&lt;/strong> 不推荐使用，风险较高且数据质量存疑&lt;/li>
+&lt;/ul>
+&lt;h4 id="其他相关技能">其他相关技能&lt;/h4>
+&lt;ul>
+&lt;li>&lt;code>stock-watcher&lt;/code> - 股票监控&lt;/li>
+&lt;li>&lt;code>stock-monitor&lt;/code> - 股票监控&lt;/li>
+&lt;li>&lt;code>stock-study&lt;/code> - 股票学习&lt;/li>
+&lt;li>&lt;code>a-stock-trading-assistant&lt;/code> - A股交易助手&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="2-技术面分析工具链">2. 技术面分析工具链&lt;/h2>
+&lt;h3 id="21-数据获取-python-库">2.1 数据获取 (Python 库)&lt;/h3>
+&lt;h4 id="yfinance">yfinance&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>仓库:&lt;/strong> &lt;a href="https://github.com/ranaroussi/yfinance">https://github.com/ranaroussi/yfinance&lt;/a>&lt;/li>
+&lt;li>&lt;strong>功能:&lt;/strong>
+&lt;ul>
+&lt;li>从 Yahoo Finance 获取金融和市场数据&lt;/li>
+&lt;li>支持单只和多只股票数据&lt;/li>
+&lt;li>实时流数据&lt;/li>
+&lt;li>市场搜索和新闻&lt;/li>
+&lt;li>行业和板块信息&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>安装:&lt;/strong> &lt;code>pip install yfinance&lt;/code>&lt;/li>
+&lt;li>&lt;strong>注意:&lt;/strong> 仅限个人使用和研究目的&lt;/li>
+&lt;/ul>
+&lt;h3 id="22-技术指标计算">2.2 技术指标计算&lt;/h3>
+&lt;h4 id="pandas-ta-推荐">pandas-ta (推荐)&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>功能:&lt;/strong> 使用 Pandas 计算技术指标&lt;/li>
+&lt;li>&lt;strong>优势:&lt;/strong>
+&lt;ul>
+&lt;li>纯 Python 实现，无需额外依赖&lt;/li>
+&lt;li>基于 NumPy 和 Pandas，性能优异&lt;/li>
+&lt;li>支持数百种技术指标&lt;/li>
+&lt;li>体积小，速度快&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>指标类别:&lt;/strong>
+&lt;ul>
+&lt;li>趋势: SMA, EMA, DEMA, TEMA&lt;/li>
+&lt;li>动量: RSI, MACD, Stochastic, Williams %R&lt;/li>
+&lt;li>波动率: Bollinger Bands, ATR&lt;/li>
+&lt;li>成交量: OBV, Volume SMA&lt;/li>
+&lt;li>趋势强度: ADX, CCI&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="ta-lib">TA-Lib&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>功能:&lt;/strong> C 库的 Python 封装，包含 150+ 技术指标&lt;/li>
+&lt;li>&lt;strong>安装:&lt;/strong> &lt;code>pip install TA-Lib&lt;/code> (需要编译，较复杂)&lt;/li>
+&lt;li>&lt;strong>优势:&lt;/strong> 业界标准，指标全面&lt;/li>
+&lt;li>&lt;strong>劣势:&lt;/strong> 安装复杂，依赖较多&lt;/li>
+&lt;/ul>
+&lt;h3 id="23-可视化工具">2.3 可视化工具&lt;/h3>
+&lt;h4 id="plotly">Plotly&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>功能:&lt;/strong> 交互式图表库&lt;/li>
+&lt;li>&lt;strong>适用:&lt;/strong> K 线图、技术指标图表&lt;/li>
+&lt;li>&lt;strong>优势:&lt;/strong> 交互性强，Web 友好&lt;/li>
+&lt;/ul>
+&lt;h4 id="matplotlib">Matplotlib&lt;/h4>
+&lt;ul>
+&lt;li>&lt;strong>功能:&lt;/strong> Python 绘图标准库&lt;/li>
+&lt;li>&lt;strong>适用:&lt;/strong> 静态图表&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="3-推荐技术方案">3. 推荐技术方案&lt;/h2>
+&lt;h3 id="方案-a-使用-manus-stock-analysis--python-脚本">方案 A: 使用 manus-stock-analysis + Python 脚本&lt;/h3>
+&lt;p>&lt;strong>优点:&lt;/strong>&lt;/p></description></item><item><title>SYSTEM_DESIGN</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/system_design/</link><pubDate>Sun, 07 Sep 2025 00:22:06 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/system_design/</guid><description>&lt;h1 id="系统设计与开发者文档">系统设计与开发者文档&lt;/h1>
 &lt;p>本文档为量化交易系统的核心开发者提供全面的技术参考，涵盖了系统架构、核心模块、API接口、部署运维以及未来的发展规划。&lt;/p>
 &lt;h2 id="1-系统架构">1. 系统架构&lt;/h2>
 &lt;p>本系统采用模块化设计，主要由数据层、分析层、策略层和应用层组成。&lt;/p></description></item><item><title>strategy</title><link>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/strategy/</link><pubDate>Sun, 07 Sep 2025 00:22:05 +0800</pubDate><guid>https://bluespace.eu.org/post/%E9%87%8F%E5%8C%96%E9%A1%B9%E7%9B%AE/strategy/</guid><description>&lt;h1 id="量化交易策略知识库">量化交易策略知识库&lt;/h1>
