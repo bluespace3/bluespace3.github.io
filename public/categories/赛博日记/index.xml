@@ -1,49 +1,84 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 29 Oct 2026 23:53:35 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-29赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 29 Oct 2026 23:53:35 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-29周四赛博日记">2026-10-29（周四）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 30 Oct 2026 23:52:59 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-10-30赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-30%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 30 Oct 2026 23:52:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-30%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-30周五赛博日记">2026-10-30（周五）赛博日记&lt;/h1>
 &lt;blockquote>
-&lt;p>生成时间：2026-10-29 23:58 (Asia/Shanghai)，合并更新（原 23:45 版 + Claude Code 记录 + Hermes 本机事项）&lt;/p>&lt;/blockquote>
+&lt;p>生成时间：2026-10-30 23:55 (Asia/Shanghai)
+本日为合并更新：23:45 版日记基础上，合入 Hermes 本机事项与 Claude Code/Cursor 工作记录。&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
-&lt;h3 id="-claude-code-工作记录cursor--9共-522-条消息项目-x-测试平台">💻 Claude Code 工作记录（Cursor × 9，共 522 条消息，项目 X 测试平台）&lt;/h3>
+&lt;h3 id="-claude-code--cursor-工作记录">💻 Claude Code / Cursor 工作记录&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>登录限流根因排查&lt;/strong>：定位 autotest 试跑 &lt;code>40003 操作太快了&lt;/code> 为短信/出口 IP 维度登录限流，而非种子数据缺失。放大因素：同一 trial 覆盖首跑+补灌重跑双登录路径；业务接口 40003 被误判为 token 失效触发 relogin 再次真打。Redis &lt;code>smsCnt:*&lt;/code> 清理结果 found=0，计数已过期。&lt;/li>
-&lt;li>&lt;strong>近一周 API 用例生成指标统计&lt;/strong>：75 条用例 / 21 批次（全 web-ai 渠道）；首次试跑一次通过率 69.9%，最终任意一次通过率 87.7%（已试跑口径）；单条耗时 P50 ≈ 49.3s（批次总耗时/条数的近似口径）；缺陷 9 个。经验：一次通过率反映生成质量、最终通过率反映可用率，报告必须显式标注分母；临时统计脚本即用即删。&lt;/li>
-&lt;li>&lt;strong>运维台环境切换按钮状态不同步&lt;/strong>：前端按钮依赖 &lt;code>opsLoadEnv&lt;/code> 的 env 值，原逻辑仅切换成功时刷新，任务失败/异常结束时停在旧环境；梳理了 &lt;code>opsEnvGet/opsEnvStatus&lt;/code> 与服务范围投票、&lt;code>applyDisplayedEnv&lt;/code> 修正链路。&lt;/li>
-&lt;li>&lt;strong>指标看板&amp;quot;上传记录&amp;quot;多来源合并方案&lt;/strong>：将&amp;quot;开发 Skill 列表&amp;quot;改为合并三类来源——开发上传（source=dev-skill）、平台生成（web-ai）、触发生产（creator 以 workflow 前缀识别）；后端 Batch 聚合新增 channel 字段，前端新增&amp;quot;来源&amp;quot;列。关键洞察：只看 source 会把触发生产误判为平台生成，workflow 前缀才是判别键。&lt;/li>
-&lt;li>&lt;strong>审核台跳生成页&amp;quot;对话不存在&amp;quot;修复&lt;/strong>：根因是 storyId 复用为 seriesId 后撞上 clientUserId 隔离（跨用户/跨浏览器查不到 qa_log）；采用前端最小修复——loadSeries 增加静默探测失败能力，审核台跳转场景不再弹惊吓式报错而是进入可继续编辑兜底态。已提交 static/assistant-chat.js 并推送。教训：不建议简单放开后端归属校验，会破坏会话隔离边界。&lt;/li>
-&lt;li>其余 4 个会话为 TAPD 需求跳转/兜底摘要类，无实质产出。&lt;/li>
+&lt;li>&lt;strong>10:22&lt;/strong> · 项目X（接口用例平台）· 67 条消息
+&lt;ul>
+&lt;li>&lt;strong>接口用例生成补强采购权限校验&lt;/strong>：原流程只校验账号与门店关联及短信登录能力，不校验目标店铺采购权限，导致生成无法下单/加购的无效用例。&lt;/li>
+&lt;li>对齐业务口径：城市按店控（按店控标志=1）且非内部用户时看「用户-门店关系表」的采购状态，否则看用户表状态；仅状态 1 和 5 视为可采购。&lt;/li>
+&lt;li>落库前增加采购权限硬检查，不满足的默认账号直接丢弃并提示换号；自动化库已有用户以自动化库状态为准（灌库 INSERT IGNORE 不会覆盖已有权限），新账号随种子带入。&lt;/li>
+&lt;li>生成提示规则同步更新：「默认账号必须具备目标门店采购权限」写入约束。已推送 main（提交 d32b21f）。&lt;/li>
+&lt;li>&lt;strong>教训&lt;/strong>：「能登录」≠「能采购」；权限判断必须区分按店控/非按店控两条路径。&lt;/li>
 &lt;/ul>
-&lt;h3 id="-本机-vllm-032-升级攻坚当日主线详见-hermes-汇总与笔记仓库两条提交">🖥️ 本机 vLLM 0.32 升级攻坚（当日主线，详见 Hermes 汇总与笔记仓库两条提交）&lt;/h3>
+&lt;/li>
+&lt;li>&lt;strong>10:31&lt;/strong> · 项目X · 43 条消息
 &lt;ul>
-&lt;li>&lt;strong>0.29→032 血统考古定案&lt;/strong>：0.29 的 PP2+MTP6 是深度本地分叉（pp_utils 广播竞态修复、MTP 尾卡续算），0.32 官方重构（speculator 目录迁移）后每处差异都要逐个搬运——是&amp;quot;两个架构版本的桥接工程&amp;quot;而非漏文件。审计 9 个关键签名全部落位，7 个带本地标记的嫌疑文件判定为零承重、无漏网。&lt;/li>
-&lt;li>&lt;strong>五次点火全链通关&lt;/strong>：attempt 5 通过 KV 池分配（18.15 GiB）→ 双卡图捕获 → 引擎初始化完整（59.77s）。五关全是血统差异：MTP 接口 → PLE 协议 → PP 尾卡续算 → KV 组拓扑。&lt;/li>
-&lt;li>&lt;strong>Sampler 预热报错修复&lt;/strong>：10-06 的 q38_sampling_warmup 补丁按 0.32 v2 Runner 新签名重写（首参加 vllm_config、尾参 seq_lens_upper_bound_np 等），单卡真跑验证 SAMPLING_WARMUP_READY。&lt;/li>
-&lt;li>&lt;strong>性能与决策&lt;/strong>：0.29 六档 decode 均值 84.9 vs 0.32 七档 91.3 t/s（+7.5%，未见退化）；prefix 命中率 90%→30% 的回归归因追查（MTP 前缀缓存边界块丢弃开关）；&lt;strong>生产定案：0.32 转正，恢复 256k 原生 rope 上下文，去 yarn&lt;/strong>（yarn mscale 疑拖累 MTP 接受率），拓展开关保留默认关；启动面板 :8900 白名单加 800K 档（262144|307200|524288|786432，KV 池代价 100.8 万→80.2 万 token）。&lt;/li>
-&lt;li>&lt;strong>凌晨断流根因闭环&lt;/strong>：01:11 TP1 CUDA illegal memory access，位置 ≥ rope 表长即 OOB，打补丁 ×4/×(factor+1) 终版修复。&lt;strong>后记&lt;/strong>：TEP2 基准后 8 分钟被外部请求触发双卡 Xid31 同形 MMU fault，判软件 OOB，稳定性结论不成立——悬案未结。&lt;/li>
+&lt;li>&lt;strong>指标看板上传记录分页&lt;/strong>：上传记录列表原来一次性渲染时间窗口内全部批次，参考已有列表交互补上翻页（每页 15 条，显示「共 N 条 · 第 X 页」），切换时间范围自动回第 1 页；顶部指标卡汇总口径不变。已推送 main（提交 6b29b51）。&lt;/li>
 &lt;/ul>
-&lt;h3 id="-知识分享视频产线b-站重制">🎬 知识分享视频产线（b 站重制）&lt;/h3>
-&lt;ul>
-&lt;li>两集复杂知识分享视频（K01/K02 v3 母带）完成交付：逐帧 VLM 抓修 4 个真 bug，LUFS -14、faststart、全解码 0 错，8899 与飞书已送达。&lt;/li>
-&lt;li>&lt;strong>&amp;ldquo;句头噪音&amp;quot;三犯根治&lt;/strong>：10-16/10-28/10-29 三次登门，根因是修复只活在&amp;quot;外挂脚本+文档&amp;quot;层，新产线复制脚手架即丢件。结构性加固：debreath 算法焊进产线基准脚本 step2 v8（report 新增&amp;quot;呼气duckN&amp;quot;可稽核列）、三张技能卡同步改口径、起链一句 &lt;code>grep -q debreath step2_*.py&lt;/code> 自检。&lt;/li>
-&lt;li>&lt;strong>qc_tone 规则 12 判例扩充&lt;/strong>：新增&amp;quot;媒介自指&amp;quot;子项（&amp;ldquo;几笔简笔画&amp;quot;类说法拦截）；本次盲区定性——统计机检管结构模式，翻译腔/生硬搭配的口播语感仍需人耳。&lt;/li>
+&lt;/li>
 &lt;/ul>
-&lt;h3 id="-台式机探活事件">🏠 台式机探活事件&lt;/h3>
+&lt;h3 id="-hermes-本机工作流可视化管理8900-面板工作流库">🤖 Hermes 本机：工作流可视化管理（8900 面板「工作流库」）&lt;/h3>
 &lt;ul>
-&lt;li>02:58 起连续 3 分钟 ping + TCP(22/8900) 全不通触发告警，约 &lt;strong>418 分钟&lt;/strong>失联后 09:57 前恢复；本周已多次同类长时失联（10-26 ×2、10-27 一起 1261 分钟、10-28 一起），冻结复发频率值得持续关注。&lt;/li>
+&lt;li>&lt;strong>动机&lt;/strong>：本机散落十多条视频产线（知识科普多版本、GitHub 涨星日报、高性价比人生等），缺统一管理层。&lt;/li>
+&lt;li>&lt;strong>调研结论&lt;/strong>（两轮 GitHub 实拉数据）：这个「统一管理层」生态位在开源界是空的——现有项目要么管单一引擎（ComfyUI 插件）、要么是单体产品（MoneyPrinterTurbo 类）、要么是通用编排器。自产的 .review 审核树相当于 Frame.io 类审片工具的自托管等价物，只缺「工作流定义目录」这一层。&lt;/li>
+&lt;li>&lt;strong>方案落地&lt;/strong>：不引新框架，给 8900 面板加「工作流库」页签——每条产线一个 yaml 定义（含 artifacts 正典位置声明，产物不搬家以免破坏产线相对路径），面板按声明实时扫描。&lt;/li>
+&lt;li>&lt;strong>验收全实测&lt;/strong>：Playwright 无头渲染走查（列表/节点流/审核门高亮/槽展开/编辑态）无 JS 错误；截图喂本地 VLM 走查布局无破损；写回 E2E 三类槽位（通配 JSON、ComfyUI 节点、py 字符串常量）写了又还原，三条护栏（只读槽拒绝/复合常量拒绝/白名单外拒绝）均验证。十条产线全冒烟通过（Range 206/穿越 403 实测）。&lt;/li>
+&lt;li>&lt;strong>过程中修掉 5 个自产 bug&lt;/strong>：接替关系方向写反、直达链接族组不展开、patch 吞行语法错、多根模式 pref 未定义、&lt;code>**/*.mp4&lt;/code> 把 benchmark 杂项卷进产物区（glob 按成片命名收窄）。&lt;/li>
+&lt;li>&lt;strong>后续产线融合方向&lt;/strong>：AI 知识讲解、GitHub 涨星日报、高性价比人生统一进暗黑荧光工作流；音色复用但声音后处理不复用（当前荧光线语音不清晰、语速偏快、停顿缺失），尽量用动画替代文字和语音。架构与坑已沉淀进 gpu-console-panel skill，新增产线=写一个 yaml（15-30 分钟）。&lt;/li>
+&lt;/ul>
+&lt;h3 id="-记忆系统--知识库入库tdai-knowledge">🧠 记忆系统 / 知识库入库（tdai-knowledge）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>规模&lt;/strong>：磁盘 374 个源文件，60 个待入库、314 个已入库跳过；另通过软链器把 831 个 skill md + 记忆文件共 833 个源链入 raw/sources（374→1207），软链保证 skill 更新即生效，每周日 23:20 cron 对账。&lt;/li>
+&lt;li>&lt;strong>卡点&lt;/strong>：两篇量化笔记反复被 GLM-5.3 审核拦截（疑似敏感内容），每次重抽都被拒，是唯一失败源。&lt;/li>
+&lt;li>&lt;strong>解法&lt;/strong>：复活本地 vLLM 副上游（localhost:8000，qwen3.8，并发 1）组成双上游池（原配置备份 .env.bak-1030-glmonly）；merge 阶段不手杀，等看门狗自然重启加载新配置，下轮抽取自动分流到本地 vLLM 消化毒源。&lt;/li>
+&lt;li>&lt;strong>空闲门重构&lt;/strong>（修自锁死循环）：ingest 用本地 vLLM 会拉高 GPU 利用率，旧版 10 分钟后会被自己的占用挡住。删掉 GPU% 门控，改为只避让真实重任务信号：ComfyUI 双实例（8188/8189）队列为空 + pipeline.log 近 10 分钟无真实任务行（过滤 vLLM metrics 刷屏噪音）。实测 GPU 92% 渲染中正确放行 GPU 关、被 pipeline 门拦下（符合预期）。&lt;/li>
+&lt;li>&lt;strong>skill 筛选&lt;/strong>：出厂类目（apple/email/dogfood/computer-use 等）清零不进库，同目录下后加的保留（creative 下 47 个）；知识库今后只收手写笔记+后期 skill，出厂 skill 滤掉但不删除。&lt;/li>
+&lt;li>&lt;strong>提醒&lt;/strong>：skill 入库前需脱敏（可能含 API key）。&lt;/li>
+&lt;/ul>
+&lt;h3 id="-其他硬件事件">🏠 其他硬件事件&lt;/h3>
+&lt;ul>
+&lt;li>MSI 主板开机停 POST：电源浪涌保护记录（SGS 功能，误报高），指导进 BIOS 关闭 SGS Support（Power Management Setup → Disabled → F10），并提醒确认 Boot 顺序。&lt;/li>
+&lt;/ul>
+&lt;h3 id="-台式机探活事件失联异常频繁共-3-起">🏠 台式机探活事件（失联异常频繁，共 3 起）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>深夜长失联&lt;/strong>：00:12 起告警，宕机约 &lt;strong>942 分钟&lt;/strong>，15:55 恢复（症状同 10-25 硬冻结事故模式）&lt;/li>
+&lt;li>&lt;strong>傍晚失联&lt;/strong>：16:10 告警，宕机约 &lt;strong>238 分钟&lt;/strong>，20:07 恢复&lt;/li>
+&lt;li>&lt;strong>夜间短暂失联&lt;/strong>：21:11 告警，宕机约 &lt;strong>4 分钟&lt;/strong>，21:14 快速恢复&lt;/li>
+&lt;li>本周累计失联 8 起以上，冻结复发频率显著升高，建议尽快排查硬件/系统根因（内存/电源/系统日志 panic 记录）&lt;/li>
 &lt;/ul>
 &lt;h3 id="-例行自动化均正常">🤖 例行自动化（均正常）&lt;/h3>
 &lt;ul>
-&lt;li>智能收藏每日回顾：无到期项，静默&lt;/li>
-&lt;li>Todoist 每日推送（09:00）、飞书文档同步（06:00/18:00）、笔记仓库同步（05:00）：正常执行&lt;/li>
-&lt;li>记忆系统（dreaming）：recall 存储重写维护，0 条晋升&lt;/li>
+&lt;li>ping-watchdog 每分钟探活：告警与恢复通知均按新规则（离线只通知一次）正常工作&lt;/li>
+&lt;li>智能收藏 / Todoist 推送 / 飞书文档同步 / 笔记仓库同步：正常执行&lt;/li>
 &lt;/ul>
 &lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
 &lt;ul>
-&lt;li>0.29 分叉的桥接工程经验值得沉淀：升级大版本前先做&amp;quot;血统审计&amp;rdquo;（本地标记清单 vs 官方 diff 逐文件定性承重/血统注释），比五次点火逐关撞墙高效。&lt;/li>
-&lt;li>指标口径显式化：一次通过率 vs 最终通过率的分母与定义必须在报告里写死。&lt;/li>
-&lt;li>&amp;ldquo;既往定案环节在新产线丢失&amp;quot;已被定性为同族事故模式，debreath 模式（算法入基准脚本+可稽核列+起链自检）可作为所有口头教训固化的模板。&lt;/li>
-&lt;li>待跟进：0.32 TEP2 双卡 Xid31 软件OOB 悬案；2 条未试跑用例补跑；qc_tone 翻译腔词表+口播可读性打分。&lt;/li>
+&lt;li>「统一工作流管理层」的开源空位判断值得记住：自托管审核树 + 工作流定义目录 = 自托管 Frame.io，下一步只需登记二线产线（naval-remake、opus-knowledge-motion）看效果。&lt;/li>
+&lt;li>双上游 LLM 池的「敏感审核毒源」问题通用解法：副上游无审核拦截，看门狗自然重启时加载新配置，零人工干预。&lt;/li>
+&lt;li>待摸底：知识分享男声注册信息（语速病根）、hltb HTML 主题装配机制、ai-advanced 执行器。&lt;/li>
 &lt;/ul>
 &lt;h2 id="今日摘要">今日摘要&lt;/h2>
-&lt;p>高强度一天：主线是 vLLM 0.29→0.32 血统考古与生产转正（decode +7.5%、去 yarn、面板加 800K 档，遗留 Xid31 悬案），白天在项目 X 平台推进登录限流根因、通过率统计、看板多来源合并与两处前端体验修复，晚间知识分享视频产线交付并完成&amp;quot;句头噪音&amp;quot;同族事故的结构性根治。&lt;/p></description></item><item><title>2026-10-28赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 28 Oct 2026 23:55:29 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-28周三赛博日记">2026-10-28（周三）赛博日记&lt;/h1>
+&lt;p>两条主线：&lt;strong>工作侧&lt;/strong>完成项目X接口用例生成的采购权限硬校验与看板分页（两提交合入 main）；&lt;strong>个人侧&lt;/strong>完成 8900 工作流库页签的设计调研+落地+全实测验收（修 5 个自产 bug），知识库批量入库进入收尾并解掉 GLM 审核毒源（双上游池方案）。台式机冻结 3 起，硬件排查迫在眉睫。&lt;/p></description></item><item><title>2026-10-29赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 29 Oct 2026 23:53:35 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-29%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-29周四赛博日记">2026-10-29（周四）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-10-29 23:45 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;p>当日无个人笔记与新增工作记忆，本日记录以对话事件为主。&lt;/p>
+&lt;h3 id="-台式机探活事件">🏠 台式机探活事件&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>失联&lt;/strong>：02:58 起连续 3 分钟 ping + TCP(22/8900) 全不通，触发告警（症状同 10-25 硬冻结事故模式）&lt;/li>
+&lt;li>&lt;strong>恢复&lt;/strong>：09:57 前发现 ping 恢复，本次失联约 &lt;strong>418 分钟&lt;/strong>；本周已多次出现同类长时失联（10-26 两起、10-27 一起 1261 分钟、10-28 一起），冻结复发频率值得持续关注&lt;/li>
+&lt;/ul>
+&lt;h3 id="-例行自动化均正常">🤖 例行自动化（均正常）&lt;/h3>
+&lt;ul>
+&lt;li>智能收藏每日回顾（smart-collect.js）：无到期项，静默&lt;/li>
+&lt;li>Todoist 每日推送（09:00）、飞书文档同步（06:00/18:00）、笔记仓库同步（05:00）：正常执行&lt;/li>
+&lt;li>记忆系统（dreaming）：recall 存储重写维护，0 条晋升&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>安静的周四：主线只有家里台式机一次 7 小时的失联与恢复，例行自动化全部平稳运行。&lt;/p></description></item><item><title>2026-10-28赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 28 Oct 2026 23:55:29 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-28%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-28周三赛博日记">2026-10-28（周三）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-10-28 23:55 (Asia/Shanghai，合并更新版)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
