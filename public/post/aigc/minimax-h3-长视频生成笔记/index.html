@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>MiniMax-H3-长视频生成笔记 | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="MiniMax H3 长视频生成笔记
+
+来源：Reddit r/StableDiffusion 帖子及社区讨论整理
+日期：2026-08-12
+原帖：Long-form videos (1 min&#43;) are very possible with MiniMax H3
+
+一、MiniMax H3 模型概述
+MiniMax H3（又名 Hailuo 3.0 / Hailuo 03）是 MiniMax 于 2026年7月31日发布的通用多模态生成模型。">
+<meta name="author" content="新人类">
+<link rel="canonical" href="https://bluespace.eu.org/post/aigc/minimax-h3-%E9%95%BF%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E7%AC%94%E8%AE%B0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c2189e7d36d72767de292f8b9d897e4a464aa5bc7eb692cda50064f5eb9eeece.css" integrity="sha256-whiefTbXJ2feKS&#43;LnYl&#43;SkZKpbx&#43;tpLNpQBk9eue7s4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://bluespace.eu.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://bluespace.eu.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/post/aigc/minimax-h3-%E9%95%BF%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E7%AC%94%E8%AE%B0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:title" content="MiniMax-H3-长视频生成笔记" />
+<meta property="og:description" content="MiniMax H3 长视频生成笔记
+
+来源：Reddit r/StableDiffusion 帖子及社区讨论整理
+日期：2026-08-12
+原帖：Long-form videos (1 min&#43;) are very possible with MiniMax H3
+
+一、MiniMax H3 模型概述
+MiniMax H3（又名 Hailuo 3.0 / Hailuo 03）是 MiniMax 于 2026年7月31日发布的通用多模态生成模型。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluespace.eu.org/post/aigc/minimax-h3-%E9%95%BF%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E7%AC%94%E8%AE%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-08-12T16:23:34+08:00" />
+<meta property="article:modified_time" content="2026-08-12T16:23:34+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MiniMax-H3-长视频生成笔记"/>
+<meta name="twitter:description" content="MiniMax H3 长视频生成笔记
+
+来源：Reddit r/StableDiffusion 帖子及社区讨论整理
+日期：2026-08-12
+原帖：Long-form videos (1 min&#43;) are very possible with MiniMax H3
+
+一、MiniMax H3 模型概述
+MiniMax H3（又名 Hailuo 3.0 / Hailuo 03）是 MiniMax 于 2026年7月31日发布的通用多模态生成模型。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://bluespace.eu.org/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "MiniMax-H3-长视频生成笔记",
+      "item": "https://bluespace.eu.org/post/aigc/minimax-h3-%E9%95%BF%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E7%AC%94%E8%AE%B0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MiniMax-H3-长视频生成笔记",
+  "name": "MiniMax-H3-长视频生成笔记",
+  "description": "MiniMax H3 长视频生成笔记 来源：Reddit r/StableDiffusion 帖子及社区讨论整理 日期：2026-08-12 原帖：Long-form videos (1 min+) are very possible with MiniMax H3\n一、MiniMax H3 模型概述 MiniMax H3（又名 Hailuo 3.0 / Hailuo 03）是 MiniMax 于 2026年7月31日发布的通用多模态生成模型。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "MiniMax H3 长视频生成笔记 来源：Reddit r/StableDiffusion 帖子及社区讨论整理 日期：2026-08-12 原帖：Long-form videos (1 min+) are very possible with MiniMax H3\n一、MiniMax H3 模型概述 MiniMax H3（又名 Hailuo 3.0 / Hailuo 03）是 MiniMax 于 2026年7月31日发布的通用多模态生成模型。\n核心特性 特性 规格 单次生成时长 4~15 秒（默认 8 秒） 分辨率 最高 2K（原生 768px 短边，上限 768×1344，32 的倍数） 帧率 24 fps 音频 原生立体声（语音+音效+音乐，单次前向传播同步生成） 参考输入 最多 9 张参考图 + 3 段参考视频 + 3 段参考音频 帧网格 17k+5 帧/块（duration 按 17 帧粒度对齐） 开源许可 MiniMax Community License（年收入 \u003c $20M 组织可商用，需署名） 排行榜 Artificial Analysis：视频编辑 #1、T2V #2、I2V #3 技术架构 Contextual Omni Representation：统一理解文本、图像、视频、音频 H3-VAE：视频变分自编码器 H3-Omni Transformer：全模态 Transformer 主干 In-Context Regeneration：上下文内再生成 三种生成模式 T2V (Text-to-Video / FL2VA) — 纯文本生成视频 I2V (Image-to-Video / FL2VA) — 首帧/尾帧条件生成 R2V (Reference-to-Video / Ref2VA) — 多参考（图+视频+音频）生成 ⚠️ R2V 使用 ref2va 权重，与 T2V/I2V 的 fl2va 权重不同。\n二、为什么能做长视频？ H3 单次上限只有 15 秒，API 没有 extend 参数。长视频的核心思路是链式拼接（Chaining）：将上一段的末尾帧/潜在表示传给下一段作为起始条件。\n关键发现 H3 在单次 15 秒生成中支持多镜头（multi-shot），用时间码分割镜头 社区已实现 1 分钟以上的连贯视频 进阶方案甚至可以做到** 2 小时长片** 三、长视频生成方案（由简到难） 方案 1：手动链式拼接（FFmpeg + I2V） 原理：提取上一段最后一帧 → 作为下一段的首帧 → 循环\n# 提取最后一带（近似末尾帧） ffmpeg -sseof -0.08 -i generation-1.mp4 -frames:v 1 -q:v 2 handoff-frame-01.jpg 流程：\n用 T2V 或 I2V 生成第一段（15s） FFmpeg 提取末尾帧 用 I2V 模式，将该帧作为 first_frame 生成下一段 需要换镜头角度时，切换到 R2V 模式 用硬切（hard cut）拼接所有片段 优点：简单直接，无需额外插件 缺点：接缝处可能有跳变、色彩偏移\n方案 2：ComfyUI 多镜头工作流（Storyboard / 首尾帧连接） 原理：在 ComfyUI 中用 Storyboard 工作流，将多组首尾帧串联\n关键组件：\nMiniMaxH3ImageToVideo 节点连接 first_frame 和 last_frame 每段独立生成后自动合并为一个完整视频 可设置每段 5~15 秒不等 社区资源：\njoeygambino/MiniMax-H3-Multishot-Workflow — 无缝链接工作流（v2.0），渲染多镜头场景为一个连续镜头 ComfyUI 0.30.0+ 内置 Storyboard 模板 方案 3：H3 Motion Context 插件（推荐方案） 这是目前社区公认最好的长视频方案。\nH3 Motion Context v0.2.0 原理：利用 H3 可以在时间坐标上\"钉住\"帧并在每个采样步重新注入的能力 突破：解除了 ComfyUI 原本只允许首帧/尾帧的限制，支持任意位置钉帧 音频延续：携带上一段的音频上下文，下一段继续相同的音频而非重新合成 Latent 直通模式：context_latent 直接从上一段的 latent 中切片，跳过解码→缩放→VAE 编码，无色彩偏移 上下文窗口：支持 5、22、39、56 帧的上下文长度 兼容 R2V：Ref2VA 图可以保留自己的图/视频/音频参考，同时启用链式延续 推荐设置：\ncontext_length: 22 encode_mode: video anchor_mode: head audio_context_length: 22 Loop Trim: match_tail=true Spectrum: off ComfyUI-MiniMaxH3-Contex-Loop（ethanfel） 更进一步的自动化循环方案：\nPlan → Loop Start → Current Shot → H3 条件化 ↓ Contex Loop Context → 采样 → 解码 → Loop Trim ↓ Segment + Checkpoint → Review Gate → Loop End ──↺ ↓ Loop End manifest → Assemble Scene Plan：用 JSON 可视化编辑器编排场景 Review Gate：每段生成后可审查、重试 自动拼接：ffmpeg 合并所有片段 PNG 序列导出：无损导出完整帧序列 元数据保留：每段保留 prompt、seed、checkpoint Scene Plan 示例：\n{ \"prompt_prefix\": \"保持相同的表演者、服装和视觉风格。\", \"defaults\": { \"duration_seconds\": 15, \"steps\": 20 }, \"shots\": [ { \"id\": \"intro\", \"prompt\": \"在电梯里的器乐开场。\" }, { \"id\": \"street\", \"prompt\": \"继续走到外面的雨中。\" } ] } 方案 4：R2V 参考视频续拍（低 VRAM 友好） 原理：用上一段视频的最后几帧作为 R2V 的视频参考\n仅使用前一段的最后 5 帧作为视频参考 大幅降低显存占用（8GB GPU 可用） 配合 Frame Load Cap 和 Skip First Frames 控制 四、Prompt 编写指南 结构化 Prompt（官方推荐） SHOT 1 (0-5s): 全景锁定，蒸汽升腾，厨师将汤勺浸入黑色碗中，雨水从雨棚边缘滴落。 SHOT 2 (5-10s): 切至特写，汤勺突破汤面，金色油脂旋转，葱花缓慢飘落。 SHOT 3 (10-15s): 切至中景，厨师直视镜头，用日语疲惫微笑说：「一杯，请慢用」。 要点 先描述整体场景（地点、角色、事件），再用时间码分镜头 镜头+摄像机+音频写在同一个 prompt 块中 对话用 [语言+声音描述] 文本 格式 音效显式写出（SFX: 雨声、脚步声…） 音乐显式标注（music: 轻柔钢琴…）或写 no music R2V 模式必须显式分配参考标签（如 , ） 实用技巧 先用 LLM 扩写：把简单想法喂给 GPT/Claude，让 LLM 按 H3 官方指南格式扩写为详细分镜 prompt 先低分辨率预览：0.6 MP 5秒约 3.5~4 分钟；确认效果后再高分辨率正式生成 时间码格式：At 00:03.500, the camera cuts to... 五、硬件需求与性能参考 显存占用 配置 说明 8 GB VRAM R2V 续拍方案可运行（仅用最后5帧参考） 16 GB VRAM 混合工作流（T2V + I2V + R2V）可行 24 GB VRAM (3090/4090) 1 MP 生成，舒适运行 5090 最佳体验 生成速度参考（RTX 3090） 分辨率 时长 耗时 0.6 MP 5 秒 ~3.5-4 分钟 0.6 MP 10 秒 ~7.5 分钟 1 MP 14 秒 ~40 分钟 加速方案 Sage Attention：注意力加速 Spectrum Node：H3 专用优化节点 EasyCache：缓存加速 nvfp4 / GGUF 量化：降低显存占用 fp16 原生（V100 等）：比默认快约 11 倍，修复黑帧问题 8 步 Turbo 模式：0.4 MP 约 3-4 分钟/段（5060Ti 16GB 实测） 上采样 RTX Super Resolution：NVIDIA 硬件上采样 SeedVR2.5：AI 视频上采样 Topaz Video：专业视频增强 LTX Upscale：LTX 模型上采样工作流 策略建议：先低分辨率生成所有片段 → 最后统一上采样（节省大量时间） 六、长视频最佳实践 1. 先规划后生成 编写完整的 Scene Plan（场景表） 每段 prompt 用前缀共享视觉语言（角色、服装、风格） 用 prompt_prefix 统一描述，每段只写变化部分 2. 分辨率策略 草稿阶段：全部用低分辨率（0.6 MP）生成 审查：用 preview_first_shot 先看第一段效果 终稿：确认后再高分辨率重出，或统一上采样 3. 接缝处理 优先使用 context_latent（Latent 直通）模式消除可见接缝 match_tail=true 自动去除重复的开头上下文 必要时在视频编辑器中做转场过渡 4. 音频连续性 H3 生成音画合一，链式拼接时音频也需要延续 audio_context_length 设为与 context_length 相同 长链拼接可能丢失高频细节，音乐视频建议用 source_track 5. 一致性维护 R2V 模式 + 参考图片锁定角色外观 ref_image_size=max 保持 2048px 短边以增强身份保真度 跨段使用相同的 seed + prompt_prefix 七、社区资源索引 资源 链接 官方博客 minimax.io/blog/minimax-h3 HuggingFace 详解 huggingface.co/blog/ResterChed/minimax-h3-hailuo-3-0 ComfyUI 官方教程 docs.comfy.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-h3 H3 Motion Context comfyui-wiki.com/en/news/2026-08-09-h3-motion-context-v0-2-0 Contex Loop 插件 github.com/ethanfel/ComfyUI-MiniMaxH3-Contex-Loop Multishot Workflow huggingface.co/joeygambino/MiniMax-H3-Multishot-Workflow Prompt Guide (LLM) github.com/ethanfel/ComfyUI-MiniMax-H3-Guide 视频长度深度分析 atlascloud.ai/blog/tips/minimax-h3-video-length Prompt 实战指南 xhinker.medium.com - MiniMax H3 Practical Prompt Guide 视频教程 MiniMax H3 Infinite Video: Make 2-Hour Movies in ComfyUI (SECourses) How To Use MiniMax H3 in ComfyUI (MDMZ) MiniMax H3 StoryBoard Workflow ComfyUI MiniMax H3 Workflow Examples (Ep29) MiniMax H3 V2V + I2V on 8GB VRAM 八、总结 MiniMax H3 虽然单次生成上限为 15 秒，但通过社区开发的多种链式拼接技术，完全可以实现 1 分钟甚至数小时的连贯长视频。核心要点：\nH3 Motion Context / Contex Loop 是当前最佳方案（Latent 直通 + 音频延续） Prompt 结构化编写是质量基础（分镜头 + 时间码 + 音效描述） 低分辨率预览 → 高分辨率出片 / 统一上采样是效率关键 R2V 参考模式是保持跨段一致性的重要工具 开源权重 + ComfyUI 本地运行，零成本（硬件除外） ",
+  "wordCount" : "2887",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-08-12T16:23:34+08:00",
+  "dateModified": "2026-08-12T16:23:34+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "新人类"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bluespace.eu.org/post/aigc/minimax-h3-%E9%95%BF%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E7%AC%94%E8%AE%B0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "蓝色空间号",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluespace.eu.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bluespace.eu.org/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/post/">文章</a></div>
+    <h1 class="post-title entry-hint-parent">
+      MiniMax-H3-长视频生成笔记
+    </h1>
+    <div class="post-meta"><span title='2026-08-12 16:23:34 +0800 CST'>2026-08-12</span>&nbsp;·&nbsp;<span>6 min</span>&nbsp;·&nbsp;<span>2887 words</span>&nbsp;·&nbsp;<span>新人类</span>
+
+</div>
+  </header><figure class="entry-cover">
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MiniMax-H3-长视频生成笔记" style="width:100%;height:auto;display:block">
+<rect width="720" height="300" fill="#131a2b"/><circle cx="491" cy="110" r="15" fill="#89c2ff" fill-opacity="0.10"/><circle cx="664" cy="192" r="22" fill="#89c2ff" fill-opacity="0.10"/><circle cx="117" cy="274" r="29" fill="#89c2ff" fill-opacity="0.10"/><circle cx="290" cy="56" r="36" fill="#89c2ff" fill-opacity="0.10"/><circle cx="463" cy="138" r="43" fill="#89c2ff" fill-opacity="0.10"/><circle cx="636" cy="220" r="50" fill="#89c2ff" fill-opacity="0.10"/><circle cx="89" cy="2" r="57" fill="#89c2ff" fill-opacity="0.10"/><circle cx="262" cy="84" r="8" fill="#89c2ff" fill-opacity="0.10"/><circle cx="435" cy="166" r="15" fill="#89c2ff" fill-opacity="0.10"/><circle cx="608" cy="248" r="22" fill="#89c2ff" fill-opacity="0.10"/><circle cx="61" cy="30" r="29" fill="#89c2ff" fill-opacity="0.10"/><circle cx="234" cy="112" r="36" fill="#89c2ff" fill-opacity="0.10"/><circle cx="407" cy="194" r="43" fill="#89c2ff" fill-opacity="0.10"/><circle cx="580" cy="276" r="50" fill="#89c2ff" fill-opacity="0.10"/><circle cx="33" cy="58" r="57" fill="#89c2ff" fill-opacity="0.10"/><circle cx="206" cy="140" r="8" fill="#89c2ff" fill-opacity="0.10"/><text x="32" y="268" font-size="64" font-weight="800" letter-spacing="7" fill="none" stroke="#89c2ff" stroke-opacity="0.35" stroke-width="1.5" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">AIGC</text>
+<text x="692" y="270" text-anchor="end" font-size="20" font-weight="600" letter-spacing="6" fill="#89c2ff" fill-opacity="0.55" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">AIGC</text>
+</svg>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一minimax-h3-模型概述">一、MiniMax H3 模型概述</a>
+      <ul>
+        <li><a href="#核心特性">核心特性</a></li>
+        <li><a href="#技术架构">技术架构</a></li>
+        <li><a href="#三种生成模式">三种生成模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#二为什么能做长视频">二、为什么能做长视频？</a>
+      <ul>
+        <li><a href="#关键发现">关键发现</a></li>
+      </ul>
+    </li>
+    <li><a href="#三长视频生成方案由简到难">三、长视频生成方案（由简到难）</a>
+      <ul>
+        <li><a href="#方案-1手动链式拼接ffmpeg--i2v">方案 1：手动链式拼接（FFmpeg + I2V）</a></li>
+        <li><a href="#方案-2comfyui-多镜头工作流storyboard--首尾帧连接">方案 2：ComfyUI 多镜头工作流（Storyboard / 首尾帧连接）</a></li>
+        <li><a href="#方案-3h3-motion-context-插件推荐方案">方案 3：H3 Motion Context 插件（推荐方案）</a></li>
+        <li><a href="#方案-4r2v-参考视频续拍低-vram-友好">方案 4：R2V 参考视频续拍（低 VRAM 友好）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四prompt-编写指南">四、Prompt 编写指南</a>
+      <ul>
+        <li><a href="#结构化-prompt官方推荐">结构化 Prompt（官方推荐）</a></li>
+        <li><a href="#要点">要点</a></li>
+        <li><a href="#实用技巧">实用技巧</a></li>
+      </ul>
+    </li>
+    <li><a href="#五硬件需求与性能参考">五、硬件需求与性能参考</a>
+      <ul>
+        <li><a href="#显存占用">显存占用</a></li>
+        <li><a href="#生成速度参考rtx-3090">生成速度参考（RTX 3090）</a></li>
+        <li><a href="#加速方案">加速方案</a></li>
+        <li><a href="#上采样">上采样</a></li>
+      </ul>
+    </li>
+    <li><a href="#六长视频最佳实践">六、长视频最佳实践</a>
+      <ul>
+        <li><a href="#1-先规划后生成">1. 先规划后生成</a></li>
+        <li><a href="#2-分辨率策略">2. 分辨率策略</a></li>
+        <li><a href="#3-接缝处理">3. 接缝处理</a></li>
+        <li><a href="#4-音频连续性">4. 音频连续性</a></li>
+        <li><a href="#5-一致性维护">5. 一致性维护</a></li>
+      </ul>
+    </li>
+    <li><a href="#七社区资源索引">七、社区资源索引</a>
+      <ul>
+        <li><a href="#视频教程">视频教程</a></li>
+      </ul>
+    </li>
+    <li><a href="#八总结">八、总结</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="minimax-h3-长视频生成笔记">MiniMax H3 长视频生成笔记<a hidden class="anchor" aria-hidden="true" href="#minimax-h3-长视频生成笔记">#</a></h1>
+<blockquote>
+<p>来源：Reddit r/StableDiffusion 帖子及社区讨论整理
+日期：2026-08-12
+原帖：<a href="https://www.reddit.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/">Long-form videos (1 min+) are very possible with MiniMax H3</a></p></blockquote>
+<hr>
+<h2 id="一minimax-h3-模型概述">一、MiniMax H3 模型概述<a hidden class="anchor" aria-hidden="true" href="#一minimax-h3-模型概述">#</a></h2>
+<p>MiniMax H3（又名 Hailuo 3.0 / Hailuo 03）是 MiniMax 于 2026年7月31日发布的<strong>通用多模态生成模型</strong>。</p>
+<h3 id="核心特性">核心特性<a hidden class="anchor" aria-hidden="true" href="#核心特性">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>规格</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>单次生成时长</strong></td>
+          <td>4~15 秒（默认 8 秒）</td>
+      </tr>
+      <tr>
+          <td><strong>分辨率</strong></td>
+          <td>最高 2K（原生 768px 短边，上限 768×1344，32 的倍数）</td>
+      </tr>
+      <tr>
+          <td><strong>帧率</strong></td>
+          <td>24 fps</td>
+      </tr>
+      <tr>
+          <td><strong>音频</strong></td>
+          <td>原生立体声（语音+音效+音乐，单次前向传播同步生成）</td>
+      </tr>
+      <tr>
+          <td><strong>参考输入</strong></td>
+          <td>最多 9 张参考图 + 3 段参考视频 + 3 段参考音频</td>
+      </tr>
+      <tr>
+          <td><strong>帧网格</strong></td>
+          <td>17k+5 帧/块（duration 按 17 帧粒度对齐）</td>
+      </tr>
+      <tr>
+          <td><strong>开源许可</strong></td>
+          <td>MiniMax Community License（年收入 &lt; $20M 组织可商用，需署名）</td>
+      </tr>
+      <tr>
+          <td><strong>排行榜</strong></td>
+          <td>Artificial Analysis：视频编辑 #1、T2V #2、I2V #3</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="技术架构">技术架构<a hidden class="anchor" aria-hidden="true" href="#技术架构">#</a></h3>
+<ul>
+<li><strong>Contextual Omni Representation</strong>：统一理解文本、图像、视频、音频</li>
+<li><strong>H3-VAE</strong>：视频变分自编码器</li>
+<li><strong>H3-Omni Transformer</strong>：全模态 Transformer 主干</li>
+<li><strong>In-Context Regeneration</strong>：上下文内再生成</li>
+</ul>
+<h3 id="三种生成模式">三种生成模式<a hidden class="anchor" aria-hidden="true" href="#三种生成模式">#</a></h3>
+<ol>
+<li><strong>T2V (Text-to-Video / FL2VA)</strong> — 纯文本生成视频</li>
+<li><strong>I2V (Image-to-Video / FL2VA)</strong> — 首帧/尾帧条件生成</li>
+<li><strong>R2V (Reference-to-Video / Ref2VA)</strong> — 多参考（图+视频+音频）生成</li>
+</ol>
+<blockquote>
+<p>⚠️ R2V 使用 <code>ref2va</code> 权重，与 T2V/I2V 的 <code>fl2va</code> 权重不同。</p></blockquote>
+<hr>
+<h2 id="二为什么能做长视频">二、为什么能做长视频？<a hidden class="anchor" aria-hidden="true" href="#二为什么能做长视频">#</a></h2>
+<p>H3 <strong>单次上限只有 15 秒</strong>，API 没有 extend 参数。长视频的核心思路是<strong>链式拼接（Chaining）</strong>：将上一段的末尾帧/潜在表示传给下一段作为起始条件。</p>
+<h3 id="关键发现">关键发现<a hidden class="anchor" aria-hidden="true" href="#关键发现">#</a></h3>
+<ul>
+<li>H3 在单次 15 秒生成中<strong>支持多镜头（multi-shot）</strong>，用时间码分割镜头</li>
+<li>社区已实现 <strong>1 分钟以上</strong>的连贯视频</li>
+<li>进阶方案甚至可以做到** 2 小时长片**</li>
+</ul>
+<hr>
+<h2 id="三长视频生成方案由简到难">三、长视频生成方案（由简到难）<a hidden class="anchor" aria-hidden="true" href="#三长视频生成方案由简到难">#</a></h2>
+<h3 id="方案-1手动链式拼接ffmpeg--i2v">方案 1：手动链式拼接（FFmpeg + I2V）<a hidden class="anchor" aria-hidden="true" href="#方案-1手动链式拼接ffmpeg--i2v">#</a></h3>
+<p><strong>原理</strong>：提取上一段最后一帧 → 作为下一段的首帧 → 循环</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 提取最后一带（近似末尾帧）</span>
+</span></span><span class="line"><span class="cl">ffmpeg -sseof -0.08 -i generation-1.mp4 -frames:v <span class="m">1</span> -q:v <span class="m">2</span> handoff-frame-01.jpg
+</span></span></code></pre></div><p><strong>流程</strong>：</p>
+<ol>
+<li>用 T2V 或 I2V 生成第一段（15s）</li>
+<li>FFmpeg 提取末尾帧</li>
+<li>用 I2V 模式，将该帧作为 <code>first_frame</code> 生成下一段</li>
+<li>需要换镜头角度时，切换到 R2V 模式</li>
+<li>用硬切（hard cut）拼接所有片段</li>
+</ol>
+<p><strong>优点</strong>：简单直接，无需额外插件
+<strong>缺点</strong>：接缝处可能有跳变、色彩偏移</p>
+<h3 id="方案-2comfyui-多镜头工作流storyboard--首尾帧连接">方案 2：ComfyUI 多镜头工作流（Storyboard / 首尾帧连接）<a hidden class="anchor" aria-hidden="true" href="#方案-2comfyui-多镜头工作流storyboard--首尾帧连接">#</a></h3>
+<p><strong>原理</strong>：在 ComfyUI 中用 Storyboard 工作流，将多组首尾帧串联</p>
+<p><strong>关键组件</strong>：</p>
+<ul>
+<li><code>MiniMaxH3ImageToVideo</code> 节点连接 <code>first_frame</code> 和 <code>last_frame</code></li>
+<li>每段独立生成后自动合并为一个完整视频</li>
+<li>可设置每段 5~15 秒不等</li>
+</ul>
+<p><strong>社区资源</strong>：</p>
+<ul>
+<li><a href="https://huggingface.co/joeygambino/MiniMax-H3-Multishot-Workflow">joeygambino/MiniMax-H3-Multishot-Workflow</a> — 无缝链接工作流（v2.0），渲染多镜头场景为一个连续镜头</li>
+<li>ComfyUI 0.30.0+ 内置 Storyboard 模板</li>
+</ul>
+<h3 id="方案-3h3-motion-context-插件推荐方案">方案 3：H3 Motion Context 插件（推荐方案）<a hidden class="anchor" aria-hidden="true" href="#方案-3h3-motion-context-插件推荐方案">#</a></h3>
+<p><strong>这是目前社区公认最好的长视频方案。</strong></p>
+<h4 id="h3-motion-context-v020">H3 Motion Context v0.2.0<a hidden class="anchor" aria-hidden="true" href="#h3-motion-context-v020">#</a></h4>
+<ul>
+<li><strong>原理</strong>：利用 H3 可以在时间坐标上&quot;钉住&quot;帧并在每个采样步重新注入的能力</li>
+<li><strong>突破</strong>：解除了 ComfyUI 原本只允许首帧/尾帧的限制，支持任意位置钉帧</li>
+<li><strong>音频延续</strong>：携带上一段的音频上下文，下一段继续相同的音频而非重新合成</li>
+<li><strong>Latent 直通模式</strong>：<code>context_latent</code> 直接从上一段的 latent 中切片，跳过解码→缩放→VAE 编码，无色彩偏移</li>
+<li><strong>上下文窗口</strong>：支持 5、22、39、56 帧的上下文长度</li>
+<li><strong>兼容 R2V</strong>：Ref2VA 图可以保留自己的图/视频/音频参考，同时启用链式延续</li>
+</ul>
+<p><strong>推荐设置</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">context_length: 22
+</span></span><span class="line"><span class="cl">encode_mode: video
+</span></span><span class="line"><span class="cl">anchor_mode: head
+</span></span><span class="line"><span class="cl">audio_context_length: 22
+</span></span><span class="line"><span class="cl">Loop Trim: match_tail=true
+</span></span><span class="line"><span class="cl">Spectrum: off
+</span></span></code></pre></div><h4 id="comfyui-minimaxh3-contex-loopethanfel">ComfyUI-MiniMaxH3-Contex-Loop（ethanfel）<a hidden class="anchor" aria-hidden="true" href="#comfyui-minimaxh3-contex-loopethanfel">#</a></h4>
+<p>更进一步的自动化循环方案：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Plan → Loop Start → Current Shot → H3 条件化
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">Contex Loop Context → 采样 → 解码 → Loop Trim
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">Segment + Checkpoint → Review Gate → Loop End ──↺
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">Loop End manifest → Assemble
+</span></span></code></pre></div><ul>
+<li><strong>Scene Plan</strong>：用 JSON 可视化编辑器编排场景</li>
+<li><strong>Review Gate</strong>：每段生成后可审查、重试</li>
+<li><strong>自动拼接</strong>：<code>ffmpeg</code> 合并所有片段</li>
+<li><strong>PNG 序列导出</strong>：无损导出完整帧序列</li>
+<li><strong>元数据保留</strong>：每段保留 prompt、seed、checkpoint</li>
+</ul>
+<p><strong>Scene Plan 示例</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;prompt_prefix&#34;</span><span class="p">:</span> <span class="s2">&#34;保持相同的表演者、服装和视觉风格。&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;defaults&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;duration_seconds&#34;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;steps&#34;</span><span class="p">:</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;shots&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;intro&#34;</span><span class="p">,</span> <span class="nt">&#34;prompt&#34;</span><span class="p">:</span> <span class="s2">&#34;在电梯里的器乐开场。&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;street&#34;</span><span class="p">,</span> <span class="nt">&#34;prompt&#34;</span><span class="p">:</span> <span class="s2">&#34;继续走到外面的雨中。&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="方案-4r2v-参考视频续拍低-vram-友好">方案 4：R2V 参考视频续拍（低 VRAM 友好）<a hidden class="anchor" aria-hidden="true" href="#方案-4r2v-参考视频续拍低-vram-友好">#</a></h3>
+<p><strong>原理</strong>：用上一段视频的最后几帧作为 R2V 的视频参考</p>
+<ul>
+<li>仅使用前一段的<strong>最后 5 帧</strong>作为视频参考</li>
+<li>大幅降低显存占用（8GB GPU 可用）</li>
+<li>配合 <code>Frame Load Cap</code> 和 <code>Skip First Frames</code> 控制</li>
+</ul>
+<hr>
+<h2 id="四prompt-编写指南">四、Prompt 编写指南<a hidden class="anchor" aria-hidden="true" href="#四prompt-编写指南">#</a></h2>
+<h3 id="结构化-prompt官方推荐">结构化 Prompt（官方推荐）<a hidden class="anchor" aria-hidden="true" href="#结构化-prompt官方推荐">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SHOT 1 (0-5s): 全景锁定，蒸汽升腾，厨师将汤勺浸入黑色碗中，雨水从雨棚边缘滴落。
+</span></span><span class="line"><span class="cl">SHOT 2 (5-10s): 切至特写，汤勺突破汤面，金色油脂旋转，葱花缓慢飘落。
+</span></span><span class="line"><span class="cl">SHOT 3 (10-15s): 切至中景，厨师直视镜头，用日语疲惫微笑说：「一杯，请慢用」。
+</span></span></code></pre></div><h3 id="要点">要点<a hidden class="anchor" aria-hidden="true" href="#要点">#</a></h3>
+<ol>
+<li><strong>先描述整体场景</strong>（地点、角色、事件），再用时间码分镜头</li>
+<li><strong>镜头+摄像机+音频</strong>写在同一个 prompt 块中</li>
+<li><strong>对话</strong>用 <code>&lt;d&gt;[语言+声音描述] 文本&lt;/d&gt;</code> 格式</li>
+<li><strong>音效</strong>显式写出（SFX: 雨声、脚步声&hellip;）</li>
+<li><strong>音乐</strong>显式标注（music: 轻柔钢琴&hellip;）或写 <code>no music</code></li>
+<li><strong>R2V 模式</strong>必须显式分配参考标签（如 <code>&lt;Subject 1&gt;</code>, <code>&lt;Audio 1&gt;</code>）</li>
+</ol>
+<h3 id="实用技巧">实用技巧<a hidden class="anchor" aria-hidden="true" href="#实用技巧">#</a></h3>
+<ul>
+<li><strong>先用 LLM 扩写</strong>：把简单想法喂给 GPT/Claude，让 LLM 按 H3 官方指南格式扩写为详细分镜 prompt</li>
+<li><strong>先低分辨率预览</strong>：0.6 MP 5秒约 3.5~4 分钟；确认效果后再高分辨率正式生成</li>
+<li><strong>时间码格式</strong>：<code>At 00:03.500, the camera cuts to...</code></li>
+</ul>
+<hr>
+<h2 id="五硬件需求与性能参考">五、硬件需求与性能参考<a hidden class="anchor" aria-hidden="true" href="#五硬件需求与性能参考">#</a></h2>
+<h3 id="显存占用">显存占用<a hidden class="anchor" aria-hidden="true" href="#显存占用">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>配置</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>8 GB VRAM</strong></td>
+          <td>R2V 续拍方案可运行（仅用最后5帧参考）</td>
+      </tr>
+      <tr>
+          <td><strong>16 GB VRAM</strong></td>
+          <td>混合工作流（T2V + I2V + R2V）可行</td>
+      </tr>
+      <tr>
+          <td><strong>24 GB VRAM (3090/4090)</strong></td>
+          <td>1 MP 生成，舒适运行</td>
+      </tr>
+      <tr>
+          <td><strong>5090</strong></td>
+          <td>最佳体验</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="生成速度参考rtx-3090">生成速度参考（RTX 3090）<a hidden class="anchor" aria-hidden="true" href="#生成速度参考rtx-3090">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>分辨率</th>
+          <th>时长</th>
+          <th>耗时</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0.6 MP</td>
+          <td>5 秒</td>
+          <td>~3.5-4 分钟</td>
+      </tr>
+      <tr>
+          <td>0.6 MP</td>
+          <td>10 秒</td>
+          <td>~7.5 分钟</td>
+      </tr>
+      <tr>
+          <td>1 MP</td>
+          <td>14 秒</td>
+          <td>~40 分钟</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="加速方案">加速方案<a hidden class="anchor" aria-hidden="true" href="#加速方案">#</a></h3>
+<ul>
+<li><strong>Sage Attention</strong>：注意力加速</li>
+<li><strong>Spectrum Node</strong>：H3 专用优化节点</li>
+<li><strong>EasyCache</strong>：缓存加速</li>
+<li><strong>nvfp4 / GGUF 量化</strong>：降低显存占用</li>
+<li><strong>fp16 原生</strong>（V100 等）：比默认快约 11 倍，修复黑帧问题</li>
+<li><strong>8 步 Turbo 模式</strong>：0.4 MP 约 3-4 分钟/段（5060Ti 16GB 实测）</li>
+</ul>
+<h3 id="上采样">上采样<a hidden class="anchor" aria-hidden="true" href="#上采样">#</a></h3>
+<ul>
+<li><strong>RTX Super Resolution</strong>：NVIDIA 硬件上采样</li>
+<li><strong>SeedVR2.5</strong>：AI 视频上采样</li>
+<li><strong>Topaz Video</strong>：专业视频增强</li>
+<li><strong>LTX Upscale</strong>：LTX 模型上采样工作流</li>
+<li><strong>策略建议</strong>：先低分辨率生成所有片段 → 最后统一上采样（节省大量时间）</li>
+</ul>
+<hr>
+<h2 id="六长视频最佳实践">六、长视频最佳实践<a hidden class="anchor" aria-hidden="true" href="#六长视频最佳实践">#</a></h2>
+<h3 id="1-先规划后生成">1. 先规划后生成<a hidden class="anchor" aria-hidden="true" href="#1-先规划后生成">#</a></h3>
+<ul>
+<li>编写完整的 Scene Plan（场景表）</li>
+<li>每段 prompt 用前缀共享视觉语言（角色、服装、风格）</li>
+<li>用 <code>prompt_prefix</code> 统一描述，每段只写变化部分</li>
+</ul>
+<h3 id="2-分辨率策略">2. 分辨率策略<a hidden class="anchor" aria-hidden="true" href="#2-分辨率策略">#</a></h3>
+<ul>
+<li><strong>草稿阶段</strong>：全部用低分辨率（0.6 MP）生成</li>
+<li><strong>审查</strong>：用 <code>preview_first_shot</code> 先看第一段效果</li>
+<li><strong>终稿</strong>：确认后再高分辨率重出，或统一上采样</li>
+</ul>
+<h3 id="3-接缝处理">3. 接缝处理<a hidden class="anchor" aria-hidden="true" href="#3-接缝处理">#</a></h3>
+<ul>
+<li>优先使用 <code>context_latent</code>（Latent 直通）模式消除可见接缝</li>
+<li><code>match_tail=true</code> 自动去除重复的开头上下文</li>
+<li>必要时在视频编辑器中做转场过渡</li>
+</ul>
+<h3 id="4-音频连续性">4. 音频连续性<a hidden class="anchor" aria-hidden="true" href="#4-音频连续性">#</a></h3>
+<ul>
+<li>H3 生成音画合一，链式拼接时音频也需要延续</li>
+<li><code>audio_context_length</code> 设为与 <code>context_length</code> 相同</li>
+<li>长链拼接可能丢失高频细节，音乐视频建议用 <code>source_track</code></li>
+</ul>
+<h3 id="5-一致性维护">5. 一致性维护<a hidden class="anchor" aria-hidden="true" href="#5-一致性维护">#</a></h3>
+<ul>
+<li>R2V 模式 + 参考图片锁定角色外观</li>
+<li><code>ref_image_size=max</code> 保持 2048px 短边以增强身份保真度</li>
+<li>跨段使用相同的 seed + prompt_prefix</li>
+</ul>
+<hr>
+<h2 id="七社区资源索引">七、社区资源索引<a hidden class="anchor" aria-hidden="true" href="#七社区资源索引">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>资源</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>官方博客</strong></td>
+          <td><a href="https://www.minimax.io/blog/minimax-h3">minimax.io/blog/minimax-h3</a></td>
+      </tr>
+      <tr>
+          <td><strong>HuggingFace 详解</strong></td>
+          <td><a href="https://huggingface.co/blog/ResterChed/minimax-h3-hailuo-3-0">huggingface.co/blog/ResterChed/minimax-h3-hailuo-3-0</a></td>
+      </tr>
+      <tr>
+          <td><strong>ComfyUI 官方教程</strong></td>
+          <td><a href="https://docs.comfy.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-h3">docs.comfy.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-h3</a></td>
+      </tr>
+      <tr>
+          <td><strong>H3 Motion Context</strong></td>
+          <td><a href="https://comfyui-wiki.com/en/news/2026-08-09-h3-motion-context-v0-2-0">comfyui-wiki.com/en/news/2026-08-09-h3-motion-context-v0-2-0</a></td>
+      </tr>
+      <tr>
+          <td><strong>Contex Loop 插件</strong></td>
+          <td><a href="https://github.com/ethanfel/ComfyUI-MiniMaxH3-Contex-Loop">github.com/ethanfel/ComfyUI-MiniMaxH3-Contex-Loop</a></td>
+      </tr>
+      <tr>
+          <td><strong>Multishot Workflow</strong></td>
+          <td><a href="https://huggingface.co/joeygambino/MiniMax-H3-Multishot-Workflow">huggingface.co/joeygambino/MiniMax-H3-Multishot-Workflow</a></td>
+      </tr>
+      <tr>
+          <td><strong>Prompt Guide (LLM)</strong></td>
+          <td><a href="https://github.com/ethanfel/ComfyUI-MiniMax-H3-Guide">github.com/ethanfel/ComfyUI-MiniMax-H3-Guide</a></td>
+      </tr>
+      <tr>
+          <td><strong>视频长度深度分析</strong></td>
+          <td><a href="https://www.atlascloud.ai/blog/tips/minimax-h3-video-length">atlascloud.ai/blog/tips/minimax-h3-video-length</a></td>
+      </tr>
+      <tr>
+          <td><strong>Prompt 实战指南</strong></td>
+          <td><a href="https://xhinker.medium.com/minimax-h3-become-the-director-of-any-video-a-practical-prompt-guide-94200a1905a8">xhinker.medium.com - MiniMax H3 Practical Prompt Guide</a></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="视频教程">视频教程<a hidden class="anchor" aria-hidden="true" href="#视频教程">#</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=1580ZDX-60Q">MiniMax H3 Infinite Video: Make 2-Hour Movies in ComfyUI (SECourses)</a></li>
+<li><a href="https://www.youtube.com/watch?v=d_wEd-fZcdg">How To Use MiniMax H3 in ComfyUI (MDMZ)</a></li>
+<li><a href="https://www.youtube.com/watch?v=hoo8qCKDLbU">MiniMax H3 StoryBoard Workflow</a></li>
+<li><a href="https://www.youtube.com/watch?v=267y00jaOUc">ComfyUI MiniMax H3 Workflow Examples (Ep29)</a></li>
+<li><a href="https://www.youtube.com/watch?v=UJTBiqzZYRk">MiniMax H3 V2V + I2V on 8GB VRAM</a></li>
+</ul>
+<hr>
+<h2 id="八总结">八、总结<a hidden class="anchor" aria-hidden="true" href="#八总结">#</a></h2>
+<p>MiniMax H3 虽然单次生成上限为 15 秒，但通过社区开发的多种链式拼接技术，完全可以实现 <strong>1 分钟甚至数小时</strong>的连贯长视频。核心要点：</p>
+<ol>
+<li><strong>H3 Motion Context / Contex Loop 是当前最佳方案</strong>（Latent 直通 + 音频延续）</li>
+<li><strong>Prompt 结构化编写</strong>是质量基础（分镜头 + 时间码 + 音效描述）</li>
+<li><strong>低分辨率预览 → 高分辨率出片 / 统一上采样</strong>是效率关键</li>
+<li><strong>R2V 参考模式</strong>是保持跨段一致性的重要工具</li>
+<li>开源权重 + ComfyUI 本地运行，<strong>零成本</strong>（硬件除外）</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-12%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title">« </span>
+    <br>
+    <span>2026-08-12赛博日记</span>
+  </a>
+  <a class="next" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-08-08%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title"> »</span>
+    <br>
+    <span>2026-08-08赛博日记</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share MiniMax-H3-长视频生成笔记 on x"
+            href="https://x.com/intent/tweet/?text=MiniMax-H3-%e9%95%bf%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e7%ac%94%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2faigc%2fminimax-h3-%25E9%2595%25BF%25E8%25A7%2586%25E9%25A2%2591%25E7%2594%259F%25E6%2588%2590%25E7%25AC%2594%25E8%25AE%25B0%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share MiniMax-H3-长视频生成笔记 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2faigc%2fminimax-h3-%25E9%2595%25BF%25E8%25A7%2586%25E9%25A2%2591%25E7%2594%259F%25E6%2588%2590%25E7%25AC%2594%25E8%25AE%25B0%2f&amp;title=MiniMax-H3-%e9%95%bf%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e7%ac%94%e8%ae%b0&amp;summary=MiniMax-H3-%e9%95%bf%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e7%ac%94%e8%ae%b0&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2faigc%2fminimax-h3-%25E9%2595%25BF%25E8%25A7%2586%25E9%25A2%2591%25E7%2594%259F%25E6%2588%2590%25E7%25AC%2594%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share MiniMax-H3-长视频生成笔记 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2faigc%2fminimax-h3-%25E9%2595%25BF%25E8%25A7%2586%25E9%25A2%2591%25E7%2594%259F%25E6%2588%2590%25E7%25AC%2594%25E8%25AE%25B0%2f&title=MiniMax-H3-%e9%95%bf%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e7%ac%94%e8%ae%b0">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share MiniMax-H3-长视频生成笔记 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2faigc%2fminimax-h3-%25E9%2595%25BF%25E8%25A7%2586%25E9%25A2%2591%25E7%2594%259F%25E6%2588%2590%25E7%25AC%2594%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share MiniMax-H3-长视频生成笔记 on whatsapp"
+            href="https://api.whatsapp.com/send?text=MiniMax-H3-%e9%95%bf%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e7%ac%94%e8%ae%b0%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2faigc%2fminimax-h3-%25E9%2595%25BF%25E8%25A7%2586%25E9%25A2%2591%25E7%2594%259F%25E6%2588%2590%25E7%25AC%2594%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share MiniMax-H3-长视频生成笔记 on telegram"
+            href="https://telegram.me/share/url?text=MiniMax-H3-%e9%95%bf%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e7%ac%94%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2faigc%2fminimax-h3-%25E9%2595%25BF%25E8%25A7%2586%25E9%25A2%2591%25E7%2594%259F%25E6%2588%2590%25E7%25AC%2594%25E8%25AE%25B0%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share MiniMax-H3-长视频生成笔记 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=MiniMax-H3-%e9%95%bf%e8%a7%86%e9%a2%91%e7%94%9f%e6%88%90%e7%ac%94%e8%ae%b0&u=https%3a%2f%2fbluespace.eu.org%2fpost%2faigc%2fminimax-h3-%25E9%2595%25BF%25E8%25A7%2586%25E9%25A2%2591%25E7%2594%259F%25E6%2588%2590%25E7%25AC%2594%25E8%25AE%25B0%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

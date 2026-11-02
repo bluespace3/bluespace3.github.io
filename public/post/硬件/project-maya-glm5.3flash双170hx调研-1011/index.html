@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Project-Maya-GLM5.3Flash双170HX调研-1011 | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="Project Maya（GLM-5.3-Flash 321B）双 170HX 可行性 &#43; 质量调查 — 2026-10-11
+调查对象：https://github.com/mw00/project-maya （Strata 衍生，MIT）
+问题：①双 CMP 170HX 64G 能不能跑 ②质量 vs Qwen3.8-Flash-Next（要证据不要猜想）">
+<meta name="author" content="新人类">
+<link rel="canonical" href="https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/project-maya-glm5.3flash%E5%8F%8C170hx%E8%B0%83%E7%A0%94-1011/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c2189e7d36d72767de292f8b9d897e4a464aa5bc7eb692cda50064f5eb9eeece.css" integrity="sha256-whiefTbXJ2feKS&#43;LnYl&#43;SkZKpbx&#43;tpLNpQBk9eue7s4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://bluespace.eu.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://bluespace.eu.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/project-maya-glm5.3flash%E5%8F%8C170hx%E8%B0%83%E7%A0%94-1011/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:title" content="Project-Maya-GLM5.3Flash双170HX调研-1011" />
+<meta property="og:description" content="Project Maya（GLM-5.3-Flash 321B）双 170HX 可行性 &#43; 质量调查 — 2026-10-11
+调查对象：https://github.com/mw00/project-maya （Strata 衍生，MIT）
+问题：①双 CMP 170HX 64G 能不能跑 ②质量 vs Qwen3.8-Flash-Next（要证据不要猜想）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/project-maya-glm5.3flash%E5%8F%8C170hx%E8%B0%83%E7%A0%94-1011/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-10-11T15:04:23+08:00" />
+<meta property="article:modified_time" content="2026-10-11T15:04:23+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project-Maya-GLM5.3Flash双170HX调研-1011"/>
+<meta name="twitter:description" content="Project Maya（GLM-5.3-Flash 321B）双 170HX 可行性 &#43; 质量调查 — 2026-10-11
+调查对象：https://github.com/mw00/project-maya （Strata 衍生，MIT）
+问题：①双 CMP 170HX 64G 能不能跑 ②质量 vs Qwen3.8-Flash-Next（要证据不要猜想）"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://bluespace.eu.org/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Project-Maya-GLM5.3Flash双170HX调研-1011",
+      "item": "https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/project-maya-glm5.3flash%E5%8F%8C170hx%E8%B0%83%E7%A0%94-1011/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Project-Maya-GLM5.3Flash双170HX调研-1011",
+  "name": "Project-Maya-GLM5.3Flash双170HX调研-1011",
+  "description": "Project Maya（GLM-5.3-Flash 321B）双 170HX 可行性 + 质量调查 — 2026-10-11 调查对象：https://github.com/mw00/project-maya （Strata 衍生，MIT） 问题：①双 CMP 170HX 64G 能不能跑 ②质量 vs Qwen3.8-Flash-Next（要证据不要猜想）\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Project Maya（GLM-5.3-Flash 321B）双 170HX 可行性 + 质量调查 — 2026-10-11 调查对象：https://github.com/mw00/project-maya （Strata 衍生，MIT） 问题：①双 CMP 170HX 64G 能不能跑 ②质量 vs Qwen3.8-Flash-Next（要证据不要猜想）\n一、Maya 是什么 跑 GLM-5.3-Flash（zai-org，MIT）：321B 总参 MoE / ~18B 激活，原生 1M ctx，GLM-5 系列首个原生多模态 llama.cpp 魔改引擎：热门专家驻 VRAM → 次热 RAM → 其余 NVMe 按路由搬运；自带 OpenAI+Anthropic 兼容 API(:8080/v1)、dashboard、MTP 投机解码、思考档位、图片输入 自带量化五档：Maya-S 96.5G / S24 94.7G / M 116G / M-Derisked 116G / L 156.3G 二、双 170HX 能跑吗：能，有同款硬件实测背书 仓库 issue #22 = 同款硬件完整报告（2× CMP 170HX 64G、GA100 sm_80、PCIe Gen2 x4、E5-2690 v4、91G RAM、Maya-M 全专家驻留显存 99.5-99.8% 命中）：\n指标 #22 实测 decode 61.3 tok/s（3 问均值 57.3-65.0，随 MTP 接受率 62-81% 波动） prefill 8K 514 tok/s（窄 PCIe 读专家是瓶颈） 并发 c1 46.8 / c2 107.6 / c4 194.4 tok/s 聚合（线性） 本机条件核对：9800X3D ✓（远强于 E5 v4）、PCIe Gen1 x16 ≈ 对方法定配置、nvme1 剩 815G ✓、CUDA 12.8/13.3 + g++13 + AVX2 ✓、sm_80 支持（要求 ≥7.0）。 推荐档位：Maya-M + 32K ctx（116G \u003c 128G 双卡；模型占满后显存仅剩 ~1.5G 给 KV，别贪上下文）。Maya-L 需 156G，会溢到 RAM 层，本机 60G RAM 不建议。\n两个必加 flag（#22 实测）：--native（接受率 53→95%）+ --kv int8（长答案 +34%），装完跑 --calibrate 10-15 分钟。\n三、速度对比（vs 本机 Qwen3.8-Flash NVFP4 生产栈实测口径） Maya-M/GLM-5.3-Flash Qwen3.8-Flash NVFP4（现栈） decode ~61（短 ctx，MTP） 62-112（MTP6 接受率波动） prefill ~500-900 2400-4800 长上下文 32K 封顶（VRAM 见底） 实测 260K-900K 仍 61-67 tok/s 并发 单请求排队制 ≤2（自定限） decode 打平略低，prefill 慢 5-9 倍，长上下文完全不是一个量级。\n四、质量证据（全部有出处，无推测） 4.1 厂商图互相回避，无官方头对头 Z.ai bench_53.png 对比列：GLM-5.2 / DeepSeek-V4-Vision-Exp / Claude Opus 4.8 / GPT-5.6 Terra / Gemini 3.7 Flash —— 无 Qwen Qwen3.8-Flash-Next 官方表对比列：Qwen3.8-27B / 3.7-Plus / DeepSeek-V4-Flash-0731 / Claude-Opus-4.6 —— 无 GLM 4.2 中立第三方 Artificial Analysis（同体系 v4.3.2 十项子评测，两家均收录）★核心证据 指标 GLM-5.3-Flash Qwen3.8-Flash-Next 胜者 智能总分（117 模型） 41.8（#4） 39.8（#6） GLM +2.0 Terminal-Bench 4.0 32.8% 25.3% GLM 明显 Terminal-Bench 2.1 84.3% 86.1% Qwen AutomationBench 60.4% 55.9% GLM HLE 39.9% 38.0% GLM 微 GPQA Diamond 91.2% 92.3% Qwen 微 CritPt（物理） 15.4% 11.1% GLM SciCode 51.6% 50.6% 持平 GDPval Elo 1644 1629 持平 AA-Briefcase（办公） 1454 1581 Qwen Omniscience 幻觉率 27.6% 45.3% GLM 大幅（全表最大差距） AA-LCR 长上下文推理 80.0% 79.7% 持平 判读：同梯队、差 2 分，不是代差。GLM 强在 agentic/工程 + 低幻觉；Qwen 赢在 TB2.1 / GPQA / 办公任务。\n4.3 重叠基准官方数交叉验证（方向一致，GLM +2~5） DeepSWE 1.1：GLM 63.4 vs Qwen 58.7 Agents’ Last Exam Pass@1：GLM 26.3 vs Qwen 24.3 Z.ai 宣传语自留余地：“approaching Claude Opus 4.8”（逼近非达到） 4.4 落到本机：量化再吃一层 Maya-M = IQ2_S 专家（2bit 级，比现栈 4bit 更激进），官方自测保留 FP8 的 97.9% 零样本准确率——但测的是 ARC/HellaSwag/WinoGrande/PIQA 老易题，token 一致率 86.2%、KL 0.33；对难题/长程 agent 的真实损耗大概率更高 净效应预估：基座 ~2 分差距被更重量化收窄，本地实际差距 ≤1 分档，任务相关（代码 agent 偏 GLM，问答/办公偏 Qwen） 五、结论 能跑，同硬件 61.3 tok/s decode 实测背书，本机只会更快；档位 Maya-M + 32K + --native + --kv int8 质量有依据的结论：GLM-5.3-Flash 基座高半档（AA 41.8 vs 39.8），幻觉率优势最显著；非代差 速度：decode 相当、prefill 慢 5-9 倍、长上下文完败 → 适合\"第二意见模型\"临时切换，不适合接替生产位 切换成本：吃满双卡+钉内存（留 6G），须停 vLLM/ComfyUI；冷启动 20-40 分钟 + 模型加载 ~5 分钟；模型下载 116G（HF 走代理或 hf-mirror，逐文件 sha256 校验） 测质量对齐 thinking 档位：GLM API 默认 max，Maya dashboard 默认 High，不对齐不公平 附：Maya 五档速览 档 大小 保留 FP8 准确率 token 一致率 S 96.5G 97.9% 83% S24 94.7G 97.7% 83% M 116G 97.9% 86.2%（KL 0.329） L 156.3G 99.2% 90%（KL 0.188） 来源：repo README / bench/results/MAYA-M.md / issue #22 / huggingface.co zai-org/GLM-5.3-Flash / artificialanalysis.ai 两模型页 / Qwen3.8-Flash-Next ModelScope README。本机速度数字：~/llm_speedtest/results/（NVFP4 A/B 0914、BF16-PLE 1M 0904）。\n",
+  "wordCount" : "1790",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-10-11T15:04:23+08:00",
+  "dateModified": "2026-10-11T15:04:23+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "新人类"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/project-maya-glm5.3flash%E5%8F%8C170hx%E8%B0%83%E7%A0%94-1011/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "蓝色空间号",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluespace.eu.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bluespace.eu.org/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/post/">文章</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Project-Maya-GLM5.3Flash双170HX调研-1011
+    </h1>
+    <div class="post-meta"><span title='2026-10-11 15:04:23 +0800 CST'>2026-10-11</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>1790 words</span>&nbsp;·&nbsp;<span>新人类</span>
+
+</div>
+  </header><figure class="entry-cover">
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Project-Maya-GLM5.3Flash双170HX调研-1011" style="width:100%;height:auto;display:block">
+<rect width="720" height="300" fill="#2a1a1a"/><circle cx="651" cy="170" r="36" fill="#d58a7f" fill-opacity="0.10"/><circle cx="24" cy="264" r="43" fill="#d58a7f" fill-opacity="0.10"/><circle cx="117" cy="58" r="50" fill="#d58a7f" fill-opacity="0.10"/><circle cx="210" cy="152" r="57" fill="#d58a7f" fill-opacity="0.10"/><circle cx="303" cy="246" r="8" fill="#d58a7f" fill-opacity="0.10"/><circle cx="396" cy="40" r="15" fill="#d58a7f" fill-opacity="0.10"/><circle cx="489" cy="134" r="22" fill="#d58a7f" fill-opacity="0.10"/><circle cx="582" cy="228" r="29" fill="#d58a7f" fill-opacity="0.10"/><circle cx="675" cy="22" r="36" fill="#d58a7f" fill-opacity="0.10"/><circle cx="48" cy="116" r="43" fill="#d58a7f" fill-opacity="0.10"/><circle cx="141" cy="210" r="50" fill="#d58a7f" fill-opacity="0.10"/><circle cx="234" cy="4" r="57" fill="#d58a7f" fill-opacity="0.10"/><circle cx="327" cy="98" r="8" fill="#d58a7f" fill-opacity="0.10"/><circle cx="420" cy="192" r="15" fill="#d58a7f" fill-opacity="0.10"/><circle cx="513" cy="286" r="22" fill="#d58a7f" fill-opacity="0.10"/><circle cx="606" cy="80" r="29" fill="#d58a7f" fill-opacity="0.10"/><text x="32" y="268" font-size="44" font-weight="800" letter-spacing="5" fill="none" stroke="#d58a7f" stroke-opacity="0.35" stroke-width="1.5" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">HARDWARE</text>
+<text x="692" y="270" text-anchor="end" font-size="20" font-weight="600" letter-spacing="6" fill="#d58a7f" fill-opacity="0.55" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">硬件</text>
+</svg>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一maya-是什么">一、Maya 是什么</a></li>
+    <li><a href="#二双-170hx-能跑吗能有同款硬件实测背书">二、双 170HX 能跑吗：能，有同款硬件实测背书</a></li>
+    <li><a href="#三速度对比vs-本机-qwen38-flash-nvfp4-生产栈实测口径">三、速度对比（vs 本机 Qwen3.8-Flash NVFP4 生产栈实测口径）</a></li>
+    <li><a href="#四质量证据全部有出处无推测">四、质量证据（全部有出处，无推测）</a>
+      <ul>
+        <li><a href="#41-厂商图互相回避无官方头对头">4.1 厂商图互相回避，无官方头对头</a></li>
+        <li><a href="#42-中立第三方-artificial-analysis同体系-v432-十项子评测两家均收录核心证据">4.2 中立第三方 Artificial Analysis（同体系 v4.3.2 十项子评测，两家均收录）★核心证据</a></li>
+        <li><a href="#43-重叠基准官方数交叉验证方向一致glm-25">4.3 重叠基准官方数交叉验证（方向一致，GLM +2~5）</a></li>
+        <li><a href="#44-落到本机量化再吃一层">4.4 落到本机：量化再吃一层</a></li>
+      </ul>
+    </li>
+    <li><a href="#五结论">五、结论</a></li>
+    <li><a href="#附maya-五档速览">附：Maya 五档速览</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="project-mayaglm-53-flash-321b双-170hx-可行性--质量调查--2026-10-11">Project Maya（GLM-5.3-Flash 321B）双 170HX 可行性 + 质量调查 — 2026-10-11<a hidden class="anchor" aria-hidden="true" href="#project-mayaglm-53-flash-321b双-170hx-可行性--质量调查--2026-10-11">#</a></h1>
+<p>调查对象：https://github.com/mw00/project-maya （Strata 衍生，MIT）
+问题：①双 CMP 170HX 64G 能不能跑 ②质量 vs Qwen3.8-Flash-Next（要证据不要猜想）</p>
+<h2 id="一maya-是什么">一、Maya 是什么<a hidden class="anchor" aria-hidden="true" href="#一maya-是什么">#</a></h2>
+<ul>
+<li>跑 GLM-5.3-Flash（zai-org，MIT）：321B 总参 MoE / ~18B 激活，原生 1M ctx，GLM-5 系列首个原生多模态</li>
+<li>llama.cpp 魔改引擎：热门专家驻 VRAM → 次热 RAM → 其余 NVMe 按路由搬运；自带 OpenAI+Anthropic 兼容 API(:8080/v1)、dashboard、MTP 投机解码、思考档位、图片输入</li>
+<li>自带量化五档：Maya-S 96.5G / S24 94.7G / <strong>M 116G</strong> / M-Derisked 116G / L 156.3G</li>
+</ul>
+<h2 id="二双-170hx-能跑吗能有同款硬件实测背书">二、双 170HX 能跑吗：能，有同款硬件实测背书<a hidden class="anchor" aria-hidden="true" href="#二双-170hx-能跑吗能有同款硬件实测背书">#</a></h2>
+<p><strong>仓库 issue #22 = 同款硬件完整报告</strong>（2× CMP 170HX 64G、GA100 sm_80、PCIe Gen2 x4、E5-2690 v4、91G RAM、Maya-M 全专家驻留显存 99.5-99.8% 命中）：</p>
+<table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>#22 实测</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>decode</td>
+          <td><strong>61.3 tok/s</strong>（3 问均值 57.3-65.0，随 MTP 接受率 62-81% 波动）</td>
+      </tr>
+      <tr>
+          <td>prefill 8K</td>
+          <td><strong>514 tok/s</strong>（窄 PCIe 读专家是瓶颈）</td>
+      </tr>
+      <tr>
+          <td>并发</td>
+          <td>c1 46.8 / c2 107.6 / c4 194.4 tok/s 聚合（线性）</td>
+      </tr>
+  </tbody>
+</table>
+<p>本机条件核对：9800X3D ✓（远强于 E5 v4）、PCIe Gen1 x16 ≈ 对方法定配置、nvme1 剩 815G ✓、CUDA 12.8/13.3 + g++13 + AVX2 ✓、sm_80 支持（要求 ≥7.0）。
+推荐档位：<strong>Maya-M + 32K ctx</strong>（116G &lt; 128G 双卡；模型占满后显存仅剩 ~1.5G 给 KV，别贪上下文）。Maya-L 需 156G，会溢到 RAM 层，本机 60G RAM 不建议。</p>
+<p>两个必加 flag（#22 实测）：<code>--native</code>（接受率 53→95%）+ <code>--kv int8</code>（长答案 +34%），装完跑 <code>--calibrate</code> 10-15 分钟。</p>
+<h2 id="三速度对比vs-本机-qwen38-flash-nvfp4-生产栈实测口径">三、速度对比（vs 本机 Qwen3.8-Flash NVFP4 生产栈实测口径）<a hidden class="anchor" aria-hidden="true" href="#三速度对比vs-本机-qwen38-flash-nvfp4-生产栈实测口径">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Maya-M/GLM-5.3-Flash</th>
+          <th>Qwen3.8-Flash NVFP4（现栈）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>decode</td>
+          <td>~61（短 ctx，MTP）</td>
+          <td>62-112（MTP6 接受率波动）</td>
+      </tr>
+      <tr>
+          <td>prefill</td>
+          <td>~500-900</td>
+          <td><strong>2400-4800</strong></td>
+      </tr>
+      <tr>
+          <td>长上下文</td>
+          <td>32K 封顶（VRAM 见底）</td>
+          <td>实测 260K-900K 仍 61-67 tok/s</td>
+      </tr>
+      <tr>
+          <td>并发</td>
+          <td>单请求排队制</td>
+          <td>≤2（自定限）</td>
+      </tr>
+  </tbody>
+</table>
+<p>decode 打平略低，<strong>prefill 慢 5-9 倍</strong>，长上下文完全不是一个量级。</p>
+<h2 id="四质量证据全部有出处无推测">四、质量证据（全部有出处，无推测）<a hidden class="anchor" aria-hidden="true" href="#四质量证据全部有出处无推测">#</a></h2>
+<h3 id="41-厂商图互相回避无官方头对头">4.1 厂商图互相回避，无官方头对头<a hidden class="anchor" aria-hidden="true" href="#41-厂商图互相回避无官方头对头">#</a></h3>
+<ul>
+<li>Z.ai bench_53.png 对比列：GLM-5.2 / DeepSeek-V4-Vision-Exp / Claude Opus 4.8 / GPT-5.6 Terra / Gemini 3.7 Flash —— <strong>无 Qwen</strong></li>
+<li>Qwen3.8-Flash-Next 官方表对比列：Qwen3.8-27B / 3.7-Plus / DeepSeek-V4-Flash-0731 / Claude-Opus-4.6 —— <strong>无 GLM</strong></li>
+</ul>
+<h3 id="42-中立第三方-artificial-analysis同体系-v432-十项子评测两家均收录核心证据">4.2 中立第三方 Artificial Analysis（同体系 v4.3.2 十项子评测，两家均收录）★核心证据<a hidden class="anchor" aria-hidden="true" href="#42-中立第三方-artificial-analysis同体系-v432-十项子评测两家均收录核心证据">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>GLM-5.3-Flash</th>
+          <th>Qwen3.8-Flash-Next</th>
+          <th>胜者</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>智能总分（117 模型）</strong></td>
+          <td><strong>41.8（#4）</strong></td>
+          <td>39.8（#6）</td>
+          <td>GLM +2.0</td>
+      </tr>
+      <tr>
+          <td>Terminal-Bench 4.0</td>
+          <td><strong>32.8%</strong></td>
+          <td>25.3%</td>
+          <td>GLM 明显</td>
+      </tr>
+      <tr>
+          <td>Terminal-Bench 2.1</td>
+          <td>84.3%</td>
+          <td><strong>86.1%</strong></td>
+          <td>Qwen</td>
+      </tr>
+      <tr>
+          <td>AutomationBench</td>
+          <td><strong>60.4%</strong></td>
+          <td>55.9%</td>
+          <td>GLM</td>
+      </tr>
+      <tr>
+          <td>HLE</td>
+          <td><strong>39.9%</strong></td>
+          <td>38.0%</td>
+          <td>GLM 微</td>
+      </tr>
+      <tr>
+          <td>GPQA Diamond</td>
+          <td>91.2%</td>
+          <td><strong>92.3%</strong></td>
+          <td>Qwen 微</td>
+      </tr>
+      <tr>
+          <td>CritPt（物理）</td>
+          <td><strong>15.4%</strong></td>
+          <td>11.1%</td>
+          <td>GLM</td>
+      </tr>
+      <tr>
+          <td>SciCode</td>
+          <td>51.6%</td>
+          <td>50.6%</td>
+          <td>持平</td>
+      </tr>
+      <tr>
+          <td>GDPval Elo</td>
+          <td>1644</td>
+          <td>1629</td>
+          <td>持平</td>
+      </tr>
+      <tr>
+          <td>AA-Briefcase（办公）</td>
+          <td>1454</td>
+          <td><strong>1581</strong></td>
+          <td>Qwen</td>
+      </tr>
+      <tr>
+          <td><strong>Omniscience 幻觉率</strong></td>
+          <td><strong>27.6%</strong></td>
+          <td><strong>45.3%</strong></td>
+          <td><strong>GLM 大幅</strong>（全表最大差距）</td>
+      </tr>
+      <tr>
+          <td>AA-LCR 长上下文推理</td>
+          <td>80.0%</td>
+          <td>79.7%</td>
+          <td>持平</td>
+      </tr>
+  </tbody>
+</table>
+<p>判读：同梯队、差 2 分，不是代差。GLM 强在 agentic/工程 + 低幻觉；Qwen 赢在 TB2.1 / GPQA / 办公任务。</p>
+<h3 id="43-重叠基准官方数交叉验证方向一致glm-25">4.3 重叠基准官方数交叉验证（方向一致，GLM +2~5）<a hidden class="anchor" aria-hidden="true" href="#43-重叠基准官方数交叉验证方向一致glm-25">#</a></h3>
+<ul>
+<li>DeepSWE 1.1：GLM 63.4 vs Qwen 58.7</li>
+<li>Agents&rsquo; Last Exam Pass@1：GLM 26.3 vs Qwen 24.3</li>
+<li>Z.ai 宣传语自留余地：&ldquo;approaching Claude Opus 4.8&rdquo;（逼近非达到）</li>
+</ul>
+<h3 id="44-落到本机量化再吃一层">4.4 落到本机：量化再吃一层<a hidden class="anchor" aria-hidden="true" href="#44-落到本机量化再吃一层">#</a></h3>
+<ul>
+<li>Maya-M = IQ2_S 专家（2bit 级，比现栈 4bit 更激进），官方自测保留 FP8 的 97.9% 零样本准确率——但测的是 ARC/HellaSwag/WinoGrande/PIQA 老易题，token 一致率 86.2%、KL 0.33；对难题/长程 agent 的真实损耗大概率更高</li>
+<li>净效应预估：基座 ~2 分差距被更重量化收窄，本地实际差距 ≤1 分档，任务相关（代码 agent 偏 GLM，问答/办公偏 Qwen）</li>
+</ul>
+<h2 id="五结论">五、结论<a hidden class="anchor" aria-hidden="true" href="#五结论">#</a></h2>
+<ol>
+<li><strong>能跑</strong>，同硬件 61.3 tok/s decode 实测背书，本机只会更快；档位 Maya-M + 32K + <code>--native</code> + <code>--kv int8</code></li>
+<li><strong>质量有依据的结论</strong>：GLM-5.3-Flash 基座高半档（AA 41.8 vs 39.8），幻觉率优势最显著；非代差</li>
+<li><strong>速度</strong>：decode 相当、prefill 慢 5-9 倍、长上下文完败 → 适合&quot;第二意见模型&quot;临时切换，不适合接替生产位</li>
+<li>切换成本：吃满双卡+钉内存（留 6G），须停 vLLM/ComfyUI；冷启动 20-40 分钟 + 模型加载 ~5 分钟；模型下载 116G（HF 走代理或 hf-mirror，逐文件 sha256 校验）</li>
+<li>测质量对齐 thinking 档位：GLM API 默认 max，Maya dashboard 默认 High，不对齐不公平</li>
+</ol>
+<h2 id="附maya-五档速览">附：Maya 五档速览<a hidden class="anchor" aria-hidden="true" href="#附maya-五档速览">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>档</th>
+          <th>大小</th>
+          <th>保留 FP8 准确率</th>
+          <th>token 一致率</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>S</td>
+          <td>96.5G</td>
+          <td>97.9%</td>
+          <td>83%</td>
+      </tr>
+      <tr>
+          <td>S24</td>
+          <td>94.7G</td>
+          <td>97.7%</td>
+          <td>83%</td>
+      </tr>
+      <tr>
+          <td><strong>M</strong></td>
+          <td>116G</td>
+          <td>97.9%</td>
+          <td>86.2%（KL 0.329）</td>
+      </tr>
+      <tr>
+          <td>L</td>
+          <td>156.3G</td>
+          <td>99.2%</td>
+          <td>90%（KL 0.188）</td>
+      </tr>
+  </tbody>
+</table>
+<p>来源：repo README / bench/results/MAYA-M.md / issue #22 / huggingface.co zai-org/GLM-5.3-Flash / artificialanalysis.ai 两模型页 / Qwen3.8-Flash-Next ModelScope README。本机速度数字：~/llm_speedtest/results/（NVFP4 A/B 0914、BF16-PLE 1M 0904）。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-11%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title">« </span>
+    <br>
+    <span>2026-10-11赛博日记</span>
+  </a>
+  <a class="next" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-10%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title"> »</span>
+    <br>
+    <span>2026-10-10赛博日记</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Project-Maya-GLM5.3Flash双170HX调研-1011 on x"
+            href="https://x.com/intent/tweet/?text=Project-Maya-GLM5.3Flash%e5%8f%8c170HX%e8%b0%83%e7%a0%94-1011&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fproject-maya-glm5.3flash%25E5%258F%258C170hx%25E8%25B0%2583%25E7%25A0%2594-1011%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Project-Maya-GLM5.3Flash双170HX调研-1011 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fproject-maya-glm5.3flash%25E5%258F%258C170hx%25E8%25B0%2583%25E7%25A0%2594-1011%2f&amp;title=Project-Maya-GLM5.3Flash%e5%8f%8c170HX%e8%b0%83%e7%a0%94-1011&amp;summary=Project-Maya-GLM5.3Flash%e5%8f%8c170HX%e8%b0%83%e7%a0%94-1011&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fproject-maya-glm5.3flash%25E5%258F%258C170hx%25E8%25B0%2583%25E7%25A0%2594-1011%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Project-Maya-GLM5.3Flash双170HX调研-1011 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fproject-maya-glm5.3flash%25E5%258F%258C170hx%25E8%25B0%2583%25E7%25A0%2594-1011%2f&title=Project-Maya-GLM5.3Flash%e5%8f%8c170HX%e8%b0%83%e7%a0%94-1011">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Project-Maya-GLM5.3Flash双170HX调研-1011 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fproject-maya-glm5.3flash%25E5%258F%258C170hx%25E8%25B0%2583%25E7%25A0%2594-1011%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Project-Maya-GLM5.3Flash双170HX调研-1011 on whatsapp"
+            href="https://api.whatsapp.com/send?text=Project-Maya-GLM5.3Flash%e5%8f%8c170HX%e8%b0%83%e7%a0%94-1011%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fproject-maya-glm5.3flash%25E5%258F%258C170hx%25E8%25B0%2583%25E7%25A0%2594-1011%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Project-Maya-GLM5.3Flash双170HX调研-1011 on telegram"
+            href="https://telegram.me/share/url?text=Project-Maya-GLM5.3Flash%e5%8f%8c170HX%e8%b0%83%e7%a0%94-1011&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fproject-maya-glm5.3flash%25E5%258F%258C170hx%25E8%25B0%2583%25E7%25A0%2594-1011%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Project-Maya-GLM5.3Flash双170HX调研-1011 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Project-Maya-GLM5.3Flash%e5%8f%8c170HX%e8%b0%83%e7%a0%94-1011&u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fproject-maya-glm5.3flash%25E5%258F%258C170hx%25E8%25B0%2583%25E7%25A0%2594-1011%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

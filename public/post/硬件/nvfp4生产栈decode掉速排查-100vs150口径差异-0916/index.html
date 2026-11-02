@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>NVFP4生产栈decode掉速排查-100vs150口径差异-0916 | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="NVFP4 生产栈 decode「掉速」排查：100 vs 150 是口径差，不是升级回退
+日期：2026-09-16 00:30 ｜ 状态：✅ 已定位，无需修复
+前置：NVFP4 vs AWQ A/B 实测、社区栈迁移计划">
+<meta name="author" content="新人类">
+<link rel="canonical" href="https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/nvfp4%E7%94%9F%E4%BA%A7%E6%A0%88decode%E6%8E%89%E9%80%9F%E6%8E%92%E6%9F%A5-100vs150%E5%8F%A3%E5%BE%84%E5%B7%AE%E5%BC%82-0916/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c2189e7d36d72767de292f8b9d897e4a464aa5bc7eb692cda50064f5eb9eeece.css" integrity="sha256-whiefTbXJ2feKS&#43;LnYl&#43;SkZKpbx&#43;tpLNpQBk9eue7s4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://bluespace.eu.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://bluespace.eu.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/nvfp4%E7%94%9F%E4%BA%A7%E6%A0%88decode%E6%8E%89%E9%80%9F%E6%8E%92%E6%9F%A5-100vs150%E5%8F%A3%E5%BE%84%E5%B7%AE%E5%BC%82-0916/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:title" content="NVFP4生产栈decode掉速排查-100vs150口径差异-0916" />
+<meta property="og:description" content="NVFP4 生产栈 decode「掉速」排查：100 vs 150 是口径差，不是升级回退
+日期：2026-09-16 00:30 ｜ 状态：✅ 已定位，无需修复
+前置：NVFP4 vs AWQ A/B 实测、社区栈迁移计划" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/nvfp4%E7%94%9F%E4%BA%A7%E6%A0%88decode%E6%8E%89%E9%80%9F%E6%8E%92%E6%9F%A5-100vs150%E5%8F%A3%E5%BE%84%E5%B7%AE%E5%BC%82-0916/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-09-16T00:20:02+08:00" />
+<meta property="article:modified_time" content="2026-09-16T00:20:02+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NVFP4生产栈decode掉速排查-100vs150口径差异-0916"/>
+<meta name="twitter:description" content="NVFP4 生产栈 decode「掉速」排查：100 vs 150 是口径差，不是升级回退
+日期：2026-09-16 00:30 ｜ 状态：✅ 已定位，无需修复
+前置：NVFP4 vs AWQ A/B 实测、社区栈迁移计划"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://bluespace.eu.org/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "NVFP4生产栈decode掉速排查-100vs150口径差异-0916",
+      "item": "https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/nvfp4%E7%94%9F%E4%BA%A7%E6%A0%88decode%E6%8E%89%E9%80%9F%E6%8E%92%E6%9F%A5-100vs150%E5%8F%A3%E5%BE%84%E5%B7%AE%E5%BC%82-0916/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "NVFP4生产栈decode掉速排查-100vs150口径差异-0916",
+  "name": "NVFP4生产栈decode掉速排查-100vs150口径差异-0916",
+  "description": "NVFP4 生产栈 decode「掉速」排查：100 vs 150 是口径差，不是升级回退 日期：2026-09-16 00:30 ｜ 状态：✅ 已定位，无需修复 前置：NVFP4 vs AWQ A/B 实测、社区栈迁移计划\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "NVFP4 生产栈 decode「掉速」排查：100 vs 150 是口径差，不是升级回退 日期：2026-09-16 00:30 ｜ 状态：✅ 已定位，无需修复 前置：NVFP4 vs AWQ A/B 实测、社区栈迁移计划\n现象 社区仓库 Qwen-Flash-SM80-170HX 于 09-15 23:24 git pull 升到 v0.1.7（78c9a59→d73d882，多轮 PLE handoff 加固 + QSA 预加载扩容）。同时段观察到 vLLM decode 只有 ~100 t/s，而\"昨天\"能测出 150+，怀疑升级导致回退。\n一句话结论 与仓库升级零关联，是测试口径差异。 150+ 出自社区等口径探针（代码任务 + thinking 开 + 长输出稳态，MAL 4.0-5.1）；100 出自普通短输出（out≤3000、普通内容，MAL 2.6-3.1）。decode ≈ 步率(≈39-42 步/s) × MAL，内容决定 MAL，是主变量——这条 09-14 深夜就写进过 A/B 笔记结论（“别拿普通文跟社区数字比”），这次是它的一次现场重演。\n排除升级嫌疑的实证链 检查项 结果 生产栈是否引用仓库代码 否。start-nvfp4-prod.sh 无 PYTHONPATH/仓库路径；grep -rl Qwen-Flash-SM80 /root/vllm029-venv/.../vllm/ 零命中 vLLM 本体是否被动过 否。venv site-packages 最后修改 09-08（dev499 build 未重建）；v0.1.7 的修复主体（GDS/TP_PLE/QSA preload）此前已证伪不移植 今天两次启动是否同配置 是。20:08 与 23:27 两次启动 cmdline 完全一致；量化后端选择逐行一致（nvfp4.py MARLIN MoE + unquantized.py TRITON，MTP draft 层） GPU OC 是否掉了 否。nvml_oc 偏移 GPU0=+200 / GPU1=+250 在位，负载采样 clocks.current.sm=1395（锁 1400 档正常生效）。170tune-persist 是 oneshot，21:04 执行完退出属正常 数字对照（同机同栈） 口径 decode MAL 出处 社区等口径：32K/64K 长 prompt、代码生成、thinking 开、out→5 万稳态 166-168，引擎 10s 打点中位 180.5 / 峰值 234 4.04-5.07 09-14 深夜 parity 探针（=「昨天的 150+」） 普通对话/长文（并发会话在跑代码任务时打点） 140-146 2.8-3.1 09-16 00:00 pipeline.log 打点 c1 out1280 普通长文（A/B 的 B 栈五档） 96-107 2.48 09-14 A/B qwen38flash_nvfp4_tep2_mtp6_c1_ab0914 今晚复测：短 prompt + out 3000 + thinking 开 94-120（客户端 94.1；同窗口引擎打点 95.5-120.2） 2.62-3.14 本次排查实测 今晚实测怎么做的 服务：:8000 NVFP4（23:27 由 model-launcher 手动拉起；此前 flashnext.service 21:04 退出，Restart=no 是 09-15 定案设计，不是故障） 探针：Flask 网站 prompt + max_tokens=3000 + enable_thinking/preserve_thinking + 社区采样（temp1.0/top_p0.95），stream_options.include_usage 取 token 数 坑复现两枚：① 客户端流式墙钟计时仍偏低（94.1 vs 引擎 100+），判数只认引擎打点；② venv 缺 socksio + all_proxy 劫持 → httpx 必须 trust_env=False（或装 httpx[socks]），与同日「no_proxy 的 CIDR 坑」是同一族环境噪音。 验收方法（下次判断是否真回退） 同口径才可比：要复核 150+，重建 parity 探针（口径要素一项不能少：长 prompt 32K+、代码任务、thinking 开、输出跑过 8K 进入稳态、采样参数社区值）；探针模板在 skill qwen-flash-sm80-170hx-migration「探针对照」节，/tmp 重启即失需重建 看 MAL：SpecDecoding metrics 打点里 Mean acceptance length ≥4 ⇒ 内容口径对上了；2.5-3 ⇒ 本来就是普通文，100 出头是正常值 基线锚点：c1 out1280 = 96-107 平带（无长度衰减是 NVFP4 栈特征，AWQ 同档只有 61-94）；若这个锚点本身掉到 \u003c90 再怀疑栈 引擎打点判据：grep \"Avg generation throughput\" ~/桌面/pipeline.log，10s 窗口粒度够看 同日插曲（与掉速无关，一并留档） 09-15 晚 CLI 会话连本地 vLLM 持续 502：根因 = no_proxy 写成 CIDR xxx.xxx.xxx.xxx/8（httpx 不认，curl 认），GNOME gsettings ignore-hosts 经 proxy-switch.sh「全局模式」→ gnome-terminal-server 快照 → 终端进程继承。三层修复（gsettings 改裸 IP / 脚本防再武装 / provider base_url 一律 localhost）。详见 skill global-model-switch 502 坑条目 config 顶部 model 块残留已删旧 slug custom:127-0-0-1-8000 → Unknown provider，switch-global-model.sh 一条命令治愈 ",
+  "wordCount" : "1636",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-09-16T00:20:02+08:00",
+  "dateModified": "2026-09-16T00:20:02+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "新人类"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/nvfp4%E7%94%9F%E4%BA%A7%E6%A0%88decode%E6%8E%89%E9%80%9F%E6%8E%92%E6%9F%A5-100vs150%E5%8F%A3%E5%BE%84%E5%B7%AE%E5%BC%82-0916/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "蓝色空间号",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluespace.eu.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bluespace.eu.org/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/post/">文章</a></div>
+    <h1 class="post-title entry-hint-parent">
+      NVFP4生产栈decode掉速排查-100vs150口径差异-0916
+    </h1>
+    <div class="post-meta"><span title='2026-09-16 00:20:02 +0800 CST'>2026-09-16</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>1636 words</span>&nbsp;·&nbsp;<span>新人类</span>
+
+</div>
+  </header><figure class="entry-cover">
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NVFP4生产栈decode掉速排查-100vs150口径差异-0916" style="width:100%;height:auto;display:block">
+<rect width="720" height="300" fill="#2a1a1a"/><circle cx="16" cy="16" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="52" cy="16" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="88" cy="16" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="124" cy="16" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="160" cy="16" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="196" cy="16" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="232" cy="16" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="268" cy="16" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="304" cy="16" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="340" cy="16" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="376" cy="16" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="412" cy="16" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="448" cy="16" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="484" cy="16" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="520" cy="16" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="556" cy="16" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="592" cy="16" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="628" cy="16" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="664" cy="16" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="700" cy="16" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="16" cy="52" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="52" cy="52" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="88" cy="52" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="124" cy="52" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="160" cy="52" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="196" cy="52" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="232" cy="52" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="268" cy="52" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="304" cy="52" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="340" cy="52" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="376" cy="52" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="412" cy="52" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="448" cy="52" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="484" cy="52" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="520" cy="52" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="556" cy="52" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="592" cy="52" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="628" cy="52" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="664" cy="52" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="700" cy="52" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="16" cy="88" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="52" cy="88" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="88" cy="88" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="124" cy="88" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="160" cy="88" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="196" cy="88" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="232" cy="88" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="268" cy="88" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="304" cy="88" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="340" cy="88" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="376" cy="88" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="412" cy="88" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="448" cy="88" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="484" cy="88" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="520" cy="88" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="556" cy="88" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="592" cy="88" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="628" cy="88" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="664" cy="88" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="700" cy="88" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="16" cy="124" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="52" cy="124" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="88" cy="124" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="124" cy="124" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="160" cy="124" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="196" cy="124" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="232" cy="124" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="268" cy="124" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="304" cy="124" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="340" cy="124" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="376" cy="124" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="412" cy="124" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="448" cy="124" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="484" cy="124" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="520" cy="124" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="556" cy="124" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="592" cy="124" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="628" cy="124" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="664" cy="124" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="700" cy="124" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="16" cy="160" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="52" cy="160" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="88" cy="160" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="124" cy="160" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="160" cy="160" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="196" cy="160" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="232" cy="160" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="268" cy="160" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="304" cy="160" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="340" cy="160" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="376" cy="160" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="412" cy="160" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="448" cy="160" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="484" cy="160" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="520" cy="160" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="556" cy="160" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="592" cy="160" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="628" cy="160" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="664" cy="160" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="700" cy="160" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="16" cy="196" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="52" cy="196" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="88" cy="196" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="124" cy="196" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="160" cy="196" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="196" cy="196" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="232" cy="196" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="268" cy="196" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="304" cy="196" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="340" cy="196" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="376" cy="196" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="412" cy="196" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="448" cy="196" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="484" cy="196" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="520" cy="196" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="556" cy="196" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="592" cy="196" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="628" cy="196" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="664" cy="196" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="700" cy="196" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="16" cy="232" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="52" cy="232" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="88" cy="232" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="124" cy="232" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="160" cy="232" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="196" cy="232" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="232" cy="232" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="268" cy="232" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="304" cy="232" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="340" cy="232" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="376" cy="232" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="412" cy="232" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="448" cy="232" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="484" cy="232" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="520" cy="232" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="556" cy="232" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="592" cy="232" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="628" cy="232" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="664" cy="232" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="700" cy="232" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="16" cy="268" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="52" cy="268" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="88" cy="268" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="124" cy="268" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="160" cy="268" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="196" cy="268" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="232" cy="268" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="268" cy="268" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="304" cy="268" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="340" cy="268" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="376" cy="268" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="412" cy="268" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="448" cy="268" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="484" cy="268" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="520" cy="268" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="556" cy="268" r="5.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="592" cy="268" r="2.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="628" cy="268" r="4.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="664" cy="268" r="1.5" fill="#d58a7f" fill-opacity="0.12"/><circle cx="700" cy="268" r="3.5" fill="#d58a7f" fill-opacity="0.12"/><text x="32" y="268" font-size="44" font-weight="800" letter-spacing="5" fill="none" stroke="#d58a7f" stroke-opacity="0.35" stroke-width="1.5" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">HARDWARE</text>
+<text x="692" y="270" text-anchor="end" font-size="20" font-weight="600" letter-spacing="6" fill="#d58a7f" fill-opacity="0.55" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">硬件</text>
+</svg>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#现象">现象</a></li>
+    <li><a href="#一句话结论">一句话结论</a></li>
+    <li><a href="#排除升级嫌疑的实证链">排除升级嫌疑的实证链</a></li>
+    <li><a href="#数字对照同机同栈">数字对照（同机同栈）</a></li>
+    <li><a href="#今晚实测怎么做的">今晚实测怎么做的</a></li>
+    <li><a href="#验收方法下次判断是否真回退">验收方法（下次判断是否真回退）</a></li>
+    <li><a href="#同日插曲与掉速无关一并留档">同日插曲（与掉速无关，一并留档）</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="nvfp4-生产栈-decode掉速排查100-vs-150-是口径差不是升级回退">NVFP4 生产栈 decode「掉速」排查：100 vs 150 是口径差，不是升级回退<a hidden class="anchor" aria-hidden="true" href="#nvfp4-生产栈-decode掉速排查100-vs-150-是口径差不是升级回退">#</a></h1>
+<p>日期：2026-09-16 00:30 ｜ 状态：✅ 已定位，无需修复
+前置：<a href="/post/%E7%A1%AC%E4%BB%B6/nvfp4-w4a16-vs-awq-ab%E5%AE%9E%E6%B5%8B-tep2-mtp6-0914/">NVFP4 vs AWQ A/B 实测</a>、<a href="/post/%E7%A1%AC%E4%BB%B6/qwen3.8-flash-next-nvfp4%E7%A4%BE%E5%8C%BA%E6%A0%88%E8%BF%81%E7%A7%BB%E4%B8%8E%E5%AF%B9%E6%AF%94%E8%AE%A1%E5%88%92-0914/">社区栈迁移计划</a></p>
+<h2 id="现象">现象<a hidden class="anchor" aria-hidden="true" href="#现象">#</a></h2>
+<p>社区仓库 Qwen-Flash-SM80-170HX 于 09-15 23:24 <code>git pull</code> 升到 v0.1.7（<code>78c9a59→d73d882</code>，多轮 PLE handoff 加固 + QSA 预加载扩容）。同时段观察到 vLLM decode 只有 <strong>~100 t/s</strong>，而&quot;昨天&quot;能测出 <strong>150+</strong>，怀疑升级导致回退。</p>
+<h2 id="一句话结论">一句话结论<a hidden class="anchor" aria-hidden="true" href="#一句话结论">#</a></h2>
+<p><strong>与仓库升级零关联，是测试口径差异。</strong> 150+ 出自社区等口径探针（代码任务 + thinking 开 + 长输出稳态，MAL 4.0-5.1）；100 出自普通短输出（out≤3000、普通内容，MAL 2.6-3.1）。decode ≈ 步率(≈39-42 步/s) × MAL，<strong>内容决定 MAL，是主变量</strong>——这条 09-14 深夜就写进过 A/B 笔记结论（&ldquo;别拿普通文跟社区数字比&rdquo;），这次是它的一次现场重演。</p>
+<h2 id="排除升级嫌疑的实证链">排除升级嫌疑的实证链<a hidden class="anchor" aria-hidden="true" href="#排除升级嫌疑的实证链">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>检查项</th>
+          <th>结果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>生产栈是否引用仓库代码</td>
+          <td><strong>否</strong>。<code>start-nvfp4-prod.sh</code> 无 PYTHONPATH/仓库路径；<code>grep -rl Qwen-Flash-SM80 /root/vllm029-venv/.../vllm/</code> 零命中</td>
+      </tr>
+      <tr>
+          <td>vLLM 本体是否被动过</td>
+          <td>否。venv site-packages 最后修改 <strong>09-08</strong>（dev499 build 未重建）；v0.1.7 的修复主体（GDS/TP_PLE/QSA preload）此前已证伪不移植</td>
+      </tr>
+      <tr>
+          <td>今天两次启动是否同配置</td>
+          <td>是。20:08 与 23:27 两次启动 cmdline 完全一致；量化后端选择逐行一致（<code>nvfp4.py</code> <strong>MARLIN</strong> MoE + <code>unquantized.py</code> <strong>TRITON</strong>，MTP draft 层）</td>
+      </tr>
+      <tr>
+          <td>GPU OC 是否掉了</td>
+          <td>否。<code>nvml_oc</code> 偏移 GPU0=+200 / GPU1=+250 在位，负载采样 <code>clocks.current.sm=1395</code>（锁 1400 档正常生效）。170tune-persist 是 oneshot，21:04 执行完退出属正常</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="数字对照同机同栈">数字对照（同机同栈）<a hidden class="anchor" aria-hidden="true" href="#数字对照同机同栈">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>口径</th>
+          <th>decode</th>
+          <th>MAL</th>
+          <th>出处</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>社区等口径：32K/64K 长 prompt、代码生成、thinking 开、out→5 万稳态</td>
+          <td><strong>166-168</strong>，引擎 10s 打点中位 <strong>180.5</strong> / 峰值 234</td>
+          <td>4.04-5.07</td>
+          <td>09-14 深夜 parity 探针（=「昨天的 150+」）</td>
+      </tr>
+      <tr>
+          <td>普通对话/长文（并发会话在跑代码任务时打点）</td>
+          <td>140-146</td>
+          <td>2.8-3.1</td>
+          <td>09-16 00:00 pipeline.log 打点</td>
+      </tr>
+      <tr>
+          <td>c1 out1280 普通长文（A/B 的 B 栈五档）</td>
+          <td><strong>96-107</strong></td>
+          <td>2.48</td>
+          <td>09-14 A/B <code>qwen38flash_nvfp4_tep2_mtp6_c1_ab0914</code></td>
+      </tr>
+      <tr>
+          <td>今晚复测：短 prompt + out 3000 + thinking 开</td>
+          <td><strong>94-120</strong>（客户端 94.1；同窗口引擎打点 95.5-120.2）</td>
+          <td>2.62-3.14</td>
+          <td>本次排查实测</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="今晚实测怎么做的">今晚实测怎么做的<a hidden class="anchor" aria-hidden="true" href="#今晚实测怎么做的">#</a></h2>
+<ul>
+<li>服务：:8000 NVFP4（23:27 由 model-launcher 手动拉起；此前 flashnext.service 21:04 退出，<code>Restart=no</code> 是 09-15 定案设计，不是故障）</li>
+<li>探针：Flask 网站 prompt + <code>max_tokens=3000</code> + <code>enable_thinking/preserve_thinking</code> + 社区采样（temp1.0/top_p0.95），<code>stream_options.include_usage</code> 取 token 数</li>
+<li>坑复现两枚：① 客户端流式墙钟计时仍偏低（94.1 vs 引擎 100+），<strong>判数只认引擎打点</strong>；② venv 缺 socksio + <code>all_proxy</code> 劫持 → httpx 必须 <code>trust_env=False</code>（或装 <code>httpx[socks]</code>），与同日「no_proxy 的 CIDR 坑」是同一族环境噪音。</li>
+</ul>
+<h2 id="验收方法下次判断是否真回退">验收方法（下次判断是否真回退）<a hidden class="anchor" aria-hidden="true" href="#验收方法下次判断是否真回退">#</a></h2>
+<ol>
+<li><strong>同口径才可比</strong>：要复核 150+，重建 parity 探针（口径要素一项不能少：长 prompt 32K+、代码任务、thinking 开、输出跑过 8K 进入稳态、采样参数社区值）；探针模板在 skill <code>qwen-flash-sm80-170hx-migration</code>「探针对照」节，/tmp 重启即失需重建</li>
+<li><strong>看 MAL</strong>：<code>SpecDecoding metrics</code> 打点里 Mean acceptance length ≥4 ⇒ 内容口径对上了；2.5-3 ⇒ 本来就是普通文，100 出头是正常值</li>
+<li><strong>基线锚点</strong>：c1 out1280 = 96-107 平带（无长度衰减是 NVFP4 栈特征，AWQ 同档只有 61-94）；若这个锚点本身掉到 &lt;90 再怀疑栈</li>
+<li>引擎打点判据：<code>grep &quot;Avg generation throughput&quot; ~/桌面/pipeline.log</code>，10s 窗口粒度够看</li>
+</ol>
+<h2 id="同日插曲与掉速无关一并留档">同日插曲（与掉速无关，一并留档）<a hidden class="anchor" aria-hidden="true" href="#同日插曲与掉速无关一并留档">#</a></h2>
+<ul>
+<li>09-15 晚 CLI 会话连本地 vLLM 持续 502：根因 = <code>no_proxy</code> 写成 CIDR <code>xxx.xxx.xxx.xxx/8</code>（httpx 不认，curl 认），GNOME gsettings ignore-hosts 经 proxy-switch.sh「全局模式」→ gnome-terminal-server 快照 → 终端进程继承。三层修复（gsettings 改裸 IP / 脚本防再武装 / provider base_url 一律 <code>localhost</code>）。详见 skill <code>global-model-switch</code> 502 坑条目</li>
+<li>config 顶部 model 块残留已删旧 slug <code>custom:127-0-0-1-8000</code> → <code>Unknown provider</code>，<code>switch-global-model.sh</code> 一条命令治愈</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-16%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title">« </span>
+    <br>
+    <span>2026-09-16赛博日记</span>
+  </a>
+  <a class="next" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-09-15%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title"> »</span>
+    <br>
+    <span>2026-09-15赛博日记</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share NVFP4生产栈decode掉速排查-100vs150口径差异-0916 on x"
+            href="https://x.com/intent/tweet/?text=NVFP4%e7%94%9f%e4%ba%a7%e6%a0%88decode%e6%8e%89%e9%80%9f%e6%8e%92%e6%9f%a5-100vs150%e5%8f%a3%e5%be%84%e5%b7%ae%e5%bc%82-0916&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fnvfp4%25E7%2594%259F%25E4%25BA%25A7%25E6%25A0%2588decode%25E6%258E%2589%25E9%2580%259F%25E6%258E%2592%25E6%259F%25A5-100vs150%25E5%258F%25A3%25E5%25BE%2584%25E5%25B7%25AE%25E5%25BC%2582-0916%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share NVFP4生产栈decode掉速排查-100vs150口径差异-0916 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fnvfp4%25E7%2594%259F%25E4%25BA%25A7%25E6%25A0%2588decode%25E6%258E%2589%25E9%2580%259F%25E6%258E%2592%25E6%259F%25A5-100vs150%25E5%258F%25A3%25E5%25BE%2584%25E5%25B7%25AE%25E5%25BC%2582-0916%2f&amp;title=NVFP4%e7%94%9f%e4%ba%a7%e6%a0%88decode%e6%8e%89%e9%80%9f%e6%8e%92%e6%9f%a5-100vs150%e5%8f%a3%e5%be%84%e5%b7%ae%e5%bc%82-0916&amp;summary=NVFP4%e7%94%9f%e4%ba%a7%e6%a0%88decode%e6%8e%89%e9%80%9f%e6%8e%92%e6%9f%a5-100vs150%e5%8f%a3%e5%be%84%e5%b7%ae%e5%bc%82-0916&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fnvfp4%25E7%2594%259F%25E4%25BA%25A7%25E6%25A0%2588decode%25E6%258E%2589%25E9%2580%259F%25E6%258E%2592%25E6%259F%25A5-100vs150%25E5%258F%25A3%25E5%25BE%2584%25E5%25B7%25AE%25E5%25BC%2582-0916%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share NVFP4生产栈decode掉速排查-100vs150口径差异-0916 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fnvfp4%25E7%2594%259F%25E4%25BA%25A7%25E6%25A0%2588decode%25E6%258E%2589%25E9%2580%259F%25E6%258E%2592%25E6%259F%25A5-100vs150%25E5%258F%25A3%25E5%25BE%2584%25E5%25B7%25AE%25E5%25BC%2582-0916%2f&title=NVFP4%e7%94%9f%e4%ba%a7%e6%a0%88decode%e6%8e%89%e9%80%9f%e6%8e%92%e6%9f%a5-100vs150%e5%8f%a3%e5%be%84%e5%b7%ae%e5%bc%82-0916">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share NVFP4生产栈decode掉速排查-100vs150口径差异-0916 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fnvfp4%25E7%2594%259F%25E4%25BA%25A7%25E6%25A0%2588decode%25E6%258E%2589%25E9%2580%259F%25E6%258E%2592%25E6%259F%25A5-100vs150%25E5%258F%25A3%25E5%25BE%2584%25E5%25B7%25AE%25E5%25BC%2582-0916%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share NVFP4生产栈decode掉速排查-100vs150口径差异-0916 on whatsapp"
+            href="https://api.whatsapp.com/send?text=NVFP4%e7%94%9f%e4%ba%a7%e6%a0%88decode%e6%8e%89%e9%80%9f%e6%8e%92%e6%9f%a5-100vs150%e5%8f%a3%e5%be%84%e5%b7%ae%e5%bc%82-0916%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fnvfp4%25E7%2594%259F%25E4%25BA%25A7%25E6%25A0%2588decode%25E6%258E%2589%25E9%2580%259F%25E6%258E%2592%25E6%259F%25A5-100vs150%25E5%258F%25A3%25E5%25BE%2584%25E5%25B7%25AE%25E5%25BC%2582-0916%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share NVFP4生产栈decode掉速排查-100vs150口径差异-0916 on telegram"
+            href="https://telegram.me/share/url?text=NVFP4%e7%94%9f%e4%ba%a7%e6%a0%88decode%e6%8e%89%e9%80%9f%e6%8e%92%e6%9f%a5-100vs150%e5%8f%a3%e5%be%84%e5%b7%ae%e5%bc%82-0916&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fnvfp4%25E7%2594%259F%25E4%25BA%25A7%25E6%25A0%2588decode%25E6%258E%2589%25E9%2580%259F%25E6%258E%2592%25E6%259F%25A5-100vs150%25E5%258F%25A3%25E5%25BE%2584%25E5%25B7%25AE%25E5%25BC%2582-0916%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share NVFP4生产栈decode掉速排查-100vs150口径差异-0916 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=NVFP4%e7%94%9f%e4%ba%a7%e6%a0%88decode%e6%8e%89%e9%80%9f%e6%8e%92%e6%9f%a5-100vs150%e5%8f%a3%e5%be%84%e5%b7%ae%e5%bc%82-0916&u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E7%25A1%25AC%25E4%25BB%25B6%2fnvfp4%25E7%2594%259F%25E4%25BA%25A7%25E6%25A0%2588decode%25E6%258E%2589%25E9%2580%259F%25E6%258E%2592%25E6%259F%25A5-100vs150%25E5%258F%25A3%25E5%25BE%2584%25E5%25B7%25AE%25E5%25BC%2582-0916%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

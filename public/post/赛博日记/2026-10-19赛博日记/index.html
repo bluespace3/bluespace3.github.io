@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>2026-10-19赛博日记 | 蓝色空间号</title>
+<meta name="keywords" content="">
+<meta name="description" content="2026-10-19 赛博日记
+
+自动生成：Mac &#43; 服务器双端数据融合（天气等无关信息已剔除）
+🖥️ 服务器 Hermes 侧
+AI 漫剧工作流移植（本日主线，会话 859&#43;206 条）
+
+收到《AI漫剧.rar》，解包 9 条工作流全部解析（节点/模型/参数/提示词），16 个 ComfyUI 节点包装好（WanVideoWrapper、SeedVR2、GIMM-VFI、Impact-Pack 等）
+模型清单 128.4GB → ModelScope 直连源全部映射，新建模型库 /mnt/nvme1/comfy_models_manga/；首批下载踩坑（URL 拼错 &#43; curl 缺 -f，14 个&quot;成功&quot;实为 404 JSON，已隔离），下载脚本 v2 修正（resolve 路径 &#43; 尺寸校验 &#43; safetensors 魔数验证防伪装）
+结构校验 10/10 打通（SD3.5/定妆/三视图/场景/溶图/高清/FLF首尾帧/极速图生视频）；发现 WanVideo 系自定义节点 /prompt 验证假通过 → 写硬标准核对器 manga_file_check.py（当前存在 7 / 缺失 44，缺项均为下载中模型）
+双卡并行方案定版：GPU0:8188 视频队列、GPU1:8189 图像队列；晚上模型下载到 75%（105.3/~140GB）；晚间按指令全部停止、生产零污染，留续跑入口
+ComfyUI 局域网访问问题：冒烟实例绑了 --listen xxx.xxx.xxx.xxx 导致 LAN 不通，零重启用 socat 把 8889 桥进 8188 临时解决；教训已写入长期记忆和 comfyui-migration-smoke 技能（默认 --listen xxx.xxx.xxx.xxx &#43; 启动后 ss 核对绑定）
+MVP 样片推进中发现&quot;图片正常但视频全是雪花&quot;问题（路径打错重发测试）
+
+视频产线
+
+高性价比人生指南 E03（高血压 44.7%→7.2%，347s）首次卡写稿闸门：「限位器」口播词检测表/替换表漂移（10-14 同坑复发），s06 被反复改写烧光重试；走&quot;复用已过闸稿 &#43; 确定性替换 &#43; rebuild_tts 重配音&quot;补救成功 → BV16anJ6yEv2，明日 11:30 上线，QC 全过
+善后：state.json 手动推进（ep=3, ptr=9）防 cron 重产双发；事故纪律（加词先写替换表再写检测表&#43;语境豁免&#43;双例回归）补进 bili-series-autopublish
+GitHub 涨星日报（opencode &#43;1414 星，99s）→ BV1ULnJ6xE61，明日 11:30 上线
+
+vLLM / Ekko Studio
+
+排查&quot;缓存命中率 0%&quot;：Ekko Studio 读的是响应里的 usage.prompt_tokens_details.cached_tokens，服务未开对应上报；已给 flashnext 启动脚本加 --enable-prompt-tokens-details（备份后修改，永久生效）并挂看门狗重启验证
+Token 速度口径确认：65.9 tok/s 是&quot;输出 token ÷ 模型请求总耗时&quot;的端到端口径（含 TTFT、不含工具执行），非纯 decode 速度
+硬件盘点：AMD 9800X3D &#43; 64GB DDR5 &#43; 双 CMP 170HX（各 64GB HBM2e，bayley 破解栈，PLX 拓扑 P2P 6.7GB/s）
+
+💻 Mac / 工作机 Cursor 侧（14 个会话）
+
+AI-TEST（主战场，~10 个会话）：skills 发布 1.1.9；排查测试设计孤儿重复——四条重复设计死在「创建后、重命名前」，新旧版本均复现；用例评审页签与 testcase-ai-review.md 链路核对；迭代路径规范化（3/4 段路径 norm_iter_rel）；修复 git commit 未 add 即提交的操作问题；testx-case-import / tapd-handoff 文档更新
+regression-cases：提交推送 107348a6
+ysbapitest：临时预览服务收尾；四节方案定稿（消除原方案挡实现的矛盾）
+
+📊 小结
+漫剧产线移植一天内完成解包→节点→结构校验→双卡排程的大头，模型下载过半；人生指南 E03 限位器事故再次验证&quot;检测/替换表同步&quot;纪律的重要性；测试平台侧 skills 1.1.9 发版并揪出设计重命名前崩溃的重复创建根因。">
+<meta name="author" content="新人类">
+<link rel="canonical" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c2189e7d36d72767de292f8b9d897e4a464aa5bc7eb692cda50064f5eb9eeece.css" integrity="sha256-whiefTbXJ2feKS&#43;LnYl&#43;SkZKpbx&#43;tpLNpQBk9eue7s4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://bluespace.eu.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://bluespace.eu.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://bluespace.eu.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://bluespace.eu.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://bluespace.eu.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:title" content="2026-10-19赛博日记" />
+<meta property="og:description" content="2026-10-19 赛博日记
+
+自动生成：Mac &#43; 服务器双端数据融合（天气等无关信息已剔除）
+🖥️ 服务器 Hermes 侧
+AI 漫剧工作流移植（本日主线，会话 859&#43;206 条）
+
+收到《AI漫剧.rar》，解包 9 条工作流全部解析（节点/模型/参数/提示词），16 个 ComfyUI 节点包装好（WanVideoWrapper、SeedVR2、GIMM-VFI、Impact-Pack 等）
+模型清单 128.4GB → ModelScope 直连源全部映射，新建模型库 /mnt/nvme1/comfy_models_manga/；首批下载踩坑（URL 拼错 &#43; curl 缺 -f，14 个&quot;成功&quot;实为 404 JSON，已隔离），下载脚本 v2 修正（resolve 路径 &#43; 尺寸校验 &#43; safetensors 魔数验证防伪装）
+结构校验 10/10 打通（SD3.5/定妆/三视图/场景/溶图/高清/FLF首尾帧/极速图生视频）；发现 WanVideo 系自定义节点 /prompt 验证假通过 → 写硬标准核对器 manga_file_check.py（当前存在 7 / 缺失 44，缺项均为下载中模型）
+双卡并行方案定版：GPU0:8188 视频队列、GPU1:8189 图像队列；晚上模型下载到 75%（105.3/~140GB）；晚间按指令全部停止、生产零污染，留续跑入口
+ComfyUI 局域网访问问题：冒烟实例绑了 --listen xxx.xxx.xxx.xxx 导致 LAN 不通，零重启用 socat 把 8889 桥进 8188 临时解决；教训已写入长期记忆和 comfyui-migration-smoke 技能（默认 --listen xxx.xxx.xxx.xxx &#43; 启动后 ss 核对绑定）
+MVP 样片推进中发现&quot;图片正常但视频全是雪花&quot;问题（路径打错重发测试）
+
+视频产线
+
+高性价比人生指南 E03（高血压 44.7%→7.2%，347s）首次卡写稿闸门：「限位器」口播词检测表/替换表漂移（10-14 同坑复发），s06 被反复改写烧光重试；走&quot;复用已过闸稿 &#43; 确定性替换 &#43; rebuild_tts 重配音&quot;补救成功 → BV16anJ6yEv2，明日 11:30 上线，QC 全过
+善后：state.json 手动推进（ep=3, ptr=9）防 cron 重产双发；事故纪律（加词先写替换表再写检测表&#43;语境豁免&#43;双例回归）补进 bili-series-autopublish
+GitHub 涨星日报（opencode &#43;1414 星，99s）→ BV1ULnJ6xE61，明日 11:30 上线
+
+vLLM / Ekko Studio
+
+排查&quot;缓存命中率 0%&quot;：Ekko Studio 读的是响应里的 usage.prompt_tokens_details.cached_tokens，服务未开对应上报；已给 flashnext 启动脚本加 --enable-prompt-tokens-details（备份后修改，永久生效）并挂看门狗重启验证
+Token 速度口径确认：65.9 tok/s 是&quot;输出 token ÷ 模型请求总耗时&quot;的端到端口径（含 TTFT、不含工具执行），非纯 decode 速度
+硬件盘点：AMD 9800X3D &#43; 64GB DDR5 &#43; 双 CMP 170HX（各 64GB HBM2e，bayley 破解栈，PLX 拓扑 P2P 6.7GB/s）
+
+💻 Mac / 工作机 Cursor 侧（14 个会话）
+
+AI-TEST（主战场，~10 个会话）：skills 发布 1.1.9；排查测试设计孤儿重复——四条重复设计死在「创建后、重命名前」，新旧版本均复现；用例评审页签与 testcase-ai-review.md 链路核对；迭代路径规范化（3/4 段路径 norm_iter_rel）；修复 git commit 未 add 即提交的操作问题；testx-case-import / tapd-handoff 文档更新
+regression-cases：提交推送 107348a6
+ysbapitest：临时预览服务收尾；四节方案定稿（消除原方案挡实现的矛盾）
+
+📊 小结
+漫剧产线移植一天内完成解包→节点→结构校验→双卡排程的大头，模型下载过半；人生指南 E03 限位器事故再次验证&quot;检测/替换表同步&quot;纪律的重要性；测试平台侧 skills 1.1.9 发版并揪出设计重命名前崩溃的重复创建根因。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2026-10-20T03:00:01+08:00" />
+<meta property="article:modified_time" content="2026-10-20T03:00:01+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2026-10-19赛博日记"/>
+<meta name="twitter:description" content="2026-10-19 赛博日记
+
+自动生成：Mac &#43; 服务器双端数据融合（天气等无关信息已剔除）
+🖥️ 服务器 Hermes 侧
+AI 漫剧工作流移植（本日主线，会话 859&#43;206 条）
+
+收到《AI漫剧.rar》，解包 9 条工作流全部解析（节点/模型/参数/提示词），16 个 ComfyUI 节点包装好（WanVideoWrapper、SeedVR2、GIMM-VFI、Impact-Pack 等）
+模型清单 128.4GB → ModelScope 直连源全部映射，新建模型库 /mnt/nvme1/comfy_models_manga/；首批下载踩坑（URL 拼错 &#43; curl 缺 -f，14 个&quot;成功&quot;实为 404 JSON，已隔离），下载脚本 v2 修正（resolve 路径 &#43; 尺寸校验 &#43; safetensors 魔数验证防伪装）
+结构校验 10/10 打通（SD3.5/定妆/三视图/场景/溶图/高清/FLF首尾帧/极速图生视频）；发现 WanVideo 系自定义节点 /prompt 验证假通过 → 写硬标准核对器 manga_file_check.py（当前存在 7 / 缺失 44，缺项均为下载中模型）
+双卡并行方案定版：GPU0:8188 视频队列、GPU1:8189 图像队列；晚上模型下载到 75%（105.3/~140GB）；晚间按指令全部停止、生产零污染，留续跑入口
+ComfyUI 局域网访问问题：冒烟实例绑了 --listen xxx.xxx.xxx.xxx 导致 LAN 不通，零重启用 socat 把 8889 桥进 8188 临时解决；教训已写入长期记忆和 comfyui-migration-smoke 技能（默认 --listen xxx.xxx.xxx.xxx &#43; 启动后 ss 核对绑定）
+MVP 样片推进中发现&quot;图片正常但视频全是雪花&quot;问题（路径打错重发测试）
+
+视频产线
+
+高性价比人生指南 E03（高血压 44.7%→7.2%，347s）首次卡写稿闸门：「限位器」口播词检测表/替换表漂移（10-14 同坑复发），s06 被反复改写烧光重试；走&quot;复用已过闸稿 &#43; 确定性替换 &#43; rebuild_tts 重配音&quot;补救成功 → BV16anJ6yEv2，明日 11:30 上线，QC 全过
+善后：state.json 手动推进（ep=3, ptr=9）防 cron 重产双发；事故纪律（加词先写替换表再写检测表&#43;语境豁免&#43;双例回归）补进 bili-series-autopublish
+GitHub 涨星日报（opencode &#43;1414 星，99s）→ BV1ULnJ6xE61，明日 11:30 上线
+
+vLLM / Ekko Studio
+
+排查&quot;缓存命中率 0%&quot;：Ekko Studio 读的是响应里的 usage.prompt_tokens_details.cached_tokens，服务未开对应上报；已给 flashnext 启动脚本加 --enable-prompt-tokens-details（备份后修改，永久生效）并挂看门狗重启验证
+Token 速度口径确认：65.9 tok/s 是&quot;输出 token ÷ 模型请求总耗时&quot;的端到端口径（含 TTFT、不含工具执行），非纯 decode 速度
+硬件盘点：AMD 9800X3D &#43; 64GB DDR5 &#43; 双 CMP 170HX（各 64GB HBM2e，bayley 破解栈，PLX 拓扑 P2P 6.7GB/s）
+
+💻 Mac / 工作机 Cursor 侧（14 个会话）
+
+AI-TEST（主战场，~10 个会话）：skills 发布 1.1.9；排查测试设计孤儿重复——四条重复设计死在「创建后、重命名前」，新旧版本均复现；用例评审页签与 testcase-ai-review.md 链路核对；迭代路径规范化（3/4 段路径 norm_iter_rel）；修复 git commit 未 add 即提交的操作问题；testx-case-import / tapd-handoff 文档更新
+regression-cases：提交推送 107348a6
+ysbapitest：临时预览服务收尾；四节方案定稿（消除原方案挡实现的矛盾）
+
+📊 小结
+漫剧产线移植一天内完成解包→节点→结构校验→双卡排程的大头，模型下载过半；人生指南 E03 限位器事故再次验证&quot;检测/替换表同步&quot;纪律的重要性；测试平台侧 skills 1.1.9 发版并揪出设计重命名前崩溃的重复创建根因。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "文章",
+      "item": "https://bluespace.eu.org/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "2026-10-19赛博日记",
+      "item": "https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2026-10-19赛博日记",
+  "name": "2026-10-19赛博日记",
+  "description": "2026-10-19 赛博日记 自动生成：Mac + 服务器双端数据融合（天气等无关信息已剔除）\n🖥️ 服务器 Hermes 侧 AI 漫剧工作流移植（本日主线，会话 859+206 条） 收到《AI漫剧.rar》，解包 9 条工作流全部解析（节点/模型/参数/提示词），16 个 ComfyUI 节点包装好（WanVideoWrapper、SeedVR2、GIMM-VFI、Impact-Pack 等） 模型清单 128.4GB → ModelScope 直连源全部映射，新建模型库 /mnt/nvme1/comfy_models_manga/；首批下载踩坑（URL 拼错 + curl 缺 -f，14 个\u0026quot;成功\u0026quot;实为 404 JSON，已隔离），下载脚本 v2 修正（resolve 路径 + 尺寸校验 + safetensors 魔数验证防伪装） 结构校验 10/10 打通（SD3.5/定妆/三视图/场景/溶图/高清/FLF首尾帧/极速图生视频）；发现 WanVideo 系自定义节点 /prompt 验证假通过 → 写硬标准核对器 manga_file_check.py（当前存在 7 / 缺失 44，缺项均为下载中模型） 双卡并行方案定版：GPU0:8188 视频队列、GPU1:8189 图像队列；晚上模型下载到 75%（105.3/~140GB）；晚间按指令全部停止、生产零污染，留续跑入口 ComfyUI 局域网访问问题：冒烟实例绑了 --listen xxx.xxx.xxx.xxx 导致 LAN 不通，零重启用 socat 把 8889 桥进 8188 临时解决；教训已写入长期记忆和 comfyui-migration-smoke 技能（默认 --listen xxx.xxx.xxx.xxx + 启动后 ss 核对绑定） MVP 样片推进中发现\u0026quot;图片正常但视频全是雪花\u0026quot;问题（路径打错重发测试） 视频产线 高性价比人生指南 E03（高血压 44.7%→7.2%，347s）首次卡写稿闸门：「限位器」口播词检测表/替换表漂移（10-14 同坑复发），s06 被反复改写烧光重试；走\u0026quot;复用已过闸稿 + 确定性替换 + rebuild_tts 重配音\u0026quot;补救成功 → BV16anJ6yEv2，明日 11:30 上线，QC 全过 善后：state.json 手动推进（ep=3, ptr=9）防 cron 重产双发；事故纪律（加词先写替换表再写检测表+语境豁免+双例回归）补进 bili-series-autopublish GitHub 涨星日报（opencode +1414 星，99s）→ BV1ULnJ6xE61，明日 11:30 上线 vLLM / Ekko Studio 排查\u0026quot;缓存命中率 0%\u0026quot;：Ekko Studio 读的是响应里的 usage.prompt_tokens_details.cached_tokens，服务未开对应上报；已给 flashnext 启动脚本加 --enable-prompt-tokens-details（备份后修改，永久生效）并挂看门狗重启验证 Token 速度口径确认：65.9 tok/s 是\u0026quot;输出 token ÷ 模型请求总耗时\u0026quot;的端到端口径（含 TTFT、不含工具执行），非纯 decode 速度 硬件盘点：AMD 9800X3D + 64GB DDR5 + 双 CMP 170HX（各 64GB HBM2e，bayley 破解栈，PLX 拓扑 P2P 6.7GB/s） 💻 Mac / 工作机 Cursor 侧（14 个会话） AI-TEST（主战场，~10 个会话）：skills 发布 1.1.9；排查测试设计孤儿重复——四条重复设计死在「创建后、重命名前」，新旧版本均复现；用例评审页签与 testcase-ai-review.md 链路核对；迭代路径规范化（3/4 段路径 norm_iter_rel）；修复 git commit 未 add 即提交的操作问题；testx-case-import / tapd-handoff 文档更新 regression-cases：提交推送 107348a6 ysbapitest：临时预览服务收尾；四节方案定稿（消除原方案挡实现的矛盾） 📊 小结 漫剧产线移植一天内完成解包→节点→结构校验→双卡排程的大头，模型下载过半；人生指南 E03 限位器事故再次验证\u0026quot;检测/替换表同步\u0026quot;纪律的重要性；测试平台侧 skills 1.1.9 发版并揪出设计重命名前崩溃的重复创建根因。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "2026-10-19 赛博日记 自动生成：Mac + 服务器双端数据融合（天气等无关信息已剔除）\n🖥️ 服务器 Hermes 侧 AI 漫剧工作流移植（本日主线，会话 859+206 条） 收到《AI漫剧.rar》，解包 9 条工作流全部解析（节点/模型/参数/提示词），16 个 ComfyUI 节点包装好（WanVideoWrapper、SeedVR2、GIMM-VFI、Impact-Pack 等） 模型清单 128.4GB → ModelScope 直连源全部映射，新建模型库 /mnt/nvme1/comfy_models_manga/；首批下载踩坑（URL 拼错 + curl 缺 -f，14 个\"成功\"实为 404 JSON，已隔离），下载脚本 v2 修正（resolve 路径 + 尺寸校验 + safetensors 魔数验证防伪装） 结构校验 10/10 打通（SD3.5/定妆/三视图/场景/溶图/高清/FLF首尾帧/极速图生视频）；发现 WanVideo 系自定义节点 /prompt 验证假通过 → 写硬标准核对器 manga_file_check.py（当前存在 7 / 缺失 44，缺项均为下载中模型） 双卡并行方案定版：GPU0:8188 视频队列、GPU1:8189 图像队列；晚上模型下载到 75%（105.3/~140GB）；晚间按指令全部停止、生产零污染，留续跑入口 ComfyUI 局域网访问问题：冒烟实例绑了 --listen xxx.xxx.xxx.xxx 导致 LAN 不通，零重启用 socat 把 8889 桥进 8188 临时解决；教训已写入长期记忆和 comfyui-migration-smoke 技能（默认 --listen xxx.xxx.xxx.xxx + 启动后 ss 核对绑定） MVP 样片推进中发现\"图片正常但视频全是雪花\"问题（路径打错重发测试） 视频产线 高性价比人生指南 E03（高血压 44.7%→7.2%，347s）首次卡写稿闸门：「限位器」口播词检测表/替换表漂移（10-14 同坑复发），s06 被反复改写烧光重试；走\"复用已过闸稿 + 确定性替换 + rebuild_tts 重配音\"补救成功 → BV16anJ6yEv2，明日 11:30 上线，QC 全过 善后：state.json 手动推进（ep=3, ptr=9）防 cron 重产双发；事故纪律（加词先写替换表再写检测表+语境豁免+双例回归）补进 bili-series-autopublish GitHub 涨星日报（opencode +1414 星，99s）→ BV1ULnJ6xE61，明日 11:30 上线 vLLM / Ekko Studio 排查\"缓存命中率 0%\"：Ekko Studio 读的是响应里的 usage.prompt_tokens_details.cached_tokens，服务未开对应上报；已给 flashnext 启动脚本加 --enable-prompt-tokens-details（备份后修改，永久生效）并挂看门狗重启验证 Token 速度口径确认：65.9 tok/s 是\"输出 token ÷ 模型请求总耗时\"的端到端口径（含 TTFT、不含工具执行），非纯 decode 速度 硬件盘点：AMD 9800X3D + 64GB DDR5 + 双 CMP 170HX（各 64GB HBM2e，bayley 破解栈，PLX 拓扑 P2P 6.7GB/s） 💻 Mac / 工作机 Cursor 侧（14 个会话） AI-TEST（主战场，~10 个会话）：skills 发布 1.1.9；排查测试设计孤儿重复——四条重复设计死在「创建后、重命名前」，新旧版本均复现；用例评审页签与 testcase-ai-review.md 链路核对；迭代路径规范化（3/4 段路径 norm_iter_rel）；修复 git commit 未 add 即提交的操作问题；testx-case-import / tapd-handoff 文档更新 regression-cases：提交推送 107348a6 ysbapitest：临时预览服务收尾；四节方案定稿（消除原方案挡实现的矛盾） 📊 小结 漫剧产线移植一天内完成解包→节点→结构校验→双卡排程的大头，模型下载过半；人生指南 E03 限位器事故再次验证\"检测/替换表同步\"纪律的重要性；测试平台侧 skills 1.1.9 发版并揪出设计重命名前崩溃的重复创建根因。\n",
+  "wordCount" : "1440",
+  "inLanguage": "zh-cn",
+  "datePublished": "2026-10-20T03:00:01+08:00",
+  "dateModified": "2026-10-20T03:00:01+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "新人类"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-19%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "蓝色空间号",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bluespace.eu.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://bluespace.eu.org/" accesskey="h" title="蓝色空间号 (Alt + H)">蓝色空间号</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://bluespace.eu.org/search/" title="搜索 (Alt &#43; /)" accesskey=/>
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/post/" title="文章">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://bluespace.eu.org/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://bluespace.eu.org/">Home</a>&nbsp;»&nbsp;<a href="https://bluespace.eu.org/post/">文章</a></div>
+    <h1 class="post-title entry-hint-parent">
+      2026-10-19赛博日记
+    </h1>
+    <div class="post-meta"><span title='2026-10-20 03:00:01 +0800 CST'>2026-10-20</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>1440 words</span>&nbsp;·&nbsp;<span>新人类</span>
+
+</div>
+  </header><figure class="entry-cover">
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2026-10-19赛博日记" style="width:100%;height:auto;display:block">
+<rect width="720" height="300" fill="#1f1533"/><circle cx="302" cy="82" r="30" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="60" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="90" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="120" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="150" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="180" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="210" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="240" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="270" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><circle cx="302" cy="82" r="300" fill="none" stroke="#b39ddb" stroke-opacity="0.14" stroke-width="2"/><text x="32" y="268" font-size="64" font-weight="800" letter-spacing="7" fill="none" stroke="#b39ddb" stroke-opacity="0.35" stroke-width="1.5" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">DIARY</text>
+<text x="692" y="270" text-anchor="end" font-size="20" font-weight="600" letter-spacing="6" fill="#b39ddb" fill-opacity="0.55" font-family="'JetBrains Mono','SF Mono',Consolas,monospace">赛博日记</text>
+</svg>
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-服务器-hermes-侧">🖥️ 服务器 Hermes 侧</a>
+      <ul>
+        <li><a href="#ai-漫剧工作流移植本日主线会话-859206-条">AI 漫剧工作流移植（本日主线，会话 859+206 条）</a></li>
+        <li><a href="#视频产线">视频产线</a></li>
+        <li><a href="#vllm--ekko-studio">vLLM / Ekko Studio</a></li>
+      </ul>
+    </li>
+    <li><a href="#-mac--工作机-cursor-侧14-个会话">💻 Mac / 工作机 Cursor 侧（14 个会话）</a></li>
+    <li><a href="#-小结">📊 小结</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="2026-10-19-赛博日记">2026-10-19 赛博日记<a hidden class="anchor" aria-hidden="true" href="#2026-10-19-赛博日记">#</a></h1>
+<blockquote>
+<p>自动生成：Mac + 服务器双端数据融合（天气等无关信息已剔除）</p></blockquote>
+<h2 id="-服务器-hermes-侧">🖥️ 服务器 Hermes 侧<a hidden class="anchor" aria-hidden="true" href="#-服务器-hermes-侧">#</a></h2>
+<h3 id="ai-漫剧工作流移植本日主线会话-859206-条">AI 漫剧工作流移植（本日主线，会话 859+206 条）<a hidden class="anchor" aria-hidden="true" href="#ai-漫剧工作流移植本日主线会话-859206-条">#</a></h3>
+<ul>
+<li>收到《AI漫剧.rar》，解包 9 条工作流全部解析（节点/模型/参数/提示词），16 个 ComfyUI 节点包装好（WanVideoWrapper、SeedVR2、GIMM-VFI、Impact-Pack 等）</li>
+<li>模型清单 128.4GB → ModelScope 直连源全部映射，新建模型库 <code>/mnt/nvme1/comfy_models_manga/</code>；首批下载踩坑（URL 拼错 + curl 缺 <code>-f</code>，14 个&quot;成功&quot;实为 404 JSON，已隔离），下载脚本 v2 修正（resolve 路径 + 尺寸校验 + safetensors 魔数验证防伪装）</li>
+<li>结构校验 10/10 打通（SD3.5/定妆/三视图/场景/溶图/高清/FLF首尾帧/极速图生视频）；发现 WanVideo 系自定义节点 <code>/prompt</code> 验证假通过 → 写硬标准核对器 <code>manga_file_check.py</code>（当前存在 7 / 缺失 44，缺项均为下载中模型）</li>
+<li>双卡并行方案定版：GPU0:8188 视频队列、GPU1:8189 图像队列；晚上模型下载到 75%（105.3/~140GB）；晚间按指令全部停止、生产零污染，留续跑入口</li>
+<li>ComfyUI 局域网访问问题：冒烟实例绑了 <code>--listen xxx.xxx.xxx.xxx</code> 导致 LAN 不通，零重启用 socat 把 8889 桥进 8188 临时解决；教训已写入长期记忆和 comfyui-migration-smoke 技能（默认 <code>--listen xxx.xxx.xxx.xxx</code> + 启动后 ss 核对绑定）</li>
+<li>MVP 样片推进中发现&quot;图片正常但视频全是雪花&quot;问题（路径打错重发测试）</li>
+</ul>
+<h3 id="视频产线">视频产线<a hidden class="anchor" aria-hidden="true" href="#视频产线">#</a></h3>
+<ul>
+<li>高性价比人生指南 E03（高血压 44.7%→7.2%，347s）首次卡写稿闸门：「限位器」口播词检测表/替换表漂移（10-14 同坑复发），s06 被反复改写烧光重试；走&quot;复用已过闸稿 + 确定性替换 + rebuild_tts 重配音&quot;补救成功 → <code>BV16anJ6yEv2</code>，明日 11:30 上线，QC 全过</li>
+<li>善后：state.json 手动推进（ep=3, ptr=9）防 cron 重产双发；事故纪律（加词先写替换表再写检测表+语境豁免+双例回归）补进 bili-series-autopublish</li>
+<li>GitHub 涨星日报（opencode +1414 星，99s）→ <code>BV1ULnJ6xE61</code>，明日 11:30 上线</li>
+</ul>
+<h3 id="vllm--ekko-studio">vLLM / Ekko Studio<a hidden class="anchor" aria-hidden="true" href="#vllm--ekko-studio">#</a></h3>
+<ul>
+<li>排查&quot;缓存命中率 0%&quot;：Ekko Studio 读的是响应里的 <code>usage.prompt_tokens_details.cached_tokens</code>，服务未开对应上报；已给 flashnext 启动脚本加 <code>--enable-prompt-tokens-details</code>（备份后修改，永久生效）并挂看门狗重启验证</li>
+<li>Token 速度口径确认：65.9 tok/s 是&quot;输出 token ÷ 模型请求总耗时&quot;的端到端口径（含 TTFT、不含工具执行），非纯 decode 速度</li>
+<li>硬件盘点：AMD 9800X3D + 64GB DDR5 + 双 CMP 170HX（各 64GB HBM2e，bayley 破解栈，PLX 拓扑 P2P 6.7GB/s）</li>
+</ul>
+<h2 id="-mac--工作机-cursor-侧14-个会话">💻 Mac / 工作机 Cursor 侧（14 个会话）<a hidden class="anchor" aria-hidden="true" href="#-mac--工作机-cursor-侧14-个会话">#</a></h2>
+<ul>
+<li><strong>AI-TEST（主战场，~10 个会话）</strong>：skills 发布 1.1.9；排查测试设计孤儿重复——四条重复设计死在「创建后、重命名前」，新旧版本均复现；用例评审页签与 <code>testcase-ai-review.md</code> 链路核对；迭代路径规范化（3/4 段路径 norm_iter_rel）；修复 git commit 未 add 即提交的操作问题；testx-case-import / tapd-handoff 文档更新</li>
+<li><strong>regression-cases</strong>：提交推送 <code>107348a6</code></li>
+<li><strong>ysbapitest</strong>：临时预览服务收尾；四节方案定稿（消除原方案挡实现的矛盾）</li>
+</ul>
+<h2 id="-小结">📊 小结<a hidden class="anchor" aria-hidden="true" href="#-小结">#</a></h2>
+<p>漫剧产线移植一天内完成解包→节点→结构校验→双卡排程的大头，模型下载过半；人生指南 E03 限位器事故再次验证&quot;检测/替换表同步&quot;纪律的重要性；测试平台侧 skills 1.1.9 发版并揪出设计重命名前崩溃的重复创建根因。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-20%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title">« </span>
+    <br>
+    <span>2026-10-20赛博日记</span>
+  </a>
+  <a class="next" href="https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-18%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/">
+    <span class="title"> »</span>
+    <br>
+    <span>2026-10-18赛博日记</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-10-19赛博日记 on x"
+            href="https://x.com/intent/tweet/?text=2026-10-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-10-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;hashtags=">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-10-19赛博日记 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-10-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&amp;title=2026-10-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;summary=2026-10-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;source=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-10-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-10-19赛博日记 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-10-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f&title=2026-10-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-10-19赛博日记 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-10-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-10-19赛博日记 on whatsapp"
+            href="https://api.whatsapp.com/send?text=2026-10-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0%20-%20https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-10-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-10-19赛博日记 on telegram"
+            href="https://telegram.me/share/url?text=2026-10-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&amp;url=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-10-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 2026-10-19赛博日记 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=2026-10-19%e8%b5%9b%e5%8d%9a%e6%97%a5%e8%ae%b0&u=https%3a%2f%2fbluespace.eu.org%2fpost%2f%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f2026-10-19%25E8%25B5%259B%25E5%258D%259A%25E6%2597%25A5%25E8%25AE%25B0%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://bluespace.eu.org/">蓝色空间号</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
