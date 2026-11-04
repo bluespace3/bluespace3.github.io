@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 03 Nov 2026 23:55:31 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-11-03赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-03%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 03 Nov 2026 23:55:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-03%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-03周二赛博日记">2026-11-03（周二）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 04 Nov 2026 23:54:23 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-11-04赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 04 Nov 2026 23:54:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-04周三赛博日记">2026-11-04（周三）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-11-04 23:52 (Asia/Shanghai)
+更新方式：合并更新（23:45 版基础上纳入 Hermes 本机事项、Claude/Cursor 工作记录、Todoist 数据）&lt;/p></description></item><item><title>2026-11-03赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-03%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 03 Nov 2026 23:55:31 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-03%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-03周二赛博日记">2026-11-03（周二）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-11-03 23:55 (Asia/Shanghai)｜本轮为合并更新（23:45 版基础上纳入 Claude Code 记录与 Hermes 本机事项）&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
@@ -55,82 +58,39 @@
 &lt;li>&lt;strong>会话数&lt;/strong>：Cursor 15 个（共 478 条消息），Claude 0 个&lt;/li>
 &lt;li>&lt;strong>主战场&lt;/strong>：&lt;code>ysbapitest&lt;/code>（AI 用例生成平台）+ &lt;code>AI-TEST&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>1. 转测编排优化：无提交不阻断（14:00，commit 895df3b）&lt;/strong>&lt;/p></description></item><item><title>2026-11-01赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 01 Nov 2026 23:54:28 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-01-赛博日记">2026-11-01 赛博日记&lt;/h1>
+&lt;p>&lt;strong>1. 转测编排优化：无提交不阻断（14:00，commit 895df3b）&lt;/strong>&lt;/p></description></item><item><title>2026-11-01赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 01 Nov 2026 23:54:28 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-01%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-01周日赛博日记">2026-11-01（周日）赛博日记&lt;/h1>
 &lt;blockquote>
-&lt;p>生成时间：2026-11-01 23:55 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;p>生成时间：2026-11-04 23:45 (Asia/Shanghai)，补生成&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
-&lt;h3 id="-动漫短剧破绽之眼r01-全片落地--质检体系调研">🎬 动漫短剧「破绽之眼」R01 全片落地 + 质检体系调研&lt;/h3>
+&lt;p>当日无个人笔记、对话会话与新增工作记忆，本日记录以自动化事件为主。&lt;/p>
+&lt;h3 id="-台式机探活事件">🏠 台式机探活事件&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>R01 修复任务 42/42 镜全部完成&lt;/strong>（凌晨 04:35 最后一镜落盘），双卡 H3 台词镜渲染收官&lt;/li>
-&lt;li>看门狗退出时因&lt;strong>判定序 bug&lt;/strong> 跳过收尾，两个 ComfyUI 实例占着双卡各 52G 显存——已按预授权方案代为收尾（stop 实例 + plan restore 拉回 flashnext）&lt;/li>
-&lt;li>&lt;strong>交付链路踩坑&lt;/strong>：合成成片写到 &lt;code>novel2drama/output/&lt;/code>，审核台只认剧集目录 &lt;code>shots/R01/renders/&lt;/code>（扫不到外面）→ 按老规矩 &lt;code>ln&lt;/code> 软链进去，8900 API 确认收录（成片数 1，关键帧 10）&lt;/li>
-&lt;li>&lt;strong>硬核质检发现&lt;/strong>：全量扫描坐实 42 镜中 &lt;strong>12 镜是日语配音&lt;/strong>（p=0.94 识别出胡话），3 镜纯静音。根因：H3 是音频驱动模型，给非台词镜喂静音/弱音频会&amp;quot;幻听&amp;quot;出外语音轨（babble 特性）&lt;/li>
-&lt;li>其他成片问题：人物重影、张嘴无声、场景漂移（游乐场→档案室）、乱码字幕、尖锐噪音——逐条反馈迭代&lt;/li>
-&lt;li>&lt;strong>决策&lt;/strong>：先做 480p 快速验证版本，正片确定后再统一提升清晰度（避免返工浪费）；发布线：渲染字幕 + 特写大字解说 + 高清放大后投 B 站&lt;/li>
+&lt;li>&lt;strong>23:25 短暂失联&lt;/strong>：ping + TCP(22/8900) 连续 6 分钟不通，触发飞书告警&lt;/li>
+&lt;li>&lt;strong>23:31 恢复&lt;/strong>：宕机约 5 分钟后自行恢复，属轻微闪断&lt;/li>
 &lt;/ul>
-&lt;h3 id="-ai-视频自动质检验收调研子代理调研完成">🔍 AI 视频自动质检验收调研（子代理调研完成）&lt;/h3>
+&lt;h3 id="-例行自动化">🤖 例行自动化&lt;/h3>
 &lt;ul>
-&lt;li>核心发现两个同类参考项目：
-&lt;ul>
-&lt;li>&lt;strong>sipratt-p/video-rsi&lt;/strong>：4 层验收（prompt lint → ffmpeg/numpy 确定性检查 → faster-whisper+ECAPA 音频检查 → 本地 VLM judge），README 抓的故障就是&amp;quot;babble、念提示词、幽灵角色、嘴不动&amp;quot;——&lt;strong>设计蓝本&lt;/strong>&lt;/li>
-&lt;li>&lt;strong>guyaga/10d10s-bonus-h3-lipsync&lt;/strong>：MiniMax H3 同款产线，逐镜 SyncNet 门禁（|offset|≤1-2 帧、confidence≥2），明确警告&amp;quot;别信 VLM 的 lipsync 打分&amp;quot;——阈值已实测校准&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&amp;ldquo;DoTA&amp;rdquo; 项目查证不存在（多路检索无果），该生态代表应为 Q-Align / VideoScore 系&lt;/li>
-&lt;li>痛点共识：每片段/成片验收靠人看太贵，需&amp;quot;渲染后自动跑质检 + FAIL 拦截&amp;quot;&lt;/li>
-&lt;/ul>
-&lt;h3 id="-知识产线大修钩子归位--封面人话转换">📺 知识产线大修：钩子归位 + 封面&amp;quot;人话转换&amp;quot;&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>结尾钩子被顶到中间&lt;/strong>：根因是 topup 补字环节机械追加到末尾把&amp;quot;关注xxx&amp;quot;顶走。焊死两道代码闸：topup 强制插到钩子前 + 过闸前 enforce_tail_hook 机械归位（E13/E14/E15 真实终稿回喂验证，归位正确零改字）&lt;/li>
-&lt;li>&lt;strong>开场目录病&lt;/strong>（三件事各一句囫囵带过）：重写 s01 节拍提示词 + 公共规则新增&amp;quot;开场只展开一个钩子&amp;quot;条款&lt;/li>
-&lt;li>&lt;strong>封面病句&lt;/strong>（&amp;ldquo;煮开也没用&amp;quot;之类不知所云）：审计发现 16 集里一批同类病，病根在 gen_cover.py（主标只要求&amp;quot;更短更狠&amp;quot;没要求主体、副标机械取 picks[0]）。已加 cover_override.json 定点覆盖机制 + gate_cover 闸 + 副标同线选条&lt;/li>
-&lt;li>E13/E14/E15 修复版已替换上线 B 站（新 BV 号，钩子全部归位收尾，LUFS -14~-15），归入合集；经验沉淀进 bili-series-autopublish / video-publish-ops 技能卡&lt;/li>
-&lt;li>旧稿转&amp;quot;仅自己可见&amp;quot;API 三轮失败（-111→21001→字段静默丢弃），按止损纪律停手，web/edit 正确载荷已沉淀&lt;/li>
-&lt;/ul>
-&lt;h3 id="-gpu-配音恢复--模型切换">⚡ GPU 配音恢复 + 模型切换&lt;/h3>
-&lt;ul>
-&lt;li>flashnext gpu_mem 0.95→0.92，余量 4.9G 稳放 TTS：13 场 GPU 配音 5 分钟（CPU 要 45 分钟），&lt;strong>禁 CPU 配音定案&lt;/strong>进技能卡&lt;/li>
-&lt;li>&lt;strong>Hermes 模型切换&lt;/strong>：视觉模型 + 主模型 → 本地 qwen3.8-flash-next，备用链 → 云端 glm-5.3-flash；切换验证（识图测试）通过；gateway 重启被内进程护栏拦，走系统 crontab 一次性重启破局&lt;/li>
-&lt;/ul>
-&lt;h3 id="-strata-本地模型服务排障">🖥️ Strata 本地模型服务排障&lt;/h3>
-&lt;ul>
-&lt;li>:8000 连不上的根因：Strata 只绑 xxx.xxx.xxx.xxx。GPU 工作台（:8900）Strata 卡片新增「监听地址」开关（xxx.xxx.xxx.xxx/xxx.xxx.xxx.xxx），保存落盘下次启动生效&lt;/li>
-&lt;li>顺手修三个隐患：旧版&amp;quot;立即应用&amp;quot;会绕过 systemd 裸起进程抢端口（改纯落盘）；pkill 模式钉死目录路径（改通配）；&lt;code>python | tee&lt;/code> 吞退出码导致 systemd Restart 永久失效（PIPESTATUS 修复）&lt;/li>
-&lt;li>质量口径提示：Strata 与生产的差异不在量化（Q8_0），在 KV cache int8 vs BF16、投机步数 4 vs 6、单卡 vs 双卡 TEP2——对长上下文质量影响可能更大&lt;/li>
-&lt;/ul>
-&lt;h3 id="-新项目调研project-maya超大-moe-显存-内存-nvme-三层放置">🔬 新项目调研：project-maya（超大 MoE 显存-内存-NVMe 三层放置）&lt;/h3>
-&lt;ul>
-&lt;li>MIT，25 天 ★2320，引擎 fork 自 Strata。双卡 CMP 170HX 64G &lt;strong>有同卡实证&lt;/strong>可跑（issue #22 双卡 decode 61.3 tok/s、#263/#281 单卡数据），机器驱动/CUDA 全满足——候选跟进&lt;/li>
-&lt;/ul>
-&lt;h3 id="-b-站知识区重制选题调研">📊 B 站知识区重制选题调研&lt;/h3>
-&lt;ul>
-&lt;li>关键结论：B 站搜索接口 &lt;code>order=play&lt;/code> 对匿名请求无效（服务端忽略），wbi 签名也无效；找片靠 &lt;code>ranking/region&lt;/code> 子分区 3 日/7 日榜 + yt-dlp 下载&lt;/li>
-&lt;li>12 领域横向对比 + 近 2 天 100 条新片，&lt;strong>选定心理学&lt;/strong>领域，1-2 天窗口；装配脚本（6 场景简笔画，句锚定）编写中&lt;/li>
-&lt;/ul>
-&lt;h3 id="-硬件与运维">⚠️ 硬件与运维&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>GPU1 PCIe 降宽 x2 告警&lt;/strong>（8880 次运行首次触发，防抖已过）：ComfyUI 退出后仍卡 Gen1 x2，非热降级，链路训练卡死需重新枚举/重启；夜间关机重启后 cmp-unlock 会 retrain 回 x16&lt;/li>
-&lt;li>ComfyUI 按指令杀干净（GPU1 完全空载 4MiB，GPU0 strata 未动 62.8G），高清渲染停在 6/41 镜，恢复时幂等续跑&lt;/li>
-&lt;li>&lt;strong>定时关机乌龙复盘&lt;/strong>：把&amp;quot;取消今天的关机&amp;quot;过度执行成停用整个 crontab 任务 → 已恢复原状（crontab 行恢复 + veto 解除）；教训入长期记忆：&amp;ldquo;取消今天的&amp;rdquo; = 只落当晚取消标记&lt;/li>
-&lt;li>gtrending 产线三天没产片：23:40 时段机器关机 + 唯一没有 @reboot 补跑的产线，已补&lt;/li>
-&lt;li>pipeline.log 定按周清理定案&lt;/li>
-&lt;/ul>
-&lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>验收自动化是当前最大痛点&lt;/strong>：每条成片人眼看太贵，发现问题是返工的开始。方向已明：video-rsi 分层架构 + H3 同款 SyncNet 门禁，做&amp;quot;渲染后自动质检 + FAIL 拦截&amp;rdquo;&lt;/li>
-&lt;li>&lt;strong>产线修复纪律&lt;/strong>：按纪律先修产线根因再修存量；封面/标题都要过&amp;quot;人话转换&amp;quot;闸&lt;/li>
-&lt;li>&lt;strong>交付三通道&lt;/strong>：renders/ 软链 + 8899 + 飞书；飞书发媒体先查 30MB 上限，超限直接走 8899（已沉淀坑位库）&lt;/li>
-&lt;li>短剧渲染策略定案：先生成 480p 快速验证，正片确定后统一提升清晰度，不要指望一个版本就过&lt;/li>
+&lt;li>智能收藏每日回顾 / Todoist 推送 / 飞书文档同步 / 笔记仓库同步：正常执行&lt;/li>
+&lt;li>记忆系统（dreaming）：例行维护，无异常&lt;/li>
 &lt;/ul>
 &lt;h2 id="今日摘要">今日摘要&lt;/h2>
-&lt;p>今天是重产出+重修复的一天：动漫短剧 R01 42 镜全片落地并进入人审/质检循环（发现 12 镜日语配音的 H3 静音幻听根因）；知识产线完成钩子归位、开场结构、封面病句三处产线级修复并替换上线三集；恢复 GPU 配音（45 分钟→5 分钟）；Hermes 切换到本地 qwen3.8-flash-next 主模型；完成 AI 视频自动质检调研（锁定 video-rsi + SyncNet 门禁方向）；处理 GPU1 PCIe 降宽告警与定时关机乌龙复盘。&lt;/p></description></item><item><title>2026-10-31赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 01 Nov 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-31-赛博日记">2026-10-31 赛博日记&lt;/h1>
-&lt;h2 id="今日记录">今日记录&lt;/h2>
+&lt;p>安静的周日：仅深夜一次 5 分钟短暂失联闪断，其余例行自动化平稳。&lt;/p></description></item><item><title>2026-10-31赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Sun, 01 Nov 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-31%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-31周六赛博日记">2026-10-31（周六）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-11-04 23:45 (Asia/Shanghai)，补生成&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;p>当日无个人笔记与新增工作记忆，本日记录以对话/自动化事件为主。&lt;/p>
+&lt;h3 id="-台式机远程开机">🏠 台式机远程开机&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>远程开机&lt;/strong>：深夜通过 TUI 会话请求&amp;quot;开机&amp;quot;，执行 WOL 魔术包（全球广播 + xxx.xxx.xxx.xxx）连发 3 轮，成功唤醒台式机。&lt;/li>
-&lt;li>&lt;strong>网络连通性确认&lt;/strong>：Tailscale 节点 &lt;code>liyi-ms-7e71&lt;/code> (xxx.xxx.xxx.xxx) ping 4/4 包、0% 丢包；局域网 xxx.xxx.xxx.xxx 已出现在 ARP 表中，主机完全在线。&lt;/li>
+&lt;li>&lt;strong>00:44&lt;/strong>：webchat 会话中发出&amp;quot;开机&amp;quot;指令，通过 WOL 魔术包（全球广播 + xxx.xxx.xxx.xxx）成功唤醒台式机&lt;/li>
+&lt;li>Tailscale 探测 &lt;code>liyi-ms-7e71&lt;/code> (xxx.xxx.xxx.xxx) 4/4 包 0% 丢包，局域网 xxx.xxx.xxx.xxx 也进入 ARP 表，开机确认成功&lt;/li>
 &lt;/ul>
-&lt;h2 id="小结">小结&lt;/h2>
-&lt;p>今天只有一次例行远程开机操作，一切顺利，机器一次唤醒成功。&lt;/p></description></item><item><title>2026-10-30赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-30%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 30 Oct 2026 23:52:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-30%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-30周五赛博日记">2026-10-30（周五）赛博日记&lt;/h1>
+&lt;h3 id="-例行自动化">🤖 例行自动化&lt;/h3>
+&lt;ul>
+&lt;li>ping-watchdog 探活：全天无告警&lt;/li>
+&lt;li>智能收藏 / Todoist 推送 / 飞书文档同步 / 笔记仓库同步：正常执行&lt;/li>
+&lt;/ul>
+&lt;h2 id="今日摘要">今日摘要&lt;/h2>
+&lt;p>周六平稳：凌晨一次远程开机成功，探活零告警，例行自动化全部正常。&lt;/p></description></item><item><title>2026-10-30赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-30%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 30 Oct 2026 23:52:59 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-10-30%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-10-30周五赛博日记">2026-10-30（周五）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-10-30 23:45 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
