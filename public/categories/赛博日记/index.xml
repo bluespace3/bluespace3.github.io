@@ -1,59 +1,70 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 05 Nov 2026 23:54:53 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-11-05赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 05 Nov 2026 23:54:53 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-05周四赛博日记">2026-11-05（周四）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>赛博日记 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><description>Recent content in 赛博日记 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 06 Nov 2026 23:54:22 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-11-06赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 06 Nov 2026 23:54:22 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-06周五赛博日记">2026-11-06（周五）赛博日记&lt;/h1>
 &lt;blockquote>
-&lt;p>生成时间：2026-11-05 23:55 (Asia/Shanghai)（合并更新版）&lt;/p>&lt;/blockquote>
+&lt;p>生成时间：2026-11-06 23:55 (Asia/Shanghai)，合并更新（含 23:30 Hermes 本机事项汇入）&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
-&lt;h3 id="-hermes-本机事项diary_inbox-直传">🖥️ Hermes 本机事项（diary_inbox 直传）&lt;/h3>
+&lt;h3 id="-claude-code--cursor-工作记录memoryclaude_2026-11-06md">💻 Claude Code / Cursor 工作记录（memory/claude_2026-11-06.md）&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>Basalt sm_80 移植验收完成&lt;/strong>：build-sm80 全线编译通过（0 错误）。手术清单——CC12.0 guard 撤除 + PDL helper guard 化、GDN cluster 融合 kernel 条件编译（sm_80 走 SPLIT+norm 等价路径）、TMA/mbarrier 数据通路 guard 化、宿主设备门放行。验收 91 个 parity/test：77 直接 PASS，5 个优雅降级（cluster/TMA 路径自识别跳过），9 个补跑转绿（含 dec_moe 非 TMA 双卡 doorbell bitwise equal）。遗留一步：端到端 generate 冒烟，需等显存空窗。&lt;/li>
-&lt;li>&lt;strong>strata 服务链治理&lt;/strong>：
+&lt;li>&lt;strong>会话数&lt;/strong>：Claude 0 个 / Cursor 2 个，共 24 条消息&lt;/li>
+&lt;li>&lt;strong>12:35 会话&lt;/strong>（项目 e/code/ysbapitest，82 条消息）：缺陷数据拉取。首次近一天试拉因关联需求接口 403 中途停止，后改走实体关联重新拉完——16 个项目 125 条缺陷筛留 61 条，写入 docs/缺陷分析.md 并推送 origin/main（5c2f0be）&lt;/li>
+&lt;li>&lt;strong>12:49 会话&lt;/strong>（同项目，55 条消息）：vLLM 网关配置调通。前两次调用因 vLLM 拒绝 Codex 的 grammar 工具失败，关闭该 profile 的 shell 后实测模型正常返回 pong&lt;/li>
+&lt;/ul>
+&lt;h3 id="-视频产线两大故障排查当日主线两次反转">🎬 视频产线两大故障排查（当日主线，两次反转）&lt;/h3>
 &lt;ul>
-&lt;li>Basalt 排队根因：&lt;code>--parallel&lt;/code> 默认 1，不是不能并发；已在面板 Basalt 工具卡参数区放出「并发槽数/单槽上下文/VRAM 预留」三项，带越界自动回退 + param-guard 日志；验收 4×300K 干跑通过，已还原生产现状 3×520000。&lt;/li>
-&lt;li>GPU 看板 prefill 速率虚高两个根因：回退公式未扣缓存命中 + 空闲快照抖动；改用 history 尾均值，误差 6%。&lt;/li>
+&lt;li>&lt;strong>GitHub 涨星日报写稿死循环&lt;/strong>：
+&lt;ul>
+&lt;li>直接死因：s04_whyhot 段三连撞 300 字天花板（327→831→406），不是写不出来&lt;/li>
+&lt;li>放大器（真 bug）：闸门拒因登记只区分&amp;quot;念命令/其余&amp;quot;，超长被拒后 bad_hint 却报&amp;quot;内容单薄、写满一点&amp;quot;——LLM 忠诚执行越写越长。典型&amp;quot;闸门拒 A、反馈说 ¬A&amp;quot;的自述脱钩缺陷，11-05 晚失败同根因&lt;/li>
+&lt;li>修复：拒因如实登记（over_bad 分流），闸门阈值一字未动；干跑 7/7 段第 1 次过闸&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;strong>vLLM 双卡启动 Errno 98 修复&lt;/strong>：真正占口的是尾网中继 socat（绑内网 IP:8000），vLLM 默认绑 xxx.xxx.xxx.xxx 必撞；启动脚本加 &lt;code>--host xxx.xxx.xxx.xxx&lt;/code> 单行修复，与「生产仅 loopback + socat 对尾网」口径对齐。&lt;/li>
-&lt;li>&lt;strong>Hermes 网关两连修&lt;/strong>：① tencentdb 401——给 hermes-gateway.service 加 systemd drop-in 注入 token，drop-in 可抗 unit 重写，401 清零；② mcp-stderr.log 刷 158MB——0.19.0-cn.7 打包缺陷（watchdog 脚本未打进包，MCP stdio 拉起即死无限重试），根治靠升级 runtime 至 0.21（0.20 为僵尸崩溃版禁用）。&lt;/li>
-&lt;li>&lt;strong>模型切换报错排查&lt;/strong>：glm-5.3-flash 被多 provider 声明的歧义坑（key/name 不同源 + auth.json 残留历史 slug），排查进行中。&lt;/li>
-&lt;li>&lt;strong>腾讯知识库管线卡死诊断&lt;/strong>：ingest 自 10-20 停摆——.env 需「日志安静 180s」才生效，但看门狗 30s 探活使日志永不安静，死锁自锁；积压 20 个提交、957 个源文件待投。解法已给（idle 时重启装载 + 指纹戳），待用户点头。&lt;/li>
+&lt;li>&lt;strong>配音段崩溃（环境污染）&lt;/strong>：ffmpeg 报 GLIBCXX_3.4.32 not found——从 Hermes 会话终端起后台任务继承了运行时自带旧 libstdc++ 的 LD_LIBRARY_PATH，劫持系统 ffmpeg。对照组 env -u LD_LIBRARY_PATH 后 rc=0。已修：run_daily.sh 加 unset LD_LIBRARY_PATH LD_PRELOAD（.bak-1106-env 可回滚）。cron 环境干净故历来无事&lt;/li>
+&lt;li>&lt;strong>当晚两次反转定案&lt;/strong>：①中午 NVIDIA/auto-ontology（英伟达给AI装大脑）成片实际 13:05:57 已上线 B 站（BV1zR4v6iEg2，已有 56 播放），22 点判&amp;quot;未投&amp;quot;是误判——只看空台账未查 done_repos 和 B 站本体，违反&amp;quot;产物在才算&amp;quot;，白折腾三轮烧两次 GPU，台账已按事实回写；②配音崩溃归因如上，系自己环境带毒&lt;/li>
+&lt;li>&lt;strong>新落三道防线&lt;/strong>（均实测）：日级前置闸（台账今日 published 秒退，&amp;ndash;redo 豁免）、抓取超时 15s→115s + 三轮重试 + 出口验真（.bak-1106-fetch 可回滚）、gtrending 台账与 B 站对账恢复一致。遗留：22:53 轮 google/skills（+532星）稿卡配音，日更名额已被占，建议不追产明天重选&lt;/li>
 &lt;/ul>
-&lt;h3 id="-视频产线">📺 视频产线&lt;/h3>
+&lt;h3 id="-三平台镜像链路重构问题1三层根因">🔁 三平台镜像链路重构（问题1三层根因）&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>E05《为什么越是学习不好的人，脑子反而越复杂？》产线全流程完成&lt;/strong>：B站已投（明晚 18:00 上线），小红书已发；封面蛋锅模板参数化。机审两处真缺陷定点修复，sau 封面设置器超时导致线上封面为视频首帧（用户可手动换）。&lt;/li>
-&lt;li>&lt;strong>E20 补跑闭环&lt;/strong>：成片 249s QC 全绿，BV 号已入队明日 11:30 上线；state 指针对账无重发风险。教训入账：长产线改用 systemd-run &amp;ndash;user 脱离会话壳。&lt;/li>
-&lt;li>&lt;strong>psych 夜间点火判定停手&lt;/strong>：当日额度已被白天 E05 加急用尽，按 11-04 立法停手 + 飞书通报；顺手给 psych_daily.py 补两处死闸门（当日额度前置检查 + publish 写 last_run），堵住夜间 cron 误产二期路径。&lt;/li>
-&lt;li>挂起：#10 抖音扫码登录/查 11-04 假成功/补发；#11 哨兵按需推码。&lt;/li>
+&lt;li>根因：①镜像链路只挂 hltb 一条线（ai-advanced/psych 重制/github-trending 三线未接）；②时序缺陷——keeper 每天 23:10 单轮，hltb 昨晚 23:17 才发 B 站导致扑空；③cookie 静默失效——实测抖音/快手 invalid（E19 后一条没发过），仅小红书 valid&lt;/li>
+&lt;li>修复落地：新建统一收件箱 /opt/sau/mirror_inbox.json 四线自动入箱；keeper 改白天 4 轮错峰（8:37/11:37/13:47/16:47）；E21 真数据三平台干跑通过（降敏、随机位、白名单拦截、节流均符合预期）&lt;/li>
+&lt;li>新建敏感词闸 text_guard.py：统一映射表（死亡风险→重症风险等，数字含义不动），B 站投稿前 + 三平台发布前双终闸——治&amp;quot;死亡风险高26%&amp;ldquo;被小红书限流（判 AI 托管发文）的问题；另加随机错峰 + 结尾文案轮换消除托管指纹、cookie 失效告警接飞书&lt;/li>
 &lt;/ul>
-&lt;h3 id="-claude-code--cursor-工作记录共-8-会话153-条消息全部-cursor">💻 Claude Code / Cursor 工作记录（共 8 会话，153 条消息，全部 Cursor）&lt;/h3>
+&lt;h3 id="-公共通知台账层落地superagent-调研的直接产出">📣 公共通知/台账层落地（superagent 调研的直接产出）&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>项目X&lt;/strong>（ysbapitest 后端 + 审核台）全天密集迭代：
-&lt;ul>
-&lt;li>新增聚合报告服务，确认 IterationMetricsDao 读接口签名&lt;/li>
-&lt;li>迭代明细备注列改为可编辑且不被「更新数据」覆盖&lt;/li>
-&lt;li>审核台「用例执行记录」执行时间展示上线（main 9c6fc6a）；「只看待审核」下同用例只显最新运行&lt;/li>
-&lt;li>AI 辅助审核日志留痕与运行记录/缺陷模板统一（main 39d7d35）&lt;/li>
-&lt;li>排查 gen-637f2fdcd19b 把 APP_SEARCH_UNIFY_IMG_001 误收为疑似 bug 的链路：门禁只认模型自填「查过」标记的漏洞确认&lt;/li>
-&lt;li>iOS 客户端仓库（iOS/YSBPro）一处提交辨认&lt;/li>
-&lt;li>&lt;strong>本周 token 用量&lt;/strong>：截至周四 15:45 达 6.61 亿，为上周同期 2.2 倍（+124.5%），已超上周整周 24.9%&lt;/li>
+&lt;li>调研 deepseek-ai/dsh-superagent-prototype（10-31 发布，5 天破 2 万★）：结论&amp;quot;改法不治症&amp;rdquo;，症结是产线缺&amp;quot;中间态&amp;quot;层——成片过闸≠已发布。抄其状态机：observe 影子模式、Mandate 凭证化（批准记录带凭哪版规则+理由）、recovery note；实跑前提不满足，价值在设计借鉴。归档至 github-repo-research 技能 references/dsh-superagent.md&lt;/li>
+&lt;li>新建 ~/kf-video/_knowledge-common/pipeline_notify.py（纯 stdlib 四件套）：notify_text（文字→微信，频控回落飞书）、notify_media（图/视频→飞书，&amp;gt;30MB 切直链）、ledger_write/read（原子写+14 天老化）、publish_guard（双台账防重）。&lt;strong>单测 7/7 过&lt;/strong>——冒烟当场抓出老化治理对非日期键抛 TypeError 的 bug，已修成&amp;quot;形状不认识一律保守保留&amp;quot;&lt;/li>
+&lt;li>psych 线（B站热门重制）接入冒烟完成（.bak-1106-pn 可回滚）：防重干跑真台账往日放行/伪今日拦截 ✓、22MB 定稿 mp4 飞书实弹送达 ✓、微信回执送达 ✓；gtrending 收编为薄封装端到端复测 ✓，今后新线接入只需三行 import&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="-记忆系统维护">🧠 记忆系统维护&lt;/h3>
+&lt;h3 id="-台式机操作与-tailscale-断链根治">🏠 台式机操作与 Tailscale 断链根治&lt;/h3>
 &lt;ul>
-&lt;li>GitHub 项目监控新增 jesdga95/basalt（595★，与 tokenspeed-flashnext 计划对应），基线 dc047a7；双仓监控清单固化到 HEARTBEAT.md&lt;/li>
-&lt;li>&lt;code>openclaw jobs list&lt;/code> 报 SQLite read-only worker SIGTERM 无法列任务，原周五监控任务载体未定位，以心跳兜底&lt;/li>
-&lt;/ul>
-&lt;h3 id="-台式机探活">🏠 台式机探活&lt;/h3>
-&lt;ul>
-&lt;li>凌晨 01:08 闪断约 2 分钟快速自愈，此后全天零告警（近一周罕见平稳日）；本周长时间硬冻结频率仍高，硬件根因排查持续&lt;/li>
+&lt;li>&lt;strong>凌晨失联告警&lt;/strong>：00:11 探活告警（ping+TCP 22/8900 全不通），符合近期硬冻结症状；12:20 远程 WOL 开机、16:28 远程关机各一次&lt;/li>
+&lt;li>&lt;strong>WOL 网页&amp;quot;状态未知&amp;quot;真根因&lt;/strong>：云服务器 tailscale 节点掉登录（NeedsLogin）。实锤为 180 天 key expiry 到期（5/10 注册 +180 天恰为今天），nodeKeyExpired 日志对上；只杀状态灯不影响唤醒&lt;/li>
+&lt;li>&lt;strong>根治两层&lt;/strong>：admin 控制台 Disable key expiry；root-only 存 reusable authkey（chmod 600，值不进卡不进聊天）+ systemd 哨兵检测 NeedsLogin 自动无头重注册&lt;/li>
 &lt;/ul>
 &lt;h2 id="思考与备忘">思考与备忘&lt;/h2>
 &lt;ul>
-&lt;li>本日主线是「infra 硬仗日」：sm_80 移植、端口冲突、日志刷屏三大坑全部实证闭环，方法论仍是「先复现取证再动手」&lt;/li>
-&lt;li>面板参数下放用户侧 + param-guard 可追溯模式值得复用到其他服务卡&lt;/li>
-&lt;li>视频产线的「当日额度死闸门」立法开始产生复利——今晚避免了 slug 撞车与台账覆盖&lt;/li>
+&lt;li>错误归因的定向指令比不定向更糟：拒因必须如实登记，反馈说反了会让模型忠诚地跑向死路（今日 327→831 字三连撞的教训）&lt;/li>
+&lt;li>从 agent 会话终端代跑产线必带 env -u LD_LIBRARY_PATH——运行时旧库会劫持系统 ffmpeg&lt;/li>
+&lt;li>&amp;ldquo;终态验证优先于过程自述&amp;rdquo;：判产物必须查本体（B 站 API/done_repos），不能只看台账和日志尾巴——今晚误判白烧两次 GPU&lt;/li>
+&lt;li>台账老化治理宁留膨胀不吞账：形状不认识的键保守保留&lt;/li>
 &lt;/ul>
 &lt;h2 id="今日摘要">今日摘要&lt;/h2>
-&lt;p>技术浓度极高的一天：Basalt sm_80 移植验收收官（91 测试全绿）、strata 面板参数化上线、vLLM 端口冲突与网关 token/日志两大顽疾根治；内容侧 E05 全流程发布、E20 补跑闭环、psych 闸门加固；工作项目迭代 8 会话 153 消息，token 消耗环比翻倍。&lt;/p></description></item><item><title>2026-11-04赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 04 Nov 2026 23:54:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-04周三赛博日记">2026-11-04（周三）赛博日记&lt;/h1>
+&lt;p>故障排查与防线建设日：视频产线写稿死循环（拒因误报根因）+ 环境污染崩溃双案归因定案并修复，三平台镜像链路重构（统一收件箱+敏感词闸+错峰），公共通知/台账层 pipeline_notify 落地并以 superagent 状态机思想武装，台式机 Tailscale 180 天到期断链根治。Cursor 侧完成 61 条缺陷分析入库。&lt;/p></description></item><item><title>2026-11-05赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Thu, 05 Nov 2026 23:54:53 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-05周四赛博日记">2026-11-05（周四）赛博日记&lt;/h1>
+&lt;blockquote>
+&lt;p>生成时间：2026-11-05 23:45 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;p>当日无个人笔记与新增工作记忆，本日记录以自动化事件为主。&lt;/p>
+&lt;h3 id="-台式机探活事件">🏠 台式机探活事件&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>凌晨闪断&lt;/strong>：昨晚 20:35 告警的失联于 01:08 恢复，本次约 &lt;strong>2 分钟&lt;/strong>，快速自愈，无后续冻结&lt;/li>
+&lt;li>此后全天 ping 探活零告警，机器保持在线（近一周罕见的全天平稳日）&lt;/li>
+&lt;/ul>
+&lt;h3 id="-例行自动化均正常">🤖 例行自动化（均正常）&lt;/h3>
+&lt;ul>
+&lt;li>ping-watchdog 每分钟探活正常&lt;/li>
+&lt;li>智能收藏 / Todoist 推送 / 飞书文档同步 / 笔记仓库同步：正常执行&lt;/li>
+&lt;li>赛博日记周任务（10-29 ~ 11-04）昨晚完成，3 份新日记已同步&lt;/li>
+&lt;/ul>
+&lt;h2 id="备注">备注&lt;/h2>
+&lt;p>本周台式机长时间硬冻结频率仍高（11-03 达 1363 分钟、11-04 两起 976+72 分钟），硬件根因排查仍未完成，持续跟踪。&lt;/p></description></item><item><title>2026-11-04赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 04 Nov 2026 23:54:23 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-11-04周三赛博日记">2026-11-04（周三）赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-11-04 23:45 (Asia/Shanghai)&lt;/p>&lt;/blockquote>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
