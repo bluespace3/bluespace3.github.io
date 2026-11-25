@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>硬件 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E7%A1%AC%E4%BB%B6/</link><description>Recent content in 硬件 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 12 Nov 2026 02:27:38 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>CMP170HX解锁边界三代勘误-熔丝分类与80GB真相-1112</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx%E8%A7%A3%E9%94%81%E8%BE%B9%E7%95%8C%E4%B8%89%E4%BB%A3%E5%8B%98%E8%AF%AF-%E7%86%94%E4%B8%9D%E5%88%86%E7%B1%BB%E4%B8%8E80gb%E7%9C%9F%E7%9B%B8-1112/</link><pubDate>Thu, 12 Nov 2026 02:27:38 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx%E8%A7%A3%E9%94%81%E8%BE%B9%E7%95%8C%E4%B8%89%E4%BB%A3%E5%8B%98%E8%AF%AF-%E7%86%94%E4%B8%9D%E5%88%86%E7%B1%BB%E4%B8%8E80gb%E7%9C%9F%E7%9B%B8-1112/</guid><description>&lt;h1 id="cmp-170hx-解锁边界三代勘误全案熔丝分类器--hbmmon--电压毛刺">CMP 170HX 解锁边界：三代勘误全案（熔丝分类器 + hbmmon + 电压毛刺）&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>硬件 on 蓝色空间号</title><link>https://bluespace.eu.org/categories/%E7%A1%AC%E4%BB%B6/</link><description>Recent content in 硬件 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 24 Nov 2026 16:32:18 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/categories/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>README-170HX-80G-PCIe4-解锁保姆教程</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/readme-170hx-80g-pcie4-%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/</link><pubDate>Tue, 24 Nov 2026 16:32:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/readme-170hx-80g-pcie4-%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/</guid><description>&lt;h1 id="cmp-170hx-一步到位80gb-显存--pcie-gen4-解锁保姆教程">CMP 170HX 一步到位：80GB 显存 + PCIe Gen4 解锁保姆教程&lt;/h1>
+&lt;blockquote>
+&lt;p>整理日期：2026-11-19 ｜ 素材已全部落盘在本目录（images/ 全量配图 + 4 份附录原文）
+本教程 = 社区四条血脉（Kate 的 GA100VFI / dalzyu 的 pico-ga100vfi / CMPGlitch 烧写全记录 / EthanZhangCN 端到端手册）的合成实操版，实操判据全部来自真实跑通的记录（2026-11-15/16 实测：81920 MiB / 128 SM / Gen4 x16 24.7–26.3 GB/s）。&lt;/p></description></item><item><title>附录-Gen3实录</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-gen3%E5%AE%9E%E5%BD%95/</link><pubDate>Tue, 24 Nov 2026 16:32:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-gen3%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="cmp-170hx-8gb---pcie-gen3-unlock-record">CMP 170HX 8GB -&amp;gt; PCIe Gen3: Unlock Record&lt;/h1>
+&lt;p>Complete record of the PCIe Gen3 link unlock on this card, built on top of the
+FF fuse burns (see &lt;code>cmp_burn.md&lt;/code>). Gen3 validated at ~13.3 GB/s
+x16-equivalent (2x Gen2). Read this before touching the PCIe patches or
+attempting Gen4.&lt;/p>
+&lt;h2 id="card-identity--result">Card identity / result&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Field&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>SKU&lt;/td>
+&lt;td>CMP 170HX 8GB (Hynix HBM)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>PCI ID&lt;/td>
+&lt;td>10de:20c2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>BDF&lt;/td>
+&lt;td>0000:01:00.0 (upstream bridge 0000:00:01.0)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Die&lt;/td>
+&lt;td>GA100 (PMC_BOOT_0 = 0x170000A1)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Host root port&lt;/td>
+&lt;td>Gen3 x16 (Host Max 3)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Link (this record)&lt;/td>
+&lt;td>&lt;strong>Gen3 trained&lt;/strong> (reduced width at measurement; x16 needs direct slot + cap mod)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Device Max&lt;/td>
+&lt;td>4 (Gen4 capable, fuses burned)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Measured (256 MiB pinned, &lt;code>tools/pcie_bandwidth.py&lt;/code>). The link was trained
+at &lt;strong>reduced width&lt;/strong> (half of the x16 capability) for these runs; the
+x16-equivalent columns scale the measured throughput linearly with width:&lt;/p></description></item><item><title>附录-Gen4-retrain原理</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-gen4-retrain%E5%8E%9F%E7%90%86/</link><pubDate>Tue, 24 Nov 2026 16:32:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-gen4-retrain%E5%8E%9F%E7%90%86/</guid><description>&lt;h1 id="gen4-retrain--reporting-why-it-works-this-way">Gen4 Retrain &amp;amp; Reporting: Why It Works This Way&lt;/h1>
+&lt;p>Research analysis of three observations on the unlocked CMP 170HX 8GB (GA100):&lt;/p>
+&lt;ol>
+&lt;li>Why Gen4 needs a &lt;strong>config-space retrain&lt;/strong> instead of the RM &lt;code>SET_PCIE_SPEED&lt;/code> call.&lt;/li>
+&lt;li>How our &lt;strong>FF/fuse + PHY state compares to the A100/A30&lt;/strong> references.&lt;/li>
+&lt;li>Why the system &lt;strong>reports Gen3 while the link runs Gen4&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>All source citations are from &lt;code>open-gpu-kernel-modules 610.43.03&lt;/code> (the exact driver
+in use) unless noted. Companion docs: &lt;code>cmp_gen3.md&lt;/code>, &lt;code>cmp_gen4.md&lt;/code>, &lt;code>cmp_burn.md&lt;/code>.&lt;/p></description></item><item><title>附录-Gen4研究</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-gen4%E7%A0%94%E7%A9%B6/</link><pubDate>Tue, 24 Nov 2026 16:32:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-gen4%E7%A0%94%E7%A9%B6/</guid><description>&lt;h1 id="cmp-170hx-8gb---pcie-gen4-research-notes">CMP 170HX 8GB -&amp;gt; PCIe Gen4: Research Notes&lt;/h1>
+&lt;p>Research synthesis for the Gen4 attempt, built on the working Gen3 x16 unlock
+(see &lt;code>cmp_gen3.md&lt;/code>). Primary source: Consensus-Protocol/cmp170hx technical wiki
+(docs/frontier/pcie-gen3-gen4.md, docs/hardware/pcie-subsystem.md,
+docs/hardware/vbios.md), cross-checked against JRex&amp;rsquo;s fuse reference table and
+the lixiangwuxian Gen3 guide.&lt;/p>
+&lt;p>NOTE ON DATING: the Consensus-Protocol wiki is current as of 2026-07-31 and
+states &amp;ldquo;no Gen3 or Gen4 link has ever trained.&amp;rdquo; That is OUTDATED for Gen3 &amp;ndash;
+this card runs Gen3 x16 (13.6 GB/s) via the Oct-2026 lixiangwuxian post-GSP
+sequence + RM staged training, with the fuses burned. The wiki&amp;rsquo;s Gen4
+&amp;ldquo;unsolved&amp;rdquo; is the same kind of snapshot; its register-level analysis below is
+still the best available map.&lt;/p></description></item><item><title>附录-PCIe-x16电容改装</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-pcie-x16%E7%94%B5%E5%AE%B9%E6%94%B9%E8%A3%85/</link><pubDate>Tue, 24 Nov 2026 16:32:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-pcie-x16%E7%94%B5%E5%AE%B9%E6%94%B9%E8%A3%85/</guid><description>&lt;h1 id="cmp-170hx-pcie-x4--x16-hardware-capacitor-mod">CMP 170HX PCIe x4 → x16 hardware capacitor mod&lt;/h1>
+&lt;p>&lt;a href="../README.md">← Main guide&lt;/a> · &lt;a href="PCIE-X16-HARDWARE-MOD.ru.md">Русская версия&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Hardware modification.&lt;/strong> This requires soldering 0402 SMD parts on a multilayer GPU PCB. A mistake can permanently damage the card. Practice on scrap hardware first if you are not comfortable with 0402 rework.&lt;/p>&lt;/blockquote>
+&lt;h2 id="what-this-mod-fixes">What this mod fixes&lt;/h2>
+&lt;p>The CMP 170HX has a full mechanical x16 edge connector and the PCB routes all 16 PCIe lanes, but the factory board leaves the AC-coupling capacitors for &lt;strong>lanes 4–15&lt;/strong> unpopulated. Stock lane width therefore negotiates as x4.&lt;/p></description></item><item><title>附录-烧写全记录</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-%E7%83%A7%E5%86%99%E5%85%A8%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 24 Nov 2026 16:32:18 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx-80g-pcie4%E8%A7%A3%E9%94%81%E4%BF%9D%E5%A7%86%E6%95%99%E7%A8%8B/%E9%99%84%E5%BD%95-%E7%83%A7%E5%86%99%E5%85%A8%E8%AE%B0%E5%BD%95/</guid><description>&lt;h1 id="cmp-170hx---a100-80g-ff-burn-record">CMP 170HX -&amp;gt; A100-80G: FF Burn Record&lt;/h1>
+&lt;p>Complete record of the fuseless-fuse (FF) burns that unlocked this card,
+performed via voltage fault injection (VFI) on a self-built RP2040 PWMVID
+glitcher. Read this before attempting any further burns.&lt;/p>
+&lt;p>The RP2040 glitcher firmware itself is NOT part of this release. The burns
+below only require the burn-window register state; how you reach it is up
+to you &amp;ndash; the bundled &lt;code>ga100vfi/&lt;/code> and &lt;code>pico-ga100vfi/&lt;/code> public VFI toolchains
+are the recommended starting point (see &amp;ldquo;Burn-window prerequisites&amp;rdquo;).&lt;/p></description></item><item><title>170HX-RTX5060Ti混插驱动共存调研-1122</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/170hx-rtx5060ti%E6%B7%B7%E6%8F%92%E9%A9%B1%E5%8A%A8%E5%85%B1%E5%AD%98%E8%B0%83%E7%A0%94-1122/</link><pubDate>Sun, 22 Nov 2026 00:05:08 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/170hx-rtx5060ti%E6%B7%B7%E6%8F%92%E9%A9%B1%E5%8A%A8%E5%85%B1%E5%AD%98%E8%B0%83%E7%A0%94-1122/</guid><description>&lt;h1 id="170hx--rtx-5060-ti-混插驱动共存调研2026-11-22">170HX + RTX 5060 Ti 混插·驱动共存调研（2026-11-22）&lt;/h1>
+&lt;p>起因：计划 2×CMP 170HX + 2×RTX 5060 Ti 混插（有核显平台负责显示输出）。外部 AI 分析判定&amp;quot;能点亮，主要矛盾在驱动版本匹配&amp;quot;。本文为逐条核查后的结论，含两处对原分析的修正。&lt;/p></description></item><item><title>CMP170HX解锁边界三代勘误-熔丝分类与80GB真相-1112</title><link>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx%E8%A7%A3%E9%94%81%E8%BE%B9%E7%95%8C%E4%B8%89%E4%BB%A3%E5%8B%98%E8%AF%AF-%E7%86%94%E4%B8%9D%E5%88%86%E7%B1%BB%E4%B8%8E80gb%E7%9C%9F%E7%9B%B8-1112/</link><pubDate>Thu, 12 Nov 2026 02:27:38 +0800</pubDate><guid>https://bluespace.eu.org/post/%E7%A1%AC%E4%BB%B6/cmp170hx%E8%A7%A3%E9%94%81%E8%BE%B9%E7%95%8C%E4%B8%89%E4%BB%A3%E5%8B%98%E8%AF%AF-%E7%86%94%E4%B8%9D%E5%88%86%E7%B1%BB%E4%B8%8E80gb%E7%9C%9F%E7%9B%B8-1112/</guid><description>&lt;h1 id="cmp-170hx-解锁边界三代勘误全案熔丝分类器--hbmmon--电压毛刺">CMP 170HX 解锁边界：三代勘误全案（熔丝分类器 + hbmmon + 电压毛刺）&lt;/h1>
 &lt;blockquote>
 &lt;p>日期：2026-11-12 ｜ 平台：双 CMP 170HX 8GB SKU（GA100，均已 cmpunlocker 软解 64GB 运行中）
 工具链：arca.live 只读熔丝分类器（&lt;code>~/bin/check_cmp170hx_readonly.py&lt;/code>）、matstatman/hbmmon（I1500 活体拓扑）
