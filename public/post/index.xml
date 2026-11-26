@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 25 Nov 2026 23:55:52 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-11-25-四卡挖矿满速与站点断更修复</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-25-%E5%9B%9B%E5%8D%A1%E6%8C%96%E7%9F%BF%E6%BB%A1%E9%80%9F%E4%B8%8E%E7%AB%99%E7%82%B9%E6%96%AD%E6%9B%B4%E4%BF%AE%E5%A4%8D/</link><pubDate>Wed, 25 Nov 2026 23:55:52 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-25-%E5%9B%9B%E5%8D%A1%E6%8C%96%E7%9F%BF%E6%BB%A1%E9%80%9F%E4%B8%8E%E7%AB%99%E7%82%B9%E6%96%AD%E6%9B%B4%E4%BF%AE%E5%A4%8D/</guid><description>&lt;h1 id="2026-11-25周三赛博日记">2026-11-25（周三）赛博日记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>文章 on 蓝色空间号</title><link>https://bluespace.eu.org/post/</link><description>Recent content in 文章 on 蓝色空间号</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 26 Nov 2026 23:54:50 +0800</lastBuildDate><atom:link href="https://bluespace.eu.org/post/index.xml" rel="self" type="application/rss+xml"/><item><title>2026-11-26-五卡挖矿上线与自动化盲区盘点</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-26-%E4%BA%94%E5%8D%A1%E6%8C%96%E7%9F%BF%E4%B8%8A%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9B%B2%E5%8C%BA%E7%9B%98%E7%82%B9/</link><pubDate>Thu, 26 Nov 2026 23:54:50 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-26-%E4%BA%94%E5%8D%A1%E6%8C%96%E7%9F%BF%E4%B8%8A%E7%BA%BF%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9B%B2%E5%8C%BA%E7%9B%98%E7%82%B9/</guid><description>&lt;h1 id="2026-11-26周四赛博日记">2026-11-26（周四）赛博日记&lt;/h1>
+&lt;h2 id="核心工作">核心工作&lt;/h2>
+&lt;h3 id="-mac-本机hermes">🏠 Mac 本机（Hermes）&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>5070 Ti 插卡不识别定案&lt;/strong>：新装 5070 Ti 开机不识别，PCI 层取证——总线上只有 2×170HX + 2×5060Ti，5070 Ti 无任何枚举记录，根因是所在 PCIe 槽**链路训练失败（retraining failed）**压根没上总线，BIOS/内核都看不到，驱动无罪。处置路径按优先级：拔插重装（新装卡最常见：金手指接触/卡扣锁好/卡尾不翘起）→ 查 MSI 7E71 B650M Mortar 的 BIOS PCIe 兼容修复条目 → 换槽交叉验证判卡坏。重新插拔后识别成功；「开机风扇不转」澄清为开机无负载属正常。顺带取证两处遗留隐患：5060Ti #2（0b:00.0）链路被降速 x1（带宽剩 1/8，挖矿无感知、跑推理/渲染前要修）、#1（05:00.0）走 PLX 桥 x8 但只有 Gen3 速率&lt;/li>
+&lt;li>&lt;strong>五卡挖矿全量上线&lt;/strong>：清空显存后 5 卡齐开（2×CMP170HX + 2×5060Ti + 5070Ti），合计 &lt;strong>761 TH/s&lt;/strong>（CMP0 192T / CMP1 181T / 5060Ti×2 各 99T / 5070Ti 190T）；GPU 控制台分组生效 &lt;code>cmp0:[0]、cmp1:[1]、rtx:[2,4]、rtx2:[3]&lt;/code>——5070 Ti（GPU3）按用户要求独立成组，不与 5060Ti 混控；5070 Ti 实测最优档 250W/2700MHz；GPU0 频率档从 1260 恢复 1500；温度墙 80→84℃（&lt;code>--temp-limit&lt;/code> 是 forge 启动参数，需重启矿进程才生效，一次重启连 GPU0 提档一起收）；开机自恢复时序链核验无问题（kmine.service After=flashnext、enabled，flashnext 当前 inactive 属正常），reset-tuning 兼容（此前 ExecStopPost 失败点）仍待验证&lt;/li>
+&lt;li>&lt;strong>今晚连环死机排查（未定案）&lt;/strong>：20:51 起数次死机断电，GPU 控制台一度停不掉矿（先停矿再查）；背景负载下 Tctl 已 92℃（此时 CPU 只跑约 2.5 个核）——CPU 冷却成头号嫌疑，受控压测方案（15 秒带 94℃ 熔断）被用户叫停避免再关机；时间线还原：kmine.sh 在 21:39~23:15 重启间隙被连改 4 次（22:10 plclamp / 22:16 rtx2 / 22:25 cmp0pl / 22:52 temp84）；「20:51 首次断电时在位是 4 卡还是 5 卡」核实到一半&lt;/li>
+&lt;li>&lt;strong>挖矿显存占用差异查清&lt;/strong>：170HX 各驻留 7G vs 50 系各 2.8&lt;del>2.9G——不是故障也不是负载不同：五卡同一个 forge 进程（PID 5890）全挂 PRL，forge 按架构自动分配工作缓冲（170HX 是 GA100 大核 108 SM，张量核大矩阵缓冲放大；Blackwell 小核同配置就小）。对算力&lt;strong>无影响&lt;/strong>：pearlhash 纯算力型算法、显存带宽只用 21&lt;/del>25%，五卡速率全在正常水位。可自定义性核实：本机 v2.1.1 help 全文 136 行 0 个 VRAM 条目，上游 v2.1.0~v2.1.2 发版说明亦无相关改动，官方口径「memory use is fitted to the card&amp;rsquo;s real free memory」；唯一半入口 &lt;code>FORGE_LOWVRAM&lt;/code> 是 8GB 卡低显存模式（本机版未文档化、只能往下压且不保证零损）——64GB 卡上 7G 驻留无代价，不建议折腾&lt;/li>
+&lt;li>&lt;strong>CMP170HX 保姆教程免焊改版定稿&lt;/strong>：物料更新为免焊方案——用汽车 ECU 升级款测电支架（一套六针）替代焊线；HTML 通用版 13.4MB 单文件终态交付（13 章主教程+10 配图+5 附录，结构即执行顺序：风险声明→成果账→物料清单含价目→阶段 0~6 每阶段带 ✅ 达成判据→翻车速查表），隐私复查 8118 命中排除为 base64 图片数据巧合、全 PASS；红线提醒保留：FF 熔丝不可逆、必须同窗烧完、Gen4 三件套缺一不可（电容三星 CL05B224KO5NNNC 买 40 备损、驱动用 615.71.09，默认 615.78.08 是坏的）；投稿去向停在用户确认步（B站专栏/博客/笔记仓库三选一待回）&lt;/li>
+&lt;li>&lt;strong>psych 日更点火&lt;/strong>：按产线固化流程执行每日点火（scaffold→topic.json→内容创作，钩子题优先自动判定）&lt;/li>
+&lt;li>直播大肥鱼战报（11-25 期）：弹幕 0·AI 回复 0·点歌 0·断流重启 0，粉丝 162（+1）&lt;/li>
+&lt;li>本机笔记仓库今日提交：无&lt;/li>
+&lt;/ul>
+&lt;h3 id="-claude-code-工作记录">💻 Claude Code 工作记录&lt;/h3>
+&lt;ul>
+&lt;li>claude_2026-11-26.md 素材未到（最近一份为 11-23，连续三日缺：11-24/25/26），工作电脑当日会话明细无法入库——按缺源跳过规则不虚构&lt;/li>
+&lt;/ul>
+&lt;h2 id="自动化运行">自动化运行&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>站点部署（bluespace.eu.org）修复后首个自动循环验证通过&lt;/strong>：今晨 03:00 自动部署完整跑通（03:00:01 全量同步开始→03:02 完成→推送 e1461439），11-25 日记随循环上线，昨晚渐进改名 5 篇（03-18/19/20/22/24）同步传导到站点；今晚实测站点 HTTP 200。11-25 的 UTF-8 坏字节修复就此闭环，连挂 5 晚的 hugo 构建崩溃未复现&lt;/li>
+&lt;li>网关 diary-hive 23:48 正常运行（本任务）：git pull 已最新（HEAD=d0de2e9）；过去 7 天（11-19~25）日记齐全无补漏；生成本篇；余力执行旧命名渐进改名 5 篇（2026-03-25/04-02/04-04/04-05/04-06）&lt;/li>
+&lt;li>REM dreaming 03:00 正常运行：梦境复盘 11-20 会话语料（「为什么/分析/怀疑/日记/精简」主题词密集，仍在消化日记覆盖旧案）；Deep Sleep 修复 recall 工件、本轮 0 条晋升 MEMORY.md&lt;/li>
+&lt;li>&lt;strong>监控盲区盘点（今晚实测发现）&lt;/strong>：server-monitor（*/5）与 discord-tracker（06:00）两条 cron 引用的脚本文件均不存在——/tmp/server-monitor.log 全为 not found（自日志首行起即失败，累计 11061 行 ≈38 天），discord-tracker.log 同样只剩报错；crontab 悬空引用、监控名存实亡。勘误：11-25 日记「近段日志无告警行」实为该日志只剩 not found 报错的误读&lt;/li>
+&lt;li>&lt;strong>网关备份持续断档&lt;/strong>：02:00 openclaw-backup 失败——tar 无法写入 /mnt/nextcloud-external/openclaw-backups/（挂载点缺失）；日志实证自 10-20 起每晚同样失败，至今 37 天，需重建挂载或改备份目标&lt;/li>
+&lt;li>agent-memory-sync（每日 5 轮）：gateway HTTP 通道报 DOWN，自动切 git 兜底通道，零丢失（http_pushed=0 pending_left=0）&lt;/li>
+&lt;/ul>
+&lt;h2 id="备注">备注&lt;/h2>
+&lt;ul>
+&lt;li>hermes 素材正常到 11-26（12.7KB）；claude 素材连续三日缺（11-24/25/26）——工作电脑 Claude Code 摘要链路断档已持续，明晚再核对，若仍缺建议主动排查该侧生成任务&lt;/li>
+&lt;li>今晚死机根因（CPU 散热 vs 电源保护）未定案，且为五卡满载后首晚出现；明天留意 kmine 重启日志、Tctl 走势与 84℃ 温墙生效情况&lt;/li>
+&lt;li>5070 Ti 收尾清单：84℃ 温墙待重启矿进程生效、reset-tuning 兼容验证、5060Ti #2 x1 降速修复&lt;/li>
+&lt;li>cmpunlocker-repo-watch cron 上周五 error(2x)，明天（周五）10:00 再跑时留意结果&lt;/li>
+&lt;li>deepseek 备用模型 402 欠费仍未处置&lt;/li>
+&lt;/ul></description></item><item><title>2026-11-25-四卡挖矿满速与站点断更修复</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-25-%E5%9B%9B%E5%8D%A1%E6%8C%96%E7%9F%BF%E6%BB%A1%E9%80%9F%E4%B8%8E%E7%AB%99%E7%82%B9%E6%96%AD%E6%9B%B4%E4%BF%AE%E5%A4%8D/</link><pubDate>Wed, 25 Nov 2026 23:55:52 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-11-25-%E5%9B%9B%E5%8D%A1%E6%8C%96%E7%9F%BF%E6%BB%A1%E9%80%9F%E4%B8%8E%E7%AB%99%E7%82%B9%E6%96%AD%E6%9B%B4%E4%BF%AE%E5%A4%8D/</guid><description>&lt;h1 id="2026-11-25周三赛博日记">2026-11-25（周三）赛博日记&lt;/h1>
 &lt;h2 id="核心工作">核心工作&lt;/h2>
 &lt;h3 id="-mac-本机hermes">🏠 Mac 本机（Hermes）&lt;/h3>
 &lt;ul>
@@ -6577,7 +6610,7 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;p>基于 Andrej Karpathy llm-wiki 模式的个人知识库系统。
 核心理念：你只负责剪藏，LLM 负责理解和沉淀。&lt;/p>
 &lt;h2 id="核心思想">核心思想&lt;/h2>
-&lt;p>与传统 RAG 的根本区别在于，它将知识「编译一次、持续维护」，而非「每次查询时重新推导」。&lt;/p></description></item><item><title>2026-04-06赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Tue, 07 Apr 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-06%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-04-06-赛博日记">2026-04-06 赛博日记&lt;/h1>
+&lt;p>与传统 RAG 的根本区别在于，它将知识「编译一次、持续维护」，而非「每次查询时重新推导」。&lt;/p></description></item><item><title>2026-04-06-GitHub趋势过滤与博客全量同步</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-06-github%E8%B6%8B%E5%8A%BF%E8%BF%87%E6%BB%A4%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%A8%E9%87%8F%E5%90%8C%E6%AD%A5/</link><pubDate>Tue, 07 Apr 2026 03:00:02 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-06-github%E8%B6%8B%E5%8A%BF%E8%BF%87%E6%BB%A4%E4%B8%8E%E5%8D%9A%E5%AE%A2%E5%85%A8%E9%87%8F%E5%90%8C%E6%AD%A5/</guid><description>&lt;h1 id="2026-04-06-赛博日记">2026-04-06 赛博日记&lt;/h1>
 &lt;h2 id="重要事件">重要事件&lt;/h2>
 &lt;ol>
 &lt;li>&lt;strong>GitHub 趋势数据优化&lt;/strong>：针对 GitHub 自动化监控脚本进行了逻辑重构，排除了广告项目和干扰性仓库，重点识别了如 LangGraph Studio 等 AI Agent 开发辅助工具。&lt;/li>
@@ -6592,7 +6625,7 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;h2 id="学到的教训">学到的教训&lt;/h2>
 &lt;ul>
 &lt;li>自动化不仅是“跑起来”，更重要的是“监控准确”；在过滤 GitHub 数据时，增加仓库 Stars 增长速率的动态监测比单纯读取页面更有效。&lt;/li>
-&lt;/ul></description></item><item><title>2026-04-05赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Mon, 06 Apr 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-05%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026-04-05-赛博日记">2026-04-05 赛博日记&lt;/h1>
+&lt;/ul></description></item><item><title>2026-04-05-自动化纠偏与Cursor配置整理</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-05-%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BA%A0%E5%81%8F%E4%B8%8Ecursor%E9%85%8D%E7%BD%AE%E6%95%B4%E7%90%86/</link><pubDate>Mon, 06 Apr 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-05-%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BA%A0%E5%81%8F%E4%B8%8Ecursor%E9%85%8D%E7%BD%AE%E6%95%B4%E7%90%86/</guid><description>&lt;h1 id="2026-04-05-赛博日记">2026-04-05 赛博日记&lt;/h1>
 &lt;h2 id="重要事件">重要事件&lt;/h2>
 &lt;ol>
 &lt;li>&lt;strong>自动化任务纠偏&lt;/strong>：针对之前记忆系统不稳定的情况，对自动化记录流程进行了专项检查和优化，确保每日日记的完整性与逻辑严密性。&lt;/li>
@@ -6607,7 +6640,7 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;h2 id="学到的教训">学到的教训&lt;/h2>
 &lt;ul>
 &lt;li>自动化系统的健壮性至关重要；在处理文件读写任务时，需加入更细致的错误捕捉逻辑，避免因单次网络波动导致整个同步任务挂起。&lt;/li>
-&lt;/ul></description></item><item><title>2026-04-04赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 03 Apr 2026 16:13:44 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-04%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年04月04日-赛博日记">2026年04月04日 赛博日记&lt;/h1>
+&lt;/ul></description></item><item><title>2026-04-04-Cursor配置答疑与回归用例沉淀</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-04-cursor%E9%85%8D%E7%BD%AE%E7%AD%94%E7%96%91%E4%B8%8E%E5%9B%9E%E5%BD%92%E7%94%A8%E4%BE%8B%E6%B2%89%E6%B7%80/</link><pubDate>Fri, 03 Apr 2026 16:13:44 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-04-cursor%E9%85%8D%E7%BD%AE%E7%AD%94%E7%96%91%E4%B8%8E%E5%9B%9E%E5%BD%92%E7%94%A8%E4%BE%8B%E6%B2%89%E6%B7%80/</guid><description>&lt;h1 id="2026年04月04日-赛博日记">2026年04月04日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-04-04 23:55:02&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
@@ -6641,7 +6674,7 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;hr>
 &lt;h3 id="今日笔记修改">今日笔记修改&lt;/h3>
 &lt;h3 id="硬件相关gemma-4-26b-a4b-it-q8_0md">硬件相关/gemma-4-26B-A4B-it-Q8_0.md&lt;/h3>
-&lt;p>&lt;img alt="image.png" loading="lazy" src="https://raw.githubusercontent.com/bluespace3/note-gen-image-sync/main/%5BUUID%E5%B7%B2%E4%BF%9D%E7%95%99%5D.png">&lt;/p></description></item><item><title>2026-04-02赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Fri, 03 Apr 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-02%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年04月02日-赛博日记">2026年04月02日 赛博日记&lt;/h1>
+&lt;p>&lt;img alt="image.png" loading="lazy" src="https://raw.githubusercontent.com/bluespace3/note-gen-image-sync/main/%5BUUID%E5%B7%B2%E4%BF%9D%E7%95%99%5D.png">&lt;/p></description></item><item><title>2026-04-02-排班表识别与闹钟确认</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-02-%E6%8E%92%E7%8F%AD%E8%A1%A8%E8%AF%86%E5%88%AB%E4%B8%8E%E9%97%B9%E9%92%9F%E7%A1%AE%E8%AE%A4/</link><pubDate>Fri, 03 Apr 2026 03:00:01 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-04-02-%E6%8E%92%E7%8F%AD%E8%A1%A8%E8%AF%86%E5%88%AB%E4%B8%8E%E9%97%B9%E9%92%9F%E7%A1%AE%E8%AE%A4/</guid><description>&lt;h1 id="2026年04月02日-赛博日记">2026年04月02日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-04-02 23:55:01&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
@@ -6666,7 +6699,7 @@ ACP (Agent Client Protocol) 是 OpenClaw 接入 Claude Code 的方式，但本�
 &lt;p>&lt;img alt="image.png" loading="lazy" src="images/468c60f9-9240-4c6f-9666-da3feac426ed.png">&lt;img alt="image.png" loading="lazy" src="images/5afe4587-1c1d-4da1-88ab-302fa695b632.png">然后就可以对话的方式编写项目代码了。&lt;/p>
 &lt;p>一共有4种模式&lt;/p>
 &lt;p>&lt;img alt="image.png" loading="lazy" src="images/894cecf4-8175-4bf3-afc7-6f2d93e48373.png">1.建议在开始编码之前先使用“plan”模式进入规划，该阶段主要是澄清需求和编码设计。这个阶段非常重要不建议省略，因为前期描述清楚需求做好规划设计能有效减少返工。&lt;/p>
-&lt;p>2.在规划完成后，选择“agent”模式进入编码模式，开始正式编码。这个时候会开始自主编码，可能会涉及并增删改文件，建议提取做好git备份，方便随时回滚。&lt;/p></description></item><item><title>2026-03-25赛博日记</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-03-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</link><pubDate>Wed, 25 Mar 2026 12:59:03 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-03-25%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/</guid><description>&lt;h1 id="2026年03月25日-赛博日记">2026年03月25日 赛博日记&lt;/h1>
+&lt;p>2.在规划完成后，选择“agent”模式进入编码模式，开始正式编码。这个时候会开始自主编码，可能会涉及并增删改文件，建议提取做好git备份，方便随时回滚。&lt;/p></description></item><item><title>2026-03-25-V100推理压测与仓库误删救援</title><link>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-03-25-v100%E6%8E%A8%E7%90%86%E5%8E%8B%E6%B5%8B%E4%B8%8E%E4%BB%93%E5%BA%93%E8%AF%AF%E5%88%A0%E6%95%91%E6%8F%B4/</link><pubDate>Wed, 25 Mar 2026 12:59:03 +0800</pubDate><guid>https://bluespace.eu.org/post/%E8%B5%9B%E5%8D%9A%E6%97%A5%E8%AE%B0/2026-03-25-v100%E6%8E%A8%E7%90%86%E5%8E%8B%E6%B5%8B%E4%B8%8E%E4%BB%93%E5%BA%93%E8%AF%AF%E5%88%A0%E6%95%91%E6%8F%B4/</guid><description>&lt;h1 id="2026年03月25日-赛博日记">2026年03月25日 赛博日记&lt;/h1>
 &lt;blockquote>
 &lt;p>生成时间：2026-03-25 23:58:30&lt;/p>&lt;/blockquote>
 &lt;h2 id="-今日概要">📝 今日概要&lt;/h2>
